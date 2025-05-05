@@ -9,5 +9,6 @@ runs:
       with:
         node-version: "22.x"
         cache: "pnpm"
+        registry-url: "https://registry.npmjs.org"
     - shell: bash
       run: pnpm install
