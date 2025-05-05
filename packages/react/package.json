@@ -1,0 +1,17 @@
+{
+  "name": "@arbeidstilsynet/design-react",
+  "version": "0.0.1",
+  "description": "React implementation of Designsystemet",
+  "author": "Arbeidstilsynet",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arbeidstilsynet/design.git"
+  },
+  "license": "MIT",
+  "exports": {},
+  "files": [],
+  "scripts": {},
+  "dependencies": {
+    "@digdir/designsystemet-react": "1.0.5"
+  }
+}
