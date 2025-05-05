@@ -1,0 +1,23 @@
+{
+  "name": "@arbeidstilsynet/design-theme",
+  "version": "0.0.1",
+  "description": "Predefined themes for Designsystemet",
+  "author": "Arbeidstilsynet",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arbeidstilsynet/design.git"
+  },
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "types": "./brand/colors.d.ts",
+      "default": "./brand/arbeidstilsynet.css"
+    },
+    "./*": "./brand/*"
+  },
+  "files": [
+    "brand/**",
+    "*.css"
+  ],
+  "scripts": {}
+}

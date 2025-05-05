@@ -21,6 +21,8 @@ importers:
         specifier: 1.0.5
         version: 1.0.5
 
+  packages/theme: {}
+
 packages:
 
   '@babel/runtime@7.27.1':
