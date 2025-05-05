@@ -1,0 +1,29 @@
+name: Generate CSS from Figma tokens
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "design-tokens/**"
+      - "package-lock.json"
+
+jobs:
+  build-css:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+    steps:
+      - uses: ./.github/actions/setup
+
+      - name: Build CSS
+        run: pnpm design-tokens:build
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          pull: "--rebase --autostash"
+          default_author: github_actions
+          message: "Generated theme CSS"
+          add: "."
