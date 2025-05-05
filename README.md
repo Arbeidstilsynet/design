@@ -1,5 +1,7 @@
 # @arbeidstilsynet/design
 
+[![npm (react)](https://img.shields.io/npm/v/@arbeidstilsynet/design-react?label=%40arbeidstilsynet%2Fdesign-react)](https://www.npmjs.com/package/@arbeidstilsynet/design-react) [![npm (css)](https://img.shields.io/npm/v/@arbeidstilsynet/design-css?label=%40arbeidstilsynet%2Fdesign-css)](https://www.npmjs.com/package/@arbeidstilsynet/design-css) [![npm (theme)](https://img.shields.io/npm/v/@arbeidstilsynet/design-theme?label=%40arbeidstilsynet%2Fdesign-theme)](https://www.npmjs.com/package/@arbeidstilsynet/design-theme)
+
 Arbeidstilsynets designsystem, bygget på toppen av [Digdirs designsystem](https://www.designsystemet.no).
 
 ## Packages
