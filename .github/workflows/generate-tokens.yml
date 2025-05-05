@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - "design-tokens/**"
-      - "package-lock.json"
+      - "package.json"
 
 jobs:
   build-css:
