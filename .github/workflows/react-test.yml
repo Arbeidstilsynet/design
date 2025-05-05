@@ -1,0 +1,24 @@
+name: React Package Tests
+
+on:
+  pull_request:
+    paths:
+      - "packages/react/**"
+      - ".github/workflows/react-test.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "packages/react/**"
+      - ".github/workflows/react-test.yml"
+
+jobs:
+  test-react:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/react
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - run: pnpm test
