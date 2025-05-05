@@ -137,3 +137,6 @@ dist
 
 # misc
 .DS_Store
+
+# test output
+.vitest-results.json
