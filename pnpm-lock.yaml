@@ -12,6 +12,12 @@ importers:
         specifier: 2.29.3
         version: 2.29.3
 
+  packages/css:
+    dependencies:
+      '@digdir/designsystemet-css':
+        specifier: 1.0.5
+        version: 1.0.5
+
 packages:
 
   '@babel/runtime@7.27.1':
@@ -72,6 +78,9 @@ packages:
 
   '@changesets/write@0.4.0':
     resolution: {integrity: sha512-CdTLvIOPiCNuH71pyDu3rA+Q0n65cmAbXnwWH84rKGiFumFzkmHNT8KHTMEchcxN+Kl8I54xGUhJ7l3E7X396Q==}
+
+  '@digdir/designsystemet-css@1.0.5':
+    resolution: {integrity: sha512-QWHnlboagKVEjRG2ThLOtadEPsO4ZBPKmscsXStM4b4xLZK2bNEFq7ff+Whr//R/Efs+HlIlWhu7wE03HwGlKg==}
 
   '@manypkg/find-root@1.1.0':
     resolution: {integrity: sha512-mki5uBvhHzO8kYYix/WRy2WX8S3B5wdVSc9D6KcU5lQNglP2yt58/VfLuAK49glRXChosY8ap2oJ1qgma3GUVA==}
@@ -530,6 +539,8 @@ snapshots:
       fs-extra: 7.0.1
       human-id: 4.1.1
       prettier: 2.8.8
+
+  '@digdir/designsystemet-css@1.0.5': {}
 
   '@manypkg/find-root@1.1.0':
     dependencies:

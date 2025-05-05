@@ -1,0 +1,19 @@
+{
+  "name": "@arbeidstilsynet/design-css",
+  "version": "0.0.1",
+  "description": "CSS for Designsystemet",
+  "author": "Arbeidstilsynet",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "default": "./index.css"
+    }
+  },
+  "files": [
+    "index.css"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "@digdir/designsystemet-css": "1.0.5"
+  }
+}
