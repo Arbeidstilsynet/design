@@ -9,6 +9,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
       - run: pnpm changeset version && pnpm install
       - run: pnpm changeset publish

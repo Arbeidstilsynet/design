@@ -4,7 +4,6 @@ description: "Common setup steps for Actions"
 runs:
   using: composite
   steps:
-    - uses: actions/checkout@v4
     - uses: pnpm/action-setup@v3
     - uses: actions/setup-node@v4
       with:
