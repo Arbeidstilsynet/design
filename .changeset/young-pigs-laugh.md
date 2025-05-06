@@ -2,4 +2,4 @@
 "@arbeidstilsynet/design-react": patch
 ---
 
-Added test for example component
+Added CI workflow
