@@ -1,5 +1,11 @@
 # @arbeidstilsynet/design-theme
 
+## 0.0.4
+
+### Patch Changes
+
+- Simplify changelog ([#11](https://github.com/Arbeidstilsynet/design/pull/11))
+
 ## 0.0.3
 
 ### Patch Changes
