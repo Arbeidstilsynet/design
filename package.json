@@ -9,9 +9,9 @@
   },
   "packageManager": "pnpm@10.10.0",
   "devDependencies": {
-    "@changesets/changelog-github": "0.5.1",
     "@changesets/cli": "2.29.3",
     "@digdir/designsystemet": "1.0.5",
+    "@svitejs/changesets-changelog-github-compact": "1.2.0",
     "prettier": "3.5.3"
   }
 }
