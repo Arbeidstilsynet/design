@@ -5,11 +5,16 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
 jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
