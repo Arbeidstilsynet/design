@@ -4,13 +4,13 @@ on:
   pull_request:
     paths:
       - "packages/react/**"
-      - ".github/workflows/react-ci.yml"
+      - ".github/workflows/ci.yml"
   push:
     branches:
       - main
     paths:
       - "packages/react/**"
-      - ".github/workflows/react-ci.yml"
+      - ".github/workflows/ci.yml"
 
 jobs:
   lint-test-build:
