@@ -1,5 +1,11 @@
 # @arbeidstilsynet/design-theme
 
+## 0.0.3
+
+### Patch Changes
+
+- [#8](https://github.com/Arbeidstilsynet/design/pull/8) [`aef4b92`](https://github.com/Arbeidstilsynet/design/commit/aef4b924b310115ad6112f67fd0300bf0437cbc5) Thanks [@vaernion](https://github.com/vaernion)! - Trigger release
+
 ## 0.0.2
 
 ### Patch Changes
