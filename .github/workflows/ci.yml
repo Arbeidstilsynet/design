@@ -15,6 +15,7 @@ on:
 jobs:
   lint-test-build:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     defaults:
       run:
         working-directory: packages/react
