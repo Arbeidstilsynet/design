@@ -12,18 +12,37 @@ concurrency:
 jobs:
   release:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: ./.github/actions/setup
+
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ vars.BETZY_BOT_APP_ID }}
+          private-key: ${{ secrets.BETZY_BOT_PRIVATE_KEY }}
+          permission-contents: write
+          permission-pull-requests: write
+
       - uses: changesets/action@v1
+        id: changeset
         with:
           publish: pnpm changeset publish
+          commit: "chore(release): 📦 version packages"
+          title: "chore(release): 📦 version packages"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+        # Changeset has some issues with pnpm so we sync it up manually
+      - name: Sync lockfile if necessary
+        if: steps.changeset.outputs.hasChangesets == 'true'
+        run: |
+          git checkout changeset-release/main
+          pnpm install --no-frozen-lockfile
+          git add .
+          git commit -m "chore(release): 📦 sync lockfile"
+          git push origin changeset-release/main
