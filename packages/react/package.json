@@ -28,7 +28,8 @@
   "scripts": {
     "build": "vite build",
     "test": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "lint": "echo TODO"
   },
   "peerDependencies": {
     "react": "^19.1.0",

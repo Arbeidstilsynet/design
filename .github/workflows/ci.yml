@@ -1,0 +1,28 @@
+name: React Package CI
+
+on:
+  pull_request:
+    paths:
+      - "packages/react/**"
+      - ".github/workflows/react-ci.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "packages/react/**"
+      - ".github/workflows/react-ci.yml"
+
+jobs:
+  lint-test-build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/react
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - run: tsc --noEmit
+        name: Typecheck
+      - run: pnpm lint
+      - run: pnpm test
+      - run: pnpm build
