@@ -23,10 +23,21 @@ jobs:
       - uses: ./.github/actions/setup
 
       - uses: changesets/action@v1
+        id: changeset
         with:
           publish: pnpm changeset publish
-          commit: "chore: new release"
-          title: "chore: new release"
+          commit: "chore(release): 📦 version packages"
+          title: "chore(release): 📦 version packages"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+        # Changeset has some issues with pnpm so we sync it up manually
+      - name: Sync lockfile if necessary
+        if: steps.changeset.outputs.hasChangesets == 'true'
+        run: |
+          git checkout changeset-release/main
+          pnpm install --no-frozen-lockfile
+          git add .
+          git commit -m "chore(release): 📦 sync lockfile"
+          git push origin changeset-release/main
