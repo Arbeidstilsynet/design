@@ -21,9 +21,12 @@ jobs:
         with:
           fetch-depth: 0
       - uses: ./.github/actions/setup
+
       - uses: changesets/action@v1
         with:
           publish: pnpm changeset publish
+          commit: "chore: new release"
+          title: "chore: new release"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
