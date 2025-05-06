@@ -1,9 +1,25 @@
-import { Button, Tooltip } from "@digdir/designsystemet-react";
+import { Button, Card, Details, Heading } from "@digdir/designsystemet-react";
 
-export function TempExample() {
+interface TempExampleProps {
+  onClick: () => void | Promise<void>;
+}
+
+export function TempExample({ onClick }: Readonly<TempExampleProps>) {
   return (
-    <Tooltip content="Tooltip content">
-      <Button>Hover me</Button>
-    </Tooltip>
+    <Card>
+      <Card.Block>
+        <Heading>Tittel</Heading>
+      </Card.Block>
+      <Card.Block>
+        <Details>
+          <Details.Summary>Oppsummering</Details.Summary>
+          <Details.Content>
+            <Button variant="primary" onClick={onClick}>
+              Klikk meg
+            </Button>
+          </Details.Content>
+        </Details>
+      </Card.Block>
+    </Card>
   );
 }
