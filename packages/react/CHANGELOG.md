@@ -1,5 +1,11 @@
 # @arbeidstilsynet/design-react
 
+## 0.0.6
+
+### Patch Changes
+
+- Fix missing use client directive ([#16](https://github.com/Arbeidstilsynet/design/pull/16))
+
 ## 0.0.5
 
 ### Patch Changes
