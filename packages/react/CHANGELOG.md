@@ -1,5 +1,11 @@
 # @arbeidstilsynet/design-react
 
+## 0.0.5
+
+### Patch Changes
+
+- Fix missing build in publish ([#14](https://github.com/Arbeidstilsynet/design/pull/14))
+
 ## 0.0.4
 
 ### Patch Changes
