@@ -21,7 +21,7 @@ import "@arbeidstilsynet/design-theme";
 ...
 
 // myComponent.tsx
-import { Button, Card, Divider, Heading } from "@arbeidstilsynet/design-react";
+import { Button } from "@arbeidstilsynet/design-react";
 
 export function MyComponent() {
   return (
