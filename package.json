@@ -3,9 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "design-tokens:build": "pnpm designsystemet tokens build --clean -o ./packages/theme/brand",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css,scss}\"",
-    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,css,scss}\""
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,css,scss}\"",
+    "typecheck": "pnpm --filter @arbeidstilsynet/* typecheck",
+    "lint": "pnpm --filter @arbeidstilsynet/* lint",
+    "build:tokens": "pnpm designsystemet tokens build --clean -o ./packages/theme/brand",
+    "build": "pnpm --filter @arbeidstilsynet/* build",
+    "build:react": "pnpm --filter @arbeidstilsynet/design-react build",
+    "release": "pnpm build && changeset publish"
   },
   "packageManager": "pnpm@10.10.0",
   "devDependencies": {
