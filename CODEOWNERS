@@ -1,0 +1,1 @@
+* @Arbeidstilsynet/team-plattform
