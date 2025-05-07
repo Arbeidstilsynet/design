@@ -34,7 +34,7 @@ export function MyComponent() {
 
 ## Font (optional)
 
-The design systeme is developed with the font Inter, but you can choose any font.
+The design system is developed with the font Inter, but you can choose any font.
 
 ### Example
 
