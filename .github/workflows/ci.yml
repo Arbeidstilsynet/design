@@ -16,8 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
-      - run: tsc --noEmit
-        name: Typecheck
+      - run: pnpm typecheck
       - run: pnpm lint
       - run: pnpm test
       - run: pnpm build
