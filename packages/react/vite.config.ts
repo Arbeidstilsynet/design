@@ -28,6 +28,7 @@ export default defineConfig({
     rollupOptions: {
       external: externalDependencies,
       output: {
+        banner: "'use client';",
         dir: "dist",
       },
     },
