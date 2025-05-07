@@ -9,3 +9,66 @@ The Norwegian Labour Inspection Authority's design system, based on [designsyste
 - [@arbeidstilsynet/design-react](./packages/react/)
 - [@arbeidstilsynet/design-css](./packages/css/)
 - [@arbeidstilsynet/design-theme](./packages/theme/)
+
+## Usage
+
+`npm i @arbeidstilsynet/design-react @arbeidstilsynet/design-css @arbeidstilsynet/design-theme`
+
+```tsx
+// layout.tsx or other top level component
+import "@arbeidstilsynet/design-css";
+import "@arbeidstilsynet/design-theme";
+...
+
+// myComponent.tsx
+import { Button, Card, Divider, Heading } from "@arbeidstilsynet/design-react";
+
+export function MyComponent() {
+  return (
+    <div>
+      <Button variant="primary">Click me</Button>
+    </div>
+  );
+}
+```
+
+## Font (optional)
+
+The design systemet is developed with the font Inter, but you can choose any font.
+
+### Example
+
+```css
+/* globals.css */
+body {
+  font-family: "Inter", sans-serif;
+  font-feature-settings: "cv05" 1; /* Enable lowercase l with tail */
+}
+```
+
+```tsx
+// layout.tsx or other top level component
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <head>
+        <link
+          rel="preconnect"
+          href="https://at-static.arbeidstilsynet.no"
+          crossOrigin=""
+        />
+        <link
+          rel="stylesheet"
+          href="https://at-static.arbeidstilsynet.no/fonts/inter/v4.1/inter.css"
+          crossOrigin=""
+        />
+      </head>
+      <body>{children}</body>
+    </html>
+  );
+}
+```
