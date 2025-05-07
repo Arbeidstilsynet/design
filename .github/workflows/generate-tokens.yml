@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
 
-      - name: Build CSS
+      - name: Generate CSS
         run: pnpm build:tokens
 
       - name: Commit changes
