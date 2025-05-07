@@ -7,6 +7,7 @@
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,css,scss}\"",
     "typecheck": "pnpm --filter @arbeidstilsynet/* typecheck",
     "lint": "pnpm --filter @arbeidstilsynet/* lint",
+    "test": "pnpm --filter @arbeidstilsynet/* test",
     "build:tokens": "pnpm designsystemet tokens build --clean -o ./packages/theme/brand",
     "build": "pnpm --filter @arbeidstilsynet/* build",
     "build:react": "pnpm --filter @arbeidstilsynet/design-react build",
