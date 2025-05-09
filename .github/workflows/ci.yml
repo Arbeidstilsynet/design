@@ -35,6 +35,7 @@ jobs:
         if: steps.test.outcome == 'success' || steps.test.outcome == 'failure'
         with:
           report_paths: "test-report.xml"
+          comment: true
           detailed_summary: true
           check_name: Unit Test Report
           check_annotations: true
