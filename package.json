@@ -7,7 +7,7 @@
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,css,scss}\"",
     "typecheck": "pnpm --filter @arbeidstilsynet/* typecheck",
     "lint": "pnpm --filter @arbeidstilsynet/* lint",
-    "test": "pnpm --filter @arbeidstilsynet/* test",
+    "test": "vitest run",
     "build:tokens": "pnpm designsystemet tokens build --clean -o ./packages/theme/brand",
     "build": "pnpm --filter @arbeidstilsynet/* build",
     "build:react": "pnpm --filter @arbeidstilsynet/design-react build",
@@ -18,6 +18,8 @@
     "@changesets/cli": "2.29.3",
     "@digdir/designsystemet": "1.0.5",
     "@svitejs/changesets-changelog-github-compact": "1.2.0",
-    "prettier": "3.5.3"
+    "@vitest/coverage-v8": "3.1.3",
+    "prettier": "3.5.3",
+    "vitest": "3.1.3"
   }
 }
