@@ -10,6 +10,7 @@
     "@arbeidstilsynet/design-css": "workspace:*",
     "@arbeidstilsynet/design-react": "workspace:*",
     "@arbeidstilsynet/design-theme": "workspace:*",
+    "@navikt/aksel-icons": "7.21.1",
     "clsx": "2.1.1",
     "react": "19.1.0",
     "react-dom": "19.1.0"
@@ -19,6 +20,7 @@
     "@storybook/addon-interactions": "8.6.12",
     "@storybook/addon-onboarding": "8.6.12",
     "@storybook/blocks": "8.6.12",
+    "@storybook/preview-api": "8.6.12",
     "@storybook/react": "8.6.12",
     "@storybook/react-vite": "8.6.12",
     "@storybook/test": "8.6.12",

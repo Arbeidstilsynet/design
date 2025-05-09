@@ -7,8 +7,8 @@ import {
 } from "@arbeidstilsynet/design-react";
 import type { Meta, StoryFn } from "@storybook/react";
 import { useState } from "react";
+import { Showcase } from "./Showcase";
 import classes from "./Showcase.stories.module.css";
-import { Showcase } from "./Showcase.tsx";
 
 export default {
   title: "Showcase",

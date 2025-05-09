@@ -41,6 +41,9 @@ importers:
       '@arbeidstilsynet/design-theme':
         specifier: workspace:*
         version: link:../../packages/theme
+      '@navikt/aksel-icons':
+        specifier: 7.21.1
+        version: 7.21.1
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -63,6 +66,9 @@ importers:
       '@storybook/blocks':
         specifier: 8.6.12
         version: 8.6.12(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(storybook@8.6.12(prettier@3.5.3))
+      '@storybook/preview-api':
+        specifier: 8.6.12
+        version: 8.6.12(storybook@8.6.12(prettier@3.5.3))
       '@storybook/react':
         specifier: 8.6.12
         version: 8.6.12(@storybook/test@8.6.12(storybook@8.6.12(prettier@3.5.3)))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(storybook@8.6.12(prettier@3.5.3))(typescript@5.8.3)
@@ -732,6 +738,9 @@ packages:
 
   '@navikt/aksel-icons@7.21.0':
     resolution: {integrity: sha512-SczkvgMbFQSEX9IAm3mkwVqx29zxyqO94B9m/ekP4vbqKvrttWs+QTlHAKHWHghjZ3KOlqqiQbY8vMdFqhtBRQ==}
+
+  '@navikt/aksel-icons@7.21.1':
+    resolution: {integrity: sha512-KjcwxUhJFKlGwnihj0ZdJSIC4ZxFBmGZVKqM8JO6qpNGCaZcsZdYY2GBhY8yX4juDOg8EDFxNH0Y/fi5EQ9S/A==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -4340,6 +4349,8 @@ snapshots:
       - supports-color
 
   '@navikt/aksel-icons@7.21.0': {}
+
+  '@navikt/aksel-icons@7.21.1': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
