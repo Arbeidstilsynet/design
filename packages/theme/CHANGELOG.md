@@ -1,5 +1,11 @@
 # @arbeidstilsynet/design-theme
 
+## 0.0.6
+
+### Patch Changes
+
+- Fjernet nemndene og arbeidsmiljoportalen ([#27](https://github.com/Arbeidstilsynet/design/pull/27))
+
 ## 0.0.5
 
 ### Patch Changes
