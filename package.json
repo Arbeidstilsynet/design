@@ -11,7 +11,8 @@
     "build:tokens": "pnpm designsystemet tokens build --clean -o ./packages/theme/brand",
     "build": "pnpm --filter @arbeidstilsynet/* build",
     "build:react": "pnpm --filter @arbeidstilsynet/design-react build",
-    "release": "pnpm build && changeset publish"
+    "release": "pnpm build && changeset publish",
+    "storybook": "pnpm --filter storybook dev"
   },
   "packageManager": "pnpm@10.10.0",
   "devDependencies": {
