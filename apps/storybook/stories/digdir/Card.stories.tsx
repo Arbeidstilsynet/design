@@ -8,11 +8,11 @@ import {
   Select,
   Textfield,
 } from "@arbeidstilsynet/design-react";
-import cat1 from "@assets/img/cats/Cat 1.jpg";
-import cat5 from "@assets/img/cats/Cat 5.jpg";
 import { PlusIcon, TrashFillIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn } from "@storybook/react";
 import { Fragment } from "react/jsx-runtime";
+import cat1 from "../assets/img/cats/Cat 1.jpg";
+import cat5 from "../assets/img/cats/Cat 5.jpg";
 
 type Story = StoryFn<typeof Card>;
 
