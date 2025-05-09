@@ -1,5 +1,11 @@
 # @arbeidstilsynet/design-theme
 
+## 0.0.5
+
+### Patch Changes
+
+- Remove unused colors types that caused errors ([#24](https://github.com/Arbeidstilsynet/design/pull/24))
+
 ## 0.0.4
 
 ### Patch Changes
