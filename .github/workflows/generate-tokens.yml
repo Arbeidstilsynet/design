@@ -2,7 +2,7 @@ name: Generate CSS from Figma tokens
 
 on:
   push:
-    branches:
+    branches-ignore:
       - main
     paths:
       - "design-tokens/**"
