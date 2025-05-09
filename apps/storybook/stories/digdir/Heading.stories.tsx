@@ -2,7 +2,7 @@ import { Heading } from "@arbeidstilsynet/design-react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Heading> = {
-  title: "Komponenter/Typography/Heading",
+  title: "designsystemet.no/Typography/Heading",
   component: Heading,
 };
 

@@ -9,7 +9,7 @@ import type { Meta, StoryFn } from "@storybook/react";
 import { useState } from "react";
 
 export default {
-  title: "Komponenter/Details",
+  title: "designsystemet.no/Details",
   component: Details,
   parameters: {
     layout: "padded",

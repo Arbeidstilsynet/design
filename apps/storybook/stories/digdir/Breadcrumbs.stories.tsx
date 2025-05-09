@@ -2,7 +2,7 @@ import { Breadcrumbs } from "@arbeidstilsynet/design-react";
 import type { Meta, StoryFn } from "@storybook/react";
 
 export default {
-  title: "Komponenter/Breadcrumbs",
+  title: "designsystemet.no/Breadcrumbs",
   component: Breadcrumbs,
 } as Meta;
 

@@ -4,7 +4,7 @@ import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 type Story = StoryObj<typeof Tag>;
 
 export default {
-  title: "Komponenter/Tag",
+  title: "designsystemet.no/Tag",
   component: Tag,
   parameters: {
     customStyles: { justifyContent: "start" },

@@ -13,7 +13,7 @@ import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 import { useState } from "react";
 
 export default {
-  title: "Komponenter/Radio",
+  title: "designsystemet.no/Radio",
   component: Radio,
 } as Meta;
 

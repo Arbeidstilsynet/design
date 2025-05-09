@@ -5,7 +5,7 @@ import { expect, userEvent, within } from "@storybook/test";
 import { useState } from "react";
 
 export default {
-  title: "Komponenter/Dropdown",
+  title: "designsystemet.no/Dropdown",
   component: Dropdown,
   parameters: {
     layout: "fullscreen",

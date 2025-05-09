@@ -11,7 +11,7 @@ import { useState } from "react";
 type Story = StoryFn<typeof Table>;
 
 export default {
-  title: "Komponenter/Table",
+  title: "designsystemet.no/Table",
   component: Table,
 } as Meta;
 

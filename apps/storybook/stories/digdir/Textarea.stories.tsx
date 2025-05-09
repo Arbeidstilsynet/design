@@ -11,7 +11,7 @@ import { useState } from "react";
 type Story = StoryObj<typeof Textarea>;
 
 export default {
-  title: "Komponenter/Textarea",
+  title: "designsystemet.no/Textarea",
   component: Textarea,
   decorators: [
     (Story, { parameters }) => (

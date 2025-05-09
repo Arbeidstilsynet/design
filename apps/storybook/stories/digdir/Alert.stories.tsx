@@ -4,7 +4,7 @@ import type { Meta, StoryFn } from "@storybook/react";
 type Story = StoryFn<typeof Alert>;
 
 const meta: Meta = {
-  title: "Komponenter/Alert",
+  title: "designsystemet.no/Alert",
   component: Alert,
   parameters: {
     layout: "padded",

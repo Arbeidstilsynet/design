@@ -2,7 +2,7 @@ import { Heading, Paragraph } from "@arbeidstilsynet/design-react";
 import type { Meta, StoryFn } from "@storybook/react";
 
 const meta: Meta = {
-  title: "Komponenter/Typography",
+  title: "designsystemet.no/Typography",
 };
 
 export default meta;

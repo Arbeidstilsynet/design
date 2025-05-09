@@ -8,7 +8,7 @@ const randomNum = Math.floor(Math.random() * 1000);
 const designsystemetLink = "https://designsystemet.no/?=" + randomNum;
 
 export default {
-  title: "Komponenter/Link",
+  title: "designsystemet.no/Link",
   component: Link,
   parameters: {
     customStyles: { padding: "2px" },

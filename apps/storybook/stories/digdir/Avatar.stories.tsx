@@ -6,7 +6,7 @@ import cat1 from "../assets/img/cats/Cat 3.jpg";
 type Story = StoryFn<typeof Avatar>;
 
 const meta: Meta<typeof Avatar> = {
-  title: "Komponenter/Avatar",
+  title: "designsystemet.no/Avatar",
   component: Avatar,
   parameters: {
     layout: "padded",

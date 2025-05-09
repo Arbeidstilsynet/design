@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 type Story = StoryObj<typeof Input>;
 
 export default {
-  title: "Komponenter/Input",
+  title: "designsystemet.no/Input",
   component: Input,
   argTypes: {
     role: {

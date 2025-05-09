@@ -18,7 +18,7 @@ import { useMemo, useState } from "react";
 type Story = StoryObj<typeof Checkbox>;
 
 export default {
-  title: "Komponenter/Checkbox",
+  title: "designsystemet.no/Checkbox",
   component: Checkbox,
 } as Meta;
 

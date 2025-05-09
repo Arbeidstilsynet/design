@@ -8,7 +8,7 @@ import type { Meta, StoryFn } from "@storybook/react";
 import { useState } from "react";
 
 export default {
-  title: "Komponenter/Pagination",
+  title: "designsystemet.no/Pagination",
   component: Pagination,
 } as Meta;
 

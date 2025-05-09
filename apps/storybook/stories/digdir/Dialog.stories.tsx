@@ -13,7 +13,7 @@ import { expect, userEvent, within } from "@storybook/test";
 import { useRef, useState } from "react";
 
 export default {
-  title: "Komponenter/Dialog",
+  title: "designsystemet.no/Dialog",
   component: Dialog,
   parameters: {
     layout: "fullscreen",

@@ -13,7 +13,7 @@ import { userEvent, within } from "@storybook/test";
 import { type ChangeEvent, useState } from "react";
 
 export default {
-  title: "Komponenter/Suggestion",
+  title: "designsystemet.no/Suggestion",
   component: Suggestion,
   /* add height by default */
   decorators: [

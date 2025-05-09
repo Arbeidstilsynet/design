@@ -7,7 +7,7 @@ import {
 import type { Meta, StoryFn } from "@storybook/react";
 
 export default {
-  title: "Komponenter/Select",
+  title: "designsystemet.no/Select",
   component: Select,
   parameters: {
     layout: "padded",

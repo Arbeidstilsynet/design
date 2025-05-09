@@ -7,7 +7,7 @@ import type { Meta } from "@storybook/react";
 import { useState } from "react";
 
 const meta: Meta = {
-  title: "Utilities/useDebounceCallback",
+  title: "designsystemet.no utilities/useDebounceCallback",
   parameters: { chromatic: { disableSnapshot: true } },
 };
 

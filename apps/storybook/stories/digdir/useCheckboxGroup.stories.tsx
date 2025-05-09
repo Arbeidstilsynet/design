@@ -9,7 +9,7 @@ import {
 import type { Meta, StoryFn } from "@storybook/react";
 
 const meta: Meta = {
-  title: "Utilities/useCheckboxGroup",
+  title: "designsystemet.no utilities/useCheckboxGroup",
   parameters: { chromatic: { disableSnapshot: true } },
   argTypes: {
     name: {

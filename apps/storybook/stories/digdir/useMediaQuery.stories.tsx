@@ -2,7 +2,7 @@ import { Paragraph, useMediaQuery } from "@arbeidstilsynet/design-react";
 import type { Meta } from "@storybook/react";
 
 const meta: Meta = {
-  title: "Utilities/useMediaQuery",
+  title: "designsystemet.no utilities/useMediaQuery",
   parameters: { chromatic: { disableSnapshot: true } },
 };
 

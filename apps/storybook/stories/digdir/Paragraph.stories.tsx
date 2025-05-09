@@ -2,7 +2,7 @@ import { Paragraph } from "@arbeidstilsynet/design-react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Paragraph> = {
-  title: "Komponenter/Typography/Paragraph",
+  title: "designsystemet.no/Typography/Paragraph",
   component: Paragraph,
 };
 

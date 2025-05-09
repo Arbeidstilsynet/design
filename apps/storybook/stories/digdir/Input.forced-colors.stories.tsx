@@ -1,14 +1,14 @@
-import * as stories from './Input.stories';
+import * as stories from "./Input.stories";
 
 export default {
   ...stories.default,
-  title: 'Komponenter/Input/Forced Colors',
+  title: "designsystemet.no/Input/Forced Colors",
   parameters: {
     chromatic: {
-      forcedColors: 'active',
+      forcedColors: "active",
     },
   },
-  tags: ['test', '!dev'],
+  tags: ["test", "!dev"],
 };
 
 export const Preview = stories.Preview;

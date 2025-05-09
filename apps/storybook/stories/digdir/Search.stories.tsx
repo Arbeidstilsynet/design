@@ -10,7 +10,7 @@ import type { Meta, StoryFn } from "@storybook/react";
 import { useState } from "react";
 
 export default {
-  title: "Komponenter/Search",
+  title: "designsystemet.no/Search",
   component: Search,
 } as Meta;
 

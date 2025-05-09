@@ -17,7 +17,7 @@ import cat5 from "../assets/img/cats/Cat 5.jpg";
 type Story = StoryFn<typeof Card>;
 
 export default {
-  title: "Komponenter/Card",
+  title: "designsystemet.no/Card",
   component: Card,
   parameters: {
     layout: "fullscreen",

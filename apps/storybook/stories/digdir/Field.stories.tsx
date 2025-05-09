@@ -12,7 +12,7 @@ import type { Meta, StoryFn } from "@storybook/react";
 type Story = StoryFn<typeof Field>;
 
 export default {
-  title: "Komponenter/Field",
+  title: "designsystemet.no/Field",
   component: Field,
   parameters: {
     customStyles: {

@@ -16,7 +16,7 @@ import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 type Story = StoryObj<typeof Button>;
 
 const meta: Meta<typeof Button> = {
-  title: "Komponenter/Button",
+  title: "designsystemet.no/Button",
   component: Button,
   parameters: {
     customStyles: {

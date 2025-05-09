@@ -6,7 +6,7 @@ import type { Meta } from "@storybook/react";
 import { useState } from "react";
 
 const meta: Meta = {
-  title: "Utilities/useSynchronizedAnimation",
+  title: "designsystemet.no utilities/useSynchronizedAnimation",
   parameters: {
     chromatic: { disableSnapshot: true },
     customStyles: {

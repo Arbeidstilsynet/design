@@ -10,7 +10,7 @@ import type { Meta, StoryFn } from "@storybook/react";
 type Story = StoryFn<typeof Fieldset>;
 
 export default {
-  title: "Komponenter/Fieldset",
+  title: "designsystemet.no/Fieldset",
   component: Fieldset,
 } as Meta;
 

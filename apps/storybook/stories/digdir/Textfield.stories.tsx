@@ -10,7 +10,7 @@ import { useState } from "react";
 type Story = StoryObj<typeof Textfield>;
 
 export default {
-  title: "Komponenter/Textfield",
+  title: "designsystemet.no/Textfield",
   component: Textfield,
   argTypes: {
     multiline: {

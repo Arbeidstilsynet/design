@@ -9,7 +9,7 @@ import type { Meta, StoryFn, StoryObj } from "@storybook/react";
 type Story = StoryObj<typeof Skeleton>;
 
 export default {
-  title: "Komponenter/Loaders/Skeleton",
+  title: "designsystemet.no/Loaders/Skeleton",
   component: Skeleton,
   parameters: {
     a11y: {

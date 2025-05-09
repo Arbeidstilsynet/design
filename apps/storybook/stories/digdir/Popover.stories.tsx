@@ -5,7 +5,7 @@ import { expect, userEvent, within } from "@storybook/test";
 import { useEffect, useState } from "react";
 
 export default {
-  title: "Komponenter/Popover",
+  title: "designsystemet.no/Popover",
   component: Popover,
   parameters: {
     layout: "fullscreen",

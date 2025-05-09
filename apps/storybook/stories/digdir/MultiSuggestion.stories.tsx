@@ -13,7 +13,7 @@ import { userEvent, within } from "@storybook/test";
 import { type ChangeEvent, useState } from "react";
 
 export default {
-  title: "Komponenter/MultiSuggestion",
+  title: "designsystemet.no/MultiSuggestion",
   component: MultiSuggestion,
   /* add height by default */
   decorators: [

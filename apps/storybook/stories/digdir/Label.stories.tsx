@@ -2,7 +2,7 @@ import { Label } from "@arbeidstilsynet/design-react";
 import type { Meta, StoryObj } from "@storybook/react";
 
 const meta: Meta<typeof Label> = {
-  title: "Komponenter/Typography/Label",
+  title: "designsystemet.no/Typography/Label",
   component: Label,
 };
 

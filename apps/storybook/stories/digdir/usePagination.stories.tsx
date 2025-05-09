@@ -7,7 +7,7 @@ import { useArgs } from "@storybook/preview-api";
 import type { Meta, StoryFn } from "@storybook/react";
 
 const meta: Meta = {
-  title: "Utilities/usePagination",
+  title: "designsystemet.no utilities/usePagination",
   parameters: { chromatic: { disableSnapshot: true } },
   argTypes: {
     currentPage: {

@@ -6,7 +6,7 @@ import { useState } from "react";
 type Story = StoryFn<typeof ErrorSummary>;
 
 export default {
-  title: "Komponenter/ErrorSummary",
+  title: "designsystemet.no/ErrorSummary",
   component: ErrorSummary,
 } as Meta;
 

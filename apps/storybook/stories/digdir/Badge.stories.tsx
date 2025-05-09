@@ -13,7 +13,7 @@ import type { Meta, StoryFn } from "@storybook/react";
 type Story = StoryFn<typeof Badge>;
 
 const meta: Meta<typeof Badge> = {
-  title: "Komponenter/Badge",
+  title: "designsystemet.no/Badge",
   component: Badge,
   parameters: {
     customStyles: {
