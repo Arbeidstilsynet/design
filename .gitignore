@@ -141,3 +141,6 @@ dist
 # test output
 .vitest-results.json
 test-report.xml
+
+# storybook
+*storybook.log
