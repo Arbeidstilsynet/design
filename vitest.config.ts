@@ -8,6 +8,7 @@ export default defineConfig({
       junit: "test-report.xml",
     },
     coverage: {
+      enabled: true,
       reporter: ["html", "json-summary", "json", "lcov"],
       reportOnFailure: true,
       exclude: [

@@ -8,7 +8,6 @@
     "typecheck": "pnpm --filter @arbeidstilsynet/* typecheck",
     "lint": "pnpm --filter @arbeidstilsynet/* lint",
     "test": "vitest run",
-    "test:coverage": "vitest run --coverage",
     "build:tokens": "pnpm designsystemet tokens build --clean -o ./packages/theme/brand",
     "build": "pnpm --filter @arbeidstilsynet/* build",
     "build:react": "pnpm --filter @arbeidstilsynet/design-react build",
