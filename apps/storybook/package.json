@@ -7,6 +7,14 @@
     "build": "storybook build"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "8.6.12",
+    "@storybook/addon-interactions": "8.6.12",
+    "@storybook/addon-onboarding": "8.6.12",
+    "@storybook/blocks": "8.6.12",
+    "@storybook/react": "8.6.12",
+    "@storybook/react-vite": "8.6.12",
+    "@storybook/test": "8.6.12",
+    "storybook": "8.6.12",
     "typescript": "5.8.3"
   }
 }
