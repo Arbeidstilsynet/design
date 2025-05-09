@@ -10,14 +10,7 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   {
-    ignores: [
-      "!**/.storybook",
-      "**/node_modules",
-      "**/dist",
-      "**/coverage",
-      "**/storybook-static",
-      "**/*.config.*",
-    ],
+    ignores: ["**/node_modules", "**/dist", "**/coverage", "**/*.config.*"],
   },
 
   eslint.configs.recommended,
@@ -58,13 +51,6 @@ export default tseslint.config(
           checksVoidReturn: false,
         },
       ],
-    },
-  },
-
-  {
-    files: ["**/*.stories.tsx"],
-    rules: {
-      "@typescript-eslint/no-empty-function": "off",
     },
   }
 );
