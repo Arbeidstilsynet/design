@@ -6,6 +6,7 @@ const config: StorybookConfig = {
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../../../packages/react/src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
+  staticDirs: ["../stories/assets"],
   addons: [
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
