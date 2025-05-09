@@ -10,6 +10,8 @@ jobs:
   lint-test-build-react:
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    permissions:
+      checks: write
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
