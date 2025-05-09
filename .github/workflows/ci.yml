@@ -26,18 +26,10 @@ jobs:
       - name: "Report Coverage"
         if: steps.test.outcome == 'success' || steps.test.outcome == 'failure'
         uses: davelosert/vitest-coverage-report-action@v2
-
-        # known issue: status check will be attached to the first workflow instead of this particular one
-        # https://github.com/mikepenz/action-junit-report/issues/40
-        # https://github.com/orgs/community/discussions/24616
-      - name: Publish unit test report
-        uses: mikepenz/action-junit-report@v5
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v2
         if: steps.test.outcome == 'success' || steps.test.outcome == 'failure'
         with:
-          report_paths: "test-report.xml"
-          comment: true
-          detailed_summary: true
-          check_annotations: true
-          check_title_template: "{{FILE_NAME}} / {{TEST_NAME}}"
+          files: "test-report.xml"
 
       - run: pnpm build
