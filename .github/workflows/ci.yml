@@ -37,7 +37,6 @@ jobs:
           report_paths: "test-report.xml"
           comment: true
           detailed_summary: true
-          check_name: Unit Test Report
           check_annotations: true
           check_title_template: "{{FILE_NAME}} / {{TEST_NAME}}"
 
