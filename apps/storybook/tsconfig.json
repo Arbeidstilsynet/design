@@ -16,5 +16,12 @@
     "strict": true /* Enable all strict type-checking options. */,
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
-  "include": [".storybook/**/*", "stories/**/*", "*.ts", "*.mjs", "global.d.ts"]
+  "include": [
+    ".storybook/**/*",
+    "stories/**/*",
+    "utils/**/*",
+    "*.ts",
+    "*.mjs",
+    "global.d.ts"
+  ]
 }

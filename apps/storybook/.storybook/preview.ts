@@ -1,6 +1,7 @@
 import "@arbeidstilsynet/design-css";
 import "@arbeidstilsynet/design-theme/arbeidstilsynet.css";
 import type { Preview } from "@storybook/react";
+import { customStylesDecorator } from "../utils/customStylesDecorator";
 import "./preview.css";
 
 const preview: Preview = {
@@ -29,6 +30,7 @@ const preview: Preview = {
       toc: true,
     },
   },
+  decorators: [customStylesDecorator],
   tags: ["autodocs"],
 };
 
