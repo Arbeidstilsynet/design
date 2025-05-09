@@ -11,6 +11,19 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
+    options: {
+      storySort: {
+        method: "alphabetical",
+        order: [
+          "Showcase",
+          "Changelog",
+          "Example",
+          "Arbeidstilsynet",
+          "designsystemet.no",
+          "designsystemet.no utilities",
+        ],
+      },
+    },
     docs: {
       toc: true,
     },
