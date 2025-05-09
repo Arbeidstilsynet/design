@@ -1,4 +1,7 @@
+import "@arbeidstilsynet/design-css";
+import "@arbeidstilsynet/design-theme/arbeidstilsynet.css";
 import type { Preview } from "@storybook/react";
+import "./preview.css";
 
 const preview: Preview = {
   parameters: {
