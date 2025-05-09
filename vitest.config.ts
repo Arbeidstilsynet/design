@@ -13,6 +13,7 @@ export default defineConfig({
       reportOnFailure: true,
       exclude: [
         ...coverageConfigDefaults.exclude,
+        "**/dist/**",
         "**/*config.{mjs,ts,js}",
         "**/.storybook/**",
         "**/*.stories.tsx",
