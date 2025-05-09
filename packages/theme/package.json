@@ -13,7 +13,6 @@
   },
   "exports": {
     ".": {
-      "types": "./brand/colors.d.ts",
       "default": "./brand/arbeidstilsynet.css"
     },
     "./*": "./brand/*"
