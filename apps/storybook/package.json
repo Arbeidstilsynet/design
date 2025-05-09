@@ -5,5 +5,8 @@
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "storybook build"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3"
   }
 }
