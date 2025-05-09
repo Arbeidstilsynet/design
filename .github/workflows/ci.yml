@@ -10,13 +10,26 @@ jobs:
   lint-test-build-react:
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    defaults:
-      run:
-        working-directory: packages/react
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup
+
       - run: pnpm typecheck
       - run: pnpm lint
+
       - run: pnpm test
+        id: test
+      - name: "Report Coverage"
+        if: steps.test.outcome == 'success' || steps.test.outcome == 'failure'
+        uses: davelosert/vitest-coverage-report-action@v2
+      - name: Publish unit test report
+        uses: mikepenz/action-junit-report@v5
+        if: steps.test.outcome == 'success' || steps.test.outcome == 'failure'
+        with:
+          report_paths: "test-report.xml"
+          detailed_summary: true
+          check_name: Unit Test Report
+          check_annotations: true
+          check_title_template: "{{FILE_NAME}} / {{TEST_NAME}}"
+
       - run: pnpm build
