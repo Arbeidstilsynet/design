@@ -15,6 +15,7 @@ const preview: Preview = {
       toc: true,
     },
   },
+  tags: ["autodocs"],
 };
 
 export default preview;
