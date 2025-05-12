@@ -67,12 +67,12 @@ export function addDateToChangelog(pkg: string) {
   // Always update the date for the latest version heading
   const updated = content.replace(
     versionHeadingRegex,
-    `## ${match[1]} (${today})`
+    `## ${match[1]} (${today})`,
   );
 
   fs.writeFileSync(changelogPath, updated, "utf8");
   console.log(
-    `Set date for latest version in packages/${pkg}/CHANGELOG.md to ${today}`
+    `Set date for latest version in packages/${pkg}/CHANGELOG.md to ${today}`,
   );
 }
 

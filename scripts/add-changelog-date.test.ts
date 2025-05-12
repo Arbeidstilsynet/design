@@ -66,7 +66,7 @@ describe("add-changelog-date", () => {
     expect(writeFileSyncSpy).toHaveBeenCalledWith(
       changelogPath,
       expect.stringContaining(`## 1.2.3 (${today})`),
-      "utf8"
+      "utf8",
     );
   });
 
@@ -84,7 +84,7 @@ describe("add-changelog-date", () => {
     expect(writeFileSyncSpy).toHaveBeenCalledWith(
       changelogPath,
       expect.stringContaining(`## 1.2.3 (${today})`),
-      "utf8"
+      "utf8",
     );
   });
 
@@ -100,7 +100,7 @@ describe("add-changelog-date", () => {
 
     expect(writeFileSyncSpy).not.toHaveBeenCalled();
     expect(consoleLogSpy).toHaveBeenCalledWith(
-      expect.stringContaining("No version heading found")
+      expect.stringContaining("No version heading found"),
     );
   });
 
@@ -111,7 +111,7 @@ describe("add-changelog-date", () => {
 
     expect(writeFileSyncSpy).not.toHaveBeenCalled();
     expect(consoleWarnSpy).toHaveBeenCalledWith(
-      expect.stringContaining("No CHANGELOG.md found")
+      expect.stringContaining("No CHANGELOG.md found"),
     );
   });
 
