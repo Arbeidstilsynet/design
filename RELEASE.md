@@ -10,7 +10,7 @@ We currently use [Changesets](https://github.com/changesets/changesets) and [Cha
 
 - [Changeset Release Action](https://github.com/changesets/action) should notice the changesets (inside `.changeset/`) and generate or update a PR with bumped version and changelog.
 
-- Approve and merge the changesets PR.
+- Approve and merge the changesets versioning PR.
 
 - [Changeset Release Action](https://github.com/changesets/action) will now publish the new package version to [NPM](https://www.npmjs.com/org/arbeidstilsynet), add a git tag and create [GitHub releases](https://github.com/Arbeidstilsynet/design/releases).
 
