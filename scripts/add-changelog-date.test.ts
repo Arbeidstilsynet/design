@@ -137,7 +137,7 @@ describe("add-changelog-date", () => {
       expect(getChangedVersion(pkg)).toBe(true);
     });
 
-    it.only("returns false if versions are the same", () => {
+    it("returns false if versions are the same", () => {
       existsSyncSpy.mockReturnValue(true);
       (execSync as Mock).mockReturnValue(JSON.stringify({ version: "1.2.3" }));
       readFileSyncSpy.mockImplementation((p, encoding) => {
