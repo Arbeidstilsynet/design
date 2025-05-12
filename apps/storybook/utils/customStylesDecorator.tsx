@@ -1,4 +1,4 @@
-import type { Decorator } from '@storybook/react';
+import type { Decorator } from "@storybook/react";
 
 /**
  * This decorator is used to customize the style of the root story element.
@@ -40,14 +40,14 @@ export const customStylesDecorator: Decorator = (Story, ctx) => {
   return (
     <div
       data-color-scheme={ctx.globals.colorScheme}
-      className='storybook-decorator'
+      className="storybook-decorator"
       style={{
-        boxSizing: 'border-box',
-        overflow: 'hidden',
-        padding: '1rem',
+        boxSizing: "border-box",
+        overflow: "hidden",
+        padding: "1rem",
         ...style,
-        ...(ctx.viewMode === 'docs' && docs),
-        ...(ctx.viewMode === 'story' && story),
+        ...(ctx.viewMode === "docs" && docs),
+        ...(ctx.viewMode === "story" && story),
       }}
     >
       <Story />

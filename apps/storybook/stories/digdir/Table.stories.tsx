@@ -99,7 +99,7 @@ export const Sortable: Story = (args) => {
       setSortDirection(
         sortField === field && sortDirection === "ascending"
           ? "descending"
-          : "ascending"
+          : "ascending",
       );
     }
   };

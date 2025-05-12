@@ -163,7 +163,7 @@ export const CustomFilterAlt2: StoryFn<typeof MultiSuggestion> = (args) => {
         <MultiSuggestion.List>
           <MultiSuggestion.Empty>Tomt</MultiSuggestion.Empty>
           {DATA_PLACES.filter(
-            (_, index) => !value || index === Number(value) - 1
+            (_, index) => !value || index === Number(value) - 1,
           ).map((text) => (
             <MultiSuggestion.Option key={text}>{text}</MultiSuggestion.Option>
           ))}
@@ -218,7 +218,7 @@ export const FetchExternal: StoryFn<typeof MultiSuggestion> = (args) => {
     const api = `https://restcountries.com/v2/name/${value}?fields=name`;
     const countries = await (await fetch(api)).json();
     setOptions(
-      Array.isArray(countries) ? countries.map(({ name }) => name) : []
+      Array.isArray(countries) ? countries.map(({ name }) => name) : [],
     );
   };
 
