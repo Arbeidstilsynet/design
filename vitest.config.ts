@@ -15,7 +15,7 @@ export default defineConfig({
         ...coverageConfigDefaults.exclude,
         "**/dist/**",
         "**/*config.{mjs,ts,js}",
-        "**/.storybook/**",
+        "**/storybook/**",
         "**/*.stories.tsx",
       ],
     },

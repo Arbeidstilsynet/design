@@ -8,7 +8,8 @@ import reactHooks from "eslint-plugin-react-hooks";
 import storybook from "eslint-plugin-storybook";
 import tseslint from "typescript-eslint";
 
-export default tseslint.config(
+/** @type {import("typescript-eslint").ConfigArray} */
+const config = tseslint.config(
   {
     ignores: ["**/node_modules", "**/dist", "**/coverage", "**/*.config.*"],
   },
@@ -54,3 +55,5 @@ export default tseslint.config(
     },
   }
 );
+
+export default config;
