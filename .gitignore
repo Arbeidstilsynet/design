@@ -145,6 +145,3 @@ test-report.xml
 # storybook
 storybook-static
 *storybook.log
-
-# changesets util script build output
-.changeset/changelog.js
