@@ -15,6 +15,7 @@
 import { execSync } from "child_process";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 
 const projects = ["react", "css", "theme"];
 const packagesDir = path.resolve(process.cwd(), "packages");
@@ -83,6 +84,9 @@ function main() {
   }
 }
 
-if (process.argv[1] === new URL(import.meta.url).pathname) {
+if (
+  process.argv[1] &&
+  path.resolve(process.argv[1]) === path.resolve(fileURLToPath(import.meta.url))
+) {
   main();
 }
