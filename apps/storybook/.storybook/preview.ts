@@ -17,6 +17,7 @@ const preview: Preview = {
       storySort: {
         method: "alphabetical",
         order: [
+          "Usage",
           "Showcase",
           "Changelog",
           "Example",
@@ -27,7 +28,9 @@ const preview: Preview = {
       },
     },
     docs: {
-      toc: true,
+      toc: {
+        headingSelector: "h2, h3",
+      },
     },
   },
   decorators: [customStylesDecorator],
