@@ -4,6 +4,8 @@
 
 The Norwegian Labour Inspection Authority's design system, based on [designsystemet.no](https://www.designsystemet.no).
 
+Storybook: [design2.arbeidstilsynet.no](https://design2.arbeidstilsynet.no)
+
 ## Packages
 
 - [@arbeidstilsynet/design-react](./packages/react/)
