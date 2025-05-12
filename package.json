@@ -14,7 +14,6 @@
     "build:react": "pnpm --filter @arbeidstilsynet/design-react build",
     "build:storybook": "pnpm --filter storybook... build",
     "version": "changeset version && tsx scripts/add-changelog-date.ts",
-    "build:changelog": "tsc -p tsconfig.changelog.json",
     "release": "pnpm build && changeset publish",
     "storybook": "pnpm --filter storybook dev"
   },
