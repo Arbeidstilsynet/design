@@ -1,5 +1,5 @@
 {
-  "name": "storybook",
+  "name": "@arbeidstilsynet/storybook",
   "version": "0.0.0",
   "private": true,
   "scripts": {
