@@ -15,7 +15,8 @@
     "build:storybook": "pnpm --filter storybook... build",
     "version": "changeset version && tsx scripts/add-changelog-date.ts",
     "release": "pnpm build && changeset publish",
-    "storybook": "pnpm --filter storybook dev"
+    "storybook": "pnpm --filter storybook dev",
+    "storybook:serve": "pnpm --filter storybook serve"
   },
   "packageManager": "pnpm@10.10.0",
   "devDependencies": {
