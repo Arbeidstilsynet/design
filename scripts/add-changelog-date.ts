@@ -55,8 +55,9 @@ export function addDateToChangelog(pkg: string) {
   const dd = String(date.getDate()).padStart(2, "0");
   const today = `${yyyy}-${mm}-${dd}`;
 
-  // Regex: match the first version heading, with or without a date
-  const versionHeadingRegex = /^## (\d+\.\d+\.\d+)(?: \(\d{4}-\d{2}-\d{2}\))?/m;
+  // Regex: match the first version heading, possibly followed by a "Released:" line
+  const versionHeadingRegex =
+    /^## (\d+\.\d+\.\d+)(?:\n\nReleased: \d{4}-\d{2}-\d{2})?/m;
   const match = content.match(versionHeadingRegex);
 
   if (!match) {
@@ -64,10 +65,10 @@ export function addDateToChangelog(pkg: string) {
     return;
   }
 
-  // Always update the date for the latest version heading
+  // Replace or insert the Released date after the heading
   const updated = content.replace(
     versionHeadingRegex,
-    `## ${match[1]} (${today})`,
+    `## ${match[1]}\n\nReleased: ${today}`,
   );
 
   fs.writeFileSync(changelogPath, updated, "utf8");

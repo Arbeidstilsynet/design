@@ -65,13 +65,13 @@ describe("add-changelog-date", () => {
     const today = getToday();
     expect(writeFileSyncSpy).toHaveBeenCalledWith(
       changelogPath,
-      expect.stringContaining(`## 1.2.3 (${today})`),
+      expect.stringContaining(`## 1.2.3\n\nReleased: ${today}`),
       "utf8",
     );
   });
 
   it("updates date if already present", () => {
-    const changelog = `# pkg\n\n## 1.2.3 (2000-01-01)\n\nSome changes\n`;
+    const changelog = `# pkg\n\n## 1.2.3\n\nReleased: 2000-01-01\n\nSome changes\n`;
     existsSyncSpy.mockImplementation((p) => p === changelogPath);
     readFileSyncSpy.mockImplementation((p) => {
       if (p === changelogPath) return changelog;
@@ -83,7 +83,7 @@ describe("add-changelog-date", () => {
     const today = getToday();
     expect(writeFileSyncSpy).toHaveBeenCalledWith(
       changelogPath,
-      expect.stringContaining(`## 1.2.3 (${today})`),
+      expect.stringContaining(`## 1.2.3\n\nReleased: ${today}`),
       "utf8",
     );
   });
@@ -140,7 +140,7 @@ describe("add-changelog-date", () => {
     it("returns false if versions are the same", () => {
       existsSyncSpy.mockReturnValue(true);
       (execSync as Mock).mockReturnValue(JSON.stringify({ version: "1.2.3" }));
-      readFileSyncSpy.mockImplementation((p, encoding) => {
+      readFileSyncSpy.mockImplementation((p) => {
         if (
           typeof p === "string" &&
           p.replace(/\\/g, "/").endsWith("/react/package.json")
