@@ -1,5 +1,11 @@
 # @arbeidstilsynet/design-react
 
+## 0.0.8 (2025-05-13)
+
+### Patch Changes
+
+- Test entry ([#35](https://github.com/Arbeidstilsynet/design/pull/35))
+
 ## 0.0.7 (2025-05-13)
 
 ### Patch Changes
