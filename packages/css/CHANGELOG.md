@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-css
 
+## 0.0.6
+
+Released: 2025-05-13
+
+### Patch Changes
+
+- Add changelog date as a new paragraph instead of in version heading. This fixes an issue with the versioning PR description containing the entire changelog. ([#38](https://github.com/Arbeidstilsynet/design/pull/38))
+
 ## 0.0.5 (2025-05-13)
 
 ### Patch Changes

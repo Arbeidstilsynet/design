@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-react
 
+## 0.0.8
+
+Released: 2025-05-13
+
+### Patch Changes
+
+- Add changelog date as a new paragraph instead of in version heading. This fixes an issue with the versioning PR description containing the entire changelog. ([#38](https://github.com/Arbeidstilsynet/design/pull/38))
+
 ## 0.0.7 (2025-05-13)
 
 ### Patch Changes
