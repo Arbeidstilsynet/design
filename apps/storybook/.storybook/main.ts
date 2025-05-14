@@ -26,6 +26,7 @@ const config: StorybookConfig = {
     reactDocgen: "react-docgen-typescript",
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
+      EXPERIMENTAL_useWatchProgram: true,
     },
   },
   // use alias to resolve @arbeidstilsynet/design-react to the local package for HMR support
