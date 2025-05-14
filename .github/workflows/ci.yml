@@ -7,7 +7,7 @@ on:
       - main
 
 jobs:
-  lint-test-build-react:
+  lint-test-build:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
