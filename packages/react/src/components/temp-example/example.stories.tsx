@@ -8,10 +8,11 @@ const meta: Meta<typeof TempExample> = {
 
 export default meta;
 
-type Story = StoryObj<typeof TempExample>;
+type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
     onClick: () => alert("Button clicked!"),
+    heading: "Tittel",
   },
 };

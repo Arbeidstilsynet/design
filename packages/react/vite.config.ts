@@ -1,6 +1,6 @@
 import react from "@vitejs/plugin-react";
-import { readFileSync } from "fs";
-import path, { resolve } from "path";
+import { readFileSync } from "node:fs";
+import path, { resolve } from "node:path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 

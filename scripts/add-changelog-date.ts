@@ -12,10 +12,10 @@
  * It ensures the changelog date is always up-to-date at the time of publishing a release.
  */
 
-import { execSync } from "child_process";
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+import { execSync } from "node:child_process";
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 const projects = ["react", "css", "theme"];
 const packagesDir = path.resolve(process.cwd(), "packages");
