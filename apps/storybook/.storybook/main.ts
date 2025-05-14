@@ -1,5 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-vite";
-import path from "path";
+import { resolve } from "node:path";
 
 const config: StorybookConfig = {
   stories: [
@@ -22,14 +22,18 @@ const config: StorybookConfig = {
     disableTelemetry: true,
   },
   typescript: {
-    reactDocgen: "react-docgen",
+    check: true,
+    reactDocgen: "react-docgen-typescript",
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+    },
   },
   // use alias to resolve @arbeidstilsynet/design-react to the local package for HMR support
   async viteFinal(config) {
     config.resolve = config.resolve || {};
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
-      "@arbeidstilsynet/design-react": path.resolve(
+      "@arbeidstilsynet/design-react": resolve(
         __dirname,
         "../../../packages/react/src/index.ts",
       ),
