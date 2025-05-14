@@ -134,7 +134,7 @@ export const ListeMedLenker: Story = (args) => (
   </List.Unordered>
 );
 
-export const ListeMedOverskrift: Story = (args) => (
+export const ListeMedOverskrift: Story = () => (
   <>
     <div>
       <Heading

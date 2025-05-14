@@ -117,7 +117,7 @@ export const Counter: Story = () => (
 export const Position: Story = () => (
   <>
     <Fieldset>
-      <Fieldset.Legend>Fields with position="start"</Fieldset.Legend>
+      <Fieldset.Legend>Fields with position=&quot;start&quot;</Fieldset.Legend>
       <Field position="start">
         <Label>Radio</Label>
         <Input type="radio" />
@@ -133,7 +133,7 @@ export const Position: Story = () => (
     </Fieldset>
     <br />
     <Fieldset>
-      <Fieldset.Legend>Fields with position="end"</Fieldset.Legend>
+      <Fieldset.Legend>Fields with position=&quot;end&quot;</Fieldset.Legend>
       <Field position="end">
         <Label>Radio</Label>
         <Input type="radio" />
