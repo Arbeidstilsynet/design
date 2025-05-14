@@ -24,6 +24,7 @@ export const Checked: Story = {
 };
 
 export const Group: Story = {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   render: ({ "aria-label": a, "aria-labelledby": b, ...args }) => (
     <Fieldset>
       <Fieldset.Legend>Skru av/på en eller flere innstillinger</Fieldset.Legend>

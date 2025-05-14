@@ -1,9 +1,7 @@
-import { Radio, UseRadioGroupProps } from "@arbeidstilsynet/design-react";
+import { Radio } from "@arbeidstilsynet/design-react";
 import type { Meta } from "@storybook/react";
 
-export const UseRadioGroup = (_props: UseRadioGroupProps) => (
-  <Radio aria-label="label" />
-);
+export const UseRadioGroup = () => <Radio aria-label="label" />;
 
 export default {
   title: "designsystemet.no utilities/useRadioGroup",

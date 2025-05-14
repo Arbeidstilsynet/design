@@ -103,7 +103,7 @@ Floating.parameters = {
   },
 };
 
-export const CustomPlacement: Story = (args) => (
+export const CustomPlacement: Story = () => (
   <>
     <Badge.Position
       placement="top-right"
@@ -118,7 +118,7 @@ export const CustomPlacement: Story = (args) => (
   </>
 );
 
-export const Status: Story = (args) => (
+export const Status: Story = () => (
   <>
     <Badge.Position data-size="sm">
       <Badge data-color="danger" />

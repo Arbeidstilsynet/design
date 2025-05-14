@@ -133,7 +133,8 @@ export const BackdropClosedbyAny: StoryFn<typeof Dialog> = () => {
       <Dialog.Trigger>Open Dialog</Dialog.Trigger>
       <Dialog ref={dialogRef} closedby="any">
         <Heading>
-          Dialog med <code>closedby="any"</code> og en veldig lang tittel
+          Dialog med <code>closedby=&quot;any&quot;</code> og en veldig lang
+          tittel
         </Heading>
         <Paragraph>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Blanditiis
