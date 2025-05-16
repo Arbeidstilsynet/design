@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-react
 
+## 0.0.9
+
+Released: 2025-05-16
+
+### Patch Changes
+
+- Fix exports for RSC client boundary ([#42](https://github.com/Arbeidstilsynet/design/pull/42))
+
 ## 0.0.8
 
 Released: 2025-05-13
