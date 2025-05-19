@@ -12,8 +12,8 @@ importers:
         specifier: 2.29.4
         version: 2.29.4
       '@digdir/designsystemet':
-        specifier: 1.0.5
-        version: 1.0.5
+        specifier: 1.0.6
+        version: 1.0.6
       '@svitejs/changesets-changelog-github-compact':
         specifier: 1.2.0
         version: 1.2.0
@@ -450,9 +450,9 @@ packages:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet@1.0.5':
-    resolution: {integrity: sha512-WmhMW84VW6cJXXLALizYABSYySWgUBiOV6VO9jcZdcffR1h8bIqDOsba8H5pPDm+2f9JTPI4R6lAkhmnGZ0kxQ==}
-    engines: {node: '>=22.14.0'}
+  '@digdir/designsystemet@1.0.6':
+    resolution: {integrity: sha512-zDLPtWmViQFz1p/gIZuoYxRKN92E2mbswsFt1u43+usOUDBNbZb/YXDpG/P6VootvilOxy1vj4fBPTgFiimAQQ==}
+    engines: {node: '>=22.15.0'}
     hasBin: true
 
   '@esbuild/aix-ppc64@0.25.3':
@@ -1155,8 +1155,8 @@ packages:
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
 
-  '@tokens-studio/sd-transforms@1.2.12':
-    resolution: {integrity: sha512-YAHKYtGjwrYXp1Kh/PM/3C/e3a05+Zg6pxA4Rz3dkxPO4L/IGBE1ExKrqOZXTLRCw6JJDofQKUapAvig0iO9Fg==}
+  '@tokens-studio/sd-transforms@1.3.0':
+    resolution: {integrity: sha512-zVbiYjTGWpSuwzZwiuvcWf79CQEcTMKSxrOaQJ0zHXFxEmrpETWeIRxv2IO8rtMos/cS8mvnDwPngoHQOMs1SA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       style-dictionary: ^4.3.0 || ^5.0.0-rc.0
@@ -1639,8 +1639,11 @@ packages:
   color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
-  colorjs.io@0.4.5:
-    resolution: {integrity: sha512-yCtUNCmge7llyfd/Wou19PMAcf5yC3XXhgFoAh6zsO2pGswhUPBaaUh8jzgHnXtXuZyFKzXZNAnyF5i+apICow==}
+  colorjs.io@0.5.2:
+    resolution: {integrity: sha512-twmVoizEW7ylZSN32OgKdXRmo1qg+wT5/6C3xu5b9QsWzSFAhHLn2xd8ro0diCsKfCj1RdaTP/nrcW+vAoQPIw==}
+
+  colorjs.io@0.6.0-alpha.1:
+    resolution: {integrity: sha512-c/h/8uAmPydQcriRdX8UTAFHj6SpSHFHBA8LvMikvYWAVApPTwg/pyOXNsGmaCBd6L/EeDlRHSNhTtnIFp/qsg==}
 
   colorparsley@0.1.8:
     resolution: {integrity: sha512-rObESTTTE6G5qO5WFwFxWPggpw4KfpxnLC6Ssl8bITBnNVRhDsyCeTRAUxWQNVTx2pRknKlO2nddYTxjkdNFaw==}
@@ -4092,14 +4095,15 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet@1.0.5':
+  '@digdir/designsystemet@1.0.6':
     dependencies:
       '@commander-js/extra-typings': 13.1.0(commander@13.1.0)
-      '@tokens-studio/sd-transforms': 1.2.12(style-dictionary@4.4.0)
+      '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@4.4.0)
       apca-w3: 0.1.9
       chalk: 5.4.1
       change-case: 5.4.4
       chroma-js: 3.1.2
+      colorjs.io: 0.6.0-alpha.1
       commander: 13.1.0
       fast-glob: 3.3.3
       hsluv: 1.0.1
@@ -4809,12 +4813,12 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.0
 
-  '@tokens-studio/sd-transforms@1.2.12(style-dictionary@4.4.0)':
+  '@tokens-studio/sd-transforms@1.3.0(style-dictionary@4.4.0)':
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.1
       '@bundled-es-modules/postcss-calc-ast-parser': 0.1.6
       '@tokens-studio/types': 0.5.2
-      colorjs.io: 0.4.5
+      colorjs.io: 0.5.2
       expr-eval-fork: 2.0.2
       is-mergeable-object: 1.1.1
       style-dictionary: 4.4.0
@@ -5393,7 +5397,9 @@ snapshots:
 
   color-name@1.1.4: {}
 
-  colorjs.io@0.4.5: {}
+  colorjs.io@0.5.2: {}
+
+  colorjs.io@0.6.0-alpha.1: {}
 
   colorparsley@0.1.8: {}
 
