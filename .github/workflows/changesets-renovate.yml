@@ -1,0 +1,39 @@
+## Based on https://github.com/scaleway/ultraviolet/blob/7ba5ded00462e30d5a37de90c06be49640786849/.github/workflows/changesets-renovate.yml
+
+name: Generate changeset for Renovate
+
+on:
+  pull_request_target:
+    paths:
+      - ".github/workflows/changesets-renovate.yml"
+      - "**/pnpm-lock.yaml"
+      - "**/package.json"
+
+jobs:
+  generate-changeset:
+    runs-on: ubuntu-latest
+    if: github.actor == 'renovate[bot]' && github.repository == 'Arbeidstilsynet/design'
+    steps:
+      - name: Create GitHub App Token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ vars.BETZY_BOT_APP_ID }}
+          private-key: ${{ secrets.BETZY_BOT_PRIVATE_KEY }}
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 10
+          ref: ${{ github.head_ref }}
+          token: ${{ steps.app-token.outputs.token }}
+
+      - uses: pnpm/action-setup@v4.1.0
+      - uses: actions/setup-node@v4.4.0
+        with:
+          node-version: 22
+          cache: "pnpm"
+
+      - name: Run changesets-renovate
+        run: pnpm dlx @scaleway/changesets-renovate
+        env:
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
