@@ -47,5 +47,6 @@ config:
           - "**/*.config.*"
           - "**/tsconfig.json"
           - "**/pnpm-workspace.yaml"
+      - all-globs-to-all-files:
           - "!.github/**"
           - "!.changeset/**"
