@@ -1,1 +1,5 @@
 @import "@digdir/designsystemet-css";
+
+body {
+  color: red;
+}
