@@ -1,18 +1,18 @@
 packages/react:
   - changed-files:
-      - any-glob-to-any-file:
+      - all-globs-to-any-file:
           - "packages/react/**"
           - "!packages/react/package.json"
 
 packages/theme:
   - changed-files:
-      - any-glob-to-any-file:
+      - all-globs-to-any-file:
           - "packages/theme/**"
           - "!packages/theme/package.json"
 
 packages/css:
   - changed-files:
-      - any-glob-to-any-file:
+      - all-globs-to-any-file:
           - "packages/css/**"
           - "!packages/css/package.json"
 
@@ -28,7 +28,7 @@ stories:
 
 storybook:
   - changed-files:
-      - any-glob-to-any-file:
+      - all-globs-to-any-file:
           - "apps/storybook/**"
           - "!apps/storybook/**/*.stories.tsx"
 
