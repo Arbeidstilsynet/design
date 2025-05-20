@@ -1,0 +1,42 @@
+packages/react:
+  - any: ["packages/react/**"]
+    not:
+      - "packages/react/package.json"
+
+packages/theme:
+  - any: ["packages/theme/**"]
+    not:
+      - "packages/theme/package.json"
+
+packages/css:
+  - any: ["packages/css/**"]
+    not:
+      - "packages/css/package.json"
+
+documentation:
+  - "**/*.md"
+
+stories:
+  - "packages/react/**/*.stories.tsx"
+  - "apps/storybook/**/*.stories.tsx"
+
+storybook:
+  - any: ["apps/storybook/**"]
+    not:
+      - "apps/storybook/**/*.stories.tsx"
+
+dependencies:
+  - "pnpm-lock.yaml"
+
+ci:
+  - ".github/**"
+
+config:
+  - any:
+      - "**/.*"
+      - "**/*.config.*"
+      - "**/tsconfig.json"
+      - "**/pnpm-workspace.yaml"
+    not:
+      - ".github/**"
+      - ".changeset/**"
