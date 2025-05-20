@@ -1,42 +1,51 @@
 packages/react:
-  - any: ["packages/react/**"]
-    not:
-      - "packages/react/package.json"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "packages/react/**"
+          - "!packages/react/package.json"
 
 packages/theme:
-  - any: ["packages/theme/**"]
-    not:
-      - "packages/theme/package.json"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "packages/theme/**"
+          - "!packages/theme/package.json"
 
 packages/css:
-  - any: ["packages/css/**"]
-    not:
-      - "packages/css/package.json"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "packages/css/**"
+          - "!packages/css/package.json"
 
 documentation:
-  - "**/*.md"
+  - changed-files:
+      - any-glob-to-any-file: "**/*.md"
 
 stories:
-  - "packages/react/**/*.stories.tsx"
-  - "apps/storybook/**/*.stories.tsx"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "packages/react/**/*.stories.tsx"
+          - "apps/storybook/**/*.stories.tsx"
 
 storybook:
-  - any: ["apps/storybook/**"]
-    not:
-      - "apps/storybook/**/*.stories.tsx"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "apps/storybook/**"
+          - "!apps/storybook/**/*.stories.tsx"
 
 dependencies:
-  - "pnpm-lock.yaml"
+  - changed-files:
+      - any-glob-to-any-file: "pnpm-lock.yaml"
 
 ci:
-  - ".github/**"
+  - changed-files:
+      - any-glob-to-any-file: ".github/**"
 
 config:
-  - any:
-      - "**/.*"
-      - "**/*.config.*"
-      - "**/tsconfig.json"
-      - "**/pnpm-workspace.yaml"
-    not:
-      - ".github/**"
-      - ".changeset/**"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/.*"
+          - "**/*.config.*"
+          - "**/tsconfig.json"
+          - "**/pnpm-workspace.yaml"
+          - "!.github/**"
+          - "!.changeset/**"
