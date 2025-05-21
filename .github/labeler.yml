@@ -16,9 +16,12 @@ packages/css:
           - "packages/css/**"
           - "!packages/css/package.json"
 
-documentation:
+storybook:
   - changed-files:
-      - any-glob-to-any-file: "**/*.md"
+      - all-globs-to-any-file:
+          - "apps/storybook/**"
+          - "!apps/storybook/**/*.stories.tsx"
+          - "!apps/storybook/package.json"
 
 stories:
   - changed-files:
@@ -26,11 +29,11 @@ stories:
           - "packages/react/**/*.stories.tsx"
           - "apps/storybook/**/*.stories.tsx"
 
-storybook:
+documentation:
   - changed-files:
       - all-globs-to-any-file:
-          - "apps/storybook/**"
-          - "!apps/storybook/**/*.stories.tsx"
+          - "**/*.md"
+          - "!**/CHANGELOG.md"
 
 dependencies:
   - changed-files:
