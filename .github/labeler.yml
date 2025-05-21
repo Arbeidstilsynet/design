@@ -34,6 +34,7 @@ documentation:
       - all-globs-to-any-file:
           - "**/*.md"
           - "!**/CHANGELOG.md"
+          - "!.changeset/**"
 
 dependencies:
   - changed-files:
