@@ -1,5 +1,23 @@
 # @arbeidstilsynet/design-react
 
+## 0.0.11
+
+Released: 2025-05-27
+
+### Patch Changes
+
+- Updated dependency `@vitejs/plugin-react` to `4.5.0`. ([#77](https://github.com/Arbeidstilsynet/design/pull/77))
+
+- Updated dependency `@types/react` to `19.1.5`. ([#75](https://github.com/Arbeidstilsynet/design/pull/75))
+
+- Updated dependency `@types/node` to `22.15.23`. ([#80](https://github.com/Arbeidstilsynet/design/pull/80))
+
+- Updated dependency `@types/node` to `22.15.21`. ([#72](https://github.com/Arbeidstilsynet/design/pull/72))
+
+- Updated dependency `typescript-eslint` to `8.33.0`. ([#81](https://github.com/Arbeidstilsynet/design/pull/81))
+
+- Updated dependency `@types/react` to `19.1.6`. ([#79](https://github.com/Arbeidstilsynet/design/pull/79))
+
 ## 0.0.10
 
 Released: 2025-05-20
