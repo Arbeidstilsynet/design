@@ -8,11 +8,7 @@ Released: 2025-05-27
 
 - Updated dependency `@vitejs/plugin-react` to `4.5.0`. ([#77](https://github.com/Arbeidstilsynet/design/pull/77))
 
-- Updated dependency `@types/react` to `19.1.5`. ([#75](https://github.com/Arbeidstilsynet/design/pull/75))
-
 - Updated dependency `@types/node` to `22.15.23`. ([#80](https://github.com/Arbeidstilsynet/design/pull/80))
-
-- Updated dependency `@types/node` to `22.15.21`. ([#72](https://github.com/Arbeidstilsynet/design/pull/72))
 
 - Updated dependency `typescript-eslint` to `8.33.0`. ([#81](https://github.com/Arbeidstilsynet/design/pull/81))
 
