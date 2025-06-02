@@ -57,7 +57,7 @@ Pakkestrukturen (css, theme, react) er tilsvarende som [digdir/designsystemet](h
    Dette er gjort av [@mattilsynet/design](https://github.com/Mattilsynet/design). Det ble ikke valgt fordi det skaper tettere binding mellom styling/themeing og komponentimplementasjon.
 
 2. Gradvis implementasjon i eksisterende kodebase.
-   Helt forskjellig CSS-håndtering og sterke koblinger i den eksisterende kdoebasen gjør det vanskelig å gjøre en gradvis omskriving med samme prosjektstruktur. Den er 100% basert på styled-components som CSS-løsning. Repoet er heller ikke rigget opp som et skikkelig monorepo.
+   Helt forskjellig CSS-håndtering og sterke koblinger i den eksisterende kodebasen gjør det vanskelig å gjøre en gradvis omskriving med samme prosjektstruktur. Den er 100% basert på styled-components som CSS-løsning. Repoet er heller ikke rigget opp som et skikkelig monorepo.
 
 ## Deltakere
 
