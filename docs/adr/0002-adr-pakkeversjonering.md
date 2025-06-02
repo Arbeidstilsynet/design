@@ -9,13 +9,15 @@
 
 ## Kontekst
 
-Bygger på [0001-adr-repo-init](0001-adr-repo-init.md). Tre forskjellige NPM-pakker skal versjoneres med hver sin endringslogg. Vi ønsker å følge semantic versioning.
+Bygger på [0001-adr-repo-init](0001-adr-repo-init.md). Tre forskjellige NPM-pakker skal versjoneres med hver sin endringslogg. Vi ønsker å følge semantic versioning. Versjonering må hensynstas både når en utvikler lager en feature branch og når Renovate oppdaterer avhengigheter som pakkene bruker.
 
 ## Beslutning
 
 Bruker [Changesets](https://github.com/changesets/changesets) til å automatisk generere endringslogg, publisere pakker og lage git tags. En [GitHub action](https://github.com/changesets/action) håndterer publisering og slår sammen alle changesets til en release PR. Konfigurerer [changeset-bot](https://github.com/apps/changeset-bot) til å gi tilbakemelding til utviklere i vanlige PRs.
 
 `RELEASE.md` skal dokumentere flyten for å publisere endringer av pakkene våre.
+
+[@scaleway/changesets-renovate](https://www.npmjs.com/package/@scaleway/changesets-renovate) benyttes for å legge til changeset i Renovate PRs.
 
 ## Konsekvenser
 
@@ -40,6 +42,8 @@ En utvikler misforstår flyten og publiserer en pakke for tidlig. Anses som svæ
 ### Avhengigheter
 
 Changesets er en kritisk avhengighet for denne versjonshåndteringen. Hvis de legger ned kan vi se etter alternativ eller falle tilbake til manuell tagging. Changesets er en viktig del av økosystemet rundt NPM-pakker, så det er sannsynlig at en erstatning vil dukke opp.
+
+[@scaleway/changesets-renovate](https://www.npmjs.com/package/@scaleway/changesets-renovate) brukes for å gi bedre samspill mellom Changesets og Renovate. Dette er ikke kritisk og kan erstattes med eget script.
 
 ### Teknisk gjeld som oppstår
 
