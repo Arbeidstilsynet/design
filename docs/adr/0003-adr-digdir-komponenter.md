@@ -25,7 +25,7 @@ Basiskomponentene vises fortsatt frem i vår Storybook, ved å benytte (kopiere)
 
 - Gir et samkjørt API som tilsvarer Digdirs, bare med andre pakkenavn.
 - Utnytter alt arbeidet Digdir har lagt i å produsere basiskomponenter av høy teknisk kvalitet. Trenger ikke legge betydelig arbeid å implementere alle selv.
-- Åpner for å ersatte/tilpasse enkeltkomponenter fra Digdir. Dette kan f.eks. være relevant for `<Label>` hvor vi per i dag har flere varianter enn Digdir har.
+- Åpner for å erstatte/tilpasse enkeltkomponenter fra Digdir. Dette kan f.eks. være relevant for `<Label>` hvor vi per i dag har flere varianter enn Digdir har.
 - Konsumerende prosjekter trenger ikke installere Digdirs pakke direkte i sin `package.json`.
 
 ### Negative konsekvenser
