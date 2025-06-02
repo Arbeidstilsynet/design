@@ -25,7 +25,7 @@ Bruker [Changesets](https://github.com/changesets/changesets) til å automatisk 
 - Deklarativ publisering ut i fra repoets tilstand: Changesets forstår hva den skal gjøre ut i fra `package.json`, publiserte versjoner i NPM og eventuelle changesets.
 - Utviklere forholder seg bare til et `changeset`: hvilke pakker som er endret, endringstype, og en beskrivelse av endringen.
 - Changesets CLI hjelper med å generere `changeset`-fil.
-- Uviklere får en tydelig oversikt over alt som er endret før de trigger en release ved å godkjenne og merge changesets sin PR.
+- Utviklere får en tydelig oversikt over alt som er endret før de trigger en release ved å godkjenne og merge changesets sin PR.
 - Changesets er industristandard innenfor open source NPM-monorepos.
 
 ### Negative konsekvenser
