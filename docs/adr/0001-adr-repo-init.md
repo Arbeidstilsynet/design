@@ -2,10 +2,10 @@
 
 ## Status
 
-* [X] Foreslått (dato: 2025-06-02)
-* [ ] Akseptert (dato: ÅÅÅÅ-MM-DD)
-* [ ] Avvist (dato: ÅÅÅÅ-MM-DD)
-* [ ] Erstattet (dato: ÅÅÅÅ-MM-DD) *lenke til ADR som erstatter denne*
+- [x] Foreslått (dato: 2025-06-02)
+- [ ] Akseptert (dato: ÅÅÅÅ-MM-DD)
+- [ ] Avvist (dato: ÅÅÅÅ-MM-DD)
+- [ ] Erstattet (dato: ÅÅÅÅ-MM-DD) _lenke til ADR som erstatter denne_
 
 ## Kontekst
 
@@ -23,41 +23,41 @@ Pakkestrukturen (css, theme, react) er tilsvarende som [digdir/designsystemet](h
 
 ### Positive konsekvenser
 
-* Tilsvarende API som `@digdir/designsystemet` for installasjon og bruk gjør det gjenkjennelig og lett å komme i gang for konsumenter.
-* Kan tydelig skille mellom CSS og rammeverk-spesifikk kode (React).
-* Konsumenter kan benytte styling av basiskomponenter med andre rammeverk enn React.
-* Tydelig separasjon mellom applikasjoner som Storybook og pakkene som konsumenter forholder seg til.
-* Håndtering av designtokens blir i stor grad automatisk.
+- Tilsvarende API som `@digdir/designsystemet` for installasjon og bruk gjør det gjenkjennelig og lett å komme i gang for konsumenter.
+- Kan tydelig skille mellom CSS og rammeverk-spesifikk kode (React).
+- Konsumenter kan benytte styling av basiskomponenter med andre rammeverk enn React.
+- Tydelig separasjon mellom applikasjoner som Storybook og pakkene som konsumenter forholder seg til.
+- Håndtering av designtokens blir i stor grad automatisk.
 
 ### Negative konsekvenser
 
-* Pakkeversjonering blir mer komplisert.
-* Konsumenter må installere tre pakker i stedet for en.
+- Pakkeversjonering blir mer komplisert.
+- Konsumenter må installere tre pakker i stedet for en.
 
 ### Risiko
 
-* Digdir legger ned satsningen for et nasjonalt designsystem. Anses som usannsynlig. I det tilfellet kan vi kopiere alt vi trenger fra Digdir sin kodebase ettersom den har MIT-lisens.
+- Digdir legger ned satsningen for et nasjonalt designsystem. Anses som usannsynlig. I det tilfellet kan vi kopiere alt vi trenger fra Digdir sin kodebase ettersom den har MIT-lisens.
 
 ### Avhengigheter
 
-* Avhengig av Digdir sitt designsystem.
-* Benytter per i dag PNPM for håndtering av flere prosjekt i monorepo. PNPM [er et sunnt og levende prosjekt](https://snyk.io/advisor/npm-package/pnpm) som er sentral i JS sitt økosystem, men dette repoet kan migrere til f.eks. Yarn om det er nødvendig.
+- Avhengig av Digdir sitt designsystem.
+- Benytter per i dag PNPM for håndtering av flere prosjekt i monorepo. PNPM [er et sunnt og levende prosjekt](https://snyk.io/advisor/npm-package/pnpm) som er sentral i JS sitt økosystem, men dette repoet kan migrere til f.eks. Yarn om det er nødvendig.
 
 ### Teknisk gjeld som oppstår
 
-* **Dobbel vedlikehold**: Må vedlikeholde både eksisterende `@at/ads-core-react` og nytt designsystem parallelt under migreringsperioden.
-* **Kompetansespredning**: Team må lære nye verktøy (PNPM workspaces, Figma Tokens Studio, Digdir CLI) som krever opplæring og kan skape avhengigheter til nøkkelpersoner.
-* **Migreringsarbeid**: Dagens basiskomponenter som ikke tilbys av Digdir må implementeres etter behov. Mer komplekse komponent som bygger på basiskomponentene, f.eks. Sjekklistepunkt/Mangelpanel/Dokumentliste/Virksomhetsinfo, må omskrives.
-* **Workflow-kompleksitet**:  Workflows må håndtere at det er flere pakker som kan endres individuelt eller samtidig. Automatisk synkronisering fra Figma til CSS krever manuell oppfølging i form av å opprette PR.
-* **Versjonshåndtering på tvers av pakker**: Koordinering av releases mellom css, theme og react-pakkene kan skape inkonsistente tilstander for konsumenter.
+- **Dobbel vedlikehold**: Må vedlikeholde både eksisterende `@at/ads-core-react` og nytt designsystem parallelt under migreringsperioden.
+- **Kompetansespredning**: Team må lære nye verktøy (PNPM workspaces, Figma Tokens Studio, Digdir CLI) som krever opplæring og kan skape avhengigheter til nøkkelpersoner.
+- **Migreringsarbeid**: Dagens basiskomponenter som ikke tilbys av Digdir må implementeres etter behov. Mer komplekse komponent som bygger på basiskomponentene, f.eks. Sjekklistepunkt/Mangelpanel/Dokumentliste/Virksomhetsinfo, må omskrives.
+- **Workflow-kompleksitet**: Workflows må håndtere at det er flere pakker som kan endres individuelt eller samtidig. Automatisk synkronisering fra Figma til CSS krever manuell oppfølging i form av å opprette PR.
+- **Versjonshåndtering på tvers av pakker**: Koordinering av releases mellom css, theme og react-pakkene kan skape inkonsistente tilstander for konsumenter.
 
 ## Alternativer vurdert
 
 1. Alt i en pakke.
-Dette er gjort av [@mattilsynet/design](https://github.com/Mattilsynet/design). Det ble ikke valgt fordi det skaper tettere binding mellom styling/themeing og komponentimplementasjon.
+   Dette er gjort av [@mattilsynet/design](https://github.com/Mattilsynet/design). Det ble ikke valgt fordi det skaper tettere binding mellom styling/themeing og komponentimplementasjon.
 
 2. Gradvis implementasjon i eksisterende kodebase.
-Helt forskjellig CSS-håndtering og sterke koblinger i den eksisterende kdoebasen gjør det vanskelig å gjøre en gradvis omskriving med samme prosjektstruktur. Den er 100% basert på styled-components som CSS-løsning. Repoet er heller ikke rigget opp som et skikkelig monorepo.
+   Helt forskjellig CSS-håndtering og sterke koblinger i den eksisterende kdoebasen gjør det vanskelig å gjøre en gradvis omskriving med samme prosjektstruktur. Den er 100% basert på styled-components som CSS-løsning. Repoet er heller ikke rigget opp som et skikkelig monorepo.
 
 ## Deltakere
 

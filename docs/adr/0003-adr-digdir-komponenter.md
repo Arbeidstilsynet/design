@@ -2,10 +2,10 @@
 
 ## Status
 
-* [X] Foreslått (dato: 2025-06-02)
-* [ ] Akseptert (dato: ÅÅÅÅ-MM-DD)
-* [ ] Avvist (dato: ÅÅÅÅ-MM-DD)
-* [ ] Erstattet (dato: ÅÅÅÅ-MM-DD) *lenke til ADR som erstatter denne*
+- [x] Foreslått (dato: 2025-06-02)
+- [ ] Akseptert (dato: ÅÅÅÅ-MM-DD)
+- [ ] Avvist (dato: ÅÅÅÅ-MM-DD)
+- [ ] Erstattet (dato: ÅÅÅÅ-MM-DD) _lenke til ADR som erstatter denne_
 
 ## Kontekst
 
@@ -23,16 +23,16 @@ Basiskomponentene vises fortsatt frem i vår Storybook, ved å benytte (kopiere)
 
 ### Positive konsekvenser
 
-* Gir et samkjørt API som tilsvarer Digdirs, bare med andre pakkenavn.
-* Utnytter alt arbeidet Digdir har lagt i å produsere basiskomponenter av høy teknisk kvalitet. Trenger ikke legge betydelig arbeid å implementere alle selv.
-* Åpner for å ersatte/tilpasse enkeltkomponenter fra Digdir. Dette kan f.eks. være relevant for `<Label>` hvor vi per i dag har flere varianter enn Digdir har.
-* Konsumerende prosjekter trenger ikke installere Digdirs pakke direkte i sin `package.json`.
+- Gir et samkjørt API som tilsvarer Digdirs, bare med andre pakkenavn.
+- Utnytter alt arbeidet Digdir har lagt i å produsere basiskomponenter av høy teknisk kvalitet. Trenger ikke legge betydelig arbeid å implementere alle selv.
+- Åpner for å ersatte/tilpasse enkeltkomponenter fra Digdir. Dette kan f.eks. være relevant for `<Label>` hvor vi per i dag har flere varianter enn Digdir har.
+- Konsumerende prosjekter trenger ikke installere Digdirs pakke direkte i sin `package.json`.
 
 ### Negative konsekvenser
 
-* Kan lage forvirring om hva forskjellen er på å importere basiskomponentene fra Digdirs pakke.
-* Noen utfordringer med Storybook og automatisk dokumentasjon av basiskomponentene, men de kan i det minste vises frem med vår designprofil.
-* Stories kan være mangelfulle eller bli utdaterte.
+- Kan lage forvirring om hva forskjellen er på å importere basiskomponentene fra Digdirs pakke.
+- Noen utfordringer med Storybook og automatisk dokumentasjon av basiskomponentene, men de kan i det minste vises frem med vår designprofil.
+- Stories kan være mangelfulle eller bli utdaterte.
 
 ### Risiko
 
@@ -49,13 +49,13 @@ Listen med re-eksporterte symboler i `packages/react/src/index.ts` må vedlikeho
 ## Alternativer vurdert
 
 1. Implementere alle basiskomponenter selv
-Vil medføre betydelig arbeid og gi lite gevinst.
+   Vil medføre betydelig arbeid og gi lite gevinst.
 
 2. Forke basiskomponentene
-Kan gi bedre samspill med Storybook, men virker ellers som unødvendig ekstraarbeid for lite gevinst. Er alltid et alternativ vi kan falle tilbake til i fremtiden.
+   Kan gi bedre samspill med Storybook, men virker ellers som unødvendig ekstraarbeid for lite gevinst. Er alltid et alternativ vi kan falle tilbake til i fremtiden.
 
 3. Tving konsument til å bruke Digdirs pakke
-Fjerner vår mulighhet til å overstyre enekeltkomponenter. Lager forvirring rundt hva som skal importeres fra hvor.
+   Fjerner vår mulighhet til å overstyre enekeltkomponenter. Lager forvirring rundt hva som skal importeres fra hvor.
 
 ## Deltakere
 
@@ -63,8 +63,8 @@ Forfatter: Grunde Thorheim
 
 ## Relaterte dokumenter
 
-* [README.md](../../README.md)
-* [packages/react/src/index.ts](../../packages/react/src/index.ts)
+- [README.md](../../README.md)
+- [packages/react/src/index.ts](../../packages/react/src/index.ts)
 
 ## Notater
 

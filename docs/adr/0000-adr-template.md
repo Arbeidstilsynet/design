@@ -2,10 +2,10 @@
 
 ## Status
 
-* [ ] Foreslått (dato: ÅÅÅÅ-MM-DD)
-* [ ] Akseptert (dato: ÅÅÅÅ-MM-DD)
-* [ ] Avvist (dato: ÅÅÅÅ-MM-DD)
-* [ ] Erstattet (dato: ÅÅÅÅ-MM-DD) *lenke til ADR som erstatter denne*
+- [ ] Foreslått (dato: ÅÅÅÅ-MM-DD)
+- [ ] Akseptert (dato: ÅÅÅÅ-MM-DD)
+- [ ] Avvist (dato: ÅÅÅÅ-MM-DD)
+- [ ] Erstattet (dato: ÅÅÅÅ-MM-DD) _lenke til ADR som erstatter denne_
 
 ## Kontekst
 
@@ -35,11 +35,11 @@ Beskriv andre alternativer som ble vurdert og hvorfor de ikke ble valgt.
 
 ## Deltakere
 
-* Navn på personer involvert i beslutningen
+- Navn på personer involvert i beslutningen
 
 ## Relaterte dokumenter
 
-* Lenker til relevante dokumenter, krav, eller andre ADR-er
+- Lenker til relevante dokumenter, krav, eller andre ADR-er
 
 ## Notater
 
