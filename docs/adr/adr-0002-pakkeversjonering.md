@@ -9,7 +9,7 @@
 
 ## Kontekst
 
-Bygger på [0001-adr-repo-init](0001-adr-repo-init.md). Tre forskjellige NPM-pakker skal versjoneres med hver sin endringslogg. Vi ønsker å følge semantic versioning. Versjonering må hensynstas både når en utvikler lager en feature branch og når Renovate oppdaterer avhengigheter som pakkene bruker.
+Bygger på [adr-0001-repo-init](adr-0001-repo-init.md). Tre forskjellige NPM-pakker skal versjoneres med hver sin endringslogg. Vi ønsker å følge semantic versioning. Versjonering må hensynstas både når en utvikler lager en feature branch og når Renovate oppdaterer avhengigheter som pakkene bruker.
 
 ## Beslutning
 
@@ -67,7 +67,7 @@ Forfatter: Grunde Thorheim
 
 ## Relaterte dokumenter
 
-- [0001-adr-repo-init.md](0001-adr-repo-init.md)
+- [adr-0001-repo-init.md](adr-0001-repo-init.md)
 - [RELEASE.md](../../RELEASE.md)
 
 ## Notater
