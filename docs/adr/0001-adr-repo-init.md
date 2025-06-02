@@ -15,7 +15,7 @@ Arbeidstilsynet ønsker å benytte [nasjonalt designsystem](designsystemet.no) p
 
 Opprettelse av et nytt monorepo i GitHub med tre publiserte pakker (css, theme, react). Bruker PNPM med [workspace](https://pnpm.io/workspaces) til å installere avhengigheter. Pakkene @arbeidstilsynet/design-css og @arbeidstilsynet/design-theme består kun av CSS, mens @arbeidstilsynet/design-react har React-komponenter.
 
-Designtokens er synkronisert med Figma Tokens Studio som det er anbefalt av designsystemet.no [sin oppskrift](https://www.designsystemet.no/grunnleggende/for-designere/eget-tema#alternativ-2-med-kobling). Egen workflow sørger for å automatisk kjøre Digdir sin CLI for å generere CSS når endringer på tokens dyttes fra Figma til en branch.
+Designtokens er synkronisert med Figma Tokens Studio som det er anbefalt av [Digdirs oppskrift](https://www.designsystemet.no/grunnleggende/for-designere/eget-tema#alternativ-2-med-kobling). Egen workflow sørger for å automatisk kjøre Digdir sin CLI for å generere CSS når endringer på tokens dyttes fra Figma til en branch.
 
 Pakkestrukturen (css, theme, react) er tilsvarende som [digdir/designsystemet](https://github.com/digdir/designsystemet) bruker. Håndtering av designtokens er inspirert av [brreg/designsytemet](https://github.com/brreg/designsystemet).
 
