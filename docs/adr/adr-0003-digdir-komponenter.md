@@ -57,6 +57,9 @@ Listen med re-eksporterte symboler i `packages/react/src/index.ts` må vedlikeho
 3. Tving konsument til å bruke Digdirs pakke
    Fjerner vår mulighhet til å overstyre enekeltkomponenter. Lager forvirring rundt hva som skal importeres fra hvor.
 
+4. Lage wrappers for alle komponenter
+   Dvs. at vi kan lage vårt eget `<Button>`-komponent som bare returnerer Digdirs `<Button>` og tar samme props. Dette forbedrer autodocs i Storybook, men det har flere ulemper. Det medfører mer vedlikeholdsarbeid enn re-eksportering. Det lager også støy i komponenttreet for konsumenter, som da får `<Button> -> <Button>` i f.eks. React Dev Tools. I likhet med alternativ 2 kan vi når som helst bytte til dette i fremtiden. Vi kan vurdere å gjøre det kun i Storybook, eller finne en annen løsning for stories.
+
 ## Deltakere
 
 Forfatter: Grunde Thorheim
