@@ -1,6 +1,6 @@
 import { Link, Paragraph } from "@arbeidstilsynet/design-react";
 import { EnvelopeClosedIcon } from "@navikt/aksel-icons";
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 
 type Story = StoryObj<typeof Link>;
 

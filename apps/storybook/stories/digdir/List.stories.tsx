@@ -1,5 +1,5 @@
 import { Heading, Link, List } from "@arbeidstilsynet/design-react";
-import type { Meta, StoryFn } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react-vite";
 
 type Story = StoryFn<typeof List.Unordered>;
 

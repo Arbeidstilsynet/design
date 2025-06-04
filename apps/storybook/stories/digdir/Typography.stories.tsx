@@ -1,5 +1,5 @@
 import { Heading, Paragraph } from "@arbeidstilsynet/design-react";
-import type { Meta, StoryFn } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react-vite";
 
 const meta: Meta = {
   title: "designsystemet.no/Typography",

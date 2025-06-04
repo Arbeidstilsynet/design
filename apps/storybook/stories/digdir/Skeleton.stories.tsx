@@ -4,7 +4,7 @@ import {
   Paragraph,
   Skeleton,
 } from "@arbeidstilsynet/design-react";
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 
 type Story = StoryObj<typeof Skeleton>;
 

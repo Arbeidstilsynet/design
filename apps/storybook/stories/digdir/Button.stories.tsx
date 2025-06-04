@@ -11,7 +11,7 @@ import {
   PrinterSmallIcon,
   TrashIcon,
 } from "@navikt/aksel-icons";
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 
 type Story = StoryObj<typeof Button>;
 

@@ -1,5 +1,5 @@
 import { Radio } from "@arbeidstilsynet/design-react";
-import type { Meta } from "@storybook/react";
+import type { Meta } from "@storybook/react-vite";
 
 export const UseRadioGroup = () => <Radio aria-label="label" />;
 

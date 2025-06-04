@@ -1,5 +1,5 @@
 import { Label } from "@arbeidstilsynet/design-react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta: Meta<typeof Label> = {
   title: "designsystemet.no/Typography/Label",

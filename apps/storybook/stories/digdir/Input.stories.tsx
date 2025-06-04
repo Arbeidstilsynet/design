@@ -9,7 +9,7 @@ import {
   Size,
   ValidationMessage,
 } from "@arbeidstilsynet/design-react";
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { useEffect, useState } from "react";
 
 type Story = StoryObj<typeof Input>;

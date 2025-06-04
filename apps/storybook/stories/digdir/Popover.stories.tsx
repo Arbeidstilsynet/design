@@ -1,7 +1,7 @@
 import { Button, Paragraph, Popover } from "@arbeidstilsynet/design-react";
 import { TrashIcon } from "@navikt/aksel-icons";
-import type { Meta, StoryFn } from "@storybook/react";
-import { expect, userEvent, within } from "@storybook/test";
+import type { Meta, StoryFn } from "@storybook/react-vite";
+import { expect, userEvent, within } from "storybook/test";
 import { useEffect, useState } from "react";
 
 export default {
