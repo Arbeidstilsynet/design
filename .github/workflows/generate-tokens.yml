@@ -5,9 +5,10 @@ on:
     branches-ignore:
       - "main"
       - "renovate/**"
+      - "changeset-release/**"
     paths:
       - "design-tokens/**"
-      - "package.json"
+      - "package.json" # run on updates to Digdir CLI, needs better handling?
       - ".github/workflows/generate-tokens.yml"
 
 concurrency:
