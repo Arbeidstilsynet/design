@@ -6,16 +6,8 @@ Released: 2025-05-30
 
 ### Patch Changes
 
-- Updated dependency `@types/node` to `22.15.27`. ([#87](https://github.com/Arbeidstilsynet/design/pull/87))
-
 - Updated dependency `@eslint/js` to `9.28.0`. ([#90](https://github.com/Arbeidstilsynet/design/pull/90))
   Updated dependency `eslint` to `9.28.0`.
-
-- Updated dependency `@types/node` to `22.15.26`. ([#86](https://github.com/Arbeidstilsynet/design/pull/86))
-
-- Updated dependency `@types/node` to `22.15.28`. ([#88](https://github.com/Arbeidstilsynet/design/pull/88))
-
-- Updated dependency `@types/node` to `22.15.24`. ([#84](https://github.com/Arbeidstilsynet/design/pull/84))
 
 - Updated dependency `@types/node` to `22.15.29`. ([#89](https://github.com/Arbeidstilsynet/design/pull/89))
 
