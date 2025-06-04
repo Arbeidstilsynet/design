@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.0.9
+
+Released: 2025-06-04
+
+### Patch Changes
+
+- Regenerate brand css (@digdir/designsystemet@1.0.8) ([#98](https://github.com/Arbeidstilsynet/design/pull/98))
+
 ## 0.0.8
 
 Released: 2025-05-13

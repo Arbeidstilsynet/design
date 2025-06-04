@@ -1,5 +1,19 @@
 # @arbeidstilsynet/design-react
 
+## 0.0.13
+
+Released: 2025-06-04
+
+### Patch Changes
+
+- Updated dependency `@digdir/designsystemet-react` to `1.0.8`. ([#101](https://github.com/Arbeidstilsynet/design/pull/101))
+
+- Updated dependency `typescript-eslint` to `8.33.1`. ([#95](https://github.com/Arbeidstilsynet/design/pull/95))
+
+- Updated dependency `@vitejs/plugin-react` to `4.5.1`. ([#93](https://github.com/Arbeidstilsynet/design/pull/93))
+
+- Update type import in stories for Storybook v9 ([#97](https://github.com/Arbeidstilsynet/design/pull/97))
+
 ## 0.0.12
 
 Released: 2025-05-30
