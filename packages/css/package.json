@@ -21,6 +21,6 @@
   ],
   "scripts": {},
   "dependencies": {
-    "@digdir/designsystemet-css": "1.0.6"
+    "@digdir/designsystemet-css": "1.0.8"
   }
 }

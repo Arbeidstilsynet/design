@@ -103,8 +103,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.0.6
-        version: 1.0.6
+        specifier: 1.0.8
+        version: 1.0.8
 
   packages/react:
     dependencies:
@@ -423,8 +423,8 @@ packages:
     resolution: {integrity: sha512-UJnjoFsmxfKUdNYdWgOB0mWUypuLvAfQPH1+pyvRJs6euowbFkFC6P13w1l8mJyi3vxYMxc9kld5jZEGRQs6bw==}
     engines: {node: '>=18'}
 
-  '@digdir/designsystemet-css@1.0.6':
-    resolution: {integrity: sha512-Vis61mOZizZR7GblxsBwxsxtrlouNzHg77Djk1vRgPiPsaJcLWE6FT3P5j2oFWQUhLYaPhcX/Xuy3Mhs7x3oQQ==}
+  '@digdir/designsystemet-css@1.0.8':
+    resolution: {integrity: sha512-5CPZs6TeVgtaikoVpPSfc/a7PC1v6zTwHLufsL0F1P8kPlhRyuWEoTMYZvw1fs71aHQ+3EPWJKQQppO6TM57EQ==}
 
   '@digdir/designsystemet-react@1.0.6':
     resolution: {integrity: sha512-tzO8wU7DvlUHJKy1jS5YC5mxa7/061o7w3Z//UULNyXYd42kKKH0GykgfjKVSKDb20Txcs6OJ2kXxpRmsOBtsA==}
@@ -3776,7 +3776,7 @@ snapshots:
 
   '@csstools/css-tokenizer@3.0.3': {}
 
-  '@digdir/designsystemet-css@1.0.6': {}
+  '@digdir/designsystemet-css@1.0.8': {}
 
   '@digdir/designsystemet-react@1.0.6(@types/react@19.1.6)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
