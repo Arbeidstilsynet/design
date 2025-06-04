@@ -9,7 +9,7 @@ import {
   useRadioGroup,
 } from "@arbeidstilsynet/design-react";
 import { FloppydiskIcon, PencilIcon } from "@navikt/aksel-icons";
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 
 export default {

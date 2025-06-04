@@ -1,6 +1,6 @@
 import { Avatar, Badge, Dropdown } from "@arbeidstilsynet/design-react";
 import { BriefcaseIcon } from "@navikt/aksel-icons";
-import type { Meta, StoryFn } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react-vite";
 import cat1 from "../assets/img/cats/Cat 3.jpg";
 
 type Story = StoryFn<typeof Avatar>;

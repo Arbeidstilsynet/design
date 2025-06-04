@@ -4,7 +4,7 @@ import {
   Select,
   ValidationMessage,
 } from "@arbeidstilsynet/design-react";
-import type { Meta, StoryFn } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react-vite";
 
 export default {
   title: "designsystemet.no/Select",

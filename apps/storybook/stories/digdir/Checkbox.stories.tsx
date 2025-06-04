@@ -12,7 +12,7 @@ import {
   usePagination,
 } from "@arbeidstilsynet/design-react";
 import { FloppydiskIcon, PencilIcon } from "@navikt/aksel-icons";
-import type { Meta, StoryFn, StoryObj } from "@storybook/react";
+import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { useMemo, useState } from "react";
 
 type Story = StoryObj<typeof Checkbox>;

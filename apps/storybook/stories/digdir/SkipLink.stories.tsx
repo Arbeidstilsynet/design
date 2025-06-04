@@ -1,6 +1,6 @@
 import { Paragraph, SkipLink } from "@arbeidstilsynet/design-react";
-import type { Meta, StoryFn } from "@storybook/react";
-import { expect, userEvent, within } from "@storybook/test";
+import type { Meta, StoryFn } from "@storybook/react-vite";
+import { expect, userEvent, within } from "storybook/test";
 
 type Story = StoryFn<typeof SkipLink>;
 

@@ -9,7 +9,7 @@ import {
   Textfield,
 } from "@arbeidstilsynet/design-react";
 import { PlusIcon, TrashFillIcon } from "@navikt/aksel-icons";
-import type { Meta, StoryFn } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react-vite";
 import { Fragment } from "react/jsx-runtime";
 import cat1 from "../assets/img/cats/Cat 1.jpg";
 import cat5 from "../assets/img/cats/Cat 5.jpg";

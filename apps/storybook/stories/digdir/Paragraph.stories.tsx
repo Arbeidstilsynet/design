@@ -1,5 +1,5 @@
 import { Paragraph } from "@arbeidstilsynet/design-react";
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 
 const meta: Meta<typeof Paragraph> = {
   title: "designsystemet.no/Typography/Paragraph",

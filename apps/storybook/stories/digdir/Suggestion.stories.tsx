@@ -8,8 +8,8 @@ import {
   EXPERIMENTAL_Suggestion as Suggestion,
   useDebounceCallback,
 } from "@arbeidstilsynet/design-react";
-import type { Meta, StoryFn } from "@storybook/react";
-import { userEvent, within } from "@storybook/test";
+import type { Meta, StoryFn } from "@storybook/react-vite";
+import { userEvent, within } from "storybook/test";
 import { type ChangeEvent, useState } from "react";
 
 export default {

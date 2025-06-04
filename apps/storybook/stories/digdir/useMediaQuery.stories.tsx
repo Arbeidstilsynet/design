@@ -1,5 +1,5 @@
 import { Paragraph, useMediaQuery } from "@arbeidstilsynet/design-react";
-import type { Meta } from "@storybook/react";
+import type { Meta } from "@storybook/react-vite";
 
 const meta: Meta = {
   title: "designsystemet.no utilities/useMediaQuery",

@@ -5,7 +5,7 @@ import {
   type Size,
   ToggleGroup,
 } from "@arbeidstilsynet/design-react";
-import type { Meta, StoryFn } from "@storybook/react";
+import type { Meta, StoryFn } from "@storybook/react-vite";
 import { useState } from "react";
 import { Showcase } from "./Showcase";
 import classes from "./Showcase.stories.module.css";

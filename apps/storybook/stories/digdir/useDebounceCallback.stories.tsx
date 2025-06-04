@@ -3,7 +3,7 @@ import {
   Textfield,
   useDebounceCallback,
 } from "@arbeidstilsynet/design-react";
-import type { Meta } from "@storybook/react";
+import type { Meta } from "@storybook/react-vite";
 import { useState } from "react";
 
 const meta: Meta = {

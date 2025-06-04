@@ -1,6 +1,6 @@
 import "@arbeidstilsynet/design-css";
 import "@arbeidstilsynet/design-theme/arbeidstilsynet.css";
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/react-vite";
 import { customStylesDecorator } from "../utils/customStylesDecorator";
 import "./preview.css";
 
