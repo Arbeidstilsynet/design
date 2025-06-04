@@ -15,3 +15,13 @@ You should use Figma to edit the tokens. You'll need the [Tokens Studio for Figm
    - File Path: `design-tokens`
 
 You can now "pull from GitHub" (button on top right) to fetch the tokens. When done editing tokens, you should "push to GitHub" (second button on top right).
+
+When changes to design-tokens are pushed to a GitHub branch, the generate-tokens workflow will start. It runs the Digdir CLI to generate the [brand .css files](../packages/theme/brand/). Any changes will be committed to that branch by the workflow.
+
+To document the changes, run `pnpm changeset` from the repo root, commit & push, and create a PR. This will also enable Changesets to publish a new version of the `@arbeidstilsynet/design-tokens` package.
+
+## Local generation
+
+To generate the tokens locally, for example if the workflow fails, you can run `pnpm build:tokens` from the repo root.
+
+Make sure to update dependencies (Digdir CLI) with `pnpm i` first.
