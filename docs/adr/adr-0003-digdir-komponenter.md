@@ -13,6 +13,10 @@ Resten av ADR bruker "basiskomponenter" til å beskrive grunnleggende komponente
 
 Vi må avgjøre hvor vidt og hvordan basiskomponentene fra Digdir skal brukes sammen med nye felleskomponenter som vi etter hvert lager selv. Vi kan potensielt implementere basiskomponentene selv fra bunn i React, og kun benytte Digdirs designsystem for håndtering av CSS.
 
+Konsument kan finne på å installere `@digdir/designsystemet-react` direkte via `package.json`, eller importere fra den uten direkte avhengighet hvis de bruker en package manager som NPM (som også er den vanligste). Bedre package managers som PNPM [sørger for](https://pnpm.io/pnpm-vs-npm#npms-flat-tree) at bare avhengigheter fra `package.json` kan importeres.
+
+Hvis konsument bruker basiskomponentene direkte fra `@digdir/designsystemet-react` så vil det fortsatt styles med vårt theme.
+
 ## Beslutning
 
 Re-eksporterer Digdirs basiskomponenter. De kan potensielt brukes via Digdirs pakke også, men vår dokumentasjon oppfordrer til å importere alt via våre pakker.
