@@ -1,5 +1,15 @@
 # @arbeidstilsynet/design-react
 
+## 0.0.14
+
+Released: 2025-06-04
+
+### Patch Changes
+
+- Updated dependency `eslint-plugin-storybook` to `9.0.4`. ([#105](https://github.com/Arbeidstilsynet/design/pull/105))
+
+- Updated dependency `@types/react-dom` to `19.1.6`. ([#102](https://github.com/Arbeidstilsynet/design/pull/102))
+
 ## 0.0.13
 
 Released: 2025-06-04
