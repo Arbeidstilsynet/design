@@ -45,9 +45,8 @@ Pakkestrukturen (css, theme, react) er tilsvarende som [digdir/designsystemet](h
 
 ### Teknisk gjeld som oppstår
 
-- **Dobbel vedlikehold**: Må vedlikeholde både eksisterende `@at/ads-core-react` og nytt designsystem parallelt under migreringsperioden.
 - **Kompetansespredning**: Team må lære nye verktøy (PNPM workspaces, Figma Tokens Studio, Digdir CLI) som krever opplæring og kan skape avhengigheter til nøkkelpersoner.
-- **Migreringsarbeid**: Dagens basiskomponenter som ikke tilbys av Digdir må implementeres etter behov. Mer komplekse komponent som bygger på basiskomponentene, f.eks. Sjekklistepunkt/Mangelpanel/Dokumentliste/Virksomhetsinfo, må omskrives.
+- **Migreringsarbeid**: Dagens basiskomponenter som ikke tilbys av Digdir må implementeres etter behov. Mer komplekse komponent som bygger på basiskomponentene, f.eks. Sjekklistepunkt/Mangelpanel/Dokumentliste/Virksomhetsinfo, må omskrives og tilpasses etter behov.
 - **Workflow-kompleksitet**: Workflows må håndtere at det er flere pakker som kan endres individuelt eller samtidig. Automatisk synkronisering fra Figma til CSS krever manuell oppfølging i form av å opprette PR.
 - **Versjonshåndtering på tvers av pakker**: Koordinering av releases mellom css, theme og react-pakkene kan skape inkonsistente tilstander for konsumenter.
 
