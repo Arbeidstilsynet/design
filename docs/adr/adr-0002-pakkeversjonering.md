@@ -48,7 +48,6 @@ Changesets er en kritisk avhengighet for denne versjonshåndteringen. Hvis de le
 ### Teknisk gjeld som oppstår
 
 - Mer kompliserte pipelines som krever en viss kjennskap til Changesets for vedlikehold og feilsøking.
-- Utviklere må lære Changesets-spesifikke kommandoer og konsepter for å bidra effektivt.
 
 ## Alternativer vurdert
 
