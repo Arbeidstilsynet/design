@@ -119,7 +119,7 @@
           "fontFamily": "{font.family}",
           "fontWeight": "{font-weight.regular}",
           "lineHeight": "{line-height.md}",
-          "fontSize": "{font-size.2}",
+          "fontSize": "{font-size.1}",
           "letterSpacing": "{letter-spacing.6}"
         }
       },
