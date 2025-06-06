@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.0.10
+
+Released: 2025-06-06
+
+### Patch Changes
+
+- Changed --ds-body-xs-font-size from 0.875 rem to 0.75rem ([#110](https://github.com/Arbeidstilsynet/design/pull/110))
+
 ## 0.0.9
 
 Released: 2025-06-04

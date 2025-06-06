@@ -1,6 +1,6 @@
 {
   "name": "@arbeidstilsynet/design-react",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "React implementation of Designsystemet",
   "author": "Arbeidstilsynet",
   "repository": {
