@@ -45,15 +45,15 @@ Pakkestrukturen (css, theme, react) er tilsvarende som [digdir/designsystemet](h
 
 ### Teknisk gjeld som oppstår
 
-- **Kompetansespredning**: Team må lære nye verktøy (PNPM workspaces, Figma Tokens Studio, Digdir CLI) som krever opplæring og kan skape avhengigheter til nøkkelpersoner.
-- **Migreringsarbeid**: Dagens basiskomponenter som ikke tilbys av Digdir må implementeres etter behov. Mer komplekse komponent som bygger på basiskomponentene, f.eks. Sjekklistepunkt/Mangelpanel/Dokumentliste/Virksomhetsinfo, må omskrives og tilpasses etter behov.
+- **Kompetansespredning**: designere/utviklere som lager designsystemet må lære nye verktøy (PNPM workspaces, Figma Tokens Studio, Digdir CLI) som krever en viss grad av opplæring. Oppveies av god dokumentasjon i readmes.
+- **Migreringsarbeid**: Dagens basiskomponenter som ikke tilbys av Digdir må implementeres etter behov. Det trengs en kartlegging og vurdering av hvilke komponenter vi trenger. Dette gjelder hovedsakelige mer komplekse komponent som bygger på basiskomponentene, f.eks. Sjekklistepunkt/Mangelpanel/Dokumentliste/Virksomhetsinfo.
 - **Workflow-kompleksitet**: Workflows må håndtere at det er flere pakker som kan endres individuelt eller samtidig. Automatisk synkronisering fra Figma til CSS krever manuell oppfølging i form av å opprette PR.
 - **Versjonshåndtering på tvers av pakker**: Koordinering av releases mellom css, theme og react-pakkene kan skape inkonsistente tilstander for konsumenter.
 
 ## Alternativer vurdert
 
 1. Alt i en pakke.
-   Dette er gjort av [@mattilsynet/design](https://github.com/Mattilsynet/design). Det ble ikke valgt fordi det skaper tettere binding mellom styling/themeing og komponentimplementasjon.
+   Dette er gjort av [@mattilsynet/design](https://github.com/Mattilsynet/design). Det ble ikke valgt fordi det skaper tettere binding mellom styling/themeing og komponentimplementasjon. Det låser oss også mer til React. Eventuell håndtering av flere rammeverk i samme pakke kan bli forvirrende og konsument vil måtte installere unødvendige avhengigheter.
 
 2. Gradvis implementasjon i eksisterende kodebase.
    Helt forskjellig CSS-håndtering og sterke koblinger i den eksisterende kodebasen gjør det vanskelig å gjøre en gradvis omskriving med samme prosjektstruktur. Den er 100% basert på styled-components som CSS-løsning. Repoet er heller ikke rigget opp som et skikkelig monorepo.
