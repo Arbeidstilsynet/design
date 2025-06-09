@@ -22,7 +22,7 @@
     "@storybook/addon-docs": "9.0.6",
     "@storybook/react-vite": "9.0.6",
     "@types/node": "22.15.30",
-    "@types/react": "19.1.6",
+    "@types/react": "19.1.7",
     "@types/react-dom": "19.1.6",
     "eslint": "9.28.0",
     "eslint-config-prettier": "10.1.5",
