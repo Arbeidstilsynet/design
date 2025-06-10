@@ -3,7 +3,7 @@
 ## Status
 
 - [x] Foreslått (dato: 2025-06-02)
-- [ ] Akseptert (dato: ÅÅÅÅ-MM-DD)
+- [X] Akseptert (dato: 2025-06-10)
 - [ ] Avvist (dato: ÅÅÅÅ-MM-DD)
 - [ ] Erstattet (dato: ÅÅÅÅ-MM-DD) _lenke til ADR som erstatter denne_
 
