@@ -46,11 +46,12 @@ ci:
 
 config:
   - changed-files:
-      - any-glob-to-any-file:
+      - all-globs-to-any-file:
           - "**/.*"
+          - "!.github/**"
+          - "!.changeset/**"
+  - changed-files:
+      - any-glob-to-any-file:
           - "**/*.config.*"
           - "**/tsconfig.json"
           - "**/pnpm-workspace.yaml"
-      - all-globs-to-all-files:
-          - "!.github/**"
-          - "!.changeset/**"
