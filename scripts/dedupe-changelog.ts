@@ -239,23 +239,23 @@ export function dedupeChangelog(pkg: string): boolean {
     (entry) => entry.dependencies.length === 0 || entriesToKeep.has(entry),
   );
 
-  const newChangesLines: string[] = [];
-  for (let i = 0; i < newEntries.length; i++) {
-    newChangesLines.push(newEntries[i].fullText);
-    if (i < newEntries.length - 1) {
-      newChangesLines.push(""); // Add empty line between entries
-    }
-  }
+  // Build the new changes content with proper spacing
+  const newChangesContent = newEntries
+    .map((entry) => entry.fullText)
+    .join("\n\n");
 
-  // Reconstruct the file - ONLY replace the changes section
+  // Reconstruct the file more carefully
   const lines = parsed.originalLines;
-  const newLines = [
-    ...lines.slice(0, parsed.changesStartIndex), // Everything before changes section
-    ...newChangesLines, // New changes section
-    ...lines.slice(parsed.nextVersionIndex), // Everything from next version onwards (or end of file)
-  ];
+  const beforeChanges = lines.slice(0, parsed.changesStartIndex);
+  const afterChanges = lines.slice(parsed.nextVersionIndex);
 
-  const newContent = newLines.join("\n");
+  // Build parts
+  const beforePart = beforeChanges.join("\n");
+  const afterPart = afterChanges.join("\n");
+
+  // Construct the final content
+  const newContent = beforePart + "\n" + newChangesContent + "\n\n" + afterPart;
+
   fs.writeFileSync(changelogPath, newContent, "utf8");
 
   return true;
