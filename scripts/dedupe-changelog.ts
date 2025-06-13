@@ -91,11 +91,9 @@ function parseChangelog(content: string) {
     if (lines[i].match(/^## \d+\.\d+\.\d+$/)) {
       if (versionStartIndex === -1) {
         versionStartIndex = i;
-        console.log(`Found latest version at line ${i}: "${lines[i]}"`);
       } else {
         nextVersionIndex = i;
-        console.log(`Found next version at line ${i}: "${lines[i]}"`);
-        break; // This should stop at the FIRST next version, not continue
+        break;
       }
     }
     // Only look for changes section AFTER we found the first version
@@ -105,34 +103,23 @@ function parseChangelog(content: string) {
       lines[i].startsWith("### ") &&
       lines[i].includes("Changes")
     ) {
-      changesStartIndex = i + 2; // Skip the "### Patch Changes" line and the empty line after it
-      console.log(`Found changes section starting at line ${i + 2}`);
+      changesStartIndex = i + 2; // Skip the "### Changes" line and the empty line after it
     }
   }
 
   if (versionStartIndex === -1 || changesStartIndex === -1) {
-    console.log("Could not find version or changes section");
     return null;
   }
 
   // Extract ONLY the changes content from the latest version
   const endIndex = nextVersionIndex === -1 ? lines.length : nextVersionIndex;
-  console.log(
-    `Extracting changes from line ${changesStartIndex} to ${endIndex}`,
-  );
-
   const changesLines = lines.slice(changesStartIndex, endIndex);
   const changesContent = changesLines.join("\n").trim();
-
-  console.log(`Changes content (${changesContent.length} chars):`);
-  console.log(`"${changesContent.substring(0, 200)}..."`);
 
   // Split content by double newlines to get individual entries
   const rawEntries = changesContent
     .split(/\n\n/)
     .filter((entry) => entry.trim());
-
-  console.log(`Found ${rawEntries.length} entries in LATEST VERSION ONLY`);
 
   const entries: Array<{
     fullText: string;
@@ -147,17 +134,6 @@ function parseChangelog(content: string) {
       entries.push(parseEntry(trimmed));
     }
   }
-
-  console.log(`Parsed ${entries.length} entries from latest version:`);
-  entries.forEach((entry, i) => {
-    if (entry.dependencies.length > 0) {
-      console.log(
-        `Entry ${i}: ${entry.dependencies.length} dependencies, PR: ${entry.prNumber}`,
-      );
-    } else {
-      console.log(`Entry ${i}: Non-dependency entry, PR: ${entry.prNumber}`);
-    }
-  });
 
   return {
     versionStartIndex,
@@ -179,11 +155,8 @@ export function dedupeChangelog(pkg: string): boolean {
   const parsed = parseChangelog(content);
 
   if (!parsed) {
-    console.log(`No version section found in ${pkg}`);
     return false;
   }
-
-  console.log(`Processing version section for ${pkg}`);
 
   // Find dependency update entries and group by package sets
   const dependencyEntries = parsed.entries.filter(
@@ -191,13 +164,8 @@ export function dedupeChangelog(pkg: string): boolean {
   );
 
   if (dependencyEntries.length === 0) {
-    console.log("No dependency updates found");
     return false;
   }
-
-  console.log(
-    `Found ${dependencyEntries.length} dependency entries to analyze`,
-  );
 
   // Group entries by package sets (entries that update the same set of packages)
   const packageSetGroups = new Map<
@@ -218,24 +186,16 @@ export function dedupeChangelog(pkg: string): boolean {
     packageSetGroups.get(packageSignature)!.push(entry);
   }
 
-  console.log(
-    `Found ${packageSetGroups.size} different package update patterns`,
-  );
-
   // For each group, keep only the entry with the highest versions
   const entriesToKeep = new Set<(typeof dependencyEntries)[0]>();
   const entriesToRemove = new Set<(typeof dependencyEntries)[0]>();
 
-  for (const [signature, entries] of packageSetGroups) {
+  for (const [, entries] of packageSetGroups) {
     if (entries.length === 1) {
       // Only one entry for this package set, keep it
       entriesToKeep.add(entries[0]);
       continue;
     }
-
-    console.log(
-      `Package set "${signature}" has ${entries.length} entries, finding newest`,
-    );
 
     // Find the entry with the highest versions
     let newestEntry = entries[0];
@@ -266,13 +226,11 @@ export function dedupeChangelog(pkg: string): boolean {
     for (const entry of entries) {
       if (entry !== newestEntry) {
         entriesToRemove.add(entry);
-        console.log(`Will remove PR #${entry.prNumber} (older version)`);
       }
     }
   }
 
   if (entriesToRemove.size === 0) {
-    console.log("No duplicates found");
     return false;
   }
 
@@ -300,9 +258,6 @@ export function dedupeChangelog(pkg: string): boolean {
   const newContent = newLines.join("\n");
   fs.writeFileSync(changelogPath, newContent, "utf8");
 
-  console.log(
-    `Removed ${entriesToRemove.size} duplicate dependency entries from packages/${pkg}/CHANGELOG.md`,
-  );
   return true;
 }
 
