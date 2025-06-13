@@ -270,7 +270,7 @@ function main() {
     console.log(
       "Usage: node dedupe-changelog.js [--debug] [--help]\n" +
         "Options:\n" +
-        "  --debug   Run in debug mode (only deduplicate changelogs without checking versions)\n" +
+        "  --debug   Run in debug mode (only deduplicate react without checking versions)\n" +
         "  --help    Show this help message",
     );
     return;
