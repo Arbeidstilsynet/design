@@ -1,4 +1,5 @@
 .at-filepicker {
   /* placeholder */
+  max-width: 42.75rem;
   color: red;
 }
