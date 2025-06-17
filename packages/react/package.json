@@ -36,7 +36,8 @@
     "react-dom": "^19.1.0"
   },
   "dependencies": {
-    "@digdir/designsystemet-react": "1.0.8"
+    "@digdir/designsystemet-react": "1.0.8",
+    "clsx": "2.1.1"
   },
   "devDependencies": {
     "@eslint/js": "9.29.0",

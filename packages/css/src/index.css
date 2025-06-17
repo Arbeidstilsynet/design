@@ -1,0 +1,5 @@
+@import "@digdir/designsystemet-css/dist/src/index.css";
+
+@layer at.components;
+
+@import "./filepicker.css" layer(at.components);
