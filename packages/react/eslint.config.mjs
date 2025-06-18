@@ -53,7 +53,14 @@ const config = tseslint.config(
         },
       ],
     },
-  }
+  },
+
+  {
+    files: ["**/*.stories.tsx"],
+    rules: {
+      "@typescript-eslint/no-empty-function": "off",
+    },
+  },
 );
 
 export default config;

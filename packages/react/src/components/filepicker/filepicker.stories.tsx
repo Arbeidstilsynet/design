@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { useState } from "react";
 import { FilePicker } from "..";
 import { createMockFile } from "./utils";
 
@@ -15,12 +16,59 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Preview: Story = {
-  render: (args) => (
-    <FilePicker {...args}>
-      <FilePicker.Dropzone />
-      <FilePicker.Files />
-    </FilePicker>
-  ),
+  render: (args) => {
+    const [files, setFiles] = useState<File[]>([]);
+    const [errors, setErrors] = useState<string[]>([]);
+
+    const handleAdd = (newFiles: File[]) => {
+      // Simple validation for demo
+      const validationErrors: string[] = [];
+      const maxSize = 10 * 1024 * 1024; // 10MB
+      const maxFiles = 5;
+
+      if (files.length + newFiles.length > maxFiles) {
+        validationErrors.push(`Maksimalt ${maxFiles} filer tillatt`);
+      }
+
+      newFiles.forEach((file) => {
+        if (file.size > maxSize) {
+          validationErrors.push(
+            `${file.name} overskrider maksimal filstørrelse (10 MB)`,
+          );
+        }
+      });
+
+      if (validationErrors.length > 0) {
+        setErrors(validationErrors);
+        return;
+      }
+
+      setErrors([]);
+      setFiles((prev) => [...prev, ...newFiles]);
+    };
+
+    const handleRemove = (fileToRemove: File) => {
+      setFiles((prev) => prev.filter((file) => file !== fileToRemove));
+      setErrors([]);
+    };
+
+    return (
+      <FilePicker
+        {...args}
+        files={files}
+        errors={errors}
+        onAdd={handleAdd}
+        onRemove={handleRemove}
+      >
+        <FilePicker.Dropzone />
+        <FilePicker.Files />
+        <FilePicker.Errors />
+      </FilePicker>
+    );
+  },
+  args: {
+    disabled: false,
+  },
 };
 
 export const WithErrors: Story = {
@@ -38,5 +86,37 @@ export const WithErrors: Story = {
       createMockFile("file2.doc", 500),
     ],
     errors: ["file1.pdf size exceeds limit", "Unsupported file type .doc"],
+  },
+};
+
+export const Disabled: Story = {
+  render: (args) => (
+    <FilePicker {...args}>
+      <FilePicker.Dropzone />
+      <FilePicker.Files />
+    </FilePicker>
+  ),
+  args: {
+    files: [createMockFile("document.pdf", 1)],
+    errors: [],
+    disabled: true,
+    onAdd: () => {},
+    onRemove: () => {},
+  },
+};
+
+export const FilesListOnly: Story = {
+  render: (args) => (
+    <FilePicker {...args}>
+      <FilePicker.Files />
+    </FilePicker>
+  ),
+
+  args: {
+    files: [
+      createMockFile("file1.pdf", 2048),
+      createMockFile("file2.doc", 500),
+    ],
+    errors: null,
   },
 };
