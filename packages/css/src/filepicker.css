@@ -69,28 +69,6 @@
   min-width: 0; /* Allow text truncation */
 }
 
-.at-filepicker-file__icon {
-  width: var(--ds-size-5);
-  height: var(--ds-size-5);
-  color: var(--ds-color-text-subtle);
-  flex-shrink: 0;
-}
-
-.at-filepicker-file__name {
-  font-weight: var(--ds-font-weight-medium);
-  color: var(--ds-color-text-default);
-  word-break: break-word;
-  display: flex;
-  align-items: center;
-  gap: var(--ds-size-1);
-}
-
-.at-filepicker-file__size {
-  font-weight: var(--ds-font-weight-regular);
-  color: var(--ds-color-text-subtle);
-  font-size: var(--ds-body-sm-font-size);
-}
-
 .at-filepicker-file__remove {
   flex-shrink: 0;
 }

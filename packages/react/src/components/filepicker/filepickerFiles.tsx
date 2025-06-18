@@ -32,26 +32,19 @@ export function FilePickerFiles({
       {files.map((file, index) => (
         <div key={`${file.name}-${index}`} className="at-filepicker-file">
           <div className="at-filepicker-file__info">
-            <FileIcon className="at-filepicker-file__icon" aria-hidden="true" />
-            <Label className="at-filepicker-file__name">
-              {file.name}{" "}
-              <span className="at-filepicker-file__size">
-                ({formatFileSize(file.size)})
-              </span>
-            </Label>
+            <FileIcon aria-hidden="true" />
+            <Label>{file.name} </Label>
+            <Label data-size="sm">({formatFileSize(file.size)})</Label>
           </div>
           <Button
+            icon
             variant="tertiary"
             data-size="sm"
-            className="at-filepicker-file__remove"
             onClick={() => onRemove(file)}
             disabled={disabled}
             aria-label={`Fjern ${file.name}`}
           >
-            <XMarkIcon
-              className="at-filepicker-file__remove-icon"
-              aria-hidden="true"
-            />
+            <XMarkIcon aria-hidden />
           </Button>
         </div>
       ))}
