@@ -39,7 +39,7 @@ export function FilePickerDropzone({
   dropLabel = "Slipp for å legge til",
   ...rest
 }: Readonly<FilePickerDropzoneProps>) {
-  const { onAdd } = use(FilePickerContext);
+  const { onAdd, disabled } = use(FilePickerContext);
 
   const onDrop = (acceptedFiles: File[]) => {
     void onAdd(acceptedFiles);
@@ -50,6 +50,7 @@ export function FilePickerDropzone({
     <Button
       ref={ref}
       className={clsx("at-filepicker-dropzone", className)}
+      disabled={disabled}
       {...rest}
       {...getRootProps()}
     >

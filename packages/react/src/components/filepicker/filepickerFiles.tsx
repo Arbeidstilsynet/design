@@ -16,24 +16,6 @@ function formatFileSize(bytes: number): string {
   return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + " " + sizes[i];
 }
 
-function getFileTypeFromName(fileName: string): string {
-  const extension = fileName.split(".").pop()?.toLowerCase();
-  switch (extension) {
-    case "pdf":
-      return "PDF-dokument";
-    case "doc":
-    case "docx":
-      return "Word-dokument";
-    case "xls":
-    case "xlsx":
-      return "Excel-dokument";
-    case "txt":
-      return "Tekstfil";
-    default:
-      return "Fil";
-  }
-}
-
 export function FilePickerFiles({
   ref,
   className,
@@ -45,28 +27,24 @@ export function FilePickerFiles({
     return null;
   }
 
-  const handleRemove = (file: File) => {
-    void onRemove?.(file);
-  };
-
   return (
     <div ref={ref} className={clsx("at-filepicker-files", className)} {...rest}>
       {files.map((file, index) => (
         <div key={`${file.name}-${index}`} className="at-filepicker-file">
           <div className="at-filepicker-file__info">
             <FileIcon className="at-filepicker-file__icon" aria-hidden="true" />
-            <div className="at-filepicker-file__details">
-              <Label className="at-filepicker-file__name">{file.name}</Label>
-              <Label className="at-filepicker-file__meta">
-                {getFileTypeFromName(file.name)} • {formatFileSize(file.size)}
-              </Label>
-            </div>
+            <Label className="at-filepicker-file__name">
+              {file.name}{" "}
+              <span className="at-filepicker-file__size">
+                ({formatFileSize(file.size)})
+              </span>
+            </Label>
           </div>
           <Button
             variant="tertiary"
             data-size="sm"
             className="at-filepicker-file__remove"
-            onClick={() => handleRemove(file)}
+            onClick={() => onRemove(file)}
             disabled={disabled}
             aria-label={`Fjern ${file.name}`}
           >
