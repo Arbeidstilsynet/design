@@ -108,28 +108,6 @@
   margin-top: var(--ds-size-3);
 }
 
-.at-filepicker-error {
-  display: flex;
-  align-items: center;
-  gap: var(--ds-size-2);
-  padding: var(--ds-size-2) var(--ds-size-3);
-  background-color: var(--ds-color-danger-surface-tinted);
-  border: 1px solid var(--ds-color-danger-border-default);
-  border-radius: var(--ds-border-radius-default);
-}
-
-.at-filepicker-error__icon {
-  width: var(--ds-size-4);
-  height: var(--ds-size-4);
-  color: var(--ds-color-danger-text-default);
-  flex-shrink: 0;
-}
-
-.at-filepicker-error__text {
-  color: var(--ds-color-danger-text-default);
-  font-size: var(--ds-body-sm-font-size);
-}
-
 /* Responsive adjustments */
 @container (max-width: 30rem) {
   .at-filepicker-file {

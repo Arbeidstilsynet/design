@@ -1,7 +1,6 @@
-import { ExclamationmarkTriangleIcon } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes, use } from "react";
-import { Label } from "../..";
+import { Alert } from "../..";
 import { FilePickerContext } from "./filepickerContext";
 
 export interface FilePickerErrorsProps extends HTMLAttributes<HTMLDivElement> {
@@ -27,13 +26,9 @@ export function FilePickerErrors({
       {...rest}
     >
       {errors.map((error, index) => (
-        <div key={index} className="at-filepicker-error">
-          <ExclamationmarkTriangleIcon
-            className="at-filepicker-error__icon"
-            aria-hidden="true"
-          />
-          <Label className="at-filepicker-error__text">{error}</Label>
-        </div>
+        <Alert key={index} data-color="danger" data-size="sm">
+          {error}
+        </Alert>
       ))}
     </div>
   );
