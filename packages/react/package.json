@@ -37,7 +37,9 @@
   },
   "dependencies": {
     "@digdir/designsystemet-react": "1.0.8",
-    "clsx": "^2.1.1"
+    "@navikt/aksel-icons": "^7.23.0",
+    "clsx": "^2.1.1",
+    "react-dropzone": "^14.3.8"
   },
   "devDependencies": {
     "@eslint/js": "9.29.0",

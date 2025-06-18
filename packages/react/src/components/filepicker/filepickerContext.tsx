@@ -1,13 +1,14 @@
 import { createContext } from "react";
+import { FilePickerProps } from "./types";
 
-export interface FilePickerContextValue {
-  files: File[];
-  onAdd: (files: File[]) => void | Promise<void>;
-  onRemove: (file: File) => void | Promise<void>;
-}
+export type FilePickerContextValue = Pick<
+  FilePickerProps,
+  "files" | "errors" | "disabled" | "isWaiting" | "onAdd" | "onRemove"
+>;
 
 export const FilePickerContext = createContext<FilePickerContextValue>({
   files: [],
+  errors: null,
   onAdd: () => {
     throw new TypeError("FilePickerContext is missing");
   },
