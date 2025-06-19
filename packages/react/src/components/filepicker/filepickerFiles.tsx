@@ -31,18 +31,20 @@ export function FilePickerFiles({
     <div className={clsx("at-filepicker-files", className)} {...rest}>
       {files.map((file, index) => (
         <div key={`${file.name}-${index}`} className="at-filepicker-file">
-          <div className="at-filepicker-file__info">
-            <FileIcon aria-hidden="true" />
-            <Label>{file.name} </Label>
-            <Label data-size="sm">({formatFileSize(file.size)})</Label>
-          </div>
+          <FileIcon aria-hidden="true" />
+          <Label className="at-filepicker-file__name" title={file.name}>
+            {file.name}
+          </Label>
+          <Label className="at-filepicker-file__size" data-size="sm">
+            ({formatFileSize(file.size)})
+          </Label>
           <Button
             icon
             variant="tertiary"
             data-size="sm"
             onClick={() => onRemove(file)}
             disabled={disabled}
-            aria-label={`Fjern ${file.name}`}
+            aria-label={`Remove ${file.name}`}
           >
             <XMarkIcon aria-hidden />
           </Button>

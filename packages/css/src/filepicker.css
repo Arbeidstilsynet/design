@@ -52,20 +52,29 @@
 }
 
 .at-filepicker-file {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
   align-items: center;
-  justify-content: space-between;
+  gap: var(--ds-size-2);
   padding: var(--ds-size-2) var(--ds-size-3);
   border: 1px solid var(--ds-color-border-subtle);
   border-radius: var(--ds-border-radius-default);
 }
 
 .at-filepicker-file__info {
-  display: flex;
-  align-items: center;
-  gap: var(--ds-size-2);
-  flex: 1;
-  min-width: 0; /* Allow text truncation */
+  display: contents; /* Makes children participate in parent grid */
+}
+
+.at-filepicker-file__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.at-filepicker-file__size {
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .at-filepicker-file__remove {
