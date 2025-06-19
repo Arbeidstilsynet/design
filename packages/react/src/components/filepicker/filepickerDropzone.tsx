@@ -23,12 +23,14 @@ function DefaultLabel() {
   );
 }
 
-export interface FilePickerDropzoneProps extends Omit<ButtonProps, "children"> {
+export interface FilePickerDropzoneProps
+  extends Omit<ButtonProps, "children" | "variant" | "type"> {
   ref?: React.Ref<HTMLButtonElement>;
 
-  /** Replace the default label nodes. Should use <Label> or other typography. */
+  /** Replace the default label nodes. Should use `<Label>` or other typography. */
   label?: React.ReactNode;
 
+  /** Label text shown when a file is dragged over the dropzone */
   dropLabel?: string;
 }
 
