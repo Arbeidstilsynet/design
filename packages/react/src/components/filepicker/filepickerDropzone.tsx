@@ -1,8 +1,9 @@
-import { Button, ButtonProps, Label } from "@/digdir";
 import { CloudUpIcon } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import { use } from "react";
 import { useDropzone } from "react-dropzone";
+import { Button, ButtonProps, Label } from "../../digdir";
+import { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 
 function DefaultLabel({
@@ -28,9 +29,8 @@ function DefaultLabel({
 }
 
 export interface FilePickerDropzoneProps
-  extends Omit<ButtonProps, "children" | "variant" | "type" | "icon"> {
-  ref?: React.Ref<HTMLButtonElement>;
-
+  extends DefaultProps<HTMLButtonElement>,
+    Omit<ButtonProps, "children" | "asChild" | "variant" | "type" | "icon"> {
   /** Replace the default label nodes. Should use `<Label>` or other typography. */
   label?: React.ReactNode;
 
@@ -46,7 +46,6 @@ export interface FilePickerDropzoneProps
 }
 
 export function FilePickerDropzone({
-  ref,
   className,
   label,
   defaultLabelText = ["Last opp fil", "Filformater: pdf, txt og docx"],
@@ -62,7 +61,6 @@ export function FilePickerDropzone({
 
   return (
     <Button
-      ref={ref}
       className={clsx("at-filepicker-dropzone", className)}
       disabled={disabled}
       {...getRootProps({ ...rest })}

@@ -1,12 +1,13 @@
-import { Button, Label } from "@/digdir";
 import { FileIcon, XMarkIcon } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes, use } from "react";
+import { Button, Label } from "../../digdir";
+import { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 
-export interface FilePickerFilesProps extends HTMLAttributes<HTMLDivElement> {
-  ref?: React.Ref<HTMLDivElement>;
-}
+export interface FilePickerFilesProps
+  extends DefaultProps<HTMLDivElement>,
+    HTMLAttributes<HTMLDivElement> {}
 
 function formatFileSize(bytes: number): string {
   if (bytes === 0) return "0 Bytes";
@@ -17,7 +18,6 @@ function formatFileSize(bytes: number): string {
 }
 
 export function FilePickerFiles({
-  ref,
   className,
   ...rest
 }: Readonly<FilePickerFilesProps>) {
@@ -28,7 +28,7 @@ export function FilePickerFiles({
   }
 
   return (
-    <div ref={ref} className={clsx("at-filepicker-files", className)} {...rest}>
+    <div className={clsx("at-filepicker-files", className)} {...rest}>
       {files.map((file, index) => (
         <div key={`${file.name}-${index}`} className="at-filepicker-file">
           <div className="at-filepicker-file__info">

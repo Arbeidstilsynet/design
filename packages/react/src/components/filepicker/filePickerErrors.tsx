@@ -1,14 +1,15 @@
-import { Alert } from "@/digdir";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes, use } from "react";
+import { Alert } from "../../digdir";
+
+import { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 
-export interface FilePickerErrorsProps extends HTMLAttributes<HTMLDivElement> {
-  ref?: React.Ref<HTMLDivElement>;
-}
+export interface FilePickerErrorsProps
+  extends DefaultProps<HTMLDivElement>,
+    HTMLAttributes<HTMLDivElement> {}
 
 export function FilePickerErrors({
-  ref,
   className,
   ...rest
 }: FilePickerErrorsProps) {
@@ -20,7 +21,6 @@ export function FilePickerErrors({
 
   return (
     <div
-      ref={ref}
       className={clsx("at-filepicker-errors", className)}
       role="alert"
       {...rest}

@@ -1,8 +1,9 @@
 import { HTMLAttributes } from "react";
+import { DefaultProps } from "../../types";
 
-export interface FilePickerProps extends HTMLAttributes<HTMLDivElement> {
-  ref?: React.Ref<HTMLDivElement>;
-
+export interface FilePickerProps
+  extends DefaultProps<HTMLDivElement>,
+    HTMLAttributes<HTMLDivElement> {
   /** Should the FilePicker be disabled */
   disabled?: boolean;
   /** Display spinner while processing files */
