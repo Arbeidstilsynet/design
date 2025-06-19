@@ -4,6 +4,7 @@
   "packageRules": [
     {
       "matchPackageNames": ["@digdir/designsystemet*"],
+      "matchManagers": ["npm"],
       "groupName": "@digdir/designsystemet"
     }
   ]
