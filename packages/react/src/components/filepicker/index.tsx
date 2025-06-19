@@ -1,6 +1,6 @@
 import { FilePicker as FilePickerParent } from "./filepicker";
 import { FilePickerDropzone } from "./filepickerDropzone";
-import { FilePickerErrors } from "./filepickerErrors2";
+import { FilePickerErrors } from "./filepickerErrors";
 import { FilePickerFiles } from "./filepickerFiles";
 
 /**
@@ -30,7 +30,7 @@ const FilePicker = Object.assign(FilePickerParent, {
 
 export { FilePickerContext } from "./filepickerContext";
 export type { FilePickerDropzoneProps } from "./filepickerDropzone";
-export type { FilePickerErrorsProps } from "./filepickerErrors2";
+export type { FilePickerErrorsProps } from "./filepickerErrors";
 export type { FilePickerFilesProps } from "./filepickerFiles";
 export type { FilePickerProps } from "./types";
 export { FilePicker, FilePickerDropzone, FilePickerErrors, FilePickerFiles };
