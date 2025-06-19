@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { FilePicker } from "..";
-import { createMockFile } from "./utils";
+import { createMockFileInKb } from "./utils";
 
 const meta: Meta<typeof FilePicker> = {
   title: "Arbeidstilsynet/FilePicker",
@@ -87,8 +87,8 @@ export const WithErrors: Story = {
 
   args: {
     files: [
-      createMockFile("file1.pdf", 2048),
-      createMockFile("file2.doc", 500),
+      createMockFileInKb("file1.pdf", 2048),
+      createMockFileInKb("file2.doc", 500),
     ],
     errors: ["file1.pdf size exceeds limit", "Unsupported file type .doc"],
   },
@@ -102,7 +102,7 @@ export const Disabled: Story = {
     </FilePicker>
   ),
   args: {
-    files: [createMockFile("document.pdf", 1)],
+    files: [createMockFileInKb("document.pdf", 1)],
     errors: [],
     disabled: true,
     onAdd: () => {},
@@ -119,8 +119,8 @@ export const FilesListOnly: Story = {
 
   args: {
     files: [
-      createMockFile("file1.pdf", 2048),
-      createMockFile("file2.doc", 500),
+      createMockFileInKb("file1.pdf", 2048),
+      createMockFileInKb("file2.doc", 500),
     ],
     errors: null,
   },
@@ -143,11 +143,11 @@ export const SideBySide: Story = {
   ),
   args: {
     files: [
-      createMockFile(
+      createMockFileInKb(
         "A very long and interesting filename that just really takes a lot of space for no good reason.pdf",
         2048,
       ),
-      createMockFile("file2.doc", 500),
+      createMockFileInKb("file2.doc", 500),
     ],
     errors: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae nulla diam. Curabitur rutrum ante metus, sed molestie erat sagittis quis. Fusce posuere gravida nibh, nec elementum ipsum lobortis at. ",
