@@ -58,7 +58,6 @@
   padding: var(--ds-size-2) var(--ds-size-3);
   border: 1px solid var(--ds-color-border-subtle);
   border-radius: var(--ds-border-radius-default);
-  background-color: var(--ds-color-surface-default);
 }
 
 .at-filepicker-file__info {
