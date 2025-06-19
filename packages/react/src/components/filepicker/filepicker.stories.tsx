@@ -110,19 +110,29 @@ export const Disabled: Story = {
   },
 };
 
-export const FilesListOnly: Story = {
+export const ChangedDefaultText: Story = {
   render: (args) => (
     <FilePicker {...args}>
+      <FilePicker.Dropzone
+        defaultLabelText={["Custom upload text"]}
+        dropLabel="Custom drop text"
+      />
       <FilePicker.Files />
     </FilePicker>
   ),
+};
 
+export const IsWaiting: Story = {
+  render: (args) => (
+    <FilePicker {...args}>
+      <FilePicker.Dropzone />
+      <FilePicker.Files />
+    </FilePicker>
+  ),
   args: {
-    files: [
-      createMockFileInKb("file1.pdf", 2048),
-      createMockFileInKb("file2.doc", 500),
-    ],
-    errors: null,
+    isWaiting: true,
+    disabled: true,
+    files: [createMockFileInKb("file being processed.doc", 500)],
   },
 };
 
@@ -131,8 +141,8 @@ export const SideBySide: Story = {
     <div style={{ display: "flex", gap: "1rem" }}>
       <FilePicker {...args}>
         <FilePicker.Dropzone />
-        <FilePicker.Files />
         <FilePicker.Errors />
+        <FilePicker.Files />
       </FilePicker>
       <FilePicker {...args}>
         <FilePicker.Dropzone />
@@ -150,19 +160,7 @@ export const SideBySide: Story = {
       createMockFileInKb("file2.doc", 500),
     ],
     errors: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae nulla diam. Curabitur rutrum ante metus, sed molestie erat sagittis quis. Fusce posuere gravida nibh, nec elementum ipsum lobortis at. ",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae nulla diam. Curabitur rutrum ante metus, sed molestie erat sagittis quis.",
     ],
   },
-};
-
-export const ChangedDefaultText: Story = {
-  render: (args) => (
-    <FilePicker {...args}>
-      <FilePicker.Dropzone
-        defaultLabelText={["Custom upload text"]}
-        dropLabel="Custom drop text"
-      />
-      <FilePicker.Files />
-    </FilePicker>
-  ),
 };

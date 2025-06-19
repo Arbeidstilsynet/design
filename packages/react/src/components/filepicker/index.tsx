@@ -5,15 +5,18 @@ import { FilePickerFiles } from "./filepickerFiles";
 
 /**
  * Controlled component for managing file uploads.
- * You should perform validation in onAdd/onRemove callbacks and pass a list of errors in props.
+ * You should perform validation in `onAdd`/`onRemove` callbacks and pass a list of errors in props.
  *
- * Note: the default label text is only only a demonstration.
- * To enforce file types and sizes you have to implement validation in `onAdd` and `onRemove` callbacks.
+ * Uses [react-dropzone](https://react-dropzone.js.org/) for drag-and-drop functionality.
+ *
+ * Note: the default label text is only an example. File types are not enforced by the component, but can be done in your validation logic as needed.
+ *
+ * FilePicker has no internal state and can be fully controlled as needed with a combination of `files`, `errors`, `disabled`, `isWaiting` props as well as using the subcomponents as desired. For example, you can change the order of the sucomponents or only use some of them. You decide if the `files` prop only contains accepted files or all including errors, and you can use the `errors` prop to display validation errors in your UI.
  *
  * Usage:
  * ```tsx
  * <FilePicker files={files} errors={errors} onAdd={handleAddFiles} onRemove={handleRemoveFile}>
- *   <FilePicker.Dropzone />
+ *   <FilePicker.Dropzone defaultLabelText={["Upload here!"]} />
  *   <FilePicker.Files />
  *   <FilePicker.Errors />
  * </FilePicker>

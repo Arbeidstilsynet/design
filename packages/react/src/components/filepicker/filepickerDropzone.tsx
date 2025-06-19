@@ -2,7 +2,7 @@ import { CloudUpIcon } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import { use } from "react";
 import { useDropzone } from "react-dropzone";
-import { Button, ButtonProps, Label } from "../../digdir";
+import { Button, ButtonProps, Label, Spinner } from "../../digdir";
 import { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 
@@ -52,7 +52,7 @@ export function FilePickerDropzone({
   dropLabel = "Slipp for å legge til",
   ...rest
 }: Readonly<FilePickerDropzoneProps>) {
-  const { onAdd, disabled } = use(FilePickerContext);
+  const { onAdd, disabled, isWaiting } = use(FilePickerContext);
 
   const onDrop = (acceptedFiles: File[]) => {
     void onAdd(acceptedFiles);
@@ -62,15 +62,18 @@ export function FilePickerDropzone({
   return (
     <Button
       className={clsx("at-filepicker-dropzone", className)}
-      disabled={disabled}
+      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+      disabled={disabled || isWaiting}
       {...getRootProps({ ...rest })}
     >
       <input {...getInputProps()} />
-      {isDragActive ? (
-        <Label>{dropLabel}</Label>
-      ) : (
-        (label ?? <DefaultLabel defaultLabelText={defaultLabelText} />)
-      )}
+      {isWaiting && <Spinner aria-label="Processing files" data-size="lg" />}
+      {!isWaiting &&
+        (isDragActive ? (
+          <Label>{dropLabel}</Label>
+        ) : (
+          (label ?? <DefaultLabel defaultLabelText={defaultLabelText} />)
+        ))}
     </Button>
   );
 }
