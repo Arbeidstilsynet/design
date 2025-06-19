@@ -9,6 +9,11 @@ const meta: Meta<typeof FilePicker> = {
   parameters: {
     layout: "padded",
   },
+  subcomponents: {
+    ["FilePicker.Dropzone"]: FilePicker.Dropzone,
+    ["FilePicker.Files"]: FilePicker.Files,
+    ["FilePicker.Errors"]: FilePicker.Errors,
+  },
 };
 
 export default meta;
