@@ -28,8 +28,8 @@ export function FilePickerFiles({
           <Label className="at-filepicker-file__name" title={file.name}>
             {file.name}
           </Label>
-          <Label className="at-filepicker-file__size" data-size="sm">
-            ({formatFileSize(file.size)})
+          <Label className="at-filepicker-file__size" data-size="sm" asChild>
+            <span>({formatFileSize(file.size)})</span>
           </Label>
           <Button
             icon
