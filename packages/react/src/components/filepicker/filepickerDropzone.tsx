@@ -64,7 +64,7 @@ export function FilePickerDropzone({
       className={clsx("at-filepicker-dropzone", className)}
       // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
       disabled={disabled || isWaiting}
-      {...getRootProps({ ...rest })}
+      {...getRootProps({ role: "button", ...rest })}
     >
       <input {...getInputProps()} />
       {isWaiting && <Spinner aria-label="Processing files" data-size="lg" />}

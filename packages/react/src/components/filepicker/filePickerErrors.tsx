@@ -20,13 +20,9 @@ export function FilePickerErrors({
   }
 
   return (
-    <div
-      className={clsx("at-filepicker-errors", className)}
-      role="alert"
-      {...rest}
-    >
+    <div className={clsx("at-filepicker-errors", className)} {...rest}>
       {errors.map((error, index) => (
-        <Alert key={index} data-color="danger" data-size="sm">
+        <Alert key={index} role="alert" data-color="danger" data-size="sm">
           {error}
         </Alert>
       ))}
