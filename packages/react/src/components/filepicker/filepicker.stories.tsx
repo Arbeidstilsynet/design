@@ -120,3 +120,24 @@ export const FilesListOnly: Story = {
     errors: null,
   },
 };
+
+export const SideBySide: Story = {
+  render: (args) => (
+    <div style={{ display: "flex", gap: "1rem" }}>
+      <FilePicker {...args}>
+        <FilePicker.Dropzone />
+        <FilePicker.Files />
+      </FilePicker>
+      <FilePicker {...args}>
+        <FilePicker.Dropzone />
+        <FilePicker.Files />
+      </FilePicker>
+    </div>
+  ),
+  args: {
+    files: [
+      createMockFile("file1.pdf", 2048),
+      createMockFile("file2.doc", 500),
+    ],
+  },
+};
