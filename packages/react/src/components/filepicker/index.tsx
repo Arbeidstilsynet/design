@@ -7,6 +7,9 @@ import { FilePickerFiles } from "./filepickerFiles";
  * Controlled component for managing file uploads.
  * You should perform validation in onAdd/onRemove callbacks and pass a list of errors in props.
  *
+ * Note: the default label text is only only a demonstration.
+ * To enforce file types and sizes you have to implement validation in `onAdd` and `onRemove` callbacks.
+ *
  * Usage:
  * ```tsx
  * <FilePicker files={files} errors={errors} onAdd={handleAddFiles} onRemove={handleRemoveFile}>
