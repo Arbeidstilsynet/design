@@ -1,7 +1,7 @@
+import { Button, Label } from "@/digdir";
 import { FileIcon, XMarkIcon } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes, use } from "react";
-import { Button, Label } from "../..";
 import { FilePickerContext } from "./filepickerContext";
 
 export interface FilePickerFilesProps extends HTMLAttributes<HTMLDivElement> {

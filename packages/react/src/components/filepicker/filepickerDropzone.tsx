@@ -1,8 +1,8 @@
+import { Button, ButtonProps, Label } from "@/digdir";
 import { CloudUpIcon } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import { use } from "react";
 import { useDropzone } from "react-dropzone";
-import { Button, ButtonProps, Label } from "../..";
 import { FilePickerContext } from "./filepickerContext";
 
 function DefaultLabel({

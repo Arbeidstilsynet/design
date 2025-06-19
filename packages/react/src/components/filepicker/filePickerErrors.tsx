@@ -1,6 +1,6 @@
+import { Alert } from "@/digdir";
 import { clsx } from "clsx/lite";
 import { HTMLAttributes, use } from "react";
-import { Alert } from "../..";
 import { FilePickerContext } from "./filepickerContext";
 
 export interface FilePickerErrorsProps extends HTMLAttributes<HTMLDivElement> {
