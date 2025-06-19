@@ -29,7 +29,8 @@
     "build": "vite build",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "circular": "pnpm dlx madge --circular --extensions \"js,jsx,ts,tsx\" --exclude \"\" ."
   },
   "peerDependencies": {
     "react": "^19.1.0",

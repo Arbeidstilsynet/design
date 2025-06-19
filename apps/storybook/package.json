@@ -8,7 +8,8 @@
     "build": "storybook build",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "serve": "pnpm dlx http-server ./storybook-static"
+    "serve": "pnpm dlx http-server ./storybook-static",
+    "circular": "pnpm dlx madge --circular --extensions \"js,jsx,ts,tsx\" ./stories"
   },
   "dependencies": {
     "@arbeidstilsynet/design-css": "workspace:*",
