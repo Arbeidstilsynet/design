@@ -5,7 +5,11 @@ import { useDropzone } from "react-dropzone";
 import { Button, ButtonProps, Label } from "../..";
 import { FilePickerContext } from "./filepickerContext";
 
-function DefaultLabel() {
+function DefaultLabel({
+  defaultLabelText,
+}: Pick<FilePickerDropzoneProps, "defaultLabelText">) {
+  const text1 = defaultLabelText?.[0];
+  const text2 = defaultLabelText?.[1];
   return (
     <>
       <span style={{ display: "flex", flexFlow: "row" }}>
@@ -15,20 +19,27 @@ function DefaultLabel() {
             textDecoration: "underline",
           }}
         >
-          Last opp fil
+          {text1}
         </Label>
       </span>
-      <Label>Filformater: pdf, txt og docx</Label>
+      {text2 && <Label>{text2}</Label>}
     </>
   );
 }
 
 export interface FilePickerDropzoneProps
-  extends Omit<ButtonProps, "children" | "variant" | "type"> {
+  extends Omit<ButtonProps, "children" | "variant" | "type" | "icon"> {
   ref?: React.Ref<HTMLButtonElement>;
 
   /** Replace the default label nodes. Should use `<Label>` or other typography. */
   label?: React.ReactNode;
+
+  /**
+   *  Replace the text in default label.
+   *  Pass an array with one or two strings.
+   *  If only one is passed, the second line is not displayed.
+   *  */
+  defaultLabelText?: [string] | [string, string];
 
   /** Label text shown when a file is dragged over the dropzone */
   dropLabel?: string;
@@ -38,6 +49,7 @@ export function FilePickerDropzone({
   ref,
   className,
   label,
+  defaultLabelText = ["Last opp fil", "Filformater: pdf, txt og docx"],
   dropLabel = "Slipp for å legge til",
   ...rest
 }: Readonly<FilePickerDropzoneProps>) {
@@ -56,7 +68,11 @@ export function FilePickerDropzone({
       {...getRootProps({ ...rest })}
     >
       <input {...getInputProps()} />
-      {isDragActive ? <Label>{dropLabel}</Label> : (label ?? <DefaultLabel />)}
+      {isDragActive ? (
+        <Label>{dropLabel}</Label>
+      ) : (
+        (label ?? <DefaultLabel defaultLabelText={defaultLabelText} />)
+      )}
     </Button>
   );
 }

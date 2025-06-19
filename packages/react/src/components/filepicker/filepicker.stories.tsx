@@ -146,3 +146,16 @@ export const SideBySide: Story = {
     ],
   },
 };
+
+export const ChangedDefaultText: Story = {
+  render: (args) => (
+    <FilePicker {...args}>
+      <FilePicker.Dropzone
+        defaultLabelText={["Custom upload text"]}
+        dropLabel="Custom drop text"
+      />
+      <FilePicker.Files />
+    </FilePicker>
+  ),
+  args: {},
+};
