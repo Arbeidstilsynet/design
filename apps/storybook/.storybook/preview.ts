@@ -23,6 +23,7 @@ const preview: Preview = {
   parameters: {
     layout: "centered",
     controls: {
+      sort: "requiredFirst",
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,
