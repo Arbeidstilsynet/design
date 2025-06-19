@@ -25,8 +25,8 @@ const config: StorybookConfig = {
       EXPERIMENTAL_useWatchProgram: true,
     },
   },
-  // use alias to resolve @arbeidstilsynet/design-react to the local package for HMR support
   async viteFinal(config) {
+    // use alias to resolve @arbeidstilsynet/design-react to the local package for HMR support
     config.resolve = config.resolve || {};
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
@@ -35,6 +35,7 @@ const config: StorybookConfig = {
         "../../../packages/react/src/index.ts",
       ),
     };
+
     return config;
   },
 };
