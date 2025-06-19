@@ -9,7 +9,7 @@ import { FilePickerFiles } from "./filepickerFiles";
  *
  * Usage:
  * ```tsx
- * <FilePicker files={files} errors={errors} onAdd={onAdd} onRemove={handleRemove}>
+ * <FilePicker files={files} errors={errors} onAdd={handleAddFiles} onRemove={handleRemoveFile}>
  *   <FilePicker.Dropzone />
  *   <FilePicker.Files />
  *   <FilePicker.Errors />
