@@ -165,5 +165,4 @@ export const ChangedDefaultText: Story = {
       <FilePicker.Files />
     </FilePicker>
   ),
-  args: {},
 };
