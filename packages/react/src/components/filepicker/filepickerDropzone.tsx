@@ -51,8 +51,7 @@ export function FilePickerDropzone({
       ref={ref}
       className={clsx("at-filepicker-dropzone", className)}
       disabled={disabled}
-      {...rest}
-      {...getRootProps()}
+      {...getRootProps({ ...rest })}
     >
       <input {...getInputProps()} />
       {isDragActive ? <Label>{dropLabel}</Label> : (label ?? <DefaultLabel />)}
