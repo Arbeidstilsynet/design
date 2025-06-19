@@ -4,18 +4,11 @@ import { HTMLAttributes, use } from "react";
 import { Button, Label } from "../../digdir";
 import { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
+import { formatFileSize } from "./utils";
 
 export interface FilePickerFilesProps
   extends DefaultProps<HTMLDivElement>,
     HTMLAttributes<HTMLDivElement> {}
-
-function formatFileSize(bytes: number): string {
-  if (bytes === 0) return "0 Bytes";
-  const k = 1024;
-  const sizes = ["Bytes", "KB", "MB", "GB"];
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
-  return parseFloat((bytes / Math.pow(k, i)).toFixed(1)) + " " + sizes[i];
-}
 
 export function FilePickerFiles({
   className,
