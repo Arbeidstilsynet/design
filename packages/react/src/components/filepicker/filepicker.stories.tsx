@@ -132,17 +132,25 @@ export const SideBySide: Story = {
       <FilePicker {...args}>
         <FilePicker.Dropzone />
         <FilePicker.Files />
+        <FilePicker.Errors />
       </FilePicker>
       <FilePicker {...args}>
         <FilePicker.Dropzone />
         <FilePicker.Files />
+        <FilePicker.Errors />
       </FilePicker>
     </div>
   ),
   args: {
     files: [
-      createMockFile("file1.pdf", 2048),
+      createMockFile(
+        "A very long and interesting filename that just really takes a lot of space for no good reason.pdf",
+        2048,
+      ),
       createMockFile("file2.doc", 500),
+    ],
+    errors: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae nulla diam. Curabitur rutrum ante metus, sed molestie erat sagittis quis. Fusce posuere gravida nibh, nec elementum ipsum lobortis at. ",
     ],
   },
 };
