@@ -4,7 +4,7 @@ import { vi } from "vitest";
 import { FilePicker, FilePickerProps } from ".";
 import { createMockFileInKb } from "./utils";
 
-const defaultProps: FilePickerProps = {
+const defaultProps: FilePickerProps<number> = {
   files: [],
   errors: [],
   onAdd: vi.fn(),
@@ -63,8 +63,14 @@ describe("FilePicker", () => {
 
   test("renders uploaded files", () => {
     const files = [
-      createMockFileInKb("document.pdf", 1024), // 1MB
-      createMockFileInKb("spreadsheet.xlsx", 512), // 512KB
+      {
+        id: 1,
+        file: createMockFileInKb("document.pdf", 1024), // 1MB
+      },
+      {
+        id: 2,
+        file: createMockFileInKb("spreadsheet.xlsx", 512), // 512KB
+      },
     ];
 
     render(
@@ -82,7 +88,7 @@ describe("FilePicker", () => {
   test("calls onRemove when remove button is clicked", async () => {
     const user = userEvent.setup();
     const onRemove = vi.fn();
-    const files = [createMockFileInKb("document.pdf", 1024)];
+    const files = [{ id: 1, file: createMockFileInKb("document.pdf", 1024) }];
 
     render(
       <FilePicker {...defaultProps} files={files} onRemove={onRemove}>
@@ -96,7 +102,7 @@ describe("FilePicker", () => {
     await user.click(removeButton);
 
     expect(onRemove).toHaveBeenCalledTimes(1);
-    expect(onRemove).toHaveBeenCalledWith(files[0]);
+    expect(onRemove).toHaveBeenCalledWith(files[0].id);
   });
 
   test("does not render errors when none provided", () => {
@@ -120,7 +126,7 @@ describe("FilePicker", () => {
   });
 
   test("disables remove buttons when disabled", () => {
-    const files = [createMockFileInKb("document.pdf", 1024)];
+    const files = [{ id: 1, file: createMockFileInKb("document.pdf", 1024) }];
 
     render(
       <FilePicker {...defaultProps} files={files} disabled>
@@ -173,7 +179,7 @@ describe("FilePicker", () => {
     [createMockFileInKb("huge.zip", 1024 * 1024), "1 GB"],
   ])("formats different file sizes correctly ($1)", (file, size) => {
     render(
-      <FilePicker {...defaultProps} files={[file]}>
+      <FilePicker {...defaultProps} files={[{ id: 1, file }]}>
         <FilePicker.Files />
       </FilePicker>,
     );
@@ -182,7 +188,7 @@ describe("FilePicker", () => {
   });
 
   test("renders complete FilePicker with all subcomponents", () => {
-    const files = [createMockFileInKb("document.pdf", 1024)];
+    const files = [{ id: 1, file: createMockFileInKb("document.pdf", 1024) }];
     const errors = ["Test error"];
 
     render(
@@ -299,10 +305,13 @@ describe("FilePicker", () => {
 
   test("displays file titles correctly for long filenames", () => {
     const files = [
-      createMockFileInKb(
-        "very-long-filename-that-might-get-truncated-in-the-ui.pdf",
-        1024,
-      ),
+      {
+        id: 1,
+        file: createMockFileInKb(
+          "very-long-filename-that-might-get-truncated-in-the-ui.pdf",
+          1024,
+        ),
+      },
     ];
 
     render(

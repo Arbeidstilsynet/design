@@ -32,5 +32,5 @@ export { FilePickerContext } from "./filepickerContext";
 export type { FilePickerDropzoneProps } from "./filepickerDropzone";
 export type { FilePickerErrorsProps } from "./filepickerErrors";
 export type { FilePickerFilesProps } from "./filepickerFiles";
-export type { FilePickerProps } from "./types";
+export type { FilePickerItem, FilePickerProps } from "./types";
 export { FilePicker, FilePickerDropzone, FilePickerErrors, FilePickerFiles };

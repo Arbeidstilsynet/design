@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { useState } from "react";
-import { FilePicker } from "..";
-import { createMockFileInKb } from "./utils";
+import { useRef, useState } from "react";
+import { FilePicker, FilePickerItem } from "..";
+import { createMockFile, createMockFileInKb } from "./utils";
 
 const meta: Meta<typeof FilePicker> = {
   title: "Arbeidstilsynet/FilePicker",
@@ -22,7 +22,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Preview: Story = {
   render: (args) => {
-    const [files, setFiles] = useState<File[]>([]);
+    const fileId = useRef(0);
+    const [files, setFiles] = useState<FilePickerItem<number>[]>([]);
     const [errors, setErrors] = useState<string[]>([]);
 
     const handleAdd = (newFiles: File[]) => {
@@ -48,12 +49,18 @@ export const Preview: Story = {
         return;
       }
 
+      const addedFiles = newFiles.map((file) => ({
+        id: fileId.current++,
+        file,
+        error: null,
+      }));
+
       setErrors([]);
-      setFiles((prev) => [...prev, ...newFiles]);
+      setFiles((prev) => [...prev, ...addedFiles]);
     };
 
-    const handleRemove = (fileToRemove: File) => {
-      setFiles((prev) => prev.filter((file) => file !== fileToRemove));
+    const handleRemove = (id: number) => {
+      setFiles((prev) => prev.filter((file) => file.id !== id));
       setErrors([]);
     };
 
@@ -87,10 +94,24 @@ export const WithErrors: Story = {
 
   args: {
     files: [
-      createMockFileInKb("file1.pdf", 2048),
-      createMockFileInKb("file2.doc", 500),
+      {
+        id: 1,
+        file: createMockFileInKb("file1.pdf", 2048),
+        error: "file1.pdf size exceeds limit",
+      },
+      {
+        id: 2,
+        file: createMockFileInKb("file2.doc", 500),
+        error:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet pretium lorem. Sed non sagittis purus. Donec quis arcu tortor. Nunc egestas vel nulla sed posuere. ",
+      },
+      {
+        id: 3,
+        file: createMockFile("file3.txt", 40),
+        error: null,
+      },
     ],
-    errors: ["file1.pdf size exceeds limit", "Unsupported file type .doc"],
+    errors: ["Too many files selected", "Another error"],
   },
 };
 
@@ -102,7 +123,7 @@ export const Disabled: Story = {
     </FilePicker>
   ),
   args: {
-    files: [createMockFileInKb("document.pdf", 1)],
+    files: [{ id: 1, file: createMockFileInKb("document.pdf", 1) }],
     errors: [],
     disabled: true,
     onAdd: () => {},
@@ -132,7 +153,9 @@ export const IsWaiting: Story = {
   args: {
     isWaiting: true,
     disabled: true,
-    files: [createMockFileInKb("file being processed.doc", 500)],
+    files: [
+      { id: 1, file: createMockFileInKb("file being processed.doc", 500) },
+    ],
   },
 };
 
@@ -153,11 +176,14 @@ export const SideBySide: Story = {
   ),
   args: {
     files: [
-      createMockFileInKb(
-        "A very long and interesting filename that just really takes a lot of space for no good reason.pdf",
-        2048,
-      ),
-      createMockFileInKb("file2.doc", 500),
+      {
+        id: 1,
+        file: createMockFileInKb(
+          "A very long and interesting filename that just really takes a lot of space for no good reason.pdf",
+          2048,
+        ),
+      },
+      { id: 2, file: createMockFileInKb("file2.doc", 500) },
     ],
     errors: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae nulla diam. Curabitur rutrum ante metus, sed molestie erat sagittis quis.",

@@ -58,10 +58,17 @@
   padding: var(--ds-size-2) var(--ds-size-3);
   border: 1px solid var(--ds-color-border-subtle);
   border-radius: var(--ds-border-radius-default);
+
+  &--error {
+    border-color: var(--ds-color-danger-border-default);
+  }
 }
 
-.at-filepicker-file__info {
-  display: contents; /* Makes children participate in parent grid */
+.at-filepicker-file__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-1);
+  min-width: 0; /* Allow text truncation */
 }
 
 .at-filepicker-file__name {
@@ -71,18 +78,16 @@
   min-width: 0;
 }
 
+.at-filepicker-file__error {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
 .at-filepicker-file__size {
   white-space: nowrap;
   flex-shrink: 0;
-}
-
-.at-filepicker-file__remove {
-  flex-shrink: 0;
-}
-
-.at-filepicker-file__remove-icon {
-  width: var(--ds-size-4);
-  height: var(--ds-size-4);
 }
 
 .at-filepicker-errors {
@@ -98,7 +103,7 @@
     padding: var(--ds-size-1) var(--ds-size-2);
   }
 
-  .at-filepicker-file__info {
+  .at-filepicker-file__content {
     gap: var(--ds-size-1);
   }
 }
