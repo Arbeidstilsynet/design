@@ -1,5 +1,26 @@
 # @arbeidstilsynet/design-react
 
+## 0.1.0
+
+Released: 2025-06-20
+
+### Minor Changes
+
+- **FilePicker**: New component ([#137](https://github.com/Arbeidstilsynet/design/pull/137))
+
+### Patch Changes
+
+- Remove EXPERIMENTAL_MultiSuggestion ([#141](https://github.com/Arbeidstilsynet/design/pull/141))
+
+- Updated dependency `@digdir/designsystemet-css` to `1.1.0`. ([#141](https://github.com/Arbeidstilsynet/design/pull/141))
+  Updated dependency `@digdir/designsystemet` to `1.1.0`.
+  Updated dependency `@digdir/designsystemet-react` to `1.1.0`.
+
+- Updated dependency `@storybook/addon-docs` to `9.0.12`. ([#135](https://github.com/Arbeidstilsynet/design/pull/135))
+  Updated dependency `@storybook/react-vite` to `9.0.12`.
+  Updated dependency `eslint-plugin-storybook` to `9.0.12`.
+  Updated dependency `storybook` to `9.0.12`.
+
 ## 0.0.17
 
 Released: 2025-06-17
