@@ -16,8 +16,8 @@ importers:
         specifier: 2.29.5
         version: 2.29.5
       '@digdir/designsystemet':
-        specifier: 1.0.8
-        version: 1.0.8
+        specifier: 1.1.0
+        version: 1.1.0
       '@svitejs/changesets-changelog-github-compact':
         specifier: 1.2.0
         version: 1.2.0
@@ -113,8 +113,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.0.8
-        version: 1.0.8
+        specifier: 1.1.0
+        version: 1.1.0
     devDependencies:
       autoprefixer:
         specifier: 10.4.21
@@ -141,8 +141,8 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.0.8
-        version: 1.0.8(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 1.1.0
+        version: 1.1.0(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@navikt/aksel-icons':
         specifier: ^7.23.0
         version: 7.23.1
@@ -474,10 +474,10 @@ packages:
   '@changesets/write@0.4.0':
     resolution: {integrity: sha512-CdTLvIOPiCNuH71pyDu3rA+Q0n65cmAbXnwWH84rKGiFumFzkmHNT8KHTMEchcxN+Kl8I54xGUhJ7l3E7X396Q==}
 
-  '@commander-js/extra-typings@13.1.0':
-    resolution: {integrity: sha512-q5P52BYb1hwVWE6dtID7VvuJWrlfbCv4klj7BjUUOqMz4jbSZD4C9fJ9lRjL2jnBGTg+gDDlaXN51rkWcLk4fg==}
+  '@commander-js/extra-typings@14.0.0':
+    resolution: {integrity: sha512-hIn0ncNaJRLkZrxBIp5AsW/eXEHNKYQBh0aPdoUqNgD+Io3NIykQqpKFyKcuasZhicGaEZJX/JBSIkZ4e5x8Dg==}
     peerDependencies:
-      commander: ~13.1.0
+      commander: ~14.0.0
 
   '@csstools/color-helpers@5.0.2':
     resolution: {integrity: sha512-JqWH1vsgdGcw2RR6VliXXdA0/59LttzlU8UlRT/iUUsEeWfYq8I+K0yhihEUTTHLRm1EXvpsCx3083EU15ecsA==}
@@ -519,17 +519,17 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.0.0
 
-  '@digdir/designsystemet-css@1.0.8':
-    resolution: {integrity: sha512-5CPZs6TeVgtaikoVpPSfc/a7PC1v6zTwHLufsL0F1P8kPlhRyuWEoTMYZvw1fs71aHQ+3EPWJKQQppO6TM57EQ==}
+  '@digdir/designsystemet-css@1.1.0':
+    resolution: {integrity: sha512-aEJdFa88ndzVFZS1gsue4qGdg8sJluDqofmer2yiroBDtongndZ8WUUJ5mrnrMrHps9Llnj1lwhVO3Ap/HicDg==}
 
-  '@digdir/designsystemet-react@1.0.8':
-    resolution: {integrity: sha512-kUSyLyHl0nFewm4dUSZERoUSPJok2BPiwj2n6tqwGrEINAm4HuOc+VmUs3dXelVM/M/Tf7gDr5m8tJOe8BczkQ==}
+  '@digdir/designsystemet-react@1.1.0':
+    resolution: {integrity: sha512-Q7rcpW5Au0+k4p8qxpTy+KSHR4lkSybuni5sRuyCcXEpfD065GpO91fBqqeOINvPtNmZIwq7cWRiT/VU2FmpxQ==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet@1.0.8':
-    resolution: {integrity: sha512-lyp+ajHdtKwyKVeTVpPNKSsNT4zduPdT/5tHQwJca7TotYj4BmCSecGfwOTp0gy0zVGzwNRAj/Mx/xSwHKcEig==}
+  '@digdir/designsystemet@1.1.0':
+    resolution: {integrity: sha512-eymvh1S3pIINpyhYW41REAjLGKAEsAzGzCEZAAxIpd2FDmLYwci5ekV8eytHMMspANw6o5IN/cBfwPTSsXqtxw==}
     engines: {node: '>=22.16.0'}
     hasBin: true
 
@@ -721,11 +721,11 @@ packages:
     resolution: {integrity: sha512-0J+zgWxHN+xXONWIyPWKFMgVuJoZuGiIFu8yxk7RJjxkzpGmyja5wRFqZIVtjDVOQpV+Rw0iOAjYPE2eQyjr0w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@floating-ui/core@1.7.0':
-    resolution: {integrity: sha512-FRdBLykrPPA6P76GGGqlex/e7fbe0F1ykgxHYNXQsH/iTEtjMj/f9bpY5oQqbjt5VgZvgz/uKXbGuROijh3VLA==}
+  '@floating-ui/core@1.7.1':
+    resolution: {integrity: sha512-azI0DrjMMfIug/ExbBaeDVJXcY0a7EPvPjb2xAJPa4HeimBX+Z18HK8QQR3jb6356SnDDdxx+hinMLcJEDdOjw==}
 
-  '@floating-ui/dom@1.7.0':
-    resolution: {integrity: sha512-lGTor4VlXcesUMh1cupTUTDoCxMb0V6bm3CnxHzQcw8Eaf1jQbgQX4i02fYgT0vJ82tb5MZ4CZk1LRGkktJCzg==}
+  '@floating-ui/dom@1.7.1':
+    resolution: {integrity: sha512-cwsmW/zyw5ltYTUeeYJ60CnQuPqmGwuGVhG9w0PRaRKkAyi38BT5CKrpIbb+jtahSwUl04cWzSx9ZOIxeS6RsQ==}
 
   '@floating-ui/react-dom@2.1.2':
     resolution: {integrity: sha512-06okr5cgPzMNBy+Ycse2A6udMi4bqwW/zgBF/rwjcNqWkyr82Mcg8b0vjX8OJpZFy/FKjJmw6wV7t44kK6kW7A==}
@@ -1083,14 +1083,14 @@ packages:
     resolution: {integrity: sha512-08eKiDAjj4zLug1taXSIJ0kGL5cawjVCyJkBb6EWSg5fEPX6L+Wtr0CH2If4j5KYylz85iaZiFlUItvgJvll5g==}
     engines: {node: ^14.13.1 || ^16.0.0 || >=18}
 
-  '@tanstack/react-virtual@3.13.9':
-    resolution: {integrity: sha512-SPWC8kwG/dWBf7Py7cfheAPOxuvIv4fFQ54PdmYbg7CpXfsKxkucak43Q0qKsxVthhUJQ1A7CIMAIplq4BjVwA==}
+  '@tanstack/react-virtual@3.13.10':
+    resolution: {integrity: sha512-nvrzk4E9mWB4124YdJ7/yzwou7IfHxlSef6ugCFcBfRmsnsma3heciiiV97sBNxyc3VuwtZvmwXd0aB5BpucVw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@tanstack/virtual-core@3.13.9':
-    resolution: {integrity: sha512-3jztt0jpaoJO5TARe2WIHC1UQC3VMLAFUW5mmMo0yrkwtDB2AQP0+sh10BVUpWrnvHjSLvzFizydtEGLCJKFoQ==}
+  '@tanstack/virtual-core@3.13.10':
+    resolution: {integrity: sha512-sPEDhXREou5HyZYqSWIqdU580rsF6FGeN7vpzijmP3KTiOGjOMZASz4Y6+QKjiFQwhWrR58OP8izYaNGVxvViA==}
 
   '@testing-library/dom@10.4.0':
     resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
@@ -1252,14 +1252,14 @@ packages:
     resolution: {integrity: sha512-xoh5rJ+tgsRKoXnkBPFRLZ7rjKM0AfVbC68UZ/ECXoDbfggb9RbEySN359acY1vS3qZ0jVTVWzbtfapwm5ztxw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@u-elements/u-datalist@0.1.5':
-    resolution: {integrity: sha512-EFMrolFuYMCj4ioT+ClNxIMHLUQldjzupvGoErmH/vfP+enbDy4ZwiI1U2kj6tYOwn9laDf+67M+gnP1X/ddlA==}
+  '@u-elements/u-combobox@0.0.14':
+    resolution: {integrity: sha512-CFwf4IIWSRGJgHNYIaS/tOQjeu4tjGYkeee66gpM9JMsrgUIXvqMXd9e8VMfdwQ3NWuHGPMC1y07CLpjb5ToNQ==}
+
+  '@u-elements/u-datalist@1.0.8':
+    resolution: {integrity: sha512-CfmPVC4I08bi7XwhHI3KC20FndfE8i2xAPAJ0FCLSvhK4028GCvzCMKuREP2VDqtP9Y0+ZJfyvOG4EWK2auZNw==}
 
   '@u-elements/u-details@0.1.1':
     resolution: {integrity: sha512-VQDwumgWzXWe/vEUVs+jPvRVlNw+1epHjkNlCjx3IA5BSKSxAPRFZ47ew5iKuZhAKmK0wke0rreA7SO/pjZN6w==}
-
-  '@u-elements/u-tags@0.1.4':
-    resolution: {integrity: sha512-5VbqbFatd42ZY6Zf2d5MGvOIsJdflf5+ixpR4B5YT97dustT9csAS6SEHrUFgGdFzJDpASIbZdojsnU1j7GArA==}
 
   '@vitejs/plugin-react@4.5.2':
     resolution: {integrity: sha512-QNVT3/Lxx99nMQWJWF7K4N6apUEuT0KlZA3mx/mVaoGj3smm/8rc8ezz15J1pcbcjDK0V15rpHetVfya08r76Q==}
@@ -3988,17 +3988,17 @@ packages:
     peerDependencies:
       zod: ^3.18.0
 
-  zod-validation-error@3.4.1:
-    resolution: {integrity: sha512-1KP64yqDPQ3rupxNv7oXhf7KdhHHgaqbKuspVoiN93TT0xrBjql+Svjkdjq/Qh/7GSMmgQs3AfvBT0heE35thw==}
+  zod-validation-error@3.5.2:
+    resolution: {integrity: sha512-mdi7YOLtram5dzJ5aDtm1AG9+mxRma1iaMrZdYIpFO7epdKBUwLHIxTF8CPDeCQ828zAXYtizrKlEJAtzgfgrw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
-      zod: ^3.24.4
+      zod: ^3.25.0
 
   zod@3.24.4:
     resolution: {integrity: sha512-OdqJE9UDRPwWsrHjLN2F8bPxvwJBK22EHLWtanu0LSYr5YqzsaaW3RMgmjwr8Rypg5k+meEJdSPXJZXE/yqOMg==}
 
-  zod@3.25.51:
-    resolution: {integrity: sha512-TQSnBldh+XSGL+opiSIq0575wvDPqu09AqWe1F7JhUMKY+M91/aGlK4MhpVNO7MgYfHcVCB1ffwAUTJzllKJqg==}
+  zod@3.25.67:
+    resolution: {integrity: sha512-idA2YXwpCdqUSKRCACDE6ItZD9TZzy3OZMtpfLoh6oPR47lipysRrJfjzMqFxQ3uJuUPyUeWe1r9vLH33xO/Qw==}
 
 snapshots:
 
@@ -4440,7 +4440,7 @@ snapshots:
       human-id: 4.1.1
       prettier: 2.8.8
 
-  '@commander-js/extra-typings@13.1.0(commander@13.1.0)':
+  '@commander-js/extra-typings@14.0.0(commander@13.1.0)':
     dependencies:
       commander: 13.1.0
 
@@ -4472,27 +4472,27 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.0
 
-  '@digdir/designsystemet-css@1.0.8': {}
+  '@digdir/designsystemet-css@1.1.0': {}
 
-  '@digdir/designsystemet-react@1.0.8(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@digdir/designsystemet-react@1.1.0(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@floating-ui/dom': 1.7.0
+      '@floating-ui/dom': 1.7.1
       '@floating-ui/react': 0.26.23(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@navikt/aksel-icons': 7.23.1
       '@radix-ui/react-slot': 1.2.3(@types/react@19.1.8)(react@19.1.0)
-      '@tanstack/react-virtual': 3.13.9(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@u-elements/u-datalist': 0.1.5
+      '@tanstack/react-virtual': 3.13.10(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@u-elements/u-combobox': 0.0.14
+      '@u-elements/u-datalist': 1.0.8
       '@u-elements/u-details': 0.1.1
-      '@u-elements/u-tags': 0.1.4
       clsx: 2.1.1
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet@1.0.8':
+  '@digdir/designsystemet@1.1.0':
     dependencies:
-      '@commander-js/extra-typings': 13.1.0(commander@13.1.0)
+      '@commander-js/extra-typings': 14.0.0(commander@13.1.0)
       '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@4.4.0)
       apca-w3: 0.1.9
       chalk: 5.4.1
@@ -4503,11 +4503,11 @@ snapshots:
       fast-glob: 3.3.3
       hsluv: 1.0.1
       object-hash: 3.0.0
-      postcss: 8.5.3
+      postcss: 8.5.6
       ramda: 0.30.1
       style-dictionary: 4.4.0
-      zod: 3.25.51
-      zod-validation-error: 3.4.1(zod@3.25.51)
+      zod: 3.25.67
+      zod-validation-error: 3.5.2(zod@3.25.67)
 
   '@esbuild/aix-ppc64@0.25.3':
     optional: true
@@ -4628,18 +4628,18 @@ snapshots:
       '@eslint/core': 0.14.0
       levn: 0.4.1
 
-  '@floating-ui/core@1.7.0':
+  '@floating-ui/core@1.7.1':
     dependencies:
       '@floating-ui/utils': 0.2.9
 
-  '@floating-ui/dom@1.7.0':
+  '@floating-ui/dom@1.7.1':
     dependencies:
-      '@floating-ui/core': 1.7.0
+      '@floating-ui/core': 1.7.1
       '@floating-ui/utils': 0.2.9
 
   '@floating-ui/react-dom@2.1.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@floating-ui/dom': 1.7.0
+      '@floating-ui/dom': 1.7.1
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
@@ -5001,13 +5001,13 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@tanstack/react-virtual@3.13.9(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@tanstack/react-virtual@3.13.10(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@tanstack/virtual-core': 3.13.9
+      '@tanstack/virtual-core': 3.13.10
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
-  '@tanstack/virtual-core@3.13.9': {}
+  '@tanstack/virtual-core@3.13.10': {}
 
   '@testing-library/dom@10.4.0':
     dependencies:
@@ -5214,11 +5214,11 @@ snapshots:
       '@typescript-eslint/types': 8.34.1
       eslint-visitor-keys: 4.2.1
 
-  '@u-elements/u-datalist@0.1.5': {}
+  '@u-elements/u-combobox@0.0.14': {}
+
+  '@u-elements/u-datalist@1.0.8': {}
 
   '@u-elements/u-details@0.1.1': {}
-
-  '@u-elements/u-tags@0.1.4': {}
 
   '@vitejs/plugin-react@4.5.2(vite@6.3.5(@types/node@22.15.32)(tsx@4.20.3)(yaml@2.7.1))':
     dependencies:
@@ -8257,10 +8257,10 @@ snapshots:
     dependencies:
       zod: 3.24.4
 
-  zod-validation-error@3.4.1(zod@3.25.51):
+  zod-validation-error@3.5.2(zod@3.25.67):
     dependencies:
-      zod: 3.25.51
+      zod: 3.25.67
 
   zod@3.24.4: {}
 
-  zod@3.25.51: {}
+  zod@3.25.67: {}
