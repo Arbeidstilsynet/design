@@ -9,6 +9,14 @@ const meta: Meta<typeof FilePicker> = {
   parameters: {
     layout: "padded",
   },
+  args: {
+    onAdd: (files) => {
+      console.log(`onAdd called with ${files.length} files`);
+    },
+    onRemove: (id) => {
+      console.log(`onRemove called with id ${id}`);
+    },
+  },
   subcomponents: {
     ["FilePicker.Dropzone"]: FilePicker.Dropzone,
     ["FilePicker.Files"]: FilePicker.Files,
