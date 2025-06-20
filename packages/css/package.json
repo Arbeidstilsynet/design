@@ -26,7 +26,7 @@
     "build": "del-cli ./dist && postcss ./src/*.css --base . --dir ./dist"
   },
   "dependencies": {
-    "@digdir/designsystemet-css": "1.0.8"
+    "@digdir/designsystemet-css": "1.1.0"
   },
   "devDependencies": {
     "autoprefixer": "10.4.21",
