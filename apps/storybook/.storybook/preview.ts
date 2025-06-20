@@ -5,9 +5,25 @@ import { customStylesDecorator } from "../utils/customStylesDecorator";
 import "./preview.css";
 
 const preview: Preview = {
+  globalTypes: {
+    colorScheme: {
+      description: "Set color-scheme in stories",
+      defaultValue: "auto",
+      toolbar: {
+        title: "Color scheme",
+        icon: "contrast",
+        items: [
+          { title: "Light", value: "light" },
+          { title: "Dark", value: "dark" },
+          { title: "Auto", value: "auto" },
+        ],
+      },
+    },
+  },
   parameters: {
     layout: "centered",
     controls: {
+      sort: "requiredFirst",
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/i,

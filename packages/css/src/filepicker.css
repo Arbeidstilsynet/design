@@ -1,0 +1,109 @@
+.at-filepicker {
+  width: 100%;
+  max-width: 43rem;
+}
+
+.at-filepicker-dropzone {
+  display: flex;
+  width: 100%;
+  min-height: var(--ds-size-26);
+  padding: var(--ds-size-4) 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-size-2);
+  border-radius: var(--ds-border-radius-default);
+  border: 2px dashed var(--ds-color-info-border-default);
+  background-color: var(--ds-color-background-default);
+  color: var(--ds-color-text-default);
+  cursor: pointer;
+
+  &:hover:not(:disabled) {
+    background-color: var(--ds-color-surface-tinted);
+  }
+
+  & span {
+    gap: var(--ds-size-2);
+  }
+
+  /* Ensure all child elements don't interfere with pointer events and inherit cursor */
+  & * {
+    pointer-events: none;
+    cursor: inherit;
+  }
+
+  /* When disabled, restore pointer events for child elements but use disabled cursor */
+  &:disabled {
+    cursor: not-allowed;
+
+    & * {
+      pointer-events: auto;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.at-filepicker-files {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-2);
+  margin: var(--ds-size-3) 0;
+}
+
+.at-filepicker-file {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: var(--ds-size-2);
+  padding: var(--ds-size-2) var(--ds-size-3);
+  border: 1px solid var(--ds-color-border-subtle);
+  border-radius: var(--ds-border-radius-default);
+
+  &--error {
+    border-color: var(--ds-color-danger-border-default);
+  }
+}
+
+.at-filepicker-file__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-1);
+  min-width: 0; /* Allow text truncation */
+}
+
+.at-filepicker-file__name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.at-filepicker-file__error {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.at-filepicker-file__size {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.at-filepicker-errors {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-2);
+  margin: var(--ds-size-3) 0;
+}
+
+/* Responsive adjustments */
+@container (max-width: 30rem) {
+  .at-filepicker-file {
+    padding: var(--ds-size-1) var(--ds-size-2);
+  }
+
+  .at-filepicker-file__content {
+    gap: var(--ds-size-1);
+  }
+}

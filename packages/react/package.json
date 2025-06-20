@@ -29,14 +29,18 @@
     "build": "vite build",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "circular": "pnpm dlx madge --circular --extensions \"js,jsx,ts,tsx\" --exclude \"\" ."
   },
   "peerDependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "dependencies": {
-    "@digdir/designsystemet-react": "1.0.8"
+    "@digdir/designsystemet-react": "1.0.8",
+    "@navikt/aksel-icons": "^7.23.0",
+    "clsx": "^2.1.1",
+    "react-dropzone": "^14.3.8"
   },
   "devDependencies": {
     "@eslint/js": "9.29.0",

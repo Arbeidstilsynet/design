@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "storybook dev -p 6006",
+    "dev": "concurrently \"pnpm --filter @arbeidstilsynet/design-css dev\" \"pnpm dev:only\"",
+    "dev:only": "storybook dev -p 6006",
     "build": "storybook build",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
-    "serve": "pnpm dlx http-server ./storybook-static"
+    "serve": "pnpm dlx http-server ./storybook-static",
+    "circular": "pnpm dlx madge --circular --extensions \"js,jsx,ts,tsx\" ./stories"
   },
   "dependencies": {
     "@arbeidstilsynet/design-css": "workspace:*",
@@ -20,10 +22,12 @@
   "devDependencies": {
     "@eslint/js": "9.29.0",
     "@storybook/addon-docs": "9.0.12",
+    "@storybook/addon-storysource": "8.6.14",
     "@storybook/react-vite": "9.0.12",
     "@types/node": "22.15.32",
     "@types/react": "19.1.8",
     "@types/react-dom": "19.1.6",
+    "concurrently": "9.1.2",
     "eslint": "9.29.0",
     "eslint-config-prettier": "10.1.5",
     "eslint-plugin-react": "7.37.5",
