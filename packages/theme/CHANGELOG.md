@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.0.11
+
+Released: 2025-06-20
+
+### Patch Changes
+
+- `--ds-size-*` rounding change from `@digdir/designsystemet@1.1.0` ([#141](https://github.com/Arbeidstilsynet/design/pull/141))
+
 ## 0.0.10
 
 Released: 2025-06-06
