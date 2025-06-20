@@ -9,6 +9,7 @@ on:
 jobs:
   format:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - uses: ./.github/actions/setup
@@ -16,12 +17,21 @@ jobs:
 
   typecheck:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - uses: ./.github/actions/setup
       - run: pnpm typecheck
 
-  lint-test-build:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: ./.github/actions/setup
+      - run: pnpm build
+
+  lint-test:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     permissions:
@@ -47,5 +57,3 @@ jobs:
         if: steps.test.outcome == 'success' || steps.test.outcome == 'failure'
         with:
           files: "test-report.xml"
-
-      - run: pnpm build

@@ -1,0 +1,21 @@
+.github-link {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+}
+
+.github-icon-dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .github-icon-light {
+    display: none;
+  }
+  .github-icon-dark {
+    display: inline-block;
+  }
+}
