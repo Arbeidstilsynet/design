@@ -1,7 +1,7 @@
 import { FileIcon, XMarkIcon } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import { Fragment, HTMLAttributes, use } from "react";
-import { Button, Label, ValidationMessage } from "../../digdir";
+import { Button, ValidationMessage } from "../../digdir";
 import { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 import { formatFileSize } from "./utils";
@@ -28,13 +28,9 @@ export function FilePickerFiles({
             <FileIcon aria-hidden="true" fontSize="1.5em" />
 
             <div className="at-filepicker-file__content">
-              <Label
-                className="at-filepicker-file__name"
-                title={file.name}
-                data-color="brand-1"
-              >
+              <span className="at-filepicker-file__name" title={file.name}>
                 {file.name}
-              </Label>
+              </span>
               {error && (
                 <ValidationMessage
                   className="at-filepicker-file__error"
@@ -47,9 +43,9 @@ export function FilePickerFiles({
               )}
             </div>
 
-            <Label className="at-filepicker-file__size" data-size="sm" asChild>
-              <span>({formatFileSize(file.size)})</span>
-            </Label>
+            <span className="at-filepicker-file__size" data-size="sm">
+              ({formatFileSize(file.size)})
+            </span>
 
             <Button
               icon
