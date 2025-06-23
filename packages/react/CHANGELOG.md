@@ -1,5 +1,15 @@
 # @arbeidstilsynet/design-react
 
+## 0.1.1
+
+Released: 2025-06-23
+
+### Patch Changes
+
+- Remove TempExample ([#149](https://github.com/Arbeidstilsynet/design/pull/149))
+
+- Updated dependency `@vitejs/plugin-react` to `4.6.0`. ([#147](https://github.com/Arbeidstilsynet/design/pull/147))
+
 ## 0.1.0
 
 Released: 2025-06-20
