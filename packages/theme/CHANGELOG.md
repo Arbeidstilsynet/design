@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.0.12
+
+Released: 2025-06-24
+
+### Patch Changes
+
+- Update readme ([#154](https://github.com/Arbeidstilsynet/design/pull/154))
+
 ## 0.0.11
 
 Released: 2025-06-20
