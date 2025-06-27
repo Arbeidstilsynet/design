@@ -16,8 +16,8 @@ importers:
         specifier: 2.29.5
         version: 2.29.5
       '@digdir/designsystemet':
-        specifier: 1.1.0
-        version: 1.1.0
+        specifier: 1.1.2
+        version: 1.1.2
       '@svitejs/changesets-changelog-github-compact':
         specifier: 1.2.0
         version: 1.2.0
@@ -113,8 +113,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.1.0
-        version: 1.1.0
+        specifier: 1.1.2
+        version: 1.1.2
     devDependencies:
       autoprefixer:
         specifier: 10.4.21
@@ -141,8 +141,8 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.1.0
-        version: 1.1.0(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 1.1.2
+        version: 1.1.2(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@navikt/aksel-icons':
         specifier: ^7.23.0
         version: 7.23.1
@@ -523,17 +523,17 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.0.0
 
-  '@digdir/designsystemet-css@1.1.0':
-    resolution: {integrity: sha512-aEJdFa88ndzVFZS1gsue4qGdg8sJluDqofmer2yiroBDtongndZ8WUUJ5mrnrMrHps9Llnj1lwhVO3Ap/HicDg==}
+  '@digdir/designsystemet-css@1.1.2':
+    resolution: {integrity: sha512-AzjCl25Q2bF9PsobSP7dY647bxiEiOq6vtck+yC0wBl+eXtlwO5K9uFG9c6jZUhYGkI/GTAESLo1mirCSNcbew==}
 
-  '@digdir/designsystemet-react@1.1.0':
-    resolution: {integrity: sha512-Q7rcpW5Au0+k4p8qxpTy+KSHR4lkSybuni5sRuyCcXEpfD065GpO91fBqqeOINvPtNmZIwq7cWRiT/VU2FmpxQ==}
+  '@digdir/designsystemet-react@1.1.2':
+    resolution: {integrity: sha512-VrQtP0HnC+j/tSQv/i5YlJd74FM83C+lRWzTcIB6en17FikeGbfz18yP5orrfupi3dC0BmQYHY/2Isy3tXQP3A==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet@1.1.0':
-    resolution: {integrity: sha512-eymvh1S3pIINpyhYW41REAjLGKAEsAzGzCEZAAxIpd2FDmLYwci5ekV8eytHMMspANw6o5IN/cBfwPTSsXqtxw==}
+  '@digdir/designsystemet@1.1.2':
+    resolution: {integrity: sha512-f9Wc3L9OgSeBtbmJkmVRKq2Xn2hMGaOE9exHYd3qsXf9TVU8iaHEhrP3YKYip7uivBqElBkTmbOnqzZ986tHTQ==}
     engines: {node: '>=22.16.0'}
     hasBin: true
 
@@ -1661,9 +1661,9 @@ packages:
     resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
     engines: {node: '>=18'}
 
-  commander@13.1.0:
-    resolution: {integrity: sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw==}
-    engines: {node: '>=18'}
+  commander@14.0.0:
+    resolution: {integrity: sha512-2uM9rYjPvyq39NwLRqaiLtWHyDC1FvryJDa2ATTVims5YAS4PupsEQsDvP14FqhFr0P49CYDugi59xaxJlTXRA==}
+    engines: {node: '>=20'}
 
   commander@7.2.0:
     resolution: {integrity: sha512-QrWXB+ZQSVPmIWIhtEO9H+gwHaMGYiF5ChvoJ+K9ZGHG/sVsa6yiesAD1GC/x46sET00Xlwo1u49RVVVzvcSkw==}
@@ -3550,9 +3550,9 @@ packages:
   strip-literal@3.0.0:
     resolution: {integrity: sha512-TcccoMhJOM3OebGhSBEmp3UZ2SfDMZUEBdRA/9ynfLi8yYajyWX3JiXArcJt4Umh4vISpspkQIY8ZZoCqjbviA==}
 
-  style-dictionary@4.4.0:
-    resolution: {integrity: sha512-+xU0IA1StzqAqFs/QtXkK+XJa7wpS4X5H+JQccRKsRCElgeLGocFU1U/UMvMUylKFw6vwGV+Y/a2wb2pm5rFFQ==}
-    engines: {node: '>=18.0.0'}
+  style-dictionary@5.0.0:
+    resolution: {integrity: sha512-ORuqKamQe4nL2B9ASmmz5LxKBDuiqHvP8jj4lQ+5kE1XJyagJVvgSz5VpTAG3dRheqlqN5++vtVmK1S6ZZyy/A==}
+    engines: {node: '>=22.0.0'}
     hasBin: true
 
   stylehacks@7.0.5:
@@ -4449,9 +4449,9 @@ snapshots:
       human-id: 4.1.1
       prettier: 2.8.8
 
-  '@commander-js/extra-typings@14.0.0(commander@13.1.0)':
+  '@commander-js/extra-typings@14.0.0(commander@14.0.0)':
     dependencies:
-      commander: 13.1.0
+      commander: 14.0.0
 
   '@csstools/color-helpers@5.0.2': {}
 
@@ -4481,9 +4481,9 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.0
 
-  '@digdir/designsystemet-css@1.1.0': {}
+  '@digdir/designsystemet-css@1.1.2': {}
 
-  '@digdir/designsystemet-react@1.1.0(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@digdir/designsystemet-react@1.1.2(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@floating-ui/dom': 1.7.1
       '@floating-ui/react': 0.26.23(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -4499,22 +4499,22 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet@1.1.0':
+  '@digdir/designsystemet@1.1.2':
     dependencies:
-      '@commander-js/extra-typings': 14.0.0(commander@13.1.0)
-      '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@4.4.0)
+      '@commander-js/extra-typings': 14.0.0(commander@14.0.0)
+      '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@5.0.0)
       apca-w3: 0.1.9
       chalk: 5.4.1
       change-case: 5.4.4
       chroma-js: 3.1.2
       colorjs.io: 0.6.0-alpha.1
-      commander: 13.1.0
+      commander: 14.0.0
       fast-glob: 3.3.3
       hsluv: 1.0.1
       object-hash: 3.0.0
       postcss: 8.5.6
       ramda: 0.30.1
-      style-dictionary: 4.4.0
+      style-dictionary: 5.0.0
       zod: 3.25.67
       zod-validation-error: 3.5.2(zod@3.25.67)
 
@@ -5055,7 +5055,7 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.0
 
-  '@tokens-studio/sd-transforms@1.3.0(style-dictionary@4.4.0)':
+  '@tokens-studio/sd-transforms@1.3.0(style-dictionary@5.0.0)':
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.1
       '@bundled-es-modules/postcss-calc-ast-parser': 0.1.6
@@ -5063,7 +5063,7 @@ snapshots:
       colorjs.io: 0.5.2
       expr-eval-fork: 2.0.2
       is-mergeable-object: 1.1.1
-      style-dictionary: 4.4.0
+      style-dictionary: 5.0.0
 
   '@tokens-studio/types@0.5.2': {}
 
@@ -5687,7 +5687,7 @@ snapshots:
 
   commander@12.1.0: {}
 
-  commander@13.1.0: {}
+  commander@14.0.0: {}
 
   commander@7.2.0: {}
 
@@ -7803,11 +7803,12 @@ snapshots:
     dependencies:
       js-tokens: 9.0.1
 
-  style-dictionary@4.4.0:
+  style-dictionary@5.0.0:
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.1
       '@bundled-es-modules/glob': 10.4.2
       '@bundled-es-modules/memfs': 4.17.0
+      '@types/node': 22.15.33
       '@zip.js/zip.js': 2.7.60
       chalk: 5.4.1
       change-case: 5.4.4
