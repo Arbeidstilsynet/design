@@ -1,3 +1,4 @@
 @import "@digdir/designsystemet-css/dist/src/index.css";
 
 @import "./filepicker.css" layer(at.components);
+@import "./header.css" layer(at.components);
