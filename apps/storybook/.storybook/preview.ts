@@ -83,6 +83,7 @@ const preview: Preview = {
         order: [
           "Overview",
           "Usage",
+          "Icons",
           "Showcase",
           "Changelog",
           "Example",

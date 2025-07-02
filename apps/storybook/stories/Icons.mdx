@@ -1,0 +1,26 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+import { Button } from "@arbeidstilsynet/design-react";
+import { XMarkIcon } from "@navikt/aksel-icons";
+
+<Meta title="Icons" />
+
+# Icons
+
+The components generally accept `ReactNode` where icons are used.
+As long as the icons use `em` for sizing they should automatically scale when the parent element scales with `data-size`.
+For example, the Button component with an icon from [@navikt/aksel-icons](https://aksel.nav.no/ikoner):
+
+<Button icon aria-label="Close" data-size="sm">
+  <XMarkIcon aria-hidden fontSize="1.5em" />
+</Button>
+
+```tsx
+import { Button } from "@arbeidstilsynet/design-react";
+import { XMarkIcon } from "@navikt/aksel-icons";
+...
+<Button icon aria-label="Close" data-size="sm" {...otherProps}>
+  <XMarkIcon aria-hidden fontSize="1.5em" />
+</Button>
+```
+
+Both `@arbeidstilsynet/design-react` and `@digdir/designsystemet-react` have `@navikt/aksel-icons` as a dependency because of usage in some components, but other icon libraries can be used.

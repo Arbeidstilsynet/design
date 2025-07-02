@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-css
 
+## 0.1.1
+
+Released: 2025-06-24
+
+### Patch Changes
+
+- Update readme ([#154](https://github.com/Arbeidstilsynet/design/pull/154))
+
 ## 0.1.0
 
 Released: 2025-06-20

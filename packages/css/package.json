@@ -1,6 +1,6 @@
 {
   "name": "@arbeidstilsynet/design-css",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "CSS for Designsystemet",
   "author": "Arbeidstilsynet",
   "repository": {
@@ -26,7 +26,7 @@
     "build": "del-cli ./dist && postcss ./src/*.css --base . --dir ./dist"
   },
   "dependencies": {
-    "@digdir/designsystemet-css": "1.1.0"
+    "@digdir/designsystemet-css": "1.1.2"
   },
   "devDependencies": {
     "autoprefixer": "10.4.21",

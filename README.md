@@ -8,20 +8,22 @@ Storybook: [design2.arbeidstilsynet.no](https://design2.arbeidstilsynet.no)
 
 ## Packages
 
-- [@arbeidstilsynet/design-react](./packages/react/)
-- [@arbeidstilsynet/design-css](./packages/css/)
-- [@arbeidstilsynet/design-theme](./packages/theme/)
+- [@arbeidstilsynet/design-react](./packages/react/) - React implementation of components
+- [@arbeidstilsynet/design-css](./packages/css/) - Styling for components
+- [@arbeidstilsynet/design-theme](./packages/theme/) - Arbeidstilsynets styling theme(s)
 
 ## Usage
 
 `npm i @arbeidstilsynet/design-react @arbeidstilsynet/design-css @arbeidstilsynet/design-theme`
 
 ```tsx
-// layout.tsx or other top level component
+// layout.tsx or other top level component.
+// These only have to be imported once.
 import "@arbeidstilsynet/design-css";
 import "@arbeidstilsynet/design-theme";
-...
+```
 
+```tsx
 // myComponent.tsx
 import { Button } from "@arbeidstilsynet/design-react";
 
