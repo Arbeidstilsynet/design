@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Banner, Header, Links, HeaderSearch, Title } from "..";
+import { Header } from "..";
 
 const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
@@ -54,26 +54,7 @@ export const Preview: Story = {
     showSearch: true,
   },
   render: (args) => (
-    <Header {...args}>
-      {args.showBanner &&
-        <Banner text={args.bannerText} />
-      }
-      {args.showTitle &&
-        <Title fagsystemNavn={args.fagsystemNavn} brukernavn={args.brukernavn} />
-      }
-      {args.showSearch &&
-        <HeaderSearch />
-      }
-      {args.showLinks &&
-        <Links
-          links={[
-            { href: "#", text: "Link 1" },
-            { href: "#", text: "Link 2" },
-            { href: "#", text: "Link 3" },
-          ]}
-        />
-      }
-    </Header>
+    <Header {...args} />
   ),
 };
 
