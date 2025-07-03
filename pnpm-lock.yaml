@@ -16,8 +16,8 @@ importers:
         specifier: 2.29.5
         version: 2.29.5
       '@digdir/designsystemet':
-        specifier: 1.1.2
-        version: 1.1.2
+        specifier: 1.1.3
+        version: 1.1.3
       '@svitejs/changesets-changelog-github-compact':
         specifier: 1.2.0
         version: 1.2.0
@@ -113,8 +113,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.1.2
-        version: 1.1.2
+        specifier: 1.1.3
+        version: 1.1.3
     devDependencies:
       autoprefixer:
         specifier: 10.4.21
@@ -141,8 +141,8 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.1.2
-        version: 1.1.2(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 1.1.3
+        version: 1.1.3(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@navikt/aksel-icons':
         specifier: ^7.23.0
         version: 7.23.1
@@ -523,17 +523,17 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.0.0
 
-  '@digdir/designsystemet-css@1.1.2':
-    resolution: {integrity: sha512-AzjCl25Q2bF9PsobSP7dY647bxiEiOq6vtck+yC0wBl+eXtlwO5K9uFG9c6jZUhYGkI/GTAESLo1mirCSNcbew==}
+  '@digdir/designsystemet-css@1.1.3':
+    resolution: {integrity: sha512-gt0rLlFnkEb5mqjSird4l4pgj3W47lm/lYMhyctNA680DYLJgTrHrjZ8a2YUuG+gdXFekab+uuXg5xUn92C7Sw==}
 
-  '@digdir/designsystemet-react@1.1.2':
-    resolution: {integrity: sha512-VrQtP0HnC+j/tSQv/i5YlJd74FM83C+lRWzTcIB6en17FikeGbfz18yP5orrfupi3dC0BmQYHY/2Isy3tXQP3A==}
+  '@digdir/designsystemet-react@1.1.3':
+    resolution: {integrity: sha512-Pm119b90kBjTyrvX3nKACMALqzW38CiorK7EXqmfqWfDcsj8iecNrFJNCqr7/Sk3gh2Oy9CFOIFK6+IMJxEISA==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet@1.1.2':
-    resolution: {integrity: sha512-f9Wc3L9OgSeBtbmJkmVRKq2Xn2hMGaOE9exHYd3qsXf9TVU8iaHEhrP3YKYip7uivBqElBkTmbOnqzZ986tHTQ==}
+  '@digdir/designsystemet@1.1.3':
+    resolution: {integrity: sha512-Qm8VbAAlbdVHb6ZXwzM40GuOfXeUXtDP5r80io9eSuJdwWjsyicGpmxP2i1PPxKhoP5/UAmibtKd7KiA/gh/OA==}
     engines: {node: '>=22.16.0'}
     hasBin: true
 
@@ -3228,8 +3228,8 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
-  ramda@0.30.1:
-    resolution: {integrity: sha512-tEF5I22zJnuclswcZMc8bDIrwRHRzf+NqVEmqg50ShAZMP7MWeR/RGDthfM/p+BlqvF2fXAzpn8i+SJcYD3alw==}
+  ramda@0.31.3:
+    resolution: {integrity: sha512-xKADKRNnqmDdX59PPKLm3gGmk1ZgNnj3k7DryqWwkamp4TJ6B36DdpyKEQ0EoEYmH2R62bV4Q+S0ym2z8N2f3Q==}
 
   react-docgen-typescript@2.2.2:
     resolution: {integrity: sha512-tvg2ZtOpOi6QDwsb3GZhOjDkkX0h8Z2gipvTg6OVMUyoYoURhEiRNePT8NZItTVCDh39JJHnLdfCOkzoLbFnTg==}
@@ -4465,9 +4465,9 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.0
 
-  '@digdir/designsystemet-css@1.1.2': {}
+  '@digdir/designsystemet-css@1.1.3': {}
 
-  '@digdir/designsystemet-react@1.1.2(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@digdir/designsystemet-react@1.1.3(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@floating-ui/dom': 1.7.1
       '@floating-ui/react': 0.26.23(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -4483,7 +4483,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet@1.1.2':
+  '@digdir/designsystemet@1.1.3':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.0)
       '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@5.0.0)
@@ -4497,7 +4497,7 @@ snapshots:
       hsluv: 1.0.1
       object-hash: 3.0.0
       postcss: 8.5.6
-      ramda: 0.30.1
+      ramda: 0.31.3
       style-dictionary: 5.0.0
       zod: 3.25.67
       zod-validation-error: 3.5.2(zod@3.25.67)
@@ -7376,7 +7376,7 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  ramda@0.30.1: {}
+  ramda@0.31.3: {}
 
   react-docgen-typescript@2.2.2(typescript@5.8.3):
     dependencies:
