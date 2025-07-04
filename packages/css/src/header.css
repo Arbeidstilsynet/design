@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  container-type: inline-size; /* Enable container queries */
 }
 
 .at-header__banner {
@@ -70,7 +71,8 @@
   flex-direction: column;
   justify-content: center;
   box-sizing: border-box;
-  padding-left: 4rem;
+  width: 26rem;
+  padding-left: var(--ds-size-22);
   padding-bottom: 1rem;
   padding-top: 1rem;
 }
@@ -85,4 +87,40 @@
   flex-direction: row;
   box-sizing: border-box;
   padding-left: 4rem;
+}
+
+
+/* Responsive adjustments */
+@container (max-width: 30rem) {
+  .at-header__search{
+    width: 100%;
+    padding-left: var(--ds-size-2);
+  }
+  .at-header__links {
+    padding-left: 0.2rem;
+  }
+  .at-header__title {
+    padding: 0 1rem;
+    padding-top: 0.1rem;
+    flex-direction: column;
+    height: auto;
+    flex: auto;
+    align-items: stretch;
+  }
+  .at-header__title-left {
+    flex-direction: row;
+    width: 100%;
+  }
+  .at-header__title-names {
+    flex-direction: row;
+  }
+  .at-header__title-center,
+  .at-header__title-right {
+    width: 50%;
+    display: inline-flex;
+    justify-content: left;
+  }
+  .at-header__title-brukernavn {
+    display: none;
+  }
 }
