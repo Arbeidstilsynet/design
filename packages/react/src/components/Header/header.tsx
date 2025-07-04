@@ -1,10 +1,10 @@
 import { clsx } from "clsx/lite";
 import { DefaultProps } from "../../types";
 import { HTMLAttributes } from "react";
-import { Banner } from "./banner";
-import { Title } from "./title";
+import { HeaderBanner } from "./headerBanner";
+import { HeaderTitle } from "./headerTitle";
 import { HeaderSearch } from "./headerSearch";
-import { Links } from "./links";
+import { HeaderLinks } from "./headerLinks";
 
 export interface HeaderProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
@@ -13,9 +13,13 @@ export interface HeaderProps
   showTitle?: boolean;
   fagsystemNavn?: string;
   brukernavn?: string;
+  titleComponent?: React.ReactNode;
   showSearch?: boolean;
   showLinks?: boolean;
-  links?: [];
+  links?: {
+    href: string;
+    text: string;
+  }[];
 }
 
 export function Header({
@@ -26,24 +30,27 @@ export function Header({
   showTitle = true,
   fagsystemNavn = "Designsystemet",
   brukernavn = "Bruker Bruk",
+  titleComponent = undefined,
   showSearch = true,
   showLinks = true,
+  links = [],
   ...rest
 }: Readonly<HeaderProps>) {
 
   return (
-    <div ref={ref} className={clsx("at-topnav", className)} {...rest}>
+    <div ref={ref} className={clsx("at-header", className)} {...rest}>
       {showBanner &&
-        <Banner text={bannerText} />
+        <HeaderBanner text={bannerText} />
       }
       {showTitle &&
-        <Title fagsystemNavn={fagsystemNavn} brukernavn={brukernavn} />
+        <HeaderTitle fagsystemNavn={fagsystemNavn} brukernavn={brukernavn} />
       }
+      {titleComponent}
       {showSearch &&
         <HeaderSearch />
       }
       {showLinks &&
-        <Links links={[{ href: "#", text: "Home" }]} />
+        <HeaderLinks links={links} />
       }
     </div>
   )

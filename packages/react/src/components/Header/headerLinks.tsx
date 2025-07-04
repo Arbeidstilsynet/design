@@ -3,21 +3,21 @@ import { HTMLAttributes } from "react";
 import { DefaultProps } from "../../types";
 import { Button, Link } from "../../digdir";
 
-export interface LinksProps extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
+export interface HeaderLinksProps extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   links: {
     href: string;
     text: string;
   }[];
 }
 
-export function Links({
+export function HeaderLinks({
   className,
   links,
   ...rest
-}: Readonly<LinksProps>) {
+}: Readonly<HeaderLinksProps>) {
   return (
-    <div className={clsx("at-topnav__links-background", className)} {...rest}>
-      <ul className="at-topnav__links">
+    <div className={clsx("at-header__links-background", className)} {...rest}>
+      <ul className="at-header__links">
         {links.map((link, index) => (
           <Button key={index} asChild>
             <Link href={link.href}>

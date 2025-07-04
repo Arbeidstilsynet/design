@@ -5,32 +5,32 @@ import { Avatar } from "../../digdir";
 import { DefaultProps } from "../../types";
 import { HTMLAttributes } from "react";
 
-export interface TitleProps extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
+export interface HeaderTitleProps extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   fagsystemNavn?: string;
   brukernavn?: string;
 }
 
-export function Title({
+export function HeaderTitle({
   className,
   fagsystemNavn = "Fagsystem",
   brukernavn = "Bruker",
   ...rest
-}: Readonly<TitleProps>) {
+}: Readonly<HeaderTitleProps>) {
   return (
-    <div className={clsx("at-topnav__title-background", className)} {...rest}>
-      <div className={clsx("at-topnav__title")}>
-        <div className={clsx("at-topnav__title-left")}>
-          <span className={clsx("at-topnav__title-light")}>
+    <div className={clsx("at-header__title-background", className)} {...rest}>
+      <div className={clsx("at-header__title")}>
+        <div className={clsx("at-header__title-left")}>
+          <span className={clsx("at-header__title-light")}>
             <LogoBlack />
           </span>
-          <span className={clsx("at-topnav__title-dark")}>
+          <span className={clsx("at-header__title-dark")}>
             <LogoWhite />
           </span>
         </div>
-        <div className={clsx("at-topnav__title-center")}>
+        <div className={clsx("at-header__title-center")}>
           <p>{fagsystemNavn}</p>
         </div>
-        <div className={clsx("at-topnav__title-right")}>
+        <div className={clsx("at-header__title-right")}>
           <Avatar aria-label="Ola Nordmann" initials="ON" />
           <p>{brukernavn}</p>
         </div>

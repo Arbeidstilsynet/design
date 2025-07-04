@@ -52,12 +52,17 @@ export const Preview: Story = {
     brukernavn: "Ola Nordmann",
     showLinks: true,
     showSearch: true,
+    links: [
+      { href: "#", text: "Link 1" },
+      { href: "#", text: "Link 2" },
+      { href: "#", text: "Link 3" },
+    ],
   },
   render: (args) => (
     <Header {...args} />
   ),
 };
 
-export const WithNames: Story = {
-  render: (args) => (<Header {...args} />),
+export const WithCustomComponent: Story = {
+  render: (args) => (<Header {...args} showTitle={false} titleComponent={<div>This is a custom component</div>} />),
 }
