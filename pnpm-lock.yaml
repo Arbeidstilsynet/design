@@ -16,8 +16,8 @@ importers:
         specifier: 2.29.5
         version: 2.29.5
       '@digdir/designsystemet':
-        specifier: 1.1.3
-        version: 1.1.3
+        specifier: 1.1.4
+        version: 1.1.4
       '@svitejs/changesets-changelog-github-compact':
         specifier: 1.2.0
         version: 1.2.0
@@ -113,8 +113,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.1.3
-        version: 1.1.3
+        specifier: 1.1.4
+        version: 1.1.4
     devDependencies:
       autoprefixer:
         specifier: 10.4.21
@@ -141,8 +141,8 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.1.3
-        version: 1.1.3(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 1.1.4
+        version: 1.1.4(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@navikt/aksel-icons':
         specifier: ^7.23.0
         version: 7.23.1
@@ -523,18 +523,18 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.0.0
 
-  '@digdir/designsystemet-css@1.1.3':
-    resolution: {integrity: sha512-gt0rLlFnkEb5mqjSird4l4pgj3W47lm/lYMhyctNA680DYLJgTrHrjZ8a2YUuG+gdXFekab+uuXg5xUn92C7Sw==}
+  '@digdir/designsystemet-css@1.1.4':
+    resolution: {integrity: sha512-lF4Uaqx95RzOXHZLhXrs4xBEvT7pS664PX0DVA8tERui5o/I40AfD0Iy78vYKcEMGmqbd7y38oLV8FFh3Sei5Q==}
 
-  '@digdir/designsystemet-react@1.1.3':
-    resolution: {integrity: sha512-Pm119b90kBjTyrvX3nKACMALqzW38CiorK7EXqmfqWfDcsj8iecNrFJNCqr7/Sk3gh2Oy9CFOIFK6+IMJxEISA==}
+  '@digdir/designsystemet-react@1.1.4':
+    resolution: {integrity: sha512-TKJN8SZSj9jkGFhnoaZVZc1Iysd2p1x4uOr0et4KWDsXg3S3tAh0PmPX/aD/YxcbllFiO59XX7dScvgHWGtUDQ==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet@1.1.3':
-    resolution: {integrity: sha512-Qm8VbAAlbdVHb6ZXwzM40GuOfXeUXtDP5r80io9eSuJdwWjsyicGpmxP2i1PPxKhoP5/UAmibtKd7KiA/gh/OA==}
-    engines: {node: '>=22.16.0'}
+  '@digdir/designsystemet@1.1.4':
+    resolution: {integrity: sha512-EzbY05uCJs/dE2308Cp/6c3hWHbIe1Qakv63d/wkaWzQE3HvX+cp0Gw/PJ0z6Vw6+OlgIzq6vudy8M2XL5Bxsw==}
+    engines: {node: '>=22.17.0'}
     hasBin: true
 
   '@esbuild/aix-ppc64@0.25.3':
@@ -725,11 +725,11 @@ packages:
     resolution: {integrity: sha512-0J+zgWxHN+xXONWIyPWKFMgVuJoZuGiIFu8yxk7RJjxkzpGmyja5wRFqZIVtjDVOQpV+Rw0iOAjYPE2eQyjr0w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@floating-ui/core@1.7.1':
-    resolution: {integrity: sha512-azI0DrjMMfIug/ExbBaeDVJXcY0a7EPvPjb2xAJPa4HeimBX+Z18HK8QQR3jb6356SnDDdxx+hinMLcJEDdOjw==}
+  '@floating-ui/core@1.7.2':
+    resolution: {integrity: sha512-wNB5ooIKHQc+Kui96jE/n69rHFWAVoxn5CAzL1Xdd8FG03cgY3MLO+GF9U3W737fYDSgPWA6MReKhBQBop6Pcw==}
 
-  '@floating-ui/dom@1.7.1':
-    resolution: {integrity: sha512-cwsmW/zyw5ltYTUeeYJ60CnQuPqmGwuGVhG9w0PRaRKkAyi38BT5CKrpIbb+jtahSwUl04cWzSx9ZOIxeS6RsQ==}
+  '@floating-ui/dom@1.7.2':
+    resolution: {integrity: sha512-7cfaOQuCS27HD7DX+6ib2OrnW+b4ZBwDNnCcT0uTyidcmyWb03FnQqJybDBoCnpdxwBSfA94UAYlRCt7mV+TbA==}
 
   '@floating-ui/react-dom@2.1.2':
     resolution: {integrity: sha512-06okr5cgPzMNBy+Ycse2A6udMi4bqwW/zgBF/rwjcNqWkyr82Mcg8b0vjX8OJpZFy/FKjJmw6wV7t44kK6kW7A==}
@@ -742,6 +742,9 @@ packages:
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
+
+  '@floating-ui/utils@0.2.10':
+    resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
 
   '@floating-ui/utils@0.2.9':
     resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
@@ -849,6 +852,9 @@ packages:
 
   '@navikt/aksel-icons@7.24.0':
     resolution: {integrity: sha512-9dP7brTTM7x8W8+1om8MW5Kk29L4IX39UiSDBWTavh1exoO0nz1UMwq48l5C9qYW4rz9H7m63EWgSfg4gxhQDw==}
+
+  '@navikt/aksel-icons@7.25.1':
+    resolution: {integrity: sha512-5byomSaGUhYsKYdBPAiy7fSelAYjNTYXk+TRKSHgAW8YXAny7tLPop1RkTrLhj7KtZxRxPBONsuYJYyPHNMvrw==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1090,14 +1096,14 @@ packages:
     resolution: {integrity: sha512-08eKiDAjj4zLug1taXSIJ0kGL5cawjVCyJkBb6EWSg5fEPX6L+Wtr0CH2If4j5KYylz85iaZiFlUItvgJvll5g==}
     engines: {node: ^14.13.1 || ^16.0.0 || >=18}
 
-  '@tanstack/react-virtual@3.13.10':
-    resolution: {integrity: sha512-nvrzk4E9mWB4124YdJ7/yzwou7IfHxlSef6ugCFcBfRmsnsma3heciiiV97sBNxyc3VuwtZvmwXd0aB5BpucVw==}
+  '@tanstack/react-virtual@3.13.12':
+    resolution: {integrity: sha512-Gd13QdxPSukP8ZrkbgS2RwoZseTTbQPLnQEn7HY/rqtM+8Zt95f7xKC7N0EsKs7aoz0WzZ+fditZux+F8EzYxA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@tanstack/virtual-core@3.13.10':
-    resolution: {integrity: sha512-sPEDhXREou5HyZYqSWIqdU580rsF6FGeN7vpzijmP3KTiOGjOMZASz4Y6+QKjiFQwhWrR58OP8izYaNGVxvViA==}
+  '@tanstack/virtual-core@3.13.12':
+    resolution: {integrity: sha512-1YBOJfRHV4sXUmWsFSf5rQor4Ss82G8dQWLRbnk3GA4jeP8hQt1hxXh0tmflpC0dz3VgEv/1+qwPyLeWkQuPFA==}
 
   '@testing-library/dom@10.4.0':
     resolution: {integrity: sha512-pemlzrSESWbdAloYml3bAJMEfNh1Z7EduzqPKprCH5S341frlpYnUEW0H72dLxa6IsYr+mPno20GiSm+h9dEdQ==}
@@ -1259,11 +1265,11 @@ packages:
     resolution: {integrity: sha512-vZrhV2lRPWDuGoxcmrzRZyxAggPL+qp3WzUrlZD+slFueDiYHxeBa34dUXPuC0RmGKzl4lS5kFJYvKCq9cnNDA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@u-elements/u-combobox@0.0.14':
-    resolution: {integrity: sha512-CFwf4IIWSRGJgHNYIaS/tOQjeu4tjGYkeee66gpM9JMsrgUIXvqMXd9e8VMfdwQ3NWuHGPMC1y07CLpjb5ToNQ==}
+  '@u-elements/u-combobox@0.0.17':
+    resolution: {integrity: sha512-WjbaiZm8cQLYsgPaqbRPI59DhdvvKA1xa5p8jhNZ3R5683NqziBKnZN2V0RnAxJQBus3s3qXAYoxcjDSWc/18g==}
 
-  '@u-elements/u-datalist@1.0.8':
-    resolution: {integrity: sha512-CfmPVC4I08bi7XwhHI3KC20FndfE8i2xAPAJ0FCLSvhK4028GCvzCMKuREP2VDqtP9Y0+ZJfyvOG4EWK2auZNw==}
+  '@u-elements/u-datalist@1.0.10':
+    resolution: {integrity: sha512-ctPlx8SL4njfsA0/JINVlVbfBW31HCswj8hDt/SsPUiF89n/fLmTLG49DxOW7RZNcXrWW+AudJy5zsuPCmCGRA==}
 
   '@u-elements/u-details@0.1.1':
     resolution: {integrity: sha512-VQDwumgWzXWe/vEUVs+jPvRVlNw+1epHjkNlCjx3IA5BSKSxAPRFZ47ew5iKuZhAKmK0wke0rreA7SO/pjZN6w==}
@@ -3538,8 +3544,8 @@ packages:
   strip-literal@3.0.0:
     resolution: {integrity: sha512-TcccoMhJOM3OebGhSBEmp3UZ2SfDMZUEBdRA/9ynfLi8yYajyWX3JiXArcJt4Umh4vISpspkQIY8ZZoCqjbviA==}
 
-  style-dictionary@5.0.0:
-    resolution: {integrity: sha512-ORuqKamQe4nL2B9ASmmz5LxKBDuiqHvP8jj4lQ+5kE1XJyagJVvgSz5VpTAG3dRheqlqN5++vtVmK1S6ZZyy/A==}
+  style-dictionary@5.0.1:
+    resolution: {integrity: sha512-j+yQ4hM7a52iUQg5LVC8bnRkem4sU+unIY2qsyjoikPVzaxjkHd4ER7bnK+znW/Rhha69t4Fi5O46UHg6w8jFQ==}
     engines: {node: '>=22.0.0'}
     hasBin: true
 
@@ -3988,8 +3994,8 @@ packages:
   zod@3.24.4:
     resolution: {integrity: sha512-OdqJE9UDRPwWsrHjLN2F8bPxvwJBK22EHLWtanu0LSYr5YqzsaaW3RMgmjwr8Rypg5k+meEJdSPXJZXE/yqOMg==}
 
-  zod@3.25.67:
-    resolution: {integrity: sha512-idA2YXwpCdqUSKRCACDE6ItZD9TZzy3OZMtpfLoh6oPR47lipysRrJfjzMqFxQ3uJuUPyUeWe1r9vLH33xO/Qw==}
+  zod@3.25.76:
+    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
 snapshots:
 
@@ -4465,17 +4471,17 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.0
 
-  '@digdir/designsystemet-css@1.1.3': {}
+  '@digdir/designsystemet-css@1.1.4': {}
 
-  '@digdir/designsystemet-react@1.1.3(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@digdir/designsystemet-react@1.1.4(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@floating-ui/dom': 1.7.1
+      '@floating-ui/dom': 1.7.2
       '@floating-ui/react': 0.26.23(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@navikt/aksel-icons': 7.24.0
+      '@navikt/aksel-icons': 7.25.1
       '@radix-ui/react-slot': 1.2.3(@types/react@19.1.8)(react@19.1.0)
-      '@tanstack/react-virtual': 3.13.10(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@u-elements/u-combobox': 0.0.14
-      '@u-elements/u-datalist': 1.0.8
+      '@tanstack/react-virtual': 3.13.12(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      '@u-elements/u-combobox': 0.0.17
+      '@u-elements/u-datalist': 1.0.10
       '@u-elements/u-details': 0.1.1
       clsx: 2.1.1
       react: 19.1.0
@@ -4483,10 +4489,10 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet@1.1.3':
+  '@digdir/designsystemet@1.1.4':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.0)
-      '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@5.0.0)
+      '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@5.0.1)
       apca-w3: 0.1.9
       chalk: 5.4.1
       change-case: 5.4.4
@@ -4498,9 +4504,9 @@ snapshots:
       object-hash: 3.0.0
       postcss: 8.5.6
       ramda: 0.31.3
-      style-dictionary: 5.0.0
-      zod: 3.25.67
-      zod-validation-error: 3.5.2(zod@3.25.67)
+      style-dictionary: 5.0.1
+      zod: 3.25.76
+      zod-validation-error: 3.5.2(zod@3.25.76)
 
   '@esbuild/aix-ppc64@0.25.3':
     optional: true
@@ -4621,18 +4627,18 @@ snapshots:
       '@eslint/core': 0.14.0
       levn: 0.4.1
 
-  '@floating-ui/core@1.7.1':
+  '@floating-ui/core@1.7.2':
     dependencies:
-      '@floating-ui/utils': 0.2.9
+      '@floating-ui/utils': 0.2.10
 
-  '@floating-ui/dom@1.7.1':
+  '@floating-ui/dom@1.7.2':
     dependencies:
-      '@floating-ui/core': 1.7.1
-      '@floating-ui/utils': 0.2.9
+      '@floating-ui/core': 1.7.2
+      '@floating-ui/utils': 0.2.10
 
   '@floating-ui/react-dom@2.1.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@floating-ui/dom': 1.7.1
+      '@floating-ui/dom': 1.7.2
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
@@ -4643,6 +4649,8 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
       tabbable: 6.2.0
+
+  '@floating-ui/utils@0.2.10': {}
 
   '@floating-ui/utils@0.2.9': {}
 
@@ -4772,6 +4780,8 @@ snapshots:
   '@navikt/aksel-icons@7.23.1': {}
 
   '@navikt/aksel-icons@7.24.0': {}
+
+  '@navikt/aksel-icons@7.25.1': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -4996,13 +5006,13 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@tanstack/react-virtual@3.13.10(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@tanstack/react-virtual@3.13.12(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@tanstack/virtual-core': 3.13.10
+      '@tanstack/virtual-core': 3.13.12
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
-  '@tanstack/virtual-core@3.13.10': {}
+  '@tanstack/virtual-core@3.13.12': {}
 
   '@testing-library/dom@10.4.0':
     dependencies:
@@ -5039,7 +5049,7 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.0
 
-  '@tokens-studio/sd-transforms@1.3.0(style-dictionary@5.0.0)':
+  '@tokens-studio/sd-transforms@1.3.0(style-dictionary@5.0.1)':
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.1
       '@bundled-es-modules/postcss-calc-ast-parser': 0.1.6
@@ -5047,7 +5057,7 @@ snapshots:
       colorjs.io: 0.5.2
       expr-eval-fork: 2.0.2
       is-mergeable-object: 1.1.1
-      style-dictionary: 5.0.0
+      style-dictionary: 5.0.1
 
   '@tokens-studio/types@0.5.2': {}
 
@@ -5209,9 +5219,9 @@ snapshots:
       '@typescript-eslint/types': 8.36.0
       eslint-visitor-keys: 4.2.1
 
-  '@u-elements/u-combobox@0.0.14': {}
+  '@u-elements/u-combobox@0.0.17': {}
 
-  '@u-elements/u-datalist@1.0.8': {}
+  '@u-elements/u-datalist@1.0.10': {}
 
   '@u-elements/u-details@0.1.1': {}
 
@@ -7766,7 +7776,7 @@ snapshots:
     dependencies:
       js-tokens: 9.0.1
 
-  style-dictionary@5.0.0:
+  style-dictionary@5.0.1:
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.1
       '@bundled-es-modules/glob': 10.4.2
@@ -8230,10 +8240,10 @@ snapshots:
     dependencies:
       zod: 3.24.4
 
-  zod-validation-error@3.5.2(zod@3.25.67):
+  zod-validation-error@3.5.2(zod@3.25.76):
     dependencies:
-      zod: 3.25.67
+      zod: 3.25.76
 
   zod@3.24.4: {}
 
-  zod@3.25.67: {}
+  zod@3.25.76: {}
