@@ -16,8 +16,8 @@ importers:
         specifier: 2.29.5
         version: 2.29.5
       '@digdir/designsystemet':
-        specifier: 1.1.4
-        version: 1.1.4
+        specifier: 1.1.5
+        version: 1.1.5
       '@svitejs/changesets-changelog-github-compact':
         specifier: 1.2.0
         version: 1.2.0
@@ -113,8 +113,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.1.4
-        version: 1.1.4
+        specifier: 1.1.5
+        version: 1.1.5
     devDependencies:
       autoprefixer:
         specifier: 10.4.21
@@ -141,8 +141,8 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.1.4
-        version: 1.1.4(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 1.1.5
+        version: 1.1.5(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@navikt/aksel-icons':
         specifier: ^7.23.0
         version: 7.23.1
@@ -523,17 +523,17 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.0.0
 
-  '@digdir/designsystemet-css@1.1.4':
-    resolution: {integrity: sha512-lF4Uaqx95RzOXHZLhXrs4xBEvT7pS664PX0DVA8tERui5o/I40AfD0Iy78vYKcEMGmqbd7y38oLV8FFh3Sei5Q==}
+  '@digdir/designsystemet-css@1.1.5':
+    resolution: {integrity: sha512-clpN9V+atF0tcNA+vIPm+Wv7Wc0WvgbkdHvKHXPl34FQjNCHTaoxzqCcioRtEMWNuO8iiavv0EY0uhEeHpfCqg==}
 
-  '@digdir/designsystemet-react@1.1.4':
-    resolution: {integrity: sha512-TKJN8SZSj9jkGFhnoaZVZc1Iysd2p1x4uOr0et4KWDsXg3S3tAh0PmPX/aD/YxcbllFiO59XX7dScvgHWGtUDQ==}
+  '@digdir/designsystemet-react@1.1.5':
+    resolution: {integrity: sha512-lu2/twJyQXRKWumeWm9pGfj1/mZ1eM3Z14+hjs59DZ0jzs3zL3pc/cVdV4pBDIlz41HeiCbnpLFCuMGnOvnxSw==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet@1.1.4':
-    resolution: {integrity: sha512-EzbY05uCJs/dE2308Cp/6c3hWHbIe1Qakv63d/wkaWzQE3HvX+cp0Gw/PJ0z6Vw6+OlgIzq6vudy8M2XL5Bxsw==}
+  '@digdir/designsystemet@1.1.5':
+    resolution: {integrity: sha512-wHGL6kDIpSetL6djt2mgB1IfCfWWub0I6RoMLk5kQ6zcFOjzuaD1FxRynvfuq4bnkqCUcbIqViiXvDmNhl1ueA==}
     engines: {node: '>=22.17.0'}
     hasBin: true
 
@@ -745,9 +745,6 @@ packages:
 
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
-
-  '@floating-ui/utils@0.2.9':
-    resolution: {integrity: sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -1265,8 +1262,8 @@ packages:
     resolution: {integrity: sha512-YzfhzcTnZVPiLfP/oeKtDp2evwvHLMe0LOy7oe+hb9KKIumLNohYS9Hgp1ifwpu42YWxhZE8yieggz6JpqO/1w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@u-elements/u-combobox@0.0.17':
-    resolution: {integrity: sha512-WjbaiZm8cQLYsgPaqbRPI59DhdvvKA1xa5p8jhNZ3R5683NqziBKnZN2V0RnAxJQBus3s3qXAYoxcjDSWc/18g==}
+  '@u-elements/u-combobox@0.0.18':
+    resolution: {integrity: sha512-0WttCjvLVTmJkEoTx7jkOu2thV3titNrQmo12jeBU/c+uviSAOfh5jMAwUj8ms2sZfvFkRy+d73VxjOHo0Iskw==}
 
   '@u-elements/u-datalist@1.0.10':
     resolution: {integrity: sha512-ctPlx8SL4njfsA0/JINVlVbfBW31HCswj8hDt/SsPUiF89n/fLmTLG49DxOW7RZNcXrWW+AudJy5zsuPCmCGRA==}
@@ -4471,16 +4468,16 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.0
 
-  '@digdir/designsystemet-css@1.1.4': {}
+  '@digdir/designsystemet-css@1.1.5': {}
 
-  '@digdir/designsystemet-react@1.1.4(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@digdir/designsystemet-react@1.1.5(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@floating-ui/dom': 1.7.2
       '@floating-ui/react': 0.26.23(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@navikt/aksel-icons': 7.25.1
       '@radix-ui/react-slot': 1.2.3(@types/react@19.1.8)(react@19.1.0)
       '@tanstack/react-virtual': 3.13.12(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@u-elements/u-combobox': 0.0.17
+      '@u-elements/u-combobox': 0.0.18
       '@u-elements/u-datalist': 1.0.10
       '@u-elements/u-details': 0.1.1
       clsx: 2.1.1
@@ -4489,7 +4486,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet@1.1.4':
+  '@digdir/designsystemet@1.1.5':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.0)
       '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@5.0.1)
@@ -4645,14 +4642,12 @@ snapshots:
   '@floating-ui/react@0.26.23(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@floating-ui/react-dom': 2.1.2(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
-      '@floating-ui/utils': 0.2.9
+      '@floating-ui/utils': 0.2.10
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
       tabbable: 6.2.0
 
   '@floating-ui/utils@0.2.10': {}
-
-  '@floating-ui/utils@0.2.9': {}
 
   '@humanfs/core@0.19.1': {}
 
@@ -5220,7 +5215,7 @@ snapshots:
       '@typescript-eslint/types': 8.37.0
       eslint-visitor-keys: 4.2.1
 
-  '@u-elements/u-combobox@0.0.17': {}
+  '@u-elements/u-combobox@0.0.18': {}
 
   '@u-elements/u-datalist@1.0.10': {}
 
