@@ -16,8 +16,8 @@ importers:
         specifier: 2.29.5
         version: 2.29.5
       '@digdir/designsystemet':
-        specifier: 1.1.5
-        version: 1.1.5
+        specifier: 1.1.6
+        version: 1.1.6
       '@svitejs/changesets-changelog-github-compact':
         specifier: 1.2.0
         version: 1.2.0
@@ -113,8 +113,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.1.5
-        version: 1.1.5
+        specifier: 1.1.6
+        version: 1.1.6
     devDependencies:
       autoprefixer:
         specifier: 10.4.21
@@ -141,8 +141,8 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.1.5
-        version: 1.1.5(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        specifier: 1.1.6
+        version: 1.1.6(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@navikt/aksel-icons':
         specifier: ^7.23.0
         version: 7.23.1
@@ -523,17 +523,17 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.0.0
 
-  '@digdir/designsystemet-css@1.1.5':
-    resolution: {integrity: sha512-clpN9V+atF0tcNA+vIPm+Wv7Wc0WvgbkdHvKHXPl34FQjNCHTaoxzqCcioRtEMWNuO8iiavv0EY0uhEeHpfCqg==}
+  '@digdir/designsystemet-css@1.1.6':
+    resolution: {integrity: sha512-Hv0SkCE6NxQ5mH2iITAm/JtuBpyB7liPlN8Y1H0jg30zc+9z6MpQtu5C6UG9MaHgJQbY9vidx7/y4L2qOIpvOg==}
 
-  '@digdir/designsystemet-react@1.1.5':
-    resolution: {integrity: sha512-lu2/twJyQXRKWumeWm9pGfj1/mZ1eM3Z14+hjs59DZ0jzs3zL3pc/cVdV4pBDIlz41HeiCbnpLFCuMGnOvnxSw==}
+  '@digdir/designsystemet-react@1.1.6':
+    resolution: {integrity: sha512-mvWKNelSb/zyXBbpwWHHU6VRS/6HmocdlxZ2s6zX+FcLfNEmwtyGpa3EgaI40SJQZSw3GOSOEJT407Pk7mMaSg==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet@1.1.5':
-    resolution: {integrity: sha512-wHGL6kDIpSetL6djt2mgB1IfCfWWub0I6RoMLk5kQ6zcFOjzuaD1FxRynvfuq4bnkqCUcbIqViiXvDmNhl1ueA==}
+  '@digdir/designsystemet@1.1.6':
+    resolution: {integrity: sha512-8mQRF9mmo8rVubFOfL7zkNSMK37bI5Xx9KvQKVN3N/LWd4axHw9qEsRfFbQtP66DXCeR9pN385ezIGIkQYWN3Q==}
     engines: {node: '>=22.17.0'}
     hasBin: true
 
@@ -3982,11 +3982,11 @@ packages:
     peerDependencies:
       zod: ^3.18.0
 
-  zod-validation-error@3.5.2:
-    resolution: {integrity: sha512-mdi7YOLtram5dzJ5aDtm1AG9+mxRma1iaMrZdYIpFO7epdKBUwLHIxTF8CPDeCQ828zAXYtizrKlEJAtzgfgrw==}
+  zod-validation-error@3.5.3:
+    resolution: {integrity: sha512-OT5Y8lbUadqVZCsnyFaTQ4/O2mys4tj7PqhdbBCp7McPwvIEKfPtdA6QfPeFQK2/Rz5LgwmAXRJTugBNBi0btw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
-      zod: ^3.25.0
+      zod: ^3.25.0 || ^4.0.0
 
   zod@3.24.4:
     resolution: {integrity: sha512-OdqJE9UDRPwWsrHjLN2F8bPxvwJBK22EHLWtanu0LSYr5YqzsaaW3RMgmjwr8Rypg5k+meEJdSPXJZXE/yqOMg==}
@@ -4468,9 +4468,9 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.0
 
-  '@digdir/designsystemet-css@1.1.5': {}
+  '@digdir/designsystemet-css@1.1.6': {}
 
-  '@digdir/designsystemet-react@1.1.5(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@digdir/designsystemet-react@1.1.6(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
       '@floating-ui/dom': 1.7.2
       '@floating-ui/react': 0.26.23(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -4486,7 +4486,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet@1.1.5':
+  '@digdir/designsystemet@1.1.6':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.0)
       '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@5.0.1)
@@ -4503,7 +4503,7 @@ snapshots:
       ramda: 0.31.3
       style-dictionary: 5.0.1
       zod: 3.25.76
-      zod-validation-error: 3.5.2(zod@3.25.76)
+      zod-validation-error: 3.5.3(zod@3.25.76)
 
   '@esbuild/aix-ppc64@0.25.3':
     optional: true
@@ -8237,7 +8237,7 @@ snapshots:
     dependencies:
       zod: 3.24.4
 
-  zod-validation-error@3.5.2(zod@3.25.76):
+  zod-validation-error@3.5.3(zod@3.25.76):
     dependencies:
       zod: 3.25.76
 
