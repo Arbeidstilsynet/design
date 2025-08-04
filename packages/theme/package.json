@@ -13,6 +13,7 @@
   },
   "exports": {
     ".": {
+      "types": "./src/themes/types.d.ts",
       "default": "./brand/arbeidstilsynet.css"
     },
     "./*": "./brand/*"
