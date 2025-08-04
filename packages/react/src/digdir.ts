@@ -115,6 +115,5 @@ export {
   usePagination,
   useRadioGroup,
   useSynchronizedAnimation,
-  ValidationMessage
+  ValidationMessage,
 } from "@digdir/designsystemet-react";
-
