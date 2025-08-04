@@ -49,8 +49,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/theme
       '@navikt/aksel-icons':
-        specifier: 7.24.0
-        version: 7.24.0
+        specifier: 7.25.1
+        version: 7.25.1
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -847,8 +847,8 @@ packages:
   '@navikt/aksel-icons@7.23.1':
     resolution: {integrity: sha512-bUsxE+ezEfdTe7xmFUc6hmx3+3dQgk6cANMT0Jghhk7tTTXaTMbUkJTPxAOjNVcfxtDAHDxlhGdC1pHRm2aw1Q==}
 
-  '@navikt/aksel-icons@7.24.0':
-    resolution: {integrity: sha512-9dP7brTTM7x8W8+1om8MW5Kk29L4IX39UiSDBWTavh1exoO0nz1UMwq48l5C9qYW4rz9H7m63EWgSfg4gxhQDw==}
+  '@navikt/aksel-icons@7.25.1':
+    resolution: {integrity: sha512-5byomSaGUhYsKYdBPAiy7fSelAYjNTYXk+TRKSHgAW8YXAny7tLPop1RkTrLhj7KtZxRxPBONsuYJYyPHNMvrw==}
 
   '@navikt/aksel-icons@7.25.1':
     resolution: {integrity: sha512-5byomSaGUhYsKYdBPAiy7fSelAYjNTYXk+TRKSHgAW8YXAny7tLPop1RkTrLhj7KtZxRxPBONsuYJYyPHNMvrw==}
@@ -4784,7 +4784,7 @@ snapshots:
 
   '@navikt/aksel-icons@7.23.1': {}
 
-  '@navikt/aksel-icons@7.24.0': {}
+  '@navikt/aksel-icons@7.25.1': {}
 
   '@navikt/aksel-icons@7.25.1': {}
 
