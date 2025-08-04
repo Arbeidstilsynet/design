@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.0.13
+
+Released: 2025-08-04
+
+### Patch Changes
+
+- Update theme build for digdir v1.1.9 ([#190](https://github.com/Arbeidstilsynet/design/pull/190))
+
 ## 0.0.12
 
 Released: 2025-06-24
