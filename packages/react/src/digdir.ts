@@ -60,8 +60,6 @@ export {
   Fieldset,
   FieldsetDescription,
   FieldsetLegend,
-  getNextFocusableValue,
-  getPrevFocusableValue,
   Heading,
   Input,
   Label,
@@ -116,7 +114,6 @@ export {
   useMediaQuery,
   usePagination,
   useRadioGroup,
-  useRovingFocus,
   useSynchronizedAnimation,
   ValidationMessage,
 } from "@digdir/designsystemet-react";
