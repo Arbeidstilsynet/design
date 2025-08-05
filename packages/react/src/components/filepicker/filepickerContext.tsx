@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { FilePickerProps } from "./types";
+import type { FilePickerProps } from "./types";
 
 export type FilePickerContextValue<TFileId extends string | number> = Pick<
   FilePickerProps<TFileId>,

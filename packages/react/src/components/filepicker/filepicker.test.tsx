@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
-import { FilePicker, FilePickerProps } from ".";
+import { FilePicker, type FilePickerProps } from ".";
 import { createMockFileInKb } from "./utils";
 
 const defaultProps: FilePickerProps<number> = {
@@ -102,7 +102,7 @@ describe("FilePicker", () => {
     await user.click(removeButton);
 
     expect(onRemove).toHaveBeenCalledTimes(1);
-    expect(onRemove).toHaveBeenCalledWith(files[0].id);
+    expect(onRemove).toHaveBeenCalledWith(files[0]!.id);
   });
 
   test("does not render errors when none provided", () => {
