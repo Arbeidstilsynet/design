@@ -20,6 +20,7 @@
     "./*": "./dist/src/*"
   },
   "files": [
+    "./types.d.ts",
     "dist"
   ],
   "scripts": {
