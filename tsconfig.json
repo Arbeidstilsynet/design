@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@arbeidstilsynet/design-react": ["packages/react/src"]
+    }
+  },
+  "include": [],
+  "references": [
+    { "path": "./scripts" },
+    { "path": "./apps/storybook" },
+    { "path": "./packages/react" }
+  ]
+}
