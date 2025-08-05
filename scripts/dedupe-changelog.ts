@@ -105,10 +105,7 @@ function parseChangelog(content: string) {
 
   // Find the FIRST (latest) version line
   for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    if (line === undefined) {
-      throw new Error("Changelog line cannot be undefined");
-    }
+    const line = lines[i]!;
 
     if (line.match(/^## \d+\.\d+\.\d+$/)) {
       if (versionStartIndex === -1) {
