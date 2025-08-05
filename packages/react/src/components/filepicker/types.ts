@@ -1,5 +1,5 @@
-import { HTMLAttributes } from "react";
-import { DefaultProps } from "../../types";
+import type { HTMLAttributes } from "react";
+import type { DefaultProps } from "../../types";
 
 export interface FilePickerProps<TFileId extends string | number>
   extends DefaultProps<HTMLDivElement>,
