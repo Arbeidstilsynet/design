@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-css
 
+## 0.1.3
+
+Released: 2025-08-05
+
+### Patch Changes
+
+- Add type declarations ([#201](https://github.com/Arbeidstilsynet/design/pull/201))
+
 ## 0.1.2
 
 Released: 2025-08-04
