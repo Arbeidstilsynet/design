@@ -59,11 +59,7 @@ function compareVersions(a: string, b: string): number {
 
 function parseEntry(entryText: string): ChangelogEntry {
   const lines = entryText.split("\n");
-  const firstLine = lines[0];
-
-  if (firstLine === undefined) {
-    throw new Error("Entry text cannot be empty");
-  }
+  const firstLine = lines[0]!;
 
   // Extract PR info from first line
   const prMatch = firstLine.match(/\(\[#(\d+)\]\(([^)]+)\)\)$/);
