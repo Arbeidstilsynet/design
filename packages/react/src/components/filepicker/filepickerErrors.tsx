@@ -1,8 +1,7 @@
 import { clsx } from "clsx/lite";
-import { HTMLAttributes, use } from "react";
+import { type HTMLAttributes, use } from "react";
 import { Alert } from "../../digdir";
-
-import { DefaultProps } from "../../types";
+import type { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 
 export interface FilePickerErrorsProps

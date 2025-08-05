@@ -13,12 +13,16 @@
   },
   "exports": {
     ".": {
-      "types": "./src/themes/types.d.ts",
+      "types": "./types.d.ts",
       "default": "./brand/arbeidstilsynet.css"
     },
-    "./*": "./brand/*"
+    "./*": {
+      "types": "./types.d.ts",
+      "default": "./brand/*"
+    }
   },
   "files": [
+    "./types.d.ts",
     "brand/**",
     "*.css"
   ],

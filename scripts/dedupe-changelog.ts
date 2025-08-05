@@ -17,8 +17,15 @@
 import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
-import { parseArgs, ParseArgsOptionsConfig } from "node:util";
+import { parseArgs, type ParseArgsOptionsConfig } from "node:util";
 import { getChangedVersion } from "./add-changelog-date.js";
+
+interface ChangelogEntry {
+  fullText: string;
+  dependencies: Array<{ packageName: string; version: string }>;
+  prNumber?: string;
+  prUrl?: string;
+}
 
 const options: ParseArgsOptionsConfig = {
   help: {
@@ -50,14 +57,21 @@ function compareVersions(a: string, b: string): number {
   return 0;
 }
 
-function parseEntry(entryText: string) {
+function parseEntry(entryText: string): ChangelogEntry {
   const lines = entryText.split("\n");
-  const firstLine = lines[0];
+  const firstLine = lines[0]!;
 
   // Extract PR info from first line
   const prMatch = firstLine.match(/\(\[#(\d+)\]\(([^)]+)\)\)$/);
   const prNumber = prMatch?.[1];
   const prUrl = prMatch?.[2];
+
+  if (!prNumber) {
+    throw new Error("Expected PR number to be present in entry text");
+  }
+  if (!prUrl) {
+    throw new Error("Expected PR URL to be present in entry text");
+  }
 
   // Find all dependency updates in the entry
   const dependencies: Array<{ packageName: string; version: string }> = [];
@@ -65,6 +79,9 @@ function parseEntry(entryText: string) {
   for (const line of lines) {
     const depMatch = line.match(/Updated dependency `([^`]+)` to `([^`]+)`/);
     if (depMatch) {
+      if (!depMatch[1] || !depMatch[2]) {
+        throw new Error("Expected dependency match to have two capture groups");
+      }
       dependencies.push({
         packageName: depMatch[1],
         version: depMatch[2],
@@ -88,7 +105,9 @@ function parseChangelog(content: string) {
 
   // Find the FIRST (latest) version line
   for (let i = 0; i < lines.length; i++) {
-    if (lines[i].match(/^## \d+\.\d+\.\d+$/)) {
+    const line = lines[i]!;
+
+    if (line.match(/^## \d+\.\d+\.\d+$/)) {
       if (versionStartIndex === -1) {
         versionStartIndex = i;
       } else {
@@ -100,8 +119,8 @@ function parseChangelog(content: string) {
     if (
       versionStartIndex !== -1 &&
       nextVersionIndex === -1 && // Only if we haven't found the next version yet
-      lines[i].startsWith("### ") &&
-      lines[i].includes("Changes")
+      line.startsWith("### ") &&
+      line.includes("Changes")
     ) {
       changesStartIndex = i + 2; // Skip the "### Changes" line and the empty line after it
     }
@@ -121,12 +140,7 @@ function parseChangelog(content: string) {
     .split(/\n\n/)
     .filter((entry) => entry.trim());
 
-  const entries: Array<{
-    fullText: string;
-    dependencies: Array<{ packageName: string; version: string }>;
-    prNumber?: string;
-    prUrl?: string;
-  }> = [];
+  const entries: ChangelogEntry[] = [];
 
   for (const rawEntry of rawEntries) {
     const trimmed = rawEntry.trim();
@@ -193,14 +207,18 @@ export function dedupeChangelog(pkg: string): boolean {
   for (const [, entries] of packageSetGroups) {
     if (entries.length === 1) {
       // Only one entry for this package set, keep it
-      entriesToKeep.add(entries[0]);
+      entriesToKeep.add(entries[0]!);
       continue;
     }
 
     // Find the entry with the highest versions
     let newestEntry = entries[0];
+    if (!newestEntry) {
+      throw new Error("Expected at least one entry in the group");
+    }
+
     for (let i = 1; i < entries.length; i++) {
-      const current = entries[i];
+      const current = entries[i]!;
 
       // Compare versions - all dependencies in current entry should be >= newestEntry
       let currentIsNewer = true;
@@ -290,6 +308,6 @@ function main() {
   }
 }
 
-if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+if (import.meta.url === pathToFileURL(process.argv[1]!).href) {
   main();
 }

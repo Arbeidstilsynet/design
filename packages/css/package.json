@@ -14,11 +14,13 @@
   "type": "module",
   "exports": {
     ".": {
+      "types": "./types.d.ts",
       "default": "./dist/src/index.css"
     },
     "./*": "./dist/src/*"
   },
   "files": [
+    "./types.d.ts",
     "dist"
   ],
   "scripts": {
