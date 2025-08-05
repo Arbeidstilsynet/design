@@ -2,6 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "composite": true,
+    "verbatimModuleSyntax": false, // too much hassle to fix type imports in the upstream stories right now
     "paths": {
       "@arbeidstilsynet/design-react": ["../../packages/react/src/index.ts"]
     }
