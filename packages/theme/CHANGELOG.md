@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.0.14
+
+Released: 2025-08-05
+
+### Patch Changes
+
+- Add type declarations ([#201](https://github.com/Arbeidstilsynet/design/pull/201))
+
 ## 0.0.13
 
 Released: 2025-08-04

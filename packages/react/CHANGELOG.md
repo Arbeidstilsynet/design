@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-react
 
+## 0.1.5
+
+Released: 2025-08-05
+
+### Patch Changes
+
+- Update tsconfig and types path ([#201](https://github.com/Arbeidstilsynet/design/pull/201))
+
 ## 0.1.4
 
 Released: 2025-08-05
