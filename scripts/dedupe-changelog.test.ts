@@ -147,7 +147,7 @@ Released: 2025-06-13
     const result = dedupeChangelog(pkg);
 
     expect(result).toBe(true);
-    const writtenContent = writeFileSyncSpy.mock.calls[0][1];
+    const writtenContent = writeFileSyncSpy.mock.calls[0][1] as string;
 
     // Should preserve all non-dependency entries
     expect(writtenContent).toContain(
