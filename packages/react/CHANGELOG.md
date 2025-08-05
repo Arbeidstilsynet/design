@@ -1,5 +1,27 @@
 # @arbeidstilsynet/design-react
 
+## 0.1.4
+
+Released: 2025-08-05
+
+### Patch Changes
+
+- Update colors type import ([#200](https://github.com/Arbeidstilsynet/design/pull/200))
+
+- Updated dependency `typescript` to `5.9.2`. ([#194](https://github.com/Arbeidstilsynet/design/pull/194))
+
+- Updated dependency `@storybook/addon-docs` to `9.1.1`. ([#196](https://github.com/Arbeidstilsynet/design/pull/196))
+  Updated dependency `@storybook/react-vite` to `9.1.1`.
+  Updated dependency `eslint-plugin-storybook` to `9.1.1`.
+  Updated dependency `storybook` to `9.1.1`.
+
+- Updated dependency `typescript-eslint` to `8.39.0`. ([#195](https://github.com/Arbeidstilsynet/design/pull/195))
+
+- Updated dependency `react` to `19.1.1`. ([#192](https://github.com/Arbeidstilsynet/design/pull/192))
+  Updated dependency `react-dom` to `19.1.1`.
+  Updated dependency `@types/react` to `19.1.9`.
+  Updated dependency `@types/react-dom` to `19.1.7`.
+
 ## 0.1.3
 
 Released: 2025-08-04
