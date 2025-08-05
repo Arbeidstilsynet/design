@@ -30,17 +30,15 @@ const config = tseslint.config(
         version: "detect",
       },
     },
-
     languageOptions: {
       parserOptions: {
         ecmaFeatures: {
           jsx: true,
         },
-
-        project: "./tsconfig.json",
+        project: true,
+        tsconfigRootDir: import.meta.dirname,
       },
     },
-
     rules: {
       "react-hooks/react-compiler": "error",
       eqeqeq: "error",

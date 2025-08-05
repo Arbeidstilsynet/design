@@ -1,5 +1,5 @@
 import { Color } from "@digdir/designsystemet-react/colors";
-import { Size } from "./digdir";
+import { Size } from "@digdir/designsystemet/types";
 
 export interface DefaultProps<TRef> {
   /**
