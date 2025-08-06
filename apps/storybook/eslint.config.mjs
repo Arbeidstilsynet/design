@@ -25,6 +25,12 @@ const config = tseslint.config(
         version: "detect",
       },
     },
+    languageOptions: {
+      parserOptions: {
+        project: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
   },
 );
 

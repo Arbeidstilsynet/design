@@ -2,8 +2,8 @@ import { CloudUpIcon } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import { use } from "react";
 import { useDropzone } from "react-dropzone";
-import { Button, ButtonProps, Label, Spinner } from "../../digdir";
-import { DefaultProps } from "../../types";
+import { Button, type ButtonProps, Label, Spinner } from "../../digdir";
+import type { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 
 function DefaultLabel({

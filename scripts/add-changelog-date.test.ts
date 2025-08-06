@@ -7,8 +7,8 @@ import {
   describe,
   expect,
   it,
-  Mock,
-  MockInstance,
+  type Mock,
+  type MockInstance,
   vi,
 } from "vitest";
 import { addDateToChangelog, getChangedVersion } from "./add-changelog-date";

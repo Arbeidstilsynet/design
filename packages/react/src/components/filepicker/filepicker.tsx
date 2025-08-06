@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
 import { FilePickerContext } from "./filepickerContext";
-import { FilePickerProps } from "./types";
+import type { FilePickerProps } from "./types";
 
 export function FilePicker<TFileId extends string | number>({
   ref,

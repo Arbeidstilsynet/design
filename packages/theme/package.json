@@ -1,6 +1,6 @@
 {
   "name": "@arbeidstilsynet/design-theme",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "Predefined themes for Designsystemet",
   "author": "Arbeidstilsynet",
   "repository": {
@@ -13,12 +13,16 @@
   },
   "exports": {
     ".": {
-      "types": "./src/themes/types.d.ts",
+      "types": "./types.d.ts",
       "default": "./brand/arbeidstilsynet.css"
     },
-    "./*": "./brand/*"
+    "./*": {
+      "types": "./types.d.ts",
+      "default": "./brand/*"
+    }
   },
   "files": [
+    "./types.d.ts",
     "brand/**",
     "*.css"
   ],

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useRef, useState } from "react";
-import { FilePicker, FilePickerItem } from "..";
+import { FilePicker, type FilePickerItem } from "..";
 import { createMockFile, createMockFileInKb } from "./utils";
 
 const meta: Meta<typeof FilePicker> = {

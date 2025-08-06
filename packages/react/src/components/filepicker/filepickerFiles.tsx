@@ -1,8 +1,8 @@
 import { FileIcon, XMarkIcon } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
-import { Fragment, HTMLAttributes, use } from "react";
+import { Fragment, type HTMLAttributes, use } from "react";
 import { Button, ValidationMessage } from "../../digdir";
-import { DefaultProps } from "../../types";
+import type { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 import { formatFileSize } from "./utils";
 

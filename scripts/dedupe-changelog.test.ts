@@ -6,7 +6,7 @@ import {
   describe,
   expect,
   it,
-  MockInstance,
+  type MockInstance,
   vi,
 } from "vitest";
 import { dedupeChangelog } from "./dedupe-changelog";
@@ -72,7 +72,7 @@ Released: 2025-06-10
     const result = dedupeChangelog(pkg);
 
     expect(result).toBe(true);
-    const writtenContent = writeFileSyncSpy.mock.calls[0][1];
+    const writtenContent = writeFileSyncSpy.mock.calls[0]![1];
 
     // Should keep newer version and non-duplicate entries
     expect(writtenContent).toContain("@types/react` to `19.1.8`");
@@ -112,7 +112,7 @@ Released: 2025-06-13
     const result = dedupeChangelog(pkg);
 
     expect(result).toBe(true);
-    const writtenContent = writeFileSyncSpy.mock.calls[0][1];
+    const writtenContent = writeFileSyncSpy.mock.calls[0]![1];
 
     // Should keep newer storybook versions (9.0.9)
     expect(writtenContent).toContain("@storybook/addon-docs` to `9.0.9`");
@@ -147,7 +147,7 @@ Released: 2025-06-13
     const result = dedupeChangelog(pkg);
 
     expect(result).toBe(true);
-    const writtenContent = writeFileSyncSpy.mock.calls[0][1];
+    const writtenContent = writeFileSyncSpy.mock.calls[0]![1] as string;
 
     // Should preserve all non-dependency entries
     expect(writtenContent).toContain(
@@ -200,7 +200,7 @@ Released: 2025-06-13
     const result = dedupeChangelog(pkg);
 
     expect(result).toBe(true);
-    const writtenContent = writeFileSyncSpy.mock.calls[0][1];
+    const writtenContent = writeFileSyncSpy.mock.calls[0]![1];
 
     // Should preserve all change types and their content
     expect(writtenContent).toContain("### Major Changes");
@@ -243,7 +243,7 @@ Released: 2025-06-10
     const result = dedupeChangelog(pkg);
 
     expect(result).toBe(true);
-    const writtenContent = writeFileSyncSpy.mock.calls[0][1];
+    const writtenContent = writeFileSyncSpy.mock.calls[0]![1];
 
     // Should deduplicate in latest version (0.0.17)
     const v17Section = writtenContent.substring(
@@ -301,7 +301,7 @@ Released: 2025-06-13
     // First run
     const result1 = dedupeChangelog(pkg);
     expect(result1).toBe(true);
-    const firstResult = writeFileSyncSpy.mock.calls[0][1];
+    const firstResult = writeFileSyncSpy.mock.calls[0]![1];
 
     // Second run with the result of the first run
     writeFileSyncSpy.mockClear();
