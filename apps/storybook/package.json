@@ -20,7 +20,7 @@
     "react-dom": "19.1.1"
   },
   "devDependencies": {
-    "@eslint/js": "9.32.0",
+    "@eslint/js": "9.33.0",
     "@storybook/addon-docs": "9.1.1",
     "@storybook/addon-storysource": "8.6.14",
     "@storybook/react-vite": "9.1.1",
@@ -28,7 +28,7 @@
     "@types/react": "19.1.9",
     "@types/react-dom": "19.1.7",
     "concurrently": "9.2.0",
-    "eslint": "9.32.0",
+    "eslint": "9.33.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-react-hooks": "6.0.0-rc1",
