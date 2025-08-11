@@ -44,8 +44,8 @@ const atViewPorts = {
       width: 3000 + "px",
     },
     type: "desktop",
-  }
-}
+  },
+};
 
 const preview: Preview = {
   globalTypes: {
@@ -84,6 +84,7 @@ const preview: Preview = {
           "Overview",
           "Usage",
           "Icons",
+          "Colors",
           "Showcase",
           "Changelog",
           "Example",
