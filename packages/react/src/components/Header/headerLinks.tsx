@@ -1,7 +1,7 @@
 import { clsx } from "clsx/lite";
 import type { HTMLAttributes } from "react";
 import type { DefaultProps } from "../../types";
-import { Button, Link, useMediaQuery } from "../../digdir";
+import { Button, Link } from "../../digdir";
 
 export interface HeaderLinksProps extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   links: {
@@ -15,7 +15,7 @@ export function HeaderLinks({
   links,
   ...rest
 }: Readonly<HeaderLinksProps>) {
-  const isMobile = useMediaQuery('(max-width: 30rem)');
+  const isMobile = false; // useMediaQuery('(max-width: 30rem)'); // Uncomment if you want to use media queries
   const dataSize = isMobile ? 'xs' : 'md';
   return (
     <div className={clsx("at-header__links-background", className)} {...rest} data-size={dataSize}>

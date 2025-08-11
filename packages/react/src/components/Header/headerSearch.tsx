@@ -1,7 +1,7 @@
 import { clsx } from "clsx/lite";
 import type { DefaultProps } from "../../types";
 import type { HTMLAttributes } from "react";
-import { Search, useMediaQuery } from "../../digdir";
+import { Search } from "../../digdir";
 
 export interface HeaderSearchProps extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   text?: string;
@@ -11,7 +11,7 @@ export function HeaderSearch({
   className,
   ...rest
 }: Readonly<HeaderSearchProps>) {
-  const isMobile = useMediaQuery('(max-width: 30rem)');
+  const isMobile = false; // useMediaQuery('(max-width: 30rem)'); // Uncomment if you want to use media queries
   const dataSize = isMobile ? 'xs' : 'md';
   return (
     <div className={clsx("at-header__search-background", className)} {...rest} data-size={dataSize}>

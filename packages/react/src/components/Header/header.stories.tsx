@@ -7,35 +7,12 @@ const meta: Meta<typeof Header> = {
   parameters: {
     layout: "padded",
   },
-  argTypes: {
-    showBanner: {
-      control: "boolean",
-      description: "Whether to show the banner or not",
-    },
-    bannerText: {
-      control: "text",
-      description: "Text to display in the banner",
-    },
-    showTitle: {
-      control: "boolean",
-      description: "Whether to show the title or not",
-    },
-    fagsystemNavn: {
-      control: "text",
-      description: "Name of the system",
-    },
-    brukernavn: {
-      control: "text",
-      description: "Name of the user",
-    },
-    showSearch: {
-      control: "boolean",
-      description: "Whether to show the search section or not",
-    },
-    showLinks: {
-      control: "boolean",
-      description: "Whether to show the links section or not",
-    },
+
+  subcomponents: {
+    ["Header.Banner"]: Header.Banner,
+    ["Header.Title"]: Header.Title,
+    ["Header.Search"]: Header.Search,
+    ["Header.Links"]: Header.Links,
   },
 };
 
@@ -44,32 +21,31 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Preview: Story = {
-  args: {
-    showBanner: true,
-    bannerText: "Dette er en bannertekst",
-    showTitle: true,
-    fagsystemNavn: "Fagsystemet",
-    brukernavn: "Ola Nordmann",
-    showLinks: true,
-    showSearch: true,
-    links: [
+  render: (args) => {
+    const links = [
       { href: "#", text: "Link 1" },
       { href: "#", text: "Link 2" },
       { href: "#", text: "Link 3" },
-    ],
+    ];
+    return (
+      <Header {...args}>
+        <Header.Banner />
+        <Header.Title />
+        <Header.Search />
+        <Header.Links links={links} />
+      </Header>
+    );
   },
-  render: (args) => (
-    <Header {...args} />
-  ),
 };
 
 export const WithCustomComponent: Story = {
   render: (args) => {
-    const CustomTitle: React.FC = () => (
-      <div>This is a custom component</div>
-    );
     return (
-      <Header {...args} showTitle={false} titleComponent={<CustomTitle />} />
+      <Header {...args}>
+        <Header.Banner />
+        <Header.Title />
+
+      </Header>
     );
   },
-}
+};
