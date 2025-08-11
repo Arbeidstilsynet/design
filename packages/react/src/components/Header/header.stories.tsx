@@ -64,5 +64,12 @@ export const Preview: Story = {
 };
 
 export const WithCustomComponent: Story = {
-  render: (args) => (<Header {...args} showTitle={false} titleComponent={<div>This is a custom component</div>} />),
+  render: (args) => {
+    const CustomTitle: React.FC = () => (
+      <div>This is a custom component</div>
+    );
+    return (
+      <Header {...args} showTitle={false} titleComponent={<CustomTitle />} />
+    );
+  },
 }

@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
-import { HTMLAttributes } from "react";
-import { DefaultProps } from "../../types";
+import type { HTMLAttributes } from "react";
+import type { DefaultProps } from "../../types";
 import { Button, Link, useMediaQuery } from "../../digdir";
 
 export interface HeaderLinksProps extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {

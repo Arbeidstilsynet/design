@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
-import { DefaultProps } from "../../types";
-import { HTMLAttributes } from "react";
+import type { DefaultProps } from "../../types";
+import type { HTMLAttributes } from "react";
 import { Search, useMediaQuery } from "../../digdir";
 
 export interface HeaderSearchProps extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {

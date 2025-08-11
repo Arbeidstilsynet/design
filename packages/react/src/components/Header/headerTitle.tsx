@@ -2,8 +2,8 @@ import { clsx } from "clsx/lite";
 import { LogoBlack } from "../logo/logoblack";
 import { LogoWhite } from "../logo/logowhite";
 import { Avatar } from "../../digdir";
-import { DefaultProps } from "../../types";
-import { HTMLAttributes } from "react";
+import type { DefaultProps } from "../../types";
+import type { HTMLAttributes } from "react";
 
 export interface HeaderTitleProps extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   fagsystemNavn?: string;
@@ -17,12 +17,14 @@ export function HeaderTitle({
   ...rest
 }: Readonly<HeaderTitleProps>) {
 
-  const getInitials = (name: string) => {
+  const getInitials = (name?: string) => {
+    if (!name) return "";
     const names = name.split(" ");
+
     if (names.length === 1) {
-      return names[0].charAt(0).toUpperCase();
+      return names[0]!.charAt(0).toUpperCase();
     }
-    return names[0].charAt(0).toUpperCase() + names[names.length - 1].charAt(0).toUpperCase();
+    return names[0]!.charAt(0).toUpperCase() + names[names.length - 1]!.charAt(0).toUpperCase();
   };
   return (
     <div className={clsx("at-header__title-background", className)} {...rest}>

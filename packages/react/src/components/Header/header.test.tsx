@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Header, HeaderProps } from "./header";
+import { Header, type HeaderProps } from "./header";
 import { vi } from "vitest";
 
 const defaultProps: HeaderProps = {

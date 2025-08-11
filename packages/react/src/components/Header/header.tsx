@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
-import { DefaultProps } from "../../types";
-import { HTMLAttributes } from "react";
+import type { DefaultProps } from "../../types";
+import type { HTMLAttributes } from "react";
 import { HeaderBanner } from "./headerBanner";
 import { HeaderTitle } from "./headerTitle";
 import { HeaderSearch } from "./headerSearch";
