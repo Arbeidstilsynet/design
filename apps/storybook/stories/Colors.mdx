@@ -7,16 +7,38 @@ import { getGroupedThemeColors, getThemeColors } from "./getThemeColors";
 
 export const DemoEffect = () => {
   const [colors, setColors] = useState({});
+  const readColors = () => {
+    const themeColors = getGroupedThemeColors();
+    setColors(themeColors);
+  };
   useEffect(() => {
     const themeColors = getGroupedThemeColors();
     setColors(themeColors);
   }, []);
+  const setDark = () => {
+    document.documentElement.setAttribute("data-color-scheme", "dark");
+    requestAnimationFrame(readColors);
+  };
+  const setLight = () => {
+    document.documentElement.setAttribute("data-color-scheme", "light");
+    requestAnimationFrame(readColors);
+  };
   return (
-    <ColorPalette>
-      {Object.entries(colors).map(([name, value]) => (
-        <ColorItem key={name} title={name} colors={value} />
-      ))}
-    </ColorPalette>
+    <>
+      <div>
+        <button type="button" onClick={setDark}>
+          Dark mode
+        </button>
+        <button type="button" onClick={setLight}>
+          Light mode
+        </button>
+      </div>
+      <ColorPalette>
+        {Object.entries(colors).map(([name, value]) => (
+          <ColorItem key={name} title={name} colors={value} />
+        ))}
+      </ColorPalette>
+    </>
   );
 };
 
