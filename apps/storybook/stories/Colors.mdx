@@ -1,0 +1,31 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
+
+import { useEffect, useState } from "react";
+import { getGroupedThemeColors, getThemeColors } from "./getThemeColors";
+
+<Meta title="Colors" />
+
+export const DemoEffect = () => {
+  const [colors, setColors] = useState({});
+  useEffect(() => {
+    const themeColors = getGroupedThemeColors();
+    setColors(themeColors);
+  }, []);
+  return (
+    <ColorPalette>
+      {Object.entries(colors).map(([name, value]) => (
+        <ColorItem key={name} title={name} colors={value} />
+      ))}
+    </ColorPalette>
+  );
+};
+
+<div>
+  # Colors from the Arbeidstilsynet theme
+
+Use with `--ds-color-` prefix.
+Example `--ds-color-primary-base-active`.
+
+<DemoEffect />
+
+</div>
