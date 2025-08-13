@@ -33,7 +33,7 @@ const atViewPorts = {
     name: "AT bigscreen 3000px",
     styles: {
       height: "1000px",
-      width: 3000 + "px",
+      width: `3000px`,
     },
     type: "desktop",
   },
