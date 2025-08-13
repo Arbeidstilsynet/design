@@ -1,9 +1,7 @@
 import { Switch } from "@arbeidstilsynet/design-react";
-import { ColorItem, ColorPalette, Meta } from "@storybook/addon-docs/blocks";
+import { ColorItem, ColorPalette } from "@storybook/addon-docs/blocks";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { getGroupedThemeColors } from "./getThemeColors";
-
-<Meta title="Colors" />;
 
 export function ColorsSwatches() {
   const parentRef = useRef(null);
