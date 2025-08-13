@@ -36,14 +36,14 @@ export function ColorsSwatches() {
         <Switch
           checked={scheme === "dark"}
           label="Dark color scheme"
-          onChange={(event) => {
+          onChange={() => {
             setScheme(scheme === "light" ? "dark" : "light");
           }}
         />
       </div>
       <ColorPalette>
         {Object.entries(colors).map(([name, value]) => (
-          <ColorItem key={name} title={name} colors={value} />
+          <ColorItem key={name} title={name} colors={value} subtitle="" />
         ))}
       </ColorPalette>
     </div>
