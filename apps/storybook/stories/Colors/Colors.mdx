@@ -1,17 +1,11 @@
-import { Meta, ColorPalette, ColorItem } from "@storybook/addon-docs/blocks";
-import { useEffect, useRef, useState, useCallback } from "react";
-import { getGroupedThemeColors, getThemeColors } from "./getThemeColors";
-import { Switch } from "@arbeidstilsynet/design-react";
+import { Meta } from "@storybook/addon-docs/blocks";
 import { ColorsSwatches } from "./ColorsSwatches";
 
 <Meta title="Colors" />
 
-<div>
-  # Colors from the Arbeidstilsynet theme
+# Colors from the Arbeidstilsynet theme
 
 Use with `--ds-color-` prefix.
 Example `--ds-color-primary-base-active`.
 
 <ColorsSwatches />
-
-</div>
