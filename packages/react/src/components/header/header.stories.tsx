@@ -29,7 +29,7 @@ export const Preview: Story = {
     ];
     return (
       <Header {...args}>
-        <Header.Banner />
+        <Header.Banner>Miljøbanner</Header.Banner>
         <Header.Title />
         <Header.Search />
         <Header.Links links={links} />
@@ -44,7 +44,6 @@ export const WithCustomComponent: Story = {
       <Header {...args}>
         <Header.Banner />
         <Header.Title />
-
       </Header>
     );
   },
