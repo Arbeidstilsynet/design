@@ -36,6 +36,7 @@ const preview: Preview = {
           "Overview",
           "Usage",
           "Icons",
+          "Colors",
           "Showcase",
           "Changelog",
           "Example",
