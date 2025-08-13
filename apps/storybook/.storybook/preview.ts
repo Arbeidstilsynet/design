@@ -5,14 +5,6 @@ import { customStylesDecorator } from "../utils/customStylesDecorator";
 import "./preview.css";
 
 const atViewPorts = {
-  atSingle: {
-    name: "AT single 150px",
-    styles: {
-      height: "200px",
-      width: "150px",
-    },
-    type: "mobile",
-  },
   atmobile: {
     name: "AT mobil 400px",
     styles: {
@@ -41,7 +33,7 @@ const atViewPorts = {
     name: "AT bigscreen 3000px",
     styles: {
       height: "1000px",
-      width: 3000 + "px",
+      width: `3000px`,
     },
     type: "desktop",
   },
