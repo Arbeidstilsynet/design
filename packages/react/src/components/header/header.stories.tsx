@@ -22,17 +22,14 @@ type Story = StoryObj<typeof meta>;
 
 export const Preview: Story = {
   render: (args) => {
-    const links = [
-      { href: "#", text: "Link 1" },
-      { href: "#", text: "Link 2" },
-      { href: "#", text: "Link 3" },
-    ];
     return (
       <Header {...args}>
         <Header.Banner>Miljøbanner</Header.Banner>
         <Header.Title />
         <Header.Search />
-        <Header.Links links={links} />
+        <Header.Links>
+          <Header.Links.Item href="#">Link 1</Header.Links.Item>
+        </Header.Links>
       </Header>
     );
   },

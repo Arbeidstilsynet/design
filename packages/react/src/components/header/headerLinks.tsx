@@ -1,33 +1,58 @@
 import { clsx } from "clsx/lite";
-import type { HTMLAttributes } from "react";
+import type { AnchorHTMLAttributes, HTMLAttributes } from "react";
 import type { DefaultProps } from "../../types";
 import { Button, Link } from "../../digdir";
 
-export interface HeaderLinksProps extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
-  links: {
-    href: string;
-    text: string;
-  }[];
+export interface HeaderLinksItemProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+  children: React.ReactNode;
+  href: string;
+  asButton?: boolean;
 }
 
-export function HeaderLinks({
+function HeaderLinksItem({
+  children,
+  href,
+  asButton = false,
   className,
-  links,
+  ...rest
+}: Readonly<HeaderLinksItemProps>) {
+  const content = (
+    <Link href={href} className={clsx("at-header__links-text", className)} {...rest}>
+      {children}
+    </Link>
+  );
+  return (
+    <li className="at-header__links-item">
+      {asButton ? (
+        <Button asChild className="at-header__links-buttons">
+          {content}
+        </Button>
+      ) : (
+        content
+      )}
+    </li>
+  )
+}
+
+export interface HeaderLinksProps extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode;
+}
+
+export function HeaderLinksRoot({
+  className,
+  children,
   ...rest
 }: Readonly<HeaderLinksProps>) {
-  const isMobile = false; // useMediaQuery('(max-width: 30rem)'); // Uncomment if you want to use media queries
-  const dataSize = isMobile ? 'xs' : 'md';
+
   return (
-    <div className={clsx("at-header__links-background", className)} {...rest} data-size={dataSize}>
+    <div className={clsx("at-header__links-background", className)} {...rest}>
       <ul className="at-header__links">
-        {links.map((link, index) => (
-          <Button key={index} asChild className="at-header__links-buttons">
-            <Link href={link.href} className="at-header__links-text">
-              {link.text}
-            </Link>
-          </Button>
-        ))}
+        {children}
       </ul>
     </div>
   );
 }
+
+export const HeaderLinks = Object.assign(HeaderLinksRoot, {
+  Item: HeaderLinksItem,
+});
