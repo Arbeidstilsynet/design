@@ -94,7 +94,7 @@
 .hamburger-menu {
   --x-width: calc(var(--hamburger-height) * 1.41421356237);
 
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: var(--hamburger-gap);
   width: max-content;
@@ -111,10 +111,6 @@
   box-sizing: border-box;
   padding-left: 4rem;
   gap: 1rem;
-  transition: translate var(--animation-timing);
-  translate: -100%;
-  padding: 0.5rem 1rem;
-  padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
 }
 
 .hamburger-menu::before,
@@ -175,9 +171,16 @@
     width: 100%;
     padding-left: var(--ds-size-2);
   }
+  .hamburger-menu {
+    display: flex;
+  }
   .at-header__links {
     padding-left: 0.2rem;
     flex-wrap: wrap;
+    transition: translate var(--animation-timing);
+    translate: -100%;
+    padding: 0.5rem 1rem;
+    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
   }
   .at-header__title {
     padding: 0 1rem;
