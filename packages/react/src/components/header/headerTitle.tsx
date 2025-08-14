@@ -5,7 +5,9 @@ import { Avatar } from "../../digdir";
 import type { DefaultProps } from "../../types";
 import type { HTMLAttributes } from "react";
 
-export interface HeaderTitleProps extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
+export interface HeaderTitleProps
+  extends DefaultProps<HTMLDivElement>,
+    HTMLAttributes<HTMLDivElement> {
   fagsystemNavn?: string;
   brukernavn?: string;
 }
@@ -16,7 +18,6 @@ export function HeaderTitle({
   brukernavn = "Bruker Brukersen",
   ...rest
 }: Readonly<HeaderTitleProps>) {
-
   const getInitials = (name?: string) => {
     if (!name) return "";
     const names = name.split(" ");
@@ -24,7 +25,10 @@ export function HeaderTitle({
     if (names.length === 1) {
       return names[0]!.charAt(0).toUpperCase();
     }
-    return names[0]!.charAt(0).toUpperCase() + names[names.length - 1]!.charAt(0).toUpperCase();
+    return (
+      names[0]!.charAt(0).toUpperCase() +
+      names[names.length - 1]!.charAt(0).toUpperCase()
+    );
   };
   return (
     <div className={clsx("at-header__title-background", className)} {...rest}>
@@ -38,16 +42,19 @@ export function HeaderTitle({
           </span>
         </div>
         <div className={clsx("at-header__title-names")}>
-
           <div className={clsx("at-header__title-center")}>
             <p>{fagsystemNavn}</p>
           </div>
           <div className={clsx("at-header__title-right")}>
-            <Avatar aria-label={brukernavn} initials={getInitials(brukernavn)} data-size="xs" />
+            <Avatar
+              aria-label={brukernavn}
+              initials={getInitials(brukernavn)}
+              data-size="xs"
+            />
             <p className={clsx("at-header__title-brukernavn")}>{brukernavn}</p>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

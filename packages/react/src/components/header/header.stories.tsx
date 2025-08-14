@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
+import { Link } from "@digdir/designsystemet-react";
 
 const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
@@ -22,13 +23,23 @@ type Story = StoryObj<typeof meta>;
 
 export const Preview: Story = {
   render: (args) => {
+    const menuLinks = [
+      { label: "Hjem", href: "#" },
+      { label: "Om oss", href: "#" },
+      { label: "Tjenester", href: "#" },
+      { label: "Kontakt", href: "#" },
+    ];
     return (
       <Header {...args}>
         <Header.Banner>Miljøbanner</Header.Banner>
         <Header.Title />
         <Header.Search />
         <Header.Links>
-          <Header.Links.Item href="#">Link 1</Header.Links.Item>
+          {menuLinks.map((link) => (
+            <Header.Links.Item key={link.label} asChild>
+              <Link href={link.href}>{link.label}</Link>
+            </Header.Links.Item>
+          ))}
         </Header.Links>
       </Header>
     );

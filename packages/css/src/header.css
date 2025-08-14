@@ -87,17 +87,24 @@
   flex-direction: row;
   box-sizing: border-box;
   padding-left: 4rem;
+  gap: 1rem;
 }
 
+.at-header__links-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
 
 /* Responsive adjustments */
 @container (max-width: 30rem) {
-  .at-header__search{
+  .at-header__search {
     width: 100%;
     padding-left: var(--ds-size-2);
   }
   .at-header__links {
     padding-left: 0.2rem;
+    flex-wrap: wrap;
   }
   .at-header__title {
     padding: 0 1rem;

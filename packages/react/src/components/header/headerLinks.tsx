@@ -1,58 +1,36 @@
 import { clsx } from "clsx/lite";
-import type { AnchorHTMLAttributes, HTMLAttributes } from "react";
-import type { DefaultProps } from "../../types";
-import { Button, Link } from "../../digdir";
+import { Slot } from "@radix-ui/react-slot";
 
-export interface HeaderLinksItemProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
+export type HeaderLinksProps = React.HtmlHTMLAttributes<HTMLDivElement> & {
   children: React.ReactNode;
-  href: string;
-  asButton?: boolean;
-}
+};
 
-function HeaderLinksItem({
-  children,
-  href,
-  asButton = false,
-  className,
-  ...rest
-}: Readonly<HeaderLinksItemProps>) {
-  const content = (
-    <Link href={href} className={clsx("at-header__links-text", className)} {...rest}>
-      {children}
-    </Link>
-  );
+export const HeaderLinksRoot = ({ children, ...props }: HeaderLinksProps) => {
   return (
-    <li className="at-header__links-item">
-      {asButton ? (
-        <Button asChild className="at-header__links-buttons">
-          {content}
-        </Button>
-      ) : (
-        content
-      )}
-    </li>
-  )
-}
-
-export interface HeaderLinksProps extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
-  children?: React.ReactNode;
-}
-
-export function HeaderLinksRoot({
-  className,
-  children,
-  ...rest
-}: Readonly<HeaderLinksProps>) {
-
-  return (
-    <div className={clsx("at-header__links-background", className)} {...rest}>
-      <ul className="at-header__links">
-        {children}
-      </ul>
+    <div className={clsx("at-header__links-background")} {...props}>
+      <div className={clsx("at-header__links")}>{children}</div>
     </div>
   );
-}
+};
+
+type LinkItemProps = React.HtmlHTMLAttributes<HTMLDivElement> & {
+  asChild: boolean;
+  children: React.ReactNode;
+};
+
+export const HeaderLinkItem = ({
+  asChild,
+  children,
+  ...props
+}: LinkItemProps) => {
+  const Component = asChild ? Slot : "div";
+  return (
+    <Component className={clsx("at-header__links-item")} {...props}>
+      {children}
+    </Component>
+  );
+};
 
 export const HeaderLinks = Object.assign(HeaderLinksRoot, {
-  Item: HeaderLinksItem,
+  Item: HeaderLinkItem,
 });
