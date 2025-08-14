@@ -8,7 +8,11 @@ export type HeaderLinksProps = React.HtmlHTMLAttributes<HTMLDivElement> & {
 export const HeaderLinksRoot = ({ children, ...props }: HeaderLinksProps) => {
   return (
     <div className={clsx("at-header__links-root")} {...props}>
-      <label className="hamburger-menu" htmlFor="hamburger-checkbox" aria-label="Toggle navigation">
+      <label
+        className="hamburger-menu"
+        htmlFor="hamburger-checkbox"
+        aria-label="Toggle navigation"
+      >
         <input id="hamburger-checkbox" type="checkbox" />
       </label>
       <div className={clsx("at-header__links")}>{children}</div>
