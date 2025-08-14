@@ -50,8 +50,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/theme
       '@navikt/aksel-icons':
-        specifier: 7.27.1
-        version: 7.27.1
+        specifier: 7.28.0
+        version: 7.28.0
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -4397,7 +4397,7 @@ snapshots:
     dependencies:
       '@floating-ui/dom': 1.7.3
       '@floating-ui/react': 0.26.23(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@navikt/aksel-icons': 7.27.1
+      '@navikt/aksel-icons': 7.28.0
       '@radix-ui/react-slot': 1.2.3(@types/react@19.1.10)(react@19.1.1)
       '@tanstack/react-virtual': 3.13.12(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@u-elements/u-combobox': 0.0.20
