@@ -36,7 +36,7 @@ export const Preview: Story = {
         <Header.Search />
         <Header.Links>
           {menuLinks.map((link) => (
-            <Header.Links.Item key={link.label} asChild>
+            <Header.Links.Item key={link.label} asChild={true}>
               <Link href={link.href}>{link.label}</Link>
             </Header.Links.Item>
           ))}

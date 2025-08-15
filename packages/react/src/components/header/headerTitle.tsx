@@ -41,18 +41,16 @@ export function HeaderTitle({
             <LogoWhite />
           </span>
         </div>
-        <div className={clsx("at-header__title-names")}>
-          <div className={clsx("at-header__title-center")}>
-            <p>{fagsystemNavn}</p>
-          </div>
-          <div className={clsx("at-header__title-right")}>
-            <Avatar
-              aria-label={brukernavn}
-              initials={getInitials(brukernavn)}
-              data-size="xs"
-            />
-            <p className={clsx("at-header__title-brukernavn")}>{brukernavn}</p>
-          </div>
+        <div className={clsx("at-header__title-center")}>
+          <p>{fagsystemNavn}</p>
+        </div>
+        <div className={clsx("at-header__title-right")}>
+          <Avatar
+            aria-label={brukernavn}
+            initials={getInitials(brukernavn)}
+            data-size="xs"
+          />
+          <p className={clsx("at-header__title-brukernavn")}>{brukernavn}</p>
         </div>
       </div>
     </div>

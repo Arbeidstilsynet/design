@@ -29,7 +29,15 @@
   flex-direction: row;
   box-sizing: border-box;
   padding: 0 4rem;
-  height: 3.5rem;
+}
+
+[data-color-scheme="light"] {
+  .at-header__title-light {
+    display: flex;
+  }
+  .at-header__title-dark {
+    display: none;
+  }
 }
 
 [data-color-scheme="dark"] {
@@ -81,8 +89,8 @@
   width: 100%;
   background-color: var(--ds-color-primary-border-subtle);
   position: relative;
-  --bar-width: 60px;
-  --bar-height: 8px;
+  --bar-width: 40px;
+  --bar-height: 4px;
   --hamburger-gap: 6px;
   --foreground: #333;
   --background: white;
@@ -99,7 +107,7 @@
   gap: var(--hamburger-gap);
   width: max-content;
   position: absolute;
-  top: var(--hamburger-margin);
+  top: -2.5rem;
   left: var(--hamburger-margin);
   z-index: 2;
   cursor: pointer;
@@ -110,7 +118,9 @@
   flex-direction: row;
   box-sizing: border-box;
   padding-left: 4rem;
-  gap: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  gap: 2rem;
 }
 
 .hamburger-menu::before,
@@ -160,16 +170,22 @@
 }
 
 .at-header__links-item {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 1rem;
+  color: blue;
 }
 
 /* Responsive adjustments */
 @container (max-width: 30rem) {
   .at-header__search {
     width: 100%;
-    padding-left: var(--ds-size-2);
+    justify-content: flex-end;
+    padding-top: 0.5rem;
+  }
+  .at-header__search-background {
+    height: 3rem;
+  }
+  .at-header__title-left svg {
+    width: 5rem;
+    height: 2rem;
   }
   .hamburger-menu {
     display: flex;
@@ -180,28 +196,30 @@
     transition: translate var(--animation-timing);
     translate: -100%;
     padding: 0.5rem 1rem;
-    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
   }
   .at-header__title {
-    padding: 0 1rem;
-    padding-top: 0.1rem;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 2rem;
     height: auto;
+    padding: 0.5rem 1rem;
     flex: auto;
-    align-items: stretch;
   }
   .at-header__title-left {
-    flex-direction: row;
-    width: 100%;
+    height: 2rem;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    justify-content: flex-start;
   }
-  .at-header__title-names {
-    flex-direction: row;
+  .at-header__title-center {
+    grid-column: 1 / 2;
+    grid-row: 2 / 2;
+    justify-content: flex-start;
   }
-  .at-header__title-center,
   .at-header__title-right {
-    width: 50%;
-    display: inline-flex;
-    justify-content: left;
+    grid-column: 2 / 2;
+    grid-row: 2 / 2;
+    justify-content: flex-end;
   }
   .at-header__title-brukernavn {
     display: none;
