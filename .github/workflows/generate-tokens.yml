@@ -8,6 +8,7 @@ on:
       - "changeset-release/**"
     paths:
       - "design-tokens/**"
+      - "!design-tokens/README.md"
       - "package.json" # run on updates to Digdir CLI, needs better handling?
       - ".github/workflows/generate-tokens.yml"
 
