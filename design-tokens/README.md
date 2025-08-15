@@ -7,22 +7,22 @@ You should use Figma to edit the tokens. You'll need the [Tokens Studio for Figm
 ## Setup
 
 1. [Install](<https://www.figma.com/community/plugin/843461159747178978/Tokens-Studio-for-Figma-(Figma-Tokens)>) the Figma Tokens plugin
-1. Generate a new Personal Access Token (PAT) in [GitHub Developer Settings](https://github.com/settings/personal-access-tokens)
+2. Generate a new Personal Access Token (PAT) in [GitHub Developer Settings](https://github.com/settings/personal-access-tokens)
     - Click `Generate new token`
     - Change `Resource owner` to `Arbeidstilsynet`
     - Add a token name and choose an expiration date
     - Under `Repository access`, select `Only selected repositories` and search for `Arbeidstilsynet/design`
-    - Under `Permissions` -> `Repositories`, click `Add permissions` and select `Contents``
+    - Under `Permissions` -> `Repositories`, click `Add permissions` and select `Contents`
     - Change Contents access to `Read and write`
     - When done, click `Generate token`
-1. Copy the PAT (you can only see it once)
-1. In the Figma Tokens plugin, under `Sync > GitHub`, add new credentials:
+3. Copy the PAT (you can only see it once)
+4. In the Figma Tokens plugin, under `Sync > GitHub`, add new credentials:
    - Name: `Digdir Figma Tokens`
    - Personal Access Token: _your PAT_
    - Repository: `Arbeidstilsynet/design`
    - Default Branch: `main`
    - File Path: `design-tokens`
-1. Ask an organization owner to approve the PAT and ensure your user has at least write access to the repo
+5. Ask an organization owner to approve the PAT and ensure your user has at least write access to the repo
    - <https://github.com/organizations/Arbeidstilsynet/settings/personal-access-token-requests>
    - <https://github.com/Arbeidstilsynet/design/settings/access>
 
