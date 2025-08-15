@@ -1,25 +1,5 @@
 {
   "tokenSetOrder": [
-    "primitives/globals",
-    "primitives/modes/size/small",
-    "primitives/modes/size/medium",
-    "primitives/modes/size/large",
-    "primitives/modes/size/global",
-    "primitives/modes/typography/size/small",
-    "primitives/modes/typography/size/medium",
-    "primitives/modes/typography/size/large",
-    "primitives/modes/typography/primary/arbeidstilsynet",
-    "primitives/modes/typography/secondary/arbeidstilsynet",
-    "primitives/modes/color-scheme/dark/global",
-    "primitives/modes/color-scheme/dark/arbeidstilsynet",
-    "primitives/modes/color-scheme/light/global",
-    "primitives/modes/color-scheme/light/arbeidstilsynet",
-    "themes/arbeidstilsynet",
-    "semantic/color",
-    "semantic/modes/main-color/primary",
-    "semantic/modes/support-color/brand-1",
-    "semantic/modes/support-color/brand-2",
-    "semantic/modes/support-color/brand-3",
-    "semantic/style"
+    "global"
   ]
 }
