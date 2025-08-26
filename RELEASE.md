@@ -15,3 +15,5 @@ We currently use [Changesets](https://github.com/changesets/changesets) and [Cha
 - [Changeset Release Action](https://github.com/changesets/action) will now publish the new package version to [NPM](https://www.npmjs.com/org/arbeidstilsynet), add a git tag and create [GitHub releases](https://github.com/Arbeidstilsynet/design/releases).
 
 - Verify that new version is available in [NPM](https://www.npmjs.com/org/arbeidstilsynet) and on [GitHub releases](https://github.com/Arbeidstilsynet/design/releases)
+
+![Release process diagram](./docs/diagrams/release.svg)
