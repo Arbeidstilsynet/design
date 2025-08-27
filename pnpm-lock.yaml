@@ -146,7 +146,7 @@ importers:
         version: 1.1.10(@types/react@19.1.11)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@navikt/aksel-icons':
         specifier: ^7.23.0
-        version: 7.28.1
+        version: 7.29.0
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -868,9 +868,6 @@ packages:
 
   '@microsoft/tsdoc@0.15.1':
     resolution: {integrity: sha512-4aErSrCR/On/e5G2hDP0wjooqDdauzEbIq8hIkIe5pXV0rtWJZvdCEKL0ykZxex+IxIwBp0eGeV48hQN07dXtw==}
-
-  '@navikt/aksel-icons@7.28.1':
-    resolution: {integrity: sha512-fB2trZb6D8R2ThAaaSAYLDt2xepG3QB1Sq7Yd+XF2mI4y80wrhwirjzCFMqOKaKweq4Rrmial2iJuaTb52+bWA==}
 
   '@navikt/aksel-icons@7.29.0':
     resolution: {integrity: sha512-SBz8MVwp7e8MzAQLw0TTcn2o1my3eJI/cVRDtZE2pEopN7ykQBCfzZFj7cfW+5pn2tlgftW990d3GZ6vQoGzyw==}
@@ -4868,8 +4865,6 @@ snapshots:
       resolve: 1.22.10
 
   '@microsoft/tsdoc@0.15.1': {}
-
-  '@navikt/aksel-icons@7.28.1': {}
 
   '@navikt/aksel-icons@7.29.0': {}
 
