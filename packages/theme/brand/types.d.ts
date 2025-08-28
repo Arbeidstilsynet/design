@@ -1,13 +1,13 @@
-/* build: v1.1.9 */
+/* build: v1.1.10 */
 import type {} from '@digdir/designsystemet/types';
 
 // Augment types based on theme
 declare module '@digdir/designsystemet/types' {
   export interface ColorDefinitions {
     primary: never;
-    'brand-1': never;
-    'brand-2': never;
-    'brand-3': never;
+    inspirator: never;
+    veileder: never;
+    tilsyn: never;
     neutral: never;
   }
   export interface SeverityColorDefinitions {
