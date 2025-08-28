@@ -1,0 +1,388 @@
+{
+  "color": {
+    "neutral": {
+      "1": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.1}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.2}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.3}"
+      },
+      "4": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.4}"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.5}"
+      },
+      "6": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.6}"
+      },
+      "7": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.7}"
+      },
+      "8": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.8}"
+      },
+      "9": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.9}"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.10}"
+      },
+      "11": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.11}"
+      },
+      "12": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.12}"
+      },
+      "13": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.13}"
+      },
+      "14": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.14}"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.neutral.16}"
+      }
+    },
+    "primary": {
+      "1": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.1}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.2}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.3}"
+      },
+      "4": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.4}"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.5}"
+      },
+      "6": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.6}"
+      },
+      "7": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.7}"
+      },
+      "8": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.8}"
+      },
+      "9": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.9}"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.10}"
+      },
+      "11": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.11}"
+      },
+      "12": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.12}"
+      },
+      "13": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.13}"
+      },
+      "14": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.14}"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.primary.16}"
+      }
+    },
+    "inspirator": {
+      "1": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.1}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.2}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.3}"
+      },
+      "4": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.4}"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.5}"
+      },
+      "6": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.6}"
+      },
+      "7": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.7}"
+      },
+      "8": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.8}"
+      },
+      "9": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.9}"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.10}"
+      },
+      "11": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.11}"
+      },
+      "12": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.12}"
+      },
+      "13": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.13}"
+      },
+      "14": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.14}"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-1.16}"
+      }
+    },
+    "veileder": {
+      "1": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.1}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.2}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.3}"
+      },
+      "4": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.4}"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.5}"
+      },
+      "6": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.6}"
+      },
+      "7": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.7}"
+      },
+      "8": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.8}"
+      },
+      "9": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.9}"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.10}"
+      },
+      "11": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.11}"
+      },
+      "12": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.12}"
+      },
+      "13": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.13}"
+      },
+      "14": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.14}"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-2.16}"
+      }
+    },
+    "tilsyn": {
+      "1": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.1}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.2}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.3}"
+      },
+      "4": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.4}"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.5}"
+      },
+      "6": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.6}"
+      },
+      "7": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.7}"
+      },
+      "8": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.8}"
+      },
+      "9": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.9}"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.10}"
+      },
+      "11": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.11}"
+      },
+      "12": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.12}"
+      },
+      "13": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.13}"
+      },
+      "14": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.14}"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.brand-3.16}"
+      }
+    }
+  },
+  "font-weight": {
+    "medium": {
+      "$type": "text",
+      "$value": "{arbeidstilsynet.bold}"
+    },
+    "semibold": {
+      "$type": "text",
+      "$value": "{arbeidstilsynet.extra-bold}"
+    },
+    "regular": {
+      "$type": "text",
+      "$value": "{arbeidstilsynet.regular}"
+    }
+  },
+  "font": {
+    "family": {
+      "$type": "text",
+      "$value": "{arbeidstilsynet.main}"
+    }
+  },
+  "border-radius": {
+    "1": {
+      "$type": "number",
+      "$value": 2
+    },
+    "2": {
+      "$type": "number",
+      "$value": 4
+    },
+    "3": {
+      "$type": "number",
+      "$value": 8
+    },
+    "4": {
+      "$type": "number",
+      "$value": 12
+    },
+    "5": {
+      "$type": "number",
+      "$value": "{border-radius.base}"
+    },
+    "6": {
+      "$type": "number",
+      "$value": 9999
+    },
+    "base": {
+      "$type": "number",
+      "$value": 4
+    },
+    "scale": {
+      "$type": "number",
+      "$value": 4
+    }
+  }
+}

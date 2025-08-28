@@ -1,0 +1,20 @@
+{
+  "arbeidstilsynet": {
+    "main": {
+      "$type": "text",
+      "$value": "Inter"
+    },
+    "bold": {
+      "$type": "text",
+      "$value": "Medium"
+    },
+    "extra-bold": {
+      "$type": "text",
+      "$value": "Semi bold"
+    },
+    "regular": {
+      "$type": "text",
+      "$value": "Regular"
+    }
+  }
+}
