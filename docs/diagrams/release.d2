@@ -1,0 +1,67 @@
+title: Release Flow (Changesets)
+direction: down
+
+CLI: {
+  label: "pnpm changeset"
+  style: {
+    font: "mono"
+  }
+}
+Feature: "Feature branch"
+PR: "PR"
+ChangesetBot: "Changeset Bot"
+Detect: "Release workflow\n(detects changesets)"
+VersionPR: "Versioning PR"
+Publish: "Release workflow\n(publish new versions)"
+NPM: "NPM"
+Tag: "Git Tag"
+GHRel: "GitHub Release"
+
+Dev -> Feature: commit
+Dev -> CLI: run CLI
+CLI -> Feature: commit
+Feature -> PR: open PR
+PR -> ChangesetBot: triggers
+ChangesetBot -> PR: "comment status"
+Maintainer -> PR: "review & approve"
+PR -> Detect: merge triggers
+Detect -> VersionPR: create/update
+Maintainer -> VersionPR: "review & approve"
+VersionPR -> Publish: merge triggers
+Publish -> NPM
+Publish -> Tag
+Publish -> GHRel
+
+classes: {
+  person: {
+    shape: person
+    width: 60
+    height: 60
+  }
+  workflow: {
+    style: {
+      fill: "#fff7e6"
+      stroke: "#d18a00"
+    }
+  }
+  bot: {
+    style: {
+      fill: "#e6f7ff"
+      stroke: "#91d5ff"
+    }
+  }
+  artifact: {
+    style: {
+      fill: "#94f6a4"
+      stroke: "#00d451"
+    }
+  }
+}
+Dev.class: person
+Maintainer.class: person
+ChangesetBot.class: bot
+Detect.class: workflow
+Publish.class: workflow
+NPM.class: artifact
+Tag.class: artifact
+GHRel.class: artifact

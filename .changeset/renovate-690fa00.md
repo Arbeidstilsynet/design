@@ -2,4 +2,4 @@
 '@arbeidstilsynet/design-react': patch
 ---
 
-Updated dependency `@types/react` to `19.1.10`.
+Updated dependency `@types/react` to `19.1.12`.

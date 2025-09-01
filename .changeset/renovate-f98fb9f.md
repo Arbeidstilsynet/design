@@ -2,4 +2,4 @@
 '@arbeidstilsynet/design-react': patch
 ---
 
-Updated dependency `vite` to `7.1.0`.
+Updated dependency `@types/react` to `19.1.11`.
