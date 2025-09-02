@@ -50,8 +50,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/theme
       '@navikt/aksel-icons':
-        specifier: 7.29.0
-        version: 7.29.0
+        specifier: 7.29.1
+        version: 7.29.1
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -871,6 +871,9 @@ packages:
 
   '@navikt/aksel-icons@7.29.0':
     resolution: {integrity: sha512-SBz8MVwp7e8MzAQLw0TTcn2o1my3eJI/cVRDtZE2pEopN7ykQBCfzZFj7cfW+5pn2tlgftW990d3GZ6vQoGzyw==}
+
+  '@navikt/aksel-icons@7.29.1':
+    resolution: {integrity: sha512-ERX4lUCYcPDQN3UT1051UY8bDb6vBwAePMSDuRO5bLnTSSq8ZqNxPDtSxaihp35DeqZi08j7AJQXGGpn0exd9g==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -4493,7 +4496,7 @@ snapshots:
     dependencies:
       '@floating-ui/dom': 1.7.3
       '@floating-ui/react': 0.26.23(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
-      '@navikt/aksel-icons': 7.29.0
+      '@navikt/aksel-icons': 7.29.1
       '@radix-ui/react-slot': 1.2.3(@types/react@19.1.12)(react@19.1.1)
       '@tanstack/react-virtual': 3.13.12(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@u-elements/u-combobox': 0.0.20
@@ -4821,6 +4824,8 @@ snapshots:
   '@microsoft/tsdoc@0.15.1': {}
 
   '@navikt/aksel-icons@7.29.0': {}
+
+  '@navikt/aksel-icons@7.29.1': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:

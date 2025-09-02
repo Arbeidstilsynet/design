@@ -14,7 +14,7 @@
   "dependencies": {
     "@arbeidstilsynet/design-css": "workspace:*",
     "@arbeidstilsynet/design-theme": "workspace:*",
-    "@navikt/aksel-icons": "7.29.0",
+    "@navikt/aksel-icons": "7.29.1",
     "clsx": "2.1.1",
     "react": "19.1.1",
     "react-dom": "19.1.1"
