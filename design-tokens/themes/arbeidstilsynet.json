@@ -135,67 +135,67 @@
     "brand-1": {
       "1": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.1}"
+        "$value": "{arbeidstilsynet.inspirator.1}"
       },
       "2": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.2}"
+        "$value": "{arbeidstilsynet.inspirator.2}"
       },
       "3": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.3}"
+        "$value": "{arbeidstilsynet.inspirator.3}"
       },
       "4": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.4}"
+        "$value": "{arbeidstilsynet.inspirator.4}"
       },
       "5": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.5}"
+        "$value": "{arbeidstilsynet.inspirator.5}"
       },
       "6": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.6}"
+        "$value": "{arbeidstilsynet.inspirator.6}"
       },
       "7": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.7}"
+        "$value": "{arbeidstilsynet.inspirator.7}"
       },
       "8": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.8}"
+        "$value": "{arbeidstilsynet.inspirator.8}"
       },
       "9": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.9}"
+        "$value": "{arbeidstilsynet.inspirator.9}"
       },
       "10": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.10}"
+        "$value": "{arbeidstilsynet.inspirator.10}"
       },
       "11": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.11}"
+        "$value": "{arbeidstilsynet.inspirator.11}"
       },
       "12": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.12}"
+        "$value": "{arbeidstilsynet.inspirator.12}"
       },
       "13": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.13}"
+        "$value": "{arbeidstilsynet.inspirator.13}"
       },
       "14": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.14}"
+        "$value": "{arbeidstilsynet.inspirator.14}"
       },
       "15": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.15}"
+        "$value": "{arbeidstilsynet.inspirator.15}"
       },
       "16": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-1.16}"
+        "$value": "{arbeidstilsynet.inspirator.16}"
       }
     },
     "brand-2": {
