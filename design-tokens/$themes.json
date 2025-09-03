@@ -6,7 +6,8 @@
     "selectedTokenSets": {
       "primitives/modes/size/medium": "source",
       "primitives/modes/size/global": "enabled",
-      "primitives/modes/typography/size/medium": "enabled"
+      "primitives/modes/typography/size/medium": "enabled",
+      "semantic/modes/support-color/inspirator": "disabled"
     },
     "$figmaCollectionId": "VariableCollectionId:36248:20757",
     "$figmaModeId": "41630:1",
@@ -54,7 +55,8 @@
     "selectedTokenSets": {
       "primitives/modes/size/large": "source",
       "primitives/modes/size/global": "enabled",
-      "primitives/modes/typography/size/large": "enabled"
+      "primitives/modes/typography/size/large": "enabled",
+      "semantic/modes/support-color/inspirator": "disabled"
     },
     "$figmaCollectionId": "VariableCollectionId:36248:20757",
     "$figmaModeId": "41630:2",
@@ -102,7 +104,8 @@
     "selectedTokenSets": {
       "primitives/modes/size/small": "source",
       "primitives/modes/size/global": "enabled",
-      "primitives/modes/typography/size/small": "enabled"
+      "primitives/modes/typography/size/small": "enabled",
+      "semantic/modes/support-color/inspirator": "disabled"
     },
     "$figmaCollectionId": "VariableCollectionId:36248:20757",
     "$figmaModeId": "41630:3",
@@ -149,7 +152,8 @@
     "$figmaModeId": "40960:6",
     "name": "arbeidstilsynet",
     "selectedTokenSets": {
-      "themes/arbeidstilsynet": "enabled"
+      "themes/arbeidstilsynet": "enabled",
+      "semantic/modes/support-color/inspirator": "disabled"
     },
     "group": "Theme",
     "$figmaVariableReferences": {
@@ -185,22 +189,6 @@
       "color.neutral.14": "9c5e250f15e7950dfcfd5db38552da6a97cd2763",
       "color.neutral.15": "a790d2aa569446efd356a446d961418270cf591d",
       "color.neutral.16": "bf76d42659efa9a7bf39777b9bb9918810f1c854",
-      "color.brand-1.1": "621372b83e027a4bec02b29860a39bbb0ce407e6",
-      "color.brand-1.2": "41a18d25728fc51d0f8e06b515d5fe8c07bef95d",
-      "color.brand-1.3": "b08e7bbe0b41ec2ae9c2cc0108b09eab062069f0",
-      "color.brand-1.4": "a0dff8c9341516f1f310abe20404e553bc596e55",
-      "color.brand-1.5": "678d812e5b704f74a4cf54b32961c69c35acf0ab",
-      "color.brand-1.6": "25ec5fd97eb6c3439a8e106778f1e04d3119efa9",
-      "color.brand-1.7": "133b6e9c413dbde0d42837bf112ffaa7aa7ba4b4",
-      "color.brand-1.8": "f28446dff513b824340f99af34640337cca098e7",
-      "color.brand-1.9": "b3a164b4da83b8a2a4c19b6b5f99c7b2ac074118",
-      "color.brand-1.10": "b6355ac2d081ecb4b3b610a44608a4a6a59236b6",
-      "color.brand-1.11": "5e8a9a46fcc0eeb30d8c71532286a2abc8831e29",
-      "color.brand-1.12": "038c4038e8bf78c506ce2094760bd39f439e18e6",
-      "color.brand-1.13": "e776b9b109a76e9f7957abf19539f92a9f200716",
-      "color.brand-1.14": "9cb9a2d3398ccebf8137f50b7a8262b53adb49d2",
-      "color.brand-1.15": "57a76a4f86f990639de3dba1e5290d1502efc5e6",
-      "color.brand-1.16": "b01284bf8cc349a4ac0322fcec2519dccf7910a5",
       "color.brand-2.1": "ba6f3a2ad7f37e16b348591c210581b66e19c838",
       "color.brand-2.2": "2bb1c18fd9dc1292c398c29d6338610cbf12aa76",
       "color.brand-2.3": "23a45e5fe5dda8ae395c89ffc4eefa4143b28a65",
@@ -244,7 +232,23 @@
       "border-radius.5": "0edfea461fefffd002a6f3a9a4c1f16ee921cd0e",
       "border-radius.6": "31665e419b1edfe8001485b7fa8bcb97d8b5c17d",
       "border-radius.base": "49415790a4c59ce7d54de58ae19e6e9b7d2d273a",
-      "border-radius.scale": "082dbf3ca2a598bfa82106a489d19c5971704cf2"
+      "border-radius.scale": "082dbf3ca2a598bfa82106a489d19c5971704cf2",
+      "color.inspirator.1": "621372b83e027a4bec02b29860a39bbb0ce407e6",
+      "color.inspirator.2": "41a18d25728fc51d0f8e06b515d5fe8c07bef95d",
+      "color.inspirator.3": "b08e7bbe0b41ec2ae9c2cc0108b09eab062069f0",
+      "color.inspirator.4": "a0dff8c9341516f1f310abe20404e553bc596e55",
+      "color.inspirator.5": "678d812e5b704f74a4cf54b32961c69c35acf0ab",
+      "color.inspirator.6": "25ec5fd97eb6c3439a8e106778f1e04d3119efa9",
+      "color.inspirator.7": "133b6e9c413dbde0d42837bf112ffaa7aa7ba4b4",
+      "color.inspirator.8": "f28446dff513b824340f99af34640337cca098e7",
+      "color.inspirator.9": "b3a164b4da83b8a2a4c19b6b5f99c7b2ac074118",
+      "color.inspirator.10": "b6355ac2d081ecb4b3b610a44608a4a6a59236b6",
+      "color.inspirator.11": "5e8a9a46fcc0eeb30d8c71532286a2abc8831e29",
+      "color.inspirator.12": "038c4038e8bf78c506ce2094760bd39f439e18e6",
+      "color.inspirator.13": "e776b9b109a76e9f7957abf19539f92a9f200716",
+      "color.inspirator.14": "9cb9a2d3398ccebf8137f50b7a8262b53adb49d2",
+      "color.inspirator.15": "57a76a4f86f990639de3dba1e5290d1502efc5e6",
+      "color.inspirator.16": "b01284bf8cc349a4ac0322fcec2519dccf7910a5"
     },
     "$figmaStyleReferences": {
       "color.primary.1": "S:5bba9aba035f8a5c5aabd85f91a27c85bcf0d2dc,",
@@ -335,7 +339,8 @@
     "$figmaModeId": "36248:2",
     "name": "Primary",
     "selectedTokenSets": {
-      "primitives/modes/typography/primary/arbeidstilsynet": "enabled"
+      "primitives/modes/typography/primary/arbeidstilsynet": "enabled",
+      "semantic/modes/support-color/inspirator": "disabled"
     },
     "group": "Typography",
     "$figmaVariableReferences": {
@@ -351,7 +356,8 @@
     "$figmaModeId": "44797:0",
     "name": "Secondary",
     "selectedTokenSets": {
-      "primitives/modes/typography/secondary/arbeidstilsynet": "enabled"
+      "primitives/modes/typography/secondary/arbeidstilsynet": "enabled",
+      "semantic/modes/support-color/inspirator": "disabled"
     },
     "group": "Typography",
     "$figmaVariableReferences": {
@@ -365,7 +371,8 @@
     "name": "Dark",
     "selectedTokenSets": {
       "primitives/modes/color-scheme/dark/global": "enabled",
-      "primitives/modes/color-scheme/dark/arbeidstilsynet": "enabled"
+      "primitives/modes/color-scheme/dark/arbeidstilsynet": "enabled",
+      "semantic/modes/support-color/inspirator": "disabled"
     },
     "id": "9ebd8aed52afbffc17e2666e8b4653a53498b257",
     "$figmaCollectionId": "VariableCollectionId:34811:5472",
@@ -700,7 +707,8 @@
     "name": "Light",
     "selectedTokenSets": {
       "primitives/modes/color-scheme/light/global": "enabled",
-      "primitives/modes/color-scheme/light/arbeidstilsynet": "enabled"
+      "primitives/modes/color-scheme/light/arbeidstilsynet": "enabled",
+      "semantic/modes/support-color/inspirator": "disabled"
     },
     "id": "0daa3ca0b427b9349da7e7dc00101b5668972926",
     "$figmaCollectionId": "VariableCollectionId:34811:5472",
@@ -1037,7 +1045,8 @@
     "selectedTokenSets": {
       "semantic/style": "enabled",
       "semantic/color": "enabled",
-      "primitives/globals": "source"
+      "primitives/globals": "source",
+      "semantic/modes/support-color/inspirator": "disabled"
     },
     "$figmaCollectionId": "VariableCollectionId:34811:5976",
     "$figmaModeId": "34811:5",
@@ -1075,22 +1084,6 @@
       "color.neutral.base-active": "622919ae57a14a7de54ebaa04450edac52125ead",
       "color.neutral.base-contrast-subtle": "535e14e74d5d51042840b29e934129abae4c9a5f",
       "color.neutral.base-contrast-default": "2d1a2664366c07ca02ab00780f49aba6a97df221",
-      "color.brand-1.background-default": "a721e4586ff5f67e192b76681622f06983992a91",
-      "color.brand-1.background-tinted": "3337c5e271307f8c57e609f6678313baebd82b75",
-      "color.brand-1.surface-default": "f1757fbf01e48187cbd2d5e3ffb07f9827eb612a",
-      "color.brand-1.surface-tinted": "fe8c4ee37cea266d9d0251683561c41a7045a9c4",
-      "color.brand-1.surface-hover": "c3d86f19a9f187f8bf17b23f44b92f2f10ce84df",
-      "color.brand-1.surface-active": "644f57bafe4f3963c7182077dec8a5e632de59bb",
-      "color.brand-1.border-subtle": "641a2c531cced908377ddc6a4edeb52ea1ce3ed4",
-      "color.brand-1.border-default": "28e60cf4c542c4dc1afe23540fca6a947650b4cc",
-      "color.brand-1.border-strong": "0e54b3154ac1d3ceb6eef4b1259f54af447964e3",
-      "color.brand-1.text-subtle": "2df98bf860623b9c4355b511c067d62966229f41",
-      "color.brand-1.text-default": "5acfbdbf9d1b5770ca2ea34ce65f8ec810c0df5b",
-      "color.brand-1.base-default": "cdc67fe7201e589ee8fe2111e597b952a6468cc4",
-      "color.brand-1.base-hover": "f9f630790329a9eae7fc381b9def2faca275cfdd",
-      "color.brand-1.base-active": "734166272030184be5d693e6b0355b44b2847996",
-      "color.brand-1.base-contrast-subtle": "aebd7ada3baaf25d63ec61796cc1c3e92df90c18",
-      "color.brand-1.base-contrast-default": "e9225e6420ed48901e23f36e54232c502c04e687",
       "color.brand-2.background-default": "c8b46e7e3c009ded1c18179cbc277f7765cd2c85",
       "color.brand-2.background-tinted": "03bbf63a57ab185e476872388459636fbb4362bc",
       "color.brand-2.surface-default": "5ffe53c5c208a79519a7e6d45f60138293f95de9",
@@ -1217,7 +1210,23 @@
       "size.18": "d86ba278379e57fbcea61e60c68acf1e1b56316d",
       "size.22": "3d3dde097b62909de76f2d8272a2b5ea436eccea",
       "size.26": "4c6e6337e7b787db3c6242733689eca5c7556b83",
-      "size.30": "255e5fc17def87cfb9a80ff10b2b095d82fafbb6"
+      "size.30": "255e5fc17def87cfb9a80ff10b2b095d82fafbb6",
+      "color.inspirator.background-default": "a721e4586ff5f67e192b76681622f06983992a91",
+      "color.inspirator.background-tinted": "3337c5e271307f8c57e609f6678313baebd82b75",
+      "color.inspirator.surface-default": "f1757fbf01e48187cbd2d5e3ffb07f9827eb612a",
+      "color.inspirator.surface-tinted": "fe8c4ee37cea266d9d0251683561c41a7045a9c4",
+      "color.inspirator.surface-hover": "c3d86f19a9f187f8bf17b23f44b92f2f10ce84df",
+      "color.inspirator.surface-active": "644f57bafe4f3963c7182077dec8a5e632de59bb",
+      "color.inspirator.border-subtle": "641a2c531cced908377ddc6a4edeb52ea1ce3ed4",
+      "color.inspirator.border-default": "28e60cf4c542c4dc1afe23540fca6a947650b4cc",
+      "color.inspirator.border-strong": "0e54b3154ac1d3ceb6eef4b1259f54af447964e3",
+      "color.inspirator.text-subtle": "2df98bf860623b9c4355b511c067d62966229f41",
+      "color.inspirator.text-default": "5acfbdbf9d1b5770ca2ea34ce65f8ec810c0df5b",
+      "color.inspirator.base-default": "cdc67fe7201e589ee8fe2111e597b952a6468cc4",
+      "color.inspirator.base-hover": "f9f630790329a9eae7fc381b9def2faca275cfdd",
+      "color.inspirator.base-active": "734166272030184be5d693e6b0355b44b2847996",
+      "color.inspirator.base-contrast-subtle": "aebd7ada3baaf25d63ec61796cc1c3e92df90c18",
+      "color.inspirator.base-contrast-default": "e9225e6420ed48901e23f36e54232c502c04e687"
     },
     "$figmaStyleReferences": {
       "typography.heading.2xl": "S:8f356210dee7e8e96440f67a005282f742cc6e22,",
@@ -1399,7 +1408,8 @@
     "id": "593774a74235b661fff40693ca7bda160aadfb74",
     "name": "primary",
     "selectedTokenSets": {
-      "semantic/modes/main-color/primary": "enabled"
+      "semantic/modes/main-color/primary": "enabled",
+      "semantic/modes/support-color/inspirator": "disabled"
     },
     "group": "Main color",
     "$figmaCollectionId": "VariableCollectionId:40350:32139",
@@ -1445,7 +1455,7 @@
     "id": "c7b8023bc7f72c73723850a8322697b94b105fe9",
     "name": "brand-1",
     "selectedTokenSets": {
-      "semantic/modes/support-color/brand-1": "enabled"
+      "semantic/modes/support-color/inspirator": "enabled"
     },
     "group": "Support color",
     "$figmaCollectionId": "VariableCollectionId:40350:32140",
@@ -1491,7 +1501,8 @@
     "id": "4fe89e2ed561e4312961e41f0f7e8b3738fee036",
     "name": "brand-2",
     "selectedTokenSets": {
-      "semantic/modes/support-color/brand-2": "enabled"
+      "semantic/modes/support-color/brand-2": "enabled",
+      "semantic/modes/support-color/inspirator": "disabled"
     },
     "group": "Support color",
     "$figmaCollectionId": "VariableCollectionId:40350:32140",
@@ -1537,7 +1548,8 @@
     "id": "b5b5aa6a401521ebe195e3582dfafd5c0c705590",
     "name": "brand-3",
     "selectedTokenSets": {
-      "semantic/modes/support-color/brand-3": "enabled"
+      "semantic/modes/support-color/brand-3": "enabled",
+      "semantic/modes/support-color/inspirator": "disabled"
     },
     "group": "Support color",
     "$figmaCollectionId": "VariableCollectionId:40350:32140",
