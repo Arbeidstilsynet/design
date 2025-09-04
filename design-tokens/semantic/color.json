@@ -264,70 +264,70 @@
         "$value": "{color.veileder.16}"
       }
     },
-    "brand-3": {
+    "tilsyn": {
       "background-default": {
         "$type": "color",
-        "$value": "{color.brand-3.1}"
+        "$value": "{color.tilsyn.1}"
       },
       "background-tinted": {
         "$type": "color",
-        "$value": "{color.brand-3.2}"
+        "$value": "{color.tilsyn.2}"
       },
       "surface-default": {
         "$type": "color",
-        "$value": "{color.brand-3.3}"
+        "$value": "{color.tilsyn.3}"
       },
       "surface-tinted": {
         "$type": "color",
-        "$value": "{color.brand-3.4}"
+        "$value": "{color.tilsyn.4}"
       },
       "surface-hover": {
         "$type": "color",
-        "$value": "{color.brand-3.5}"
+        "$value": "{color.tilsyn.5}"
       },
       "surface-active": {
         "$type": "color",
-        "$value": "{color.brand-3.6}"
+        "$value": "{color.tilsyn.6}"
       },
       "border-subtle": {
         "$type": "color",
-        "$value": "{color.brand-3.7}"
+        "$value": "{color.tilsyn.7}"
       },
       "border-default": {
         "$type": "color",
-        "$value": "{color.brand-3.8}"
+        "$value": "{color.tilsyn.8}"
       },
       "border-strong": {
         "$type": "color",
-        "$value": "{color.brand-3.9}"
+        "$value": "{color.tilsyn.9}"
       },
       "text-subtle": {
         "$type": "color",
-        "$value": "{color.brand-3.10}"
+        "$value": "{color.tilsyn.10}"
       },
       "text-default": {
         "$type": "color",
-        "$value": "{color.brand-3.11}"
+        "$value": "{color.tilsyn.11}"
       },
       "base-default": {
         "$type": "color",
-        "$value": "{color.brand-3.12}"
+        "$value": "{color.tilsyn.12}"
       },
       "base-hover": {
         "$type": "color",
-        "$value": "{color.brand-3.13}"
+        "$value": "{color.tilsyn.13}"
       },
       "base-active": {
         "$type": "color",
-        "$value": "{color.brand-3.14}"
+        "$value": "{color.tilsyn.14}"
       },
       "base-contrast-subtle": {
         "$type": "color",
-        "$value": "{color.brand-3.15}"
+        "$value": "{color.tilsyn.15}"
       },
       "base-contrast-default": {
         "$type": "color",
-        "$value": "{color.brand-3.16}"
+        "$value": "{color.tilsyn.16}"
       }
     },
     "success": {

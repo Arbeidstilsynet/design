@@ -264,70 +264,70 @@
         "$value": "{arbeidstilsynet.veileder.16}"
       }
     },
-    "brand-3": {
+    "tilsyn": {
       "1": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.1}"
+        "$value": "{arbeidstilsynet.tilsyn.1}"
       },
       "2": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.2}"
+        "$value": "{arbeidstilsynet.tilsyn.2}"
       },
       "3": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.3}"
+        "$value": "{arbeidstilsynet.tilsyn.3}"
       },
       "4": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.4}"
+        "$value": "{arbeidstilsynet.tilsyn.4}"
       },
       "5": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.5}"
+        "$value": "{arbeidstilsynet.tilsyn.5}"
       },
       "6": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.6}"
+        "$value": "{arbeidstilsynet.tilsyn.6}"
       },
       "7": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.7}"
+        "$value": "{arbeidstilsynet.tilsyn.7}"
       },
       "8": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.8}"
+        "$value": "{arbeidstilsynet.tilsyn.8}"
       },
       "9": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.9}"
+        "$value": "{arbeidstilsynet.tilsyn.9}"
       },
       "10": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.10}"
+        "$value": "{arbeidstilsynet.tilsyn.10}"
       },
       "11": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.11}"
+        "$value": "{arbeidstilsynet.tilsyn.11}"
       },
       "12": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.12}"
+        "$value": "{arbeidstilsynet.tilsyn.12}"
       },
       "13": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.13}"
+        "$value": "{arbeidstilsynet.tilsyn.13}"
       },
       "14": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.14}"
+        "$value": "{arbeidstilsynet.tilsyn.14}"
       },
       "15": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.15}"
+        "$value": "{arbeidstilsynet.tilsyn.15}"
       },
       "16": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.brand-3.16}"
+        "$value": "{arbeidstilsynet.tilsyn.16}"
       }
     }
   },

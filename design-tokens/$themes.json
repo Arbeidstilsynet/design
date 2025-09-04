@@ -7,7 +7,7 @@
       "primitives/modes/size/medium": "source",
       "primitives/modes/size/global": "enabled",
       "primitives/modes/typography/size/medium": "enabled",
-      "semantic/modes/support-color/veileder": "disabled"
+      "semantic/modes/support-color/tilsyn": "disabled"
     },
     "$figmaCollectionId": "VariableCollectionId:36248:20757",
     "$figmaModeId": "41630:1",
@@ -56,7 +56,7 @@
       "primitives/modes/size/large": "source",
       "primitives/modes/size/global": "enabled",
       "primitives/modes/typography/size/large": "enabled",
-      "semantic/modes/support-color/veileder": "disabled"
+      "semantic/modes/support-color/tilsyn": "disabled"
     },
     "$figmaCollectionId": "VariableCollectionId:36248:20757",
     "$figmaModeId": "41630:2",
@@ -105,7 +105,7 @@
       "primitives/modes/size/small": "source",
       "primitives/modes/size/global": "enabled",
       "primitives/modes/typography/size/small": "enabled",
-      "semantic/modes/support-color/veileder": "disabled"
+      "semantic/modes/support-color/tilsyn": "disabled"
     },
     "$figmaCollectionId": "VariableCollectionId:36248:20757",
     "$figmaModeId": "41630:3",
@@ -153,7 +153,7 @@
     "name": "arbeidstilsynet",
     "selectedTokenSets": {
       "themes/arbeidstilsynet": "enabled",
-      "semantic/modes/support-color/veileder": "disabled"
+      "semantic/modes/support-color/tilsyn": "disabled"
     },
     "group": "Theme",
     "$figmaVariableReferences": {
@@ -189,22 +189,6 @@
       "color.neutral.14": "9c5e250f15e7950dfcfd5db38552da6a97cd2763",
       "color.neutral.15": "a790d2aa569446efd356a446d961418270cf591d",
       "color.neutral.16": "bf76d42659efa9a7bf39777b9bb9918810f1c854",
-      "color.brand-3.1": "24b46aa3fdd537dea9ba53e6060b01f02967fc42",
-      "color.brand-3.2": "6391efb86b1e87c14ba5e367e8f7033557ec803e",
-      "color.brand-3.3": "2c5732e603435a0c46d6e068163efd73720fe772",
-      "color.brand-3.4": "a807820e1e92514d591ded1fa8b33c1bf46c2150",
-      "color.brand-3.5": "856aff80fba23118703954fdc4188d084a5b7658",
-      "color.brand-3.6": "c9ba6a0ea47a60072ec643b04545b7fcbc29c1ed",
-      "color.brand-3.7": "0422c85871f91e74f21a2581bf6a0dd2e863e482",
-      "color.brand-3.8": "4c89cfa23001862e4f584c5af0bc19ae00073a1b",
-      "color.brand-3.9": "9bda471af669d652b9a1d1aed6fb1cb8071993c7",
-      "color.brand-3.10": "7219705cadb8091ba9628b420d556a369519fe60",
-      "color.brand-3.11": "f217c4ea4c73e0a032817ead4d68f28ef1061fbe",
-      "color.brand-3.12": "6c5f10632f15213303f1017e56f0c014cafcc8d0",
-      "color.brand-3.13": "4f4d6ca0293c049eccb47ce106f9dadbb1a51375",
-      "color.brand-3.14": "7767f353f707ea6670d5963f22e8a7e2291167fe",
-      "color.brand-3.15": "36a0fb8f0ecd9037fbce30e4e0b446e8a8d417d5",
-      "color.brand-3.16": "a9fac8d7631ef4fce1b317e1bb1c9e7ce44c4e71",
       "font.family": "96dd2b2a1c87e21815551d27185e3b7cfe9263bb",
       "font-weight.medium": "edd3119df32bca151e16f89886989332782c0091",
       "font-weight.semibold": "73ec0aa0ecfb4e8a93ff32aa0f20142018b5ae2f",
@@ -248,7 +232,23 @@
       "color.veileder.13": "d24257d607fc536f329aa0daf15ef7dfe9513a3c",
       "color.veileder.14": "5623c4e1fddd44f7a34d628e47a35d765c5aceb8",
       "color.veileder.15": "0b33fa4f6875c53d5d0724dd6cbafc0b0de6b808",
-      "color.veileder.16": "cf102ffccc892e7e7373fff2a6b37600389c4117"
+      "color.veileder.16": "cf102ffccc892e7e7373fff2a6b37600389c4117",
+      "color.tilsyn.1": "24b46aa3fdd537dea9ba53e6060b01f02967fc42",
+      "color.tilsyn.2": "6391efb86b1e87c14ba5e367e8f7033557ec803e",
+      "color.tilsyn.3": "2c5732e603435a0c46d6e068163efd73720fe772",
+      "color.tilsyn.4": "a807820e1e92514d591ded1fa8b33c1bf46c2150",
+      "color.tilsyn.5": "856aff80fba23118703954fdc4188d084a5b7658",
+      "color.tilsyn.6": "c9ba6a0ea47a60072ec643b04545b7fcbc29c1ed",
+      "color.tilsyn.7": "0422c85871f91e74f21a2581bf6a0dd2e863e482",
+      "color.tilsyn.8": "4c89cfa23001862e4f584c5af0bc19ae00073a1b",
+      "color.tilsyn.9": "9bda471af669d652b9a1d1aed6fb1cb8071993c7",
+      "color.tilsyn.10": "7219705cadb8091ba9628b420d556a369519fe60",
+      "color.tilsyn.11": "f217c4ea4c73e0a032817ead4d68f28ef1061fbe",
+      "color.tilsyn.12": "6c5f10632f15213303f1017e56f0c014cafcc8d0",
+      "color.tilsyn.13": "4f4d6ca0293c049eccb47ce106f9dadbb1a51375",
+      "color.tilsyn.14": "7767f353f707ea6670d5963f22e8a7e2291167fe",
+      "color.tilsyn.15": "36a0fb8f0ecd9037fbce30e4e0b446e8a8d417d5",
+      "color.tilsyn.16": "a9fac8d7631ef4fce1b317e1bb1c9e7ce44c4e71"
     }
   },
   {
@@ -258,7 +258,7 @@
     "name": "Primary",
     "selectedTokenSets": {
       "primitives/modes/typography/primary/arbeidstilsynet": "enabled",
-      "semantic/modes/support-color/veileder": "disabled"
+      "semantic/modes/support-color/tilsyn": "disabled"
     },
     "group": "Typography",
     "$figmaVariableReferences": {
@@ -275,7 +275,7 @@
     "name": "Secondary",
     "selectedTokenSets": {
       "primitives/modes/typography/secondary/arbeidstilsynet": "enabled",
-      "semantic/modes/support-color/veileder": "disabled"
+      "semantic/modes/support-color/tilsyn": "disabled"
     },
     "group": "Typography",
     "$figmaVariableReferences": {
@@ -290,7 +290,7 @@
     "selectedTokenSets": {
       "primitives/modes/color-scheme/dark/global": "enabled",
       "primitives/modes/color-scheme/dark/arbeidstilsynet": "enabled",
-      "semantic/modes/support-color/veileder": "disabled"
+      "semantic/modes/support-color/tilsyn": "disabled"
     },
     "id": "9ebd8aed52afbffc17e2666e8b4653a53498b257",
     "$figmaCollectionId": "VariableCollectionId:34811:5472",
@@ -393,22 +393,6 @@
       "arbeidstilsynet.primary.14": "802f182debd9fc961fc08de9a7e1338f91abd802",
       "arbeidstilsynet.primary.15": "22214e254c7c7b3fd642d7b0e4840b0c650a5199",
       "arbeidstilsynet.primary.16": "a419241d9340bc3853e7d1c97fa493a96b6d1f12",
-      "arbeidstilsynet.brand-3.1": "148a8ce2b4a033cc64f9fd04c6118e28038c19c4",
-      "arbeidstilsynet.brand-3.2": "6c0e1d51b8c5eb1d002f3127a03b68bf155babd2",
-      "arbeidstilsynet.brand-3.3": "37607f23b36f1cf900d048ee3845517de4573950",
-      "arbeidstilsynet.brand-3.4": "79f7c7c0742f8000d896050cfecd828117cb6371",
-      "arbeidstilsynet.brand-3.5": "9e6a2dba3e93c3e43b4b731d8547af3768568038",
-      "arbeidstilsynet.brand-3.6": "d1382fe22816b1ecee29431788332b40b9ed1a70",
-      "arbeidstilsynet.brand-3.7": "3669d7babee49e00cd2715e89277a122e01c9b3c",
-      "arbeidstilsynet.brand-3.8": "7b8b70dbc221d08af257891d21f4d0e45cd3acce",
-      "arbeidstilsynet.brand-3.9": "bd39500c35df252177ae8b57f03e2812579ebecf",
-      "arbeidstilsynet.brand-3.10": "29f493c8a51d562416f67a1513ac7576e48ce101",
-      "arbeidstilsynet.brand-3.11": "a71e6c776f4405a756e8c412734b54b4283fd78b",
-      "arbeidstilsynet.brand-3.12": "abd14313db73a267b8d1e0f0d8b5f99e710b3110",
-      "arbeidstilsynet.brand-3.13": "f90497d930ab90c4a34a95116783cc14433785e7",
-      "arbeidstilsynet.brand-3.14": "b06ac1accbe19c45f2568dd01f38b6300d87f922",
-      "arbeidstilsynet.brand-3.15": "1cca57bcfdd4b6b0b251d86d6a9c46788de838d6",
-      "arbeidstilsynet.brand-3.16": "410899e52523e2f3415c7be3f27b23e9a78df24d",
       "arbeidstilsynet.neutral.1": "9618104c46370ec6b77d1c4a17d0d67dfd16b5bd",
       "arbeidstilsynet.neutral.2": "8bdd71ed49690ae70dc2867626e1f50782fc1e7c",
       "arbeidstilsynet.neutral.3": "70c91dc95a8522dbe1b1dc5ca4a38e2f98d1af88",
@@ -456,7 +440,23 @@
       "arbeidstilsynet.veileder.13": "2c937f3092736ee23bd404df155f1d2a291653ae",
       "arbeidstilsynet.veileder.14": "0236883837ce878106ca78377e9405bb4d3d1c64",
       "arbeidstilsynet.veileder.15": "206650c61e8e3ff1c462f598f70ae408937707e4",
-      "arbeidstilsynet.veileder.16": "d711fa64e513898b4929f63265a95f47b70956a3"
+      "arbeidstilsynet.veileder.16": "d711fa64e513898b4929f63265a95f47b70956a3",
+      "arbeidstilsynet.tilsyn.1": "148a8ce2b4a033cc64f9fd04c6118e28038c19c4",
+      "arbeidstilsynet.tilsyn.2": "6c0e1d51b8c5eb1d002f3127a03b68bf155babd2",
+      "arbeidstilsynet.tilsyn.3": "37607f23b36f1cf900d048ee3845517de4573950",
+      "arbeidstilsynet.tilsyn.4": "79f7c7c0742f8000d896050cfecd828117cb6371",
+      "arbeidstilsynet.tilsyn.5": "9e6a2dba3e93c3e43b4b731d8547af3768568038",
+      "arbeidstilsynet.tilsyn.6": "d1382fe22816b1ecee29431788332b40b9ed1a70",
+      "arbeidstilsynet.tilsyn.7": "3669d7babee49e00cd2715e89277a122e01c9b3c",
+      "arbeidstilsynet.tilsyn.8": "7b8b70dbc221d08af257891d21f4d0e45cd3acce",
+      "arbeidstilsynet.tilsyn.9": "bd39500c35df252177ae8b57f03e2812579ebecf",
+      "arbeidstilsynet.tilsyn.10": "29f493c8a51d562416f67a1513ac7576e48ce101",
+      "arbeidstilsynet.tilsyn.11": "a71e6c776f4405a756e8c412734b54b4283fd78b",
+      "arbeidstilsynet.tilsyn.12": "abd14313db73a267b8d1e0f0d8b5f99e710b3110",
+      "arbeidstilsynet.tilsyn.13": "f90497d930ab90c4a34a95116783cc14433785e7",
+      "arbeidstilsynet.tilsyn.14": "b06ac1accbe19c45f2568dd01f38b6300d87f922",
+      "arbeidstilsynet.tilsyn.15": "1cca57bcfdd4b6b0b251d86d6a9c46788de838d6",
+      "arbeidstilsynet.tilsyn.16": "410899e52523e2f3415c7be3f27b23e9a78df24d"
     }
   },
   {
@@ -464,7 +464,7 @@
     "selectedTokenSets": {
       "primitives/modes/color-scheme/light/global": "enabled",
       "primitives/modes/color-scheme/light/arbeidstilsynet": "enabled",
-      "semantic/modes/support-color/veileder": "disabled"
+      "semantic/modes/support-color/tilsyn": "disabled"
     },
     "id": "0daa3ca0b427b9349da7e7dc00101b5668972926",
     "$figmaCollectionId": "VariableCollectionId:34811:5472",
@@ -567,22 +567,6 @@
       "arbeidstilsynet.primary.14": "802f182debd9fc961fc08de9a7e1338f91abd802",
       "arbeidstilsynet.primary.15": "22214e254c7c7b3fd642d7b0e4840b0c650a5199",
       "arbeidstilsynet.primary.16": "a419241d9340bc3853e7d1c97fa493a96b6d1f12",
-      "arbeidstilsynet.brand-3.1": "148a8ce2b4a033cc64f9fd04c6118e28038c19c4",
-      "arbeidstilsynet.brand-3.2": "6c0e1d51b8c5eb1d002f3127a03b68bf155babd2",
-      "arbeidstilsynet.brand-3.3": "37607f23b36f1cf900d048ee3845517de4573950",
-      "arbeidstilsynet.brand-3.4": "79f7c7c0742f8000d896050cfecd828117cb6371",
-      "arbeidstilsynet.brand-3.5": "9e6a2dba3e93c3e43b4b731d8547af3768568038",
-      "arbeidstilsynet.brand-3.6": "d1382fe22816b1ecee29431788332b40b9ed1a70",
-      "arbeidstilsynet.brand-3.7": "3669d7babee49e00cd2715e89277a122e01c9b3c",
-      "arbeidstilsynet.brand-3.8": "7b8b70dbc221d08af257891d21f4d0e45cd3acce",
-      "arbeidstilsynet.brand-3.9": "bd39500c35df252177ae8b57f03e2812579ebecf",
-      "arbeidstilsynet.brand-3.10": "29f493c8a51d562416f67a1513ac7576e48ce101",
-      "arbeidstilsynet.brand-3.11": "a71e6c776f4405a756e8c412734b54b4283fd78b",
-      "arbeidstilsynet.brand-3.12": "abd14313db73a267b8d1e0f0d8b5f99e710b3110",
-      "arbeidstilsynet.brand-3.13": "f90497d930ab90c4a34a95116783cc14433785e7",
-      "arbeidstilsynet.brand-3.14": "b06ac1accbe19c45f2568dd01f38b6300d87f922",
-      "arbeidstilsynet.brand-3.15": "1cca57bcfdd4b6b0b251d86d6a9c46788de838d6",
-      "arbeidstilsynet.brand-3.16": "410899e52523e2f3415c7be3f27b23e9a78df24d",
       "arbeidstilsynet.neutral.1": "9618104c46370ec6b77d1c4a17d0d67dfd16b5bd",
       "arbeidstilsynet.neutral.2": "8bdd71ed49690ae70dc2867626e1f50782fc1e7c",
       "arbeidstilsynet.neutral.3": "70c91dc95a8522dbe1b1dc5ca4a38e2f98d1af88",
@@ -630,7 +614,23 @@
       "arbeidstilsynet.veileder.13": "2c937f3092736ee23bd404df155f1d2a291653ae",
       "arbeidstilsynet.veileder.14": "0236883837ce878106ca78377e9405bb4d3d1c64",
       "arbeidstilsynet.veileder.15": "206650c61e8e3ff1c462f598f70ae408937707e4",
-      "arbeidstilsynet.veileder.16": "d711fa64e513898b4929f63265a95f47b70956a3"
+      "arbeidstilsynet.veileder.16": "d711fa64e513898b4929f63265a95f47b70956a3",
+      "arbeidstilsynet.tilsyn.1": "148a8ce2b4a033cc64f9fd04c6118e28038c19c4",
+      "arbeidstilsynet.tilsyn.2": "6c0e1d51b8c5eb1d002f3127a03b68bf155babd2",
+      "arbeidstilsynet.tilsyn.3": "37607f23b36f1cf900d048ee3845517de4573950",
+      "arbeidstilsynet.tilsyn.4": "79f7c7c0742f8000d896050cfecd828117cb6371",
+      "arbeidstilsynet.tilsyn.5": "9e6a2dba3e93c3e43b4b731d8547af3768568038",
+      "arbeidstilsynet.tilsyn.6": "d1382fe22816b1ecee29431788332b40b9ed1a70",
+      "arbeidstilsynet.tilsyn.7": "3669d7babee49e00cd2715e89277a122e01c9b3c",
+      "arbeidstilsynet.tilsyn.8": "7b8b70dbc221d08af257891d21f4d0e45cd3acce",
+      "arbeidstilsynet.tilsyn.9": "bd39500c35df252177ae8b57f03e2812579ebecf",
+      "arbeidstilsynet.tilsyn.10": "29f493c8a51d562416f67a1513ac7576e48ce101",
+      "arbeidstilsynet.tilsyn.11": "a71e6c776f4405a756e8c412734b54b4283fd78b",
+      "arbeidstilsynet.tilsyn.12": "abd14313db73a267b8d1e0f0d8b5f99e710b3110",
+      "arbeidstilsynet.tilsyn.13": "f90497d930ab90c4a34a95116783cc14433785e7",
+      "arbeidstilsynet.tilsyn.14": "b06ac1accbe19c45f2568dd01f38b6300d87f922",
+      "arbeidstilsynet.tilsyn.15": "1cca57bcfdd4b6b0b251d86d6a9c46788de838d6",
+      "arbeidstilsynet.tilsyn.16": "410899e52523e2f3415c7be3f27b23e9a78df24d"
     }
   },
   {
@@ -640,7 +640,7 @@
       "semantic/style": "enabled",
       "semantic/color": "enabled",
       "primitives/globals": "source",
-      "semantic/modes/support-color/veileder": "disabled"
+      "semantic/modes/support-color/tilsyn": "disabled"
     },
     "$figmaCollectionId": "VariableCollectionId:34811:5976",
     "$figmaModeId": "34811:5",
@@ -678,22 +678,6 @@
       "color.neutral.base-active": "622919ae57a14a7de54ebaa04450edac52125ead",
       "color.neutral.base-contrast-subtle": "535e14e74d5d51042840b29e934129abae4c9a5f",
       "color.neutral.base-contrast-default": "2d1a2664366c07ca02ab00780f49aba6a97df221",
-      "color.brand-3.background-default": "c12b05fb1914dd9f678389031d288807b0f66769",
-      "color.brand-3.background-tinted": "4663deedff81081b2f3161b2b129825a6aba0e6a",
-      "color.brand-3.surface-default": "46f72071b3e94deb66b70d26191f72e13f8cdbf1",
-      "color.brand-3.surface-tinted": "1e0b756f167757a396878b67814d31e64b24ef85",
-      "color.brand-3.surface-hover": "aa9a5e588e0582033327fbc03a2283efc3ef945e",
-      "color.brand-3.surface-active": "a19fa8208061f5d918cda6c41b86a8b6061de98d",
-      "color.brand-3.border-subtle": "93051cdab8aed602de2d23dcd2e3cb8127ab635c",
-      "color.brand-3.border-default": "8c7742e1cb5674384c37bea8fb658a190fe103c9",
-      "color.brand-3.border-strong": "d240eea5ef9c04d4a8637a36c0b3bb276cf09593",
-      "color.brand-3.text-subtle": "d7ecb2c479148a16d3265d179ce6579f8b6ff580",
-      "color.brand-3.text-default": "02f87b5e6cc1769d047636564e73b086ac8d45a8",
-      "color.brand-3.base-default": "7850e41774ea26207c47439d43f2366f6ef56ff7",
-      "color.brand-3.base-hover": "d6422e9671c57e40da501885c7c42196ef7e8c43",
-      "color.brand-3.base-active": "5595f501a543b779d21e3a2f3b3d80c82b2285b4",
-      "color.brand-3.base-contrast-subtle": "c283c1e117ed03fbbf64f790a490ee8c29990fe3",
-      "color.brand-3.base-contrast-default": "428233c791a9ce87c18645fcb2e4d11e38152e29",
       "color.success.background-default": "160c336607406cc7afc4414a5c85d03a1d043a9e",
       "color.success.background-tinted": "b3ba5b0594b4bd490c68ab82c388eef4286b2aa2",
       "color.success.surface-default": "2c66c1842e24eae2929b657b3e509c05c408346a",
@@ -820,7 +804,23 @@
       "color.veileder.base-hover": "544351b162845e2c44cc71c31383d174457ac130",
       "color.veileder.base-active": "474b4898c9fec53957bb9b142f5c46d5e3b6774b",
       "color.veileder.base-contrast-subtle": "203ec72952b02a42ef8e6dc5b9cf81c436f8624d",
-      "color.veileder.base-contrast-default": "0dd36ac70979be57932d962da07a0b1a06bba113"
+      "color.veileder.base-contrast-default": "0dd36ac70979be57932d962da07a0b1a06bba113",
+      "color.tilsyn.background-default": "c12b05fb1914dd9f678389031d288807b0f66769",
+      "color.tilsyn.background-tinted": "4663deedff81081b2f3161b2b129825a6aba0e6a",
+      "color.tilsyn.surface-default": "46f72071b3e94deb66b70d26191f72e13f8cdbf1",
+      "color.tilsyn.surface-tinted": "1e0b756f167757a396878b67814d31e64b24ef85",
+      "color.tilsyn.surface-hover": "aa9a5e588e0582033327fbc03a2283efc3ef945e",
+      "color.tilsyn.surface-active": "a19fa8208061f5d918cda6c41b86a8b6061de98d",
+      "color.tilsyn.border-subtle": "93051cdab8aed602de2d23dcd2e3cb8127ab635c",
+      "color.tilsyn.border-default": "8c7742e1cb5674384c37bea8fb658a190fe103c9",
+      "color.tilsyn.border-strong": "d240eea5ef9c04d4a8637a36c0b3bb276cf09593",
+      "color.tilsyn.text-subtle": "d7ecb2c479148a16d3265d179ce6579f8b6ff580",
+      "color.tilsyn.text-default": "02f87b5e6cc1769d047636564e73b086ac8d45a8",
+      "color.tilsyn.base-default": "7850e41774ea26207c47439d43f2366f6ef56ff7",
+      "color.tilsyn.base-hover": "d6422e9671c57e40da501885c7c42196ef7e8c43",
+      "color.tilsyn.base-active": "5595f501a543b779d21e3a2f3b3d80c82b2285b4",
+      "color.tilsyn.base-contrast-subtle": "c283c1e117ed03fbbf64f790a490ee8c29990fe3",
+      "color.tilsyn.base-contrast-default": "428233c791a9ce87c18645fcb2e4d11e38152e29"
     },
     "$figmaStyleReferences": {
       "typography.heading.2xl": "S:8f356210dee7e8e96440f67a005282f742cc6e22,",
@@ -857,7 +857,7 @@
     "name": "primary",
     "selectedTokenSets": {
       "semantic/modes/main-color/primary": "enabled",
-      "semantic/modes/support-color/veileder": "disabled"
+      "semantic/modes/support-color/tilsyn": "disabled"
     },
     "group": "Main color",
     "$figmaCollectionId": "VariableCollectionId:40350:32139",
@@ -886,7 +886,7 @@
     "name": "inspirator",
     "selectedTokenSets": {
       "semantic/modes/support-color/inspirator": "enabled",
-      "semantic/modes/support-color/veileder": "disabled"
+      "semantic/modes/support-color/tilsyn": "disabled"
     },
     "$figmaCollectionId": "VariableCollectionId:40350:32140",
     "$figmaModeId": "12559:4",
@@ -915,7 +915,8 @@
     "id": "4fe89e2ed561e4312961e41f0f7e8b3738fee036",
     "name": "veileder",
     "selectedTokenSets": {
-      "semantic/modes/support-color/veileder": "enabled"
+      "semantic/modes/support-color/veileder": "enabled",
+      "semantic/modes/support-color/tilsyn": "disabled"
     },
     "$figmaCollectionId": "VariableCollectionId:40350:32140",
     "$figmaModeId": "12559:5",
@@ -942,12 +943,10 @@
   },
   {
     "id": "b5b5aa6a401521ebe195e3582dfafd5c0c705590",
-    "name": "brand-3",
+    "name": "tilsyn",
     "selectedTokenSets": {
-      "semantic/modes/support-color/brand-3": "enabled",
-      "semantic/modes/support-color/veileder": "disabled"
+      "semantic/modes/support-color/tilsyn": "enabled"
     },
-    "group": "Support color",
     "$figmaCollectionId": "VariableCollectionId:40350:32140",
     "$figmaModeId": "12559:6",
     "$figmaVariableReferences": {
@@ -967,6 +966,8 @@
       "color.support.base-active": "2627ae5c4adfacbaf31dce093d8259d2a56b664a",
       "color.support.base-contrast-subtle": "64f5cebd3a606389cacfe6b40d4ba6576d155640",
       "color.support.base-contrast-default": "e35d730d4ec3b71273388a5e8688aa8055340cb7"
-    }
+    },
+    "$figmaStyleReferences": {},
+    "group": "Support color"
   }
 ]
