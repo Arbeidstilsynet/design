@@ -1,5 +1,39 @@
 # @arbeidstilsynet/design-react
 
+## 0.1.7
+
+Released: 2025-09-04
+
+### Patch Changes
+
+- Updated dependency `typescript-eslint` to `8.42.0`. ([#269](https://github.com/Arbeidstilsynet/design/pull/269))
+
+- Updated dependency `babel-plugin-react-compiler` to `19.1.0-rc.3`. ([#263](https://github.com/Arbeidstilsynet/design/pull/263))
+
+- Updated dependency `@testing-library/jest-dom` to `6.8.0`. ([#245](https://github.com/Arbeidstilsynet/design/pull/245))
+
+- Updated dependency `@types/node` to `22.18.1`. ([#271](https://github.com/Arbeidstilsynet/design/pull/271))
+
+- Updated dependency `@vitejs/plugin-react` to `5.0.2`. ([#260](https://github.com/Arbeidstilsynet/design/pull/260))
+
+- Updated dependency `@types/react` to `19.1.12`. ([#259](https://github.com/Arbeidstilsynet/design/pull/259))
+
+- Updated dependency `@types/react-dom` to `19.1.9`. ([#262](https://github.com/Arbeidstilsynet/design/pull/262))
+
+- Updated dependency `@digdir/designsystemet-css` to `1.4.0`. ([#243](https://github.com/Arbeidstilsynet/design/pull/243))
+  Updated dependency `@digdir/designsystemet` to `1.4.0`.
+  Updated dependency `@digdir/designsystemet-react` to `1.4.0`.
+
+- Updated dependency `vite` to `7.1.4`. ([#264](https://github.com/Arbeidstilsynet/design/pull/264))
+
+- Updated dependency `@storybook/addon-docs` to `9.1.4`. ([#266](https://github.com/Arbeidstilsynet/design/pull/266))
+  Updated dependency `@storybook/react-vite` to `9.1.4`.
+  Updated dependency `eslint-plugin-storybook` to `9.1.4`.
+  Updated dependency `storybook` to `9.1.4`.
+
+- Updated dependency `@eslint/js` to `9.34.0`. ([#250](https://github.com/Arbeidstilsynet/design/pull/250))
+  Updated dependency `eslint` to `9.34.0`.
+
 ## 0.1.6
 
 Released: 2025-08-19
