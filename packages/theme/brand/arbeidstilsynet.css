@@ -53,22 +53,22 @@ build: v1.1.10
   --ds-color-inspirator-base-active: #064640;
   --ds-color-inspirator-base-contrast-subtle: #ffffff;
   --ds-color-inspirator-base-contrast-default: #ffffff;
-  --ds-color-brand-2-background-default: #ffffff;
-  --ds-color-brand-2-background-tinted: #FFE9B4;
-  --ds-color-brand-2-surface-default: #ffffff;
-  --ds-color-brand-2-surface-tinted: #FFE9B4;
-  --ds-color-brand-2-surface-hover: #FFE199;
-  --ds-color-brand-2-surface-active: #FFC333;
-  --ds-color-brand-2-border-subtle: #E5E5E5;
-  --ds-color-brand-2-border-default: #333333;
-  --ds-color-brand-2-border-strong: #666666;
-  --ds-color-brand-2-text-subtle: #000000;
-  --ds-color-brand-2-text-default: #000000;
-  --ds-color-brand-2-base-default: #FFC333;
-  --ds-color-brand-2-base-hover: #e3ae2d;
-  --ds-color-brand-2-base-active: #fec233;
-  --ds-color-brand-2-base-contrast-subtle: #000000;
-  --ds-color-brand-2-base-contrast-default: #000000;
+  --ds-color-veileder-background-default: #ffffff;
+  --ds-color-veileder-background-tinted: #FFE9B4;
+  --ds-color-veileder-surface-default: #ffffff;
+  --ds-color-veileder-surface-tinted: #FFE9B4;
+  --ds-color-veileder-surface-hover: #FFE199;
+  --ds-color-veileder-surface-active: #FFC333;
+  --ds-color-veileder-border-subtle: #E5E5E5;
+  --ds-color-veileder-border-default: #333333;
+  --ds-color-veileder-border-strong: #666666;
+  --ds-color-veileder-text-subtle: #000000;
+  --ds-color-veileder-text-default: #000000;
+  --ds-color-veileder-base-default: #FFC333;
+  --ds-color-veileder-base-hover: #e3ae2d;
+  --ds-color-veileder-base-active: #fec233;
+  --ds-color-veileder-base-contrast-subtle: #000000;
+  --ds-color-veileder-base-contrast-default: #000000;
   --ds-color-brand-3-background-default: #ffffff;
   --ds-color-brand-3-background-tinted: #B1CDE7;
   --ds-color-brand-3-surface-default: #ffffff;
@@ -205,22 +205,22 @@ build: v1.1.10
   --ds-color-inspirator-base-active: #064640;
   --ds-color-inspirator-base-contrast-subtle: #ffffff;
   --ds-color-inspirator-base-contrast-default: #ffffff;
-  --ds-color-brand-2-background-default: #ffffff;
-  --ds-color-brand-2-background-tinted: #FFE9B4;
-  --ds-color-brand-2-surface-default: #ffffff;
-  --ds-color-brand-2-surface-tinted: #FFE9B4;
-  --ds-color-brand-2-surface-hover: #FFE199;
-  --ds-color-brand-2-surface-active: #FFC333;
-  --ds-color-brand-2-border-subtle: #E5E5E5;
-  --ds-color-brand-2-border-default: #333333;
-  --ds-color-brand-2-border-strong: #666666;
-  --ds-color-brand-2-text-subtle: #000000;
-  --ds-color-brand-2-text-default: #000000;
-  --ds-color-brand-2-base-default: #FFC333;
-  --ds-color-brand-2-base-hover: #e3ae2d;
-  --ds-color-brand-2-base-active: #fec233;
-  --ds-color-brand-2-base-contrast-subtle: #000000;
-  --ds-color-brand-2-base-contrast-default: #000000;
+  --ds-color-veileder-background-default: #ffffff;
+  --ds-color-veileder-background-tinted: #FFE9B4;
+  --ds-color-veileder-surface-default: #ffffff;
+  --ds-color-veileder-surface-tinted: #FFE9B4;
+  --ds-color-veileder-surface-hover: #FFE199;
+  --ds-color-veileder-surface-active: #FFC333;
+  --ds-color-veileder-border-subtle: #E5E5E5;
+  --ds-color-veileder-border-default: #333333;
+  --ds-color-veileder-border-strong: #666666;
+  --ds-color-veileder-text-subtle: #000000;
+  --ds-color-veileder-text-default: #000000;
+  --ds-color-veileder-base-default: #FFC333;
+  --ds-color-veileder-base-hover: #e3ae2d;
+  --ds-color-veileder-base-active: #fec233;
+  --ds-color-veileder-base-contrast-subtle: #000000;
+  --ds-color-veileder-base-contrast-default: #000000;
   --ds-color-brand-3-background-default: #ffffff;
   --ds-color-brand-3-background-tinted: #B1CDE7;
   --ds-color-brand-3-surface-default: #ffffff;
@@ -547,22 +547,22 @@ build: v1.1.10
   --ds-color-inspirator-base-active: #313737;
   --ds-color-inspirator-base-contrast-subtle: #a2a3a3;
   --ds-color-inspirator-base-contrast-default: #ffffff;
-  --ds-color-brand-2-background-default: #1d1b15;
-  --ds-color-brand-2-background-tinted: #26231b;
-  --ds-color-brand-2-surface-default: #302c22;
-  --ds-color-brand-2-surface-tinted: #393428;
-  --ds-color-brand-2-surface-hover: #403b2d;
-  --ds-color-brand-2-surface-active: #494334;
-  --ds-color-brand-2-border-subtle: #58503e;
-  --ds-color-brand-2-border-default: #867b5f;
-  --ds-color-brand-2-border-strong: #b0a17c;
-  --ds-color-brand-2-text-subtle: #b0a17c;
-  --ds-color-brand-2-text-default: #f8e3af;
-  --ds-color-brand-2-base-default: #181611;
-  --ds-color-brand-2-base-hover: #29261d;
-  --ds-color-brand-2-base-active: #3c372a;
-  --ds-color-brand-2-base-contrast-subtle: #a5a4a2;
-  --ds-color-brand-2-base-contrast-default: #ffffff;
+  --ds-color-veileder-background-default: #1d1b15;
+  --ds-color-veileder-background-tinted: #26231b;
+  --ds-color-veileder-surface-default: #302c22;
+  --ds-color-veileder-surface-tinted: #393428;
+  --ds-color-veileder-surface-hover: #403b2d;
+  --ds-color-veileder-surface-active: #494334;
+  --ds-color-veileder-border-subtle: #58503e;
+  --ds-color-veileder-border-default: #867b5f;
+  --ds-color-veileder-border-strong: #b0a17c;
+  --ds-color-veileder-text-subtle: #b0a17c;
+  --ds-color-veileder-text-default: #f8e3af;
+  --ds-color-veileder-base-default: #181611;
+  --ds-color-veileder-base-hover: #29261d;
+  --ds-color-veileder-base-active: #3c372a;
+  --ds-color-veileder-base-contrast-subtle: #a5a4a2;
+  --ds-color-veileder-base-contrast-default: #ffffff;
   --ds-color-brand-3-background-default: #181c1f;
   --ds-color-brand-3-background-tinted: #1f2428;
   --ds-color-brand-3-surface-default: #272d32;
@@ -699,22 +699,22 @@ build: v1.1.10
   --ds-color-inspirator-base-active: #313737;
   --ds-color-inspirator-base-contrast-subtle: #a2a3a3;
   --ds-color-inspirator-base-contrast-default: #ffffff;
-  --ds-color-brand-2-background-default: #1d1b15;
-  --ds-color-brand-2-background-tinted: #26231b;
-  --ds-color-brand-2-surface-default: #302c22;
-  --ds-color-brand-2-surface-tinted: #393428;
-  --ds-color-brand-2-surface-hover: #403b2d;
-  --ds-color-brand-2-surface-active: #494334;
-  --ds-color-brand-2-border-subtle: #58503e;
-  --ds-color-brand-2-border-default: #867b5f;
-  --ds-color-brand-2-border-strong: #b0a17c;
-  --ds-color-brand-2-text-subtle: #b0a17c;
-  --ds-color-brand-2-text-default: #f8e3af;
-  --ds-color-brand-2-base-default: #181611;
-  --ds-color-brand-2-base-hover: #29261d;
-  --ds-color-brand-2-base-active: #3c372a;
-  --ds-color-brand-2-base-contrast-subtle: #a5a4a2;
-  --ds-color-brand-2-base-contrast-default: #ffffff;
+  --ds-color-veileder-background-default: #1d1b15;
+  --ds-color-veileder-background-tinted: #26231b;
+  --ds-color-veileder-surface-default: #302c22;
+  --ds-color-veileder-surface-tinted: #393428;
+  --ds-color-veileder-surface-hover: #403b2d;
+  --ds-color-veileder-surface-active: #494334;
+  --ds-color-veileder-border-subtle: #58503e;
+  --ds-color-veileder-border-default: #867b5f;
+  --ds-color-veileder-border-strong: #b0a17c;
+  --ds-color-veileder-text-subtle: #b0a17c;
+  --ds-color-veileder-text-default: #f8e3af;
+  --ds-color-veileder-base-default: #181611;
+  --ds-color-veileder-base-hover: #29261d;
+  --ds-color-veileder-base-active: #3c372a;
+  --ds-color-veileder-base-contrast-subtle: #a5a4a2;
+  --ds-color-veileder-base-contrast-default: #ffffff;
   --ds-color-brand-3-background-default: #181c1f;
   --ds-color-brand-3-background-tinted: #1f2428;
   --ds-color-brand-3-surface-default: #272d32;
@@ -924,28 +924,6 @@ build: v1.1.10
 }
 }
 @layer ds.theme.color {
-[data-color="brand-2"], [data-color-scheme][data-color="brand-2"] {
-  --ds-color-background-default: var(--ds-color-brand-2-background-default);
-  --ds-color-background-tinted: var(--ds-color-brand-2-background-tinted);
-  --ds-color-surface-default: var(--ds-color-brand-2-surface-default);
-  --ds-color-surface-tinted: var(--ds-color-brand-2-surface-tinted);
-  --ds-color-surface-hover: var(--ds-color-brand-2-surface-hover);
-  --ds-color-surface-active: var(--ds-color-brand-2-surface-active);
-  --ds-color-border-subtle: var(--ds-color-brand-2-border-subtle);
-  --ds-color-border-default: var(--ds-color-brand-2-border-default);
-  --ds-color-border-strong: var(--ds-color-brand-2-border-strong);
-  --ds-color-text-subtle: var(--ds-color-brand-2-text-subtle);
-  --ds-color-text-default: var(--ds-color-brand-2-text-default);
-  --ds-color-base-default: var(--ds-color-brand-2-base-default);
-  --ds-color-base-hover: var(--ds-color-brand-2-base-hover);
-  --ds-color-base-active: var(--ds-color-brand-2-base-active);
-  --ds-color-base-contrast-subtle: var(--ds-color-brand-2-base-contrast-subtle);
-  --ds-color-base-contrast-default: var(--ds-color-brand-2-base-contrast-default);
-}
-
-}
-
-@layer ds.theme.color {
 [data-color="brand-3"], [data-color-scheme][data-color="brand-3"] {
   --ds-color-background-default: var(--ds-color-brand-3-background-default);
   --ds-color-background-tinted: var(--ds-color-brand-3-background-tinted);
@@ -1095,6 +1073,28 @@ build: v1.1.10
   --ds-color-base-active: var(--ds-color-success-base-active);
   --ds-color-base-contrast-subtle: var(--ds-color-success-base-contrast-subtle);
   --ds-color-base-contrast-default: var(--ds-color-success-base-contrast-default);
+}
+
+}
+
+@layer ds.theme.color {
+[data-color="veileder"], [data-color-scheme][data-color="veileder"] {
+  --ds-color-background-default: var(--ds-color-veileder-background-default);
+  --ds-color-background-tinted: var(--ds-color-veileder-background-tinted);
+  --ds-color-surface-default: var(--ds-color-veileder-surface-default);
+  --ds-color-surface-tinted: var(--ds-color-veileder-surface-tinted);
+  --ds-color-surface-hover: var(--ds-color-veileder-surface-hover);
+  --ds-color-surface-active: var(--ds-color-veileder-surface-active);
+  --ds-color-border-subtle: var(--ds-color-veileder-border-subtle);
+  --ds-color-border-default: var(--ds-color-veileder-border-default);
+  --ds-color-border-strong: var(--ds-color-veileder-border-strong);
+  --ds-color-text-subtle: var(--ds-color-veileder-text-subtle);
+  --ds-color-text-default: var(--ds-color-veileder-text-default);
+  --ds-color-base-default: var(--ds-color-veileder-base-default);
+  --ds-color-base-hover: var(--ds-color-veileder-base-hover);
+  --ds-color-base-active: var(--ds-color-veileder-base-active);
+  --ds-color-base-contrast-subtle: var(--ds-color-veileder-base-contrast-subtle);
+  --ds-color-base-contrast-default: var(--ds-color-veileder-base-contrast-default);
 }
 
 }

@@ -7,7 +7,7 @@ declare module '@digdir/designsystemet/types' {
   export interface ColorDefinitions {
     primary: never;
     inspirator: never;
-    'brand-2': never;
+    veileder: never;
     'brand-3': never;
     neutral: never;
   }
