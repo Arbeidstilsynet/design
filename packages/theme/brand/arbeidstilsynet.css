@@ -924,28 +924,6 @@ build: v1.1.10
 }
 }
 @layer ds.theme.color {
-[data-color="brand-1"], [data-color-scheme][data-color="brand-1"] {
-  --ds-color-background-default: var(--ds-color-inspirator-background-default);
-  --ds-color-background-tinted: var(--ds-color-inspirator-background-tinted);
-  --ds-color-surface-default: var(--ds-color-inspirator-surface-default);
-  --ds-color-surface-tinted: var(--ds-color-inspirator-surface-tinted);
-  --ds-color-surface-hover: var(--ds-color-inspirator-surface-hover);
-  --ds-color-surface-active: var(--ds-color-inspirator-surface-active);
-  --ds-color-border-subtle: var(--ds-color-inspirator-border-subtle);
-  --ds-color-border-default: var(--ds-color-inspirator-border-default);
-  --ds-color-border-strong: var(--ds-color-inspirator-border-strong);
-  --ds-color-text-subtle: var(--ds-color-inspirator-text-subtle);
-  --ds-color-text-default: var(--ds-color-inspirator-text-default);
-  --ds-color-base-default: var(--ds-color-inspirator-base-default);
-  --ds-color-base-hover: var(--ds-color-inspirator-base-hover);
-  --ds-color-base-active: var(--ds-color-inspirator-base-active);
-  --ds-color-base-contrast-subtle: var(--ds-color-inspirator-base-contrast-subtle);
-  --ds-color-base-contrast-default: var(--ds-color-inspirator-base-contrast-default);
-}
-
-}
-
-@layer ds.theme.color {
 [data-color="brand-2"], [data-color-scheme][data-color="brand-2"] {
   --ds-color-background-default: var(--ds-color-brand-2-background-default);
   --ds-color-background-tinted: var(--ds-color-brand-2-background-tinted);
@@ -1029,6 +1007,28 @@ build: v1.1.10
   --ds-color-base-active: var(--ds-color-info-base-active);
   --ds-color-base-contrast-subtle: var(--ds-color-info-base-contrast-subtle);
   --ds-color-base-contrast-default: var(--ds-color-info-base-contrast-default);
+}
+
+}
+
+@layer ds.theme.color {
+[data-color="inspirator"], [data-color-scheme][data-color="inspirator"] {
+  --ds-color-background-default: var(--ds-color-inspirator-background-default);
+  --ds-color-background-tinted: var(--ds-color-inspirator-background-tinted);
+  --ds-color-surface-default: var(--ds-color-inspirator-surface-default);
+  --ds-color-surface-tinted: var(--ds-color-inspirator-surface-tinted);
+  --ds-color-surface-hover: var(--ds-color-inspirator-surface-hover);
+  --ds-color-surface-active: var(--ds-color-inspirator-surface-active);
+  --ds-color-border-subtle: var(--ds-color-inspirator-border-subtle);
+  --ds-color-border-default: var(--ds-color-inspirator-border-default);
+  --ds-color-border-strong: var(--ds-color-inspirator-border-strong);
+  --ds-color-text-subtle: var(--ds-color-inspirator-text-subtle);
+  --ds-color-text-default: var(--ds-color-inspirator-text-default);
+  --ds-color-base-default: var(--ds-color-inspirator-base-default);
+  --ds-color-base-hover: var(--ds-color-inspirator-base-hover);
+  --ds-color-base-active: var(--ds-color-inspirator-base-active);
+  --ds-color-base-contrast-subtle: var(--ds-color-inspirator-base-contrast-subtle);
+  --ds-color-base-contrast-default: var(--ds-color-inspirator-base-contrast-default);
 }
 
 }
