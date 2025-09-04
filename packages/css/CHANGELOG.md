@@ -1,5 +1,17 @@
 # @arbeidstilsynet/design-css
 
+## 0.1.5
+
+Released: 2025-09-04
+
+### Patch Changes
+
+- Updated dependency `cssnano` to `7.1.1`. ([#248](https://github.com/Arbeidstilsynet/design/pull/248))
+
+- Updated dependency `@digdir/designsystemet-css` to `1.4.0`. ([#243](https://github.com/Arbeidstilsynet/design/pull/243))
+  Updated dependency `@digdir/designsystemet` to `1.4.0`.
+  Updated dependency `@digdir/designsystemet-react` to `1.4.0`.
+
 ## 0.1.4
 
 Released: 2025-08-19
