@@ -66,7 +66,7 @@
         "$value": "#ffffff"
       }
     },
-    "brand-1": {
+    "inspirator": {
       "1": {
         "$type": "color",
         "$value": "#ffffff"
@@ -132,7 +132,7 @@
         "$value": "#ffffff"
       }
     },
-    "brand-2": {
+    "veileder": {
       "1": {
         "$type": "color",
         "$value": "#ffffff"
@@ -198,7 +198,7 @@
         "$value": "#000000"
       }
     },
-    "brand-3": {
+    "tilsyn": {
       "1": {
         "$type": "color",
         "$value": "#ffffff"
