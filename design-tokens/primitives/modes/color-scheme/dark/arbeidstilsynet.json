@@ -69,63 +69,63 @@
     "inspirator": {
       "1": {
         "$type": "color",
-        "$value": "#191c1b"
+        "$value": "#241413"
       },
       "2": {
         "$type": "color",
-        "$value": "#202424"
+        "$value": "#2F1A19"
       },
       "3": {
         "$type": "color",
-        "$value": "#282d2c"
+        "$value": "#3B211F"
       },
       "4": {
         "$type": "color",
-        "$value": "#303635"
+        "$value": "#442524"
       },
       "5": {
         "$type": "color",
-        "$value": "#363d3c"
+        "$value": "#4F2C29"
       },
       "6": {
         "$type": "color",
-        "$value": "#3d4544"
+        "$value": "#633734"
       },
       "7": {
         "$type": "color",
-        "$value": "#4a5352"
+        "$value": "#76413E"
       },
       "8": {
         "$type": "color",
-        "$value": "#707f7d"
+        "$value": "#BE6964"
       },
       "9": {
         "$type": "color",
-        "$value": "#93a6a4"
+        "$value": "#E2938E"
       },
       "10": {
         "$type": "color",
-        "$value": "#93a6a4"
+        "$value": "#E2938E"
       },
       "11": {
         "$type": "color",
-        "$value": "#d0eae7"
+        "$value": "#F9E9E8"
       },
       "12": {
         "$type": "color",
-        "$value": "#131615"
+        "$value": "#99403D"
       },
       "13": {
         "$type": "color",
-        "$value": "#222625"
+        "$value": "#793331"
       },
       "14": {
         "$type": "color",
-        "$value": "#313737"
+        "$value": "#5C2625"
       },
       "15": {
         "$type": "color",
-        "$value": "#a2a3a3"
+        "$value": "#FEFDFD"
       },
       "16": {
         "$type": "color",
