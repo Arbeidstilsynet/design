@@ -22,7 +22,7 @@ export const HeaderLinksRoot = ({ children, ...props }: HeaderLinksProps) => {
   );
 };
 
-interface LinkItemProps
+export interface LinkItemProps
   extends DefaultProps<HTMLDivElement>,
     React.HtmlHTMLAttributes<HTMLDivElement> {
   asChild: boolean;

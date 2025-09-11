@@ -1,12 +1,28 @@
 import { render, screen } from "@testing-library/react";
 import { Header, type HeaderProps } from ".";
 import { vi } from "vitest";
+import { Link } from "@digdir/designsystemet-react";
 
 const defaultProps: HeaderProps = {
   className: "test-header",
 };
 
 describe("Header", () => {
+  beforeAll(() => {
+    Object.defineProperty(window, "matchMedia", {
+      writable: true,
+      value: (query: string) => ({
+        matches: false,
+        media: query,
+        onchange: null,
+        addListener: vi.fn(), // deprecated
+        removeListener: vi.fn(), // deprecated
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+        dispatchEvent: vi.fn(),
+      }),
+    });
+  });
   beforeEach(() => {
     vi.clearAllMocks();
   });
@@ -14,13 +30,15 @@ describe("Header", () => {
   test("renders with default props", () => {
     render(
       <Header {...defaultProps}>
-        <Header.Banner />
         <Header.Title />
         <Header.Search />
-        <Header.Links links={[{ href: "#", text: "Home" }]} />
+        <Header.Links>
+          <Header.Links.Item asChild={true}>
+            <Link href="#">Home</Link>
+          </Header.Links.Item>
+        </Header.Links>
       </Header>,
     );
-    expect(screen.getByText("Miljøbanner")).toBeInTheDocument();
     expect(screen.getByText("Fagsystem")).toBeInTheDocument();
     expect(screen.getByText("Søk")).toBeInTheDocument();
     expect(screen.getByText("Bruker Brukersen")).toBeInTheDocument();
@@ -29,7 +47,6 @@ describe("Header", () => {
 
   test("renders without children", () => {
     render(<Header {...defaultProps} />);
-    expect(screen.queryByText("Miljøbanner")).not.toBeInTheDocument();
     expect(screen.queryByText("Fagsystem")).not.toBeInTheDocument();
     expect(screen.queryByText("Søk")).not.toBeInTheDocument();
     expect(screen.queryByText("Bruker Brukersen")).not.toBeInTheDocument();
@@ -38,13 +55,15 @@ describe("Header", () => {
   test("applies custom arguments for all children", () => {
     render(
       <Header {...defaultProps}>
-        <Header.Banner text="båt" />
         <Header.Title fagsystemNavn="bil" brukernavn="Jsn for" />
         <Header.Search />
-        <Header.Links links={[{ href: "#", text: "Custom Link" }]} />
+        <Header.Links>
+          <Header.Links.Item asChild={true}>
+            <Link href="#">Custom Link</Link>
+          </Header.Links.Item>
+        </Header.Links>
       </Header>,
     );
-    expect(screen.getByText("båt")).toBeInTheDocument();
     expect(screen.getByText("bil")).toBeInTheDocument();
     expect(screen.getByText("Jsn for")).toBeInTheDocument();
     expect(screen.getByText("Custom Link")).toBeInTheDocument();

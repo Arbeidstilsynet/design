@@ -10,7 +10,6 @@ const meta: Meta<typeof Header> = {
   },
 
   subcomponents: {
-    ["Header.Banner"]: Header.Banner,
     ["Header.Title"]: Header.Title,
     ["Header.Search"]: Header.Search,
     ["Header.Links"]: Header.Links,
@@ -31,7 +30,6 @@ export const Preview: Story = {
     ];
     return (
       <Header {...args}>
-        <Header.Banner>Miljøbanner</Header.Banner>
         <Header.Title />
         <Header.Search />
         <Header.Links>
@@ -50,7 +48,6 @@ export const WithCustomComponent: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Header.Banner />
         <Header.Title />
       </Header>
     );
