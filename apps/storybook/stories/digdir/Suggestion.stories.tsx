@@ -7,16 +7,15 @@ import {
   Paragraph,
   Spinner,
   EXPERIMENTAL_Suggestion as Suggestion,
+  SuggestionItem,
+  SuggestionMultipleProps,
   type SuggestionProps,
+  SuggestionSingleProps,
   useDebounceCallback,
 } from "@arbeidstilsynet/design-react";
 import type { Meta, StoryFn } from "@storybook/react-vite";
 import { type ChangeEvent, useState } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
-
-// SuggestionSelected is not currently exported from @digdir/designsystemet-react
-type Item = { label: string; value: string };
-type SuggestionSelected = Array<string | Partial<Item>> | string;
 
 export default {
   title: "designsystemet.no/Suggestion",
@@ -97,8 +96,8 @@ export const Preview: StoryFn<typeof Suggestion> = (args) => {
   );
 };
 
-export const ControlledSingleArray: StoryFn<typeof Suggestion> = (args) => {
-  const [selected, setSelected] = useState<string[]>(["Oslo"]);
+export const ControlledSingle: StoryFn<SuggestionSingleProps> = (args) => {
+  const [selected, setSelected] = useState<string | undefined>("");
 
   return (
     <>
@@ -107,74 +106,7 @@ export const ControlledSingleArray: StoryFn<typeof Suggestion> = (args) => {
         <Suggestion
           {...args}
           selected={selected}
-          onSelectedChange={(items) =>
-            setSelected(items.map((item) => item.value))
-          }
-        >
-          <Suggestion.Input />
-          <Suggestion.Clear />
-          <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
-            {DATA_PLACES.map((place) => (
-              <Suggestion.Option key={place} label={place} value={place}>
-                {place}
-                <div>Kommune</div>
-              </Suggestion.Option>
-            ))}
-          </Suggestion.List>
-        </Suggestion>
-      </Field>
-      <Divider style={{ marginTop: "var(--ds-size-4)" }} />
-
-      <Paragraph style={{ margin: "var(--ds-size-2) 0" }}>
-        Valgte reisemål: {selected.join(", ")}
-      </Paragraph>
-
-      <Button
-        onClick={() => {
-          setSelected(["Sogndal"]);
-        }}
-      >
-        Sett reisemål til Sogndal
-      </Button>
-    </>
-  );
-};
-ControlledSingleArray.play = async ({ canvasElement, step }) => {
-  const input = await waitFor(() =>
-    within(canvasElement).getByRole("combobox"),
-  );
-  const resultText = within(canvasElement).getByText("Valgte reisemål:", {
-    exact: false,
-  });
-  const button = within(canvasElement).getByText("Sett reisemål", {
-    exact: false,
-    selector: "button",
-  });
-
-  await step("Initial state is rendered correctly", async () => {
-    await expect(resultText).toHaveTextContent("Oslo");
-    await waitFor(() => expect(input).toHaveValue("Oslo"));
-  });
-
-  await step("Controlled state change renders correctly", async () => {
-    await userEvent.click(button);
-    await expect(resultText).toHaveTextContent("Sogndal");
-    await waitFor(() => expect(input).toHaveValue("Sogndal"));
-  });
-};
-
-export const ControlledSingle: StoryFn<typeof Suggestion> = (args) => {
-  const [selected, setSelected] = useState<string>("");
-
-  return (
-    <>
-      <Field>
-        <Label>Velg destinasjon</Label>
-        <Suggestion
-          {...args}
-          selected={selected}
-          onSelectedChange={(items) => setSelected(items.at(0)?.value ?? "")}
+          onSelectedChange={(item) => setSelected(item?.value)}
         >
           <Suggestion.Input />
           <Suggestion.Clear />
@@ -229,7 +161,7 @@ ControlledSingle.play = async ({ canvasElement, step }) => {
   });
 };
 
-export const ControlledMultiple: StoryFn<typeof Suggestion> = (args) => {
+export const ControlledMultiple: StoryFn<SuggestionMultipleProps> = (args) => {
   const [selected, setSelected] = useState<string[]>(["Oslo"]);
 
   return (
@@ -305,12 +237,10 @@ ControlledMultiple.play = async ({ canvasElement, step }) => {
   });
 };
 
-export const ControlledIndependentLabelValue: StoryFn<typeof Suggestion> = (
+export const ControlledIndependentLabelValue: StoryFn<SuggestionSingleProps> = (
   args,
 ) => {
-  const [items, setItems] = useState<typeof DATA_PEOPLE>(
-    DATA_PEOPLE.slice(0, 1),
-  );
+  const [item, setItem] = useState<SuggestionItem | undefined>(DATA_PEOPLE[0]);
 
   return (
     <>
@@ -318,8 +248,8 @@ export const ControlledIndependentLabelValue: StoryFn<typeof Suggestion> = (
         <Label>Velg person</Label>
         <Suggestion
           {...args}
-          selected={items.slice(0, 1)}
-          onSelectedChange={(items) => setItems(items)}
+          selected={item}
+          onSelectedChange={setItem}
           filter={false}
         >
           <Suggestion.Input />
@@ -346,13 +276,13 @@ export const ControlledIndependentLabelValue: StoryFn<typeof Suggestion> = (
             width: 400,
           }}
         >
-          {JSON.stringify(items)}
+          {JSON.stringify(item)}
         </pre>
       </div>
 
       <Button
         onClick={() => {
-          setItems(DATA_PEOPLE.slice(2, 3));
+          setItem(DATA_PEOPLE[2]);
         }}
       >
         Sett Nina
@@ -445,8 +375,8 @@ export const CustomMatching: StoryFn<typeof Suggestion> = (args) => {
   );
 };
 
-export const AlwaysShowAll: StoryFn<typeof Suggestion> = (args) => {
-  const [selected, setSelected] = useState<SuggestionSelected>("Sogndal");
+export const AlwaysShowAll: StoryFn<SuggestionSingleProps> = (args) => {
+  const [selected, setSelected] = useState<string | undefined>("Sogndal");
 
   return (
     <Field>
@@ -455,7 +385,7 @@ export const AlwaysShowAll: StoryFn<typeof Suggestion> = (args) => {
         {...args}
         selected={selected}
         filter={false}
-        onSelectedChange={(values) => setSelected(values)}
+        onSelectedChange={(item) => setSelected(item?.value)}
       >
         <Suggestion.Input />
         <Suggestion.Clear />
@@ -529,11 +459,11 @@ FetchExternal.parameters = {
   },
 };
 
-export const DefaultValue: StoryFn<typeof Suggestion> = (args) => {
+export const DefaultValue: StoryFn<SuggestionSingleProps> = (args) => {
   return (
     <Field>
       <Label>Velg en destinasjon</Label>
-      <Suggestion {...args} defaultSelected={["Sogndal"]}>
+      <Suggestion {...args} defaultSelected={"Sogndal"}>
         <Suggestion.Input />
         <Suggestion.Clear />
         <Suggestion.List>

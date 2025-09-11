@@ -1,5 +1,17 @@
 # @arbeidstilsynet/design-theme
 
+## 0.1.0
+
+Released: 2025-09-04
+
+### Minor Changes
+
+- Rename support color brands to inspirator,veileder,tilsyn ([#272](https://github.com/Arbeidstilsynet/design/pull/272))
+
+### Patch Changes
+
+- Endret farger for inspirator light/dark ([#273](https://github.com/Arbeidstilsynet/design/pull/273))
+
 ## 0.0.14
 
 Released: 2025-08-05
