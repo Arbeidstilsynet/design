@@ -76,3 +76,19 @@ export default function RootLayout({
   );
 }
 ```
+
+## Development
+
+- Install all packages
+
+`pnpm i`
+
+- Project structure
+
+`/apps/storybook` contains the web ui and configuration for Storybook.
+
+`/packages/react/` contains the code for our custom React components. Add new React components here.
+
+`/packages/css/` contains styling for the custom React components. Add styling files here. Remember to add container queries for small screens.
+
+You need to manually add the new component to the index.ts file as an export. And you need to manually add the css file to the index.css file as an export.
