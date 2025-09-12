@@ -6,9 +6,9 @@ import { HeaderLinks } from "./headerLinks";
 /**
  * Header component for the design system.
  * It includes optional title, search, and links sections.
- * 
+ *
  * Uses Radix UI's Slot for flexible link items.
- * 
+ *
  */
 
 const Header = Object.assign(HeaderParent, {

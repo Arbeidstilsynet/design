@@ -24,7 +24,7 @@ export const HeaderLinksRoot = ({ children, ...props }: HeaderLinksProps) => {
 
 export interface LinkItemProps
   extends DefaultProps<HTMLDivElement>,
-  React.HtmlHTMLAttributes<HTMLDivElement> {
+    React.HtmlHTMLAttributes<HTMLDivElement> {
   asChild?: boolean;
   children: React.ReactNode;
 }
