@@ -1,8 +1,8 @@
 import { CloudUpIcon } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
-import { use } from "react";
+import { use, type HTMLAttributes } from "react";
 import { useDropzone } from "react-dropzone";
-import { Button, type ButtonProps, Label, Spinner } from "../../digdir";
+import { Button, Label, Spinner } from "../../digdir";
 import type { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 
@@ -14,7 +14,7 @@ function DefaultLabel({
   return (
     <>
       <span style={{ display: "flex", flexFlow: "row" }}>
-        <CloudUpIcon />
+        <CloudUpIcon title="Cloud" />
         <Label
           style={{
             textDecoration: "underline",
@@ -29,8 +29,8 @@ function DefaultLabel({
 }
 
 export interface FilePickerDropzoneProps
-  extends DefaultProps<HTMLButtonElement>,
-    Omit<ButtonProps, "children" | "asChild" | "variant" | "type" | "icon"> {
+  extends DefaultProps<HTMLDivElement>,
+    HTMLAttributes<HTMLDivElement> {
   /** Replace the default label nodes. Should use `<Label>` or other typography. */
   label?: React.ReactNode;
 
@@ -53,27 +53,51 @@ export function FilePickerDropzone({
   ...rest
 }: Readonly<FilePickerDropzoneProps>) {
   const { onAdd, disabled, isWaiting } = use(FilePickerContext);
+  const isDisabled = Boolean(disabled || isWaiting);
 
   const onDrop = (acceptedFiles: File[]) => {
     void onAdd(acceptedFiles);
   };
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
+
+  const { getRootProps, getInputProps, isDragActive, open } = useDropzone({
+    onDrop,
+    noClick: true, // we trigger via the button
+    noKeyboard: true, // native keyboard on the button
+    disabled: isDisabled,
+  });
 
   return (
-    <Button
-      className={clsx("at-filepicker-dropzone", className)}
-      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
-      disabled={disabled || isWaiting}
-      {...getRootProps({ role: "button", ...rest })}
+    <div
+      {...getRootProps({
+        // Wrapper handles drag events only
+        role: "group",
+        "aria-disabled": isDisabled || undefined,
+        className: clsx(
+          "at-filepicker-dropzone-wrapper",
+          isDisabled && "is-disabled",
+          className,
+        ),
+        ...rest,
+      })}
     >
-      <input {...getInputProps()} />
-      {isWaiting && <Spinner aria-label="Processing files" data-size="lg" />}
-      {!isWaiting &&
-        (isDragActive ? (
-          <Label>{dropLabel}</Label>
-        ) : (
-          (label ?? <DefaultLabel defaultLabelText={defaultLabelText} />)
-        ))}
-    </Button>
+      <input {...getInputProps()} aria-hidden />
+
+      <Button
+        type="button"
+        disabled={isDisabled}
+        className={clsx("at-filepicker-dropzone", isDragActive && "is-drag")}
+        onClick={() => {
+          if (!isDisabled) open();
+        }}
+      >
+        {isWaiting && <Spinner aria-label="Processing files" data-size="lg" />}
+        {!isWaiting &&
+          (isDragActive ? (
+            <Label>{dropLabel}</Label>
+          ) : (
+            (label ?? <DefaultLabel defaultLabelText={defaultLabelText} />)
+          ))}
+      </Button>
+    </div>
   );
 }

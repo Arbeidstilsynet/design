@@ -3,6 +3,19 @@
   max-width: 43rem;
 }
 
+.at-filepicker-dropzone-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.at-filepicker-dropzone.is-drag {
+  border-style: solid; /* switch from dashed while dragging */
+  border-color: var(--ds-color-info-base-default);
+  background-color: var(--ds-color-info-surface-tinted);
+  /* Optional subtle elevation */
+  box-shadow: 0 0 0 1px var(--ds-color-info-border-subtle);
+}
+
 .at-filepicker-dropzone {
   display: flex;
   width: 100%;

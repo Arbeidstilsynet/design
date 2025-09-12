@@ -163,7 +163,7 @@ describe("FilePicker", () => {
     );
 
     const fileInput = screen
-      .getByRole("button")
+      .getByRole("group")
       .querySelector("input[type='file']");
     expect(fileInput).not.toBeNull();
     await user.upload(fileInput as HTMLElement, file);
@@ -295,7 +295,7 @@ describe("FilePicker", () => {
     );
 
     const fileInput = screen
-      .getByRole("button")
+      .getByRole("group")
       .querySelector("input[type='file']");
     await user.upload(fileInput as HTMLElement, files);
 

@@ -2,7 +2,7 @@ import { coverageConfigDefaults, defineConfig } from "vitest/config";
 
 export default defineConfig({
   test: {
-    workspace: ["packages/*", "scripts"],
+    projects: ["packages/*", "scripts", "apps/*"],
     reporters: ["default", "junit"],
     outputFile: {
       junit: "test-report.xml",
