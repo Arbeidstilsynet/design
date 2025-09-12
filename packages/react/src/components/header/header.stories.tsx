@@ -49,7 +49,7 @@ export const WithCustomComponent: Story = {
     return (
       <Header {...args}>
         <Header.Title />
-        <div style={{ marginLeft: "auto", backgroundColor: "orange" }}>
+        <div style={{ width: "100%", backgroundColor: "orange" }}>
           <p>Custom component can be placed here</p>
         </div>
       </Header>
