@@ -6,6 +6,11 @@
       "matchPackageNames": ["@digdir/designsystemet*"],
       "matchManagers": ["npm"],
       "groupName": "@digdir/designsystemet"
+    },
+    {
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["dependencies"],
+      "rangeStrategy": "bump"
     }
   ]
 }
