@@ -8,6 +8,9 @@ import { HeaderLinks } from "./headerLinks";
  * It includes optional title, search, and links sections.
  *
  * Uses Radix UI's Slot for flexible link items.
+ * This means that you can pass any component as a child to `Header.Links.Item` and it will render correctly.
+ * The `asChild` prop must be set to `true` on `Header.Links.Item` to enable this behavior.
+ * Any className passed to `Header.Links.Item` will be applied to the child component.
  *
  */
 
