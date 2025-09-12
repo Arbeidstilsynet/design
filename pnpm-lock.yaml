@@ -146,7 +146,7 @@ importers:
         specifier: 1.4.0
         version: 1.4.0(@types/react@19.1.12)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@navikt/aksel-icons':
-        specifier: ^7.23.0
+        specifier: ^7.29.1
         version: 7.29.1
       '@radix-ui/react-slot':
         specifier: ^1.2.3
