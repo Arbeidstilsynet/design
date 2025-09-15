@@ -2,7 +2,6 @@ import { clsx } from "clsx/lite";
 import type { DefaultProps } from "../../types";
 import type { HTMLAttributes } from "react";
 import { Search } from "../../digdir";
-import { useMediaQuery } from "../hooks/useMediaQuery";
 
 export interface HeaderSearchProps
   extends DefaultProps<HTMLDivElement>,
@@ -14,26 +13,18 @@ export function HeaderSearch({
   className,
   ...rest
 }: Readonly<HeaderSearchProps>) {
-  const isMobile = useMediaQuery("(max-width: 30rem)");
-  const dataSize = isMobile ? "xs" : "md";
   return (
-    <div
-      className={clsx("at-header__search-background", className)}
-      {...rest}
-      data-size={dataSize}
-    >
+    <div className={clsx("at-header__search-background", className)} {...rest}>
       <div className={clsx("at-header__search")}>
-        {isMobile ? (
-          <Search>
-            <Search.Input name="placeholder" aria-label="Søk" />
-          </Search>
-        ) : (
-          <Search>
-            <Search.Input name="placeholder" aria-label="Søk" />
-            <Search.Clear />
-            <Search.Button />
-          </Search>
-        )}
+        <Search>
+          <Search.Input
+            name="placeholder"
+            aria-label="Søk"
+            className="at-header__search-input"
+          />
+          <Search.Clear className="at-header__search-clear" />
+          <Search.Button className="at-header__search-button" />
+        </Search>
       </div>
     </div>
   );
