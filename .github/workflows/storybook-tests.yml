@@ -1,0 +1,13 @@
+name: Storybook tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
+      - uses: ./.github/actions/setup
+      - run: pnpm --filter @arbeidstilsynet/storybook test
