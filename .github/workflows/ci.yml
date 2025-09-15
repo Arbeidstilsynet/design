@@ -57,3 +57,7 @@ jobs:
         if: steps.test.outcome == 'success' || steps.test.outcome == 'failure'
         with:
           files: "test-report.xml"
+
+  storybook-tests:
+    name: Storybook Tests
+    uses: ./.github/workflows/storybook-tests.yml
