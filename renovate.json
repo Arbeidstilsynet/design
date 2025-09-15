@@ -5,7 +5,8 @@
     {
       "matchPackageNames": ["@digdir/designsystemet*"],
       "matchManagers": ["npm"],
-      "groupName": "@digdir/designsystemet"
+      "groupName": "@digdir/designsystemet",
+      "automerge": false
     },
     {
       "matchManagers": ["npm"],
