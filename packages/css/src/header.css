@@ -72,6 +72,11 @@
   padding-top: var(--ds-size-2);
 }
 
+.at-header__search-clear,
+.at-header__search-button {
+  display: inline-flex;
+}
+
 .at-header__links-root {
   width: 100%;
   background-color: transparent;
@@ -81,7 +86,7 @@
   --hamburger-gap: 6px;
   --foreground: #333;
   --background: white;
-  --hamburger-margin: 8px;
+  --hamburger-margin: var(--ds-size-4);
   --animation-timing: 200ms ease-in-out;
   --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
@@ -94,7 +99,7 @@
   gap: var(--hamburger-gap);
   width: max-content;
   position: absolute;
-  top: -2.5rem;
+  top: -2.8rem;
   left: var(--hamburger-margin);
   z-index: 2;
   cursor: pointer;
@@ -105,9 +110,9 @@
   flex-direction: row;
   box-sizing: border-box;
   padding-left: var(--ds-size-4);
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  gap: 2rem;
+  padding-top: var(--ds-size-2);
+  padding-bottom: var(--ds-size-2);
+  gap: var(--ds-size-8);
   background-color: var(--ds-color-primary-background-tinted);
 }
 
@@ -162,11 +167,14 @@
   .at-header__search {
     width: 100%;
     justify-content: flex-end;
-    padding-top: 0.5rem;
-    padding-left: calc(var(--hamburger-width) + var(--ds-size-4));
+    padding-top: var(--ds-size-2);
+    padding-right: var(--ds-size-2);
+    padding-left: calc(var(--hamburger-width) + var(--ds-size-6));
   }
-  .at-header__search-background {
-    height: 3rem;
+
+  .at-header__search-clear,
+  .at-header__search-button {
+    display: none;
   }
   .at-header__title-left svg {
     width: 5rem;
@@ -177,13 +185,12 @@
   }
   .at-header__links {
     background-color: transparent;
-    padding-left: 0.2rem;
     flex-wrap: wrap;
     transition:
       translate var(--animation-timing),
       background-color var(--animation-timing);
     translate: -100%;
-    padding: 0.5rem 1rem;
+    padding: var(--ds-size-2) var(--ds-size-4);
   }
   .hamburger-menu:has(input:checked) + .at-header__links {
     translate: 0;
@@ -194,7 +201,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 2rem;
     height: auto;
-    padding: 0.5rem 1rem;
+    padding: var(--ds-size-2) var(--ds-size-4);
     flex: auto;
   }
   .at-header__title-left {
