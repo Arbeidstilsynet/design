@@ -2,9 +2,9 @@ name: Storybook tests
 
 on:
   workflow_dispatch:
-  pull_request:
+  push:
     branches:
-      - "feat/storybook-a11y"
+      - feat/storybook-a11y
 
 jobs:
   test:
