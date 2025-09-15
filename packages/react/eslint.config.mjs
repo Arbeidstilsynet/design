@@ -43,6 +43,16 @@ const config = tseslint.config(
       "react-hooks/react-compiler": "error",
       eqeqeq: "error",
 
+      "@typescript-eslint/prefer-nullish-coalescing": [
+        "error",
+        {
+          ignoreBooleanCoercion: true,
+          ignorePrimitives: {
+            boolean: true,
+          },
+        },
+      ],
+
       "@typescript-eslint/no-misused-promises": [
         "error",
         {
