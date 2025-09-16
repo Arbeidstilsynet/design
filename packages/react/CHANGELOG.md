@@ -1,5 +1,34 @@
 # @arbeidstilsynet/design-react
 
+## 0.2.0
+
+Released: 2025-09-16
+
+### Minor Changes
+
+- Add Header component ([#283](https://github.com/Arbeidstilsynet/design/pull/283))
+  Add Logo for light/dark mode
+
+### Patch Changes
+
+- Exclude stories types from published declarations ([#291](https://github.com/Arbeidstilsynet/design/pull/291))
+
+- Add exports: LogoBlack, LogoGreen, LogoWhite ([#286](https://github.com/Arbeidstilsynet/design/pull/286))
+
+- Updated dependency `@digdir/designsystemet-css` to `1.5.0`. ([#290](https://github.com/Arbeidstilsynet/design/pull/290))
+  Updated dependency `@digdir/designsystemet` to `1.5.0`.
+  Updated dependency `@digdir/designsystemet-react` to `1.5.0`.
+
+- Updated dependency `@types/react` to `19.1.13`. ([#294](https://github.com/Arbeidstilsynet/design/pull/294))
+
+- Updated dependency `@navikt/aksel-icons` to `^7.30.1`. ([#296](https://github.com/Arbeidstilsynet/design/pull/296))
+
+- Updated dependency `@types/node` to `22.18.3`. ([#293](https://github.com/Arbeidstilsynet/design/pull/293))
+
+- FilePicker: change border and background on Dropzone when dragging files ([#291](https://github.com/Arbeidstilsynet/design/pull/291))
+
+- FilePicker: accessibility tweaks, avoid nested button and input ([#291](https://github.com/Arbeidstilsynet/design/pull/291))
+
 ## 0.1.8
 
 Released: 2025-09-09

@@ -1,5 +1,24 @@
 # @arbeidstilsynet/design-css
 
+## 0.2.0
+
+Released: 2025-09-16
+
+### Minor Changes
+
+- Add Header component ([#283](https://github.com/Arbeidstilsynet/design/pull/283))
+  Add Logo for light/dark mode
+
+### Patch Changes
+
+- Updated dependency `@digdir/designsystemet-css` to `1.5.0`. ([#290](https://github.com/Arbeidstilsynet/design/pull/290))
+  Updated dependency `@digdir/designsystemet` to `1.5.0`.
+  Updated dependency `@digdir/designsystemet-react` to `1.5.0`.
+
+- FilePicker: change border and background on Dropzone when dragging files ([#291](https://github.com/Arbeidstilsynet/design/pull/291))
+
+- FilePicker: accessibility tweaks, avoid nested button and input ([#291](https://github.com/Arbeidstilsynet/design/pull/291))
+
 ## 0.1.5
 
 Released: 2025-09-04
