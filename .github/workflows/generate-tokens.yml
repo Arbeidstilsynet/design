@@ -25,7 +25,7 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
-      - uses: ./.github/actions/setup
+      - uses: Arbeidstilsynet/action-pnpm-setup@v1
 
       - name: Generate CSS
         run: pnpm build:tokens

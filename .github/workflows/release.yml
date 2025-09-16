@@ -27,7 +27,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
-      - uses: ./.github/actions/setup
+      - uses: Arbeidstilsynet/action-pnpm-setup@v1
 
       - uses: changesets/action@v1
         id: changeset
