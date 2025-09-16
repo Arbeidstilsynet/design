@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.2.0
+
+Released: 2025-09-16
+
+### Minor Changes
+
+- Rebuilt theme with @digdir/designsystemet v1.5.0, see size changes in https://github.com/digdir/designsystemet/releases/tag/v1.5.0 ([#291](https://github.com/Arbeidstilsynet/design/pull/291))
+
 ## 0.1.0
 
 Released: 2025-09-04
