@@ -13,7 +13,7 @@ jobs:
         working-directory: ./apps/storybook
     steps:
       - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
-      - uses: Arbeidstilsynet/action-pnpm-setup@v1
+      - uses: Arbeidstilsynet/action-pnpm-setup@e1b9e26933e5766b9ea74e7fc60d52fea32172a1 # v1
       - run: pnpm exec playwright install
       - name: Build CSS
         run: pnpm --filter @arbeidstilsynet/design-css build
