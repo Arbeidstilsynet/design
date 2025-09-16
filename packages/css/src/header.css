@@ -99,7 +99,7 @@
   gap: var(--hamburger-gap);
   width: max-content;
   position: absolute;
-  top: -2.8rem;
+  top: calc(-1 * var(--ds-size-11));
   left: var(--hamburger-margin);
   z-index: 2;
   cursor: pointer;
