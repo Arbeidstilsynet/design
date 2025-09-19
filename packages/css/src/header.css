@@ -18,24 +18,6 @@
   padding: 0 var(--ds-size-4);
 }
 
-[data-color-scheme="light"] {
-  .at-header__title-light {
-    display: flex;
-  }
-  .at-header__title-dark {
-    display: none;
-  }
-}
-
-[data-color-scheme="dark"] {
-  .at-header__title-light {
-    display: none;
-  }
-  .at-header__title-dark {
-    display: flex;
-  }
-}
-
 .at-header__title-left,
 .at-header__title-center,
 .at-header__title-right {

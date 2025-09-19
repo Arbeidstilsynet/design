@@ -1,9 +1,8 @@
 import { clsx } from "clsx/lite";
-import { LogoBlack } from "../logo/logoblack";
-import { LogoWhite } from "../logo/logowhite";
 import { Avatar } from "../../digdir";
 import type { DefaultProps } from "../../types";
 import type { HTMLAttributes } from "react";
+import { LightDarkLogo } from "../logo/lightdarklogo";
 
 export interface HeaderTitleProps
   extends DefaultProps<HTMLDivElement>,
@@ -34,12 +33,7 @@ export function HeaderTitle({
     <div className={clsx("at-header__title-background", className)} {...rest}>
       <div className={clsx("at-header__title")}>
         <div className={clsx("at-header__title-left")}>
-          <span className={clsx("at-header__title-light")}>
-            <LogoBlack />
-          </span>
-          <span className={clsx("at-header__title-dark")}>
-            <LogoWhite />
-          </span>
+          <LightDarkLogo />
         </div>
         <div className={clsx("at-header__title-center")}>
           <p>{fagsystemNavn}</p>
