@@ -1,0 +1,38 @@
+.at-logo-wrapper > .at-logo {
+  grid-area: 1 / 1;
+  display: flex;
+}
+
+.at-logo-dark {
+  display: none;
+}
+
+[data-color-scheme="light"] .at-logo-light {
+  display: flex;
+}
+[data-color-scheme="light"] .at-logo-dark {
+  display: none;
+}
+
+[data-color-scheme="dark"] .at-logo-light {
+  display: none;
+}
+[data-color-scheme="dark"] .at-logo-dark {
+  display: flex;
+}
+
+[data-color-scheme="auto"] .at-logo-light {
+  display: flex;
+}
+[data-color-scheme="auto"] .at-logo-dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-color-scheme="auto"] .at-logo-light {
+    display: none;
+  }
+  [data-color-scheme="auto"] .at-logo-dark {
+    display: flex;
+  }
+}
