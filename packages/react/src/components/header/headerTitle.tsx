@@ -1,7 +1,7 @@
 import { clsx } from "clsx/lite";
+import type { HTMLAttributes } from "react";
 import { Avatar } from "../../digdir";
 import type { DefaultProps } from "../../types";
-import type { HTMLAttributes } from "react";
 import { LightDarkLogo } from "../logo/lightdarklogo";
 
 export interface HeaderTitleProps
@@ -33,7 +33,7 @@ export function HeaderTitle({
     <div className={clsx("at-header__title-background", className)} {...rest}>
       <div className={clsx("at-header__title")}>
         <div className={clsx("at-header__title-left")}>
-          <LightDarkLogo />
+          <LightDarkLogo width="150px" />
         </div>
         <div className={clsx("at-header__title-center")}>
           <p>{fagsystemNavn}</p>
