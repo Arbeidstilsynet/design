@@ -1,10 +1,4 @@
-.at-logo-wrapper {
-  display: inline-grid;
-  place-items: center;
-}
-
 .at-logo-wrapper > .at-logo {
-  grid-area: 1 / 1;
   display: flex;
 }
 
