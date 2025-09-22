@@ -18,8 +18,8 @@ importers:
         specifier: 2.29.7
         version: 2.29.7(@types/node@22.18.6)
       '@digdir/designsystemet':
-        specifier: 1.5.0
-        version: 1.5.0
+        specifier: 1.5.1
+        version: 1.5.1
       '@storybook/addon-vitest':
         specifier: 9.1.7
         version: 9.1.7(@vitest/browser@3.2.4)(@vitest/runner@3.2.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(storybook@9.1.7(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@7.1.6(@types/node@22.18.6)(tsx@4.20.5)(yaml@2.8.0)))(vitest@3.2.4)
@@ -136,8 +136,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.5.0
-        version: 1.5.0
+        specifier: 1.5.1
+        version: 1.5.1
     devDependencies:
       autoprefixer:
         specifier: 10.4.21
@@ -164,8 +164,8 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.5.0
-        version: 1.5.0(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: 1.5.1
+        version: 1.5.1(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@navikt/aksel-icons':
         specifier: ^7.30.1
         version: 7.30.1
@@ -559,17 +559,17 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.0.0
 
-  '@digdir/designsystemet-css@1.5.0':
-    resolution: {integrity: sha512-cfDfgTXBru+N9gi8T9PGXEonrbK7sCqKxT21Pv6YijekzDI5bQVjBb2oFFvqzgMbCbsiS+lFqYhOJ8XwvP5Vyw==}
+  '@digdir/designsystemet-css@1.5.1':
+    resolution: {integrity: sha512-o7QltH+fXjNvgJ9Z3d+dMnaSbTBf+aMsECqtO9uLhQVyA/p8t3rWKZsOFl33vgqpvtWuI9NfEQv75DavTc2RWA==}
 
-  '@digdir/designsystemet-react@1.5.0':
-    resolution: {integrity: sha512-Tsbn9mpFe1t0Su+oOfF0Z18U1xaiYffxp/RcTIWFCr83Ab6wfK/g3egEWRXOCZJTDbqdXvnwzZ07qrz5cFR/XQ==}
+  '@digdir/designsystemet-react@1.5.1':
+    resolution: {integrity: sha512-tGTpfESIFWkhY7WIHgpNEhbU6fZb4SDHEGec+ccQcEj3UXfXT0YS+SRwSBrk3TRrO8eigUkhhHK3qbd0Jabekg==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet@1.5.0':
-    resolution: {integrity: sha512-TsYyqIuyl7fRyfRH1bKKxirrGeriL1uCnCCoY/ZUHY6dq9FsK7DthiB2GAnRv4IiyKSgYwU/LW9yJO+8CR+4Yw==}
+  '@digdir/designsystemet@1.5.1':
+    resolution: {integrity: sha512-KlKnqExtvjdEkWOcHwJmDd/3FbgeHHw21UOl2yaLOXO6mZP0OpWv5Si7igMeoWJli3pqdQz8lN5f/DshWwWwpA==}
     engines: {node: '>=22.19.0'}
     hasBin: true
 
@@ -4604,9 +4604,9 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.0
 
-  '@digdir/designsystemet-css@1.5.0': {}
+  '@digdir/designsystemet-css@1.5.1': {}
 
-  '@digdir/designsystemet-react@1.5.0(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@digdir/designsystemet-react@1.5.1(@types/react@19.1.13)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@floating-ui/dom': 1.7.4
       '@floating-ui/react': 0.26.23(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -4622,7 +4622,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet@1.5.0':
+  '@digdir/designsystemet@1.5.1':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.0)
       '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@5.0.4)
