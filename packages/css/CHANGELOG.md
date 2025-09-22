@@ -1,5 +1,19 @@
 # @arbeidstilsynet/design-css
 
+## 0.3.0
+
+Released: 2025-09-22
+
+### Minor Changes
+
+- LightDarkLogo: New component ([#306](https://github.com/Arbeidstilsynet/design/pull/306))
+
+### Patch Changes
+
+- Updated dependency `@digdir/designsystemet-css` to `1.5.1`. ([#313](https://github.com/Arbeidstilsynet/design/pull/313))
+  Updated dependency `@digdir/designsystemet` to `1.5.1`.
+  Updated dependency `@digdir/designsystemet-react` to `1.5.1`.
+
 ## 0.2.0
 
 Released: 2025-09-16

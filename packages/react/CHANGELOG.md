@@ -1,5 +1,36 @@
 # @arbeidstilsynet/design-react
 
+## 0.3.0
+
+Released: 2025-09-22
+
+### Minor Changes
+
+- LightDarkLogo: New component ([#306](https://github.com/Arbeidstilsynet/design/pull/306))
+
+### Patch Changes
+
+- Updated dependency `typescript-eslint` to `8.44.0`. ([#304](https://github.com/Arbeidstilsynet/design/pull/304))
+
+- Updated dependency `jsdom` to `27.0.0`. ([#299](https://github.com/Arbeidstilsynet/design/pull/299))
+
+- Updated dependency `@vitejs/plugin-react` to `5.0.3`. ([#308](https://github.com/Arbeidstilsynet/design/pull/308))
+
+- Updated dependency `@types/node` to `22.18.6`. ([#310](https://github.com/Arbeidstilsynet/design/pull/310))
+
+- Updated dependency `@storybook/addon-vitest` to `9.1.7`. ([#312](https://github.com/Arbeidstilsynet/design/pull/312))
+  Updated dependency `@storybook/react-vite` to `9.1.7`.
+  Updated dependency `@storybook/addon-a11y` to `9.1.7`.
+  Updated dependency `@storybook/addon-docs` to `9.1.7`.
+  Updated dependency `eslint-plugin-storybook` to `9.1.7`.
+  Updated dependency `storybook` to `9.1.7`.
+
+- Updated dependency `vite` to `7.1.6`. ([#311](https://github.com/Arbeidstilsynet/design/pull/311))
+
+- Updated dependency `@digdir/designsystemet-css` to `1.5.1`. ([#313](https://github.com/Arbeidstilsynet/design/pull/313))
+  Updated dependency `@digdir/designsystemet` to `1.5.1`.
+  Updated dependency `@digdir/designsystemet-react` to `1.5.1`.
+
 ## 0.2.0
 
 Released: 2025-09-16
