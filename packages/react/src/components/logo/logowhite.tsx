@@ -1,7 +1,9 @@
-export const LogoWhite = () => (
+import type { SVGProps } from "react";
+
+export const LogoWhite = ({ width = "100%" }: SVGProps<SVGSVGElement>) => (
   <svg
-    width={150}
-    height={39}
+    width={width}
+    height="auto"
     fill="none"
     viewBox="0 0 150 39"
     xmlns="http://www.w3.org/2000/svg"
