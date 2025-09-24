@@ -52,6 +52,10 @@
     }
   }
 
+  &[aria-busy="true"] {
+    cursor: progress;
+  }
+
   &.is-drag {
     border-style: solid; /* switch from dashed while dragging */
     border-color: var(--ds-color-info-base-default);

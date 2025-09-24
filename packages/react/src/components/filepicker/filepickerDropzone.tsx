@@ -85,12 +85,14 @@ export function FilePickerDropzone({
       <Button
         type="button"
         disabled={isDisabled}
+        loading={
+          isWaiting && <Spinner aria-label="Processing files" data-size="lg" />
+        }
         className={clsx("at-filepicker-dropzone", isDragActive && "is-drag")}
         onClick={() => {
           if (!isDisabled) open();
         }}
       >
-        {isWaiting && <Spinner aria-label="Processing files" data-size="lg" />}
         {!isWaiting &&
           (isDragActive ? (
             <Label>{dropLabel}</Label>
