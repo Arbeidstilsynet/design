@@ -58,7 +58,7 @@ export function FilePickerDropzone({
   dropLabel = "Slipp for å legge til",
   ...rest
 }: Readonly<FilePickerDropzoneProps>) {
-  const { onAdd, disabled, isWaiting } = use(FilePickerContext);
+  const { onAdd, disabled, isWaiting, errors } = use(FilePickerContext);
   const isDisabled = Boolean(disabled || isWaiting);
 
   const onDrop = (acceptedFiles: File[]) => {
@@ -78,11 +78,7 @@ export function FilePickerDropzone({
         // Wrapper handles drag events only
         role: "group",
         "aria-disabled": isDisabled || undefined,
-        className: clsx(
-          "at-filepicker-dropzone-wrapper",
-          isDisabled && "is-disabled",
-          className,
-        ),
+        className: clsx("at-filepicker-dropzone-wrapper", className),
         ...rest,
       })}
     >
@@ -94,7 +90,11 @@ export function FilePickerDropzone({
         loading={
           isWaiting && <Spinner aria-label="Processing files" data-size="lg" />
         }
-        className={clsx("at-filepicker-dropzone", isDragActive && "is-drag")}
+        className={clsx(
+          "at-filepicker-dropzone",
+          isDragActive && "is-drag",
+          errors && errors.length > 0 && "has-error",
+        )}
         onClick={() => {
           if (!isDisabled) open();
         }}

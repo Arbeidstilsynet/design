@@ -8,7 +8,6 @@
 }
 
 .at-filepicker-dropzone-wrapper {
-  width: 100%;
   position: relative;
 }
 
@@ -28,8 +27,13 @@
   color: var(--ds-color-text-default);
   cursor: pointer;
 
+  &.has-error {
+    border-color: var(--ds-color-danger-border-default);
+  }
+
   &:hover:not(:disabled) {
     background-color: var(--ds-color-primary-background-tinted);
+    border-color: var(--ds-color-info-border-default);
     border-style: solid;
   }
 
