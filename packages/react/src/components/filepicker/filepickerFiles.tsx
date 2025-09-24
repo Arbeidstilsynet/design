@@ -1,4 +1,4 @@
-import { FileIcon, XMarkIcon } from "@navikt/aksel-icons";
+import { FileIcon, TrashIcon } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import { Fragment, type HTMLAttributes, use } from "react";
 import { Button, ValidationMessage } from "../../digdir";
@@ -51,11 +51,12 @@ export function FilePickerFiles({
               icon
               variant="tertiary"
               data-size="sm"
-              onClick={() => onRemove(id)}
               disabled={disabled}
               aria-label={`Remove ${file.name}`}
+              className="at-filepicker-file__remove"
+              onClick={() => onRemove(id)}
             >
-              <XMarkIcon aria-hidden />
+              <TrashIcon aria-hidden />
             </Button>
           </div>
         </Fragment>

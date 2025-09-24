@@ -85,8 +85,7 @@
   align-items: center;
   gap: var(--ds-size-2);
   padding: var(--ds-size-2) var(--ds-size-3);
-  border: 1px solid var(--ds-color-border-subtle);
-  border-radius: var(--ds-border-radius-default);
+  border: var(--ds-border-width-default) solid var(--ds-color-border-default);
 
   &--error {
     border-color: var(--ds-color-danger-border-default);
@@ -117,6 +116,12 @@
 .at-filepicker-file__size {
   white-space: nowrap;
   flex-shrink: 0;
+}
+
+.at-filepicker-file__remove {
+  border-radius: var(--border-radius-default, 4px);
+  border: var(--ds-border-width-default) solid
+    var(--ds-color-primary-border-strong);
 }
 
 .at-filepicker-errors {
