@@ -160,7 +160,6 @@ export const IsWaiting: Story = {
   ),
   args: {
     isWaiting: true,
-    disabled: true,
     files: [
       { id: 1, file: createMockFileInKb("file being processed.doc", 500) },
     ],
