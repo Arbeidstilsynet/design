@@ -82,21 +82,15 @@
 .at-filepicker-file {
   display: grid;
   grid-template-columns: auto 1fr auto auto;
+  gap: var(--ds-size-1);
   align-items: center;
-  gap: var(--ds-size-2);
-  padding: var(--ds-size-2) var(--ds-size-3);
+
+  padding: var(--ds-size-2) var(--ds-size-2);
   border: var(--ds-border-width-default) solid var(--ds-color-border-default);
 
   &--error {
     border-color: var(--ds-color-danger-border-default);
   }
-}
-
-.at-filepicker-file__content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-1);
-  min-width: 0; /* Allow text truncation */
 }
 
 .at-filepicker-file__name {
@@ -107,10 +101,12 @@
 }
 
 .at-filepicker-file__error {
+  grid-column: 1 / span 2;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
+  align-self: start;
 }
 
 .at-filepicker-file__size {

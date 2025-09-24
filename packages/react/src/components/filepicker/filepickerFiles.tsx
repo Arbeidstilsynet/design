@@ -27,21 +27,9 @@ export function FilePickerFiles({
           <div className="at-filepicker-file">
             <FileIcon aria-hidden="true" fontSize="1.5em" />
 
-            <div className="at-filepicker-file__content">
-              <span className="at-filepicker-file__name" title={file.name}>
-                {file.name}
-              </span>
-              {error && (
-                <ValidationMessage
-                  className="at-filepicker-file__error"
-                  data-color="danger"
-                  data-size="sm"
-                  title={error}
-                >
-                  {error}
-                </ValidationMessage>
-              )}
-            </div>
+            <span className="at-filepicker-file__name" title={file.name}>
+              {file.name}
+            </span>
 
             <span className="at-filepicker-file__size" data-size="sm">
               ({formatFileSize(file.size)})
@@ -58,6 +46,17 @@ export function FilePickerFiles({
             >
               <TrashIcon aria-hidden />
             </Button>
+
+            {error && (
+              <ValidationMessage
+                className="at-filepicker-file__error"
+                data-color="danger"
+                data-size="sm"
+                title={error}
+              >
+                {error}
+              </ValidationMessage>
+            )}
           </div>
         </Fragment>
       ))}
