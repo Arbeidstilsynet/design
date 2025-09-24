@@ -11,19 +11,21 @@ function DefaultLabel({
 }: Pick<FilePickerDropzoneProps, "defaultLabelText">) {
   const text1 = defaultLabelText?.[0];
   const text2 = defaultLabelText?.[1];
+  const text3 = defaultLabelText?.[2];
   return (
     <>
+      <CloudUpIcon title="Cloud" />
       <span style={{ display: "flex", flexFlow: "row" }}>
-        <CloudUpIcon title="Cloud" />
-        <Label
+        {text1}
+        <span
           style={{
             textDecoration: "underline",
           }}
         >
-          {text1}
-        </Label>
+          {text2}
+        </span>
       </span>
-      {text2 && <Label>{text2}</Label>}
+      {text3}
     </>
   );
 }
@@ -39,7 +41,7 @@ export interface FilePickerDropzoneProps
    *  Pass an array with one or two strings.
    *  If only one is passed, the second line is not displayed.
    *  */
-  defaultLabelText?: [string] | [string, string];
+  defaultLabelText?: [string] | [string, string] | [string, string, string];
 
   /** Label text shown when a file is dragged over the dropzone */
   dropLabel?: string;
@@ -48,7 +50,11 @@ export interface FilePickerDropzoneProps
 export function FilePickerDropzone({
   className,
   label,
-  defaultLabelText = ["Last opp fil", "Filformater: pdf, txt og docx"],
+  defaultLabelText = [
+    "Dra og slipp eller",
+    "Last opp fil",
+    "Filformater: pdf, txt og docx",
+  ],
   dropLabel = "Slipp for å legge til",
   ...rest
 }: Readonly<FilePickerDropzoneProps>) {
@@ -95,7 +101,7 @@ export function FilePickerDropzone({
       >
         {!isWaiting &&
           (isDragActive ? (
-            <Label>{dropLabel}</Label>
+            <Label style={{ textDecoration: "underline" }}>{dropLabel}</Label>
           ) : (
             (label ?? <DefaultLabel defaultLabelText={defaultLabelText} />)
           ))}
