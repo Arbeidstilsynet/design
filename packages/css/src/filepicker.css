@@ -1,10 +1,10 @@
 .at-filepicker {
   width: 100%;
   max-width: 43rem;
-}
 
-.at-filepicker[data-disabled="true"] {
-  opacity: var(--ds-disabled-opacity);
+  &[data-disabled="true"] {
+    opacity: var(--ds-disabled-opacity);
+  }
 }
 
 .at-filepicker-dropzone-wrapper {
@@ -12,23 +12,16 @@
   position: relative;
 }
 
-.at-filepicker-dropzone.is-drag {
-  border-style: solid; /* switch from dashed while dragging */
-  border-color: var(--ds-color-info-base-default);
-  background-color: var(--ds-color-info-surface-tinted);
-  /* Optional subtle elevation */
-  box-shadow: 0 0 0 1px var(--ds-color-info-border-subtle);
-}
-
 .at-filepicker-dropzone {
   display: flex;
   width: 100%;
-  min-height: var(--ds-size-26);
-  padding: var(--ds-size-4) 0;
+  --filepicker-dropzone-min-height: calc(var(--ds-size-30) + var(--ds-size-3));
+  min-height: var(--filepicker-dropzone-min-height);
+  padding: var(--ds-size-7) 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--ds-size-2);
+  gap: var(--ds-size-1);
   border-radius: var(--ds-border-radius-default);
   border: 2px dashed var(--ds-color-info-border-default);
   background-color: var(--ds-color-background-default);
@@ -57,6 +50,14 @@
       pointer-events: auto;
       cursor: not-allowed;
     }
+  }
+
+  &.is-drag {
+    border-style: solid; /* switch from dashed while dragging */
+    border-color: var(--ds-color-info-base-default);
+    background-color: var(--ds-color-info-surface-tinted);
+    /* Optional subtle elevation */
+    box-shadow: 0 0 0 1px var(--ds-color-info-border-subtle);
   }
 }
 
