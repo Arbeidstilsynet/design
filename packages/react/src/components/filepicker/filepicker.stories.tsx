@@ -98,6 +98,31 @@ export const Preview: Story = {
   },
 };
 
+export const WithFiles: Story = {
+  render: (args) => (
+    <FilePicker {...args}>
+      <FilePicker.Dropzone />
+      <Paragraph data-size="xs">Antall filer 2/2</Paragraph>
+      <FilePicker.Errors />
+      <FilePicker.Files />
+    </FilePicker>
+  ),
+
+  args: {
+    files: [
+      {
+        id: 1,
+        file: createMockFileInKb("file1.pdf", 2048),
+      },
+      {
+        id: 2,
+        file: createMockFileInKb("file2.doc", 500),
+      },
+    ],
+    errors: null,
+  },
+};
+
 export const WithErrors: Story = {
   render: (args) => (
     <FilePicker {...args}>
