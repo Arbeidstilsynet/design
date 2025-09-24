@@ -116,7 +116,10 @@ export const WithFiles: Story = {
       },
       {
         id: 2,
-        file: createMockFileInKb("file2.doc", 500),
+        file: createMockFileInKb(
+          "very long filename that just goes on and on and on and on and on and maybe ends somewhere around here.doc",
+          500,
+        ),
       },
     ],
     errors: null,
