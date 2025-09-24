@@ -15,7 +15,12 @@ export function FilePicker<TFileId extends string | number>({
   ...rest
 }: Readonly<FilePickerProps<TFileId>>) {
   return (
-    <div ref={ref} className={clsx("at-filepicker", className)} {...rest}>
+    <div
+      ref={ref}
+      className={clsx("at-filepicker", className)}
+      data-disabled={disabled}
+      {...rest}
+    >
       <FilePickerContext
         // @ts-expect-error Type 'string | number' is not assignable to type 'TFileId'
         // FilePickerContextValue does not get the generic type, so onRemove errors here.

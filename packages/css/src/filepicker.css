@@ -3,6 +3,10 @@
   max-width: 43rem;
 }
 
+.at-filepicker[data-disabled="true"] {
+  opacity: var(--ds-disabled-opacity);
+}
+
 .at-filepicker-dropzone-wrapper {
   width: 100%;
   position: relative;
