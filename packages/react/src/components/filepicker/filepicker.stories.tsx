@@ -88,8 +88,8 @@ export const Preview: Story = {
         <Paragraph data-size="xs">
           Antall filer {files.length}/{maxFiles}
         </Paragraph>
-        <FilePicker.Files />
         <FilePicker.Errors />
+        <FilePicker.Files />
       </FilePicker>
     );
   },
@@ -102,8 +102,9 @@ export const WithErrors: Story = {
   render: (args) => (
     <FilePicker {...args}>
       <FilePicker.Dropzone />
-      <FilePicker.Files />
+      <Paragraph data-size="xs">Antall filer 3/3</Paragraph>
       <FilePicker.Errors />
+      <FilePicker.Files />
     </FilePicker>
   ),
 
@@ -183,8 +184,8 @@ export const SideBySide: Story = {
       </FilePicker>
       <FilePicker {...args}>
         <FilePicker.Dropzone />
-        <FilePicker.Files />
         <FilePicker.Errors />
+        <FilePicker.Files />
       </FilePicker>
     </div>
   ),
