@@ -1,3 +1,4 @@
+import { Paragraph } from "@digdir/designsystemet-react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useRef, useState } from "react";
 import { FilePicker, type FilePickerItem } from "..";
@@ -34,11 +35,13 @@ export const Preview: Story = {
     const [files, setFiles] = useState<FilePickerItem<number>[]>([]);
     const [errors, setErrors] = useState<string[]>([]);
 
+    const maxFiles = 5;
+    const maxSizeInMb = 10;
+
     const handleAdd = (newFiles: File[]) => {
       // Simple validation for demo
       const validationErrors: string[] = [];
-      const maxSize = 10 * 1024 * 1024; // 10MB
-      const maxFiles = 5;
+      const maxSize = maxSizeInMb * 1024 * 1024;
 
       if (files.length + newFiles.length > maxFiles) {
         validationErrors.push(`Maksimalt ${maxFiles} filer tillatt`);
@@ -80,7 +83,11 @@ export const Preview: Story = {
         onAdd={handleAdd}
         onRemove={handleRemove}
       >
+        <Paragraph data-size="xs">Maks filstørrelse {maxSizeInMb} MB</Paragraph>
         <FilePicker.Dropzone />
+        <Paragraph data-size="xs">
+          Antall filer {files.length}/{maxFiles}
+        </Paragraph>
         <FilePicker.Files />
         <FilePicker.Errors />
       </FilePicker>

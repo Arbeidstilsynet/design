@@ -1,6 +1,9 @@
 .at-filepicker {
+  display: flex;
+  flex-flow: column;
   width: 100%;
   max-width: 43rem;
+  gap: var(--ds-size-1);
 
   &[data-disabled="true"] {
     opacity: var(--ds-disabled-opacity);
