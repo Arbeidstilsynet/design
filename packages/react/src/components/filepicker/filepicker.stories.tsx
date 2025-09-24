@@ -198,3 +198,29 @@ export const SideBySide: Story = {
     ],
   },
 };
+
+export const SizeVariants: Story = {
+  render: (args) => (
+    <div style={{ display: "flex", flexFlow: "column", gap: "1rem" }}>
+      <FilePicker {...args} data-size="sm">
+        <FilePicker.Dropzone defaultLabelText={["data-size=sm"]} />
+        <FilePicker.Errors />
+        <FilePicker.Files />
+      </FilePicker>
+      <FilePicker {...args} data-size="md">
+        <FilePicker.Dropzone defaultLabelText={["data-size=md"]} />
+        <FilePicker.Errors />
+        <FilePicker.Files />
+      </FilePicker>
+      <FilePicker {...args} data-size="lg">
+        <FilePicker.Dropzone defaultLabelText={["data-size=lg"]} />
+        <FilePicker.Errors />
+        <FilePicker.Files />
+      </FilePicker>
+    </div>
+  ),
+  args: {
+    files: [],
+    errors: [],
+  },
+};
