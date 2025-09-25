@@ -12,7 +12,7 @@ import { FilePickerFiles } from "./filepickerFiles";
  * Note: the default label text is only an example. File types are not enforced by the component, but can be done in your validation logic as needed.
  *
  * FilePicker has no internal state and can be fully controlled as needed with a combination of `files`, `errors`, `disabled`, `isWaiting` props as well as using the subcomponents as desired.
- * For example, you can change the order of the sucomponents or only use some of them. You decide if the `files` prop only contains accepted files or all including errors, and you can use the `errors` prop to display validation errors in your UI.
+ * For example, you can change the order of the subcomponents or only use some of them. You decide if the `files` prop only contains accepted files or all including errors, and you can use the `errors` prop to display validation errors in your UI.
  *
  * Usage:
  * ```tsx
