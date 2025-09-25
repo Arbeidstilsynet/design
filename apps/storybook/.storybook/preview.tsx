@@ -83,11 +83,10 @@ const preview: Preview = {
         order: [
           "Overview",
           "Usage",
-          "Icons",
           "Colors",
+          "Icons",
           "Showcase",
           "Changelog",
-          "Example",
           "Arbeidstilsynet",
           "designsystemet.no",
           "designsystemet.no utilities",
