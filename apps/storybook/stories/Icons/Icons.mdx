@@ -1,0 +1,23 @@
+import { IconsDemo } from "./demo";
+
+# Icons
+
+The components generally accept `ReactNode` where icons are used.<br />
+Icons that naturally scale with font size (SVGs) will scale automatically when placed inside a designsystemet component.<br />
+For example, the Button component with an icon from @navikt/aksel-icons:
+
+<IconsDemo />
+
+```tsx
+import { Button } from "@arbeidstilsynet/design-react";
+import { CloudIcon } from "@navikt/aksel-icons";
+
+<Button icon aria-label="Close" data-size="sm">
+  <CloudIcon aria-hidden />
+</Button>;
+```
+
+Both `@arbeidstilsynet/design-react` and `@digdir/designsystemet-react` have @navikt/aksel-icons as a dependency, but other icon libraries can be used.
+
+As of Digdir/designsystemet v1.5.0, icons cannot be scaled with both `data-size` and `fontSize`.
+See [https://www.designsystemet.no/en/fundamentals/code/sizes](https://www.designsystemet.no/en/fundamentals/code/sizes) for more information.

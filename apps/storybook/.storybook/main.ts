@@ -2,6 +2,12 @@ import type { StorybookConfig } from "@storybook/react-vite";
 import { resolve } from "node:path";
 
 const config: StorybookConfig = {
+  framework: {
+    name: "@storybook/react-vite",
+    options: {
+      strictMode: true,
+    },
+  },
   stories: [
     "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
@@ -14,10 +20,6 @@ const config: StorybookConfig = {
     "@storybook/addon-a11y",
     "@storybook/addon-vitest",
   ],
-  framework: {
-    name: "@storybook/react-vite",
-    options: {},
-  },
   core: {
     builder: "@storybook/builder-vite",
     disableTelemetry: true,
@@ -27,6 +29,7 @@ const config: StorybookConfig = {
     reactDocgen: "react-docgen-typescript",
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
+      shouldRemoveUndefinedFromOptional: true,
       EXPERIMENTAL_useWatchProgram: true,
     },
   },
