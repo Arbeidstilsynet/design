@@ -7,8 +7,8 @@ import { FilePickerContext } from "./filepickerContext";
 import { formatFileSize } from "./utils";
 
 export interface FilePickerFilesProps
-  extends DefaultProps<HTMLDivElement>,
-    HTMLAttributes<HTMLDivElement> {}
+  extends DefaultProps<HTMLUListElement>,
+    HTMLAttributes<HTMLUListElement> {}
 
 export function FilePickerFiles({
   className,
@@ -21,10 +21,10 @@ export function FilePickerFiles({
   }
 
   return (
-    <div className={clsx("at-filepicker-files", className)} {...rest}>
+    <ul className={clsx("at-filepicker-files", className)} {...rest}>
       {files.map(({ id, file, error }) => (
         <Fragment key={id}>
-          <div className="at-filepicker-file">
+          <li className="at-filepicker-file">
             <FileIcon aria-hidden="true" fontSize="1.5em" />
 
             <span className="at-filepicker-file__name" title={file.name}>
@@ -57,9 +57,9 @@ export function FilePickerFiles({
                 {error}
               </ValidationMessage>
             )}
-          </div>
+          </li>
         </Fragment>
       ))}
-    </div>
+    </ul>
   );
 }
