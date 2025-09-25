@@ -19,7 +19,11 @@ export function FilePickerErrors({
   }
 
   return (
-    <div className={clsx("at-filepicker-errors", className)} {...rest}>
+    <div
+      className={clsx("at-filepicker-errors", className)}
+      aria-live="polite"
+      {...rest}
+    >
       {errors.map((error, index) => (
         <ValidationMessage key={index}>{error}</ValidationMessage>
       ))}
