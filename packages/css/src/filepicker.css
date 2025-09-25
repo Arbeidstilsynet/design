@@ -1,38 +1,44 @@
 .at-filepicker {
+  display: flex;
+  flex-flow: column;
   width: 100%;
   max-width: 43rem;
+  gap: var(--ds-size-1);
+
+  &[data-disabled="true"] .at-filepicker-dropzone,
+  &[data-disabled="true"] .at-filepicker-file__remove {
+    opacity: var(--ds-disabled-opacity);
+  }
 }
 
 .at-filepicker-dropzone-wrapper {
-  width: 100%;
   position: relative;
-}
-
-.at-filepicker-dropzone.is-drag {
-  border-style: solid; /* switch from dashed while dragging */
-  border-color: var(--ds-color-info-base-default);
-  background-color: var(--ds-color-info-surface-tinted);
-  /* Optional subtle elevation */
-  box-shadow: 0 0 0 1px var(--ds-color-info-border-subtle);
 }
 
 .at-filepicker-dropzone {
   display: flex;
   width: 100%;
-  min-height: var(--ds-size-26);
-  padding: var(--ds-size-4) 0;
+  --filepicker-dropzone-min-height: calc(var(--ds-size-30) + var(--ds-size-3));
+  min-height: var(--filepicker-dropzone-min-height);
+  padding: var(--ds-size-6) 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--ds-size-2);
+  gap: var(--ds-size-0);
   border-radius: var(--ds-border-radius-default);
   border: 2px dashed var(--ds-color-info-border-default);
   background-color: var(--ds-color-background-default);
   color: var(--ds-color-text-default);
   cursor: pointer;
 
+  &.has-error {
+    border-color: var(--ds-color-danger-border-default);
+  }
+
   &:hover:not(:disabled) {
-    background-color: var(--ds-color-surface-tinted);
+    background-color: var(--ds-color-primary-background-tinted);
+    border-color: var(--ds-color-info-border-default);
+    border-style: solid;
   }
 
   & span {
@@ -54,34 +60,40 @@
       cursor: not-allowed;
     }
   }
+
+  &[aria-busy="true"] {
+    cursor: progress;
+  }
+
+  &.is-drag {
+    border-style: solid; /* switch from dashed while dragging */
+    border-color: var(--ds-color-info-base-default);
+    background-color: var(--ds-color-info-surface-tinted);
+    /* Optional subtle elevation */
+    box-shadow: 0 0 0 1px var(--ds-color-info-border-subtle);
+  }
 }
 
 .at-filepicker-files {
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-2);
-  margin: var(--ds-size-3) 0;
+  padding: 0;
+  margin: 0;
 }
 
 .at-filepicker-file {
   display: grid;
   grid-template-columns: auto 1fr auto auto;
+  gap: var(--ds-size-1);
   align-items: center;
-  gap: var(--ds-size-2);
-  padding: var(--ds-size-2) var(--ds-size-3);
-  border: 1px solid var(--ds-color-border-subtle);
-  border-radius: var(--ds-border-radius-default);
+
+  padding: var(--ds-size-2) var(--ds-size-2);
+  border: var(--ds-border-width-default) solid var(--ds-color-border-default);
 
   &--error {
     border-color: var(--ds-color-danger-border-default);
   }
-}
-
-.at-filepicker-file__content {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-1);
-  min-width: 0; /* Allow text truncation */
 }
 
 .at-filepicker-file__name {
@@ -92,10 +104,12 @@
 }
 
 .at-filepicker-file__error {
+  grid-column: 1 / span 2;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
+  align-self: start;
 }
 
 .at-filepicker-file__size {
@@ -107,7 +121,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--ds-size-2);
-  margin: var(--ds-size-3) 0;
 }
 
 /* Responsive adjustments */

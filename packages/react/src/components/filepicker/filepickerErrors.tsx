@@ -1,6 +1,6 @@
 import { clsx } from "clsx/lite";
 import { type HTMLAttributes, use } from "react";
-import { Alert } from "../../digdir";
+import { ValidationMessage } from "../../digdir";
 import type { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 
@@ -19,11 +19,13 @@ export function FilePickerErrors({
   }
 
   return (
-    <div className={clsx("at-filepicker-errors", className)} {...rest}>
+    <div
+      className={clsx("at-filepicker-errors", className)}
+      role="status"
+      {...rest}
+    >
       {errors.map((error, index) => (
-        <Alert key={index} role="alert" data-color="danger" data-size="sm">
-          {error}
-        </Alert>
+        <ValidationMessage key={index}>{error}</ValidationMessage>
       ))}
     </div>
   );

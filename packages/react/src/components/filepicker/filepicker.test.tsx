@@ -112,7 +112,7 @@ describe("FilePicker", () => {
       </FilePicker>,
     );
 
-    expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+    expect(screen.queryByRole("status")).not.toBeInTheDocument();
   });
 
   test("does not render files when none provided", () => {
@@ -247,7 +247,7 @@ describe("FilePicker", () => {
       </FilePicker>,
     );
 
-    expect(screen.queryByRole("alert")).not.toBeInTheDocument();
+    expect(screen.queryByRole("status")).not.toBeInTheDocument();
   });
 
   test("renders multiple errors correctly", () => {
@@ -262,7 +262,7 @@ describe("FilePicker", () => {
     expect(screen.getByText("Error 1")).toBeInTheDocument();
     expect(screen.getByText("Error 2")).toBeInTheDocument();
     expect(screen.getByText("Error 3")).toBeInTheDocument();
-    expect(screen.getAllByRole("alert")).toHaveLength(3);
+    expect(screen.getAllByRole("status")).toHaveLength(1);
   });
 
   test("shows drop label when dragging files", async () => {

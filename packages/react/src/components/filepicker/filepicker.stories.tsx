@@ -1,3 +1,4 @@
+import { Paragraph } from "@digdir/designsystemet-react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useRef, useState } from "react";
 import { FilePicker, type FilePickerItem } from "..";
@@ -34,11 +35,13 @@ export const Preview: Story = {
     const [files, setFiles] = useState<FilePickerItem<number>[]>([]);
     const [errors, setErrors] = useState<string[]>([]);
 
+    const maxFiles = 5;
+    const maxSizeInMb = 10;
+
     const handleAdd = (newFiles: File[]) => {
       // Simple validation for demo
       const validationErrors: string[] = [];
-      const maxSize = 10 * 1024 * 1024; // 10MB
-      const maxFiles = 5;
+      const maxSize = maxSizeInMb * 1024 * 1024;
 
       if (files.length + newFiles.length > maxFiles) {
         validationErrors.push(`Maksimalt ${maxFiles} filer tillatt`);
@@ -80,9 +83,13 @@ export const Preview: Story = {
         onAdd={handleAdd}
         onRemove={handleRemove}
       >
+        <Paragraph data-size="xs">Maks filstørrelse {maxSizeInMb} MB</Paragraph>
         <FilePicker.Dropzone />
-        <FilePicker.Files />
+        <Paragraph data-size="xs">
+          Antall filer {files.length}/{maxFiles}
+        </Paragraph>
         <FilePicker.Errors />
+        <FilePicker.Files />
       </FilePicker>
     );
   },
@@ -91,12 +98,41 @@ export const Preview: Story = {
   },
 };
 
+export const WithFiles: Story = {
+  render: (args) => (
+    <FilePicker {...args}>
+      <FilePicker.Dropzone />
+      <Paragraph data-size="xs">Antall filer 2/2</Paragraph>
+      <FilePicker.Errors />
+      <FilePicker.Files />
+    </FilePicker>
+  ),
+
+  args: {
+    files: [
+      {
+        id: 1,
+        file: createMockFileInKb("file1.pdf", 2048),
+      },
+      {
+        id: 2,
+        file: createMockFileInKb(
+          "very long filename that just goes on and on and on and on and on and maybe ends somewhere around here.doc",
+          500,
+        ),
+      },
+    ],
+    errors: null,
+  },
+};
+
 export const WithErrors: Story = {
   render: (args) => (
     <FilePicker {...args}>
       <FilePicker.Dropzone />
-      <FilePicker.Files />
+      <Paragraph data-size="xs">Antall filer 3/3</Paragraph>
       <FilePicker.Errors />
+      <FilePicker.Files />
     </FilePicker>
   ),
 
@@ -126,7 +162,9 @@ export const WithErrors: Story = {
 export const Disabled: Story = {
   render: (args) => (
     <FilePicker {...args}>
+      <Paragraph data-size="xs">Maks filstørrelse 1 MB</Paragraph>
       <FilePicker.Dropzone />
+      <Paragraph data-size="xs">Antall filer 1/1</Paragraph>
       <FilePicker.Files />
     </FilePicker>
   ),
@@ -160,7 +198,6 @@ export const IsWaiting: Story = {
   ),
   args: {
     isWaiting: true,
-    disabled: true,
     files: [
       { id: 1, file: createMockFileInKb("file being processed.doc", 500) },
     ],
@@ -177,8 +214,8 @@ export const SideBySide: Story = {
       </FilePicker>
       <FilePicker {...args}>
         <FilePicker.Dropzone />
-        <FilePicker.Files />
         <FilePicker.Errors />
+        <FilePicker.Files />
       </FilePicker>
     </div>
   ),
@@ -196,5 +233,31 @@ export const SideBySide: Story = {
     errors: [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae nulla diam. Curabitur rutrum ante metus, sed molestie erat sagittis quis.",
     ],
+  },
+};
+
+export const SizeVariants: Story = {
+  render: (args) => (
+    <div style={{ display: "flex", flexFlow: "column", gap: "1rem" }}>
+      <FilePicker {...args} data-size="sm">
+        <FilePicker.Dropzone defaultLabelText={["data-size=sm"]} />
+        <FilePicker.Errors />
+        <FilePicker.Files />
+      </FilePicker>
+      <FilePicker {...args} data-size="md">
+        <FilePicker.Dropzone defaultLabelText={["data-size=md"]} />
+        <FilePicker.Errors />
+        <FilePicker.Files />
+      </FilePicker>
+      <FilePicker {...args} data-size="lg">
+        <FilePicker.Dropzone defaultLabelText={["data-size=lg"]} />
+        <FilePicker.Errors />
+        <FilePicker.Files />
+      </FilePicker>
+    </div>
+  ),
+  args: {
+    files: [],
+    errors: [],
   },
 };
