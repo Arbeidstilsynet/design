@@ -1,5 +1,13 @@
 import "@arbeidstilsynet/design-css";
 import "@arbeidstilsynet/design-theme/arbeidstilsynet.css";
+import {
+  Controls,
+  Description,
+  Primary,
+  Stories,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
 import type { Preview } from "@storybook/react-vite";
 import { customStylesDecorator } from "../utils/customStylesDecorator";
 import "./preview.css";
@@ -57,7 +65,6 @@ const preview: Preview = {
   },
   parameters: {
     layout: "centered",
-
     controls: {
       sort: "requiredFirst",
       matchers: {
@@ -65,13 +72,11 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-
     viewport: {
       options: {
         ...atViewPorts,
       },
     },
-
     options: {
       storySort: {
         method: "alphabetical",
@@ -89,17 +94,23 @@ const preview: Preview = {
         ],
       },
     },
-
     docs: {
       toc: {
         headingSelector: "h2, h3",
       },
+      // customize autodocs template to sort required props first in the props table
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <Controls sort="requiredFirst" />
+          <Stories />
+        </>
+      ),
     },
-
     a11y: {
-      // 'todo' - show a11y violations in the test UI only
-      // 'error' - fail CI on a11y violations
-      // 'off' - skip a11y checks entirely
       test: "error",
     },
   },
