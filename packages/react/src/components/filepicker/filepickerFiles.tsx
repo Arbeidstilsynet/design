@@ -37,7 +37,7 @@ export function FilePickerFiles({
 
             <Button
               icon
-              variant="tertiary"
+              variant="secondary"
               data-size="sm"
               disabled={disabled}
               aria-label={`Remove ${file.name}`}

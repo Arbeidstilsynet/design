@@ -117,12 +117,6 @@
   flex-shrink: 0;
 }
 
-.at-filepicker-file__remove {
-  border-radius: var(--border-radius-default, 4px);
-  border: var(--ds-border-width-default) solid
-    var(--ds-color-primary-border-strong);
-}
-
 .at-filepicker-errors {
   display: flex;
   flex-direction: column;
