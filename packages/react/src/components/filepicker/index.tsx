@@ -18,8 +18,8 @@ import { FilePickerFiles } from "./filepickerFiles";
  * ```tsx
  * <FilePicker files={files} errors={errors} onAdd={handleAddFiles} onRemove={handleRemoveFile}>
  *   <FilePicker.Dropzone defaultLabelText={["Upload here!"]} />
- *   <FilePicker.Files />
  *   <FilePicker.Errors />
+ *   <FilePicker.Files />
  * </FilePicker>
  * ```
  */
