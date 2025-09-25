@@ -38,8 +38,8 @@ export interface FilePickerDropzoneProps
 
   /**
    *  Replace the text in default label.
-   *  Pass an array with one or two strings.
-   *  If only one is passed, the second line is not displayed.
+   *  Pass an array with one to three strings.
+   *  The second string will be underlined, and the third will show on a new row.
    *  */
   defaultLabelText?: [string] | [string, string] | [string, string, string];
 
