@@ -21,7 +21,7 @@ export function FilePickerErrors({
   return (
     <div
       className={clsx("at-filepicker-errors", className)}
-      aria-live="polite"
+      role="status"
       {...rest}
     >
       {errors.map((error, index) => (
