@@ -162,7 +162,9 @@ export const WithErrors: Story = {
 export const Disabled: Story = {
   render: (args) => (
     <FilePicker {...args}>
+      <Paragraph data-size="xs">Maks filstørrelse 1 MB</Paragraph>
       <FilePicker.Dropzone />
+      <Paragraph data-size="xs">Antall filer 1/1</Paragraph>
       <FilePicker.Files />
     </FilePicker>
   ),
