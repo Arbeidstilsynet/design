@@ -19,11 +19,11 @@
   width: 100%;
   --filepicker-dropzone-min-height: calc(var(--ds-size-30) + var(--ds-size-3));
   min-height: var(--filepicker-dropzone-min-height);
-  padding: var(--ds-size-7) 0;
+  padding: var(--ds-size-6) 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: var(--ds-size-1);
+  gap: var(--ds-size-0);
   border-radius: var(--ds-border-radius-default);
   border: 2px dashed var(--ds-color-info-border-default);
   background-color: var(--ds-color-background-default);
