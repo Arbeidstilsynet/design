@@ -3,6 +3,7 @@
 //  but we want to ensure internal use aligns with exported components and eventual overrides
 
 export type * from "@digdir/designsystemet-react";
+
 // use named re-exports instead of export * to fix error with RSC:
 // "It's currently unsupported to use "export *" in a client boundary. Please use named exports instead."
 export {

@@ -16,3 +16,5 @@ export interface DefaultProps<TRef> {
    */
   "data-color"?: Color;
 }
+
+export type { Color, Size };
