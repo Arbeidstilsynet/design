@@ -1,5 +1,17 @@
 # @arbeidstilsynet/design-css
 
+## 0.3.1
+
+Released: 2025-09-26
+
+### Patch Changes
+
+- Update FilePicker look, render semantic list for files ([#318](https://github.com/Arbeidstilsynet/design/pull/318))
+
+- Rename --ds-disabled-opacity to --ds-opacity-disabled ([#326](https://github.com/Arbeidstilsynet/design/pull/326))
+
+- Fix missing opacity on disabled button ([#324](https://github.com/Arbeidstilsynet/design/pull/324))
+
 ## 0.3.0
 
 Released: 2025-09-22
