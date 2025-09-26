@@ -4,11 +4,6 @@
   width: 100%;
   max-width: 43rem;
   gap: var(--ds-size-1);
-
-  &[data-disabled="true"] .at-filepicker-dropzone,
-  &[data-disabled="true"] .at-filepicker-file__remove {
-    opacity: var(--ds-disabled-opacity);
-  }
 }
 
 .at-filepicker-dropzone-wrapper {
@@ -88,7 +83,7 @@
   gap: var(--ds-size-1);
   align-items: center;
 
-  padding: var(--ds-size-2) var(--ds-size-2);
+  padding: var(--ds-size-2);
   border: var(--ds-border-width-default) solid var(--ds-color-border-default);
 
   &--error {
