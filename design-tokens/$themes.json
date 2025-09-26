@@ -735,7 +735,6 @@
       "color.warning.base-contrast-default": "80b66fa02d4042b93a25b062729b5426f26826a4",
       "color.focus.inner": "22a2f104d6dba095650d525e06549ba742d147ae",
       "color.focus.outer": "1e92a99e9ce5be227c1042b08c26b3bead298b41",
-      "disabled.opacity": "9919b82963edd9eea9e3f1690ac78b0a7a1a3a56",
       "border-width.default": "b61c8b4ba73d10933065d59481ecc19bae4a61e0",
       "border-width.focus": "cd937b27c4b5179ec790482fe4f243333682ab16",
       "border-radius.sm": "f384d0e9f9ae3e4e2647b2e6454765671981cf1c",
@@ -811,7 +810,8 @@
       "color.tilsyn.base-hover": "d6422e9671c57e40da501885c7c42196ef7e8c43",
       "color.tilsyn.base-active": "5595f501a543b779d21e3a2f3b3d80c82b2285b4",
       "color.tilsyn.base-contrast-subtle": "c283c1e117ed03fbbf64f790a490ee8c29990fe3",
-      "color.tilsyn.base-contrast-default": "428233c791a9ce87c18645fcb2e4d11e38152e29"
+      "color.tilsyn.base-contrast-default": "428233c791a9ce87c18645fcb2e4d11e38152e29",
+      "opacity.disabled": "9919b82963edd9eea9e3f1690ac78b0a7a1a3a56"
     },
     "$figmaStyleReferences": {
       "typography.heading.2xl": "S:8f356210dee7e8e96440f67a005282f742cc6e22,",
