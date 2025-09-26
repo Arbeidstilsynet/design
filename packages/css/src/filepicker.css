@@ -4,10 +4,6 @@
   width: 100%;
   max-width: 43rem;
   gap: var(--ds-size-1);
-
-  &[data-disabled="true"] .at-filepicker-dropzone {
-    opacity: var(--ds-disabled-opacity);
-  }
 }
 
 .at-filepicker-dropzone-wrapper {
