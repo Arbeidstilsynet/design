@@ -3,13 +3,3 @@
 @import "./filepicker.css" layer(at.components);
 @import "./header.css" layer(at.components);
 @import "./lightdarklogo.css" layer(at.components);
-
-/* Workaround for upstream token rename
-/* "Rename --ds-disabled-opacity to --ds-opacity-disabled"
-/* https://github.com/digdir/designsystemet/pull/3250
-*/
-
-/* Alias old name -> new name */
-:where(:root) {
-  --ds-opacity-disabled: var(--ds-disabled-opacity);
-}
