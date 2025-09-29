@@ -1,4 +1,4 @@
-import { Paragraph } from "@digdir/designsystemet-react";
+import { Label, Paragraph } from "@digdir/designsystemet-react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useRef, useState } from "react";
 import { FilePicker, type FilePickerItem } from "..";
@@ -183,6 +183,18 @@ export const ChangedDefaultText: Story = {
       <FilePicker.Dropzone
         defaultLabelText={["Custom upload text"]}
         dropLabel="Custom drop text"
+      />
+      <FilePicker.Files />
+    </FilePicker>
+  ),
+};
+
+export const CustomLabelNode: Story = {
+  render: (args) => (
+    <FilePicker {...args}>
+      <FilePicker.Dropzone
+        label={<Label>Custom label node</Label>}
+        dropLabel={<Label>Custom drop text</Label>}
       />
       <FilePicker.Files />
     </FilePicker>
