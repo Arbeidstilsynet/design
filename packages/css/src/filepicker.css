@@ -123,6 +123,3 @@
 .at-filepicker-files-table tbody tr:has(.at-filepicker-files-file__name:hover) {
   background: var(--ds-color-neutral-surface-tinted);
 }
-
-.at-filepicker-files-file__remove {
-}

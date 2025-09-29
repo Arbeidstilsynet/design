@@ -59,8 +59,6 @@ export function FilePickerFiles({
                 data-size="sm"
                 disabled={disabled}
                 aria-label={`Remove ${file.name}`}
-                // className="at-filepicker-file__remove"
-                className="at-filepicker-files-file__remove "
                 onClick={() => onRemove(id)}
               >
                 Fjern fil
