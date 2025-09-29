@@ -115,6 +115,7 @@
 
     &[aria-disabled="true"] {
       cursor: not-allowed;
+      opacity: var(--opacity-disabled, 0.3);
     }
   }
 }
