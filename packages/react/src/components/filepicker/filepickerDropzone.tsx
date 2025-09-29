@@ -50,6 +50,11 @@ export interface FilePickerDropzoneProps
   dropLabel?: string | React.ReactNode;
 }
 
+/**
+ * Area for drag-and-drop or opening the file dialog.
+ *
+ * Pass either `label` or `defaultLabelText` to customize the label.
+ */
 export function FilePickerDropzone({
   className,
   label,

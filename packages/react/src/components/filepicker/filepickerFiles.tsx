@@ -10,6 +10,9 @@ export interface FilePickerFilesProps
   extends DefaultProps<HTMLUListElement>,
     HTMLAttributes<HTMLUListElement> {}
 
+/**
+ * Displays files added to the parent `FilePicker` component.
+ */
 export function FilePickerFiles({
   className,
   ...rest
