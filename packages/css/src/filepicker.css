@@ -72,9 +72,17 @@
 }
 
 /**
+* Errors
+*/
+.at-filepicker-errors {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-size-2);
+}
+
+/**
 * Files table
 */
-
 .at-filepicker-files-table {
 }
 
