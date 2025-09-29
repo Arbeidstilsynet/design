@@ -1,14 +1,14 @@
-import { FileIcon, TrashIcon } from "@navikt/aksel-icons";
+import { FileTextIcon, TrashIcon } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
-import { Fragment, type HTMLAttributes, use } from "react";
-import { Button, ValidationMessage } from "../../digdir";
+import { type HTMLAttributes, use } from "react";
+import { Button, Link, Table } from "../../digdir";
 import type { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 import { formatFileSize } from "./utils";
 
 export interface FilePickerFilesProps
-  extends DefaultProps<HTMLUListElement>,
-    HTMLAttributes<HTMLUListElement> {}
+  extends DefaultProps<HTMLTableElement>,
+    HTMLAttributes<HTMLTableElement> {}
 
 /**
  * Displays files added to the parent `FilePicker` component.
@@ -24,45 +24,52 @@ export function FilePickerFiles({
   }
 
   return (
-    <ul className={clsx("at-filepicker-files", className)} {...rest}>
-      {files.map(({ id, file, error }) => (
-        <Fragment key={id}>
-          <li className="at-filepicker-file">
-            <FileIcon aria-hidden="true" fontSize="1.5em" />
-
-            <span className="at-filepicker-file__name" title={file.name}>
-              {file.name}
-            </span>
-
-            <span className="at-filepicker-file__size" data-size="sm">
-              ({formatFileSize(file.size)})
-            </span>
-
-            <Button
-              icon
-              variant="secondary"
-              data-size="sm"
-              disabled={disabled}
-              aria-label={`Remove ${file.name}`}
-              className="at-filepicker-file__remove"
-              onClick={() => onRemove(id)}
+    <Table className={clsx("at-filepicker-files-table", className)} {...rest}>
+      <Table.Head>
+        <Table.Row>
+          <Table.HeaderCell>Navn</Table.HeaderCell>
+          <Table.HeaderCell>Filstørrelse</Table.HeaderCell>
+          <Table.HeaderCell></Table.HeaderCell>
+        </Table.Row>
+      </Table.Head>
+      <Table.Body>
+        {files.map(({ id, file, hasError }) => (
+          <Table.Row key={id} data-error={hasError}>
+            <Table.Cell
+              title={file.name}
+              className="at-filepicker-files-file__name"
+              data-color="info"
             >
-              <TrashIcon aria-hidden />
-            </Button>
-
-            {error && (
-              <ValidationMessage
-                className="at-filepicker-file__error"
-                data-color="danger"
-                data-size="sm"
-                title={error}
+              <Link
+                href={disabled ? undefined : URL.createObjectURL(file)}
+                target="_blank"
+                rel="noreferrer"
+                aria-disabled={disabled}
               >
-                {error}
-              </ValidationMessage>
-            )}
-          </li>
-        </Fragment>
-      ))}
-    </ul>
+                <FileTextIcon aria-hidden="true" fontSize="1.5em" />
+                <span className="at-filepicker-files-file__text">
+                  {file.name}
+                </span>
+              </Link>
+            </Table.Cell>
+            <Table.Cell>{formatFileSize(file.size)}</Table.Cell>
+            <Table.Cell data-color="danger">
+              <Button
+                variant="tertiary"
+                data-size="sm"
+                disabled={disabled}
+                aria-label={`Remove ${file.name}`}
+                // className="at-filepicker-file__remove"
+                className="at-filepicker-files-file__remove "
+                onClick={() => onRemove(id)}
+              >
+                Fjern fil
+                <TrashIcon aria-hidden />
+              </Button>
+            </Table.Cell>
+          </Table.Row>
+        ))}
+      </Table.Body>
+    </Table>
   );
 }

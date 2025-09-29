@@ -6,6 +6,9 @@
   gap: var(--ds-size-1);
 }
 
+/**
+* Dropzone
+*/
 .at-filepicker-dropzone-wrapper {
   position: relative;
 }
@@ -68,62 +71,49 @@
   }
 }
 
-.at-filepicker-files {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-2);
-  padding: 0;
-  margin: 0;
+/**
+* Files table
+*/
+
+.at-filepicker-files-table {
 }
 
-.at-filepicker-file {
-  display: grid;
-  grid-template-columns: auto 1fr auto auto;
-  gap: var(--ds-size-1);
-  align-items: center;
-
-  padding: var(--ds-size-2);
-  border: var(--ds-border-width-default) solid var(--ds-color-border-default);
-
-  &--error {
-    border-color: var(--ds-color-danger-border-default);
-  }
+.at-filepicker-files-table th,
+.at-filepicker-files-table td {
+  white-space: nowrap;
 }
 
-.at-filepicker-file__name {
+.at-filepicker-files-table :is(th, td) {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0;
 }
 
-.at-filepicker-file__error {
-  grid-column: 1 / span 2;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0;
-  align-self: start;
+/* Filename column: takes remaining width and truncates */
+.at-filepicker-files-table :is(th, td):not(:first-child) {
+  width: max-content;
 }
 
-.at-filepicker-file__size {
-  white-space: nowrap;
-  flex-shrink: 0;
+.at-filepicker-files-table tr[data-error="true"] {
+  background: var(--ds-color-danger-surface-tinted);
 }
 
-.at-filepicker-errors {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-size-2);
-}
+.at-filepicker-files-file__name {
+  /* color: var(--ds-color) */
 
-/* Responsive adjustments */
-@container (max-width: 30rem) {
-  .at-filepicker-file {
-    padding: var(--ds-size-1) var(--ds-size-2);
-  }
-
-  .at-filepicker-file__content {
+  a {
+    display: flex;
+    align-items: center;
     gap: var(--ds-size-1);
+
+    &[aria-disabled="true"] {
+      cursor: not-allowed;
+    }
   }
+}
+
+.at-filepicker-files-table tbody tr:has(.at-filepicker-files-file__name:hover) {
+  background: var(--ds-color-neutral-surface-tinted);
+}
+
+.at-filepicker-files-file__remove {
 }
