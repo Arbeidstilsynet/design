@@ -141,18 +141,17 @@ export const WithErrors: Story = {
       {
         id: 1,
         file: createMockFileInKb("file1.pdf", 2048),
-        error: "file1.pdf size exceeds limit",
+        hasError: true,
       },
       {
         id: 2,
         file: createMockFileInKb("file2.doc", 500),
-        error:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet pretium lorem. Sed non sagittis purus. Donec quis arcu tortor. Nunc egestas vel nulla sed posuere. ",
+        hasError: true,
       },
       {
         id: 3,
         file: createMockFile("file3.txt", 40),
-        error: null,
+        hasError: null,
       },
     ],
     errors: ["Too many files selected", "Another error"],
