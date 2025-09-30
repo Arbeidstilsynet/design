@@ -186,9 +186,12 @@ export const ChangedDefaultText: Story = {
         defaultLabelText={["Custom upload text"]}
         dropLabel="Custom drop text"
       />
-      <FilePicker.Files />
+      <FilePicker.Files columnNames={["File", "Size", "Action"]} />
     </FilePicker>
   ),
+  args: {
+    files: [{ id: 1, file: createMockFileInKb("Some file.pdf", 500) }],
+  },
 };
 
 export const CustomLabelNode: Story = {
