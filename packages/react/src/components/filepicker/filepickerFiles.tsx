@@ -40,7 +40,7 @@ export function FilePickerFiles({
             {columnNames[1]}
           </Table.HeaderCell>
           <Table.HeaderCell title={columnNames[2]}>
-            {columnNames[2]}
+            {columnNames[2] || <span className="ds-sr-only">Action</span>}
           </Table.HeaderCell>
         </Table.Row>
       </Table.Head>
