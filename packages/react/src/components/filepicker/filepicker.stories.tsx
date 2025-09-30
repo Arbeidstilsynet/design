@@ -130,7 +130,7 @@ export const WithErrors: Story = {
   render: (args) => (
     <FilePicker {...args}>
       <FilePicker.Dropzone />
-      <Paragraph data-size="xs">Antall filer 3/3</Paragraph>
+      <Paragraph data-size="xs">Antall filer 3/2</Paragraph>
       <FilePicker.Errors />
       <FilePicker.Files />
     </FilePicker>
