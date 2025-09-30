@@ -12,6 +12,17 @@ const defaultProps: FilePickerProps<number> = {
 };
 
 describe("FilePicker", () => {
+  beforeAll(() => {
+    vi.stubGlobal("URL", {
+      createObjectURL: vi.fn(() => "mocked-object-url"),
+      revokeObjectURL: vi.fn(),
+    });
+  });
+
+  afterAll(() => {
+    vi.unstubAllGlobals();
+  });
+
   beforeEach(() => {
     vi.clearAllMocks();
   });
