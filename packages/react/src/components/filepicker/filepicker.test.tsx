@@ -195,7 +195,7 @@ describe("FilePicker", () => {
       </FilePicker>,
     );
 
-    expect(screen.getByText(`(${size})`)).toBeInTheDocument();
+    expect(screen.getByRole("cell", { name: size })).toBeInTheDocument();
   });
 
   test("renders complete FilePicker with all subcomponents", () => {
