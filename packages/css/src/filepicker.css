@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: column;
   width: 100%;
-  max-width: 43rem;
+  max-width: calc(var(--ds-size-30) * 5 + var(--ds-size-22));
   gap: var(--ds-size-1);
   container-type: inline-size;
 }
@@ -29,10 +29,6 @@
   background-color: var(--ds-color-background-default);
   color: var(--ds-color-text-default);
   cursor: pointer;
-
-  &.has-error {
-    border-color: var(--ds-color-danger-border-default);
-  }
 
   &:hover:not(:disabled) {
     border-color: var(--ds-color-info-border-default);
