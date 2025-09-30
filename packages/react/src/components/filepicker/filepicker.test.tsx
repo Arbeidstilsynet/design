@@ -92,8 +92,8 @@ describe("FilePicker", () => {
 
     expect(screen.getByText("document.pdf")).toBeInTheDocument();
     expect(screen.getByText("spreadsheet.xlsx")).toBeInTheDocument();
-    expect(screen.getByText("(1 MB)")).toBeInTheDocument();
-    expect(screen.getByText("(512 KB)")).toBeInTheDocument();
+    expect(screen.getByText("1 MB")).toBeInTheDocument();
+    expect(screen.getByText("512 KB")).toBeInTheDocument();
   });
 
   test("calls onRemove when remove button is clicked", async () => {
