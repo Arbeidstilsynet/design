@@ -84,9 +84,7 @@
 * Files table
 */
 .at-filepicker-files-table {
-  width: 100%;
-  border-collapse: collapse;
-  table-layout: auto; /* Let browser size natural min-content for narrow columns */
+  table-layout: fixed;
 }
 
 /* Prevent wrapping + enable ellipsis everywhere */
@@ -97,51 +95,49 @@
   text-overflow: ellipsis;
 }
 
-/* Make non-name columns shrink to min-content; name column gets remaining width */
-.at-filepicker-files-table :is(th, td):not(:first-child) {
-  width: 1%; /* Minimal width, lets first column expand */
+/* Name column gets remaining space */
+.at-filepicker-files-table :is(th, td):nth-child(1) {
+  width: auto;
+}
+.at-filepicker-files-table :is(th, td):nth-child(2) {
+  width: var(--ds-size-22);
+}
+.at-filepicker-files-table :is(th, td):nth-child(3) {
+  width: var(--ds-size-22);
 }
 
 .at-filepicker-files-file__name a {
   display: flex;
   align-items: center;
   gap: var(--ds-size-1);
-  min-width: 0; /* allow inner text to shrink */
-  overflow: hidden;
 }
 
-.at-filepicker-files-file__name .at-filepicker-files-file__text {
+.at-filepicker-files-file__text {
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
+  flex: 1; /* Keep showing icon while text is overflowing */
 }
 
-.at-filepicker-files-file__name {
-  /* color: var(--ds-color) */
+.at-filepicker-files-file__name a {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-1);
 
-  a {
-    display: flex;
-    align-items: center;
-    gap: var(--ds-size-1);
-
-    &[aria-disabled="true"] {
-      cursor: not-allowed;
-      opacity: var(--opacity-disabled, 0.3);
-    }
+  &[aria-disabled="true"] {
+    cursor: not-allowed;
+    opacity: var(--opacity-disabled, 0.3);
   }
 }
 
 .at-filepicker-files-table tr[data-error="true"] {
   background: var(--ds-color-danger-surface-tinted);
+
+  &:has(.at-filepicker-files-file__name:hover) {
+    background: var(--ds-color-danger-surface-hover);
+  }
 }
 
-/* Hover effect for error rows */
-.at-filepicker-files-table
-  tr[data-error="true"]:has(.at-filepicker-files-file__name:hover) {
-  background: var(--ds-color-danger-surface-hover);
-}
-
-/* Hover effect for non-error rows */
 .at-filepicker-files-table
   tr:not([data-error="true"]):has(.at-filepicker-files-file__name:hover) {
   background: var(--ds-color-neutral-surface-tinted);
