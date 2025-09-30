@@ -141,7 +141,7 @@ export const WithErrors: Story = {
       {
         id: 1,
         file: createMockFileInKb("file1.pdf", 2048),
-        hasError: true,
+        hasError: false,
       },
       {
         id: 2,
@@ -154,7 +154,10 @@ export const WithErrors: Story = {
         hasError: null,
       },
     ],
-    errors: ["Too many files selected", "Another error"],
+    errors: [
+      "Too many files selected",
+      "file2.doc has an unsupported file type",
+    ],
   },
 };
 
