@@ -112,7 +112,7 @@
   }
 }
 .at-filepicker-files-table :is(th, td):nth-child(3) {
-  width: var(--ds-size-22);
+  width: var(--ds-size-26);
 }
 
 .at-filepicker-files-file__name a {
