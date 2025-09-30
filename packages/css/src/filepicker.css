@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 43rem;
   gap: var(--ds-size-1);
+  container-type: inline-size;
 }
 
 /**
@@ -101,6 +102,14 @@
 }
 .at-filepicker-files-table :is(th, td):nth-child(2) {
   width: var(--ds-size-22);
+
+  @container (max-width: 400px) {
+    width: var(--ds-size-18);
+  }
+
+  @container (max-width: 350px) {
+    width: var(--ds-size-14);
+  }
 }
 .at-filepicker-files-table :is(th, td):nth-child(3) {
   width: var(--ds-size-22);
