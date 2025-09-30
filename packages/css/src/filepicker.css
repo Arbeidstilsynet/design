@@ -84,25 +84,36 @@
 * Files table
 */
 .at-filepicker-files-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto; /* Let browser size natural min-content for narrow columns */
 }
 
+/* Prevent wrapping + enable ellipsis everywhere */
 .at-filepicker-files-table th,
 .at-filepicker-files-table td {
   white-space: nowrap;
-}
-
-.at-filepicker-files-table :is(th, td) {
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* Filename column: takes remaining width and truncates */
+/* Make non-name columns shrink to min-content; name column gets remaining width */
 .at-filepicker-files-table :is(th, td):not(:first-child) {
-  width: max-content;
+  width: 1%; /* Minimal width, lets first column expand */
 }
 
-.at-filepicker-files-table tr[data-error="true"] {
-  background: var(--ds-color-danger-surface-tinted);
+.at-filepicker-files-file__name a {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-size-1);
+  min-width: 0; /* allow inner text to shrink */
+  overflow: hidden;
+}
+
+.at-filepicker-files-file__name .at-filepicker-files-file__text {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .at-filepicker-files-file__name {
@@ -120,6 +131,18 @@
   }
 }
 
-.at-filepicker-files-table tbody tr:has(.at-filepicker-files-file__name:hover) {
+.at-filepicker-files-table tr[data-error="true"] {
+  background: var(--ds-color-danger-surface-tinted);
+}
+
+/* Hover effect for error rows */
+.at-filepicker-files-table
+  tr[data-error="true"]:has(.at-filepicker-files-file__name:hover) {
+  background: var(--ds-color-danger-surface-hover);
+}
+
+/* Hover effect for non-error rows */
+.at-filepicker-files-table
+  tr:not([data-error="true"]):has(.at-filepicker-files-file__name:hover) {
   background: var(--ds-color-neutral-surface-tinted);
 }
