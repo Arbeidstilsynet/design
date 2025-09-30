@@ -331,9 +331,9 @@ describe("FilePicker", () => {
       </FilePicker>,
     );
 
-    const fileLabel = screen.getByText(
-      "very-long-filename-that-might-get-truncated-in-the-ui.pdf",
-    );
+    const fileLabel = screen.getByRole("cell", {
+      name: "very-long-filename-that-might-get-truncated-in-the-ui.pdf",
+    });
     expect(fileLabel).toHaveAttribute(
       "title",
       "very-long-filename-that-might-get-truncated-in-the-ui.pdf",
