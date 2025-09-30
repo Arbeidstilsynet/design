@@ -13,6 +13,11 @@ export interface FilePickerFilesProps
    * Custom column names for the file table.
    */
   columnNames?: [string, string, string];
+
+  /**
+   * Custom label for the remove button.
+   */
+  removeButtonLabel?: string;
 }
 
 /**
@@ -21,6 +26,7 @@ export interface FilePickerFilesProps
 export function FilePickerFiles({
   className,
   columnNames = ["Navn", "Størrelse", ""],
+  removeButtonLabel = "Fjern",
   ...rest
 }: Readonly<FilePickerFilesProps>) {
   const { files, onRemove, disabled } = use(FilePickerContext);
@@ -75,7 +81,7 @@ export function FilePickerFiles({
                   aria-label={`Remove ${file.name}`}
                   onClick={() => onRemove(id)}
                 >
-                  Fjern
+                  {removeButtonLabel}
                   <TrashIcon aria-hidden />
                 </Button>
               </Table.Cell>

@@ -186,7 +186,10 @@ export const ChangedDefaultText: Story = {
         defaultLabelText={["Custom upload text"]}
         dropLabel="Custom drop text"
       />
-      <FilePicker.Files columnNames={["File", "Size", "Action"]} />
+      <FilePicker.Files
+        columnNames={["File", "Size", "Action"]}
+        removeButtonLabel="Remove"
+      />
     </FilePicker>
   ),
   args: {
