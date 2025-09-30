@@ -61,7 +61,7 @@ export function FilePickerFiles({
                 aria-label={`Remove ${file.name}`}
                 onClick={() => onRemove(id)}
               >
-                Fjern fil
+                Fjern
                 <TrashIcon aria-hidden />
               </Button>
             </Table.Cell>
