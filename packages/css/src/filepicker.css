@@ -1,8 +1,9 @@
 .at-filepicker {
-  display: flex;
+  --at-filepicker-max-width: calc(var(--ds-size-30) * 5 + var(--ds-size-22))
+    display: flex;
   flex-flow: column;
   width: 100%;
-  max-width: calc(var(--ds-size-30) * 5 + var(--ds-size-22));
+  max-width: var(--at-filepicker-max-width);
   gap: var(--ds-size-1);
   container-type: inline-size;
 }
