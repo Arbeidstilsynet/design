@@ -274,7 +274,19 @@ export const SizeVariants: Story = {
     </div>
   ),
   args: {
-    files: [],
+    files: [
+      {
+        id: 1,
+        file: createMockFileInKb("file1.pdf", 2048),
+      },
+      {
+        id: 2,
+        file: createMockFileInKb(
+          "very long filename that just goes on and on and on and on and on and maybe ends somewhere around here.doc",
+          500,
+        ),
+      },
+    ],
     errors: [],
   },
 };
