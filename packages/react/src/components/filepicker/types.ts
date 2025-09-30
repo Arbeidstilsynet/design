@@ -30,6 +30,6 @@ export interface FilePickerItem<
   id: TFileId;
   /** The file itself. See: https://developer.mozilla.org/en-US/docs/Web/API/File */
   file: File;
-  /** Validation error for this file. Will be displayed on the file in `FilePicker.Files`. */
-  error?: string | null;
+  /** If this file has an error. Consider passing details in `errors` to `FilePicker` to show the cause. */
+  hasError?: boolean | null;
 }

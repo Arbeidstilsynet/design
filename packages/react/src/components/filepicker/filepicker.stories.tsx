@@ -1,4 +1,4 @@
-import { Paragraph } from "@digdir/designsystemet-react";
+import { Label, Paragraph } from "@digdir/designsystemet-react";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useRef, useState } from "react";
 import { FilePicker, type FilePickerItem } from "..";
@@ -130,7 +130,7 @@ export const WithErrors: Story = {
   render: (args) => (
     <FilePicker {...args}>
       <FilePicker.Dropzone />
-      <Paragraph data-size="xs">Antall filer 3/3</Paragraph>
+      <Paragraph data-size="xs">Antall filer 3/2</Paragraph>
       <FilePicker.Errors />
       <FilePicker.Files />
     </FilePicker>
@@ -141,21 +141,23 @@ export const WithErrors: Story = {
       {
         id: 1,
         file: createMockFileInKb("file1.pdf", 2048),
-        error: "file1.pdf size exceeds limit",
+        hasError: false,
       },
       {
         id: 2,
         file: createMockFileInKb("file2.doc", 500),
-        error:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet pretium lorem. Sed non sagittis purus. Donec quis arcu tortor. Nunc egestas vel nulla sed posuere. ",
+        hasError: true,
       },
       {
         id: 3,
         file: createMockFile("file3.txt", 40),
-        error: null,
+        hasError: null,
       },
     ],
-    errors: ["Too many files selected", "Another error"],
+    errors: [
+      "Too many files selected",
+      "file2.doc has an unsupported file type",
+    ],
   },
 };
 
@@ -183,6 +185,24 @@ export const ChangedDefaultText: Story = {
       <FilePicker.Dropzone
         defaultLabelText={["Custom upload text"]}
         dropLabel="Custom drop text"
+      />
+      <FilePicker.Files
+        columnNames={["File", "Size", "Action"]}
+        removeButtonLabel="Remove"
+      />
+    </FilePicker>
+  ),
+  args: {
+    files: [{ id: 1, file: createMockFileInKb("Some file.pdf", 500) }],
+  },
+};
+
+export const CustomLabelNode: Story = {
+  render: (args) => (
+    <FilePicker {...args}>
+      <FilePicker.Dropzone
+        label={<Label>Custom label node</Label>}
+        dropLabel={<Label>Custom drop text</Label>}
       />
       <FilePicker.Files />
     </FilePicker>
@@ -257,7 +277,19 @@ export const SizeVariants: Story = {
     </div>
   ),
   args: {
-    files: [],
+    files: [
+      {
+        id: 1,
+        file: createMockFileInKb("file1.pdf", 2048),
+      },
+      {
+        id: 2,
+        file: createMockFileInKb(
+          "very long filename that just goes on and on and on and on and on and maybe ends somewhere around here.doc",
+          500,
+        ),
+      },
+    ],
     errors: [],
   },
 };

@@ -2,7 +2,7 @@ import { CloudUpIcon } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import { use, type HTMLAttributes } from "react";
 import { useDropzone } from "react-dropzone";
-import { Button, Label, Spinner } from "../../digdir";
+import { Button, Spinner } from "../../digdir";
 import type { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 
@@ -33,7 +33,7 @@ function DefaultLabel({
 export interface FilePickerDropzoneProps
   extends DefaultProps<HTMLDivElement>,
     HTMLAttributes<HTMLDivElement> {
-  /** Replace the default label nodes. Should use `<Label>` or other typography. */
+  /** Replace the default label nodes entirely. */
   label?: React.ReactNode;
 
   /**
@@ -43,10 +43,18 @@ export interface FilePickerDropzoneProps
    *  */
   defaultLabelText?: [string] | [string, string] | [string, string, string];
 
-  /** Label text shown when a file is dragged over the dropzone */
-  dropLabel?: string;
+  /**
+   * Label shown when a file is dragged over the dropzone.
+   * If it's a string it will be underlined.
+   */
+  dropLabel?: string | React.ReactNode;
 }
 
+/**
+ * Area for drag-and-drop or opening the file dialog.
+ *
+ * Pass either `label` or `defaultLabelText` to customize the label.
+ */
 export function FilePickerDropzone({
   className,
   label,
@@ -71,6 +79,13 @@ export function FilePickerDropzone({
     noKeyboard: true, // native keyboard on the button
     disabled: isDisabled,
   });
+
+  const dragNode =
+    typeof dropLabel === "string" ? (
+      <span style={{ textDecoration: "underline" }}>{dropLabel}</span>
+    ) : (
+      dropLabel
+    );
 
   return (
     <div
@@ -100,11 +115,9 @@ export function FilePickerDropzone({
         }}
       >
         {!isWaiting &&
-          (isDragActive ? (
-            <Label style={{ textDecoration: "underline" }}>{dropLabel}</Label>
-          ) : (
-            (label ?? <DefaultLabel defaultLabelText={defaultLabelText} />)
-          ))}
+          (isDragActive
+            ? dragNode
+            : (label ?? <DefaultLabel defaultLabelText={defaultLabelText} />))}
       </Button>
     </div>
   );

@@ -8,6 +8,9 @@ export interface FilePickerErrorsProps
   extends DefaultProps<HTMLDivElement>,
     HTMLAttributes<HTMLDivElement> {}
 
+/**
+ * Displays errors passed to the parent `FilePicker` component.
+ */
 export function FilePickerErrors({
   className,
   ...rest

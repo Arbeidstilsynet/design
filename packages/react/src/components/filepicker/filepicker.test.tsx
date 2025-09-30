@@ -12,6 +12,17 @@ const defaultProps: FilePickerProps<number> = {
 };
 
 describe("FilePicker", () => {
+  beforeAll(() => {
+    vi.stubGlobal("URL", {
+      createObjectURL: vi.fn(() => "mocked-object-url"),
+      revokeObjectURL: vi.fn(),
+    });
+  });
+
+  afterAll(() => {
+    vi.unstubAllGlobals();
+  });
+
   beforeEach(() => {
     vi.clearAllMocks();
   });
@@ -81,8 +92,8 @@ describe("FilePicker", () => {
 
     expect(screen.getByText("document.pdf")).toBeInTheDocument();
     expect(screen.getByText("spreadsheet.xlsx")).toBeInTheDocument();
-    expect(screen.getByText("(1 MB)")).toBeInTheDocument();
-    expect(screen.getByText("(512 KB)")).toBeInTheDocument();
+    expect(screen.getByText("1 MB")).toBeInTheDocument();
+    expect(screen.getByText("512 KB")).toBeInTheDocument();
   });
 
   test("calls onRemove when remove button is clicked", async () => {
@@ -184,7 +195,7 @@ describe("FilePicker", () => {
       </FilePicker>,
     );
 
-    expect(screen.getByText(`(${size})`)).toBeInTheDocument();
+    expect(screen.getByRole("cell", { name: size })).toBeInTheDocument();
   });
 
   test("renders complete FilePicker with all subcomponents", () => {
@@ -320,9 +331,9 @@ describe("FilePicker", () => {
       </FilePicker>,
     );
 
-    const fileLabel = screen.getByText(
-      "very-long-filename-that-might-get-truncated-in-the-ui.pdf",
-    );
+    const fileLabel = screen.getByRole("cell", {
+      name: "very-long-filename-that-might-get-truncated-in-the-ui.pdf",
+    });
     expect(fileLabel).toHaveAttribute(
       "title",
       "very-long-filename-that-might-get-truncated-in-the-ui.pdf",
