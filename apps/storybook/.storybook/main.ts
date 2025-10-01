@@ -12,6 +12,7 @@ const config: StorybookConfig = {
     "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
     "../../../packages/react/src/components/**/*.stories.@(js|jsx|mjs|ts|tsx)",
+    "../../../packages/react/src/components/**/*.mdx",
   ],
   staticDirs: ["../stories/assets"],
   addons: [
