@@ -1,7 +1,11 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "composite": true
+    "composite": true,
+    "paths": {
+      "@arbeidstilsynet/design-react": ["../react/src/index.ts"]
+    }
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "../react/src/**/*.ts", "../react/src/**/*.tsx"],
+  "exclude": ["../react/src/**/*.test.tsx"]
 }
