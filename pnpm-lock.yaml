@@ -164,22 +164,6 @@ importers:
         specifier: 13.0.2
         version: 13.0.2(postcss@8.5.6)
 
-  packages/docs-components:
-    dependencies:
-      '@arbeidstilsynet/design-react':
-        specifier: workspace:*
-        version: link:../react
-    devDependencies:
-      '@types/react':
-        specifier: 19.1.14
-        version: 19.1.14
-      clsx:
-        specifier: 2.1.1
-        version: 2.1.1
-      react:
-        specifier: 19.1.1
-        version: 19.1.1
-
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
@@ -204,9 +188,6 @@ importers:
       '@eslint/js':
         specifier: 9.36.0
         version: 9.36.0
-      '@internal/docs-components':
-        specifier: workspace:*
-        version: link:../docs-components
       '@testing-library/jest-dom':
         specifier: 6.8.0
         version: 6.8.0

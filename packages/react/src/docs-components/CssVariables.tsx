@@ -1,8 +1,8 @@
 // based on upstream component
 // https://github.com/digdir/designsystemet/blob/7d233fbf6841ff1839607ec93984d5aec049a5b5/apps/storybook/docs-components/CssVariables/CssVariables.tsx
 
-import { Heading, Table } from "@arbeidstilsynet/design-react";
 import cl from "clsx/lite";
+import { Heading, Table } from "..";
 
 type CssVariablesProps = {
   css: string;
