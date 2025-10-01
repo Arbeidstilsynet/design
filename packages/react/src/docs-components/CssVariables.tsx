@@ -45,7 +45,7 @@ export function CssVariables({ css, className, ...rest }: CssVariablesProps) {
 
 /* get variables and its value from css file */
 function getCssVariables(css: string) {
-  const res: { [key: string]: string } = {};
+  const res: Record<string, string> = {};
 
   // temporarily remove inline strings, as they may contain ; and } characters
   // and thus ruin the matching for property declarations
