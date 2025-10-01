@@ -1,0 +1,20 @@
+import {
+  Meta,
+  Primary,
+  Stories,
+  Controls,
+  Description,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import { CssVariables } from "@internal/docs-components";
+import { FilePicker } from "./filepicker";
+import * as FilePickerStories from "./filepicker.stories";
+import css from "@arbeidstilsynet/design-css/filepicker.css?inline";
+
+<Meta of={FilePickerStories} />
+<Title />
+<Description />
+<Primary />
+<Controls sort="requiredFirst" />
+<CssVariables css={css} />
+<Stories />

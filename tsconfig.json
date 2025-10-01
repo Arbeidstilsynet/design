@@ -5,6 +5,7 @@
   "references": [
     { "path": "./scripts" },
     { "path": "./apps/storybook" },
-    { "path": "./packages/react" }
+    { "path": "./packages/react" },
+    { "path": "./packages/docs-components" }
   ]
 }
