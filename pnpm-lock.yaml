@@ -18,8 +18,8 @@ importers:
         specifier: 2.29.7
         version: 2.29.7(@types/node@22.18.6)
       '@digdir/designsystemet':
-        specifier: 1.5.1
-        version: 1.5.1
+        specifier: 1.6.0
+        version: 1.6.0
       '@svitejs/changesets-changelog-github-compact':
         specifier: 1.2.0
         version: 1.2.0
@@ -130,8 +130,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.5.1
-        version: 1.5.1
+        specifier: 1.6.0
+        version: 1.6.0
     devDependencies:
       autoprefixer:
         specifier: 10.4.21
@@ -158,8 +158,8 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.5.1
-        version: 1.5.1(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        specifier: 1.6.0
+        version: 1.6.0(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@navikt/aksel-icons':
         specifier: ^7.31.0
         version: 7.31.0
@@ -556,18 +556,18 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.0.0
 
-  '@digdir/designsystemet-css@1.5.1':
-    resolution: {integrity: sha512-o7QltH+fXjNvgJ9Z3d+dMnaSbTBf+aMsECqtO9uLhQVyA/p8t3rWKZsOFl33vgqpvtWuI9NfEQv75DavTc2RWA==}
+  '@digdir/designsystemet-css@1.6.0':
+    resolution: {integrity: sha512-I6bT2S4uKxTFEgi+y8/kGIloxMlW/4dKUhBDHi+nqmQFaBW7SK85/+y7xboQdjgmhFdLq9Uu2bfn6K1O/1fatQ==}
 
-  '@digdir/designsystemet-react@1.5.1':
-    resolution: {integrity: sha512-tGTpfESIFWkhY7WIHgpNEhbU6fZb4SDHEGec+ccQcEj3UXfXT0YS+SRwSBrk3TRrO8eigUkhhHK3qbd0Jabekg==}
+  '@digdir/designsystemet-react@1.6.0':
+    resolution: {integrity: sha512-zaggFLCc64+zrVMcruj7ck5yPvpYx6LT7P7rUfzvSyMHu1vIw0W01YBp6omAv7vJi6qZ7gu1QAFQiADGmditlg==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet@1.5.1':
-    resolution: {integrity: sha512-KlKnqExtvjdEkWOcHwJmDd/3FbgeHHw21UOl2yaLOXO6mZP0OpWv5Si7igMeoWJli3pqdQz8lN5f/DshWwWwpA==}
-    engines: {node: '>=22.19.0'}
+  '@digdir/designsystemet@1.6.0':
+    resolution: {integrity: sha512-czTQnEndW71HX60uXyRQpMzVv172mLimh8uU9vkilYArhh3O31ea1Pymwn2NIBeqat2/0A1DF/P+SIEcmewNaQ==}
+    engines: {node: '>=20 <25'}
     hasBin: true
 
   '@esbuild/aix-ppc64@0.25.8':
@@ -1748,8 +1748,8 @@ packages:
     resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
     engines: {node: '>=18'}
 
-  commander@14.0.0:
-    resolution: {integrity: sha512-2uM9rYjPvyq39NwLRqaiLtWHyDC1FvryJDa2ATTVims5YAS4PupsEQsDvP14FqhFr0P49CYDugi59xaxJlTXRA==}
+  commander@14.0.1:
+    resolution: {integrity: sha512-2JkV3gUZUVrbNA+1sjBOYLsMZ5cEEl8GTFP2a4AVz5hvasAMCQ1D2l2le/cX+pV4N6ZU17zjUahLpIXRrnWL8A==}
     engines: {node: '>=20'}
 
   compare-versions@6.1.1:
@@ -4099,8 +4099,8 @@ packages:
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
 
-  zod-validation-error@4.0.1:
-    resolution: {integrity: sha512-F3rdaCOHs5ViJ5YTz5zzRtfkQdMdIeKudJAoxy7yB/2ZMEHw73lmCAcQw11r7++20MyGl4WV59EVh7A9rNAyog==}
+  zod-validation-error@4.0.2:
+    resolution: {integrity: sha512-Q6/nZLe6jxuU80qb/4uJ4t5v2VEZ44lzQjPDhYJNztRQ4wyWc6VF3D3Kb/fAuPetZQnhS3hnajCf9CsWesghLQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
@@ -4108,8 +4108,8 @@ packages:
   zod@3.25.76:
     resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
-  zod@4.1.5:
-    resolution: {integrity: sha512-rcUUZqlLJgBC33IT3PNMgsCq6TzLQEG/Ei/KTCU0PedSWRMAXoOUN+4t/0H+Q8bdnLPdqUYnvboJT0bn/229qg==}
+  zod@4.1.11:
+    resolution: {integrity: sha512-WPsqwxITS2tzx1bzhIKsEs19ABD5vmCVa4xBo2tq/SrV4RNZtfws1EnCWQXM6yh8bD08a1idvkB5MZSBiZsjwg==}
 
 snapshots:
 
@@ -4549,9 +4549,9 @@ snapshots:
       human-id: 4.1.1
       prettier: 2.8.8
 
-  '@commander-js/extra-typings@14.0.0(commander@14.0.0)':
+  '@commander-js/extra-typings@14.0.0(commander@14.0.1)':
     dependencies:
-      commander: 14.0.0
+      commander: 14.0.1
 
   '@csstools/color-helpers@5.0.2': {}
 
@@ -4585,9 +4585,9 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.0
 
-  '@digdir/designsystemet-css@1.5.1': {}
+  '@digdir/designsystemet-css@1.6.0': {}
 
-  '@digdir/designsystemet-react@1.5.1(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@digdir/designsystemet-react@1.6.0(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@floating-ui/dom': 1.7.4
       '@floating-ui/react': 0.26.23(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
@@ -4603,15 +4603,15 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet@1.5.1':
+  '@digdir/designsystemet@1.6.0':
     dependencies:
-      '@commander-js/extra-typings': 14.0.0(commander@14.0.0)
+      '@commander-js/extra-typings': 14.0.0(commander@14.0.1)
       '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@5.0.4)
       apca-w3: 0.1.9
       change-case: 5.4.4
       chroma-js: 3.1.2
       colorjs.io: 0.6.0-alpha.1
-      commander: 14.0.0
+      commander: 14.0.1
       fast-glob: 3.3.3
       hsluv: 1.0.1
       object-hash: 3.0.0
@@ -4619,8 +4619,8 @@ snapshots:
       postcss: 8.5.6
       ramda: 0.31.3
       style-dictionary: 5.0.4
-      zod: 4.1.5
-      zod-validation-error: 4.0.1(zod@4.1.5)
+      zod: 4.1.11
+      zod-validation-error: 4.0.2(zod@4.1.11)
 
   '@esbuild/aix-ppc64@0.25.8':
     optional: true
@@ -5871,7 +5871,7 @@ snapshots:
 
   commander@12.1.0: {}
 
-  commander@14.0.0: {}
+  commander@14.0.1: {}
 
   compare-versions@6.1.1: {}
 
@@ -8430,10 +8430,10 @@ snapshots:
     dependencies:
       zod: 3.25.76
 
-  zod-validation-error@4.0.1(zod@4.1.5):
+  zod-validation-error@4.0.2(zod@4.1.11):
     dependencies:
-      zod: 4.1.5
+      zod: 4.1.11
 
   zod@3.25.76: {}
 
-  zod@4.1.5: {}
+  zod@4.1.11: {}
