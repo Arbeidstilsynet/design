@@ -1,5 +1,45 @@
 # @arbeidstilsynet/design-react
 
+## 0.3.1
+
+Released: 2025-10-02
+
+### Patch Changes
+
+- Update FilePicker look, render semantic list for files ([#318](https://github.com/Arbeidstilsynet/design/pull/318))
+
+- FilePicker: FilePickerItem can have boolean `hasError` instead of string `error` ([#331](https://github.com/Arbeidstilsynet/design/pull/331))
+
+- FilePicker: show files as table instead of list ([#331](https://github.com/Arbeidstilsynet/design/pull/331))
+
+- Export Color and Size types ([#321](https://github.com/Arbeidstilsynet/design/pull/321))
+
+- Updated dependency `@storybook/addon-vitest` to `9.1.8`. ([#328](https://github.com/Arbeidstilsynet/design/pull/328))
+  Updated dependency `@storybook/react-vite` to `9.1.8`.
+  Updated dependency `@storybook/addon-a11y` to `9.1.8`.
+  Updated dependency `@storybook/addon-docs` to `9.1.8`.
+  Updated dependency `eslint-plugin-storybook` to `9.1.8`.
+  Updated dependency `storybook` to `9.1.8`.
+
+- Updated dependency `typescript-eslint` to `8.44.1`. ([#322](https://github.com/Arbeidstilsynet/design/pull/322))
+
+- Updated dependency `@types/react` to `19.1.15`. ([#335](https://github.com/Arbeidstilsynet/design/pull/335))
+
+- Updated dependency `@digdir/designsystemet-css` to `1.6.0`. ([#336](https://github.com/Arbeidstilsynet/design/pull/336))
+  Updated dependency `@digdir/designsystemet` to `1.6.0`.
+  Updated dependency `@digdir/designsystemet-react` to `1.6.0`.
+
+- Updated dependency `@navikt/aksel-icons` to `^7.31.0`. ([#320](https://github.com/Arbeidstilsynet/design/pull/320))
+
+- Updated dependency `@vitejs/plugin-react` to `5.0.4`. ([#333](https://github.com/Arbeidstilsynet/design/pull/333))
+
+- Updated dependency `vite` to `7.1.7`. ([#319](https://github.com/Arbeidstilsynet/design/pull/319))
+
+- Updated dependency `@eslint/js` to `9.36.0`. ([#316](https://github.com/Arbeidstilsynet/design/pull/316))
+  Updated dependency `eslint` to `9.36.0`.
+
+- FilePicker.Dropzone: support arbitrary `dropLabel` node ([#331](https://github.com/Arbeidstilsynet/design/pull/331))
+
 ## 0.3.0
 
 Released: 2025-09-22

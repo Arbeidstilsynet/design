@@ -1,5 +1,25 @@
 # @arbeidstilsynet/design-css
 
+## 0.3.1
+
+Released: 2025-10-02
+
+### Patch Changes
+
+- Update FilePicker look, render semantic list for files ([#318](https://github.com/Arbeidstilsynet/design/pull/318))
+
+- FilePicker: scale width with data-size ([#332](https://github.com/Arbeidstilsynet/design/pull/332))
+
+- Rename --ds-disabled-opacity to --ds-opacity-disabled ([#326](https://github.com/Arbeidstilsynet/design/pull/326))
+
+- FilePicker: show files as table instead of list ([#331](https://github.com/Arbeidstilsynet/design/pull/331))
+
+- Updated dependency `@digdir/designsystemet-css` to `1.6.0`. ([#336](https://github.com/Arbeidstilsynet/design/pull/336))
+  Updated dependency `@digdir/designsystemet` to `1.6.0`.
+  Updated dependency `@digdir/designsystemet-react` to `1.6.0`.
+
+- Fix missing opacity on disabled button ([#324](https://github.com/Arbeidstilsynet/design/pull/324))
+
 ## 0.3.0
 
 Released: 2025-09-22

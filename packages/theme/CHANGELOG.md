@@ -1,5 +1,15 @@
 # @arbeidstilsynet/design-theme
 
+## 0.2.1
+
+Released: 2025-10-02
+
+### Patch Changes
+
+- Add missing --ds-link-color-visited ([#327](https://github.com/Arbeidstilsynet/design/pull/327))
+
+- Rename --ds-disabled-opacity to --ds-opacity-disabled ([#326](https://github.com/Arbeidstilsynet/design/pull/326))
+
 ## 0.2.0
 
 Released: 2025-09-16
