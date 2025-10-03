@@ -71,7 +71,7 @@ importers:
         version: 9.1.8(storybook@9.1.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@7.1.7(@types/node@22.18.7)(tsx@4.20.6)(yaml@2.8.0)))
       '@storybook/addon-docs':
         specifier: 9.1.8
-        version: 9.1.8(@types/react@19.1.15)(storybook@9.1.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@7.1.7(@types/node@22.18.7)(tsx@4.20.6)(yaml@2.8.0)))
+        version: 9.1.8(@types/react@19.1.16)(storybook@9.1.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@7.1.7(@types/node@22.18.7)(tsx@4.20.6)(yaml@2.8.0)))
       '@storybook/addon-storysource':
         specifier: 8.6.14
         version: 8.6.14(storybook@9.1.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@7.1.7(@types/node@22.18.7)(tsx@4.20.6)(yaml@2.8.0)))
@@ -85,11 +85,11 @@ importers:
         specifier: 22.18.7
         version: 22.18.7
       '@types/react':
-        specifier: 19.1.15
-        version: 19.1.15
+        specifier: 19.1.16
+        version: 19.1.16
       '@types/react-dom':
         specifier: 19.1.9
-        version: 19.1.9(@types/react@19.1.15)
+        version: 19.1.9(@types/react@19.1.16)
       '@vitest/browser':
         specifier: 3.2.4
         version: 3.2.4(playwright@1.55.1)(vite@7.1.7(@types/node@22.18.7)(tsx@4.20.6)(yaml@2.8.0))(vitest@3.2.4)
@@ -159,13 +159,13 @@ importers:
     dependencies:
       '@digdir/designsystemet-react':
         specifier: 1.6.0
-        version: 1.6.0(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 1.6.0(@types/react@19.1.16)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@navikt/aksel-icons':
         specifier: ^7.31.0
         version: 7.31.0
       '@radix-ui/react-slot':
         specifier: ^1.2.3
-        version: 1.2.3(@types/react@19.1.15)(react@19.1.1)
+        version: 1.2.3(@types/react@19.1.16)(react@19.1.1)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -181,7 +181,7 @@ importers:
         version: 9.36.0
       '@storybook/addon-docs':
         specifier: 9.1.8
-        version: 9.1.8(@types/react@19.1.15)(storybook@9.1.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@7.1.7(@types/node@22.18.7)(tsx@4.20.6)(yaml@2.8.0)))
+        version: 9.1.8(@types/react@19.1.16)(storybook@9.1.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@7.1.7(@types/node@22.18.7)(tsx@4.20.6)(yaml@2.8.0)))
       '@storybook/addon-vitest':
         specifier: 9.1.8
         version: 9.1.8(@vitest/browser@3.2.4)(@vitest/runner@3.2.4)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(storybook@9.1.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@7.1.7(@types/node@22.18.7)(tsx@4.20.6)(yaml@2.8.0)))(vitest@3.2.4)
@@ -193,7 +193,7 @@ importers:
         version: 6.8.0
       '@testing-library/react':
         specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
+        version: 16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.1.9(@types/react@19.1.16))(@types/react@19.1.16)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@testing-library/user-event':
         specifier: 14.6.1
         version: 14.6.1(@testing-library/dom@10.4.1)
@@ -204,11 +204,11 @@ importers:
         specifier: 22.18.7
         version: 22.18.7
       '@types/react':
-        specifier: 19.1.15
-        version: 19.1.15
+        specifier: 19.1.16
+        version: 19.1.16
       '@types/react-dom':
         specifier: 19.1.9
-        version: 19.1.9(@types/react@19.1.15)
+        version: 19.1.9(@types/react@19.1.16)
       '@vitejs/plugin-react':
         specifier: 5.0.4
         version: 5.0.4(vite@7.1.7(@types/node@22.18.7)(tsx@4.20.6)(yaml@2.8.0))
@@ -1282,8 +1282,8 @@ packages:
     peerDependencies:
       '@types/react': ^19.0.0
 
-  '@types/react@19.1.15':
-    resolution: {integrity: sha512-+kLxJpaJzXybyDyFXYADyP1cznTO8HSuBpenGlnKOAkH4hyNINiywvXS/tGJhsrGGP/gM185RA3xpjY0Yg4erA==}
+  '@types/react@19.1.16':
+    resolution: {integrity: sha512-WBM/nDbEZmDUORKnh5i1bTnAz6vTohUf9b8esSMu+b24+srbaxa04UbJgWx78CVfNXA20sNu0odEIluZDFdCog==}
 
   '@types/resolve@1.20.6':
     resolution: {integrity: sha512-A4STmOXPhMUtHH+S6ymgE2GiBSMqf4oTvcQZMcHzokuTLVYzXTB8ttjcgxOVaAp2lGwEdzZ0J+cRbbeevQj1UQ==}
@@ -4624,12 +4624,12 @@ snapshots:
 
   '@digdir/designsystemet-css@1.6.0': {}
 
-  '@digdir/designsystemet-react@1.6.0(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@digdir/designsystemet-react@1.6.0(@types/react@19.1.16)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@floating-ui/dom': 1.7.4
       '@floating-ui/react': 0.26.23(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@navikt/aksel-icons': 7.31.0
-      '@radix-ui/react-slot': 1.2.3(@types/react@19.1.15)(react@19.1.1)
+      '@radix-ui/react-slot': 1.2.3(@types/react@19.1.16)(react@19.1.1)
       '@tanstack/react-virtual': 3.13.12(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@u-elements/u-combobox': 1.0.1
       '@u-elements/u-datalist': 1.0.14
@@ -4919,10 +4919,10 @@ snapshots:
       globby: 11.1.0
       read-yaml-file: 1.1.0
 
-  '@mdx-js/react@3.1.0(@types/react@19.1.15)(react@19.1.1)':
+  '@mdx-js/react@3.1.0(@types/react@19.1.16)(react@19.1.1)':
     dependencies:
       '@types/mdx': 2.0.13
-      '@types/react': 19.1.15
+      '@types/react': 19.1.16
       react: 19.1.1
 
   '@microsoft/api-extractor-model@7.30.7(@types/node@22.18.7)':
@@ -4979,18 +4979,18 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@radix-ui/react-compose-refs@1.1.2(@types/react@19.1.15)(react@19.1.1)':
+  '@radix-ui/react-compose-refs@1.1.2(@types/react@19.1.16)(react@19.1.1)':
     dependencies:
       react: 19.1.1
     optionalDependencies:
-      '@types/react': 19.1.15
+      '@types/react': 19.1.16
 
-  '@radix-ui/react-slot@1.2.3(@types/react@19.1.15)(react@19.1.1)':
+  '@radix-ui/react-slot@1.2.3(@types/react@19.1.16)(react@19.1.1)':
     dependencies:
-      '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.1.15)(react@19.1.1)
+      '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.1.16)(react@19.1.1)
       react: 19.1.1
     optionalDependencies:
-      '@types/react': 19.1.15
+      '@types/react': 19.1.16
 
   '@rolldown/pluginutils@1.0.0-beta.38': {}
 
@@ -5104,9 +5104,9 @@ snapshots:
       axe-core: 4.10.3
       storybook: 9.1.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@7.1.7(@types/node@22.18.7)(tsx@4.20.6)(yaml@2.8.0))
 
-  '@storybook/addon-docs@9.1.8(@types/react@19.1.15)(storybook@9.1.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@7.1.7(@types/node@22.18.7)(tsx@4.20.6)(yaml@2.8.0)))':
+  '@storybook/addon-docs@9.1.8(@types/react@19.1.16)(storybook@9.1.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@7.1.7(@types/node@22.18.7)(tsx@4.20.6)(yaml@2.8.0)))':
     dependencies:
-      '@mdx-js/react': 3.1.0(@types/react@19.1.15)(react@19.1.1)
+      '@mdx-js/react': 3.1.0(@types/react@19.1.16)(react@19.1.1)
       '@storybook/csf-plugin': 9.1.8(storybook@9.1.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@7.1.7(@types/node@22.18.7)(tsx@4.20.6)(yaml@2.8.0)))
       '@storybook/icons': 1.4.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)
       '@storybook/react-dom-shim': 9.1.8(react-dom@19.1.1(react@19.1.1))(react@19.1.1)(storybook@9.1.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@7.1.7(@types/node@22.18.7)(tsx@4.20.6)(yaml@2.8.0)))
@@ -5236,15 +5236,15 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
 
-  '@testing-library/react@16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.1.9(@types/react@19.1.15))(@types/react@19.1.15)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
+  '@testing-library/react@16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.1.9(@types/react@19.1.16))(@types/react@19.1.16)(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
       '@babel/runtime': 7.28.2
       '@testing-library/dom': 10.4.1
       react: 19.1.1
       react-dom: 19.1.1(react@19.1.1)
     optionalDependencies:
-      '@types/react': 19.1.15
-      '@types/react-dom': 19.1.9(@types/react@19.1.15)
+      '@types/react': 19.1.16
+      '@types/react-dom': 19.1.9(@types/react@19.1.16)
 
   '@testing-library/user-event@14.6.1(@testing-library/dom@10.4.1)':
     dependencies:
@@ -5316,11 +5316,11 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
-  '@types/react-dom@19.1.9(@types/react@19.1.15)':
+  '@types/react-dom@19.1.9(@types/react@19.1.16)':
     dependencies:
-      '@types/react': 19.1.15
+      '@types/react': 19.1.16
 
-  '@types/react@19.1.15':
+  '@types/react@19.1.16':
     dependencies:
       csstype: 3.1.3
 
