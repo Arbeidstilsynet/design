@@ -1,8 +1,8 @@
 import { Button, Paragraph, Popover } from "@arbeidstilsynet/design-react";
 import { TrashIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn } from "@storybook/react-vite";
+import { useState } from "react";
 import { expect, userEvent, within } from "storybook/test";
-import { useEffect, useState } from "react";
 
 export default {
   title: "designsystemet.no/Popover",
@@ -144,17 +144,13 @@ const VariantsMap: {
 };
 
 export const Variants: StoryFn<typeof Popover> = () => {
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => setOpen(true), []);
-
   return (
     <>
       {Object.entries(VariantsMap).map(([key, props], index) => (
         <Popover.TriggerContext key={key}>
           <Popover.Trigger>popover</Popover.Trigger>
           <Popover
-            open={open}
+            open={true}
             placement={index >= 4 ? "bottom" : "top"}
             autoPlacement={false}
             {...props}
