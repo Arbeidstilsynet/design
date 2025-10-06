@@ -3,13 +3,12 @@
 import { default as eslint } from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import jsxA11y from "eslint-plugin-jsx-a11y";
-import reactPlugin from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import storybook from "eslint-plugin-storybook";
+import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 
-/** @type {import("typescript-eslint").ConfigArray} */
-const config = tseslint.config(
+export default defineConfig(
   {
     ignores: ["**/node_modules", "**/dist", "**/coverage", "**/*.config.*"],
   },
@@ -17,9 +16,9 @@ const config = tseslint.config(
   eslint.configs.recommended,
   tseslint.configs.recommendedTypeChecked,
   tseslint.configs.stylisticTypeChecked,
-  reactPlugin.configs.flat.recommended,
-  reactPlugin.configs.flat["jsx-runtime"],
-  reactHooks.configs.recommended,
+  // @ts-ignore Property 'configs' does not exist on type
+  reactHooks.configs["recommended-latest"],
+  // @ts-ignore
   jsxA11y.flatConfigs.recommended,
   storybook.configs["flat/recommended"],
   eslintConfigPrettier,
@@ -40,7 +39,6 @@ const config = tseslint.config(
       },
     },
     rules: {
-      "react-hooks/react-compiler": "error",
       eqeqeq: "error",
 
       "@typescript-eslint/prefer-nullish-coalescing": [
@@ -70,5 +68,3 @@ const config = tseslint.config(
     },
   },
 );
-
-export default config;
