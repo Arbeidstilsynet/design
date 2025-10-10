@@ -236,7 +236,7 @@ build: v1.6.0
   --ds-color-warning-base-contrast-default: #000000;
   --ds-color-focus-inner: #ffffff;
   --ds-color-focus-outer: #000000;
-  --ds-color-inspirator2: #;
+  --ds-color-inspirator2-background-default: #ffffff;
   --ds-link-color-visited: #663299;
 
   color-scheme: light;
@@ -390,7 +390,7 @@ build: v1.6.0
   --ds-color-warning-base-contrast-default: #000000;
   --ds-color-focus-inner: #ffffff;
   --ds-color-focus-outer: #000000;
-  --ds-color-inspirator2: #;
+  --ds-color-inspirator2-background-default: #ffffff;
   --ds-link-color-visited: #663299;
 
   color-scheme: light;
@@ -709,7 +709,7 @@ build: v1.6.0
   --ds-color-warning-base-contrast-default: #ffffff;
   --ds-color-focus-inner: #1b1b1b;
   --ds-color-focus-outer: #e5e5e5;
-  --ds-color-inspirator2: #;
+  --ds-color-inspirator2-background-default: #241413;
   --ds-link-color-visited: #b49acd;
 
   color-scheme: dark;
@@ -863,7 +863,7 @@ build: v1.6.0
   --ds-color-warning-base-contrast-default: #ffffff;
   --ds-color-focus-inner: #1b1b1b;
   --ds-color-focus-outer: #e5e5e5;
-  --ds-color-inspirator2: #;
+  --ds-color-inspirator2-background-default: #241413;
   --ds-link-color-visited: #b49acd;
 
   color-scheme: dark;
