@@ -4,7 +4,7 @@
 
 Gnist, the Norwegian Labour Inspection Authority's design system, based on [designsystemet.no](https://www.designsystemet.no).
 
-Storybook: [gnist.arbeidstilsynet.no](https://design2.arbeidstilsynet.no)
+Storybook: [gnist.arbeidstilsynet.no](https://gnist.arbeidstilsynet.no)
 
 ## Packages
 
