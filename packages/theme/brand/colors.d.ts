@@ -9,6 +9,7 @@ declare module '@digdir/designsystemet/types' {
     inspirator: never;
     veileder: never;
     tilsyn: never;
+    inspirator2: never;
     neutral: never;
   }
   export interface SeverityColorDefinitions {
