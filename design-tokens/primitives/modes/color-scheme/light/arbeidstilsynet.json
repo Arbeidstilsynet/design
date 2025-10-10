@@ -66,6 +66,72 @@
         "$value": "#ffffff"
       }
     },
+    "support2": {
+      "1": {
+        "$type": "color",
+        "$value": "#ffffff"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "#D6F1EE"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "#ffffff"
+      },
+      "4": {
+        "$type": "color",
+        "$value": "#D6F1EE"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "#B3E5DF"
+      },
+      "6": {
+        "$type": "color",
+        "$value": "#67CBC0"
+      },
+      "7": {
+        "$type": "color",
+        "$value": "#E5E5E5"
+      },
+      "8": {
+        "$type": "color",
+        "$value": "#333333"
+      },
+      "9": {
+        "$type": "color",
+        "$value": "#666666"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "#000000"
+      },
+      "11": {
+        "$type": "color",
+        "$value": "#000000"
+      },
+      "12": {
+        "$type": "color",
+        "$value": "#0B8477"
+      },
+      "13": {
+        "$type": "color",
+        "$value": "#085E55"
+      },
+      "14": {
+        "$type": "color",
+        "$value": "#064640"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "#ffffff"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "#ffffff"
+      }
+    },
     "inspirator": {
       "1": {
         "$type": "color",

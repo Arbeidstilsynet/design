@@ -132,6 +132,72 @@
         "$value": "{arbeidstilsynet.neutral.16}"
       }
     },
+    "support2": {
+      "1": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.1}"
+      },
+      "2": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.2}"
+      },
+      "3": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.3}"
+      },
+      "4": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.4}"
+      },
+      "5": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.5}"
+      },
+      "6": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.6}"
+      },
+      "7": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.7}"
+      },
+      "8": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.8}"
+      },
+      "9": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.9}"
+      },
+      "10": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.10}"
+      },
+      "11": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.11}"
+      },
+      "12": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.12}"
+      },
+      "13": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.13}"
+      },
+      "14": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.14}"
+      },
+      "15": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.15}"
+      },
+      "16": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.support2.16}"
+      }
+    },
     "inspirator": {
       "1": {
         "$type": "color",
