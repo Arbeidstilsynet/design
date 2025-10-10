@@ -603,6 +603,10 @@
         "$type": "color",
         "$value": "{color.neutral.text-default}"
       }
+    },
+    "inspirator2": {
+      "$type": "color",
+      "$value": "#"
     }
   },
   "link": {

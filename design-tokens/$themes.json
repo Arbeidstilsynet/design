@@ -957,5 +957,15 @@
     },
     "$figmaStyleReferences": {},
     "group": "Support color"
+  },
+  {
+    "id": "a2e92eaae5f27aa8b475f2ff87db7accd3b38170",
+    "name": "Inspirator2",
+    "$figmaStyleReferences": {},
+    "selectedTokenSets": {
+      "primitives/modes/color-scheme/dark/arbeidstilsynet": "enabled",
+      "themes/arbeidstilsynet": "enabled"
+    },
+    "group": "Support color"
   }
 ]
