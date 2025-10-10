@@ -605,8 +605,10 @@
       }
     },
     "inspirator2": {
-      "$type": "color",
-      "$value": "#"
+      "background-default": {
+        "$type": "color",
+        "$value": "{color.inspirator.1}"
+      }
     }
   },
   "link": {
