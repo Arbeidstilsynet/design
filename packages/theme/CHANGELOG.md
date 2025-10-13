@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.2.2
+
+Released: 2025-10-13
+
+### Patch Changes
+
+- chore: use trusted publisher for npm ([#367](https://github.com/Arbeidstilsynet/design/pull/367))
+
 ## 0.2.1
 
 Released: 2025-10-02

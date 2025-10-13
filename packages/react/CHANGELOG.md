@@ -1,5 +1,28 @@
 # @arbeidstilsynet/design-react
 
+## 0.3.3
+
+Released: 2025-10-13
+
+### Patch Changes
+
+- Updated dependency `typescript-eslint` to `8.46.0`. ([#359](https://github.com/Arbeidstilsynet/design/pull/359))
+
+- Updated dependency `eslint-plugin-react-hooks` to `7.0.0`. ([#364](https://github.com/Arbeidstilsynet/design/pull/364))
+
+- Updated dependency `@types/eslint-plugin-jsx-a11y` to `6.10.1`. ([#352](https://github.com/Arbeidstilsynet/design/pull/352))
+
+- Updated dependency `@types/react` to `19.2.2`. ([#360](https://github.com/Arbeidstilsynet/design/pull/360))
+  Updated dependency `@types/react-dom` to `19.2.1`.
+
+- Updated dependency `@types/node` to `22.18.9`. ([#365](https://github.com/Arbeidstilsynet/design/pull/365))
+
+- Updated dependency `@types/react` to `19.2.1`. ([#358](https://github.com/Arbeidstilsynet/design/pull/358))
+
+- Updated dependency `@navikt/aksel-icons` to `^7.32.1`. ([#362](https://github.com/Arbeidstilsynet/design/pull/362))
+
+- chore: use trusted publisher for npm ([#367](https://github.com/Arbeidstilsynet/design/pull/367))
+
 ## 0.3.2
 
 Released: 2025-10-06
