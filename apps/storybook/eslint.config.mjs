@@ -14,8 +14,7 @@ export default defineConfig(
 
   eslint.configs.recommended,
   tseslint.configs.recommended,
-  // @ts-ignore Property 'configs' does not exist on type
-  reactHooks.configs["recommended-latest"],
+  reactHooks.configs.flat["recommended-latest"],
   storybook.configs["flat/recommended"],
   eslintConfigPrettier,
 
