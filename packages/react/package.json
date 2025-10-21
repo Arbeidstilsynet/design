@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@arbeidstilsynet/design-css": "workspace:*",
-    "@eslint/js": "9.37.0",
+    "@eslint/js": "9.38.0",
     "@storybook/addon-docs": "9.1.13",
     "@storybook/addon-vitest": "9.1.13",
     "@storybook/react-vite": "9.1.13",
@@ -58,7 +58,7 @@
     "@types/react-dom": "19.2.2",
     "@vitejs/plugin-react": "5.0.4",
     "babel-plugin-react-compiler": "19.1.0-rc.3",
-    "eslint": "9.37.0",
+    "eslint": "9.38.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-react-hooks": "7.0.0",
