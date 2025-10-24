@@ -1,5 +1,17 @@
 # @arbeidstilsynet/design-react
 
+## 0.3.5
+
+Released: 2025-10-24
+
+### Patch Changes
+
+- Updated dependency `typescript-eslint` to `8.46.2`. ([#389](https://github.com/Arbeidstilsynet/design/pull/389))
+
+- Updated dependency `@types/node` to `22.18.12`. ([#388](https://github.com/Arbeidstilsynet/design/pull/388))
+
+- Updated dependency `@navikt/aksel-icons` to `^7.32.3`. ([#385](https://github.com/Arbeidstilsynet/design/pull/385))
+
 ## 0.3.4
 
 Released: 2025-10-21
