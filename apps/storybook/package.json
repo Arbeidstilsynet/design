@@ -36,7 +36,7 @@
     "eslint": "9.38.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-react-hooks": "7.0.0",
-    "eslint-plugin-storybook": "9.1.14",
+    "eslint-plugin-storybook": "9.1.15",
     "playwright": "1.56.1",
     "storybook": "9.1.15",
     "typescript": "5.9.3",
