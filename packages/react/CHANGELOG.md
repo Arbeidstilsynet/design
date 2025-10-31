@@ -1,5 +1,34 @@
 # @arbeidstilsynet/design-react
 
+## 0.3.5
+
+Released: 2025-10-31
+
+### Patch Changes
+
+- Update Storybook dev dependencies ([#403](https://github.com/Arbeidstilsynet/design/pull/403))
+
+- Updated dependency `typescript-eslint` to `8.46.2`. ([#389](https://github.com/Arbeidstilsynet/design/pull/389))
+
+- Updated dependency `eslint-plugin-react-hooks` to `7.0.1`. ([#397](https://github.com/Arbeidstilsynet/design/pull/397))
+
+- Updated dependency `@vitejs/plugin-react` to `5.1.0`. ([#394](https://github.com/Arbeidstilsynet/design/pull/394))
+
+- Updated dependency `vite` to `7.1.12`. ([#392](https://github.com/Arbeidstilsynet/design/pull/392))
+
+- Updated dependency `eslint-plugin-storybook` to `9.1.15`. ([#396](https://github.com/Arbeidstilsynet/design/pull/396))
+
+- Updated dependency `@types/node` to `24.9.1`. ([#398](https://github.com/Arbeidstilsynet/design/pull/398))
+
+- Updated dependency `@storybook/addon-a11y` to `9.1.16`. ([#400](https://github.com/Arbeidstilsynet/design/pull/400))
+  Updated dependency `@storybook/addon-docs` to `9.1.16`.
+  Updated dependency `@storybook/addon-vitest` to `9.1.16`.
+  Updated dependency `@storybook/react-vite` to `9.1.16`.
+  Updated dependency `eslint-plugin-storybook` to `9.1.16`.
+  Updated dependency `storybook` to `9.1.16`.
+
+- Updated dependency `@navikt/aksel-icons` to `^7.32.3`. ([#385](https://github.com/Arbeidstilsynet/design/pull/385))
+
 ## 0.3.4
 
 Released: 2025-10-21
