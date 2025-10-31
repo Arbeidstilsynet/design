@@ -15,8 +15,8 @@ importers:
         specifier: 2.29.7
         version: 2.29.7(@types/node@24.9.1)
       '@digdir/designsystemet':
-        specifier: 1.6.1
-        version: 1.6.1
+        specifier: 1.7.0
+        version: 1.7.0
       '@svitejs/changesets-changelog-github-compact':
         specifier: 1.2.0
         version: 1.2.0
@@ -124,8 +124,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.6.1
-        version: 1.6.1
+        specifier: 1.7.0
+        version: 1.7.0
     devDependencies:
       autoprefixer:
         specifier: 10.4.21
@@ -152,8 +152,8 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.6.1
-        version: 1.6.1(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        specifier: 1.7.0
+        version: 1.7.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@navikt/aksel-icons':
         specifier: ^7.32.3
         version: 7.32.3
@@ -486,17 +486,17 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.0.0
 
-  '@digdir/designsystemet-css@1.6.1':
-    resolution: {integrity: sha512-70omxVgz/B4uHLiF/KVXbw/M/hlUFX9V6T+2NgS934vRI9xekK7e5MDP7hhJOe9zmIDzmrCpBAB2eTNvXYklhw==}
+  '@digdir/designsystemet-css@1.7.0':
+    resolution: {integrity: sha512-+dZpRbnDIPZ+ZymPZ44hZam1h41ZODeqfGOFeriq8/GcoT0dYWx44pWsDRJ+FWsbWivoNC1A2TqlWtdLq5LxKg==}
 
-  '@digdir/designsystemet-react@1.6.1':
-    resolution: {integrity: sha512-z+VEINaht/gmoKNWIaf7oinU76z7wzyose+4Naqb4dczb291QMT2edF2xii5JpDoI8kBKVV0w4MRJz05oYrjkQ==}
+  '@digdir/designsystemet-react@1.7.0':
+    resolution: {integrity: sha512-sZjqv9K3ARnfv7oRfsF8PC5CLiKgyd9pRjFKznozt56EQJkClIwv1KWpGnYfTRKNIje9O+BEnbnLBLW3aPVHJw==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet@1.6.1':
-    resolution: {integrity: sha512-gdIABNStg6MyK2j1ZBVBr1qek5QEnt9AObzXLzuQ7aVo3rAK/SaSU3LFpN3H/RhEEzyaPJXkHNyUE/lfNxbkhQ==}
+  '@digdir/designsystemet@1.7.0':
+    resolution: {integrity: sha512-kvj2aoED9JKXZ7ajJcGqDHEaL0tOekqVZh75EuqU/E5inD8pYCGxkhN3CMioZHRnDZehHbZ2TElQZi53KvyXMw==}
     engines: {node: '>=20 <25'}
     hasBin: true
 
@@ -3210,8 +3210,8 @@ packages:
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
 
-  ramda@0.31.3:
-    resolution: {integrity: sha512-xKADKRNnqmDdX59PPKLm3gGmk1ZgNnj3k7DryqWwkamp4TJ6B36DdpyKEQ0EoEYmH2R62bV4Q+S0ym2z8N2f3Q==}
+  ramda@0.32.0:
+    resolution: {integrity: sha512-GQWAHhxhxWBWA8oIBr1XahFVjQ9Fic6MK9ikijfd4TZHfE2+urfk+irVlR5VOn48uwMgM+loRRBJd6Yjsbc0zQ==}
 
   react-docgen-typescript@2.4.0:
     resolution: {integrity: sha512-ZtAp5XTO5HRzQctjPU0ybY0RRCQO19X/8fxn3w7y2VVTUbGHDKULPTL4ky3vB05euSgG5NpALhEhDPvQ56wvXg==}
@@ -3995,6 +3995,9 @@ packages:
   zod@4.1.11:
     resolution: {integrity: sha512-WPsqwxITS2tzx1bzhIKsEs19ABD5vmCVa4xBo2tq/SrV4RNZtfws1EnCWQXM6yh8bD08a1idvkB5MZSBiZsjwg==}
 
+  zod@4.1.12:
+    resolution: {integrity: sha512-JInaHOamG8pt5+Ey8kGmdcAcg3OL9reK8ltczgHTAwNhMys/6ThXHityHxVV2p3fkw/c+MAvBHFVYHFZDmjMCQ==}
+
 snapshots:
 
   '@adobe/css-tools@4.4.3': {}
@@ -4359,9 +4362,9 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.0
 
-  '@digdir/designsystemet-css@1.6.1': {}
+  '@digdir/designsystemet-css@1.7.0': {}
 
-  '@digdir/designsystemet-react@1.6.1(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@digdir/designsystemet-react@1.7.0(@types/react@19.2.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
       '@floating-ui/dom': 1.7.4
       '@floating-ui/react': 0.26.23(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
@@ -4377,7 +4380,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet@1.6.1':
+  '@digdir/designsystemet@1.7.0':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.1)
       '@tokens-studio/sd-transforms': 1.3.0(style-dictionary@5.1.1)
@@ -4391,10 +4394,10 @@ snapshots:
       object-hash: 3.0.0
       picocolors: 1.1.1
       postcss: 8.5.6
-      ramda: 0.31.3
+      ramda: 0.32.0
       style-dictionary: 5.1.1
-      zod: 4.1.11
-      zod-validation-error: 4.0.2(zod@4.1.11)
+      zod: 4.1.12
+      zod-validation-error: 4.0.2(zod@4.1.12)
 
   '@esbuild/aix-ppc64@0.25.8':
     optional: true
@@ -7255,7 +7258,7 @@ snapshots:
 
   queue-microtask@1.2.3: {}
 
-  ramda@0.31.3: {}
+  ramda@0.32.0: {}
 
   react-docgen-typescript@2.4.0(typescript@5.9.3):
     dependencies:
@@ -8104,4 +8107,10 @@ snapshots:
     dependencies:
       zod: 4.1.11
 
+  zod-validation-error@4.0.2(zod@4.1.12):
+    dependencies:
+      zod: 4.1.12
+
   zod@4.1.11: {}
+
+  zod@4.1.12: {}
