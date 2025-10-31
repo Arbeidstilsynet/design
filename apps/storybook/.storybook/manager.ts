@@ -1,5 +1,5 @@
-import { create } from "storybook/internal/theming";
 import { addons, types } from "storybook/manager-api";
+import { create } from "storybook/theming";
 import { GitHubLink } from "./addon-github-link";
 
 const ADDON_ID = "github-link";
