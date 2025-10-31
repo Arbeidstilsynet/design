@@ -1,5 +1,10 @@
+// This file has been automatically migrated to valid ESM format by Storybook.
+import { fileURLToPath } from "node:url";
 import type { StorybookConfig } from "@storybook/react-vite";
-import { resolve } from "node:path";
+import { resolve, dirname } from "node:path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const config: StorybookConfig = {
   framework: {
@@ -17,9 +22,8 @@ const config: StorybookConfig = {
   staticDirs: ["../stories/assets"],
   addons: [
     "@storybook/addon-docs",
-    "@storybook/addon-storysource",
     "@storybook/addon-a11y",
-    "@storybook/addon-vitest",
+    "@storybook/addon-vitest"
   ],
   core: {
     builder: "@storybook/builder-vite",
