@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-css
 
+## 0.3.4
+
+Released: 2025-11-01
+
+### Patch Changes
+
+- Updated dependency `cssnano` to `7.1.2`. ([#408](https://github.com/Arbeidstilsynet/design/pull/408))
+
 ## 0.3.3
 
 Released: 2025-10-21
