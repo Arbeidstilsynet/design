@@ -36,9 +36,8 @@ function collectCustomPropNames(prefix: string): Set<string> {
 
   for (const sheet of Array.from(document.styleSheets)) {
     // Narrow to CSSStyleSheet to access cssRules (may still throw cross-origin)
-    const cssSheet = sheet as CSSStyleSheet;
     try {
-      processRules(cssSheet.cssRules);
+      processRules(sheet.cssRules);
     } catch {
       // Cross-origin/inaccessible stylesheet; skip
     }

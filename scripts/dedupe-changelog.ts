@@ -160,6 +160,37 @@ function parseChangelog(content: string) {
   };
 }
 
+function getNewestEntry(entries: ChangelogEntry[]): ChangelogEntry {
+  let newestEntry = entries[0];
+  if (!newestEntry) {
+    throw new Error("Expected at least one entry in the group");
+  }
+
+  for (let i = 1; i < entries.length; i++) {
+    const current = entries[i]!;
+
+    // Compare versions - all dependencies in current entry should be >= newestEntry
+    let currentIsNewer = true;
+    for (const dep of current.dependencies) {
+      const correspondingDep = newestEntry.dependencies.find(
+        (d) => d.packageName === dep.packageName,
+      );
+      if (
+        correspondingDep &&
+        compareVersions(dep.version, correspondingDep.version) < 0
+      ) {
+        currentIsNewer = false;
+        break;
+      }
+    }
+
+    if (currentIsNewer) {
+      newestEntry = current;
+    }
+  }
+  return newestEntry;
+}
+
 function getEntries(
   dependencyEntries: ChangelogEntry[],
   packageSetGroups: Map<string, ChangelogEntry[]>,
@@ -174,34 +205,7 @@ function getEntries(
       continue;
     }
 
-    // Find the entry with the highest versions
-    let newestEntry = entries[0];
-    if (!newestEntry) {
-      throw new Error("Expected at least one entry in the group");
-    }
-
-    for (let i = 1; i < entries.length; i++) {
-      const current = entries[i]!;
-
-      // Compare versions - all dependencies in current entry should be >= newestEntry
-      let currentIsNewer = true;
-      for (const dep of current.dependencies) {
-        const correspondingDep = newestEntry.dependencies.find(
-          (d) => d.packageName === dep.packageName,
-        );
-        if (
-          correspondingDep &&
-          compareVersions(dep.version, correspondingDep.version) < 0
-        ) {
-          currentIsNewer = false;
-          break;
-        }
-      }
-
-      if (currentIsNewer) {
-        newestEntry = current;
-      }
-    }
+    const newestEntry = getNewestEntry(entries);
 
     entriesToKeep.add(newestEntry);
     for (const entry of entries) {
