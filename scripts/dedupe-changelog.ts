@@ -62,7 +62,7 @@ function parseEntry(entryText: string): ChangelogEntry {
   const firstLine = lines[0]!;
 
   // Extract PR info from first line
-  const prMatch = firstLine.match(/\(\[#(\d+)\]\(([^)]+)\)\)$/);
+  const prMatch = /\(\[#(\d+)\]\(([^)]+)\)\)$/.exec(firstLine);
   const prNumber = prMatch?.[1];
   const prUrl = prMatch?.[2];
 
@@ -77,7 +77,7 @@ function parseEntry(entryText: string): ChangelogEntry {
   const dependencies: Array<{ packageName: string; version: string }> = [];
 
   for (const line of lines) {
-    const depMatch = line.match(/Updated dependency `([^`]+)` to `([^`]+)`/);
+    const depMatch = /Updated dependency `([^`]+)` to `([^`]+)`/.exec(line);
     if (depMatch) {
       if (!depMatch[1] || !depMatch[2]) {
         throw new Error("Expected dependency match to have two capture groups");
@@ -107,7 +107,7 @@ function parseChangelog(content: string) {
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i]!;
 
-    if (line.match(/^## \d+\.\d+\.\d+$/)) {
+    if (/^## \d+\.\d+\.\d+$/.exec(line)) {
       if (versionStartIndex === -1) {
         versionStartIndex = i;
       } else {
