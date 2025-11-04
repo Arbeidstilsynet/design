@@ -1,0 +1,6 @@
+{
+  "sonarlint.connectedMode.project": {
+    "connectionId": "arbeidstilsynet",
+    "projectKey": "Arbeidstilsynet_design"
+  }
+}
