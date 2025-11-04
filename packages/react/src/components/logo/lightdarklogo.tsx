@@ -20,7 +20,10 @@ export interface LightDarkLogoProps extends SVGProps<SVGSVGElement> {
  * <LightDarkLogo width="150px" />
  * ```
  */
-export function LightDarkLogo({ width = "100%", ...rest }: LightDarkLogoProps) {
+export function LightDarkLogo({
+  width = "100%",
+  ...rest
+}: Readonly<LightDarkLogoProps>) {
   return (
     <span className="at-logo-wrapper">
       <span className="at-logo at-logo-light">

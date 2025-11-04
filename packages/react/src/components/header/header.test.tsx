@@ -1,7 +1,7 @@
-import { render, screen } from "@testing-library/react";
-import { Header, type HeaderProps } from ".";
-import { vi } from "vitest";
 import { Link } from "@digdir/designsystemet-react";
+import { render, screen } from "@testing-library/react";
+import { vi } from "vitest";
+import { Header, type HeaderProps } from ".";
 
 const defaultProps: HeaderProps = {
   className: "test-header",
@@ -9,7 +9,7 @@ const defaultProps: HeaderProps = {
 
 describe("Header", () => {
   beforeAll(() => {
-    Object.defineProperty(window, "matchMedia", {
+    Object.defineProperty(globalThis, "matchMedia", {
       writable: true,
       value: (query: string) => ({
         matches: false,

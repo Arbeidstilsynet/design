@@ -9,7 +9,7 @@ import {
   type MockInstance,
   vi,
 } from "vitest";
-import { dedupeChangelog } from "./dedupe-changelog";
+import { dedupeChangelog, runDedupe } from "./dedupe-changelog";
 
 describe("dedupe-changelog", () => {
   let readFileSyncSpy: MockInstance;
@@ -71,17 +71,18 @@ Released: 2025-06-10
     setupTest(changelog);
     const result = dedupeChangelog(pkg);
 
-    expect(result).toBe(true);
-    const writtenContent = writeFileSyncSpy.mock.calls[0]![1];
+    expect(result.error).toBe(false);
+    const content = result.content;
+    expect(content).not.toBeNull();
 
     // Should keep newer version and non-duplicate entries
-    expect(writtenContent).toContain("@types/react` to `19.1.8`");
-    expect(writtenContent).not.toContain("@types/react` to `19.1.7`");
-    expect(writtenContent).toContain("@types/node` to `22.15.31`");
+    expect(content).toContain("@types/react` to `19.1.8`");
+    expect(content).not.toContain("@types/react` to `19.1.7`");
+    expect(content).toContain("@types/node` to `22.15.31`");
 
     // Should not affect older versions
-    expect(writtenContent).toContain("## 0.0.16");
-    expect(writtenContent).toContain("@types/react` to `19.1.6`");
+    expect(content).toContain("## 0.0.16");
+    expect(content).toContain("@types/react` to `19.1.6`");
   });
 
   it("handles multi-line dependency entries and version comparison", () => {
@@ -111,16 +112,17 @@ Released: 2025-06-13
     setupTest(changelog);
     const result = dedupeChangelog(pkg);
 
-    expect(result).toBe(true);
-    const writtenContent = writeFileSyncSpy.mock.calls[0]![1];
+    expect(result.error).toBe(false);
+    const content = result.content;
+    expect(content).not.toBeNull();
 
     // Should keep newer storybook versions (9.0.9)
-    expect(writtenContent).toContain("@storybook/addon-docs` to `9.0.9`");
-    expect(writtenContent).not.toContain("@storybook/addon-docs` to `9.0.8`");
+    expect(content).toContain("@storybook/addon-docs` to `9.0.9`");
+    expect(content).not.toContain("@storybook/addon-docs` to `9.0.8`");
 
     // Should handle version comparison correctly (5.10.2 > 5.2.15)
-    expect(writtenContent).toContain("typescript` to `5.10.2`");
-    expect(writtenContent).not.toContain("typescript` to `5.2.15`");
+    expect(content).toContain("typescript` to `5.10.2`");
+    expect(content).not.toContain("typescript` to `5.2.15`");
   });
 
   it("preserves non-dependency entries and maintains order", () => {
@@ -146,26 +148,21 @@ Released: 2025-06-13
     setupTest(changelog);
     const result = dedupeChangelog(pkg);
 
-    expect(result).toBe(true);
-    const writtenContent = writeFileSyncSpy.mock.calls[0]![1] as string;
+    expect(result.error).toBe(false);
+    const content = result.content;
+    expect(content).not.toBeNull();
 
     // Should preserve all non-dependency entries
-    expect(writtenContent).toContain(
-      "Fixed a critical bug in component rendering",
-    );
-    expect(writtenContent).toContain("Added new prop to Button component");
-    expect(writtenContent).toContain(
-      "Improved accessibility for screen readers",
-    );
+    expect(content).toContain("Fixed a critical bug in component rendering");
+    expect(content).toContain("Added new prop to Button component");
+    expect(content).toContain("Improved accessibility for screen readers");
 
     // Should keep newer dependency version
-    expect(writtenContent).toContain("@types/react` to `19.1.8`");
-    expect(writtenContent).not.toContain("@types/react` to `19.1.7`");
+    expect(content).toContain("@types/react` to `19.1.8`");
+    expect(content).not.toContain("@types/react` to `19.1.7`");
 
     // Should maintain relative order of non-dependency entries
-    const lines = writtenContent
-      .split("\n")
-      .filter((line) => line.startsWith("- "));
+    const lines = content!.split("\n").filter((line) => line.startsWith("- "));
     expect(lines[0]).toContain("Fixed a critical bug in component rendering");
     expect(lines[1]).toContain("Added new prop to Button component");
     expect(lines[2]).toContain("@types/react` to `19.1.8`");
@@ -197,9 +194,9 @@ Released: 2025-06-13
 `;
 
     setupTest(changelog);
-    const result = dedupeChangelog(pkg);
+    const result = runDedupe(pkg);
 
-    expect(result).toBe(true);
+    expect(result.error).toBe(false);
     const writtenContent = writeFileSyncSpy.mock.calls[0]![1];
 
     // Should preserve all change types and their content
@@ -240,9 +237,9 @@ Released: 2025-06-10
 `;
 
     setupTest(changelog);
-    const result = dedupeChangelog(pkg);
+    const result = runDedupe(pkg);
 
-    expect(result).toBe(true);
+    expect(result.error).toBe(false);
     const writtenContent = writeFileSyncSpy.mock.calls[0]![1];
 
     // Should deduplicate in latest version (0.0.17)
@@ -276,9 +273,10 @@ Released: 2025-06-13
 `;
 
     setupTest(changelog);
-    const result = dedupeChangelog(pkg);
+    const result = runDedupe(pkg);
 
-    expect(result).toBe(false);
+    expect(result.error).toBe(false);
+    expect(result.content).toBeNull();
     expect(writeFileSyncSpy).not.toHaveBeenCalled();
   });
 
@@ -299,8 +297,9 @@ Released: 2025-06-13
     setupTest(changelog);
 
     // First run
-    const result1 = dedupeChangelog(pkg);
-    expect(result1).toBe(true);
+    const result1 = runDedupe(pkg);
+    expect(result1.error).toBe(false);
+    expect(result1.content).not.toBeNull();
     const firstResult = writeFileSyncSpy.mock.calls[0]![1];
 
     // Second run with the result of the first run
@@ -310,28 +309,31 @@ Released: 2025-06-13
       return "";
     });
 
-    const result2 = dedupeChangelog(pkg);
-    expect(result2).toBe(false); // No changes needed
+    const result2 = runDedupe(pkg);
+    expect(result2.error).toBe(false);
+    expect(result2.content).toBeNull(); // No changes needed
     expect(writeFileSyncSpy).not.toHaveBeenCalled();
   });
 
   it("handles edge cases: missing file and no version sections", () => {
     // Missing file
     existsSyncSpy.mockReturnValue(false);
-    let result = dedupeChangelog(pkg);
+    const result1 = runDedupe(pkg);
 
-    expect(result).toBe(false);
+    expect(result1.error).toBe(true);
+    expect(result1.content).toBeNull();
     expect(writeFileSyncSpy).not.toHaveBeenCalled();
     expect(consoleWarnSpy).toHaveBeenCalledWith(
-      expect.stringContaining("No CHANGELOG.md found"),
+      expect.stringContaining("No file CHANGELOG.md found"),
     );
 
     // No version sections
     const emptyChangelog = `# @arbeidstilsynet/design-react\n\nNo versions yet.\n`;
     setupTest(emptyChangelog);
-    result = dedupeChangelog(pkg);
+    const result2 = runDedupe(pkg);
 
-    expect(result).toBe(false);
+    expect(result2.error).toBe(true);
+    expect(result2.content).toBeNull();
     expect(writeFileSyncSpy).not.toHaveBeenCalled();
   });
 
@@ -424,11 +426,58 @@ Released: 2025-06-10
     setupTest(input);
     const result = dedupeChangelog(pkg);
 
-    expect(result).toBe(true);
-    expect(writeFileSyncSpy).toHaveBeenCalledWith(
-      changelogPath,
-      expectedOutput,
-      "utf8",
-    );
+    expect(result.error).toBe(false);
+    expect(result.content).toBe(expectedOutput);
+  });
+
+  it("groups entries by sorted package signature regardless of dependency order", () => {
+    // If sorting doesn't work, these won't be grouped together
+    // Entry 1: zebra, middle, alpha (reverse alphabetical)
+    // Entry 2: alpha, zebra, middle (different order)
+    // Entry 3: middle, alpha, zebra (different order)
+    // Without sorting: 3 different signatures, no deduplication
+    // With sorting: all become "alpha,middle,zebra", proper deduplication
+    const input = `# @arbeidstilsynet/design-react
+
+## 0.0.17
+
+Released: 2025-06-13
+
+### Patch Changes
+
+- Updated dependency \`zebra-package\` to \`3.0.0\`. ([#100](https://github.com/Arbeidstilsynet/design/pull/100))
+  Updated dependency \`middle-package\` to \`3.0.0\`.
+  Updated dependency \`alpha-package\` to \`3.0.0\`.
+
+- Updated dependency \`alpha-package\` to \`2.0.0\`. ([#101](https://github.com/Arbeidstilsynet/design/pull/101))
+  Updated dependency \`zebra-package\` to \`2.0.0\`.
+  Updated dependency \`middle-package\` to \`2.0.0\`.
+
+- Updated dependency \`middle-package\` to \`1.0.0\`. ([#102](https://github.com/Arbeidstilsynet/design/pull/102))
+  Updated dependency \`alpha-package\` to \`1.0.0\`.
+  Updated dependency \`zebra-package\` to \`1.0.0\`.
+`;
+
+    // Expected: only the newest entry (3.0.0) should remain
+    // If sorting fails, all three entries will remain (different signatures)
+    const expectedOutput = `# @arbeidstilsynet/design-react
+
+## 0.0.17
+
+Released: 2025-06-13
+
+### Patch Changes
+
+- Updated dependency \`zebra-package\` to \`3.0.0\`. ([#100](https://github.com/Arbeidstilsynet/design/pull/100))
+  Updated dependency \`middle-package\` to \`3.0.0\`.
+  Updated dependency \`alpha-package\` to \`3.0.0\`.
+
+`;
+
+    setupTest(input);
+    const result = dedupeChangelog(pkg);
+
+    expect(result.error).toBe(false);
+    expect(result.content).toBe(expectedOutput);
   });
 });

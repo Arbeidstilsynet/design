@@ -1,6 +1,6 @@
 // @ts-check
 
-import { default as eslint } from "@eslint/js";
+import js from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import reactHooks from "eslint-plugin-react-hooks";
@@ -13,7 +13,7 @@ export default defineConfig(
     ignores: ["**/node_modules", "**/dist", "**/coverage", "**/*.config.*"],
   },
 
-  eslint.configs.recommended,
+  js.configs.recommended,
   tseslint.configs.recommendedTypeChecked,
   tseslint.configs.stylisticTypeChecked,
   reactHooks.configs.flat["recommended-latest"],

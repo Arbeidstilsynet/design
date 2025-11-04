@@ -112,12 +112,6 @@
   width: var(--ds-size-26);
 }
 
-.at-filepicker-files-file__name a {
-  display: flex;
-  align-items: center;
-  gap: var(--ds-size-1);
-}
-
 .at-filepicker-files-file__text {
   min-width: 0;
   overflow: hidden;

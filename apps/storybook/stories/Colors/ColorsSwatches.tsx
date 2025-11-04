@@ -1,6 +1,6 @@
 import { Switch } from "@arbeidstilsynet/design-react";
 import { ColorItem, ColorPalette } from "@storybook/addon-docs/blocks";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getGroupedThemeColors } from "./getThemeColors";
 
 export function ColorsSwatches() {
@@ -10,15 +10,11 @@ export function ColorsSwatches() {
     ReturnType<typeof getGroupedThemeColors>
   >({});
 
-  const readColors = useCallback(() => {
-    if (!parentRef.current) return;
-    const themeColors = getGroupedThemeColors("--ds-color-", parentRef.current);
-    setColors(themeColors);
-  }, []);
-
   useEffect(() => {
-    readColors();
-  }, [readColors, scheme]);
+    if (!parentRef.current) return;
+    const themeColors = getGroupedThemeColors(parentRef.current);
+    setColors(themeColors);
+  }, [scheme]);
 
   return (
     <div

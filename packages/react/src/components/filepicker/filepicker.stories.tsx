@@ -1,5 +1,5 @@
 import { Label, Paragraph } from "@digdir/designsystemet-react";
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { useRef, useState } from "react";
 import { FilePicker, type FilePickerItem } from "..";
 import { createMockFile, createMockFileInKb } from "./utils";
@@ -29,73 +29,70 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Preview: Story = {
-  render: (args) => {
-    const fileId = useRef(0);
-    const [files, setFiles] = useState<FilePickerItem<number>[]>([]);
-    const [errors, setErrors] = useState<string[]>([]);
+export const Preview: StoryFn<typeof FilePicker> = (args) => {
+  const fileId = useRef(0);
+  const [files, setFiles] = useState<FilePickerItem<number>[]>([]);
+  const [errors, setErrors] = useState<string[]>([]);
 
-    const maxFiles = 5;
-    const maxSizeInMb = 10;
+  const maxFiles = 5;
+  const maxSizeInMb = 10;
 
-    const handleAdd = (newFiles: File[]) => {
-      // Simple validation for demo
-      const validationErrors: string[] = [];
-      const maxSize = maxSizeInMb * 1024 * 1024;
+  const handleAdd = async (newFiles: File[]) => {
+    // Simple validation for demo
+    const validationErrors: string[] = [];
+    const maxSize = maxSizeInMb * 1024 * 1024;
 
-      if (files.length + newFiles.length > maxFiles) {
-        validationErrors.push(`Maksimalt ${maxFiles} filer tillatt`);
+    if (files.length + newFiles.length > maxFiles) {
+      validationErrors.push(`Maksimalt ${maxFiles} filer tillatt`);
+    }
+
+    for (const file of newFiles) {
+      if (file.size > maxSize) {
+        validationErrors.push(
+          `${file.name} overskrider maksimal filstørrelse (10 MB)`,
+        );
       }
+    }
 
-      newFiles.forEach((file) => {
-        if (file.size > maxSize) {
-          validationErrors.push(
-            `${file.name} overskrider maksimal filstørrelse (10 MB)`,
-          );
-        }
-      });
+    if (validationErrors.length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
 
-      if (validationErrors.length > 0) {
-        setErrors(validationErrors);
-        return;
-      }
+    const addedFiles = newFiles.map((file) => ({
+      id: fileId.current++,
+      file,
+      error: null,
+    }));
 
-      const addedFiles = newFiles.map((file) => ({
-        id: fileId.current++,
-        file,
-        error: null,
-      }));
+    setErrors([]);
+    setFiles((prev) => [...prev, ...addedFiles]);
+    await args.onAdd?.(newFiles);
+  };
 
-      setErrors([]);
-      setFiles((prev) => [...prev, ...addedFiles]);
-    };
+  const handleRemove = async (id: number) => {
+    setFiles((prev) => prev.filter((file) => file.id !== id));
+    setErrors([]);
+    await args.onRemove?.(id);
+  };
 
-    const handleRemove = (id: number) => {
-      setFiles((prev) => prev.filter((file) => file.id !== id));
-      setErrors([]);
-    };
-
-    return (
-      <FilePicker
-        {...args}
-        files={files}
-        errors={errors}
-        onAdd={handleAdd}
-        onRemove={handleRemove}
-      >
-        <Paragraph data-size="xs">Maks filstørrelse {maxSizeInMb} MB</Paragraph>
-        <FilePicker.Dropzone />
-        <Paragraph data-size="xs">
-          Antall filer {files.length}/{maxFiles}
-        </Paragraph>
-        <FilePicker.Errors />
-        <FilePicker.Files />
-      </FilePicker>
-    );
-  },
-  args: {
-    disabled: false,
-  },
+  return (
+    <FilePicker
+      {...args}
+      files={files}
+      errors={errors}
+      onAdd={handleAdd}
+      onRemove={handleRemove}
+    >
+      <Paragraph data-size="xs">Maks filstørrelse {maxSizeInMb} MB</Paragraph>
+      <FilePicker.Dropzone />
+      <Paragraph data-size="xs">
+        Antall filer {files.length}/{maxFiles}
+      </Paragraph>
+      <FilePicker.Errors />
+      <FilePicker.Files />
+    </FilePicker>
+  );
 };
 
 export const WithFiles: Story = {

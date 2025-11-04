@@ -20,6 +20,8 @@ import { pathToFileURL } from "node:url";
 import { parseArgs, type ParseArgsOptionsConfig } from "node:util";
 import { getChangedVersion } from "./add-changelog-date.js";
 
+const CHANGELOG_FILE_NAME = "CHANGELOG.md";
+
 interface ChangelogEntry {
   fullText: string;
   dependencies: Array<{ packageName: string; version: string }>;
@@ -40,7 +42,7 @@ const projects = ["react", "css", "theme"] as const;
 const packagesDir = path.resolve(process.cwd(), "packages");
 
 function parseVersion(version: string): number[] {
-  return version.split(".").map((v) => parseInt(v, 10));
+  return version.split(".").map((v) => Number.parseInt(v, 10));
 }
 
 function compareVersions(a: string, b: string): number {
@@ -62,7 +64,7 @@ function parseEntry(entryText: string): ChangelogEntry {
   const firstLine = lines[0]!;
 
   // Extract PR info from first line
-  const prMatch = firstLine.match(/\(\[#(\d+)\]\(([^)]+)\)\)$/);
+  const prMatch = /\(\[#(\d+)\]\(([^)]+)\)\)$/.exec(firstLine);
   const prNumber = prMatch?.[1];
   const prUrl = prMatch?.[2];
 
@@ -77,7 +79,7 @@ function parseEntry(entryText: string): ChangelogEntry {
   const dependencies: Array<{ packageName: string; version: string }> = [];
 
   for (const line of lines) {
-    const depMatch = line.match(/Updated dependency `([^`]+)` to `([^`]+)`/);
+    const depMatch = /Updated dependency `([^`]+)` to `([^`]+)`/.exec(line);
     if (depMatch) {
       if (!depMatch[1] || !depMatch[2]) {
         throw new Error("Expected dependency match to have two capture groups");
@@ -107,7 +109,7 @@ function parseChangelog(content: string) {
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i]!;
 
-    if (line.match(/^## \d+\.\d+\.\d+$/)) {
+    if (/^## \d+\.\d+\.\d+$/.exec(line)) {
       if (versionStartIndex === -1) {
         versionStartIndex = i;
       } else {
@@ -158,49 +160,10 @@ function parseChangelog(content: string) {
   };
 }
 
-export function dedupeChangelog(pkg: string): boolean {
-  const changelogPath = path.join(packagesDir, pkg, "CHANGELOG.md");
-  if (!fs.existsSync(changelogPath)) {
-    console.warn(`No CHANGELOG.md found for ${pkg}`);
-    return false;
-  }
-
-  const content = fs.readFileSync(changelogPath, "utf8");
-  const parsed = parseChangelog(content);
-
-  if (!parsed) {
-    return false;
-  }
-
-  // Find dependency update entries and group by package sets
-  const dependencyEntries = parsed.entries.filter(
-    (entry) => entry.dependencies.length > 0,
-  );
-
-  if (dependencyEntries.length === 0) {
-    return false;
-  }
-
-  // Group entries by package sets (entries that update the same set of packages)
-  const packageSetGroups = new Map<
-    string,
-    Array<(typeof dependencyEntries)[0]>
-  >();
-
-  for (const entry of dependencyEntries) {
-    // Create a signature for this entry based on the packages it updates
-    const packageSignature = entry.dependencies
-      .map((d) => d.packageName)
-      .sort()
-      .join(",");
-
-    if (!packageSetGroups.has(packageSignature)) {
-      packageSetGroups.set(packageSignature, []);
-    }
-    packageSetGroups.get(packageSignature)!.push(entry);
-  }
-
-  // For each group, keep only the entry with the highest versions
+function getEntries(
+  dependencyEntries: ChangelogEntry[],
+  packageSetGroups: Map<string, ChangelogEntry[]>,
+) {
   const entriesToKeep = new Set<(typeof dependencyEntries)[0]>();
   const entriesToRemove = new Set<(typeof dependencyEntries)[0]>();
 
@@ -248,8 +211,62 @@ export function dedupeChangelog(pkg: string): boolean {
     }
   }
 
+  return { entriesToRemove, entriesToKeep };
+}
+
+export function dedupeChangelog(pkg: string): {
+  error: boolean;
+  content: string | null;
+} {
+  const changelogPath = path.join(packagesDir, pkg, CHANGELOG_FILE_NAME);
+  if (!fs.existsSync(changelogPath)) {
+    console.warn(`No file ${CHANGELOG_FILE_NAME} found for ${pkg}`);
+    return { error: true, content: null };
+  }
+
+  const content = fs.readFileSync(changelogPath, "utf8");
+  const parsed = parseChangelog(content);
+
+  if (!parsed) {
+    return { error: true, content: null };
+  }
+
+  // Find dependency update entries and group by package sets
+  const dependencyEntries = parsed.entries.filter(
+    (entry) => entry.dependencies.length > 0,
+  );
+
+  if (dependencyEntries.length === 0) {
+    return { error: false, content: null };
+  }
+
+  // Group entries by package sets (entries that update the same set of packages)
+  const packageSetGroups = new Map<
+    string,
+    Array<(typeof dependencyEntries)[0]>
+  >();
+
+  for (const entry of dependencyEntries) {
+    // Create a signature for this entry based on the packages it updates
+    const packageSignature = entry.dependencies
+      .map((d) => d.packageName)
+      .sort((a, b) => a.localeCompare(b))
+      .join(",");
+
+    if (!packageSetGroups.has(packageSignature)) {
+      packageSetGroups.set(packageSignature, []);
+    }
+    packageSetGroups.get(packageSignature)!.push(entry);
+  }
+
+  // For each group, keep only the entry with the highest versions
+  const { entriesToRemove, entriesToKeep } = getEntries(
+    dependencyEntries,
+    packageSetGroups,
+  );
+
   if (entriesToRemove.size === 0) {
-    return false;
+    return { error: false, content: null };
   }
 
   // Rebuild ONLY the changes section of the latest version
@@ -274,9 +291,16 @@ export function dedupeChangelog(pkg: string): boolean {
   // Construct the final content
   const newContent = beforePart + "\n" + newChangesContent + "\n\n" + afterPart;
 
-  fs.writeFileSync(changelogPath, newContent, "utf8");
+  return { error: false, content: newContent };
+}
 
-  return true;
+export function runDedupe(pkg: string) {
+  const result = dedupeChangelog(pkg);
+  if (!result.error && result.content) {
+    const changelogPath = path.join(packagesDir, pkg, CHANGELOG_FILE_NAME);
+    fs.writeFileSync(changelogPath, result.content, "utf8");
+  }
+  return result;
 }
 
 function main() {
@@ -297,13 +321,13 @@ function main() {
   for (const pkg of projects) {
     if (values.debug && pkg === "react") {
       console.log(`Debug mode: deduplicating changelog for ${pkg}...`);
-      dedupeChangelog(pkg);
+      runDedupe(pkg);
       continue;
     }
 
     if (getChangedVersion(pkg)) {
       console.log(`Changes detected in ${pkg}, deduplicating changelog...`);
-      dedupeChangelog(pkg);
+      runDedupe(pkg);
     }
   }
 }
