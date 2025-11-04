@@ -5,8 +5,8 @@ import type { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 
 export interface FilePickerErrorsProps
-  extends DefaultProps<HTMLDivElement>,
-    HTMLAttributes<HTMLDivElement> {}
+  extends DefaultProps<HTMLOutputElement>,
+    HTMLAttributes<HTMLOutputElement> {}
 
 /**
  * Displays errors passed to the parent `FilePicker` component.
@@ -22,14 +22,10 @@ export function FilePickerErrors({
   }
 
   return (
-    <div
-      className={clsx("at-filepicker-errors", className)}
-      role="status"
-      {...rest}
-    >
+    <output className={clsx("at-filepicker-errors", className)} {...rest}>
       {errors.map((error, index) => (
         <ValidationMessage key={index}>{error}</ValidationMessage>
       ))}
-    </div>
+    </output>
   );
 }
