@@ -1,5 +1,5 @@
 function escapeRe(s: string) {
-  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return s.replaceAll(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`);
 }
 
 // Minimal local type for grouping rules to avoid `any`
@@ -11,7 +11,7 @@ function isGroupingRule(rule: CSSRule): rule is GroupingRule {
 
 function collectCustomPropNames(prefix = "--ds-color-"): Set<string> {
   const names = new Set<string>();
-  const varRe = new RegExp(`(${escapeRe(prefix)}[\\w-]+)\\s*:`, "g");
+  const varRe = new RegExp(String.raw`(${escapeRe(prefix)}[\w-]+)\s*:`, "g");
 
   const processRules = (rules?: CSSRuleList) => {
     if (!rules) return;
@@ -21,8 +21,7 @@ function collectCustomPropNames(prefix = "--ds-color-"): Set<string> {
         processRules(rule.cssRules);
       }
       try {
-        const text = rule.cssText as string | undefined;
-        if (!text) continue;
+        const text = rule.cssText;
         let m: RegExpExecArray | null;
         while ((m = varRe.exec(text)) !== null) {
           names.add(m[1]!);
@@ -55,9 +54,8 @@ export function getThemeColors(prefix = "--ds-color-", target?: Element) {
 
   // Fallback to computed-style enumeration (may not list custom props)
   if (names.size === 0) {
-    for (let i = 0; i < styles.length; i++) {
-      const name = styles[i];
-      if (name && name.startsWith(prefix)) names.add(name);
+    for (const name of styles) {
+      if (name?.startsWith(prefix)) names.add(name);
     }
   }
 
@@ -85,7 +83,7 @@ export function getGroupedThemeColors(
     const groupName = groupRaw.charAt(0).toUpperCase() + groupRaw.slice(1);
     const colorName = rest.join("-");
 
-    if (!groups[groupName]) groups[groupName] = {};
+    groups[groupName] ??= {};
     groups[groupName][colorName] = value;
   }
 
