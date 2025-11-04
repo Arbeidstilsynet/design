@@ -8,7 +8,7 @@ import { FilePickerContext } from "./filepickerContext";
 
 function DefaultLabel({
   defaultLabelText,
-}: Pick<FilePickerDropzoneProps, "defaultLabelText">) {
+}: Readonly<Pick<FilePickerDropzoneProps, "defaultLabelText">>) {
   const text1 = defaultLabelText?.[0];
   const text2 = defaultLabelText?.[1];
   const text3 = defaultLabelText?.[2];
