@@ -158,49 +158,10 @@ function parseChangelog(content: string) {
   };
 }
 
-export function dedupeChangelog(pkg: string): boolean {
-  const changelogPath = path.join(packagesDir, pkg, "CHANGELOG.md");
-  if (!fs.existsSync(changelogPath)) {
-    console.warn(`No CHANGELOG.md found for ${pkg}`);
-    return false;
-  }
-
-  const content = fs.readFileSync(changelogPath, "utf8");
-  const parsed = parseChangelog(content);
-
-  if (!parsed) {
-    return false;
-  }
-
-  // Find dependency update entries and group by package sets
-  const dependencyEntries = parsed.entries.filter(
-    (entry) => entry.dependencies.length > 0,
-  );
-
-  if (dependencyEntries.length === 0) {
-    return false;
-  }
-
-  // Group entries by package sets (entries that update the same set of packages)
-  const packageSetGroups = new Map<
-    string,
-    Array<(typeof dependencyEntries)[0]>
-  >();
-
-  for (const entry of dependencyEntries) {
-    // Create a signature for this entry based on the packages it updates
-    const packageSignature = entry.dependencies
-      .map((d) => d.packageName)
-      .sort()
-      .join(",");
-
-    if (!packageSetGroups.has(packageSignature)) {
-      packageSetGroups.set(packageSignature, []);
-    }
-    packageSetGroups.get(packageSignature)!.push(entry);
-  }
-
-  // For each group, keep only the entry with the highest versions
+function getEntries(
+  dependencyEntries: ChangelogEntry[],
+  packageSetGroups: Map<string, ChangelogEntry[]>,
+) {
   const entriesToKeep = new Set<(typeof dependencyEntries)[0]>();
   const entriesToRemove = new Set<(typeof dependencyEntries)[0]>();
 
@@ -247,6 +208,57 @@ export function dedupeChangelog(pkg: string): boolean {
       }
     }
   }
+
+  return { entriesToRemove, entriesToKeep };
+}
+
+export function dedupeChangelog(pkg: string): boolean {
+  const changelogPath = path.join(packagesDir, pkg, "CHANGELOG.md");
+  if (!fs.existsSync(changelogPath)) {
+    console.warn(`No CHANGELOG.md found for ${pkg}`);
+    return false;
+  }
+
+  const content = fs.readFileSync(changelogPath, "utf8");
+  const parsed = parseChangelog(content);
+
+  if (!parsed) {
+    return false;
+  }
+
+  // Find dependency update entries and group by package sets
+  const dependencyEntries = parsed.entries.filter(
+    (entry) => entry.dependencies.length > 0,
+  );
+
+  if (dependencyEntries.length === 0) {
+    return false;
+  }
+
+  // Group entries by package sets (entries that update the same set of packages)
+  const packageSetGroups = new Map<
+    string,
+    Array<(typeof dependencyEntries)[0]>
+  >();
+
+  for (const entry of dependencyEntries) {
+    // Create a signature for this entry based on the packages it updates
+    const packageSignature = entry.dependencies
+      .map((d) => d.packageName)
+      .sort()
+      .join(",");
+
+    if (!packageSetGroups.has(packageSignature)) {
+      packageSetGroups.set(packageSignature, []);
+    }
+    packageSetGroups.get(packageSignature)!.push(entry);
+  }
+
+  // For each group, keep only the entry with the highest versions
+  const { entriesToRemove, entriesToKeep } = getEntries(
+    dependencyEntries,
+    packageSetGroups,
+  );
 
   if (entriesToRemove.size === 0) {
     return false;
