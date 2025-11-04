@@ -1,5 +1,15 @@
 # @arbeidstilsynet/design-css
 
+## 0.3.4
+
+Released: 2025-11-04
+
+### Patch Changes
+
+- FilePicker: remove duplicate selector ([#411](https://github.com/Arbeidstilsynet/design/pull/411))
+
+- Updated dependency `cssnano` to `7.1.2`. ([#408](https://github.com/Arbeidstilsynet/design/pull/408))
+
 ## 0.3.3
 
 Released: 2025-10-21

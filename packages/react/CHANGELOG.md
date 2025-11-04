@@ -1,5 +1,24 @@
 # @arbeidstilsynet/design-react
 
+## 0.3.6
+
+Released: 2025-11-04
+
+### Patch Changes
+
+- FilePicker.Errors: use `<output>` as root element instead of `<div>` ([#411](https://github.com/Arbeidstilsynet/design/pull/411))
+
+- Updated dependency `@navikt/aksel-icons` to `^7.32.5`. ([#409](https://github.com/Arbeidstilsynet/design/pull/409))
+
+- Updated dependency `@eslint/js` to `9.39.0`. ([#410](https://github.com/Arbeidstilsynet/design/pull/410))
+  Updated dependency `eslint` to `9.39.0`.
+
+- Updated dependency `@types/node` to `24.9.2`. ([#404](https://github.com/Arbeidstilsynet/design/pull/404))
+
+- LightDarkLogo: fix props to be readonly ([#411](https://github.com/Arbeidstilsynet/design/pull/411))
+
+- FilePicker.Dropzone: fix DefaultLabel props to be readonly ([#411](https://github.com/Arbeidstilsynet/design/pull/411))
+
 ## 0.3.5
 
 Released: 2025-10-31
