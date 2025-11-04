@@ -1,6 +1,6 @@
 // @ts-check
 
-import { default as eslint } from "@eslint/js";
+import js from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import reactHooks from "eslint-plugin-react-hooks";
 import storybook from "eslint-plugin-storybook";
@@ -12,7 +12,7 @@ export default defineConfig(
     ignores: ["**/node_modules", "**/storybook-static", "**/*.config.*"],
   },
 
-  eslint.configs.recommended,
+  js.configs.recommended,
   tseslint.configs.recommended,
   reactHooks.configs.flat["recommended-latest"],
   storybook.configs["flat/recommended"],
