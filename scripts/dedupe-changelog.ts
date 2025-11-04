@@ -20,6 +20,8 @@ import { pathToFileURL } from "node:url";
 import { parseArgs, type ParseArgsOptionsConfig } from "node:util";
 import { getChangedVersion } from "./add-changelog-date.js";
 
+const CHANGELOG_FILE_NAME = "CHANGELOG.md";
+
 interface ChangelogEntry {
   fullText: string;
   dependencies: Array<{ packageName: string; version: string }>;
@@ -212,18 +214,21 @@ function getEntries(
   return { entriesToRemove, entriesToKeep };
 }
 
-export function dedupeChangelog(pkg: string): boolean {
-  const changelogPath = path.join(packagesDir, pkg, "CHANGELOG.md");
+export function dedupeChangelog(pkg: string): {
+  error: boolean;
+  content: string | null;
+} {
+  const changelogPath = path.join(packagesDir, pkg, CHANGELOG_FILE_NAME);
   if (!fs.existsSync(changelogPath)) {
-    console.warn(`No CHANGELOG.md found for ${pkg}`);
-    return false;
+    console.warn(`No file ${CHANGELOG_FILE_NAME} found for ${pkg}`);
+    return { error: true, content: null };
   }
 
   const content = fs.readFileSync(changelogPath, "utf8");
   const parsed = parseChangelog(content);
 
   if (!parsed) {
-    return false;
+    return { error: true, content: null };
   }
 
   // Find dependency update entries and group by package sets
@@ -232,7 +237,7 @@ export function dedupeChangelog(pkg: string): boolean {
   );
 
   if (dependencyEntries.length === 0) {
-    return false;
+    return { error: false, content: null };
   }
 
   // Group entries by package sets (entries that update the same set of packages)
@@ -261,7 +266,7 @@ export function dedupeChangelog(pkg: string): boolean {
   );
 
   if (entriesToRemove.size === 0) {
-    return false;
+    return { error: false, content: null };
   }
 
   // Rebuild ONLY the changes section of the latest version
@@ -286,9 +291,16 @@ export function dedupeChangelog(pkg: string): boolean {
   // Construct the final content
   const newContent = beforePart + "\n" + newChangesContent + "\n\n" + afterPart;
 
-  fs.writeFileSync(changelogPath, newContent, "utf8");
+  return { error: false, content: newContent };
+}
 
-  return true;
+export function runDedupe(pkg: string) {
+  const result = dedupeChangelog(pkg);
+  if (!result.error && result.content) {
+    const changelogPath = path.join(packagesDir, pkg, CHANGELOG_FILE_NAME);
+    fs.writeFileSync(changelogPath, result.content, "utf8");
+  }
+  return result;
 }
 
 function main() {
@@ -309,13 +321,13 @@ function main() {
   for (const pkg of projects) {
     if (values.debug && pkg === "react") {
       console.log(`Debug mode: deduplicating changelog for ${pkg}...`);
-      dedupeChangelog(pkg);
+      runDedupe(pkg);
       continue;
     }
 
     if (getChangedVersion(pkg)) {
       console.log(`Changes detected in ${pkg}, deduplicating changelog...`);
-      dedupeChangelog(pkg);
+      runDedupe(pkg);
     }
   }
 }
