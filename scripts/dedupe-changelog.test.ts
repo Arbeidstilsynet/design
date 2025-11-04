@@ -431,4 +431,59 @@ Released: 2025-06-10
       "utf8",
     );
   });
+
+  it("groups entries by sorted package signature regardless of dependency order", () => {
+    // If sorting doesn't work, these won't be grouped together
+    // Entry 1: zebra, middle, alpha (reverse alphabetical)
+    // Entry 2: alpha, zebra, middle (different order)
+    // Entry 3: middle, alpha, zebra (different order)
+    // Without sorting: 3 different signatures, no deduplication
+    // With sorting: all become "alpha,middle,zebra", proper deduplication
+    const input = `# @arbeidstilsynet/design-react
+
+## 0.0.17
+
+Released: 2025-06-13
+
+### Patch Changes
+
+- Updated dependency \`zebra-package\` to \`3.0.0\`. ([#100](https://github.com/Arbeidstilsynet/design/pull/100))
+  Updated dependency \`middle-package\` to \`3.0.0\`.
+  Updated dependency \`alpha-package\` to \`3.0.0\`.
+
+- Updated dependency \`alpha-package\` to \`2.0.0\`. ([#101](https://github.com/Arbeidstilsynet/design/pull/101))
+  Updated dependency \`zebra-package\` to \`2.0.0\`.
+  Updated dependency \`middle-package\` to \`2.0.0\`.
+
+- Updated dependency \`middle-package\` to \`1.0.0\`. ([#102](https://github.com/Arbeidstilsynet/design/pull/102))
+  Updated dependency \`alpha-package\` to \`1.0.0\`.
+  Updated dependency \`zebra-package\` to \`1.0.0\`.
+`;
+
+    // Expected: only the newest entry (3.0.0) should remain
+    // If sorting fails, all three entries will remain (different signatures)
+    const expectedOutput = `# @arbeidstilsynet/design-react
+
+## 0.0.17
+
+Released: 2025-06-13
+
+### Patch Changes
+
+- Updated dependency \`zebra-package\` to \`3.0.0\`. ([#100](https://github.com/Arbeidstilsynet/design/pull/100))
+  Updated dependency \`middle-package\` to \`3.0.0\`.
+  Updated dependency \`alpha-package\` to \`3.0.0\`.
+
+`;
+
+    setupTest(input);
+    const result = dedupeChangelog(pkg);
+
+    expect(result).toBe(true);
+    expect(writeFileSyncSpy).toHaveBeenCalledWith(
+      changelogPath,
+      expectedOutput,
+      "utf8",
+    );
+  });
 });
