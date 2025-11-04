@@ -47,13 +47,13 @@ export const Preview: Story = {
         validationErrors.push(`Maksimalt ${maxFiles} filer tillatt`);
       }
 
-      newFiles.forEach((file) => {
+      for (const file of newFiles) {
         if (file.size > maxSize) {
           validationErrors.push(
             `${file.name} overskrider maksimal filstørrelse (10 MB)`,
           );
         }
-      });
+      }
 
       if (validationErrors.length > 0) {
         setErrors(validationErrors);
