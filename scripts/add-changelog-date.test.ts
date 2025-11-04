@@ -143,7 +143,7 @@ describe("add-changelog-date", () => {
       readFileSyncSpy.mockImplementation((p) => {
         if (
           typeof p === "string" &&
-          p.replace(/\\/g, "/").endsWith("/react/package.json")
+          p.replaceAll("\\", "/").endsWith("/react/package.json")
         ) {
           return JSON.stringify({ version: "1.2.3" });
         }
