@@ -232,13 +232,13 @@ describe("FilePicker", () => {
 
   test("passes through HTML attributes to root element", () => {
     render(
-      <FilePicker {...defaultProps} data-testid="file-picker" role="region">
+      <FilePicker {...defaultProps} data-testid="file-picker" title="foo">
         <FilePicker.Dropzone />
       </FilePicker>,
     );
 
     const element = screen.getByTestId("file-picker");
-    expect(element).toHaveAttribute("role", "region");
+    expect(element).toHaveAttribute("title", "foo");
   });
 
   test("handles null files gracefully", () => {
