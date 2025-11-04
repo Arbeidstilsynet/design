@@ -1,3 +1,5 @@
+const DESIGNSYSTEMET_COLOR_PREFIX = "--ds-color-";
+
 function escapeRe(s: string) {
   return s.replaceAll(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`);
 }
@@ -9,7 +11,7 @@ function isGroupingRule(rule: CSSRule): rule is GroupingRule {
   return "cssRules" in rule;
 }
 
-function collectCustomPropNames(prefix = "--ds-color-"): Set<string> {
+function collectCustomPropNames(prefix: string): Set<string> {
   const names = new Set<string>();
   const varRe = new RegExp(String.raw`(${escapeRe(prefix)}[\w-]+)\s*:`, "g");
 
@@ -45,7 +47,7 @@ function collectCustomPropNames(prefix = "--ds-color-"): Set<string> {
   return names;
 }
 
-export function getThemeColors(prefix = "--ds-color-", target?: Element) {
+function getThemeColors(target: Element | null, prefix: string) {
   const el = target ?? document.documentElement;
   const styles = getComputedStyle(el);
 
@@ -68,10 +70,10 @@ export function getThemeColors(prefix = "--ds-color-", target?: Element) {
 }
 
 export function getGroupedThemeColors(
-  prefix = "--ds-color-",
-  target?: Element,
+  target: Element | null,
+  prefix = DESIGNSYSTEMET_COLOR_PREFIX,
 ) {
-  const flat = getThemeColors(prefix, target);
+  const flat = getThemeColors(target, prefix);
   const groups: Record<string, Record<string, string>> = {};
 
   for (const [fullName, value] of Object.entries(flat)) {
