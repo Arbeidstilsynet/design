@@ -2,4 +2,4 @@
 "@arbeidstilsynet/design-react": patch
 ---
 
-FilePicker.Dropzone: fix DefaltLabel props to be readonly
+FilePicker.Dropzone: fix DefaultLabel props to be readonly
