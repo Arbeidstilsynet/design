@@ -5,13 +5,11 @@ import eslintConfigPrettier from "eslint-config-prettier/flat";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import reactHooks from "eslint-plugin-react-hooks";
 import storybook from "eslint-plugin-storybook";
-import { defineConfig } from "eslint/config";
+import { defineConfig, globalIgnores } from "eslint/config";
 import tseslint from "typescript-eslint";
 
 export default defineConfig(
-  {
-    ignores: ["**/node_modules", "**/dist", "**/coverage", "**/*.config.*"],
-  },
+  globalIgnores(["dist/", "coverage/", "*.config.*"]),
 
   js.configs.recommended,
   tseslint.configs.recommendedTypeChecked,

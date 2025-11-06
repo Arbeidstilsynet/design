@@ -4,13 +4,11 @@ import js from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import reactHooks from "eslint-plugin-react-hooks";
 import storybook from "eslint-plugin-storybook";
-import { defineConfig } from "eslint/config";
+import { defineConfig, globalIgnores } from "eslint/config";
 import tseslint from "typescript-eslint";
 
 export default defineConfig(
-  {
-    ignores: ["**/node_modules", "**/storybook-static", "**/*.config.*"],
-  },
+  globalIgnores(["storybook-static/", "*.config.*"]),
 
   js.configs.recommended,
   tseslint.configs.recommended,
