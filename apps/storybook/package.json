@@ -22,10 +22,10 @@
   },
   "devDependencies": {
     "@eslint/js": "9.39.0",
-    "@storybook/addon-a11y": "10.0.2",
-    "@storybook/addon-docs": "10.0.2",
-    "@storybook/addon-vitest": "10.0.2",
-    "@storybook/react-vite": "10.0.2",
+    "@storybook/addon-a11y": "10.0.3",
+    "@storybook/addon-docs": "10.0.3",
+    "@storybook/addon-vitest": "10.0.3",
+    "@storybook/react-vite": "10.0.3",
     "@types/node": "24.9.2",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
@@ -35,9 +35,9 @@
     "eslint": "9.39.0",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-react-hooks": "7.0.1",
-    "eslint-plugin-storybook": "10.0.2",
+    "eslint-plugin-storybook": "10.0.3",
     "playwright": "1.56.1",
-    "storybook": "10.0.2",
+    "storybook": "10.0.3",
     "typescript": "5.9.3",
     "typescript-eslint": "8.46.2"
   }
