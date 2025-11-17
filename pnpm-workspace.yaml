@@ -3,11 +3,5 @@ packages:
   - apps/*
 
 overrides:
-  vite@>=7.1.0 <=7.1.10: ">=7.1.11"
-
-auditConfig:
-  ignoreCves:
-    # unfixed issue in expr-eval-fork, used transitively by @digdir/designsystemet
-    # https://github.com/advisories/GHSA-jc85-fpwf-qm7x
-    # this should not affect us since we control the input (design-tokens)
-    - CVE-2025-12735
+  expr-eval-fork@<=2.0.2: ">=3.0.0"
+  js-yaml@<4.1.1: ">=4.1.1"
