@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-css
 
+## 0.3.5
+
+Released: 2025-11-17
+
+### Patch Changes
+
+- Updated dependency `autoprefixer` to `10.4.22`. ([#433](https://github.com/Arbeidstilsynet/design/pull/433))
+
 ## 0.3.4
 
 Released: 2025-11-04

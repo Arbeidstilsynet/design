@@ -1,5 +1,33 @@
 # @arbeidstilsynet/design-react
 
+## 0.3.8
+
+Released: 2025-11-17
+
+### Patch Changes
+
+- Updated dependency `@types/react` to `19.2.4`. ([#435](https://github.com/Arbeidstilsynet/design/pull/435))
+  Updated dependency `@types/react-dom` to `19.2.3`.
+
+- Updated dependency `jsdom` to `27.2.0`. ([#383](https://github.com/Arbeidstilsynet/design/pull/383))
+
+- Updated dependency `@types/node` to `24.10.1`. ([#437](https://github.com/Arbeidstilsynet/design/pull/437))
+
+- Updated dependency `@vitejs/plugin-react` to `5.1.1`. ([#438](https://github.com/Arbeidstilsynet/design/pull/438))
+
+- Updated dependency `@storybook/addon-a11y` to `10.0.7`. ([#436](https://github.com/Arbeidstilsynet/design/pull/436))
+  Updated dependency `@storybook/addon-docs` to `10.0.7`.
+  Updated dependency `@storybook/addon-vitest` to `10.0.7`.
+  Updated dependency `@storybook/react-vite` to `10.0.7`.
+  Updated dependency `eslint-plugin-storybook` to `10.0.7`.
+  Updated dependency `storybook` to `10.0.7`.
+
+- Updated dependency `@navikt/aksel-icons` to `^7.33.3`. ([#442](https://github.com/Arbeidstilsynet/design/pull/442))
+
+- Updated dependency `typescript-eslint` to `8.46.4`. ([#434](https://github.com/Arbeidstilsynet/design/pull/434))
+
+- Update babel-plugin-react-compiler to stable v1 ([#443](https://github.com/Arbeidstilsynet/design/pull/443))
+
 ## 0.3.7
 
 Released: 2025-11-11
