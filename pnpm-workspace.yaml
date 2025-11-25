@@ -2,11 +2,11 @@ packages:
   - packages/*
   - apps/*
 
-overrides:
-  expr-eval-fork@<=2.0.2: ">=3.0.0"
-
 auditConfig:
   ignoreGhsas:
-    # fix backported to 3.14.2, but security advisory is not updated
-    # https://github.com/nodeca/js-yaml/pull/731
     - GHSA-mh29-5h37-fv8m
+
+overrides:
+  expr-eval-fork@<=2.0.2: '>=3.0.0'
+  glob@>=10.2.0 <10.5.0: '>=10.5.0'
+  glob@>=11.0.0 <11.1.0: '>=11.1.0'
