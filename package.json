@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "create:tokens": "pnpm designsystemet tokens create --clean -o ./packages/theme/brand",
     "build:tokens": "pnpm designsystemet tokens build --clean -o ./packages/theme/brand",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css,scss}\"",
     "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,css,scss}\"",

@@ -1,0 +1,70 @@
+{
+  "color": {
+    "support": {
+      "background-default": {
+        "$type": "color",
+        "$value": "{color.alt-accent.background-default}"
+      },
+      "background-tinted": {
+        "$type": "color",
+        "$value": "{color.alt-accent.background-tinted}"
+      },
+      "surface-default": {
+        "$type": "color",
+        "$value": "{color.alt-accent.surface-default}"
+      },
+      "surface-tinted": {
+        "$type": "color",
+        "$value": "{color.alt-accent.surface-tinted}"
+      },
+      "surface-hover": {
+        "$type": "color",
+        "$value": "{color.alt-accent.surface-hover}"
+      },
+      "surface-active": {
+        "$type": "color",
+        "$value": "{color.alt-accent.surface-active}"
+      },
+      "border-subtle": {
+        "$type": "color",
+        "$value": "{color.alt-accent.border-subtle}"
+      },
+      "border-default": {
+        "$type": "color",
+        "$value": "{color.alt-accent.border-default}"
+      },
+      "border-strong": {
+        "$type": "color",
+        "$value": "{color.alt-accent.border-strong}"
+      },
+      "text-subtle": {
+        "$type": "color",
+        "$value": "{color.alt-accent.text-subtle}"
+      },
+      "text-default": {
+        "$type": "color",
+        "$value": "{color.alt-accent.text-default}"
+      },
+      "base-default": {
+        "$type": "color",
+        "$value": "{color.alt-accent.base-default}"
+      },
+      "base-hover": {
+        "$type": "color",
+        "$value": "{color.alt-accent.base-hover}"
+      },
+      "base-active": {
+        "$type": "color",
+        "$value": "{color.alt-accent.base-active}"
+      },
+      "base-contrast-subtle": {
+        "$type": "color",
+        "$value": "{color.alt-accent.base-contrast-subtle}"
+      },
+      "base-contrast-default": {
+        "$type": "color",
+        "$value": "{color.alt-accent.base-contrast-default}"
+      }
+    }
+  }
+}

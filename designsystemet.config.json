@@ -1,0 +1,31 @@
+{
+  "$schema": "node_modules/@digdir/designsystemet/dist/config.schema.json",
+  "outDir": "./design-tokens",
+  "themes": {
+    "arbeidstilsynet": {
+      "colors": {
+        "main": {
+          "accent": "#0b8477",
+          "inverted": "#0b8477"
+        },
+        "support": {
+          "kunnskap": "#ffd366",
+          "myndighet": "#81afd9",
+          "inspirator": "#f26561",
+          "alt-accent": "#11c1b0"
+        },
+        "neutral": "#535353"
+      },
+      "overrides": {
+        "colors": {
+          "alt-accent": {
+            "background-tinted": {
+              "light": "#d6f1ee"
+            }
+          }
+        }
+      },
+      "borderRadius": 12
+    }
+  }
+}

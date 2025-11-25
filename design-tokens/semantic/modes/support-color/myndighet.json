@@ -3,67 +3,67 @@
     "support": {
       "background-default": {
         "$type": "color",
-        "$value": "{color.veileder.background-default}"
+        "$value": "{color.myndighet.background-default}"
       },
       "background-tinted": {
         "$type": "color",
-        "$value": "{color.veileder.background-tinted}"
+        "$value": "{color.myndighet.background-tinted}"
       },
       "surface-default": {
         "$type": "color",
-        "$value": "{color.veileder.surface-default}"
+        "$value": "{color.myndighet.surface-default}"
       },
       "surface-tinted": {
         "$type": "color",
-        "$value": "{color.veileder.surface-tinted}"
+        "$value": "{color.myndighet.surface-tinted}"
       },
       "surface-hover": {
         "$type": "color",
-        "$value": "{color.veileder.surface-hover}"
+        "$value": "{color.myndighet.surface-hover}"
       },
       "surface-active": {
         "$type": "color",
-        "$value": "{color.veileder.surface-active}"
+        "$value": "{color.myndighet.surface-active}"
       },
       "border-subtle": {
         "$type": "color",
-        "$value": "{color.veileder.border-subtle}"
+        "$value": "{color.myndighet.border-subtle}"
       },
       "border-default": {
         "$type": "color",
-        "$value": "{color.veileder.border-default}"
+        "$value": "{color.myndighet.border-default}"
       },
       "border-strong": {
         "$type": "color",
-        "$value": "{color.veileder.border-strong}"
+        "$value": "{color.myndighet.border-strong}"
       },
       "text-subtle": {
         "$type": "color",
-        "$value": "{color.veileder.text-subtle}"
+        "$value": "{color.myndighet.text-subtle}"
       },
       "text-default": {
         "$type": "color",
-        "$value": "{color.veileder.text-default}"
+        "$value": "{color.myndighet.text-default}"
       },
       "base-default": {
         "$type": "color",
-        "$value": "{color.veileder.base-default}"
+        "$value": "{color.myndighet.base-default}"
       },
       "base-hover": {
         "$type": "color",
-        "$value": "{color.veileder.base-hover}"
+        "$value": "{color.myndighet.base-hover}"
       },
       "base-active": {
         "$type": "color",
-        "$value": "{color.veileder.base-active}"
+        "$value": "{color.myndighet.base-active}"
       },
       "base-contrast-subtle": {
         "$type": "color",
-        "$value": "{color.veileder.base-contrast-subtle}"
+        "$value": "{color.myndighet.base-contrast-subtle}"
       },
       "base-contrast-default": {
         "$type": "color",
-        "$value": "{color.veileder.base-contrast-default}"
+        "$value": "{color.myndighet.base-contrast-default}"
       }
     }
   }
