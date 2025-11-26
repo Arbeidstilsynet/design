@@ -11,3 +11,6 @@ auditConfig:
     # no fix available as of 2025.11.26
     # https://github.com/silentmatt/expr-eval/issues/289
     - GHSA-jc85-fpwf-qm7x
+
+minimumReleaseAge: 4320
+trustPolicy: no-downgrade
