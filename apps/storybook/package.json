@@ -27,7 +27,7 @@
     "@storybook/addon-vitest": "10.0.7",
     "@storybook/react-vite": "10.0.7",
     "@types/node": "24.10.1",
-    "@types/react": "19.2.4",
+    "@types/react": "19.2.6",
     "@types/react-dom": "19.2.3",
     "@vitest/browser-playwright": "4.0.13",
     "@vitest/coverage-v8": "4.0.13",
