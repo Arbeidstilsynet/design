@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.2.3
+
+Released: 2025-11-26
+
+### Patch Changes
+
+- Activate release immutability ([#456](https://github.com/Arbeidstilsynet/design/pull/456))
+
 ## 0.2.2
 
 Released: 2025-10-13
