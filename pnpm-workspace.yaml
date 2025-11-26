@@ -12,5 +12,5 @@ auditConfig:
     # https://github.com/silentmatt/expr-eval/issues/289
     - GHSA-jc85-fpwf-qm7x
 
-minimumReleaseAge: 4320
+minimumReleaseAge: 4320 # 3 days
 trustPolicy: no-downgrade
