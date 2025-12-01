@@ -1,5 +1,28 @@
 # @arbeidstilsynet/design-react
 
+## 0.3.9
+
+Released: 2025-11-26
+
+### Patch Changes
+
+- Activate release immutability ([#456](https://github.com/Arbeidstilsynet/design/pull/456))
+
+- Updated dependency `vite` to `7.2.4`. ([#447](https://github.com/Arbeidstilsynet/design/pull/447))
+
+- Updated dependency `@navikt/aksel-icons` to `^7.33.5`. ([#450](https://github.com/Arbeidstilsynet/design/pull/450))
+
+- Updated dependency `@storybook/addon-a11y` to `10.0.8`. ([#448](https://github.com/Arbeidstilsynet/design/pull/448))
+  Updated dependency `@storybook/addon-docs` to `10.0.8`.
+  Updated dependency `@storybook/addon-vitest` to `10.0.8`.
+  Updated dependency `@storybook/react-vite` to `10.0.8`.
+  Updated dependency `eslint-plugin-storybook` to `10.0.8`.
+  Updated dependency `storybook` to `10.0.8`.
+
+- Updated dependency `@types/react` to `19.2.6`. ([#445](https://github.com/Arbeidstilsynet/design/pull/445))
+
+- Updated dependency `typescript-eslint` to `8.47.0`. ([#451](https://github.com/Arbeidstilsynet/design/pull/451))
+
 ## 0.3.8
 
 Released: 2025-11-17

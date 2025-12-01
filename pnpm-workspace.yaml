@@ -4,9 +4,19 @@ packages:
 
 auditConfig:
   ignoreGhsas:
-    - GHSA-mh29-5h37-fv8m
+    # no fix available as of 2025.11.26
+    # https://github.com/silentmatt/expr-eval/issues/289
+    - GHSA-jc85-fpwf-qm7x
+
+autoInstallPeers: false
+
+minimumReleaseAge: 4320 # 3 days
 
 overrides:
-  expr-eval-fork@<=2.0.2: '>=3.0.0'
-  glob@>=10.2.0 <10.5.0: '>=10.5.0'
-  glob@>=11.0.0 <11.1.0: '>=11.1.0'
+  expr-eval-fork@<=2.0.2: ">=3.0.0"
+  glob@>=10.0.0 <11.1.0: ">=11.1.0"
+
+trustPolicy: no-downgrade
+trustPolicyExclude:
+  - "rxjs@7.8.2"
+  - "semver@6.3.1"
