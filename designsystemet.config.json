@@ -6,26 +6,90 @@
       "colors": {
         "main": {
           "accent": "#0b8477",
-          "inverted": "#0b8477"
+          "reverse": "#88B0A9",
+          "brandcolor": "#11C1B0"
         },
         "support": {
-          "kunnskap": "#ffd366",
           "myndighet": "#81afd9",
-          "inspirator": "#f26561",
-          "alt-accent": "#11c1b0"
+          "veileder": "#ffd366",
+          "korall": "#f26561"
         },
         "neutral": "#535353"
       },
       "overrides": {
+        "severity": {
+          "danger": "#D51911"
+        },
         "colors": {
-          "alt-accent": {
+          "reverse": {
+            "border-default": {
+              "light": "#528B82",
+              "dark": "#12877B"
+            },
             "background-tinted": {
-              "light": "#d6f1ee"
+              "light": "#112320",
+              "dark": "#112320"
+            },
+            "background-default": {
+              "light": "#2C5750",
+              "dark": "#1C3532"
+            },
+            "surface-default": {
+              "light": "#162C28",
+              "dark": "#085E56"
+            },
+            "surface-tinted": {
+              "light": "#19322E",
+              "dark": "#09655D"
+            },
+            "surface-hover": {
+              "light": "#1D3A36",
+              "dark": "#0A6C63"
+            },
+            "surface-active": {
+              "light": "#2C5752",
+              "dark": "#0B7A6F"
+            },
+            "border-subtle": {
+              "light": "#2C5750",
+              "dark": "#2c5750"
+            },
+            "text-default": {
+              "light": "#E6EEED",
+              "dark": "#D3E9E7"
+            },
+            "base-hover": {
+              "light": "#779a94",
+              "dark": "#B2D8D5"
+            },
+            "base-active": {
+              "light": "#66847f",
+              "dark": "#BDDEDB"
+            },
+            "base-contrast-subtle": {
+              "light": "#000202",
+              "dark": "#000202"
+            },
+            "base-contrast-default": {
+              "light": "#000000",
+              "dark": "#000000"
+            },
+            "base-default": {
+              "light": "#88B0A9",
+              "dark": "#91C7C2"
+            },
+            "text-subtle": {
+              "light": "#CFDFDC",
+              "dark": "#C3E1DE"
+            },
+            "border-strong": {
+              "light": "#CFDFDC",
+              "dark": "#91C7C2"
             }
           }
         }
       },
-      "borderRadius": 12
+      "borderRadius": 4
     }
   }
 }

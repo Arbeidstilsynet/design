@@ -109,20 +109,20 @@
     "group": "Main color"
   },
   {
-    "id": "6272c7bdf7d73f7fc4d90f2277bb3e625055e1b9",
-    "name": "inverted",
+    "id": "d0a940ae7a378422c0ee94c9317eba5eb8a8084e",
+    "name": "reverse",
     "selectedTokenSets": {
-      "semantic/modes/main-color/inverted": "enabled"
+      "semantic/modes/main-color/reverse": "enabled"
     },
     "group": "Main color"
   },
   {
-    "id": "cd9930ac1c5b96b5f215a231adcf5ed93b76e0e4",
-    "name": "kunnskap",
+    "id": "f189b0540e3b974b0ca2abb1cc1fa54e89986e72",
+    "name": "brandcolor",
     "selectedTokenSets": {
-      "semantic/modes/support-color/kunnskap": "enabled"
+      "semantic/modes/main-color/brandcolor": "enabled"
     },
-    "group": "Support color"
+    "group": "Main color"
   },
   {
     "id": "9e1cf7c1ddc9ea858aa06d106c7444c65785adf7",
@@ -133,18 +133,18 @@
     "group": "Support color"
   },
   {
-    "id": "bc4c9c8051975f9b611eece971472713581a19ec",
-    "name": "inspirator",
+    "id": "d1de25885a7d5b4df82d92a843359fad7de876a2",
+    "name": "veileder",
     "selectedTokenSets": {
-      "semantic/modes/support-color/inspirator": "enabled"
+      "semantic/modes/support-color/veileder": "enabled"
     },
     "group": "Support color"
   },
   {
-    "id": "65dc21e8467f8dd6b04c827b65ea8886f804c726",
-    "name": "alt-accent",
+    "id": "7590e211e08baa97ee2794a0f883bb53d24a5049",
+    "name": "korall",
     "selectedTokenSets": {
-      "semantic/modes/support-color/alt-accent": "enabled"
+      "semantic/modes/support-color/korall": "enabled"
     },
     "group": "Support color"
   }

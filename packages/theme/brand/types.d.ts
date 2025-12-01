@@ -5,11 +5,11 @@ import type {} from '@digdir/designsystemet/types';
 declare module '@digdir/designsystemet/types' {
   export interface ColorDefinitions {
     accent: never;
-    inverted: never;
-    kunnskap: never;
+    reverse: never;
+    brandcolor: never;
     myndighet: never;
-    inspirator: never;
-    'alt-accent': never;
+    veileder: never;
+    korall: never;
     neutral: never;
   }
   export interface SeverityColorDefinitions {

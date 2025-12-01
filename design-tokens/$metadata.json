@@ -15,11 +15,11 @@
     "themes/arbeidstilsynet",
     "semantic/color",
     "semantic/modes/main-color/accent",
-    "semantic/modes/main-color/inverted",
-    "semantic/modes/support-color/kunnskap",
+    "semantic/modes/main-color/reverse",
+    "semantic/modes/main-color/brandcolor",
     "semantic/modes/support-color/myndighet",
-    "semantic/modes/support-color/inspirator",
-    "semantic/modes/support-color/alt-accent",
+    "semantic/modes/support-color/veileder",
+    "semantic/modes/support-color/korall",
     "semantic/style"
   ]
 }
