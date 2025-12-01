@@ -6282,12 +6282,6 @@ snapshots:
       minipass: 7.1.2
       path-scurry: 2.0.0
 
-  glob@13.0.0:
-    dependencies:
-      minimatch: 10.1.1
-      minipass: 7.1.2
-      path-scurry: 2.0.0
-
   globals@14.0.0: {}
 
   globalthis@1.0.4:
