@@ -40,6 +40,6 @@
     "playwright": "1.57.0",
     "storybook": "10.0.8",
     "typescript": "5.9.3",
-    "typescript-eslint": "8.47.0"
+    "typescript-eslint": "8.48.0"
   }
 }
