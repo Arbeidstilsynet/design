@@ -69,7 +69,7 @@ importers:
         version: 10.0.8(storybook@10.0.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0)))
       '@storybook/addon-docs':
         specifier: 10.0.8
-        version: 10.0.8(@types/react@19.2.6)(esbuild@0.25.8)(rollup@4.46.2)(storybook@10.0.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0)))(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0))
+        version: 10.0.8(@types/react@19.2.7)(esbuild@0.25.8)(rollup@4.46.2)(storybook@10.0.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0)))(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0))
       '@storybook/addon-vitest':
         specifier: 10.0.8
         version: 10.0.8(@vitest/browser-playwright@4.0.14)(@vitest/browser@4.0.14(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0))(vitest@4.0.14))(@vitest/runner@4.0.14)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.0.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0)))(vitest@4.0.14)
@@ -83,11 +83,11 @@ importers:
         specifier: 24.10.1
         version: 24.10.1
       '@types/react':
-        specifier: 19.2.6
-        version: 19.2.6
+        specifier: 19.2.7
+        version: 19.2.7
       '@types/react-dom':
         specifier: 19.2.3
-        version: 19.2.3(@types/react@19.2.6)
+        version: 19.2.3(@types/react@19.2.7)
       '@vitest/browser-playwright':
         specifier: 4.0.14
         version: 4.0.14(playwright@1.57.0)(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0))(vitest@4.0.14)
@@ -154,13 +154,13 @@ importers:
     dependencies:
       '@digdir/designsystemet-react':
         specifier: 1.6.1
-        version: 1.6.1(@types/react@19.2.6)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 1.6.1(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@navikt/aksel-icons':
         specifier: ^7.33.5
         version: 7.33.5
       '@radix-ui/react-slot':
         specifier: ^1.2.4
-        version: 1.2.4(@types/react@19.2.6)(react@19.2.0)
+        version: 1.2.4(@types/react@19.2.7)(react@19.2.0)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -176,7 +176,7 @@ importers:
         version: 9.39.1
       '@storybook/addon-docs':
         specifier: 10.0.8
-        version: 10.0.8(@types/react@19.2.6)(esbuild@0.25.8)(rollup@4.46.2)(storybook@10.0.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0)))(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0))
+        version: 10.0.8(@types/react@19.2.7)(esbuild@0.25.8)(rollup@4.46.2)(storybook@10.0.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0)))(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0))
       '@storybook/addon-vitest':
         specifier: 10.0.8
         version: 10.0.8(@vitest/browser-playwright@4.0.14)(@vitest/browser@4.0.14(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0))(vitest@4.0.14))(@vitest/runner@4.0.14)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.0.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0)))(vitest@4.0.14)
@@ -191,7 +191,7 @@ importers:
         version: 6.9.1
       '@testing-library/react':
         specifier: 16.3.0
-        version: 16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.6))(@types/react@19.2.6)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
+        version: 16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@testing-library/user-event':
         specifier: 14.6.1
         version: 14.6.1(@testing-library/dom@10.4.1)
@@ -202,11 +202,11 @@ importers:
         specifier: 24.10.1
         version: 24.10.1
       '@types/react':
-        specifier: 19.2.6
-        version: 19.2.6
+        specifier: 19.2.7
+        version: 19.2.7
       '@types/react-dom':
         specifier: 19.2.3
-        version: 19.2.3(@types/react@19.2.6)
+        version: 19.2.3(@types/react@19.2.7)
       '@vitejs/plugin-react':
         specifier: 5.1.1
         version: 5.1.1(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0))
@@ -1231,8 +1231,8 @@ packages:
     peerDependencies:
       '@types/react': ^19.2.0
 
-  '@types/react@19.2.6':
-    resolution: {integrity: sha512-p/jUvulfgU7oKtj6Xpk8cA2Y1xKTtICGpJYeJXz2YVO2UcvjQgeRMLDGfDeqeRW2Ta+0QNFwcc8X3GH8SxZz6w==}
+  '@types/react@19.2.7':
+    resolution: {integrity: sha512-MWtvHrGZLFttgeEj28VXHxpmwYbor/ATPYbBfSFZEIRK0ecCFLl2Qo55z52Hss+UV9CRN7trSeq1zbgx7YDWWg==}
 
   '@types/resolve@1.20.6':
     resolution: {integrity: sha512-A4STmOXPhMUtHH+S6ymgE2GiBSMqf4oTvcQZMcHzokuTLVYzXTB8ttjcgxOVaAp2lGwEdzZ0J+cRbbeevQj1UQ==}
@@ -4327,12 +4327,12 @@ snapshots:
 
   '@digdir/designsystemet-css@1.6.1': {}
 
-  '@digdir/designsystemet-react@1.6.1(@types/react@19.2.6)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@digdir/designsystemet-react@1.6.1(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
       '@floating-ui/dom': 1.7.4
       '@floating-ui/react': 0.26.23(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@navikt/aksel-icons': 7.33.5
-      '@radix-ui/react-slot': 1.2.4(@types/react@19.2.6)(react@19.2.0)
+      '@radix-ui/react-slot': 1.2.4(@types/react@19.2.7)(react@19.2.0)
       '@tanstack/react-virtual': 3.13.12(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@u-elements/u-combobox': 1.0.2
       '@u-elements/u-datalist': 1.0.14
@@ -4613,10 +4613,10 @@ snapshots:
       globby: 11.1.0
       read-yaml-file: 1.1.0
 
-  '@mdx-js/react@3.1.0(@types/react@19.2.6)(react@19.2.0)':
+  '@mdx-js/react@3.1.0(@types/react@19.2.7)(react@19.2.0)':
     dependencies:
       '@types/mdx': 2.0.13
-      '@types/react': 19.2.6
+      '@types/react': 19.2.7
       react: 19.2.0
 
   '@microsoft/api-extractor-model@7.30.7(@types/node@24.10.1)':
@@ -4670,18 +4670,18 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@radix-ui/react-compose-refs@1.1.2(@types/react@19.2.6)(react@19.2.0)':
+  '@radix-ui/react-compose-refs@1.1.2(@types/react@19.2.7)(react@19.2.0)':
     dependencies:
       react: 19.2.0
     optionalDependencies:
-      '@types/react': 19.2.6
+      '@types/react': 19.2.7
 
-  '@radix-ui/react-slot@1.2.4(@types/react@19.2.6)(react@19.2.0)':
+  '@radix-ui/react-slot@1.2.4(@types/react@19.2.7)(react@19.2.0)':
     dependencies:
-      '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.2.6)(react@19.2.0)
+      '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.2.7)(react@19.2.0)
       react: 19.2.0
     optionalDependencies:
-      '@types/react': 19.2.6
+      '@types/react': 19.2.7
 
   '@rolldown/pluginutils@1.0.0-beta.47': {}
 
@@ -4797,9 +4797,9 @@ snapshots:
       axe-core: 4.10.3
       storybook: 10.0.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0))
 
-  '@storybook/addon-docs@10.0.8(@types/react@19.2.6)(esbuild@0.25.8)(rollup@4.46.2)(storybook@10.0.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0)))(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0))':
+  '@storybook/addon-docs@10.0.8(@types/react@19.2.7)(esbuild@0.25.8)(rollup@4.46.2)(storybook@10.0.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0)))(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0))':
     dependencies:
-      '@mdx-js/react': 3.1.0(@types/react@19.2.6)(react@19.2.0)
+      '@mdx-js/react': 3.1.0(@types/react@19.2.7)(react@19.2.0)
       '@storybook/csf-plugin': 10.0.8(esbuild@0.25.8)(rollup@4.46.2)(storybook@10.0.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0)))(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0))
       '@storybook/icons': 1.6.0(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       '@storybook/react-dom-shim': 10.0.8(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(storybook@10.0.8(@testing-library/dom@10.4.1)(prettier@3.6.2)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(vite@7.2.4(@types/node@24.10.1)(tsx@4.20.6)(yaml@2.8.0)))
@@ -4930,15 +4930,15 @@ snapshots:
       picocolors: 1.1.1
       redent: 3.0.0
 
-  '@testing-library/react@16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.6))(@types/react@19.2.6)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+  '@testing-library/react@16.3.0(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.7))(@types/react@19.2.7)(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
     dependencies:
       '@babel/runtime': 7.28.2
       '@testing-library/dom': 10.4.1
       react: 19.2.0
       react-dom: 19.2.0(react@19.2.0)
     optionalDependencies:
-      '@types/react': 19.2.6
-      '@types/react-dom': 19.2.3(@types/react@19.2.6)
+      '@types/react': 19.2.7
+      '@types/react-dom': 19.2.3(@types/react@19.2.7)
 
   '@testing-library/user-event@14.6.1(@testing-library/dom@10.4.1)':
     dependencies:
@@ -5008,11 +5008,11 @@ snapshots:
     dependencies:
       undici-types: 7.16.0
 
-  '@types/react-dom@19.2.3(@types/react@19.2.6)':
+  '@types/react-dom@19.2.3(@types/react@19.2.7)':
     dependencies:
-      '@types/react': 19.2.6
+      '@types/react': 19.2.7
 
-  '@types/react@19.2.6':
+  '@types/react@19.2.7':
     dependencies:
       csstype: 3.2.3
 
