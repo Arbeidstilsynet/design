@@ -2,8 +2,7 @@ import type { HTMLAttributes } from "react";
 import type { DefaultProps } from "../../types";
 
 export interface FilePickerProps<TFileId extends string | number>
-  extends DefaultProps<HTMLDivElement>,
-    HTMLAttributes<HTMLDivElement> {
+  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   /** Should the FilePicker be disabled */
   disabled?: boolean;
   /** Display spinner while processing files */
