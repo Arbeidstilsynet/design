@@ -5,8 +5,7 @@ import type { DefaultProps } from "../../types";
 import { LightDarkLogo } from "../logo/lightdarklogo";
 
 export interface HeaderTitleProps
-  extends DefaultProps<HTMLDivElement>,
-    HTMLAttributes<HTMLDivElement> {
+  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   fagsystemNavn?: string;
   brukernavn?: string;
 }
