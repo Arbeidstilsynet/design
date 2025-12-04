@@ -30,7 +30,10 @@ export function HeaderTitleDropdown({
     <div className={clsx(className)} {...rest}>
       <Dropdown.TriggerContext>
         <Dropdown.Trigger onClick={() => setOpen(!open)} variant="tertiary">
-          {brukernavn}
+          <span className={clsx("at-header__title-brukernavn")}>
+            {brukernavn}
+          </span>
+          <span className="at-header__title-dropdown-text">Meny</span>
           {open ? (
             <ChevronDownIcon aria-hidden />
           ) : (
