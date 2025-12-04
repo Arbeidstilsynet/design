@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-react
 
+## 0.3.11
+
+Released: 2025-12-04
+
+### Patch Changes
+
+- Updated dependency `vite` to `7.2.6`. ([#485](https://github.com/Arbeidstilsynet/design/pull/485))
+
 ## 0.3.10
 
 Released: 2025-12-02
