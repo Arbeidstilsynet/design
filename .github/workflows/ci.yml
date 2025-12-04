@@ -47,7 +47,7 @@ jobs:
 
       - name: "Report Coverage"
         if: steps.test.outcome == 'success' || steps.test.outcome == 'failure'
-        uses: davelosert/vitest-coverage-report-action@8ab049ff5a2c6e78f78af446329379b318544a1a # v2
+        uses: davelosert/vitest-coverage-report-action@5b6122e3a819a3be7b27fc961b7faafb3bf00e4d # v2
 
         # known issue: status check will be attached to the wrong workflow
         # https://github.com/orgs/community/discussions/24616
