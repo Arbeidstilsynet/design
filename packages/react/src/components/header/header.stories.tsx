@@ -43,10 +43,10 @@ export const Preview: Story = {
 export const WithLinksComponent: Story = {
   render: (args) => {
     const menuLinks = [
-      { label: "Hjem", href: "#" },
-      { label: "Om oss", href: "#" },
-      { label: "Tjenester", href: "#" },
-      { label: "Kontakt", href: "#" },
+      { label: "Søknader", href: "#" },
+      { label: "Meldinger", href: "#" },
+      { label: "Kart", href: "#" },
+      { label: "Virksomheter", href: "#" },
     ];
     return (
       <Header {...args}>
