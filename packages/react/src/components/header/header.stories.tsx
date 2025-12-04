@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
-import { Link } from "@digdir/designsystemet-react";
+import type { LinkItem } from "./headerTitleLinks";
 
 const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
@@ -22,7 +22,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Preview: Story = {
   render: (args) => {
-    const menuLinks = [
+    const menuLinks: LinkItem[] = [
       { label: "Hjem", href: "#" },
       { label: "Om oss", href: "#" },
       { label: "Tjenester", href: "#" },
@@ -30,15 +30,11 @@ export const Preview: Story = {
     ];
     return (
       <Header {...args}>
-        <Header.Title />
-        <Header.Search />
-        <Header.Links>
-          {menuLinks.map((link) => (
-            <Header.Links.Item key={link.label} asChild={true}>
-              <Link href={link.href}>{link.label}</Link>
-            </Header.Links.Item>
-          ))}
-        </Header.Links>
+        <Header.Title 
+          fagsystemNavn="Arbeidstilsynet"
+          brukernavn="Ola Nordmann"
+          links={menuLinks}
+        />
       </Header>
     );
   },
