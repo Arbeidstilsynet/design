@@ -4,7 +4,8 @@ import type { HTMLAttributes } from "react";
 import { Search } from "../../digdir";
 
 export interface HeaderSearchProps
-  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
+  extends DefaultProps<HTMLDivElement>,
+    HTMLAttributes<HTMLDivElement> {
   text?: string;
 }
 
