@@ -39,9 +39,9 @@ export function HeaderTitleDropdown({
           <div className="at-header__title-dropdown-desktop">
             {brukernavn}
             {open ? (
-              <ChevronDownIcon aria-hidden />
-            ) : (
               <ChevronUpIcon aria-hidden />
+            ) : (
+              <ChevronDownIcon aria-hidden />
             )}
           </div>
           <div className="at-header__title-dropdown-mobile">
