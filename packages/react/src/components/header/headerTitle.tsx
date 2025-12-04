@@ -7,8 +7,7 @@ import { HeaderTitleDropdown } from "./headerTitleDropdown";
 import { Switch } from "../../digdir";
 
 export interface HeaderTitleProps
-  extends DefaultProps<HTMLDivElement>,
-    HTMLAttributes<HTMLDivElement> {
+  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   fagsystemNavn?: string;
   brukernavn?: string;
   links?: LinkItem[];
