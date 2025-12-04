@@ -5,7 +5,8 @@ import type { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 
 export interface FilePickerErrorsProps
-  extends DefaultProps<HTMLOutputElement>, HTMLAttributes<HTMLOutputElement> {}
+  extends DefaultProps<HTMLOutputElement>,
+    HTMLAttributes<HTMLOutputElement> {}
 
 /**
  * Displays errors passed to the parent `FilePicker` component.

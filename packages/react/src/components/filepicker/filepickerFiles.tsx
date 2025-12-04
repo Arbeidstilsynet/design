@@ -7,7 +7,8 @@ import { FilePickerContext } from "./filepickerContext";
 import { formatFileSize } from "./utils";
 
 export interface FilePickerFilesProps
-  extends DefaultProps<HTMLTableElement>, HTMLAttributes<HTMLTableElement> {
+  extends DefaultProps<HTMLTableElement>,
+    HTMLAttributes<HTMLTableElement> {
   /**
    * Custom column names for the file table.
    */

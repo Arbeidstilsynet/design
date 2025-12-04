@@ -31,7 +31,8 @@ function DefaultLabel({
 }
 
 export interface FilePickerDropzoneProps
-  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
+  extends DefaultProps<HTMLDivElement>,
+    HTMLAttributes<HTMLDivElement> {
   /** Replace the default label nodes entirely. */
   label?: React.ReactNode;
 
