@@ -23,24 +23,34 @@
 .at-header__title-right {
   display: flex;
   align-items: center;
-  flex: 1;
 }
 
 .at-header__title-left {
   justify-content: flex-start;
+  gap: var(--ds-size-4);
+  margin-right: var(--ds-size-22);
 }
 
 .at-header__title-center {
-  justify-content: center;
+  justify-content: flex-start;
+  gap: var(--ds-size-8);
+  flex: 1;
+}
+
+.at-header__title-link {
+  text-decoration: none;
 }
 
 .at-header__title-right {
   justify-content: flex-end;
 }
 
+.at-header__title-dropdown-controls {
+  padding: var(--ds-size-2) var(--ds-size-4);
+}
+
 .at-header__search-background {
   width: 100%;
-  background-color: var(--ds-color-primary-background-tinted);
 }
 
 .at-header__search {
@@ -95,7 +105,6 @@
   padding-top: var(--ds-size-2);
   padding-bottom: var(--ds-size-2);
   gap: var(--ds-size-8);
-  background-color: var(--ds-color-primary-background-tinted);
 }
 
 .hamburger-menu::before,

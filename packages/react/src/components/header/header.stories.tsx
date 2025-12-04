@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
 import type { LinkItem } from "./headerTitleLinks";
+import { Link } from "../..";
 
 const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
@@ -26,15 +27,48 @@ export const Preview: Story = {
       { label: "Hjem", href: "#" },
       { label: "Om oss", href: "#" },
       { label: "Tjenester", href: "#" },
+    ];
+    return (
+      <Header {...args}>
+        <Header.Title
+          fagsystemNavn="Gnist"
+          brukernavn="Ola Nordmann"
+          links={menuLinks}
+        />
+      </Header>
+    );
+  },
+};
+
+export const WithLinksComponent: Story = {
+  render: (args) => {
+    const menuLinks = [
+      { label: "Hjem", href: "#" },
+      { label: "Om oss", href: "#" },
+      { label: "Tjenester", href: "#" },
       { label: "Kontakt", href: "#" },
     ];
     return (
       <Header {...args}>
-        <Header.Title 
-          fagsystemNavn="Arbeidstilsynet"
-          brukernavn="Ola Nordmann"
-          links={menuLinks}
-        />
+        <Header.Title />
+        <Header.Links>
+          {menuLinks.map((link) => (
+            <Header.Links.Item key={link.label} asChild={true}>
+              <Link href={link.href}>{link.label}</Link>
+            </Header.Links.Item>
+          ))}
+        </Header.Links>
+      </Header>
+    );
+  },
+};
+
+export const WithSearchComponent: Story = {
+  render: (args) => {
+    return (
+      <Header {...args}>
+        <Header.Title />
+        <Header.Search text="Søk" />
       </Header>
     );
   },

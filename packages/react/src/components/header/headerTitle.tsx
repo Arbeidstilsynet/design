@@ -29,7 +29,10 @@ export function HeaderTitle({
   return (
     <div className={clsx("at-header__title-background", className)} {...rest}>
       <div className={clsx("at-header__title")}>
-        <HeaderTitleLogo className={clsx("at-header__title-left")} fagsystemNavn={fagsystemNavn}/>
+        <HeaderTitleLogo
+          className={clsx("at-header__title-left")}
+          fagsystemNavn={fagsystemNavn}
+        />
         <HeaderTitleLinks
           className={clsx("at-header__title-center")}
           links={links}
