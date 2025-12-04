@@ -5,7 +5,7 @@ import { HeaderLinks } from "./headerLinks";
 
 /**
  * Header component for the design system.
- * It includes the primary title section along with optional search, and links sections.
+ * It includes the primary title section along with optional search and links sections.
  *
  * The primary Title section (`Header.Title`) displays the system name, user information, and navigation links.
  * You can pass in a list of links and user controls (like a theme switcher) to be displayed in a dropdown.

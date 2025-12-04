@@ -1,5 +1,5 @@
 import { clsx } from "clsx/lite";
-import { useState, type HTMLAttributes, type ReactNode } from "react";
+import { useId, useState, type HTMLAttributes, type ReactNode } from "react";
 import type { DefaultProps } from "../../types";
 import { Dropdown } from "../../digdir";
 import {
@@ -30,6 +30,7 @@ export function HeaderTitleDropdown({
   ...rest
 }: Readonly<HeaderTitleDropdownProps>) {
   const [open, setOpen] = useState(false);
+  const id = useId();
 
   return (
     <div className={clsx(className)} {...rest}>
@@ -62,7 +63,7 @@ export function HeaderTitleDropdown({
               </Dropdown.Item>
             ))}
             {controls?.map((control, index) => (
-              <Dropdown.Item key={index}>
+              <Dropdown.Item key={id + "-control-" + index}>
                 <div className={clsx("at-header__title-dropdown-controls")}>
                   {control}
                 </div>
