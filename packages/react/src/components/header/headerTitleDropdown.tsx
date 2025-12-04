@@ -36,7 +36,7 @@ export function HeaderTitleDropdown({
       <Dropdown.TriggerContext>
         <Dropdown.Trigger onClick={() => setOpen(!open)} variant="tertiary">
           <div className="at-header__title-dropdown-desktop">
-            <span>{brukernavn}</span>
+            {brukernavn}
             {open ? (
               <ChevronDownIcon aria-hidden />
             ) : (
