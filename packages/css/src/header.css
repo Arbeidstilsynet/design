@@ -45,7 +45,7 @@
   justify-content: flex-end;
 }
 
-.at-header__title-dropdown-text {
+.at-header__title-dropdown-mobile {
   display: none;
 }
 
@@ -200,10 +200,10 @@
     translate: 0;
     background-color: var(--ds-color-primary-background-tinted);
   }
-  .at-header__title-brukernavn {
-    display: none;
+  .at-header__title-dropdown-mobile {
+    display: inline-flex;
   }
-  .at-header__title-dropdown-text {
-    display: inline;
+  .at-header__title-dropdown-desktop {
+    display: none;
   }
 }

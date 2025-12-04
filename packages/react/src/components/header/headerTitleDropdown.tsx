@@ -2,7 +2,12 @@ import { clsx } from "clsx/lite";
 import { useState, type HTMLAttributes, type ReactNode } from "react";
 import type { DefaultProps } from "../../types";
 import { Dropdown } from "../../digdir";
-import { ChevronDownIcon, ChevronUpIcon } from "@navikt/aksel-icons";
+import {
+  ChevronDownIcon,
+  ChevronUpIcon,
+  MenuHamburgerIcon,
+  XMarkIcon,
+} from "@navikt/aksel-icons";
 
 export interface DropdownItem {
   label: string;
@@ -30,15 +35,22 @@ export function HeaderTitleDropdown({
     <div className={clsx(className)} {...rest}>
       <Dropdown.TriggerContext>
         <Dropdown.Trigger onClick={() => setOpen(!open)} variant="tertiary">
-          <span className={clsx("at-header__title-brukernavn")}>
-            {brukernavn}
-          </span>
-          <span className="at-header__title-dropdown-text">Meny</span>
-          {open ? (
-            <ChevronDownIcon aria-hidden />
-          ) : (
-            <ChevronUpIcon aria-hidden />
-          )}
+          <div className="at-header__title-dropdown-desktop">
+            <span>{brukernavn}</span>
+            {open ? (
+              <ChevronDownIcon aria-hidden />
+            ) : (
+              <ChevronUpIcon aria-hidden />
+            )}
+          </div>
+          <div className="at-header__title-dropdown-mobile">
+            <span className="at-header__title-dropdown-text">Meny</span>
+            {open ? (
+              <XMarkIcon aria-hidden />
+            ) : (
+              <MenuHamburgerIcon aria-hidden />
+            )}
+          </div>
         </Dropdown.Trigger>
         <Dropdown open={open} onClose={() => setOpen(false)}>
           <Dropdown.List>
