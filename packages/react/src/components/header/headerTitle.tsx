@@ -1,10 +1,9 @@
 import { clsx } from "clsx/lite";
-import type { HTMLAttributes } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
 import type { DefaultProps } from "../../types";
 import { HeaderTitleLogo } from "./headerTitleLogo";
 import { HeaderTitleLinks, type LinkItem } from "./headerTitleLinks";
 import { HeaderTitleDropdown } from "./headerTitleDropdown";
-import { Switch } from "../../digdir";
 
 export interface HeaderTitleProps
   extends DefaultProps<HTMLDivElement>,
@@ -12,20 +11,17 @@ export interface HeaderTitleProps
   fagsystemNavn?: string;
   brukernavn?: string;
   links?: LinkItem[];
+  controls?: ReactNode[];
 }
 
 export function HeaderTitle({
   className,
   fagsystemNavn = "Fagsystem",
   brukernavn = "Bruker Brukersen",
-  links = [
-    { label: "Hjem", href: "#" },
-    { label: "Saksbehandling", href: "#" },
-    { label: "Mine saker", href: "#" },
-  ],
+  links = [],
+  controls = [],
   ...rest
 }: Readonly<HeaderTitleProps>) {
-  const controls = [<Switch label="Mørk modus" position="end" />];
   return (
     <div className={clsx("at-header__title-background", className)} {...rest}>
       <div className={clsx("at-header__title")}>

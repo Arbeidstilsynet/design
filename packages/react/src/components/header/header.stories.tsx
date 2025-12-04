@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
 import type { LinkItem } from "./headerTitleLinks";
-import { Link } from "../..";
+import { Link, Switch } from "../..";
 
 const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
@@ -21,19 +21,43 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Preview: Story = {
+interface PreviewArgs {
+  fagsystemNavn: string;
+  brukernavn: string;
+  menulinks: LinkItem[];
+  controls: React.ReactNode[];
+};
+
+const menuLinks: LinkItem[] = [
+  { label: "Hjem", href: "#" },
+  { label: "Om oss", href: "#" },
+  { label: "Tjenester", href: "#" },
+];
+
+const controls = [<Switch label="Mørk modus" position="end" />];
+
+const ekstraLinks = [
+  { label: "Søknader", href: "#" },
+  { label: "Meldinger", href: "#" },
+  { label: "Kart", href: "#" },
+  { label: "Virksomheter", href: "#" },
+];
+
+export const Preview: StoryObj<PreviewArgs> = {
+  args: {
+    fagsystemNavn: "Arbeidstilsynet",
+    brukernavn: "Ola Nordmann",
+    menulinks: menuLinks,
+    controls: controls,
+  },
   render: (args) => {
-    const menuLinks: LinkItem[] = [
-      { label: "Hjem", href: "#" },
-      { label: "Om oss", href: "#" },
-      { label: "Tjenester", href: "#" },
-    ];
     return (
-      <Header {...args}>
+      <Header>
         <Header.Title
-          fagsystemNavn="Gnist"
-          brukernavn="Ola Nordmann"
-          links={menuLinks}
+          fagsystemNavn={args.fagsystemNavn}
+          brukernavn={args.brukernavn}
+          links={args.menulinks}
+          controls={args.controls}
         />
       </Header>
     );
@@ -42,17 +66,11 @@ export const Preview: Story = {
 
 export const WithLinksComponent: Story = {
   render: (args) => {
-    const menuLinks = [
-      { label: "Søknader", href: "#" },
-      { label: "Meldinger", href: "#" },
-      { label: "Kart", href: "#" },
-      { label: "Virksomheter", href: "#" },
-    ];
     return (
       <Header {...args}>
         <Header.Title />
         <Header.Links>
-          {menuLinks.map((link) => (
+          {ekstraLinks.map((link) => (
             <Header.Links.Item key={link.label} asChild={true}>
               <Link href={link.href}>{link.label}</Link>
             </Header.Links.Item>
