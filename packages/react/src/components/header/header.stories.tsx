@@ -26,7 +26,7 @@ interface PreviewArgs {
   brukernavn: string;
   menulinks: LinkItem[];
   controls: React.ReactNode[];
-};
+}
 
 const menuLinks: LinkItem[] = [
   { label: "Hjem", href: "#" },
