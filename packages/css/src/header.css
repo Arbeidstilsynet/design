@@ -93,6 +93,10 @@
 @media (max-width: 30rem) {
   .at-header {
     padding-left: var(--ds-size-4);
+
+    & .ds-search {
+      max-width: 100%;
+    }
   }
 }
 
