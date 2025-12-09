@@ -1,105 +1,63 @@
 name: CI
 
 on:
+  pull_request:
   push:
     branches:
-      - feat/release-slack
+      - main
 
 jobs:
-  foo:
+  format:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Set dummy changeset outputs
-        id: changeset
-        run: |
-          echo "published=true" >> "$GITHUB_OUTPUT"
-          echo 'publishedPackages=[{"name":"@test/foo","version":"1.2.3"},{"name":"@test/bar","version":"4.5.6"}]' >> "$GITHUB_OUTPUT"
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
+      - uses: Arbeidstilsynet/action-pnpm-setup@f85980486b86b35f3ad337b60b3b03c36d16e343 # v1
+      - run: pnpm format:check
 
-      - name: Notify Slack about published packages
-        if: steps.changeset.outputs.published == 'true'
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          PUBLISHED_PACKAGES: ${{ steps.changeset.outputs.publishedPackages }}
-          CHANNEL_NAME: "#plattform"
-        run: |
-          if [ -z "$SLACK_WEBHOOK_URL" ]; then
-            echo "SLACK_WEBHOOK_URL is not set. Skipping Slack notification."
-            exit 0
-          fi
+  typecheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
+      - uses: Arbeidstilsynet/action-pnpm-setup@f85980486b86b35f3ad337b60b3b03c36d16e343 # v1
+      - run: pnpm typecheck
 
-          if [ -z "$PUBLISHED_PACKAGES" ]; then
-            echo "PUBLISHED_PACKAGES is empty. Skipping Slack notification."
-            exit 0
-          fi
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
+      - uses: Arbeidstilsynet/action-pnpm-setup@f85980486b86b35f3ad337b60b3b03c36d16e343 # v1
+      - run: pnpm build
 
-          # Turn JSON array into a readable bullet list:
-          PACKAGES_TEXT=$(echo "$PUBLISHED_PACKAGES" | jq -r 'map("- \(.name) \(.version)") | join("\n")')
+  lint-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      checks: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
+      - uses: Arbeidstilsynet/action-pnpm-setup@f85980486b86b35f3ad337b60b3b03c36d16e343 # v1
+      - run: pnpm lint
+      - run: pnpm test
+        id: test
 
-          # Build text with a real newline before the first bullet
-          TEXT=$(printf 'New versions published to NPM from https://github.com/Arbeidstilsynet/design\n%s' "$PACKAGES_TEXT")
+      - name: "Report Coverage"
+        if: steps.test.outcome == 'success' || steps.test.outcome == 'failure'
+        uses: davelosert/vitest-coverage-report-action@8ab049ff5a2c6e78f78af446329379b318544a1a # v2
 
-          payload=$(jq -Rn \
-            --arg text "$TEXT" \
-            --arg channel "$CHANNEL_NAME" \
-            '{channel:$channel, text:$text}')
+        # known issue: status check will be attached to the wrong workflow
+        # https://github.com/orgs/community/discussions/24616
+        # https://github.com/EnricoMi/publish-unit-test-result-action/issues/12
+      - name: Publish Test Results
+        uses: EnricoMi/publish-unit-test-result-action@34d7c956a59aed1bfebf31df77b8de55db9bbaaf # v2
+        if: steps.test.outcome == 'success' || steps.test.outcome == 'failure'
+        with:
+          files: "test-report.xml"
 
-          curl -fsS -X POST --data-urlencode "payload=$payload" "$SLACK_WEBHOOK_URL" || {
-            echo "Slack notification failed"
-            exit 1
-          }
-
-  # format:
-  #   runs-on: ubuntu-latest
-  #   timeout-minutes: 10
-  #   steps:
-  #     - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
-  #     - uses: Arbeidstilsynet/action-pnpm-setup@f85980486b86b35f3ad337b60b3b03c36d16e343 # v1
-  #     - run: pnpm format:check
-
-  # typecheck:
-  #   runs-on: ubuntu-latest
-  #   timeout-minutes: 10
-  #   steps:
-  #     - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
-  #     - uses: Arbeidstilsynet/action-pnpm-setup@f85980486b86b35f3ad337b60b3b03c36d16e343 # v1
-  #     - run: pnpm typecheck
-
-  # build:
-  #   runs-on: ubuntu-latest
-  #   timeout-minutes: 10
-  #   steps:
-  #     - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
-  #     - uses: Arbeidstilsynet/action-pnpm-setup@f85980486b86b35f3ad337b60b3b03c36d16e343 # v1
-  #     - run: pnpm build
-
-  # lint-test:
-  #   runs-on: ubuntu-latest
-  #   timeout-minutes: 10
-  #   permissions:
-  #     contents: read
-  #     checks: write
-  #     pull-requests: write
-  #   steps:
-  #     - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 # v6
-  #     - uses: Arbeidstilsynet/action-pnpm-setup@f85980486b86b35f3ad337b60b3b03c36d16e343 # v1
-  #     - run: pnpm lint
-  #     - run: pnpm test
-  #       id: test
-
-  #     - name: "Report Coverage"
-  #       if: steps.test.outcome == 'success' || steps.test.outcome == 'failure'
-  #       uses: davelosert/vitest-coverage-report-action@8ab049ff5a2c6e78f78af446329379b318544a1a # v2
-
-  #       # known issue: status check will be attached to the wrong workflow
-  #       # https://github.com/orgs/community/discussions/24616
-  #       # https://github.com/EnricoMi/publish-unit-test-result-action/issues/12
-  #     - name: Publish Test Results
-  #       uses: EnricoMi/publish-unit-test-result-action@34d7c956a59aed1bfebf31df77b8de55db9bbaaf # v2
-  #       if: steps.test.outcome == 'success' || steps.test.outcome == 'failure'
-  #       with:
-  #         files: "test-report.xml"
-
-  # storybook-tests:
-  #   name: Storybook Tests
-  #   uses: ./.github/workflows/storybook-tests.yml
+  storybook-tests:
+    name: Storybook Tests
+    uses: ./.github/workflows/storybook-tests.yml
