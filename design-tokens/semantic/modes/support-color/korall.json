@@ -1,69 +1,69 @@
 {
   "color": {
-    "main": {
+    "support": {
       "background-default": {
         "$type": "color",
-        "$value": "{color.primary.background-default}"
+        "$value": "{color.korall.background-default}"
       },
       "background-tinted": {
         "$type": "color",
-        "$value": "{color.primary.background-tinted}"
+        "$value": "{color.korall.background-tinted}"
       },
       "surface-default": {
         "$type": "color",
-        "$value": "{color.primary.surface-default}"
+        "$value": "{color.korall.surface-default}"
       },
       "surface-tinted": {
         "$type": "color",
-        "$value": "{color.primary.surface-tinted}"
+        "$value": "{color.korall.surface-tinted}"
       },
       "surface-hover": {
         "$type": "color",
-        "$value": "{color.primary.surface-hover}"
+        "$value": "{color.korall.surface-hover}"
       },
       "surface-active": {
         "$type": "color",
-        "$value": "{color.primary.surface-active}"
+        "$value": "{color.korall.surface-active}"
       },
       "border-subtle": {
         "$type": "color",
-        "$value": "{color.primary.border-subtle}"
+        "$value": "{color.korall.border-subtle}"
       },
       "border-default": {
         "$type": "color",
-        "$value": "{color.primary.border-default}"
+        "$value": "{color.korall.border-default}"
       },
       "border-strong": {
         "$type": "color",
-        "$value": "{color.primary.border-strong}"
+        "$value": "{color.korall.border-strong}"
       },
       "text-subtle": {
         "$type": "color",
-        "$value": "{color.primary.text-subtle}"
+        "$value": "{color.korall.text-subtle}"
       },
       "text-default": {
         "$type": "color",
-        "$value": "{color.primary.text-default}"
+        "$value": "{color.korall.text-default}"
       },
       "base-default": {
         "$type": "color",
-        "$value": "{color.primary.base-default}"
+        "$value": "{color.korall.base-default}"
       },
       "base-hover": {
         "$type": "color",
-        "$value": "{color.primary.base-hover}"
+        "$value": "{color.korall.base-hover}"
       },
       "base-active": {
         "$type": "color",
-        "$value": "{color.primary.base-active}"
+        "$value": "{color.korall.base-active}"
       },
       "base-contrast-subtle": {
         "$type": "color",
-        "$value": "{color.primary.base-contrast-subtle}"
+        "$value": "{color.korall.base-contrast-subtle}"
       },
       "base-contrast-default": {
         "$type": "color",
-        "$value": "{color.primary.base-contrast-default}"
+        "$value": "{color.korall.base-contrast-default}"
       }
     }
   }

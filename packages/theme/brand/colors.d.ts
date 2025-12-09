@@ -1,14 +1,16 @@
 /* This file is deprecated and will be removed in a future release. Use types.d.ts instead */
-/* build: v1.6.1 */
-import type {} from '@digdir/designsystemet/types';
+/* build: v1.8.0 */
+import type {} from '@digdir/designsystemet-types';
 
 // Augment types based on theme
-declare module '@digdir/designsystemet/types' {
+declare module '@digdir/designsystemet-types' {
   export interface ColorDefinitions {
-    primary: never;
-    inspirator: never;
+    accent: never;
+    reverse: never;
+    brandcolor: never;
+    myndighet: never;
     veileder: never;
-    tilsyn: never;
+    korall: never;
     neutral: never;
   }
   export interface SeverityColorDefinitions {

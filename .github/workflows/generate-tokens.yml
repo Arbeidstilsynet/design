@@ -28,7 +28,7 @@ jobs:
       - uses: Arbeidstilsynet/action-pnpm-setup@f85980486b86b35f3ad337b60b3b03c36d16e343 # v1
 
       - name: Generate CSS
-        run: pnpm build:tokens
+        run: pnpm tokens:build
 
       - name: Commit changes
         uses: EndBug/add-and-commit@a94899bca583c204427a224a7af87c02f9b325d5 # v9

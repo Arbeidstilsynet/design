@@ -1,69 +1,69 @@
 {
   "color": {
-    "support": {
+    "main": {
       "background-default": {
         "$type": "color",
-        "$value": "{color.tilsyn.background-default}"
+        "$value": "{color.brandcolor.background-default}"
       },
       "background-tinted": {
         "$type": "color",
-        "$value": "{color.tilsyn.background-tinted}"
+        "$value": "{color.brandcolor.background-tinted}"
       },
       "surface-default": {
         "$type": "color",
-        "$value": "{color.tilsyn.surface-default}"
+        "$value": "{color.brandcolor.surface-default}"
       },
       "surface-tinted": {
         "$type": "color",
-        "$value": "{color.tilsyn.surface-tinted}"
+        "$value": "{color.brandcolor.surface-tinted}"
       },
       "surface-hover": {
         "$type": "color",
-        "$value": "{color.tilsyn.surface-hover}"
+        "$value": "{color.brandcolor.surface-hover}"
       },
       "surface-active": {
         "$type": "color",
-        "$value": "{color.tilsyn.surface-active}"
+        "$value": "{color.brandcolor.surface-active}"
       },
       "border-subtle": {
         "$type": "color",
-        "$value": "{color.tilsyn.border-subtle}"
+        "$value": "{color.brandcolor.border-subtle}"
       },
       "border-default": {
         "$type": "color",
-        "$value": "{color.tilsyn.border-default}"
+        "$value": "{color.brandcolor.border-default}"
       },
       "border-strong": {
         "$type": "color",
-        "$value": "{color.tilsyn.border-strong}"
+        "$value": "{color.brandcolor.border-strong}"
       },
       "text-subtle": {
         "$type": "color",
-        "$value": "{color.tilsyn.text-subtle}"
+        "$value": "{color.brandcolor.text-subtle}"
       },
       "text-default": {
         "$type": "color",
-        "$value": "{color.tilsyn.text-default}"
+        "$value": "{color.brandcolor.text-default}"
       },
       "base-default": {
         "$type": "color",
-        "$value": "{color.tilsyn.base-default}"
+        "$value": "{color.brandcolor.base-default}"
       },
       "base-hover": {
         "$type": "color",
-        "$value": "{color.tilsyn.base-hover}"
+        "$value": "{color.brandcolor.base-hover}"
       },
       "base-active": {
         "$type": "color",
-        "$value": "{color.tilsyn.base-active}"
+        "$value": "{color.brandcolor.base-active}"
       },
       "base-contrast-subtle": {
         "$type": "color",
-        "$value": "{color.tilsyn.base-contrast-subtle}"
+        "$value": "{color.brandcolor.base-contrast-subtle}"
       },
       "base-contrast-default": {
         "$type": "color",
-        "$value": "{color.tilsyn.base-contrast-default}"
+        "$value": "{color.brandcolor.base-contrast-default}"
       }
     }
   }

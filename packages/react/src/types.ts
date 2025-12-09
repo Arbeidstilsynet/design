@@ -1,4 +1,4 @@
-import type { Color, Size } from "@digdir/designsystemet/types";
+import type { Color, Size } from "@digdir/designsystemet-types";
 
 export interface DefaultProps<TRef> {
   /**

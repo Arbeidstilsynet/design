@@ -10,16 +10,16 @@
     "primitives/modes/typography/size/large",
     "primitives/modes/typography/primary/arbeidstilsynet",
     "primitives/modes/typography/secondary/arbeidstilsynet",
-    "primitives/modes/color-scheme/dark/global",
     "primitives/modes/color-scheme/dark/arbeidstilsynet",
-    "primitives/modes/color-scheme/light/global",
     "primitives/modes/color-scheme/light/arbeidstilsynet",
     "themes/arbeidstilsynet",
     "semantic/color",
-    "semantic/modes/main-color/primary",
-    "semantic/modes/support-color/inspirator",
+    "semantic/modes/main-color/accent",
+    "semantic/modes/main-color/reverse",
+    "semantic/modes/main-color/brandcolor",
+    "semantic/modes/support-color/myndighet",
     "semantic/modes/support-color/veileder",
-    "semantic/modes/support-color/tilsyn",
+    "semantic/modes/support-color/korall",
     "semantic/style"
   ]
 }
