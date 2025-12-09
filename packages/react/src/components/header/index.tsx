@@ -16,3 +16,4 @@ const Header = Object.assign(HeaderParent, {
 export type { HeaderProps } from "./header";
 export type { HeaderTitleProps } from "./headerTitle";
 export { Header, HeaderTitle };
+export { HeaderDefaultLogo } from "./headerDefaultLogo";
