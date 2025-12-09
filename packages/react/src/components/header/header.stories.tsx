@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
 import type { LinkItem } from "./headerTitleLinks";
-import { Link, Search, Switch } from "../..";
+import { Search, Switch } from "../..";
 
 const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
@@ -12,7 +12,6 @@ const meta: Meta<typeof Header> = {
 
   subcomponents: {
     ["Header.Title"]: Header.Title,
-    ["Header.Links"]: Header.Links,
   },
 };
 
@@ -35,13 +34,6 @@ const menuLinks: LinkItem[] = [
 
 const controls = [<Switch label="Mørk modus" position="end" />];
 
-const ekstraLinks = [
-  { label: "Søknader", href: "#" },
-  { label: "Meldinger", href: "#" },
-  { label: "Kart", href: "#" },
-  { label: "Virksomheter", href: "#" },
-];
-
 export const Preview: StoryObj<PreviewArgs> = {
   args: {
     fagsystemNavn: "Arbeidstilsynet",
@@ -63,30 +55,13 @@ export const Preview: StoryObj<PreviewArgs> = {
   },
 };
 
-export const WithLinksComponent: Story = {
-  render: (args) => {
-    return (
-      <Header {...args}>
-        <Header.Title />
-        <Header.Links>
-          {ekstraLinks.map((link) => (
-            <Header.Links.Item key={link.label} asChild={true}>
-              <Link href={link.href}>{link.label}</Link>
-            </Header.Links.Item>
-          ))}
-        </Header.Links>
-      </Header>
-    );
-  },
-};
-
 export const WithSearchComponent: Story = {
   render: (args) => {
     return (
       <Header {...args}>
         <Header.Title />
-        <Search style={{ width: "26rem" }}>
-          <Search.Input name="placeholder" aria-label="Søk" size={26} />
+        <Search data-size="sm" style={{ width: "26rem" }}>
+          <Search.Input name="placeholder" aria-label="Søk" />
           <Search.Clear />
           <Search.Button />
         </Search>

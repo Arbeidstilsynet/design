@@ -31,15 +31,9 @@ describe("Header", () => {
     render(
       <Header {...defaultProps}>
         <Header.Title />
-        <Header.Links>
-          <Header.Links.Item asChild={true}>
-            <Link href="#">Home</Link>
-          </Header.Links.Item>
-        </Header.Links>
       </Header>,
     );
     expect(screen.getByText("Fagsystem")).toBeInTheDocument();
-    expect(screen.getByText("Søk")).toBeInTheDocument();
     expect(screen.getByText("Bruker Brukersen")).toBeInTheDocument();
   });
 
@@ -54,11 +48,7 @@ describe("Header", () => {
     render(
       <Header {...defaultProps}>
         <Header.Title fagsystemNavn="bil" brukernavn="Jsn for" />
-        <Header.Links>
-          <Header.Links.Item asChild={true}>
-            <Link href="#">Custom Link</Link>
-          </Header.Links.Item>
-        </Header.Links>
+        <Link href="#">Custom Link</Link>
       </Header>,
     );
     expect(screen.getByText("bil")).toBeInTheDocument();
