@@ -17,13 +17,13 @@ export interface DropdownItem {
 export interface HeaderTitleDropdownProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   controls?: ReactNode[];
-  brukernavn?: string;
+  userName?: string;
 }
 
 export function HeaderTitleDropdown({
   className,
   controls,
-  brukernavn,
+  userName,
   ...rest
 }: Readonly<HeaderTitleDropdownProps>) {
   const [open, setOpen] = useState(false);
@@ -34,7 +34,7 @@ export function HeaderTitleDropdown({
       <Dropdown.TriggerContext>
         <Dropdown.Trigger onClick={() => setOpen(!open)} variant="tertiary">
           <div className="at-header__title-dropdown-desktop">
-            {brukernavn}
+            {userName}
             {open ? (
               <ChevronUpIcon aria-hidden />
             ) : (

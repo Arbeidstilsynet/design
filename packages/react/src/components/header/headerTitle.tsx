@@ -7,16 +7,18 @@ import { HeaderTitleDropdown } from "./headerTitleDropdown";
 
 export interface HeaderTitleProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
-  fagsystemNavn?: string;
-  brukernavn?: string;
+  logo: ReactNode;
+  appName: string;
+  userName: string;
   links?: LinkItem[];
   controls?: ReactNode[];
 }
 
 export function HeaderTitle({
   className,
-  fagsystemNavn = "Fagsystem",
-  brukernavn = "Bruker Brukersen",
+  logo,
+  appName,
+  userName,
   links = [],
   controls = [],
   ...rest
@@ -26,7 +28,8 @@ export function HeaderTitle({
       <div className={clsx("at-header__title")}>
         <HeaderTitleLogo
           className={clsx("at-header__title-left")}
-          fagsystemNavn={fagsystemNavn}
+          logo={logo}
+          appName={appName}
         />
         <HeaderTitleLinks
           className={clsx("at-header__title-center")}
@@ -34,7 +37,7 @@ export function HeaderTitle({
         />
         <HeaderTitleDropdown
           className={clsx("at-header__title-right")}
-          brukernavn={brukernavn}
+          userName={userName}
           controls={controls}
         />
       </div>

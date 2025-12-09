@@ -30,7 +30,11 @@ describe("Header", () => {
   test("renders with default props", () => {
     render(
       <Header {...defaultProps}>
-        <Header.Title />
+        <Header.Title
+          logo={<div></div>}
+          appName="Fagsystem"
+          userName="Bruker Brukersen"
+        />
       </Header>,
     );
     expect(screen.getByText("Fagsystem")).toBeInTheDocument();
@@ -47,7 +51,7 @@ describe("Header", () => {
   test("applies custom arguments for all children", () => {
     render(
       <Header {...defaultProps}>
-        <Header.Title fagsystemNavn="bil" brukernavn="Jsn for" />
+        <Header.Title logo={<div></div>} appName="bil" userName="Jsn for" />
         <Link href="#">Custom Link</Link>
       </Header>,
     );
