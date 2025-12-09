@@ -1,5 +1,17 @@
 # @arbeidstilsynet/design-theme
 
+## 0.3.0
+
+Released: 2025-12-09
+
+### Minor Changes
+
+- Complete change of colors. New: `accent, reverse, brandcolor, myndighet, veileder, korall, neutral`. Old (removed or changed): `primary, inspirator, veileder, tilsyn, neutral`. ([#489](https://github.com/Arbeidstilsynet/design/pull/489))
+
+- Update upstream @digdir/designsystemet to v1.8.0 ([#489](https://github.com/Arbeidstilsynet/design/pull/489))
+
+- Complete regeneration of theme using Digdir v1.8 and config file ([#489](https://github.com/Arbeidstilsynet/design/pull/489))
+
 ## 0.2.3
 
 Released: 2025-11-26

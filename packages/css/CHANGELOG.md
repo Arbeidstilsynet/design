@@ -1,5 +1,15 @@
 # @arbeidstilsynet/design-css
 
+## 0.4.0
+
+Released: 2025-12-09
+
+### Minor Changes
+
+- Header: complete redesign ([#487](https://github.com/Arbeidstilsynet/design/pull/487))
+
+- Update upstream @digdir/designsystemet to v1.8.0 ([#489](https://github.com/Arbeidstilsynet/design/pull/489))
+
 ## 0.3.6
 
 Released: 2025-11-26

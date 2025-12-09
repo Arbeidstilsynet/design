@@ -1,5 +1,21 @@
 # @arbeidstilsynet/design-react
 
+## 0.4.0
+
+Released: 2025-12-09
+
+### Minor Changes
+
+- Header: complete redesign ([#487](https://github.com/Arbeidstilsynet/design/pull/487))
+
+- Update upstream @digdir/designsystemet to v1.8.0 ([#489](https://github.com/Arbeidstilsynet/design/pull/489))
+
+### Patch Changes
+
+- Use the new `@digdir/designsystemet-theme` package instead of `@digdir/designsystemet/types` for types in DefaultProps ([#489](https://github.com/Arbeidstilsynet/design/pull/489))
+
+- Updated dependency `vite` to `7.2.6`. ([#485](https://github.com/Arbeidstilsynet/design/pull/485))
+
 ## 0.3.10
 
 Released: 2025-12-02
