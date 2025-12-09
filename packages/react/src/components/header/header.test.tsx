@@ -31,7 +31,6 @@ describe("Header", () => {
     render(
       <Header {...defaultProps}>
         <Header.Title />
-        <Header.Search />
         <Header.Links>
           <Header.Links.Item asChild={true}>
             <Link href="#">Home</Link>
@@ -55,7 +54,6 @@ describe("Header", () => {
     render(
       <Header {...defaultProps}>
         <Header.Title fagsystemNavn="bil" brukernavn="Jsn for" />
-        <Header.Search />
         <Header.Links>
           <Header.Links.Item asChild={true}>
             <Link href="#">Custom Link</Link>

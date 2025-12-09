@@ -1,7 +1,7 @@
 import { Header as HeaderParent } from "./header";
 import { HeaderTitle } from "./headerTitle";
-import { HeaderSearch } from "./headerSearch";
 import { HeaderLinks } from "./headerLinks";
+import { FilePicker } from "../";
 
 /**
  * Header component for the design system.
@@ -19,12 +19,10 @@ import { HeaderLinks } from "./headerLinks";
 
 const Header = Object.assign(HeaderParent, {
   Title: HeaderTitle,
-  Search: HeaderSearch,
   Links: HeaderLinks,
 });
 
 export type { HeaderProps } from "./header";
-export type { HeaderSearchProps } from "./headerSearch";
 export type { HeaderLinksProps, LinkItemProps } from "./headerLinks";
 export type { HeaderTitleProps } from "./headerTitle";
-export { Header, HeaderTitle, HeaderSearch, HeaderLinks };
+export { Header, HeaderTitle, HeaderLinks };

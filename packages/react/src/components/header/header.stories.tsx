@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
 import type { LinkItem } from "./headerTitleLinks";
-import { Link, Switch } from "../..";
+import { Link, Search, Switch } from "../..";
 
 const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
@@ -12,7 +12,6 @@ const meta: Meta<typeof Header> = {
 
   subcomponents: {
     ["Header.Title"]: Header.Title,
-    ["Header.Search"]: Header.Search,
     ["Header.Links"]: Header.Links,
   },
 };
@@ -86,7 +85,11 @@ export const WithSearchComponent: Story = {
     return (
       <Header {...args}>
         <Header.Title />
-        <Header.Search text="Søk" />
+        <Search>
+          <Search.Input name="placeholder" aria-label="Søk" />
+          <Search.Clear />
+          <Search.Button />
+        </Search>
       </Header>
     );
   },
