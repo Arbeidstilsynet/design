@@ -64,4 +64,7 @@ jobs:
           TEXT=$(printf 'New versions published to NPM from https://github.com/Arbeidstilsynet/design\n%s' "$PACKAGES_TEXT")
 
           payload=$(jq -Rn --arg text "$TEXT" '{channel:"$CHANNEL_NAME", text:$text}')
-          curl -X POST --data-urlencode "payload=$payload" "$SLACK_WEBHOOK_URL"
+          curl -fsS -X POST --data-urlencode "payload=$payload" "$SLACK_WEBHOOK_URL" || {
+            echo "Slack notification failed"
+            exit 1
+          }
