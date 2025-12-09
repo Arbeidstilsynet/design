@@ -3,28 +3,6 @@ import { Header } from "..";
 import type { LinkItem } from "./headerTitleLinks";
 import { Search, Switch } from "../..";
 
-function LogoSvg({
-  width = 48,
-  height = 40,
-}: {
-  width?: number;
-  height?: number;
-}) {
-  return (
-    <svg
-      width={width}
-      height={height}
-      viewBox="0 0 48 40"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <rect width="48" height="40" rx="4" fill="#0062BA" />
-      <path d="M24 8L32 16H28V28H20V16H16L24 8Z" fill="white" />
-      <circle cx="24" cy="32" r="2" fill="white" />
-    </svg>
-  );
-}
-
 const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
   component: Header,
@@ -67,7 +45,6 @@ export const Preview: StoryObj<PreviewArgs> = {
     return (
       <Header>
         <Header.Title
-          logo={<LogoSvg />}
           appName={args.appName}
           userName={args.userName}
           links={args.menulinks}
@@ -82,11 +59,7 @@ export const WithSearchComponent: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Header.Title
-          appName="Fagsystem"
-          userName="Ola Nordmann"
-          logo={<LogoSvg />}
-        />
+        <Header.Title appName="Fagsystem" userName="Ola Nordmann" />
         <Search data-size="sm" style={{ width: "26rem" }}>
           <Search.Input name="placeholder" aria-label="Søk" />
           <Search.Clear />
@@ -101,11 +74,7 @@ export const WithCustomComponent: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Header.Title
-          appName="Fagsystem"
-          userName="Ola Nordmann"
-          logo={<LogoSvg />}
-        />
+        <Header.Title appName="Fagsystem" userName="Ola Nordmann" />
         <div style={{ width: "100%", backgroundColor: "orange" }}>
           <p>Custom component can be placed here</p>
         </div>

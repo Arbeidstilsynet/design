@@ -4,10 +4,11 @@ import type { DefaultProps } from "../../types";
 import { HeaderTitleLogo } from "./headerTitleLogo";
 import { HeaderTitleLinks, type LinkItem } from "./headerTitleLinks";
 import { HeaderTitleDropdown } from "./headerTitleDropdown";
+import { HeaderDefaultLogo } from "./headerDefaultLogo";
 
 export interface HeaderTitleProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
-  logo: ReactNode;
+  logo?: ReactNode;
   appName: string;
   userName: string;
   links?: LinkItem[];
@@ -16,7 +17,7 @@ export interface HeaderTitleProps
 
 export function HeaderTitle({
   className,
-  logo,
+  logo = <HeaderDefaultLogo />,
   appName,
   userName,
   links = [],
