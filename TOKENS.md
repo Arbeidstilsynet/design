@@ -1,5 +1,7 @@
 # Design tokens
 
+Tokens are meant to be used with the [Designsystemet - Core UI Kit for Figma](https://www.figma.com/community/file/1322138390374166141).
+
 Exported design tokens from the Digdir common designsystem live in the [design-tokens](./design-tokens/) directory.
 
 Tokens are initially created from the [config file](./designsystemet.config.json) using the `pnpm tokens:create` script. Major changes to design tokens and changed colors should first be done through the config file when possible.
