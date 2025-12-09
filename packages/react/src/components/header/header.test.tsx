@@ -30,19 +30,15 @@ describe("Header", () => {
   test("renders with default props", () => {
     render(
       <Header {...defaultProps}>
-        <Header.Title />
-        <Header.Search />
-        <Header.Links>
-          <Header.Links.Item asChild={true}>
-            <Link href="#">Home</Link>
-          </Header.Links.Item>
-        </Header.Links>
+        <Header.Title
+          logo={<div></div>}
+          appName="Fagsystem"
+          userName="Bruker Brukersen"
+        />
       </Header>,
     );
     expect(screen.getByText("Fagsystem")).toBeInTheDocument();
-    expect(screen.getByText("Søk")).toBeInTheDocument();
     expect(screen.getByText("Bruker Brukersen")).toBeInTheDocument();
-    expect(screen.getByText("Home")).toBeInTheDocument();
   });
 
   test("renders without children", () => {
@@ -55,17 +51,11 @@ describe("Header", () => {
   test("applies custom arguments for all children", () => {
     render(
       <Header {...defaultProps}>
-        <Header.Title fagsystemNavn="bil" brukernavn="Jsn for" />
-        <Header.Search />
-        <Header.Links>
-          <Header.Links.Item asChild={true}>
-            <Link href="#">Custom Link</Link>
-          </Header.Links.Item>
-        </Header.Links>
+        <Header.Title logo={<div></div>} appName="bil" userName="Jsn for" />
+        <Link href="#">Custom Link</Link>
       </Header>,
     );
     expect(screen.getByText("bil")).toBeInTheDocument();
     expect(screen.getByText("Jsn for")).toBeInTheDocument();
-    expect(screen.getByText("Custom Link")).toBeInTheDocument();
   });
 });
