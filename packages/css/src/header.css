@@ -41,8 +41,8 @@
   flex: 1;
 }
 
-.at-header__title-link {
-  text-decoration: none;
+.at-header__title-link:not(:hover):not(:focus-visible) {
+  text-decoration-line: none;
 }
 
 .at-header__title-right {
@@ -126,9 +126,6 @@
 
   .at-header__title-logo {
     display: none;
-  }
-  .at-header__search {
-    width: 100%;
   }
 
   .at-header__title-dropdown-mobile {
