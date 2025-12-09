@@ -9,8 +9,7 @@ export interface LinkItem {
 }
 
 export interface HeaderTitleLinksProps
-  extends DefaultProps<HTMLDivElement>,
-    HTMLAttributes<HTMLDivElement> {
+  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   links?: LinkItem[];
 }
 

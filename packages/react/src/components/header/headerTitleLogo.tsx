@@ -25,8 +25,7 @@ function LogoSvg({
 }
 
 export interface HeaderTitleLogoProps
-  extends DefaultProps<HTMLDivElement>,
-    HTMLAttributes<HTMLDivElement> {
+  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   logo?: ReactNode;
   fagsystemNavn?: string;
 }
