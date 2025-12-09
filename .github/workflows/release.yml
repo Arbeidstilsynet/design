@@ -45,6 +45,7 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           PUBLISHED_PACKAGES: ${{ steps.changeset.outputs.publishedPackages }}
+          CHANNEL_NAME: "#plattform"
         run: |
           if [ -z "$SLACK_WEBHOOK_URL" ]; then
             echo "SLACK_WEBHOOK_URL is not set. Skipping Slack notification."
@@ -62,5 +63,5 @@ jobs:
           # Build text with a real newline before the first bullet
           TEXT=$(printf 'New versions published to NPM from https://github.com/Arbeidstilsynet/design\n%s' "$PACKAGES_TEXT")
 
-          payload=$(jq -Rn --arg text "$TEXT" '{channel:"#plattform", text:$text}')
+          payload=$(jq -Rn --arg text "$TEXT" '{channel:"$CHANNEL_NAME", text:$text}')
           curl -X POST --data-urlencode "payload=$payload" "$SLACK_WEBHOOK_URL"
