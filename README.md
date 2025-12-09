@@ -92,3 +92,7 @@ export default function RootLayout({
 `/packages/css/` contains styling for the custom React components. Add styling files here. Remember to add container queries for small screens.
 
 You need to manually add the new component to the index.ts file as an export. And you need to manually add the css file to the index.css file as an export.
+
+### Design tokens
+
+See [TOKENS.md](./TOKENS.md) for how to update `design-tokens`.
