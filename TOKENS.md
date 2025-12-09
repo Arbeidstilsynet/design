@@ -10,13 +10,13 @@ You should use Figma to edit the tokens. You'll need the [Tokens Studio for Figm
 
 1. [Install](<https://www.figma.com/community/plugin/843461159747178978/Tokens-Studio-for-Figma-(Figma-Tokens)>) the Figma Tokens plugin
 2. Generate a new Personal Access Token (PAT) in [GitHub Developer Settings](https://github.com/settings/personal-access-tokens)
-    - Click `Generate new token`
-    - Change `Resource owner` to `Arbeidstilsynet`
-    - Add a token name and choose an expiration date
-    - Under `Repository access`, select `Only selected repositories` and search for `Arbeidstilsynet/design`
-    - Under `Permissions` -> `Repositories`, click `Add permissions` and select `Contents`
-    - Change Contents access to `Read and write`
-    - When done, click `Generate token`
+   - Click `Generate new token`
+   - Change `Resource owner` to `Arbeidstilsynet`
+   - Add a token name and choose an expiration date
+   - Under `Repository access`, select `Only selected repositories` and search for `Arbeidstilsynet/design`
+   - Under `Permissions` -> `Repositories`, click `Add permissions` and select `Contents`
+   - Change Contents access to `Read and write`
+   - When done, click `Generate token`
 3. Copy the PAT (you can only see it once)
 4. In the Figma Tokens plugin, under `Sync > GitHub`, add new credentials:
    - Name: `Digdir Figma Tokens`
