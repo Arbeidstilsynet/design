@@ -15,16 +15,13 @@ export interface DropdownItem {
 }
 
 export interface HeaderTitleDropdownProps
-  extends DefaultProps<HTMLDivElement>,
-    HTMLAttributes<HTMLDivElement> {
-  links?: DropdownItem[];
+  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   controls?: ReactNode[];
   brukernavn?: string;
 }
 
 export function HeaderTitleDropdown({
   className,
-  links,
   controls,
   brukernavn,
   ...rest
@@ -55,13 +52,6 @@ export function HeaderTitleDropdown({
         </Dropdown.Trigger>
         <Dropdown open={open} onClose={() => setOpen(false)}>
           <Dropdown.List>
-            {links?.map((link) => (
-              <Dropdown.Item key={link.href}>
-                <Dropdown.Button asChild onClick={() => setOpen(false)}>
-                  <a href={link.href}>{link.label}</a>
-                </Dropdown.Button>
-              </Dropdown.Item>
-            ))}
             {controls?.map((control, index) => (
               <Dropdown.Item key={id + "-control-" + index}>
                 <div className={clsx("at-header__title-dropdown-controls")}>

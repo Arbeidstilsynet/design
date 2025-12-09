@@ -6,8 +6,7 @@ import { HeaderTitleLinks, type LinkItem } from "./headerTitleLinks";
 import { HeaderTitleDropdown } from "./headerTitleDropdown";
 
 export interface HeaderTitleProps
-  extends DefaultProps<HTMLDivElement>,
-    HTMLAttributes<HTMLDivElement> {
+  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   fagsystemNavn?: string;
   brukernavn?: string;
   links?: LinkItem[];
@@ -36,7 +35,6 @@ export function HeaderTitle({
         <HeaderTitleDropdown
           className={clsx("at-header__title-right")}
           brukernavn={brukernavn}
-          links={links}
           controls={controls}
         />
       </div>
