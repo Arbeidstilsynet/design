@@ -85,8 +85,8 @@ export const WithSearchComponent: Story = {
     return (
       <Header {...args}>
         <Header.Title />
-        <Search>
-          <Search.Input name="placeholder" aria-label="Søk" />
+        <Search style={{ width: "26rem" }}>
+          <Search.Input name="placeholder" aria-label="Søk" size={26} />
           <Search.Clear />
           <Search.Button />
         </Search>
