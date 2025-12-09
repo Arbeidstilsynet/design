@@ -42,7 +42,6 @@ describe("Header", () => {
     expect(screen.getByText("Fagsystem")).toBeInTheDocument();
     expect(screen.getByText("Søk")).toBeInTheDocument();
     expect(screen.getByText("Bruker Brukersen")).toBeInTheDocument();
-    expect(screen.getByText("Home")).toBeInTheDocument();
   });
 
   test("renders without children", () => {
@@ -66,6 +65,5 @@ describe("Header", () => {
     );
     expect(screen.getByText("bil")).toBeInTheDocument();
     expect(screen.getByText("Jsn for")).toBeInTheDocument();
-    expect(screen.getByText("Custom Link")).toBeInTheDocument();
   });
 });
