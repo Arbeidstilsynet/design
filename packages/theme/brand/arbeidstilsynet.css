@@ -273,7 +273,7 @@ design-tokens: v1.7.3
 
   color-scheme: light;
 }
-
+ 
 @media (prefers-color-scheme: light) {
   [data-color-scheme="auto"] {
   --ds-color-accent-background-default: #ffffff;
@@ -808,7 +808,7 @@ design-tokens: v1.7.3
 
   color-scheme: dark;
 }
-
+ 
 @media (prefers-color-scheme: dark) {
   [data-color-scheme="auto"] {
   --ds-color-accent-background-default: #0d1a18;
