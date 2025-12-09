@@ -51,5 +51,16 @@ jobs:
             exit 0
           fi
 
-          payload=$(jq -Rn --arg text "New versions published to NPM from https://github.com/Arbeidstilsynet/design/: $PUBLISHED_PACKAGES" '{channel:"#plattform", text:$text}')
+          if [ -z "$PUBLISHED_PACKAGES" ]; then
+            echo "PUBLISHED_PACKAGES is empty. Skipping Slack notification."
+            exit 0
+          fi
+
+          # Turn JSON array into a readable bullet list:
+          PACKAGES_TEXT=$(echo "$PUBLISHED_PACKAGES" | jq -r 'map("- \(.name) \(.version)") | join("\n")')
+
+          # Build text with a real newline before the first bullet
+          TEXT=$(printf 'New versions published to NPM from https://github.com/Arbeidstilsynet/design\n%s' "$PACKAGES_TEXT")
+
+          payload=$(jq -Rn --arg text "$TEXT" '{channel:"#plattform", text:$text}')
           curl -X POST --data-urlencode "payload=$payload" "$SLACK_WEBHOOK_URL"
