@@ -1,10 +1,12 @@
+export interface HeaderDefaultLogoProps extends React.SVGProps<SVGSVGElement> {
+  width?: number;
+  height?: number;
+}
+
 export function HeaderDefaultLogo({
   width = 48,
   height = 40,
-}: {
-  width?: number;
-  height?: number;
-}) {
+}: Readonly<HeaderDefaultLogoProps>) {
   return (
     <svg
       width={width}
@@ -67,8 +69,8 @@ export function HeaderDefaultLogo({
         fill="white"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M27.5607 7.28931C27.6145 7.24779 27.692 7.25736 27.7339 7.31068L30.3616 10.6573L30.5837 13.631C30.5887 13.6983 30.5377 13.757 30.4697 13.762C30.4018 13.767 30.3426 13.7164 30.3376 13.649L30.121 10.7492L27.5392 7.46104C27.4973 7.40772 27.5069 7.33083 27.5607 7.28931Z"
         fill="black"
       />
