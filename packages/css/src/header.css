@@ -46,13 +46,14 @@
   flex: 1;
 }
 
+.at-header__title-right {
+  justify-content: flex-end;
+  margin-right: var(--ds-size-15);
+}
+
 .at-header__title-link:not(:hover):not(:focus-visible),
 .at-header__title-dropdown-controls .ds-link:not(:hover):not(:focus-visible) {
   text-decoration-line: none;
-}
-
-.at-header__title-right {
-  justify-content: flex-end;
 }
 
 /* add padding except for hr (Divider) that are either from the consumer controls prop
@@ -92,12 +93,14 @@
     margin-right: 0;
   }
 
-  .at-header__title-right {
-    justify-self: flex-end;
-  }
-
   .at-header__title-center {
     display: none;
+  }
+
+  .at-header__title-right {
+    justify-self: flex-end;
+    margin-right: unset;
+    margin-right: var(--ds-size-4);
   }
 
   .at-header__title-logo {
