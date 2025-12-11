@@ -114,6 +114,6 @@
   }
 
   .at-header__title-dropdown-item-mobile {
-    display: unset;
+    display: block;
   }
 }
