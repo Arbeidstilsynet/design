@@ -46,7 +46,8 @@
   flex: 1;
 }
 
-.at-header__title-link:not(:hover):not(:focus-visible) {
+.at-header__title-link:not(:hover):not(:focus-visible),
+.at-header__title-dropdown-controls .ds-link:not(:hover):not(:focus-visible) {
   text-decoration-line: none;
 }
 
