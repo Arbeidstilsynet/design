@@ -10,6 +10,11 @@
   & .ds-search {
     align-self: self-start;
   }
+
+  /* disable visited color in both the navigation and dropdown menu */
+  & .ds-link {
+    --dsc-link-color--visited: var(--dsc-link-color);
+  }
 }
 
 .at-header__title-background {
