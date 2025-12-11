@@ -1,7 +1,7 @@
 import { clsx } from "clsx/lite";
 import type { HTMLAttributes } from "react";
-import type { DefaultProps } from "../../types";
 import { Link } from "../../digdir";
+import type { DefaultProps } from "../../types";
 
 export interface LinkItem {
   label: string;
@@ -19,7 +19,7 @@ export function HeaderTitleLinks({
   ...rest
 }: Readonly<HeaderTitleLinksProps>) {
   return (
-    <div className={clsx(className)} {...rest}>
+    <nav className={clsx(className)} {...rest}>
       {links?.map((link) => (
         <Link
           key={link.href}
@@ -29,6 +29,6 @@ export function HeaderTitleLinks({
           {link.label}
         </Link>
       ))}
-    </div>
+    </nav>
   );
 }
