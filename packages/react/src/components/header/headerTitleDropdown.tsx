@@ -6,7 +6,7 @@ import {
 } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import { useId, useState, type HTMLAttributes, type ReactNode } from "react";
-import { Button, Divider, Dropdown, Link } from "../../digdir";
+import { Button, Divider, Dropdown, Link, useMediaQuery } from "../../digdir";
 import type { DefaultProps } from "../../types";
 import type { LinkItem } from "./headerTitleLinks";
 
@@ -32,31 +32,37 @@ export function HeaderTitleDropdown({
   const [open, setOpen] = useState(false);
   const id = useId();
 
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   return (
     <div className={clsx(className)} {...rest}>
       <Dropdown.TriggerContext>
-        {/* only one of these Dropdown.Trigger are displayed, depending on screen size */}
+        {/* Have to use a shared Dropdown.Trigger for desktop/mobile or the positioning in Popover becomes wrong */}
         <Dropdown.Trigger
           onClick={() => setOpen(!open)}
           data-size="sm"
-          variant="tertiary"
-          className="at-header__title-dropdown-desktop"
+          variant={isMobile ? "primary" : "tertiary"}
+          className="at-header__title-dropdown-trigger"
         >
-          {userName}
-          {open ? (
-            <ChevronUpIcon aria-hidden />
+          {isMobile ? (
+            <>
+              {open ? (
+                <XMarkIcon aria-hidden />
+              ) : (
+                <MenuHamburgerIcon aria-hidden />
+              )}
+              <span className="at-header__title-dropdown-text">Meny</span>
+            </>
           ) : (
-            <ChevronDownIcon aria-hidden />
+            <>
+              {userName}
+              {open ? (
+                <ChevronUpIcon aria-hidden />
+              ) : (
+                <ChevronDownIcon aria-hidden />
+              )}
+            </>
           )}
-        </Dropdown.Trigger>
-        <Dropdown.Trigger
-          onClick={() => setOpen(!open)}
-          data-size="sm"
-          variant="primary"
-          className="at-header__title-dropdown-mobile"
-        >
-          {open ? <XMarkIcon aria-hidden /> : <MenuHamburgerIcon aria-hidden />}
-          <span className="at-header__title-dropdown-text">Meny</span>
         </Dropdown.Trigger>
 
         <Dropdown
