@@ -58,7 +58,8 @@ export function HeaderTitleDropdown({
           <Dropdown.List>
             {controls?.map((control, index) => (
               <Dropdown.Item key={id + "-control-" + index}>
-                <div className={clsx("at-header__title-dropdown-controls")}>
+                {/* Dropdown.Item does not forward className, so we wrap the control */}
+                <div className="at-header__title-dropdown-controls">
                   {control}
                 </div>
               </Dropdown.Item>
