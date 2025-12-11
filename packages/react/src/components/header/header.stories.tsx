@@ -1,7 +1,7 @@
 import { EnvelopeClosedIcon, PersonCircleIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
-import { Badge, Divider, Link, Search, Switch } from "../..";
+import { Badge, Divider, Link, Switch } from "../..";
 import type { LinkItem } from "./headerTitleLinks";
 
 const meta: Meta<typeof Header> = {
@@ -68,30 +68,25 @@ export const Preview: StoryObj<PreviewArgs> = {
   },
 };
 
-export const WithSearchComponent: Story = {
-  render: (args) => {
-    return (
-      <Header {...args}>
-        <Header.Title appName="Fagsystem" userName="Ola Nordmann" />
-        <Search data-size="sm" style={{ width: "26rem" }}>
-          <Search.Input name="placeholder" aria-label="Søk" />
-          <Search.Clear />
-          <Search.Button />
-        </Search>
-      </Header>
-    );
-  },
-};
-
 export const WithCustomComponent: Story = {
   render: (args) => {
     return (
-      <Header {...args}>
-        <Header.Title appName="Fagsystem" userName="Ola Nordmann" />
+      <>
         <div style={{ width: "100%", backgroundColor: "orange" }}>
-          <p>Custom component can be placed here</p>
+          <p>
+            Whatever can be placed here and not interfer with the header menu in
+            desktop or mobile views
+          </p>
         </div>
-      </Header>
+        <Header {...args}>
+          <Header.Title appName="Fagsystem" userName="Ola Nordmann" />
+          <div style={{ width: "100%", backgroundColor: "orange" }}>
+            <p>
+              Custom component can be placed here and align with the Header logo
+            </p>
+          </div>
+        </Header>
+      </>
     );
   },
 };
