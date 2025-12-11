@@ -18,8 +18,6 @@ const meta: Meta<typeof Header> = {
 
 export default meta;
 
-type Story = StoryObj<typeof meta>;
-
 interface PreviewArgs {
   appName: string;
   userName: string;
@@ -64,29 +62,6 @@ export const Preview: StoryObj<PreviewArgs> = {
           controls={args.controls}
         />
       </Header>
-    );
-  },
-};
-
-export const WithCustomComponent: Story = {
-  render: (args) => {
-    return (
-      <>
-        <div style={{ width: "100%", backgroundColor: "orange" }}>
-          <p>
-            Whatever can be placed here and not interfer with the header menu in
-            desktop or mobile views
-          </p>
-        </div>
-        <Header {...args}>
-          <Header.Title appName="Fagsystem" userName="Ola Nordmann" />
-          <div style={{ width: "100%", backgroundColor: "orange" }}>
-            <p>
-              Custom component can be placed here and align with the Header logo
-            </p>
-          </div>
-        </Header>
-      </>
     );
   },
 };
