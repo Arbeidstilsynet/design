@@ -1,13 +1,13 @@
-import { clsx } from "clsx/lite";
-import { useId, useState, type HTMLAttributes, type ReactNode } from "react";
-import type { DefaultProps } from "../../types";
-import { Dropdown } from "../../digdir";
 import {
   ChevronDownIcon,
   ChevronUpIcon,
   MenuHamburgerIcon,
   XMarkIcon,
 } from "@navikt/aksel-icons";
+import { clsx } from "clsx/lite";
+import { useId, useState, type HTMLAttributes, type ReactNode } from "react";
+import { Dropdown } from "../../digdir";
+import type { DefaultProps } from "../../types";
 
 export interface DropdownItem {
   label: string;
@@ -32,23 +32,27 @@ export function HeaderTitleDropdown({
   return (
     <div className={clsx(className)} {...rest}>
       <Dropdown.TriggerContext>
-        <Dropdown.Trigger onClick={() => setOpen(!open)} variant="tertiary">
-          <div className="at-header__title-dropdown-desktop">
-            {userName}
-            {open ? (
-              <ChevronUpIcon aria-hidden />
-            ) : (
-              <ChevronDownIcon aria-hidden />
-            )}
-          </div>
-          <div className="at-header__title-dropdown-mobile">
-            <span className="at-header__title-dropdown-text">Meny</span>
-            {open ? (
-              <XMarkIcon aria-hidden />
-            ) : (
-              <MenuHamburgerIcon aria-hidden />
-            )}
-          </div>
+        <Dropdown.Trigger
+          onClick={() => setOpen(!open)}
+          data-size="sm"
+          variant="tertiary"
+          className="at-header__title-dropdown-desktop"
+        >
+          {userName}
+          {open ? (
+            <ChevronUpIcon aria-hidden />
+          ) : (
+            <ChevronDownIcon aria-hidden />
+          )}
+        </Dropdown.Trigger>
+        <Dropdown.Trigger
+          onClick={() => setOpen(!open)}
+          data-size="sm"
+          variant="primary"
+          className="at-header__title-dropdown-mobile"
+        >
+          {open ? <XMarkIcon aria-hidden /> : <MenuHamburgerIcon aria-hidden />}
+          <span className="at-header__title-dropdown-text">Meny</span>
         </Dropdown.Trigger>
         <Dropdown open={open} onClose={() => setOpen(false)}>
           <Dropdown.List>
