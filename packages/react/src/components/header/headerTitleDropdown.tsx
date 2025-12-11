@@ -6,7 +6,7 @@ import {
 } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import { useId, useState, type HTMLAttributes, type ReactNode } from "react";
-import { Divider, Dropdown, Link } from "../../digdir";
+import { Button, Divider, Dropdown, Link } from "../../digdir";
 import type { DefaultProps } from "../../types";
 import type { LinkItem } from "./headerTitleLinks";
 
@@ -59,7 +59,12 @@ export function HeaderTitleDropdown({
           <span className="at-header__title-dropdown-text">Meny</span>
         </Dropdown.Trigger>
 
-        <Dropdown open={open} onClose={() => setOpen(false)}>
+        <Dropdown
+          open={open}
+          onClose={() => setOpen(false)}
+          placement="bottom"
+          className="at-header__title-dropdown-content"
+        >
           {/* Navigation menu items for mobile, including Divider */}
           <Dropdown.List>
             {links?.map((link) => (
@@ -80,9 +85,15 @@ export function HeaderTitleDropdown({
                 </div>
               </Dropdown.Item>
             ))}
-            <div className={clsx("at-header__title-dropdown-item-mobile")}>
-              <Divider />
-            </div>
+            <Dropdown.Item>
+              <div
+                className={clsx(
+                  "at-header__title-dropdown-item-mobile at-header__title-dropdown-controls",
+                )}
+              >
+                <Divider />
+              </div>
+            </Dropdown.Item>
 
             {/* Misc menu controls that are always shown */}
             {controls?.map((control, index) => (
@@ -94,8 +105,27 @@ export function HeaderTitleDropdown({
               </Dropdown.Item>
             ))}
           </Dropdown.List>
+
+          {/* Mobile-only close button */}
+          <Dropdown.Item>
+            <div className="at-header__title-dropdown-close-mobile">
+              <Button
+                type="button"
+                variant="secondary"
+                onClick={() => setOpen(false)}
+              >
+                <XMarkIcon aria-hidden />
+                Lukk
+              </Button>
+            </div>
+          </Dropdown.Item>
         </Dropdown>
       </Dropdown.TriggerContext>
+
+      {/* overlay */}
+      {open ? (
+        <div aria-hidden className="at-header__title-dropdown-backdrop" />
+      ) : null}
     </div>
   );
 }

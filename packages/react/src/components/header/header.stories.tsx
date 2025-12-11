@@ -1,7 +1,7 @@
 import { EnvelopeClosedIcon, PersonCircleIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
-import { Badge, Link, Search, Switch } from "../..";
+import { Badge, Divider, Link, Search, Switch } from "../..";
 import type { LinkItem } from "./headerTitleLinks";
 
 const meta: Meta<typeof Header> = {
@@ -43,6 +43,7 @@ const controls = [
     <Link href="#">Innboks</Link>
     <Badge count={15} style={{ marginLeft: "auto" }} />
   </>,
+  <Divider />,
   <Switch label="Mørk modus" position="end" />,
 ];
 
