@@ -1,10 +1,10 @@
 import { clsx } from "clsx/lite";
 import type { HTMLAttributes, ReactNode } from "react";
 import type { DefaultProps } from "../../types";
-import { HeaderTitleLogo } from "./headerTitleLogo";
-import { HeaderTitleLinks, type LinkItem } from "./headerTitleLinks";
-import { HeaderTitleDropdown } from "./headerTitleDropdown";
 import { HeaderDefaultLogo } from "./headerDefaultLogo";
+import { HeaderTitleDropdown } from "./headerTitleDropdown";
+import { HeaderTitleLinks, type LinkItem } from "./headerTitleLinks";
+import { HeaderTitleLogo } from "./headerTitleLogo";
 
 export interface HeaderTitleProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
@@ -38,6 +38,7 @@ export function HeaderTitle({
         />
         <HeaderTitleDropdown
           className={clsx("at-header__title-right")}
+          links={links}
           userName={userName}
           controls={controls}
         />
