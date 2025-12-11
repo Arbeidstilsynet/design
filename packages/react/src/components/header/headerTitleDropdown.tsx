@@ -32,6 +32,7 @@ export function HeaderTitleDropdown({
   return (
     <div className={clsx(className)} {...rest}>
       <Dropdown.TriggerContext>
+        {/* only one of these Dropdown.Trigger are displayed, depending on screen size */}
         <Dropdown.Trigger
           onClick={() => setOpen(!open)}
           data-size="sm"
@@ -54,6 +55,7 @@ export function HeaderTitleDropdown({
           {open ? <XMarkIcon aria-hidden /> : <MenuHamburgerIcon aria-hidden />}
           <span className="at-header__title-dropdown-text">Meny</span>
         </Dropdown.Trigger>
+
         <Dropdown open={open} onClose={() => setOpen(false)}>
           <Dropdown.List>
             {controls?.map((control, index) => (
