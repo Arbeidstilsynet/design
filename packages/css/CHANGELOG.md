@@ -1,5 +1,15 @@
 # @arbeidstilsynet/design-css
 
+## 0.4.1
+
+Released: 2025-12-11
+
+### Patch Changes
+
+- Header: use nav for links ([#492](https://github.com/Arbeidstilsynet/design/pull/492))
+
+- Header: moved links into menu in mobile view, added close button ([#492](https://github.com/Arbeidstilsynet/design/pull/492))
+
 ## 0.4.0
 
 Released: 2025-12-09
