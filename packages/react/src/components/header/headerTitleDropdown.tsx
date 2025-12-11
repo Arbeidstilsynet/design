@@ -6,8 +6,9 @@ import {
 } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import { useId, useState, type HTMLAttributes, type ReactNode } from "react";
-import { Dropdown } from "../../digdir";
+import { Divider, Dropdown, Link } from "../../digdir";
 import type { DefaultProps } from "../../types";
+import type { LinkItem } from "./headerTitleLinks";
 
 export interface DropdownItem {
   label: string;
@@ -17,12 +18,14 @@ export interface DropdownItem {
 export interface HeaderTitleDropdownProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   controls?: ReactNode[];
+  links?: LinkItem[];
   userName?: string;
 }
 
 export function HeaderTitleDropdown({
   className,
   controls,
+  links,
   userName,
   ...rest
 }: Readonly<HeaderTitleDropdownProps>) {
@@ -57,7 +60,31 @@ export function HeaderTitleDropdown({
         </Dropdown.Trigger>
 
         <Dropdown open={open} onClose={() => setOpen(false)}>
+          {/* Navigation menu items for mobile, including Divider */}
           <Dropdown.List>
+            {links?.map((link) => (
+              <Dropdown.Item key={"nav-" + link.href}>
+                {/* Dropdown.Item does not forward className, so we wrap the control */}
+                <div
+                  className={clsx(
+                    "at-header__title-dropdown-controls",
+                    "at-header__title-dropdown-item-mobile",
+                  )}
+                >
+                  <Link
+                    href={link.href}
+                    className={clsx("at-header__title-link")}
+                  >
+                    {link.label}
+                  </Link>
+                </div>
+              </Dropdown.Item>
+            ))}
+            <div className={clsx("at-header__title-dropdown-item-mobile")}>
+              <Divider />
+            </div>
+
+            {/* Misc menu controls that are always shown */}
             {controls?.map((control, index) => (
               <Dropdown.Item key={id + "-control-" + index}>
                 {/* Dropdown.Item does not forward className, so we wrap the control */}
