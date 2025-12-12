@@ -1,5 +1,6 @@
 import "@arbeidstilsynet/design-css";
 import "@arbeidstilsynet/design-theme/arbeidstilsynet.css";
+import "../utils/add-displaynames";
 import {
   Controls,
   Description,

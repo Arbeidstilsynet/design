@@ -45,6 +45,9 @@ importers:
       '@arbeidstilsynet/design-css':
         specifier: workspace:*
         version: link:../../packages/css
+      '@arbeidstilsynet/design-react':
+        specifier: workspace:*
+        version: link:../../packages/react
       '@arbeidstilsynet/design-theme':
         specifier: workspace:*
         version: link:../../packages/theme
