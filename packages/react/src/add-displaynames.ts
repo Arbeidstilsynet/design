@@ -7,7 +7,7 @@ const addDisplaynames = (pkg: any) => {
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   Object.keys(pkg).forEach((key) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    if ('render' in pkg[key]) {
+    if ("render" in pkg[key]) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       pkg[key].displayName = key;
     }
