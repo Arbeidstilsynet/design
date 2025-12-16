@@ -65,3 +65,26 @@ export const Preview: StoryObj<PreviewArgs> = {
     );
   },
 };
+
+export const CustomLinks: StoryObj<PreviewArgs> = {
+  args: {
+    appName: "Arbeidstilsynet",
+    userName: "Ola Nordmann",
+    controls: controls,
+  },
+  render: (args) => {
+    return (
+      <Header>
+        <Header.Title
+          appName={args.appName}
+          userName={args.userName}
+          controls={args.controls}
+        >
+          <div>Hjem</div>
+          <div>Om oss</div>
+          <div>Tjenester</div>
+        </Header.Title>
+      </Header>
+    );
+  },
+};
