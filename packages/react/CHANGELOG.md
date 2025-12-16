@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-react
 
+## 0.4.2
+
+Released: 2025-12-16
+
+### Patch Changes
+
+- Add support for custom link components in header ([#498](https://github.com/Arbeidstilsynet/design/pull/498))
+
 ## 0.4.1
 
 Released: 2025-12-11
