@@ -10,7 +10,7 @@ import { HeaderTitle } from "./headerTitle";
  *
  * For the navigation links, you can either provide an array of link items via the `links` prop,
  * or you can customize the links by passing your own components as children to `Header.Title`.
- * Make sure that the children you provide are valid React elements and accepts className props for proper styling.
+ * Make sure that the children you provide are valid React elements and accept className props for proper styling.
  *
  * Example usage for Next.js Link components:
  * ```tsx
