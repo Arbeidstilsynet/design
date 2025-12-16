@@ -25,6 +25,21 @@ interface PreviewArgs {
   controls: React.ReactNode[];
 }
 
+// Mock router link component for demonstration
+const MockRouterLink = ({
+  to,
+  children,
+  className,
+}: {
+  to: string;
+  children: React.ReactNode;
+  className?: string;
+}) => (
+  <a href={to} className={className}>
+    {children}
+  </a>
+);
+
 const menuLinks: LinkItem[] = [
   { label: "Hjem", href: "#" },
   { label: "Om oss", href: "#" },
@@ -61,6 +76,29 @@ export const Preview: StoryObj<PreviewArgs> = {
           links={args.menulinks}
           controls={args.controls}
         />
+      </Header>
+    );
+  },
+};
+
+export const CustomLinks: StoryObj<PreviewArgs> = {
+  args: {
+    appName: "Arbeidstilsynet",
+    userName: "Ola Nordmann",
+    controls: controls,
+  },
+  render: (args) => {
+    return (
+      <Header>
+        <Header.Title
+          appName={args.appName}
+          userName={args.userName}
+          controls={args.controls}
+        >
+          <MockRouterLink to="/">Hjem</MockRouterLink>
+          <MockRouterLink to="/saker">Saker</MockRouterLink>
+          <MockRouterLink to="/virksomheter">Virksomheter</MockRouterLink>
+        </Header.Title>
       </Header>
     );
   },

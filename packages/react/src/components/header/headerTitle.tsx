@@ -13,6 +13,7 @@ export interface HeaderTitleProps
   userName: string;
   links?: LinkItem[];
   controls?: ReactNode[];
+  children?: ReactNode;
 }
 
 export function HeaderTitle({
@@ -22,6 +23,7 @@ export function HeaderTitle({
   userName,
   links = [],
   controls = [],
+  children,
   ...rest
 }: Readonly<HeaderTitleProps>) {
   return (
@@ -35,13 +37,17 @@ export function HeaderTitle({
         <HeaderTitleLinks
           className={clsx("at-header__title-center")}
           links={links}
-        />
+        >
+          {children}
+        </HeaderTitleLinks>
         <HeaderTitleDropdown
           className={clsx("at-header__title-right")}
           links={links}
           userName={userName}
           controls={controls}
-        />
+        >
+          {children}
+        </HeaderTitleDropdown>
       </div>
     </div>
   );
