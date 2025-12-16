@@ -13,10 +13,11 @@ import {
   Children,
   isValidElement,
 } from "react";
-import { Button, Divider, Dropdown, Link, useMediaQuery } from "../../digdir";
+import { Button, Divider, Dropdown, Link } from "../../digdir";
 import type { DefaultProps } from "../../types";
 import type { LinkItem } from "./headerTitleLinks";
 import { Slot } from "@radix-ui/react-slot";
+import { useMediaQuery } from "../hooks/useMediaQuery";
 
 export interface DropdownItem {
   label: string;
