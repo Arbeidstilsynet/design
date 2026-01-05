@@ -5,6 +5,8 @@ packages:
 autoInstallPeers: false
 
 minimumReleaseAge: 4320
+minimumReleaseAgeExclude:
+  - ts-api-utils@2.4.0
 
 overrides:
   glob@>=10.0.0 <11.1.0: ">=11.1.0"
