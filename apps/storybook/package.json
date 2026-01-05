@@ -39,7 +39,7 @@
     "eslint-plugin-react-hooks": "7.0.1",
     "eslint-plugin-storybook": "10.1.2",
     "playwright": "1.57.0",
-    "storybook": "10.1.2",
+    "storybook": "10.1.10",
     "typescript": "5.9.3",
     "typescript-eslint": "8.48.0"
   }
