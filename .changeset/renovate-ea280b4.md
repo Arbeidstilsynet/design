@@ -1,0 +1,5 @@
+---
+'@arbeidstilsynet/design-react': patch
+---
+
+Updated dependency `@testing-library/react` to `16.3.1`.
