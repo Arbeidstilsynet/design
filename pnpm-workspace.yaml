@@ -2,19 +2,13 @@ packages:
   - packages/*
   - apps/*
 
-auditConfig:
-  ignoreGhsas:
-    - GHSA-jc85-fpwf-qm7x
-
 autoInstallPeers: false
 
 minimumReleaseAge: 4320
 
 overrides:
-  expr-eval-fork@<=2.0.2: '>=3.0.0'
-  expr-eval-fork@<=3.0.0: '>=3.0.1'
-  glob@>=10.0.0 <11.1.0: '>=11.1.0'
-  qs@<6.14.1: '>=6.14.1'
+  glob@>=10.0.0 <11.1.0: ">=11.1.0"
+  qs@<6.14.1: ">=6.14.1"
 
 trustPolicy: no-downgrade
 
