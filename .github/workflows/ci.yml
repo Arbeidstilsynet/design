@@ -53,7 +53,7 @@ jobs:
         # https://github.com/orgs/community/discussions/24616
         # https://github.com/EnricoMi/publish-unit-test-result-action/issues/12
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action@34d7c956a59aed1bfebf31df77b8de55db9bbaaf # v2
+        uses: EnricoMi/publish-unit-test-result-action@27d65e188ec43221b20d26de30f4892fad91df2f # v2
         if: steps.test.outcome == 'success' || steps.test.outcome == 'failure'
         with:
           files: "test-report.xml"
