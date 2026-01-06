@@ -22,7 +22,7 @@
     "react-dom": "19.2.0"
   },
   "devDependencies": {
-    "@eslint/js": "9.39.1",
+    "@eslint/js": "9.39.2",
     "@storybook/addon-a11y": "10.1.11",
     "@storybook/addon-docs": "10.1.11",
     "@storybook/addon-vitest": "10.1.11",
@@ -34,7 +34,7 @@
     "@vitest/browser-playwright": "4.0.14",
     "@vitest/coverage-v8": "4.0.14",
     "concurrently": "9.2.1",
-    "eslint": "9.39.1",
+    "eslint": "9.39.2",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-react-hooks": "7.0.1",
     "eslint-plugin-storybook": "10.1.11",
