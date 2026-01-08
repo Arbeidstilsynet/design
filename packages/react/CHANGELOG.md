@@ -1,5 +1,44 @@
 # @arbeidstilsynet/design-react
 
+## 0.5.0
+
+Released: 2026-01-08
+
+### Minor Changes
+
+- FilePicker.Files: remove file icons ([#523](https://github.com/Arbeidstilsynet/design/pull/523))
+
+### Patch Changes
+
+- FilePicker.Files: use neutral color by default ([#523](https://github.com/Arbeidstilsynet/design/pull/523))
+
+- Updated dependency `@digdir/designsystemet-css` to `1.9.0`. ([#519](https://github.com/Arbeidstilsynet/design/pull/519))
+  Updated dependency `@digdir/designsystemet` to `1.9.0`.
+  Updated dependency `@digdir/designsystemet-react` to `1.9.0`.
+  Updated dependency `@digdir/designsystemet-types` to `1.9.0`.
+
+- Updated dependency `typescript-eslint` to `8.51.0`. ([#503](https://github.com/Arbeidstilsynet/design/pull/503))
+
+- Updated dependency `jsdom` to `27.4.0`. ([#517](https://github.com/Arbeidstilsynet/design/pull/517))
+
+- Updated dependency `@types/node` to `24.10.4`. ([#509](https://github.com/Arbeidstilsynet/design/pull/509))
+
+- Updated dependency `@navikt/aksel-icons` to `^7.37.0`. ([#521](https://github.com/Arbeidstilsynet/design/pull/521))
+
+- Updated dependency `@vitejs/plugin-react` to `5.1.2`. ([#511](https://github.com/Arbeidstilsynet/design/pull/511))
+
+- Updated dependency `react` to `19.2.3`. ([#515](https://github.com/Arbeidstilsynet/design/pull/515))
+  Updated dependency `react-dom` to `19.2.3`.
+
+- Updated dependency `@testing-library/react` to `16.3.1`. ([#506](https://github.com/Arbeidstilsynet/design/pull/506))
+
+- Updated dependency `@eslint/js` to `9.39.2`. ([#513](https://github.com/Arbeidstilsynet/design/pull/513))
+  Updated dependency `eslint` to `9.39.2`.
+
+- Updated dependency `vite` to `7.3.0`. ([#518](https://github.com/Arbeidstilsynet/design/pull/518))
+
+- FilePicker: Decrease font size to small. Delete button now scales with data-size. ([#523](https://github.com/Arbeidstilsynet/design/pull/523))
+
 ## 0.4.2
 
 Released: 2025-12-16

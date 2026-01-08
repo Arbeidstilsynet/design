@@ -1,5 +1,24 @@
 # @arbeidstilsynet/design-css
 
+## 0.5.0
+
+Released: 2026-01-08
+
+### Minor Changes
+
+- Export upstream individual CSS files ([#519](https://github.com/Arbeidstilsynet/design/pull/519))
+
+### Patch Changes
+
+- Updated dependency `@digdir/designsystemet-css` to `1.9.0`. ([#519](https://github.com/Arbeidstilsynet/design/pull/519))
+  Updated dependency `@digdir/designsystemet` to `1.9.0`.
+  Updated dependency `@digdir/designsystemet-react` to `1.9.0`.
+  Updated dependency `@digdir/designsystemet-types` to `1.9.0`.
+
+- Updated dependency `autoprefixer` to `10.4.23`. ([#512](https://github.com/Arbeidstilsynet/design/pull/512))
+
+- FilePicker: Decrease font size to small. Delete button now scales with data-size. ([#523](https://github.com/Arbeidstilsynet/design/pull/523))
+
 ## 0.4.1
 
 Released: 2025-12-11
