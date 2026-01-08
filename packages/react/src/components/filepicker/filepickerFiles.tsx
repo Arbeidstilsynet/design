@@ -35,7 +35,11 @@ export function FilePickerFiles({
   }
 
   return (
-    <Table className={clsx("at-filepicker-files-table", className)} {...rest}>
+    <Table
+      data-color="neutral"
+      className={clsx("at-filepicker-files-table", className)}
+      {...rest}
+    >
       <Table.Head>
         <Table.Row>
           <Table.HeaderCell title={columnNames[0]}>
@@ -57,7 +61,6 @@ export function FilePickerFiles({
               <Table.Cell
                 title={file.name}
                 className="at-filepicker-files-file__name"
-                data-color="info"
               >
                 <Link
                   href={disabled ? undefined : URL.createObjectURL(file)}
