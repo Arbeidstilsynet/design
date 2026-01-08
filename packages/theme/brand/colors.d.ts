@@ -7,9 +7,8 @@ declare module '@digdir/designsystemet-types' {
   export interface ColorDefinitions {
     accent: never;
     reverse: never;
-    brandcolor: never;
-    myndighet: never;
-    veileder: never;
+    blaa: never;
+    gul: never;
     korall: never;
     neutral: never;
   }
