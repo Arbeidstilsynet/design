@@ -1,4 +1,4 @@
-import { FileTextIcon, TrashIcon } from "@navikt/aksel-icons";
+import { TrashIcon } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import { type HTMLAttributes, use } from "react";
 import { Button, Link, Table } from "../../digdir";
@@ -65,7 +65,6 @@ export function FilePickerFiles({
                   rel="noreferrer"
                   aria-disabled={disabled}
                 >
-                  <FileTextIcon aria-hidden="true" fontSize="1.5em" />
                   <span className="at-filepicker-files-file__text">
                     {file.name}
                   </span>
