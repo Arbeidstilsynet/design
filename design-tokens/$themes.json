@@ -117,26 +117,18 @@
     "group": "Main color"
   },
   {
-    "id": "f189b0540e3b974b0ca2abb1cc1fa54e89986e72",
-    "name": "brandcolor",
+    "id": "85ff04220e989b77c2982520d1288146e6850c18",
+    "name": "blaa",
     "selectedTokenSets": {
-      "semantic/modes/main-color/brandcolor": "enabled"
-    },
-    "group": "Main color"
-  },
-  {
-    "id": "9e1cf7c1ddc9ea858aa06d106c7444c65785adf7",
-    "name": "myndighet",
-    "selectedTokenSets": {
-      "semantic/modes/support-color/myndighet": "enabled"
+      "semantic/modes/support-color/blaa": "enabled"
     },
     "group": "Support color"
   },
   {
-    "id": "d1de25885a7d5b4df82d92a843359fad7de876a2",
-    "name": "veileder",
+    "id": "a82e45656680e483b67b4d5c2ecceb732ecb1f9c",
+    "name": "gul",
     "selectedTokenSets": {
-      "semantic/modes/support-color/veileder": "enabled"
+      "semantic/modes/support-color/gul": "enabled"
     },
     "group": "Support color"
   },

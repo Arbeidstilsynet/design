@@ -132,72 +132,6 @@
         "$value": "{arbeidstilsynet.reverse.16}"
       }
     },
-    "brandcolor": {
-      "1": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.1}"
-      },
-      "2": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.2}"
-      },
-      "3": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.3}"
-      },
-      "4": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.4}"
-      },
-      "5": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.5}"
-      },
-      "6": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.6}"
-      },
-      "7": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.7}"
-      },
-      "8": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.8}"
-      },
-      "9": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.9}"
-      },
-      "10": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.10}"
-      },
-      "11": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.11}"
-      },
-      "12": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.12}"
-      },
-      "13": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.13}"
-      },
-      "14": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.14}"
-      },
-      "15": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.15}"
-      },
-      "16": {
-        "$type": "color",
-        "$value": "{arbeidstilsynet.brandcolor.16}"
-      }
-    },
     "neutral": {
       "1": {
         "$type": "color",
@@ -264,136 +198,136 @@
         "$value": "{arbeidstilsynet.neutral.16}"
       }
     },
-    "myndighet": {
+    "blaa": {
       "1": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.1}"
+        "$value": "{arbeidstilsynet.blaa.1}"
       },
       "2": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.2}"
+        "$value": "{arbeidstilsynet.blaa.2}"
       },
       "3": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.3}"
+        "$value": "{arbeidstilsynet.blaa.3}"
       },
       "4": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.4}"
+        "$value": "{arbeidstilsynet.blaa.4}"
       },
       "5": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.5}"
+        "$value": "{arbeidstilsynet.blaa.5}"
       },
       "6": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.6}"
+        "$value": "{arbeidstilsynet.blaa.6}"
       },
       "7": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.7}"
+        "$value": "{arbeidstilsynet.blaa.7}"
       },
       "8": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.8}"
+        "$value": "{arbeidstilsynet.blaa.8}"
       },
       "9": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.9}"
+        "$value": "{arbeidstilsynet.blaa.9}"
       },
       "10": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.10}"
+        "$value": "{arbeidstilsynet.blaa.10}"
       },
       "11": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.11}"
+        "$value": "{arbeidstilsynet.blaa.11}"
       },
       "12": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.12}"
+        "$value": "{arbeidstilsynet.blaa.12}"
       },
       "13": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.13}"
+        "$value": "{arbeidstilsynet.blaa.13}"
       },
       "14": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.14}"
+        "$value": "{arbeidstilsynet.blaa.14}"
       },
       "15": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.15}"
+        "$value": "{arbeidstilsynet.blaa.15}"
       },
       "16": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.myndighet.16}"
+        "$value": "{arbeidstilsynet.blaa.16}"
       }
     },
-    "veileder": {
+    "gul": {
       "1": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.1}"
+        "$value": "{arbeidstilsynet.gul.1}"
       },
       "2": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.2}"
+        "$value": "{arbeidstilsynet.gul.2}"
       },
       "3": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.3}"
+        "$value": "{arbeidstilsynet.gul.3}"
       },
       "4": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.4}"
+        "$value": "{arbeidstilsynet.gul.4}"
       },
       "5": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.5}"
+        "$value": "{arbeidstilsynet.gul.5}"
       },
       "6": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.6}"
+        "$value": "{arbeidstilsynet.gul.6}"
       },
       "7": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.7}"
+        "$value": "{arbeidstilsynet.gul.7}"
       },
       "8": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.8}"
+        "$value": "{arbeidstilsynet.gul.8}"
       },
       "9": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.9}"
+        "$value": "{arbeidstilsynet.gul.9}"
       },
       "10": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.10}"
+        "$value": "{arbeidstilsynet.gul.10}"
       },
       "11": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.11}"
+        "$value": "{arbeidstilsynet.gul.11}"
       },
       "12": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.12}"
+        "$value": "{arbeidstilsynet.gul.12}"
       },
       "13": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.13}"
+        "$value": "{arbeidstilsynet.gul.13}"
       },
       "14": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.14}"
+        "$value": "{arbeidstilsynet.gul.14}"
       },
       "15": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.15}"
+        "$value": "{arbeidstilsynet.gul.15}"
       },
       "16": {
         "$type": "color",
-        "$value": "{arbeidstilsynet.veileder.16}"
+        "$value": "{arbeidstilsynet.gul.16}"
       }
     },
     "korall": {
