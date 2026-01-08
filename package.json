@@ -10,6 +10,7 @@
     "typecheck": "tsc -b",
     "typecheck:scripts": "tsc --project scripts",
     "lint": "pnpm -r lint",
+    "dev": "pnpm storybook",
     "test": "vitest run",
     "build": "pnpm -r build",
     "build:react": "pnpm --filter @arbeidstilsynet/design-react build",
