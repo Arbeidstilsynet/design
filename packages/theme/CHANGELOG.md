@@ -1,5 +1,15 @@
 # @arbeidstilsynet/design-theme
 
+## 0.4.0
+
+Released: 2026-01-08
+
+### Minor Changes
+
+- Regenerate design-tokens, adding new focus tokens from digdir/designsystemet@1.9.0 ([#519](https://github.com/Arbeidstilsynet/design/pull/519))
+
+- Complete change of colors. Full current list of colors: `accent, reverse, blaa, gul, korall, neutral, info, success, warning, danger`. Removed: `brandcolor, myndighet, veileder`. ([#525](https://github.com/Arbeidstilsynet/design/pull/525))
+
 ## 0.3.0
 
 Released: 2025-12-09
