@@ -144,3 +144,8 @@
     opacity: var(--opacity-disabled, 0.3);
   }
 }
+
+.at-filepicker-files-file__button {
+  --dsc-button-padding: var(--ds-size-1) var(--ds-size-4);
+  min-height: unset;
+}
