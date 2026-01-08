@@ -84,33 +84,47 @@
 */
 .at-filepicker-files-table {
   table-layout: fixed;
-}
 
-/* Prevent wrapping + enable ellipsis everywhere */
-.at-filepicker-files-table th,
-.at-filepicker-files-table td {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-/* Name column gets remaining space */
-.at-filepicker-files-table :is(th, td):nth-child(1) {
-  width: auto;
-}
-.at-filepicker-files-table :is(th, td):nth-child(2) {
-  width: var(--ds-size-22);
-
-  @container (max-width: 400px) {
-    width: var(--ds-size-18);
+  /* Prevent wrapping + enable ellipsis everywhere */
+  th,
+  td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  @container (max-width: 350px) {
-    width: var(--ds-size-14);
+  /* Name column gets remaining space */
+  :is(th, td):nth-child(1) {
+    width: auto;
   }
-}
-.at-filepicker-files-table :is(th, td):nth-child(3) {
-  width: var(--ds-size-26);
+
+  :is(th, td):nth-child(2) {
+    width: var(--ds-size-22);
+
+    @container (max-width: 400px) {
+      width: var(--ds-size-18);
+    }
+
+    @container (max-width: 350px) {
+      width: var(--ds-size-14);
+    }
+  }
+
+  :is(th, td):nth-child(3) {
+    width: var(--ds-size-26);
+  }
+
+  tr[data-error="true"] {
+    background: var(--ds-color-danger-surface-tinted);
+
+    &:has(.at-filepicker-files-file__name:hover) {
+      background: var(--ds-color-danger-surface-hover);
+    }
+  }
+
+  tr:not([data-error="true"]):has(.at-filepicker-files-file__name:hover) {
+    background: var(--ds-color-neutral-surface-tinted);
+  }
 }
 
 .at-filepicker-files-file__text {
@@ -129,17 +143,4 @@
     cursor: not-allowed;
     opacity: var(--opacity-disabled, 0.3);
   }
-}
-
-.at-filepicker-files-table tr[data-error="true"] {
-  background: var(--ds-color-danger-surface-tinted);
-
-  &:has(.at-filepicker-files-file__name:hover) {
-    background: var(--ds-color-danger-surface-hover);
-  }
-}
-
-.at-filepicker-files-table
-  tr:not([data-error="true"]):has(.at-filepicker-files-file__name:hover) {
-  background: var(--ds-color-neutral-surface-tinted);
 }
