@@ -1,5 +1,5 @@
 ---
-"@arbeidstilsynet/design-react": patch
+"@arbeidstilsynet/design-react": minor
 ---
 
-FilePicker: remove file icons
+FilePicker.Files: remove file icons
