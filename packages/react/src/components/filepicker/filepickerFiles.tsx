@@ -75,7 +75,6 @@ export function FilePickerFiles({
               <Table.Cell data-color="danger">
                 <Button
                   variant="tertiary"
-                  data-size="sm"
                   disabled={disabled}
                   aria-label={`Remove ${file.name}`}
                   onClick={() => onRemove(id)}
