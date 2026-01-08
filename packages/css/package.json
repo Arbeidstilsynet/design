@@ -17,6 +17,7 @@
       "types": "./types.d.ts",
       "default": "./dist/src/index.css"
     },
+    "./digdir/*": "./dist/digdir/*",
     "./*": "./dist/src/*"
   },
   "files": [
@@ -25,12 +26,13 @@
   ],
   "scripts": {
     "dev": "postcss ./src/*.css --base . --dir ./dist --watch",
-    "build": "del-cli ./dist && postcss ./src/*.css --base . --dir ./dist"
+    "build": "del-cli ./dist && postcss ./src/*.css --base . --dir ./dist && pnpx tsx ./scripts/copy-digdir-css.ts"
   },
   "dependencies": {
-    "@digdir/designsystemet-css": "1.8.0"
+    "@digdir/designsystemet-css": "1.9.0"
   },
   "devDependencies": {
+    "@types/node": "24.10.4",
     "autoprefixer": "10.4.23",
     "cssnano": "7.1.2",
     "del-cli": "7.0.0",

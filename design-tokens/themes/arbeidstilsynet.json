@@ -731,6 +731,16 @@
         "$type": "color",
         "$value": "{arbeidstilsynet.link.visited}"
       }
+    },
+    "focus": {
+      "inner-color": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.focus.inner}"
+      },
+      "outer-color": {
+        "$type": "color",
+        "$value": "{arbeidstilsynet.focus.outer}"
+      }
     }
   },
   "font-family": {

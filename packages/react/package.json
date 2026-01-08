@@ -37,8 +37,8 @@
     "react-dom": "^19.1.0"
   },
   "dependencies": {
-    "@digdir/designsystemet-react": "1.8.0",
-    "@digdir/designsystemet-types": "1.8.0",
+    "@digdir/designsystemet-react": "1.9.0",
+    "@digdir/designsystemet-types": "1.9.0",
     "@navikt/aksel-icons": "^7.37.0",
     "@radix-ui/react-slot": "^1.2.4",
     "clsx": "^2.1.1",
