@@ -1,4 +1,4 @@
-import { FileTextIcon, TrashIcon } from "@navikt/aksel-icons";
+import { TrashIcon } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import { type HTMLAttributes, use } from "react";
 import { Button, Link, Table } from "../../digdir";
@@ -35,7 +35,11 @@ export function FilePickerFiles({
   }
 
   return (
-    <Table className={clsx("at-filepicker-files-table", className)} {...rest}>
+    <Table
+      data-color="neutral"
+      className={clsx("at-filepicker-files-table", className)}
+      {...rest}
+    >
       <Table.Head>
         <Table.Row>
           <Table.HeaderCell title={columnNames[0]}>
@@ -57,7 +61,6 @@ export function FilePickerFiles({
               <Table.Cell
                 title={file.name}
                 className="at-filepicker-files-file__name"
-                data-color="info"
               >
                 <Link
                   href={disabled ? undefined : URL.createObjectURL(file)}
@@ -65,7 +68,6 @@ export function FilePickerFiles({
                   rel="noreferrer"
                   aria-disabled={disabled}
                 >
-                  <FileTextIcon aria-hidden="true" fontSize="1.5em" />
                   <span className="at-filepicker-files-file__text">
                     {file.name}
                   </span>
@@ -75,14 +77,12 @@ export function FilePickerFiles({
               <Table.Cell data-color="danger">
                 <Button
                   variant="tertiary"
-                  data-size="sm"
                   disabled={disabled}
                   aria-label={`Remove ${file.name}`}
                   onClick={() => onRemove(id)}
+                  className="at-filepicker-files-file__button"
                 >
-                  <span className="at-filepicker-files-file__remove-text">
-                    {removeButtonLabel}
-                  </span>
+                  {removeButtonLabel}
                   <TrashIcon aria-hidden />
                 </Button>
               </Table.Cell>
