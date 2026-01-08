@@ -16,8 +16,8 @@ importers:
         specifier: 2.29.8
         version: 2.29.8(@types/node@24.10.4)
       '@digdir/designsystemet':
-        specifier: 1.8.0
-        version: 1.8.0
+        specifier: 1.9.0
+        version: 1.9.0
       '@svitejs/changesets-changelog-github-compact':
         specifier: 1.2.0
         version: 1.2.0
@@ -128,8 +128,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.8.0
-        version: 1.8.0
+        specifier: 1.9.0
+        version: 1.9.0
     devDependencies:
       autoprefixer:
         specifier: 10.4.23
@@ -156,11 +156,11 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.8.0
-        version: 1.8.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 1.9.0
+        version: 1.9.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@digdir/designsystemet-types':
-        specifier: 1.8.0
-        version: 1.8.0
+        specifier: 1.9.0
+        version: 1.9.0
       '@navikt/aksel-icons':
         specifier: ^7.37.0
         version: 7.37.0
@@ -498,20 +498,20 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.0.0
 
-  '@digdir/designsystemet-css@1.8.0':
-    resolution: {integrity: sha512-TlOh9ZzOOpXEGXbBneNQmZebBN9Kx4jf4IHLmu77EpZ2nezZniw0YG5zvUOrzDtSYDxgeFp4VcqltMn8bbY1ow==}
+  '@digdir/designsystemet-css@1.9.0':
+    resolution: {integrity: sha512-0vnCjgncLrGT1ldXzyc0qJ3rZpf/iin/2ZP7hCxxkgfP/BKgb3UBpnc6ZzkC8vvrFq1s3LMEy9udCTD4LVtQZQ==}
 
-  '@digdir/designsystemet-react@1.8.0':
-    resolution: {integrity: sha512-LdyiMMFeX/cnJMRzMe8XtSwqOmN7VIYFROBJfcc2sRvps1oQDGWFEjkprvgNVIOzHdC3MSLfZ5isEJI0+nM2Ig==}
+  '@digdir/designsystemet-react@1.9.0':
+    resolution: {integrity: sha512-/RapjnOUUy4pzLXnDi5qMp3xiAaFCwb8v8/STFNDhA8SFDGSjsanRzNb8YNFZSqE9bXh/ZhAdVMZM2RJu9b7AQ==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet-types@1.8.0':
-    resolution: {integrity: sha512-hTiJfW/759f44VCyvoCJEfpi7BUFMe4f+5YC9KkOwGoo2v3umgAU8+uUJU3xvq+kJR6sJn7HaOFrpfInVSGAEg==}
+  '@digdir/designsystemet-types@1.9.0':
+    resolution: {integrity: sha512-JgdtlQNKAM49vIWFmXyZwM5CzQxHOsf/oL90xswG7ZtI5XFZVX1jc3ItAWa+hkIZFpdPGdzPuUcotxK+tQt2SQ==}
 
-  '@digdir/designsystemet@1.8.0':
-    resolution: {integrity: sha512-Rj3zdOQEt7jFO+0dcdA7ZJ0lVk3nAEPB1Qokum6tPql9+nR1QNqLWkItyAAsqX6ZJ9pNPD4AgMDbI0oRrakhcg==}
+  '@digdir/designsystemet@1.9.0':
+    resolution: {integrity: sha512-PI+Ab92rFptoNt4sLJKHNxVXKm5IeNC5GcxYObGjcvR18T18vtRsz7g7xH4E+ks2lbl9MUf/4sFR62Z2KGWMoA==}
     engines: {node: '>=20 <25'}
     hasBin: true
 
@@ -1339,8 +1339,8 @@ packages:
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
 
-  '@tokens-studio/sd-transforms@2.0.2':
-    resolution: {integrity: sha512-ul37oAtMg3KDZS4fgvpTyFH7fvyhhRZmLrKfd4vAiyvgbio6mC7H7AqE9at1vj0hg86IBPlUU3aDS6aVSnVbyQ==}
+  '@tokens-studio/sd-transforms@2.0.3':
+    resolution: {integrity: sha512-PyrmRb7FuJBHzsbuWNk/O06hJbaZ+RL7chmK7PRbEptaSruhANai7Kxja5CiYnTcxOj373uRMDPxoFwCHaVpvA==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       style-dictionary: ^5.0.0
@@ -4607,11 +4607,11 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.0
 
-  '@digdir/designsystemet-css@1.8.0': {}
+  '@digdir/designsystemet-css@1.9.0': {}
 
-  '@digdir/designsystemet-react@1.8.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@digdir/designsystemet-react@1.9.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@digdir/designsystemet-types': 1.8.0
+      '@digdir/designsystemet-types': 1.9.0
       '@floating-ui/dom': 1.7.4
       '@floating-ui/react': 0.26.23(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@navikt/aksel-icons': 7.37.0
@@ -4626,13 +4626,13 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet-types@1.8.0': {}
+  '@digdir/designsystemet-types@1.9.0': {}
 
-  '@digdir/designsystemet@1.8.0':
+  '@digdir/designsystemet@1.9.0':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.2)
-      '@digdir/designsystemet-types': 1.8.0
-      '@tokens-studio/sd-transforms': 2.0.2(style-dictionary@5.1.1)
+      '@digdir/designsystemet-types': 1.9.0
+      '@tokens-studio/sd-transforms': 2.0.3(style-dictionary@5.1.1)
       apca-w3: 0.1.9
       change-case: 5.4.4
       chroma-js: 3.2.0
@@ -5322,7 +5322,7 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.1
 
-  '@tokens-studio/sd-transforms@2.0.2(style-dictionary@5.1.1)':
+  '@tokens-studio/sd-transforms@2.0.3(style-dictionary@5.1.1)':
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.1
       '@bundled-es-modules/postcss-calc-ast-parser': 0.1.6
