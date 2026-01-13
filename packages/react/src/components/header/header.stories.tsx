@@ -55,8 +55,7 @@ const controls = [
         lineHeight: 1,
         display: "inline-flex",
         alignItems: "center",
-        paddingTop: "0",
-        paddingBottom: "0",
+        minHeight: "0",
       }}
     >
       Profil
@@ -70,8 +69,7 @@ const controls = [
         lineHeight: 1,
         display: "inline-flex",
         alignItems: "center",
-        paddingTop: "0",
-        paddingBottom: "0",
+        minHeight: "0",
       }}
     >
       Innboks
