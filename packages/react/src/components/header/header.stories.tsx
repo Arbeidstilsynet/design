@@ -41,9 +41,9 @@ const MockRouterLink = ({
 );
 
 const menuLinks: LinkItem[] = [
-  { label: "Hjem", href: "#" },
-  { label: "Om oss", href: "#" },
-  { label: "Tjenester", href: "#" },
+  { label: "Hjem", href: "/" },
+  { label: "Om oss", href: "/om-oss" },
+  { label: "Tjenester", href: "/tjenester" },
 ];
 
 const controls = [
