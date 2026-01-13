@@ -41,23 +41,43 @@ const MockRouterLink = ({
 );
 
 const menuLinks: LinkItem[] = [
-  { label: "Hjem", href: "#" },
-  { label: "Om oss", href: "#" },
-  { label: "Tjenester", href: "#" },
+  { label: "Hjem", href: "/" },
+  { label: "Om oss", href: "/om-oss" },
+  { label: "Tjenester", href: "/tjenester" },
 ];
 
 const controls = [
-  <>
-    <PersonCircleIcon />
-    <Link href="#">Profil</Link>
-  </>,
-  <>
-    <EnvelopeClosedIcon />
-    <Link href="#">Innboks</Link>
+  <div style={{ display: "flex", alignItems: "center" }} key="profile">
+    <PersonCircleIcon style={{ flexShrink: 0 }} />
+    <Link
+      href="#"
+      style={{
+        lineHeight: 1,
+        display: "inline-flex",
+        alignItems: "center",
+        minHeight: "0",
+      }}
+    >
+      Profil
+    </Link>
+  </div>,
+  <div style={{ display: "flex", alignItems: "center" }} key="inbox">
+    <EnvelopeClosedIcon style={{ flexShrink: 0 }} />
+    <Link
+      href="#"
+      style={{
+        lineHeight: 1,
+        display: "inline-flex",
+        alignItems: "center",
+        minHeight: "0",
+      }}
+    >
+      Innboks
+    </Link>
     <Badge count={15} style={{ marginLeft: "auto" }} />
-  </>,
-  <Divider />,
-  <Switch label="Mørk modus" position="end" />,
+  </div>,
+  <Divider key="divider1" />,
+  <Switch key="dark-mode" label="Mørk modus" position="end" />,
 ];
 
 export const Preview: StoryObj<PreviewArgs> = {
