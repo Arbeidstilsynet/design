@@ -49,15 +49,37 @@ const menuLinks: LinkItem[] = [
 const controls = [
   <div style={{ display: "flex", alignItems: "center" }} key="profile">
     <PersonCircleIcon style={{ flexShrink: 0 }} />
-    <Link href="#" style={{ lineHeight: 1, display: "inline-flex", alignItems: "center" }} > Profil</Link>
-  </div >,
+    <Link
+      href="#"
+      style={{
+        lineHeight: 1,
+        display: "inline-flex",
+        alignItems: "center",
+        paddingTop: "0",
+        paddingBottom: "0",
+      }}
+    >
+      Profil
+    </Link>
+  </div>,
   <div style={{ display: "flex", alignItems: "center" }} key="inbox">
     <EnvelopeClosedIcon style={{ flexShrink: 0 }} />
-    <Link href="#" style={{ lineHeight: 1, display: "inline-flex", alignItems: "center" }}>Innboks</Link>
+    <Link
+      href="#"
+      style={{
+        lineHeight: 1,
+        display: "inline-flex",
+        alignItems: "center",
+        paddingTop: "0",
+        paddingBottom: "0",
+      }}
+    >
+      Innboks
+    </Link>
     <Badge count={15} style={{ marginLeft: "auto" }} />
   </div>,
-  <Divider />,
-  <Switch label="Mørk modus" position="end" />,
+  <Divider key="divider1" />,
+  <Switch key="dark-mode" label="Mørk modus" position="end" />,
 ];
 
 export const Preview: StoryObj<PreviewArgs> = {
