@@ -47,11 +47,11 @@ const menuLinks: LinkItem[] = [
 ];
 
 const controls = [
-  <div style={{ display: "flex", alignItems: "center", height: "100%" }} key="profile">
+  <div style={{ display: "flex", alignItems: "center" }} key="profile">
     <PersonCircleIcon style={{ flexShrink: 0 }} />
     <Link href="#" style={{ lineHeight: 1, display: "inline-flex", alignItems: "center" }} > Profil</Link>
   </div >,
-  <div style={{ display: "flex", alignItems: "center", height: "100%" }} key="inbox">
+  <div style={{ display: "flex", alignItems: "center" }} key="inbox">
     <EnvelopeClosedIcon style={{ flexShrink: 0 }} />
     <Link href="#" style={{ lineHeight: 1, display: "inline-flex", alignItems: "center" }}>Innboks</Link>
     <Badge count={15} style={{ marginLeft: "auto" }} />
