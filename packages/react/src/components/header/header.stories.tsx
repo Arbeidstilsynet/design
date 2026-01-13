@@ -47,15 +47,15 @@ const menuLinks: LinkItem[] = [
 ];
 
 const controls = [
-  <>
+  <div style={{ display: "flex", alignItems: "center", verticalAlign: "middle", height: "100%" }}>
     <PersonCircleIcon />
     <Link href="#">Profil</Link>
-  </>,
-  <>
+  </div>,
+  <div style={{ display: "flex", alignItems: "center", verticalAlign: "middle", height: "100%" }}>
     <EnvelopeClosedIcon />
     <Link href="#">Innboks</Link>
     <Badge count={15} style={{ marginLeft: "auto" }} />
-  </>,
+  </div>,
   <Divider />,
   <Switch label="Mørk modus" position="end" />,
 ];
