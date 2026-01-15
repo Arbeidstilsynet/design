@@ -25,7 +25,7 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
-      - uses: Arbeidstilsynet/action-pnpm-setup@549a790d028b3270d8249e47943fd1a5fadcd2f8 # v1
+      - uses: Arbeidstilsynet/action-pnpm-setup@f3d97993013e8b1a22061064fbc5786b3a84bfd6 # v1
 
       - name: Generate CSS
         run: pnpm tokens:build
