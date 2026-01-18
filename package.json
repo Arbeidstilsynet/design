@@ -25,7 +25,7 @@
     "@changesets/cli": "2.29.8",
     "@digdir/designsystemet": "1.9.0",
     "@svitejs/changesets-changelog-github-compact": "1.2.0",
-    "@types/node": "24.10.8",
+    "@types/node": "24.10.9",
     "@vitest/coverage-v8": "4.0.17",
     "prettier": "3.8.0",
     "tsx": "4.21.0",
