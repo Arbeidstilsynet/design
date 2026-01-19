@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-css
 
+## 0.5.1
+
+Released: 2026-01-19
+
+### Patch Changes
+
+- Updated dependency `@types/node` to `24.10.9`. ([#546](https://github.com/Arbeidstilsynet/design/pull/546))
+
 ## 0.5.0
 
 Released: 2026-01-08
