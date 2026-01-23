@@ -4,8 +4,10 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  container-type: inline-size; /* Enable container queries */
+  container-type: inline-size;
+  /* Enable container queries */
   margin: var(--ds-size-2) var(--ds-size-4);
+  --at-header-max-width: 82rem;
 
   & .ds-search {
     align-self: self-start;
@@ -17,60 +19,57 @@
   }
 }
 
-.at-header__title-background {
-  width: 100%;
-}
-
-.at-header__title {
+.at-header__background {
+  width: var(--at-header-max-width);
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
 }
 
-.at-header__title-left,
-.at-header__title-center,
-.at-header__title-right {
+.at-header__left,
+.at-header__center,
+.at-header__right {
   display: flex;
   align-items: center;
 }
 
-.at-header__title-left {
+.at-header__left {
   justify-content: flex-start;
   gap: var(--ds-size-4);
   margin-right: var(--ds-size-22);
 }
 
-.at-header__title-center {
+.at-header__center {
   justify-content: flex-start;
   gap: var(--ds-size-8);
   flex: 1;
 }
 
-.at-header__title-right {
+.at-header__right {
   justify-content: flex-end;
   margin-right: var(--ds-size-15);
 }
 
-.at-header__title-link:not(:hover):not(:focus-visible),
-.at-header__title-dropdown-controls .ds-link:not(:hover):not(:focus-visible) {
+.at-header__link:not(:hover):not(:focus-visible),
+.at-header__dropdown-controls .ds-link:not(:hover):not(:focus-visible) {
   text-decoration-line: none;
 }
 
 /* add padding except for hr (Divider) that are either from the consumer controls prop
  or provided by us below links for mobile version */
-.at-header__title-dropdown-controls:not(:has(> hr:only-child)) {
+.at-header__dropdown-controls:not(:has(> hr:only-child)) {
   padding: var(--ds-size-2) var(--ds-size-4);
 }
 
-.at-header__title-dropdown-item-mobile {
+.at-header__dropdown-item-mobile {
   display: none;
 }
 
-.at-header__title-dropdown-close-mobile {
+.at-header__dropdown-close-mobile {
   display: none;
 }
 
-.at-header__title-dropdown-backdrop {
+.at-header__dropdown-backdrop {
   display: none;
 }
 
@@ -89,35 +88,35 @@
     justify-content: space-between;
   }
 
-  .at-header__title-left {
+  .at-header__left {
     margin-right: 0;
   }
 
-  .at-header__title-center {
+  .at-header__center {
     display: none;
   }
 
-  .at-header__title-right {
+  .at-header__right {
     justify-self: flex-end;
     margin-right: unset;
     margin-right: var(--ds-size-4);
   }
 
-  .at-header__title-logo {
+  .at-header__logo {
     display: none;
   }
 
-  .at-header__title-dropdown-item-mobile {
+  .at-header__dropdown-item-mobile {
     display: block;
   }
 
   /* Full-width dropdown overlay for mobile */
-  .at-header .ds-dropdown.at-header__title-dropdown-content {
+  .at-header .ds-dropdown.at-header__dropdown-content {
     width: 100%;
     max-width: 100%;
   }
 
-  .at-header__title-dropdown-close-mobile {
+  .at-header__dropdown-close-mobile {
     display: block;
     margin: var(--ds-size-4);
     margin-bottom: var(--ds-size-2);
@@ -127,7 +126,7 @@
     }
   }
 
-  .at-header__title-dropdown-backdrop {
+  .at-header__dropdown-backdrop {
     display: block;
     position: fixed;
     inset: 0;

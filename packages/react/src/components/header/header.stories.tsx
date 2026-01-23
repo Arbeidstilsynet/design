@@ -2,7 +2,7 @@ import { EnvelopeClosedIcon, PersonCircleIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
 import { Badge, Divider, Link, Switch } from "../..";
-import type { LinkItem } from "./headerTitleLinks";
+import { HeaderDefaultLogo } from "./headerDefaultLogo";
 
 const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
@@ -10,41 +10,17 @@ const meta: Meta<typeof Header> = {
   parameters: {
     layout: "padded",
   },
-
-  subcomponents: {
-    ["Header.Title"]: Header.Title,
-  },
 };
 
 export default meta;
 
 interface PreviewArgs {
-  appName: string;
-  userName: string;
-  menulinks: LinkItem[];
+  logo: React.ReactNode;
+  appName: React.ReactNode;
+  menuTitle: string;
+  menuLinks: React.ReactNode[];
   controls: React.ReactNode[];
 }
-
-// Mock router link component for demonstration
-const MockRouterLink = ({
-  to,
-  children,
-  className,
-}: {
-  to: string;
-  children: React.ReactNode;
-  className?: string;
-}) => (
-  <a href={to} className={className}>
-    {children}
-  </a>
-);
-
-const menuLinks: LinkItem[] = [
-  { label: "Hjem", href: "/" },
-  { label: "Om oss", href: "/om-oss" },
-  { label: "Tjenester", href: "/tjenester" },
-];
 
 const controls = [
   <div style={{ display: "flex", alignItems: "center" }} key="profile">
@@ -83,42 +59,20 @@ const controls = [
 export const Preview: StoryObj<PreviewArgs> = {
   args: {
     appName: "Arbeidstilsynet",
-    userName: "Ola Nordmann",
-    menulinks: menuLinks,
+    menuTitle: "Ola Nordmann",
     controls: controls,
   },
   render: (args) => {
     return (
-      <Header>
-        <Header.Title
-          appName={args.appName}
-          userName={args.userName}
-          links={args.menulinks}
-          controls={args.controls}
-        />
-      </Header>
-    );
-  },
-};
-
-export const CustomLinks: StoryObj<PreviewArgs> = {
-  args: {
-    appName: "Arbeidstilsynet",
-    userName: "Ola Nordmann",
-    controls: controls,
-  },
-  render: (args) => {
-    return (
-      <Header>
-        <Header.Title
-          appName={args.appName}
-          userName={args.userName}
-          controls={args.controls}
-        >
-          <MockRouterLink to="/">Hjem</MockRouterLink>
-          <MockRouterLink to="/saker">Saker</MockRouterLink>
-          <MockRouterLink to="/virksomheter">Virksomheter</MockRouterLink>
-        </Header.Title>
+      <Header
+        image={<HeaderDefaultLogo />}
+        appName={args.appName}
+        menuTitle={args.menuTitle}
+        controls={args.controls}
+      >
+        <Link href="">Hjem</Link>
+        <Link href="">Om oss</Link>
+        <Link href="">Tjenester</Link>
       </Header>
     );
   },

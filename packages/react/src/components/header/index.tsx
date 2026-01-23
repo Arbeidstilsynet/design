@@ -1,38 +1,44 @@
-import { Header as HeaderParent } from "./header";
-import { HeaderTitle } from "./headerTitle";
+import { clsx } from "clsx/lite";
+import type { DefaultProps } from "../../types";
+import type { HTMLAttributes, ReactNode } from "react";
+import { HeaderDropdown } from "./headerDropdown";
+import { HeaderLogo } from "./headerLogo";
+import { HeaderLinks } from "./headerLinks";
 
-/**
- * Header component for the design system.
- * It includes the primary title section along with optional search and links sections.
- *
- * The primary Title section (`Header.Title`) displays the system name, user information, and navigation links.
- * You can pass in a list of user controls (like a theme switcher) to be displayed in a dropdown.
- *
- * For the navigation links, you can either provide an array of link items via the `links` prop,
- * or you can customize the links by passing your own components as children to `Header.Title`.
- * Make sure that the children you provide are valid React elements and accept className props for proper styling.
- *
- * Example usage for Next.js Link components:
- * ```tsx
- * import Link from "next/link";
- *
- * <Header>
- *   <Header.Title
- *     appName="My Application"
- *     userName="John Doe"
- *   >
- *     <Link href="/">Home</Link>
- *     <Link href="/about">About</Link>
- *  </Header.Title>
- * </Header>
- * ```
- */
+export interface HeaderProps
+  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
+  image: ReactNode;
+  appName: ReactNode;
+  menuTitle: string;
+  children?: ReactNode;
+  controls?: ReactNode;
+}
 
-const Header = Object.assign(HeaderParent, {
-  Title: HeaderTitle,
-});
-
-export type { HeaderProps } from "./header";
-export type { HeaderTitleProps } from "./headerTitle";
-export { Header, HeaderTitle };
-export { HeaderDefaultLogo } from "./headerDefaultLogo";
+export function Header({
+  ref,
+  className,
+  image,
+  children,
+  appName,
+  menuTitle,
+  controls = [],
+  ...rest
+}: Readonly<HeaderProps>) {
+  return (
+    <header ref={ref} className={clsx("at-header", className)} {...rest}>
+      <div className={clsx("at-header__background", className)}>
+        <HeaderLogo
+          className="at-header__left"
+          logo={image}
+          appName={appName}
+        />
+        <HeaderLinks className="at-header__center">{children}</HeaderLinks>
+        <HeaderDropdown
+          className="at-header__right"
+          controls={controls}
+          userName={menuTitle}
+        />
+      </div>
+    </header>
+  );
+}

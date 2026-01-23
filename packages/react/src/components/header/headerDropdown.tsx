@@ -6,16 +6,14 @@ import {
 } from "@navikt/aksel-icons";
 import { clsx } from "clsx/lite";
 import {
-  useId,
   useState,
   type HTMLAttributes,
   type ReactNode,
   Children,
   isValidElement,
 } from "react";
-import { Button, Divider, Dropdown, Link } from "../../digdir";
+import { Button, Divider, Dropdown } from "../../digdir";
 import type { DefaultProps } from "../../types";
-import type { LinkItem } from "./headerTitleLinks";
 import { Slot } from "@radix-ui/react-slot";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 
@@ -24,24 +22,21 @@ export interface DropdownItem {
   href: string;
 }
 
-export interface HeaderTitleDropdownProps
+export interface HeaderDropdownProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
-  controls?: ReactNode[];
-  links?: LinkItem[];
+  controls?: ReactNode;
   userName?: string;
   children?: ReactNode;
 }
 
-export function HeaderTitleDropdown({
+export function HeaderDropdown({
   className,
   controls,
-  links,
   userName,
   children,
   ...rest
-}: Readonly<HeaderTitleDropdownProps>) {
+}: Readonly<HeaderDropdownProps>) {
   const [open, setOpen] = useState(false);
-  const id = useId();
 
   const isMobile = useMediaQuery("(max-width: 768px)");
 
@@ -106,24 +101,7 @@ export function HeaderTitleDropdown({
                     </div>
                   </Dropdown.Item>
                 ))
-              : links?.map((link) => (
-                  <Dropdown.Item key={"nav-" + link.href}>
-                    {/* Dropdown.Item does not forward className, so we wrap the control */}
-                    <div
-                      className={clsx(
-                        "at-header__title-dropdown-controls",
-                        "at-header__title-dropdown-item-mobile",
-                      )}
-                    >
-                      <Link
-                        href={link.href}
-                        className={clsx("at-header__title-link")}
-                      >
-                        {link.label}
-                      </Link>
-                    </div>
-                  </Dropdown.Item>
-                ))}
+              : null}
             <Dropdown.Item>
               <div
                 className={clsx(
@@ -135,14 +113,14 @@ export function HeaderTitleDropdown({
             </Dropdown.Item>
 
             {/* Misc menu controls that are always shown */}
-            {controls?.map((control, index) => (
-              <Dropdown.Item key={id + "-control-" + index}>
+            {controls && (
+              <Dropdown.Item>
                 {/* Dropdown.Item does not forward className, so we wrap the control */}
                 <div className="at-header__title-dropdown-controls">
-                  {control}
+                  {controls}
                 </div>
               </Dropdown.Item>
-            ))}
+            )}
           </Dropdown.List>
 
           {/* Mobile-only close button */}
