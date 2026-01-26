@@ -47,7 +47,6 @@ export function HeaderDropdown({
         <Dropdown.Trigger
           data-size="sm"
           variant={isMobile ? "primary" : "tertiary"}
-          className="at-header__dropdown-trigger"
         >
           {isMobile ? (
             <>
@@ -56,7 +55,7 @@ export function HeaderDropdown({
               ) : (
                 <MenuHamburgerIcon aria-hidden />
               )}
-              <span className="at-header__dropdown-text">Meny</span>
+              <span>Meny</span>
             </>
           ) : (
             <>
