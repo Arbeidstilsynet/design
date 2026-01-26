@@ -45,7 +45,6 @@ export function HeaderDropdown({
       <Dropdown.TriggerContext>
         {/* Have to use a shared Dropdown.Trigger for desktop/mobile or the positioning in Popover becomes wrong */}
         <Dropdown.Trigger
-          onClick={() => setOpen(!open)}
           data-size="sm"
           variant={isMobile ? "primary" : "tertiary"}
           className="at-header__title-dropdown-trigger"
@@ -73,6 +72,7 @@ export function HeaderDropdown({
 
         <Dropdown
           open={open}
+          onOpen={() => setOpen(true)}
           onClose={() => setOpen(false)}
           placement="bottom"
           className="at-header__title-dropdown-content"
