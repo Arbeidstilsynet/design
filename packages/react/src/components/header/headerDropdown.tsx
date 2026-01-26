@@ -102,15 +102,18 @@ export function HeaderDropdown({
                   </Dropdown.Item>
                 ))
               : null}
-            <Dropdown.Item>
-              <div
-                className={clsx(
-                  "at-header__title-dropdown-item-mobile at-header__title-dropdown-controls",
-                )}
-              >
-                <Divider />
-              </div>
-            </Dropdown.Item>
+
+            {Children.count(children) > 0 && (
+              <Dropdown.Item>
+                <div
+                  className={clsx(
+                    "at-header__title-dropdown-item-mobile at-header__title-dropdown-controls",
+                  )}
+                >
+                  <Divider />
+                </div>
+              </Dropdown.Item>
+            )}
 
             {/* Misc menu controls that are always shown */}
             {controls && (
