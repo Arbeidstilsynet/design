@@ -1,27 +1,28 @@
 import { clsx } from "clsx/lite";
-import type { DefaultProps } from "../../types";
 import type { HTMLAttributes, ReactNode } from "react";
+import type { DefaultProps } from "../../types";
 import { HeaderDropdown } from "./headerDropdown";
-import { HeaderLogo } from "./headerLogo";
 import { HeaderLinks } from "./headerLinks";
+import { HeaderLogo } from "./headerLogo";
 
 export interface HeaderProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   image: ReactNode;
   appName: ReactNode;
+  links: ReactNode[];
   menuTitle: string;
-  children?: ReactNode;
-  controls?: ReactNode;
+  menuControls?: ReactNode;
+  children: never;
 }
 
 export function Header({
   ref,
   className,
   image,
-  children,
   appName,
+  links,
   menuTitle,
-  controls = [],
+  menuControls = [],
   ...rest
 }: Readonly<HeaderProps>) {
   return (
@@ -32,10 +33,10 @@ export function Header({
           logo={image}
           appName={appName}
         />
-        <HeaderLinks className="at-header__center">{children}</HeaderLinks>
+        <HeaderLinks className="at-header__center" links={links} />
         <HeaderDropdown
           className="at-header__right"
-          controls={controls}
+          menuControls={menuControls}
           userName={menuTitle}
         />
       </div>

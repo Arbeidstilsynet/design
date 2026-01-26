@@ -1,5 +1,6 @@
 import { EnvelopeClosedIcon, PersonCircleIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { useRef } from "react";
 import { Header } from "..";
 import { Badge, Divider, Link, Switch } from "../..";
 import { HeaderStoriesLogo } from "./headeStoriesLogo";
@@ -63,12 +64,13 @@ export const Preview: StoryObj<PreviewArgs> = {
     controls: controls,
   },
   render: (args) => {
+    const ref = useRef(null);
     return (
       <Header
         image={<HeaderStoriesLogo />}
         appName={args.appName}
         menuTitle={args.menuTitle}
-        controls={args.controls}
+        menuControls={args.controls}
       >
         <Link href="">Hjem</Link>
         <Link href="">Om oss</Link>

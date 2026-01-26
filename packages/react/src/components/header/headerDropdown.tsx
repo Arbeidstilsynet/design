@@ -24,16 +24,16 @@ export interface DropdownItem {
 
 export interface HeaderDropdownProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
-  controls?: ReactNode;
+  menuControls?: ReactNode;
   userName?: string;
-  children?: ReactNode;
+  links?: ReactNode;
 }
 
 export function HeaderDropdown({
   className,
-  controls,
+  menuControls,
   userName,
-  children,
+  links: children,
   ...rest
 }: Readonly<HeaderDropdownProps>) {
   const [open, setOpen] = useState(false);
@@ -113,10 +113,12 @@ export function HeaderDropdown({
             )}
 
             {/* Misc menu controls that are always shown */}
-            {controls && (
+            {menuControls && (
               <Dropdown.Item>
                 {/* Dropdown.Item does not forward className, so we wrap the control */}
-                <div className="at-header__dropdown-controls">{controls}</div>
+                <div className="at-header__dropdown-controls">
+                  {menuControls}
+                </div>
               </Dropdown.Item>
             )}
           </Dropdown.List>
