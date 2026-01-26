@@ -26,10 +26,10 @@
     "@digdir/designsystemet": "1.9.0",
     "@svitejs/changesets-changelog-github-compact": "1.2.0",
     "@types/node": "24.10.9",
-    "@vitest/coverage-v8": "4.0.17",
+    "@vitest/coverage-v8": "4.0.18",
     "prettier": "3.8.1",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
-    "vitest": "4.0.17"
+    "vitest": "4.0.18"
   }
 }
