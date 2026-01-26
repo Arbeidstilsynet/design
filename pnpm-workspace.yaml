@@ -5,12 +5,14 @@ packages:
 autoInstallPeers: false
 
 minimumReleaseAge: 4320
+
 minimumReleaseAgeExclude:
   - ts-api-utils@2.4.0
 
 overrides:
-  glob@>=10.0.0 <11.1.0: ">=11.1.0"
-  qs@<6.14.1: ">=6.14.1"
+  glob@>=10.0.0 <11.1.0: '>=11.1.0'
+  lodash@>=4.0.0 <=4.17.22: '>=4.17.23'
+  qs@<6.14.1: '>=6.14.1'
 
 trustPolicy: no-downgrade
 
