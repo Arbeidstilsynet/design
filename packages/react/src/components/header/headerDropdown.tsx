@@ -47,7 +47,7 @@ export function HeaderDropdown({
         <Dropdown.Trigger
           data-size="sm"
           variant={isMobile ? "primary" : "tertiary"}
-          className="at-header__title-dropdown-trigger"
+          className="at-header__dropdown-trigger"
         >
           {isMobile ? (
             <>
@@ -56,7 +56,7 @@ export function HeaderDropdown({
               ) : (
                 <MenuHamburgerIcon aria-hidden />
               )}
-              <span className="at-header__title-dropdown-text">Meny</span>
+              <span className="at-header__dropdown-text">Meny</span>
             </>
           ) : (
             <>
@@ -75,7 +75,7 @@ export function HeaderDropdown({
           onOpen={() => setOpen(true)}
           onClose={() => setOpen(false)}
           placement="bottom"
-          className="at-header__title-dropdown-content"
+          className="at-header__dropdown-content"
         >
           {/* Navigation menu items for mobile, including Divider */}
           <Dropdown.List>
@@ -85,14 +85,12 @@ export function HeaderDropdown({
                     {/* Dropdown.Item does not forward className, so we wrap the control */}
                     <div
                       className={clsx(
-                        "at-header__title-dropdown-controls",
-                        "at-header__title-dropdown-item-mobile",
+                        "at-header__dropdown-controls",
+                        "at-header__dropdown-item-mobile",
                       )}
                     >
                       {isValidElement(child) ? (
-                        <Slot
-                          className={clsx("at-header__title-link", "ds-link")}
-                        >
+                        <Slot className={clsx("at-header__link", "ds-link")}>
                           {child}
                         </Slot>
                       ) : (
@@ -107,7 +105,7 @@ export function HeaderDropdown({
               <Dropdown.Item>
                 <div
                   className={clsx(
-                    "at-header__title-dropdown-item-mobile at-header__title-dropdown-controls",
+                    "at-header__dropdown-item-mobile at-header__dropdown-controls",
                   )}
                 >
                   <Divider />
@@ -119,16 +117,14 @@ export function HeaderDropdown({
             {controls && (
               <Dropdown.Item>
                 {/* Dropdown.Item does not forward className, so we wrap the control */}
-                <div className="at-header__title-dropdown-controls">
-                  {controls}
-                </div>
+                <div className="at-header__dropdown-controls">{controls}</div>
               </Dropdown.Item>
             )}
           </Dropdown.List>
 
           {/* Mobile-only close button */}
           <Dropdown.Item>
-            <div className="at-header__title-dropdown-close-mobile">
+            <div className="at-header__dropdown-close-mobile">
               <Button
                 type="button"
                 variant="secondary"
@@ -144,7 +140,7 @@ export function HeaderDropdown({
 
       {/* overlay */}
       {open ? (
-        <div aria-hidden className="at-header__title-dropdown-backdrop" />
+        <div aria-hidden className="at-header__dropdown-backdrop" />
       ) : null}
     </div>
   );
