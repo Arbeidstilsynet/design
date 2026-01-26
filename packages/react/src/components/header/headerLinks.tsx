@@ -19,7 +19,10 @@ export function HeaderLinks({
       {links?.map((link, idx) => {
         if (isValidElement(link)) {
           return (
-            <Slot key={idx} className={clsx("at-header__link", "ds-link")}>
+            <Slot
+              key={link.key ?? idx}
+              className={clsx("at-header__link", "ds-link")}
+            >
               {link}
             </Slot>
           );

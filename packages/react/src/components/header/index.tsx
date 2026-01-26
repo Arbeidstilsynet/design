@@ -6,13 +6,15 @@ import { HeaderLinks } from "./headerLinks";
 import { HeaderLogo } from "./headerLogo";
 
 export interface HeaderProps
-  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
+  extends
+    DefaultProps<HTMLElement>,
+    Omit<HTMLAttributes<HTMLElement>, "children"> {
+  className?: string;
   image: ReactNode;
   appName: ReactNode;
   links: ReactNode[];
   menuTitle: string;
   menuControls?: ReactNode;
-  children: never;
 }
 
 export function Header({
@@ -22,12 +24,12 @@ export function Header({
   appName,
   links,
   menuTitle,
-  menuControls = [],
+  menuControls,
   ...rest
 }: Readonly<HeaderProps>) {
   return (
     <header ref={ref} className={clsx("at-header", className)} {...rest}>
-      <div className={clsx("at-header__background", className)}>
+      <div className="at-header__background">
         <HeaderLogo
           className="at-header__left"
           logo={image}
@@ -38,6 +40,7 @@ export function Header({
           className="at-header__right"
           menuControls={menuControls}
           userName={menuTitle}
+          links={links}
         />
       </div>
     </header>

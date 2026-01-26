@@ -7,7 +7,6 @@ import {
 import { Slot } from "@radix-ui/react-slot";
 import { clsx } from "clsx/lite";
 import {
-  Children,
   isValidElement,
   useState,
   type HTMLAttributes,
@@ -17,23 +16,20 @@ import { Button, Divider, Dropdown } from "../../digdir";
 import type { DefaultProps } from "../../types";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 
-export interface DropdownItem {
-  label: string;
-  href: string;
-}
-
 export interface HeaderDropdownProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
-  menuControls?: ReactNode;
+  links?: ReactNode[];
   userName?: string;
-  links?: ReactNode;
+  menuControls?: ReactNode;
+  menuCloseText?: string;
 }
 
 export function HeaderDropdown({
   className,
   menuControls,
   userName,
-  links: children,
+  links,
+  menuCloseText = "Lukk",
   ...rest
 }: Readonly<HeaderDropdownProps>) {
   const [open, setOpen] = useState(false);
@@ -78,29 +74,27 @@ export function HeaderDropdown({
         >
           {/* Navigation menu items for mobile, including Divider */}
           <Dropdown.List>
-            {children
-              ? Children.map(children, (child, index) => (
-                  <Dropdown.Item key={"nav-" + index}>
-                    {/* Dropdown.Item does not forward className, so we wrap the control */}
-                    <div
-                      className={clsx(
-                        "at-header__dropdown-controls",
-                        "at-header__dropdown-item-mobile",
-                      )}
-                    >
-                      {isValidElement(child) ? (
-                        <Slot className={clsx("at-header__link", "ds-link")}>
-                          {child}
-                        </Slot>
-                      ) : (
-                        child
-                      )}
-                    </div>
-                  </Dropdown.Item>
-                ))
-              : null}
+            {links?.map((link, index) => (
+              <Dropdown.Item key={"nav-" + index}>
+                {/* Dropdown.Item does not forward className, so we wrap the control */}
+                <div
+                  className={clsx(
+                    "at-header__dropdown-controls",
+                    "at-header__dropdown-item-mobile",
+                  )}
+                >
+                  {isValidElement(link) ? (
+                    <Slot className={clsx("at-header__link", "ds-link")}>
+                      {link}
+                    </Slot>
+                  ) : (
+                    link
+                  )}
+                </div>
+              </Dropdown.Item>
+            ))}
 
-            {Children.count(children) > 0 && (
+            {links && links.length > 0 && (
               <Dropdown.Item>
                 <div
                   className={clsx(
@@ -132,7 +126,7 @@ export function HeaderDropdown({
                 onClick={() => setOpen(false)}
               >
                 <XMarkIcon aria-hidden />
-                Lukk
+                {menuCloseText}
               </Button>
             </div>
           </Dropdown.Item>

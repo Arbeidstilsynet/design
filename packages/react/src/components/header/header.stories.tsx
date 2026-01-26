@@ -1,7 +1,6 @@
 import { EnvelopeClosedIcon, PersonCircleIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { useRef } from "react";
-import { Header } from "..";
+import { Header, type HeaderProps } from "..";
 import { Badge, Divider, Link, Switch } from "../..";
 import { HeaderStoriesLogo } from "./headeStoriesLogo";
 
@@ -15,15 +14,7 @@ const meta: Meta<typeof Header> = {
 
 export default meta;
 
-interface PreviewArgs {
-  logo: React.ReactNode;
-  appName: React.ReactNode;
-  menuTitle: string;
-  menuLinks: React.ReactNode[];
-  controls: React.ReactNode[];
-}
-
-const controls = [
+const menuControls = [
   <div style={{ display: "flex", alignItems: "center" }} key="profile">
     <PersonCircleIcon style={{ flexShrink: 0 }} />
     <Link
@@ -57,25 +48,34 @@ const controls = [
   <Switch key="dark-mode" label="Mørk modus" position="end" />,
 ];
 
-export const Preview: StoryObj<PreviewArgs> = {
+const links = [
+  <Link key="home" href="">
+    Hjem
+  </Link>,
+  <Link key="about" href="">
+    Om oss
+  </Link>,
+  <Link key="services" href="">
+    Tjenester
+  </Link>,
+];
+
+export const Preview: StoryObj<HeaderProps> = {
   args: {
     appName: "Arbeidstilsynet",
     menuTitle: "Ola Nordmann",
-    controls: controls,
+    menuControls,
+    links: links,
   },
   render: (args) => {
-    const ref = useRef(null);
     return (
       <Header
         image={<HeaderStoriesLogo />}
         appName={args.appName}
+        links={args.links}
         menuTitle={args.menuTitle}
-        menuControls={args.controls}
-      >
-        <Link href="">Hjem</Link>
-        <Link href="">Om oss</Link>
-        <Link href="">Tjenester</Link>
-      </Header>
+        menuControls={args.menuControls}
+      />
     );
   },
 };
