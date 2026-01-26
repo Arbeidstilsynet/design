@@ -2,7 +2,7 @@ import { EnvelopeClosedIcon, PersonCircleIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
 import { Badge, Divider, Link, Switch } from "../..";
-import { HeaderDefaultLogo } from "./headerDefaultLogo";
+import { HeaderStoriesLogo } from "./headeStoriesLogo";
 
 const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
@@ -65,7 +65,7 @@ export const Preview: StoryObj<PreviewArgs> = {
   render: (args) => {
     return (
       <Header
-        image={<HeaderDefaultLogo />}
+        image={<HeaderStoriesLogo />}
         appName={args.appName}
         menuTitle={args.menuTitle}
         controls={args.controls}

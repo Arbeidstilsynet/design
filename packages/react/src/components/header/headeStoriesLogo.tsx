@@ -1,12 +1,12 @@
-export interface HeaderDefaultLogoProps extends React.SVGProps<SVGSVGElement> {
+interface HeaderStoriesLogoProps extends React.SVGProps<SVGSVGElement> {
   width?: number;
   height?: number;
 }
 
-export function HeaderDefaultLogo({
+export function HeaderStoriesLogo({
   width = 48,
   height = 40,
-}: Readonly<HeaderDefaultLogoProps>) {
+}: Readonly<HeaderStoriesLogoProps>) {
   return (
     <svg
       width={width}
