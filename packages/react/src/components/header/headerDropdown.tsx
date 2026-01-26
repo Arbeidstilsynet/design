@@ -4,17 +4,17 @@ import {
   MenuHamburgerIcon,
   XMarkIcon,
 } from "@navikt/aksel-icons";
+import { Slot } from "@radix-ui/react-slot";
 import { clsx } from "clsx/lite";
 import {
+  Children,
+  isValidElement,
   useState,
   type HTMLAttributes,
   type ReactNode,
-  Children,
-  isValidElement,
 } from "react";
 import { Button, Divider, Dropdown } from "../../digdir";
 import type { DefaultProps } from "../../types";
-import { Slot } from "@radix-ui/react-slot";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 
 export interface DropdownItem {
@@ -38,7 +38,7 @@ export function HeaderDropdown({
 }: Readonly<HeaderDropdownProps>) {
   const [open, setOpen] = useState(false);
 
-  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useMediaQuery("(max-width: 48rem)");
 
   return (
     <div className={clsx(className)} {...rest}>
