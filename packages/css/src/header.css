@@ -1,11 +1,11 @@
 .at-header {
+  --at-header-max-width: 82.5rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   container-type: inline-size;
-  --at-header-max-width: 82.5rem;
   padding: var(--ds-size-2) var(--ds-size-4);
 
   & .ds-search {
