@@ -24,14 +24,13 @@ export interface HeaderNavbarProps
  * ```
  */
 export function HeaderNavbar({
-  ref,
   className,
   ...rest
 }: Readonly<HeaderNavbarProps>) {
   const { links } = use(HeaderContext);
 
   return (
-    <nav ref={ref} className={clsx("at-header__center", className)} {...rest}>
+    <nav className={clsx("at-header__center", className)} {...rest}>
       {links?.map((link, idx) => {
         if (isValidElement(link)) {
           return (

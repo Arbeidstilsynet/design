@@ -79,7 +79,6 @@ export interface HeaderMenuProps
  * ```
  */
 export function HeaderMenu({
-  ref,
   className,
   children,
   triggerContent,
@@ -116,7 +115,7 @@ export function HeaderMenu({
   }, [open, headerRef]);
 
   return (
-    <div ref={ref} className={clsx("at-header__right", className)} {...rest}>
+    <div className={clsx("at-header__right", className)} {...rest}>
       <Dropdown.TriggerContext>
         {/* Have to use a shared Dropdown.Trigger for desktop/mobile or the positioning in Popover becomes wrong */}
         <Dropdown.Trigger

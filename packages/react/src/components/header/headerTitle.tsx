@@ -34,13 +34,12 @@ export interface HeaderTitleProps
  * ```
  */
 export function HeaderTitle({
-  ref,
   className,
   children,
   ...rest
 }: Readonly<HeaderTitleProps>) {
   return (
-    <div ref={ref} className={clsx("at-header__left", className)} {...rest}>
+    <div className={clsx("at-header__left", className)} {...rest}>
       {children}
     </div>
   );
