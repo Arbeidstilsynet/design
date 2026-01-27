@@ -8,6 +8,7 @@ import { Slot } from "@radix-ui/react-slot";
 import { clsx } from "clsx/lite";
 import {
   isValidElement,
+  use,
   useState,
   type HTMLAttributes,
   type ReactNode,
@@ -15,29 +16,77 @@ import {
 import { Button, Divider, Dropdown } from "../../digdir";
 import type { DefaultProps } from "../../types";
 import { useMediaQuery } from "../hooks/useMediaQuery";
+import { HeaderContext } from "./headerContext";
 
-export interface HeaderDropdownProps
+export interface HeaderMenuProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
-  links?: ReactNode[];
-  userName?: string;
-  menuControls?: ReactNode;
-  menuCloseText?: string;
+  /**
+   * Text displayed on the menu button in desktop view.
+   * Typically a user name or menu title.
+   */
+  menuButtonText?: string;
+
+  /**
+   * Text for the close button in mobile dropdown view.
+   * @default "Lukk"
+   */
+  closeButtonText?: string;
+
+  /**
+   * Custom menu controls to display in the dropdown.
+   * These appear below navigation links (on mobile) in the menu.
+   *
+   * You are responsible for providing appropriate content such as
+   * profile links, settings toggles, or other menu items.
+   *
+   * @example
+   * ```tsx
+   * <Header.Menu menuButtonText="Ola Nordmann">
+   *   <ProfileMenuItem />
+   *   <Divider />
+   *   <Switch label="Mørk modus" position="end" />
+   * </Header.Menu>
+   * ```
+   */
+  children?: ReactNode;
 }
 
-export function HeaderDropdown({
+/**
+ * Dropdown menu for the header with user controls and navigation (on mobile).
+ *
+ * On **desktop**: Shows a dropdown trigger with `menuButtonText` that opens a menu
+ * containing only the custom children (menu controls).
+ *
+ * On **mobile**: Shows a hamburger menu button that opens a full-width dropdown
+ * containing both navigation links (from parent `Header`) and custom children.
+ *
+ * The component is responsible for the dropdown behavior and styling.
+ * You control what appears in the menu through the `children` prop.
+ *
+ * @example
+ * ```tsx
+ * <Header.Menu menuButtonText="Ola Nordmann" closeButtonText="Lukk">
+ *   <ProfileLink />
+ *   <InboxLink />
+ *   <Divider />
+ *   <Switch label="Mørk modus" position="end" />
+ * </Header.Menu>
+ * ```
+ */
+export function HeaderMenu({
+  ref,
   className,
-  menuControls,
-  userName,
-  links,
-  menuCloseText = "Lukk",
+  children,
+  menuButtonText,
+  closeButtonText = "Lukk",
   ...rest
-}: Readonly<HeaderDropdownProps>) {
+}: Readonly<HeaderMenuProps>) {
   const [open, setOpen] = useState(false);
-
+  const { links } = use(HeaderContext);
   const isMobile = useMediaQuery("(max-width: 48rem)");
 
   return (
-    <div className={clsx(className)} {...rest}>
+    <div ref={ref} className={clsx("at-header__right", className)} {...rest}>
       <Dropdown.TriggerContext>
         {/* Have to use a shared Dropdown.Trigger for desktop/mobile or the positioning in Popover becomes wrong */}
         <Dropdown.Trigger
@@ -55,7 +104,7 @@ export function HeaderDropdown({
             </>
           ) : (
             <>
-              {userName}
+              {menuButtonText}
               {open ? (
                 <ChevronUpIcon aria-hidden />
               ) : (
@@ -107,12 +156,10 @@ export function HeaderDropdown({
             )}
 
             {/* Misc menu controls that are always shown */}
-            {menuControls && (
+            {children && (
               <Dropdown.Item>
                 {/* Dropdown.Item does not forward className, so we wrap the control */}
-                <div className="at-header__dropdown-controls">
-                  {menuControls}
-                </div>
+                <div className="at-header__dropdown-controls">{children}</div>
               </Dropdown.Item>
             )}
           </Dropdown.List>
@@ -126,7 +173,7 @@ export function HeaderDropdown({
                 onClick={() => setOpen(false)}
               >
                 <XMarkIcon aria-hidden />
-                {menuCloseText}
+                {closeButtonText}
               </Button>
             </div>
           </Dropdown.Item>

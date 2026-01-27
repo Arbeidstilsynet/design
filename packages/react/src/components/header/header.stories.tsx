@@ -1,8 +1,11 @@
-import { EnvelopeClosedIcon, PersonCircleIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header, type HeaderProps } from "..";
-import { Badge, Divider, Link, Switch } from "../..";
-import { HeaderStoriesLogo } from "./headeStoriesLogo";
+import { Divider, Link, Switch } from "../..";
+import {
+  InboxMenuItem,
+  ProfileMenuItem,
+} from "./stories-helpers/headerStoriesMenuItems";
+import { HeaderStoriesLogo } from "./stories-helpers/headeStoriesLogo";
 
 const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
@@ -13,40 +16,6 @@ const meta: Meta<typeof Header> = {
 };
 
 export default meta;
-
-const menuControls = [
-  <div style={{ display: "flex", alignItems: "center" }} key="profile">
-    <PersonCircleIcon style={{ flexShrink: 0 }} />
-    <Link
-      href="#"
-      style={{
-        lineHeight: 1,
-        display: "inline-flex",
-        alignItems: "center",
-        minHeight: "0",
-      }}
-    >
-      Profil
-    </Link>
-  </div>,
-  <div style={{ display: "flex", alignItems: "center" }} key="inbox">
-    <EnvelopeClosedIcon style={{ flexShrink: 0 }} />
-    <Link
-      href="#"
-      style={{
-        lineHeight: 1,
-        display: "inline-flex",
-        alignItems: "center",
-        minHeight: "0",
-      }}
-    >
-      Innboks
-    </Link>
-    <Badge count={15} style={{ marginLeft: "auto" }} />
-  </div>,
-  <Divider key="divider1" />,
-  <Switch key="dark-mode" label="Mørk modus" position="end" />,
-];
 
 const links = [
   <Link key="home" href="">
@@ -60,22 +29,135 @@ const links = [
   </Link>,
 ];
 
+/**
+ * Default header with all compound components.
+ * Shows illustration, logo, navbar, and menu with profile items.
+ */
 export const Preview: StoryObj<HeaderProps> = {
-  args: {
-    appName: "Arbeidstilsynet",
-    menuTitle: "Ola Nordmann",
-    menuControls,
-    links: links,
-  },
-  render: (args) => {
+  render: () => {
     return (
-      <Header
-        image={<HeaderStoriesLogo />}
-        appName={args.appName}
-        links={args.links}
-        menuTitle={args.menuTitle}
-        menuControls={args.menuControls}
-      />
+      <Header links={links}>
+        <Header.Title>
+          <Header.Illustration>
+            <HeaderStoriesLogo />
+          </Header.Illustration>
+          <Header.Logo>
+            <Link href="/">Arbeidstilsynet</Link>
+          </Header.Logo>
+        </Header.Title>
+        <Header.Navbar />
+        <Header.Menu menuButtonText="Ola Nordmann" closeButtonText="Lukk">
+          <ProfileMenuItem />
+          <InboxMenuItem />
+          <Divider />
+          <Switch label="Mørk modus" position="end" />
+        </Header.Menu>
+      </Header>
+    );
+  },
+};
+
+/**
+ * Header without illustration - only shows logo.
+ * Useful for simpler headers or when illustration is not needed.
+ */
+export const WithoutIllustration: StoryObj<HeaderProps> = {
+  render: () => {
+    return (
+      <Header links={links}>
+        <Header.Title>
+          <Header.Logo>
+            <Link href="/">Arbeidstilsynet</Link>
+          </Header.Logo>
+        </Header.Title>
+        <Header.Navbar />
+        <Header.Menu menuButtonText="Ola Nordmann">
+          <ProfileMenuItem />
+          <Divider />
+          <Switch label="Mørk modus" position="end" />
+        </Header.Menu>
+      </Header>
+    );
+  },
+};
+
+/**
+ * Header with minimal menu - no custom controls.
+ * On desktop, only shows navigation links in navbar.
+ * On mobile, navigation links appear in the hamburger menu.
+ */
+export const MinimalMenu: StoryObj<HeaderProps> = {
+  render: () => {
+    return (
+      <Header links={links}>
+        <Header.Title>
+          <Header.Illustration>
+            <HeaderStoriesLogo />
+          </Header.Illustration>
+          <Header.Logo>
+            <Link href="/">Arbeidstilsynet</Link>
+          </Header.Logo>
+        </Header.Title>
+        <Header.Navbar />
+        <Header.Menu menuButtonText="Meny" />
+      </Header>
+    );
+  },
+};
+
+/**
+ * Header with rich menu controls including inbox with badge.
+ * Demonstrates custom menu content with multiple interactive elements.
+ */
+export const RichMenu: StoryObj<HeaderProps> = {
+  render: () => {
+    return (
+      <Header links={links}>
+        <Header.Title>
+          <Header.Illustration>
+            <HeaderStoriesLogo />
+          </Header.Illustration>
+          <Header.Logo>
+            <Link href="/">Arbeidstilsynet</Link>
+          </Header.Logo>
+        </Header.Title>
+        <Header.Navbar />
+        <Header.Menu
+          menuButtonText="Kari Nordmann"
+          closeButtonText="Lukk menyen"
+        >
+          <ProfileMenuItem />
+          <InboxMenuItem count={42} />
+          <Divider />
+          <Switch label="Mørk modus" position="end" />
+          <Switch label="Høy kontrast" position="end" />
+        </Header.Menu>
+      </Header>
+    );
+  },
+};
+
+/**
+ * Header without navigation links - only menu controls.
+ * Useful for simple applications or landing pages.
+ */
+export const NoNavigation: StoryObj<HeaderProps> = {
+  render: () => {
+    return (
+      <Header>
+        <Header.Title>
+          <Header.Illustration>
+            <HeaderStoriesLogo />
+          </Header.Illustration>
+          <Header.Logo>
+            <Link href="/">Arbeidstilsynet</Link>
+          </Header.Logo>
+        </Header.Title>
+        <Header.Navbar />
+        <Header.Menu menuButtonText="Innstillinger">
+          <Switch label="Mørk modus" position="end" />
+        </Header.Menu>
+      </Header>
     );
   },
 };
