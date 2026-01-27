@@ -66,6 +66,9 @@ export const Preview: Story = {
       </Header>
     );
   },
+  args: {
+    links,
+  },
 };
 
 /**
@@ -89,6 +92,9 @@ export const NoMenu: Story = {
         <Header.Navbar />
       </Header>
     );
+  },
+  args: {
+    links,
   },
 };
 
@@ -150,5 +156,8 @@ export const CustomMaxWidth: Story = {
         </Header.Menu>
       </Header>
     );
+  },
+  args: {
+    links,
   },
 };
