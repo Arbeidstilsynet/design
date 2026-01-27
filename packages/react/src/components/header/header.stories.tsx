@@ -27,15 +27,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const links = [
-  <Link key="home" href="">
-    Hjem
-  </Link>,
-  <Link key="about" href="">
-    Om oss
-  </Link>,
-  <Link key="services" href="">
-    Tjenester
-  </Link>,
+  <a key="home" href="./#">
+    Brukere
+  </a>,
+  <a key="about" href="./#">
+    Saker
+  </a>,
+  <a key="services" href="./#">
+    Virksomheter
+  </a>,
 ];
 
 /**

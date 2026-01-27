@@ -12,6 +12,8 @@ export interface HeaderProps
    * On mobile viewports, links are automatically shown in the `Header.Menu` dropdown
    * above any custom menu controls.
    *
+   * NB: for proper SPA navigation, pass an array of link components (e.g. `<NextLink>`) from the routing library, instead of Link from the design system.
+   *
    * @example
    * ```tsx
    * <Header links={[

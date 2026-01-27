@@ -20,6 +20,11 @@ import { HeaderTitle } from "./headerTitle";
  * - `Header.Navbar` - Navigation links (hidden on mobile, shown in desktop)
  * - `Header.Menu` - Dropdown menu with custom controls
  *
+ * ## Links prop
+ *
+ * For proper SPA navigation, pass an array of link components (e.g. `<NextLink>`) from the routing library, instead of Link from the design system.
+ * These will automatically receive classnames through Slot for styling.
+ *
  * ## Usage
  *
  * ```tsx
