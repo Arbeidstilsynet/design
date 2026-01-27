@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { Header, type HeaderProps } from "..";
+import { Header } from "..";
 import { Divider, Heading, Link, Switch } from "../..";
 import {
   InboxMenuItem,
@@ -24,6 +24,8 @@ const meta: Meta<typeof Header> = {
 
 export default meta;
 
+type Story = StoryObj<typeof meta>;
+
 const links = [
   <Link key="home" href="">
     Hjem
@@ -40,7 +42,7 @@ const links = [
  * Default header with all compound components.
  * Shows illustration, logo, navbar, and menu with profile items.
  */
-export const Preview: StoryObj<HeaderProps> = {
+export const Preview: Story = {
   render: () => {
     return (
       <Header links={links}>
@@ -70,7 +72,7 @@ export const Preview: StoryObj<HeaderProps> = {
  * Header without menu - only navigation links.
  * Useful for simple applications without user controls.
  */
-export const NoMenu: StoryObj<HeaderProps> = {
+export const NoMenu: Story = {
   render: () => {
     return (
       <Header links={links}>
@@ -94,7 +96,7 @@ export const NoMenu: StoryObj<HeaderProps> = {
  * Header without navigation links - only menu controls.
  * Useful for simple applications or landing pages.
  */
-export const NoNavigation: StoryObj<HeaderProps> = {
+export const NoNavigation: Story = {
   render: () => {
     return (
       <Header>
@@ -122,7 +124,7 @@ export const NoNavigation: StoryObj<HeaderProps> = {
  * Demonstrates overriding the `--at-header-max-width` CSS variable
  * to constrain the header content to a narrower width.
  */
-export const CustomMaxWidth: StoryObj<HeaderProps> = {
+export const CustomMaxWidth: Story = {
   render: () => {
     return (
       <Header

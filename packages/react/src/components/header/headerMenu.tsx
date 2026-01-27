@@ -21,10 +21,16 @@ import { HeaderContext } from "./headerContext";
 export interface HeaderMenuProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   /**
-   * Content for the menu button.
+   * Content for the menu button on desktop.
    * Typically a user name or menu title.
    */
   triggerContent: ReactNode;
+
+  /**
+   * Text for the menu button on mobile.
+   * @default "Meny".
+   */
+  mobileMenuText?: string;
 
   /**
    * Text for the close button in mobile dropdown view.
@@ -76,6 +82,7 @@ export function HeaderMenu({
   className,
   children,
   triggerContent,
+  mobileMenuText = "Meny",
   closeButtonText = "Lukk",
   ...rest
 }: Readonly<HeaderMenuProps>) {
@@ -98,7 +105,7 @@ export function HeaderMenu({
               ) : (
                 <MenuHamburgerIcon aria-hidden />
               )}
-              <span>Meny</span>
+              {mobileMenuText}
             </>
           ) : (
             <>
