@@ -21,10 +21,10 @@ import { HeaderContext } from "./headerContext";
 export interface HeaderMenuProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   /**
-   * Text displayed on the menu button in desktop view.
+   * Content for the menu button.
    * Typically a user name or menu title.
    */
-  menuButtonText?: string;
+  triggerContent: ReactNode;
 
   /**
    * Text for the close button in mobile dropdown view.
@@ -41,7 +41,7 @@ export interface HeaderMenuProps
    *
    * @example
    * ```tsx
-   * <Header.Menu menuButtonText="Ola Nordmann">
+   * <Header.Menu triggerContent="Ola Nordmann">
    *   <ProfileMenuItem />
    *   <Divider />
    *   <Switch label="Mørk modus" position="end" />
@@ -54,7 +54,7 @@ export interface HeaderMenuProps
 /**
  * Dropdown menu for the header with user controls and navigation (on mobile).
  *
- * On **desktop**: Shows a dropdown trigger with `menuButtonText` that opens a menu
+ * On **desktop**: Shows a dropdown trigger with `triggerContent` that opens a menu
  * containing only the custom children (menu controls).
  *
  * On **mobile**: Shows a hamburger menu button that opens a full-width dropdown
@@ -65,7 +65,7 @@ export interface HeaderMenuProps
  *
  * @example
  * ```tsx
- * <Header.Menu menuButtonText="Ola Nordmann" closeButtonText="Lukk">
+ * <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
  *   <ProfileLink />
  *   <InboxLink />
  *   <Divider />
@@ -77,7 +77,7 @@ export function HeaderMenu({
   ref,
   className,
   children,
-  menuButtonText,
+  triggerContent,
   closeButtonText = "Lukk",
   ...rest
 }: Readonly<HeaderMenuProps>) {
@@ -104,7 +104,7 @@ export function HeaderMenu({
             </>
           ) : (
             <>
-              {menuButtonText}
+              {triggerContent}
               {open ? (
                 <ChevronUpIcon aria-hidden />
               ) : (

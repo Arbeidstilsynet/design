@@ -46,7 +46,7 @@ export const Preview: StoryObj<HeaderProps> = {
           </Header.Logo>
         </Header.Title>
         <Header.Navbar />
-        <Header.Menu menuButtonText="Ola Nordmann" closeButtonText="Lukk">
+        <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
           <ProfileMenuItem />
           <InboxMenuItem />
           <Divider />
@@ -71,7 +71,7 @@ export const WithoutIllustration: StoryObj<HeaderProps> = {
           </Header.Logo>
         </Header.Title>
         <Header.Navbar />
-        <Header.Menu menuButtonText="Ola Nordmann">
+        <Header.Menu triggerContent="Ola Nordmann">
           <ProfileMenuItem />
           <Divider />
           <Switch label="Mørk modus" position="end" />
@@ -99,7 +99,7 @@ export const MinimalMenu: StoryObj<HeaderProps> = {
           </Header.Logo>
         </Header.Title>
         <Header.Navbar />
-        <Header.Menu menuButtonText="Meny" />
+        <Header.Menu triggerContent="Meny" />
       </Header>
     );
   },
@@ -123,7 +123,7 @@ export const RichMenu: StoryObj<HeaderProps> = {
         </Header.Title>
         <Header.Navbar />
         <Header.Menu
-          menuButtonText="Kari Nordmann"
+          triggerContent="Kari Nordmann"
           closeButtonText="Lukk menyen"
         >
           <ProfileMenuItem />
@@ -154,7 +154,7 @@ export const NoNavigation: StoryObj<HeaderProps> = {
           </Header.Logo>
         </Header.Title>
         <Header.Navbar />
-        <Header.Menu menuButtonText="Innstillinger">
+        <Header.Menu triggerContent="Innstillinger">
           <Switch label="Mørk modus" position="end" />
         </Header.Menu>
       </Header>

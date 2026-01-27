@@ -47,7 +47,7 @@ import { HeaderTitle } from "./headerTitle";
  *     </Header.Logo>
  *   </Header.Title>
  *   <Header.Navbar />
- *   <Header.Menu menuButtonText="Ola Nordmann" closeButtonText="Lukk">
+ *   <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
  *     <ProfileMenuItem />
  *     <InboxMenuItem />
  *     <Divider />
