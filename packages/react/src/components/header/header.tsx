@@ -1,5 +1,5 @@
 import { clsx } from "clsx/lite";
-import { useMemo, type HTMLAttributes, type ReactNode } from "react";
+import { useMemo, useRef, type HTMLAttributes, type ReactNode } from "react";
 import type { DefaultProps } from "../../types";
 import { HeaderContext } from "./headerContext";
 
@@ -38,11 +38,20 @@ export function Header({
   links = [],
   ...rest
 }: Readonly<HeaderProps>) {
-  const contextValue = useMemo(() => ({ links }), [links]);
+  const internalRef = useRef<HTMLElement>(null);
+  const headerRef = (ref as React.RefObject<HTMLElement>) ?? internalRef;
+  const contextValue = useMemo(
+    () => ({ links, headerRef }),
+    [links, headerRef],
+  );
 
   return (
     <HeaderContext.Provider value={contextValue}>
-      <header ref={ref} className={clsx("at-header", className)} {...rest}>
+      <header
+        ref={headerRef}
+        className={clsx("at-header", className)}
+        {...rest}
+      >
         <div className="at-header__container">{children}</div>
       </header>
     </HeaderContext.Provider>

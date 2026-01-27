@@ -9,6 +9,7 @@ import { clsx } from "clsx/lite";
 import {
   isValidElement,
   use,
+  useLayoutEffect,
   useState,
   type HTMLAttributes,
   type ReactNode,
@@ -87,8 +88,32 @@ export function HeaderMenu({
   ...rest
 }: Readonly<HeaderMenuProps>) {
   const [open, setOpen] = useState(false);
-  const { links } = use(HeaderContext);
+  const [backdropTop, setBackdropTop] = useState(0);
+  const { links, headerRef } = use(HeaderContext);
   const isMobile = useMediaQuery("(max-width: 48rem)");
+
+  // Calculate backdrop position when menu opens
+  useLayoutEffect(() => {
+    if (!open || !headerRef.current) return;
+
+    const updateBackdropPosition = () => {
+      const rect = headerRef.current?.getBoundingClientRect();
+      if (rect) {
+        setBackdropTop(rect.bottom);
+      }
+    };
+
+    updateBackdropPosition();
+
+    // Update on scroll/resize
+    window.addEventListener("scroll", updateBackdropPosition, true);
+    window.addEventListener("resize", updateBackdropPosition);
+
+    return () => {
+      window.removeEventListener("scroll", updateBackdropPosition, true);
+      window.removeEventListener("resize", updateBackdropPosition);
+    };
+  }, [open, headerRef]);
 
   return (
     <div ref={ref} className={clsx("at-header__right", className)} {...rest}>
@@ -187,7 +212,11 @@ export function HeaderMenu({
 
       {/* overlay */}
       {open ? (
-        <div aria-hidden className="at-header__dropdown-backdrop" />
+        <div
+          aria-hidden
+          className="at-header__dropdown-backdrop"
+          style={{ top: backdropTop }}
+        />
       ) : null}
     </div>
   );
