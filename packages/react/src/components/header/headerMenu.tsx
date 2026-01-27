@@ -30,7 +30,7 @@ export interface HeaderMenuProps
    * Text for the close button in mobile dropdown view.
    * @default "Lukk"
    */
-  closeButtonText?: string;
+  closeButtonText?: ReactNode;
 
   /**
    * Custom menu controls to display in the dropdown.
