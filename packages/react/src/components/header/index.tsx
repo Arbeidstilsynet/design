@@ -20,14 +20,7 @@ import { HeaderTitle } from "./headerTitle";
  * - `Header.Navbar` - Navigation links (hidden on mobile, shown in desktop)
  * - `Header.Menu` - Dropdown menu with custom controls
  *
- * ## Links behavior
- *
- * Pass navigation links to the `links` prop on the root `Header` component.
- * These links are automatically:
- * - Shown in `Header.Navbar` on desktop viewports
- * - Moved to `Header.Menu` dropdown on mobile viewports
- *
- * ## Example usage
+ * ## Usage
  *
  * ```tsx
  * const links = [

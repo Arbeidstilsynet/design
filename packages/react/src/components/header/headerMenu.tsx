@@ -34,10 +34,8 @@ export interface HeaderMenuProps
 
   /**
    * Custom menu controls to display in the dropdown.
-   * These appear below navigation links (on mobile) in the menu.
-   *
-   * You are responsible for providing appropriate content such as
-   * profile links, settings toggles, or other menu items.
+   * On mobile viewport these appear between navigation links and the close button in the menu.
+   * A `<Divider />` is automatically added between navigation links and custom controls.
    *
    * @example
    * ```tsx

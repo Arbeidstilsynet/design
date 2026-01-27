@@ -13,6 +13,13 @@ const meta: Meta<typeof Header> = {
   parameters: {
     layout: "padded",
   },
+  subcomponents: {
+    ["Header.Title"]: Header.Title,
+    ["Header.Illustration"]: Header.Illustration,
+    ["Header.Logo"]: Header.Logo,
+    ["Header.Navbar"]: Header.Navbar,
+    ["Header.Menu"]: Header.Menu,
+  },
 };
 
 export default meta;
