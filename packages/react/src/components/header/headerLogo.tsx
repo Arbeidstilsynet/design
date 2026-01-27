@@ -33,7 +33,7 @@ export function HeaderLogo({
   ...rest
 }: Readonly<HeaderLogoProps>) {
   return (
-    <div ref={ref} className={clsx("at-header__app-name", className)} {...rest}>
+    <div ref={ref} className={clsx("at-header__logo", className)} {...rest}>
       {children}
     </div>
   );

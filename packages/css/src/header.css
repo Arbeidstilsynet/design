@@ -51,6 +51,7 @@
   margin-left: auto;
 }
 
+.at-header__logo .ds-link:not(:hover):not(:focus-visible),
 .at-header__link:not(:hover):not(:focus-visible),
 .at-header__dropdown-controls .ds-link:not(:hover):not(:focus-visible) {
   text-decoration-line: none;
