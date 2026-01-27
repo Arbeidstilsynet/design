@@ -103,7 +103,7 @@
   }
 
   /* Hide illustration on mobile, keep logo visible */
-  .at-header__logo {
+  .at-header__illustration {
     display: none;
   }
 

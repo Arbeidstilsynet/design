@@ -31,7 +31,7 @@ export function HeaderIllustration({
   ...rest
 }: Readonly<HeaderIllustrationProps>) {
   return (
-    <div className={clsx("at-header__logo", className)} {...rest}>
+    <div className={clsx("at-header__illustration", className)} {...rest}>
       {children}
     </div>
   );
