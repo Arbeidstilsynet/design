@@ -111,10 +111,15 @@
     display: block;
   }
 
-  /* Full-width dropdown overlay for mobile */
   .at-header .ds-dropdown.at-header__dropdown-content {
+    /* Full-width dropdown overlay for mobile */
     width: 100%;
     max-width: 100%;
+    /* Hide box-shadow to avoid line between dropdown menu and header on mobile */
+    box-shadow: none;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
   }
 
   .at-header__dropdown-close-mobile {
