@@ -1,0 +1,20 @@
+import {
+  Meta,
+  Primary,
+  Stories,
+  Controls,
+  Description,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import { CssVariables } from "../../docs-components/CssVariables";
+import { Header } from "./header";
+import * as HeaderStories from "./header.stories";
+import css from "@arbeidstilsynet/design-css/header.css?inline";
+
+<Meta of={HeaderStories} />
+<Title />
+<Description />
+<Primary />
+<Controls sort="requiredFirst" />
+<CssVariables css={css} />
+<Stories />
