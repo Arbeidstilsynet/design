@@ -72,16 +72,14 @@ const Header = Object.assign(HeaderParent, {
 
 export type { HeaderProps } from "./header";
 export { HeaderContext } from "./headerContext";
+export { HeaderIllustration } from "./headerIllustration";
 export type { HeaderIllustrationProps } from "./headerIllustration";
+export { HeaderLogo } from "./headerLogo";
 export type { HeaderLogoProps } from "./headerLogo";
+export { HeaderMenu } from "./headerMenu";
 export type { HeaderMenuProps } from "./headerMenu";
+export { HeaderNavbar } from "./headerNavbar";
 export type { HeaderNavbarProps } from "./headerNavbar";
+export { HeaderTitle } from "./headerTitle";
 export type { HeaderTitleProps } from "./headerTitle";
-export {
-  Header,
-  HeaderIllustration,
-  HeaderLogo,
-  HeaderMenu,
-  HeaderNavbar,
-  HeaderTitle,
-};
+export { Header };

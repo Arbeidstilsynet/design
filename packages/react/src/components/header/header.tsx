@@ -43,7 +43,7 @@ export function Header({
   return (
     <HeaderContext.Provider value={contextValue}>
       <header ref={ref} className={clsx("at-header", className)} {...rest}>
-        <div className="at-header__background">{children}</div>
+        <div className="at-header__container">{children}</div>
       </header>
     </HeaderContext.Provider>
   );

@@ -109,3 +109,37 @@ export const NoNavigation: StoryObj<HeaderProps> = {
     );
   },
 };
+
+/**
+ * Header with custom max-width.
+ * Demonstrates overriding the `--at-header-max-width` CSS variable
+ * to constrain the header content to a narrower width.
+ */
+export const CustomMaxWidth: StoryObj<HeaderProps> = {
+  render: () => {
+    return (
+      <Header
+        links={links}
+        style={{ "--at-header-max-width": "50rem" } as React.CSSProperties}
+      >
+        <Header.Title>
+          <Header.Illustration>
+            <HeaderStoriesIllustration />
+          </Header.Illustration>
+          <Header.Logo>
+            <Link href="/">
+              <Heading>Arbeidstilsynet</Heading>
+            </Link>
+          </Header.Logo>
+        </Header.Title>
+        <Header.Navbar />
+        <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
+          <ProfileMenuItem />
+          <InboxMenuItem />
+          <Divider />
+          <Switch label="Mørk modus" position="end" />
+        </Header.Menu>
+      </Header>
+    );
+  },
+};
