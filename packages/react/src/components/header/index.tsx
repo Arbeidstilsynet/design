@@ -55,12 +55,6 @@ import { HeaderTitle } from "./headerTitle";
  *   </Header.Menu>
  * </Header>
  * ```
- *
- * ## Customization
- *
- * You control the content of `Header.Menu` children entirely.
- * Use any combination of links, toggles, dividers, or custom components
- * as needed for your application's menu.
  */
 const Header = Object.assign(HeaderParent, {
   Title: HeaderTitle,
