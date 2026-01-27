@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header, type HeaderProps } from "..";
-import { Divider, Link, Switch } from "../..";
+import { Divider, Heading, Link, Switch } from "../..";
 import {
   InboxMenuItem,
   ProfileMenuItem,
 } from "./stories-helpers/headerStoriesMenuItems";
-import { HeaderStoriesLogo } from "./stories-helpers/headeStoriesLogo";
+import { HeaderStoriesIllustration } from "./stories-helpers/headeStoriesIllustation";
 
 const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
@@ -39,10 +39,12 @@ export const Preview: StoryObj<HeaderProps> = {
       <Header links={links}>
         <Header.Title>
           <Header.Illustration>
-            <HeaderStoriesLogo />
+            <HeaderStoriesIllustration />
           </Header.Illustration>
           <Header.Logo>
-            <Link href="/">Arbeidstilsynet</Link>
+            <Link href="/">
+              <Heading>Arbeidstilsynet</Heading>
+            </Link>
           </Header.Logo>
         </Header.Title>
         <Header.Navbar />
@@ -58,80 +60,24 @@ export const Preview: StoryObj<HeaderProps> = {
 };
 
 /**
- * Header without illustration - only shows logo.
- * Useful for simpler headers or when illustration is not needed.
+ * Header without menu - only navigation links.
+ * Useful for simple applications without user controls.
  */
-export const WithoutIllustration: StoryObj<HeaderProps> = {
-  render: () => {
-    return (
-      <Header links={links}>
-        <Header.Title>
-          <Header.Logo>
-            <Link href="/">Arbeidstilsynet</Link>
-          </Header.Logo>
-        </Header.Title>
-        <Header.Navbar />
-        <Header.Menu triggerContent="Ola Nordmann">
-          <ProfileMenuItem />
-          <Divider />
-          <Switch label="Mørk modus" position="end" />
-        </Header.Menu>
-      </Header>
-    );
-  },
-};
-
-/**
- * Header with minimal menu - no custom controls.
- * On desktop, only shows navigation links in navbar.
- * On mobile, navigation links appear in the hamburger menu.
- */
-export const MinimalMenu: StoryObj<HeaderProps> = {
+export const NoMenu: StoryObj<HeaderProps> = {
   render: () => {
     return (
       <Header links={links}>
         <Header.Title>
           <Header.Illustration>
-            <HeaderStoriesLogo />
+            <HeaderStoriesIllustration />
           </Header.Illustration>
           <Header.Logo>
-            <Link href="/">Arbeidstilsynet</Link>
+            <Link href="/">
+              <Heading>Arbeidstilsynet</Heading>
+            </Link>
           </Header.Logo>
         </Header.Title>
         <Header.Navbar />
-        <Header.Menu triggerContent="Meny" />
-      </Header>
-    );
-  },
-};
-
-/**
- * Header with rich menu controls including inbox with badge.
- * Demonstrates custom menu content with multiple interactive elements.
- */
-export const RichMenu: StoryObj<HeaderProps> = {
-  render: () => {
-    return (
-      <Header links={links}>
-        <Header.Title>
-          <Header.Illustration>
-            <HeaderStoriesLogo />
-          </Header.Illustration>
-          <Header.Logo>
-            <Link href="/">Arbeidstilsynet</Link>
-          </Header.Logo>
-        </Header.Title>
-        <Header.Navbar />
-        <Header.Menu
-          triggerContent="Kari Nordmann"
-          closeButtonText="Lukk menyen"
-        >
-          <ProfileMenuItem />
-          <InboxMenuItem count={42} />
-          <Divider />
-          <Switch label="Mørk modus" position="end" />
-          <Switch label="Høy kontrast" position="end" />
-        </Header.Menu>
       </Header>
     );
   },
@@ -147,10 +93,12 @@ export const NoNavigation: StoryObj<HeaderProps> = {
       <Header>
         <Header.Title>
           <Header.Illustration>
-            <HeaderStoriesLogo />
+            <HeaderStoriesIllustration />
           </Header.Illustration>
           <Header.Logo>
-            <Link href="/">Arbeidstilsynet</Link>
+            <Link href="/">
+              <Heading>Arbeidstilsynet</Heading>
+            </Link>
           </Header.Logo>
         </Header.Title>
         <Header.Navbar />
