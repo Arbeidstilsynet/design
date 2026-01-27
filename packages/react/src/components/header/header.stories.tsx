@@ -43,9 +43,9 @@ const links = [
  * Shows illustration, logo, navbar, and menu with profile items.
  */
 export const Preview: Story = {
-  render: () => {
+  render: (args) => {
     return (
-      <Header links={links}>
+      <Header {...args}>
         <Header.Title>
           <Header.Illustration>
             <HeaderStoriesIllustration />
@@ -73,9 +73,9 @@ export const Preview: Story = {
  * Useful for simple applications without user controls.
  */
 export const NoMenu: Story = {
-  render: () => {
+  render: (args) => {
     return (
-      <Header links={links}>
+      <Header {...args}>
         <Header.Title>
           <Header.Illustration>
             <HeaderStoriesIllustration />
@@ -97,9 +97,9 @@ export const NoMenu: Story = {
  * Useful for simple applications or landing pages.
  */
 export const NoNavigation: Story = {
-  render: () => {
+  render: (args) => {
     return (
-      <Header>
+      <Header {...args}>
         <Header.Title>
           <Header.Illustration>
             <HeaderStoriesIllustration />
@@ -125,10 +125,10 @@ export const NoNavigation: Story = {
  * to constrain the header content to a narrower width.
  */
 export const CustomMaxWidth: Story = {
-  render: () => {
+  render: (args) => {
     return (
       <Header
-        links={links}
+        {...args}
         style={{ "--at-header-max-width": "50rem" } as React.CSSProperties}
       >
         <Header.Title>
