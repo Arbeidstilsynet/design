@@ -161,3 +161,34 @@ export const CustomMaxWidth: Story = {
     links,
   },
 };
+
+export const CustomLogoFont: Story = {
+  render: (args) => {
+    return (
+      <Header {...args}>
+        <Header.Title>
+          <Header.Illustration>
+            <HeaderStoriesIllustration />
+          </Header.Illustration>
+          <Header.Logo>
+            <Link href="/">
+              <Heading style={{ fontFamily: "monospace" }}>
+                Arbeidstilsynet
+              </Heading>
+            </Link>
+          </Header.Logo>
+        </Header.Title>
+        <Header.Navbar />
+        <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
+          <ProfileMenuItem />
+          <InboxMenuItem />
+          <Divider />
+          <Switch label="Mørk modus" position="end" />
+        </Header.Menu>
+      </Header>
+    );
+  },
+  args: {
+    links,
+  },
+};
