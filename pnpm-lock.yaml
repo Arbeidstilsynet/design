@@ -17,8 +17,8 @@ importers:
         specifier: 2.29.8
         version: 2.29.8(@types/node@24.10.9)
       '@digdir/designsystemet':
-        specifier: 1.9.0
-        version: 1.9.0
+        specifier: 1.11.0
+        version: 1.11.0
       '@svitejs/changesets-changelog-github-compact':
         specifier: 1.2.0
         version: 1.2.0
@@ -129,8 +129,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.9.0
-        version: 1.9.0
+        specifier: 1.11.0
+        version: 1.11.0
     devDependencies:
       '@types/node':
         specifier: 24.10.9
@@ -160,11 +160,11 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.9.0
-        version: 1.9.0(@types/react@19.2.9)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+        specifier: 1.11.0
+        version: 1.11.0(@types/react@19.2.9)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@digdir/designsystemet-types':
-        specifier: 1.9.0
-        version: 1.9.0
+        specifier: 1.11.0
+        version: 1.11.0
       '@navikt/aksel-icons':
         specifier: ^7.40.0
         version: 7.40.0
@@ -489,20 +489,20 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.1.1
 
-  '@digdir/designsystemet-css@1.9.0':
-    resolution: {integrity: sha512-0vnCjgncLrGT1ldXzyc0qJ3rZpf/iin/2ZP7hCxxkgfP/BKgb3UBpnc6ZzkC8vvrFq1s3LMEy9udCTD4LVtQZQ==}
+  '@digdir/designsystemet-css@1.11.0':
+    resolution: {integrity: sha512-fbLs5nrDyCdoIZAJMErj9+P4dmA+u2q3n+y2fWHRYK2U1Bs8hWKF47M3EhtqVCbmJIUhhI0SvRp8vb72Fa+WLQ==}
 
-  '@digdir/designsystemet-react@1.9.0':
-    resolution: {integrity: sha512-/RapjnOUUy4pzLXnDi5qMp3xiAaFCwb8v8/STFNDhA8SFDGSjsanRzNb8YNFZSqE9bXh/ZhAdVMZM2RJu9b7AQ==}
+  '@digdir/designsystemet-react@1.11.0':
+    resolution: {integrity: sha512-JoCTcKxD3MiMakyfv458TVvA6YIfjSoDOUkBcSbLC7sp+WrczjA9lJN+NsCv2PNTb6kGLJ2WPwNhhx+6i8dlJQ==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet-types@1.9.0':
-    resolution: {integrity: sha512-JgdtlQNKAM49vIWFmXyZwM5CzQxHOsf/oL90xswG7ZtI5XFZVX1jc3ItAWa+hkIZFpdPGdzPuUcotxK+tQt2SQ==}
+  '@digdir/designsystemet-types@1.11.0':
+    resolution: {integrity: sha512-9kgM+cADYmroibCSH5VWqkXw6gEYXN+vV1glmRWhHvMq6veiD4BpBgsVAs2tDi972+SIvyo8VMPriva+XEobug==}
 
-  '@digdir/designsystemet@1.9.0':
-    resolution: {integrity: sha512-PI+Ab92rFptoNt4sLJKHNxVXKm5IeNC5GcxYObGjcvR18T18vtRsz7g7xH4E+ks2lbl9MUf/4sFR62Z2KGWMoA==}
+  '@digdir/designsystemet@1.11.0':
+    resolution: {integrity: sha512-pQTfjCJ5X4dY0pGxUvkI7xD1YbiKKilsy9c1BLUgqg30+aK2P1W6ngD8DSDec09X3AvCBxLwJV7bK4Jg3jNBnw==}
     engines: {node: '>=20 <25'}
     hasBin: true
 
@@ -1514,9 +1514,6 @@ packages:
     resolution: {integrity: sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==}
     engines: {node: '>= 8'}
 
-  apca-w3@0.1.9:
-    resolution: {integrity: sha512-Zrf6AeBeQjNe/fxK7U1jCo5zfdjDl6T4/kdw5Xlky3G7u+EJTZkyItjMYQGtwf9pkftsINxcYyOpuLkzKf1ITQ==}
-
   argparse@1.0.10:
     resolution: {integrity: sha512-o5Roy6tNG4SL/FOkCAN6RzjiakZS25RLYFrcMttJqbdd8BWrnA+fGz57iN5Pb06pvBGvl5gQ0B48dJlslXvoTg==}
 
@@ -1729,9 +1726,6 @@ packages:
 
   colorjs.io@0.6.1:
     resolution: {integrity: sha512-8lyR2wHzuIykCpqHKgluGsqQi5iDm3/a2IgP2GBZrasn2sBRkE4NOGsglZxWLs/jZQoNkmA/KM/8NV16rLUdBg==}
-
-  colorparsley@0.1.8:
-    resolution: {integrity: sha512-rObESTTTE6G5qO5WFwFxWPggpw4KfpxnLC6Ssl8bITBnNVRhDsyCeTRAUxWQNVTx2pRknKlO2nddYTxjkdNFaw==}
 
   commander@11.1.0:
     resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
@@ -3989,6 +3983,12 @@ packages:
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
 
+  zod-validation-error@5.0.0:
+    resolution: {integrity: sha512-hmk+pkyKq7Q71PiWVSDUc3VfpzpvcRHZ3QPw9yEMVvmtCekaMeOHnbr3WbxfrgEnQTv6haGP4cmv0Ojmihzsxw==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      zod: ^3.25.0 || ^4.0.0
+
   zod@4.3.5:
     resolution: {integrity: sha512-k7Nwx6vuWx1IJ9Bjuf4Zt1PEllcwe7cls3VNzm4CQ1/hgtFUK2bRNG3rvnpPUhFjmqJKAKtjV576KnUkHocg/g==}
 
@@ -4345,11 +4345,13 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.1
 
-  '@digdir/designsystemet-css@1.9.0': {}
-
-  '@digdir/designsystemet-react@1.9.0(@types/react@19.2.9)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@digdir/designsystemet-css@1.11.0':
     dependencies:
-      '@digdir/designsystemet-types': 1.9.0
+      '@digdir/designsystemet-types': 1.11.0
+
+  '@digdir/designsystemet-react@1.11.0(@types/react@19.2.9)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+    dependencies:
+      '@digdir/designsystemet-types': 1.11.0
       '@floating-ui/dom': 1.7.4
       '@floating-ui/react': 0.26.23(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@navikt/aksel-icons': 7.40.0
@@ -4364,15 +4366,13 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet-types@1.9.0': {}
+  '@digdir/designsystemet-types@1.11.0': {}
 
-  '@digdir/designsystemet@1.9.0':
+  '@digdir/designsystemet@1.11.0':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.2)
-      '@digdir/designsystemet-types': 1.9.0
+      '@digdir/designsystemet-types': 1.11.0
       '@tokens-studio/sd-transforms': 2.0.3(style-dictionary@5.1.4)
-      apca-w3: 0.1.9
-      change-case: 5.4.4
       chroma-js: 3.2.0
       colorjs.io: 0.6.1
       commander: 14.0.2
@@ -4384,7 +4384,7 @@ snapshots:
       ramda: 0.32.0
       style-dictionary: 5.1.4
       zod: 4.3.5
-      zod-validation-error: 4.0.2(zod@4.3.5)
+      zod-validation-error: 5.0.0(zod@4.3.5)
 
   '@esbuild/aix-ppc64@0.27.2':
     optional: true
@@ -5409,10 +5409,6 @@ snapshots:
       normalize-path: 3.0.0
       picomatch: 2.3.1
 
-  apca-w3@0.1.9:
-    dependencies:
-      colorparsley: 0.1.8
-
   argparse@1.0.10:
     dependencies:
       sprintf-js: 1.0.3
@@ -5648,8 +5644,6 @@ snapshots:
   colorjs.io@0.5.2: {}
 
   colorjs.io@0.6.1: {}
-
-  colorparsley@0.1.8: {}
 
   commander@11.1.0: {}
 
@@ -8037,6 +8031,10 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   zod-validation-error@4.0.2(zod@4.3.5):
+    dependencies:
+      zod: 4.3.5
+
+  zod-validation-error@5.0.0(zod@4.3.5):
     dependencies:
       zod: 4.3.5
 

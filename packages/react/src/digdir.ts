@@ -47,6 +47,7 @@ export {
   ErrorSummaryItem,
   ErrorSummaryLink,
   ErrorSummaryList,
+  EXPERIMENTAL_AvatarStack,
   EXPERIMENTAL_Suggestion,
   EXPERIMENTAL_SuggestionClear,
   EXPERIMENTAL_SuggestionEmpty,
