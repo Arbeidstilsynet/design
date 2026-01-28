@@ -105,7 +105,7 @@ function Button({ variant, ...rest }: ButtonProps) {
 </Button>;
 ```
 
-In addition to HTMLAttributes, we use a common generic type to ensure each component supports `data-` attributes from Designsystemet, as well as `ref`. Almost always, rest props should be added to the outermost component/element.
+In addition to HTMLAttributes, we use a common generic type [DefaultProps](https://github.com/Arbeidstilsynet/design/blob/main/packages/react/src/types.ts) to ensure each component supports `data-` attributes from Designsystemet, as well as `ref`. Almost always, rest props should be added to the outermost component/element.
 
 Here is a real example of `FilePicker`'s props. Note that we don't need to explicitely define common props like `id`, `className`, `style`.
 
