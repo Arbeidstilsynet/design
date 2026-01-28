@@ -1,19 +1,57 @@
 import { clsx } from "clsx/lite";
+import { useRef, type HTMLAttributes, type ReactNode } from "react";
 import type { DefaultProps } from "../../types";
-import type { HTMLAttributes } from "react";
+import { HeaderContext } from "./headerContext";
 
 export interface HeaderProps
-  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {}
+  extends DefaultProps<HTMLElement>, HTMLAttributes<HTMLElement> {
+  /**
+   * Navigation links to be displayed in the navbar (desktop) and menu (mobile).
+   *
+   * On desktop viewports, links appear in the `Header.Navbar` component.
+   * On mobile viewports, links are automatically shown in the `Header.Menu` dropdown
+   * above any custom menu controls.
+   *
+   * NB: for proper SPA navigation, pass an array of link components (e.g. `<NextLink>`) from the routing library, instead of Link from the design system.
+   *
+   * @example
+   * ```tsx
+   * <Header links={[
+   *   <Link key="home" href="/">Hjem</Link>,
+   *   <Link key="about" href="/about">Om oss</Link>,
+   * ]}>
+   *   ...
+   * </Header>
+   * ```
+   */
+  links?: ReactNode[];
+
+  /**
+   * Compound component children.
+   * Typically includes `Header.Title`, `Header.Navbar`, and `Header.Menu`.
+   */
+  children?: ReactNode;
+}
 
 export function Header({
   ref,
   className,
   children,
+  links = [],
   ...rest
 }: Readonly<HeaderProps>) {
+  const internalRef = useRef<HTMLElement>(null);
+  const headerRef = (ref as React.RefObject<HTMLElement>) ?? internalRef;
+
   return (
-    <div ref={ref} className={clsx("at-header", className)} {...rest}>
-      {children}
-    </div>
+    <HeaderContext value={{ links, headerRef }}>
+      <header
+        ref={headerRef}
+        className={clsx("at-header", className)}
+        {...rest}
+      >
+        <div className="at-header__container">{children}</div>
+      </header>
+    </HeaderContext>
   );
 }

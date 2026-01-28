@@ -1,8 +1,11 @@
-import { EnvelopeClosedIcon, PersonCircleIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
-import { Badge, Divider, Link, Switch } from "../..";
-import type { LinkItem } from "./headerTitleLinks";
+import { Divider, Heading, Link, Switch } from "../..";
+import {
+  InboxMenuItem,
+  ProfileMenuItem,
+} from "./stories-helpers/headerStoriesMenuItems";
+import { HeaderStoriesIllustration } from "./stories-helpers/headeStoriesIllustation";
 
 const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
@@ -10,116 +13,151 @@ const meta: Meta<typeof Header> = {
   parameters: {
     layout: "padded",
   },
-
   subcomponents: {
     ["Header.Title"]: Header.Title,
+    ["Header.Illustration"]: Header.Illustration,
+    ["Header.Logo"]: Header.Logo,
+    ["Header.Navbar"]: Header.Navbar,
+    ["Header.Menu"]: Header.Menu,
   },
 };
 
 export default meta;
 
-interface PreviewArgs {
-  appName: string;
-  userName: string;
-  menulinks: LinkItem[];
-  controls: React.ReactNode[];
-}
+type Story = StoryObj<typeof meta>;
 
-// Mock router link component for demonstration
-const MockRouterLink = ({
-  to,
-  children,
-  className,
-}: {
-  to: string;
-  children: React.ReactNode;
-  className?: string;
-}) => (
-  <a href={to} className={className}>
-    {children}
-  </a>
-);
-
-const menuLinks: LinkItem[] = [
-  { label: "Hjem", href: "/" },
-  { label: "Om oss", href: "/om-oss" },
-  { label: "Tjenester", href: "/tjenester" },
+const links = [
+  <a key="home" href="./#">
+    Brukere
+  </a>,
+  <a key="about" href="./#">
+    Saker
+  </a>,
+  <a key="services" href="./#">
+    Virksomheter
+  </a>,
 ];
 
-const controls = [
-  <div style={{ display: "flex", alignItems: "center" }} key="profile">
-    <PersonCircleIcon style={{ flexShrink: 0 }} />
-    <Link
-      href="#"
-      style={{
-        lineHeight: 1,
-        display: "inline-flex",
-        alignItems: "center",
-        minHeight: "0",
-      }}
-    >
-      Profil
-    </Link>
-  </div>,
-  <div style={{ display: "flex", alignItems: "center" }} key="inbox">
-    <EnvelopeClosedIcon style={{ flexShrink: 0 }} />
-    <Link
-      href="#"
-      style={{
-        lineHeight: 1,
-        display: "inline-flex",
-        alignItems: "center",
-        minHeight: "0",
-      }}
-    >
-      Innboks
-    </Link>
-    <Badge count={15} style={{ marginLeft: "auto" }} />
-  </div>,
-  <Divider key="divider1" />,
-  <Switch key="dark-mode" label="Mørk modus" position="end" />,
-];
-
-export const Preview: StoryObj<PreviewArgs> = {
-  args: {
-    appName: "Arbeidstilsynet",
-    userName: "Ola Nordmann",
-    menulinks: menuLinks,
-    controls: controls,
-  },
+/**
+ * Default header with all compound components.
+ * Shows illustration, logo, navbar, and menu with profile items.
+ */
+export const Preview: Story = {
   render: (args) => {
     return (
-      <Header>
-        <Header.Title
-          appName={args.appName}
-          userName={args.userName}
-          links={args.menulinks}
-          controls={args.controls}
-        />
+      <Header {...args}>
+        <Header.Title>
+          <Header.Illustration>
+            <HeaderStoriesIllustration />
+          </Header.Illustration>
+          <Header.Logo>
+            <Link href="/">
+              <Heading>Arbeidstilsynet</Heading>
+            </Link>
+          </Header.Logo>
+        </Header.Title>
+        <Header.Navbar />
+        <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
+          <ProfileMenuItem />
+          <InboxMenuItem />
+          <Divider />
+          <Switch label="Mørk modus" position="end" />
+        </Header.Menu>
+      </Header>
+    );
+  },
+  args: {
+    links,
+  },
+};
+
+/**
+ * Header without menu - only navigation links.
+ * Useful for simple applications without user controls.
+ */
+export const NoMenu: Story = {
+  render: (args) => {
+    return (
+      <Header {...args}>
+        <Header.Title>
+          <Header.Illustration>
+            <HeaderStoriesIllustration />
+          </Header.Illustration>
+          <Header.Logo>
+            <Link href="/">
+              <Heading>Arbeidstilsynet</Heading>
+            </Link>
+          </Header.Logo>
+        </Header.Title>
+        <Header.Navbar />
+      </Header>
+    );
+  },
+  args: {
+    links,
+  },
+};
+
+/**
+ * Header without navigation links - only menu controls.
+ * Useful for simple applications or landing pages.
+ */
+export const NoNavigation: Story = {
+  render: (args) => {
+    return (
+      <Header {...args}>
+        <Header.Title>
+          <Header.Illustration>
+            <HeaderStoriesIllustration />
+          </Header.Illustration>
+          <Header.Logo>
+            <Link href="/">
+              <Heading>Arbeidstilsynet</Heading>
+            </Link>
+          </Header.Logo>
+        </Header.Title>
+        <Header.Navbar />
+        <Header.Menu triggerContent="Innstillinger">
+          <Switch label="Mørk modus" position="end" />
+        </Header.Menu>
       </Header>
     );
   },
 };
 
-export const CustomLinks: StoryObj<PreviewArgs> = {
-  args: {
-    appName: "Arbeidstilsynet",
-    userName: "Ola Nordmann",
-    controls: controls,
-  },
+/**
+ * Header with custom max-width.
+ * Demonstrates overriding the `--at-header-max-width` CSS variable
+ * to constrain the header content to a narrower width.
+ */
+export const CustomMaxWidth: Story = {
   render: (args) => {
     return (
-      <Header>
-        <Header.Title
-          appName={args.appName}
-          userName={args.userName}
-          controls={args.controls}
-        >
-          <MockRouterLink to="/">Hjem</MockRouterLink>
-          <MockRouterLink to="/saker">Saker</MockRouterLink>
-          <MockRouterLink to="/virksomheter">Virksomheter</MockRouterLink>
+      <Header
+        {...args}
+        style={{ "--at-header-max-width": "50rem" } as React.CSSProperties}
+      >
+        <Header.Title>
+          <Header.Illustration>
+            <HeaderStoriesIllustration />
+          </Header.Illustration>
+          <Header.Logo>
+            <Link href="/">
+              <Heading>Arbeidstilsynet</Heading>
+            </Link>
+          </Header.Logo>
         </Header.Title>
+        <Header.Navbar />
+        <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
+          <ProfileMenuItem />
+          <InboxMenuItem />
+          <Divider />
+          <Switch label="Mørk modus" position="end" />
+        </Header.Menu>
       </Header>
     );
+  },
+  args: {
+    links,
   },
 };

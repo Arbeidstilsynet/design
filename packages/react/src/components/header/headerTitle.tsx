@@ -1,54 +1,46 @@
 import { clsx } from "clsx/lite";
 import type { HTMLAttributes, ReactNode } from "react";
 import type { DefaultProps } from "../../types";
-import { HeaderDefaultLogo } from "./headerDefaultLogo";
-import { HeaderTitleDropdown } from "./headerTitleDropdown";
-import { HeaderTitleLinks, type LinkItem } from "./headerTitleLinks";
-import { HeaderTitleLogo } from "./headerTitleLogo";
 
 export interface HeaderTitleProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
-  logo?: ReactNode;
-  appName: string;
-  userName: string;
-  links?: LinkItem[];
-  controls?: ReactNode[];
-  children?: ReactNode;
+  /**
+   * Title content, typically containing `Header.Illustration` and `Header.Logo`.
+   *
+   * @example
+   * ```tsx
+   * <Header.Title>
+   *   <Header.Illustration>{illustrationImage}</Header.Illustration>
+   *   <Header.Logo><Link href="/">{logoImage}</Link></Header.Logo>
+   * </Header.Title>
+   * ```
+   */
+  children: ReactNode;
 }
 
+/**
+ * Container for the header's branding area containing illustration and logo.
+ * Typically placed as the first child of `Header`.
+ *
+ * Use `Header.Illustration` for decorative images (hidden on mobile) and
+ * `Header.Logo` for the main logo/app name (always visible).
+ *
+ * @example
+ * ```tsx
+ * <Header.Title>
+ *   <Header.Illustration>{illustrationImage}</Header.Illustration>
+ *   <Header.Logo><Link href="/">{logoImage}</Link></Header.Logo>
+ * </Header.Title>
+ * ```
+ */
 export function HeaderTitle({
   className,
-  logo = <HeaderDefaultLogo />,
-  appName,
-  userName,
-  links = [],
-  controls = [],
   children,
   ...rest
 }: Readonly<HeaderTitleProps>) {
   return (
-    <div className={clsx("at-header__title-background", className)} {...rest}>
-      <div className={clsx("at-header__title")}>
-        <HeaderTitleLogo
-          className={clsx("at-header__title-left")}
-          logo={logo}
-          appName={appName}
-        />
-        <HeaderTitleLinks
-          className={clsx("at-header__title-center")}
-          links={links}
-        >
-          {children}
-        </HeaderTitleLinks>
-        <HeaderTitleDropdown
-          className={clsx("at-header__title-right")}
-          links={links}
-          userName={userName}
-          controls={controls}
-        >
-          {children}
-        </HeaderTitleDropdown>
-      </div>
+    <div className={clsx("at-header__left", className)} {...rest}>
+      {children}
     </div>
   );
 }
