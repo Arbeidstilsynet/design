@@ -240,7 +240,7 @@ ControlledMultiple.play = async ({ canvasElement, step }) => {
 export const ControlledIndependentLabelValue: StoryFn<SuggestionSingleProps> = (
   args,
 ) => {
-  const [item, setItem] = useState<SuggestionItem | undefined>(DATA_PEOPLE[0]);
+  const [item, setItem] = useState<SuggestionItem | null>(DATA_PEOPLE[0]!);
 
   return (
     <>
@@ -273,7 +273,6 @@ export const ControlledIndependentLabelValue: StoryFn<SuggestionSingleProps> = (
             fontSize: 14,
             height: 100,
             whiteSpace: "pre-wrap",
-            width: 400,
           }}
         >
           {JSON.stringify(item)}
@@ -282,7 +281,7 @@ export const ControlledIndependentLabelValue: StoryFn<SuggestionSingleProps> = (
 
       <Button
         onClick={() => {
-          setItem(DATA_PEOPLE[2]);
+          setItem(DATA_PEOPLE[2]!);
         }}
       >
         Sett Nina
@@ -520,4 +519,49 @@ export const InDetails: StoryFn<typeof Suggestion> = (args) => {
       </Details.Content>
     </Details>
   );
+};
+
+export const AutoPlacementOnXAxis: StoryFn<typeof Suggestion> = (args) => {
+  return (
+    <div style={{ paddingTop: "700px" }}>
+      <Field>
+        <Label>Velg en destinasjon</Label>
+        <Suggestion {...args} autoFocus>
+          <Suggestion.Input />
+          <Suggestion.Clear />
+          <Suggestion.List>
+            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            {DATA_PLACES.map((place) => (
+              <Suggestion.Option key={place}>{place}</Suggestion.Option>
+            ))}
+          </Suggestion.List>
+        </Suggestion>
+      </Field>
+    </div>
+  );
+};
+
+export const Creatable: StoryFn<typeof Suggestion> = (args) => {
+  return (
+    <Field>
+      <Label>Velg eller legg til en destinasjon</Label>
+      <Suggestion {...args}>
+        <Suggestion.Input />
+        <Suggestion.Clear />
+        <Suggestion.List>
+          <Suggestion.Empty>
+            Ingen treff, trykk enter for å legge til
+          </Suggestion.Empty>
+          {DATA_PLACES.map((place) => (
+            <Suggestion.Option key={place}>{place}</Suggestion.Option>
+          ))}
+        </Suggestion.List>
+      </Suggestion>
+    </Field>
+  );
+};
+
+Creatable.args = {
+  multiple: true,
+  creatable: true,
 };
