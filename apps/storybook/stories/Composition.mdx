@@ -151,7 +151,7 @@ export interface FilePickerItem<
 ## Compound components
 
 Compound components are a pattern where multiple components work together to provide a more complex UI.
-This is often done by creating a parent component passes props down to child components via [context](https://react.dev/reference/react/createContext) as dependency injection.
+This is often done by creating a parent component that passes props down to child components via [context](https://react.dev/reference/react/createContext) as dependency injection.
 
 Compound components can append subcomponents as static properties on the parent component, making it easy to discover and use them together, but this is not required for the pattern to work. With React Server Components we have to import each component separately anyway, so they should all be exported.
 
