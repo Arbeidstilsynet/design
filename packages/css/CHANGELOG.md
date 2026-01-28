@@ -1,5 +1,28 @@
 # @arbeidstilsynet/design-css
 
+## 0.6.0
+
+Released: 2026-01-28
+
+### Minor Changes
+
+- Header: set max-width on contents, configurable with CSS variable `--at-header-max-width`. Defaults to 82.5rem (~1320px). ([#563](https://github.com/Arbeidstilsynet/design/pull/563))
+
+- Header: full rewrite, new API using compound components ([#563](https://github.com/Arbeidstilsynet/design/pull/563))
+
+### Patch Changes
+
+- Header: fix background overlay in mobile covering Header logo and menu button ([#563](https://github.com/Arbeidstilsynet/design/pull/563))
+
+- Updated dependency `postcss-nesting` to `14.0.0`. ([#541](https://github.com/Arbeidstilsynet/design/pull/541))
+
+- Updated dependency `@digdir/designsystemet-css` to `1.11.0`. ([#557](https://github.com/Arbeidstilsynet/design/pull/557))
+  Updated dependency `@digdir/designsystemet` to `1.11.0`.
+  Updated dependency `@digdir/designsystemet-react` to `1.11.0`.
+  Updated dependency `@digdir/designsystemet-types` to `1.11.0`.
+
+- Updated dependency `@types/node` to `24.10.9`. ([#546](https://github.com/Arbeidstilsynet/design/pull/546))
+
 ## 0.5.0
 
 Released: 2026-01-08

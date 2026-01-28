@@ -1,5 +1,49 @@
 # @arbeidstilsynet/design-react
 
+## 0.6.0
+
+Released: 2026-01-28
+
+### Minor Changes
+
+- Header: can now use any ReactNode as Logo/Title, allowing link to root ([#563](https://github.com/Arbeidstilsynet/design/pull/563))
+
+- Re-export new component `EXPERIMENTAL_AvatarStack` from `@digdir/designsystemet-react@1.11.0` ([#557](https://github.com/Arbeidstilsynet/design/pull/557))
+
+- Header: set max-width on contents, configurable with CSS variable `--at-header-max-width`. Defaults to 82.5rem (~1320px). ([#563](https://github.com/Arbeidstilsynet/design/pull/563))
+
+- Header: full rewrite, new API using compound components ([#563](https://github.com/Arbeidstilsynet/design/pull/563))
+
+### Patch Changes
+
+- Header: fix background overlay in mobile covering Header logo and menu button ([#563](https://github.com/Arbeidstilsynet/design/pull/563))
+
+- Updated dependency `@types/react` to `19.2.9`. ([#555](https://github.com/Arbeidstilsynet/design/pull/555))
+
+- Updated dependency `vite` to `7.3.1`. ([#529](https://github.com/Arbeidstilsynet/design/pull/529))
+
+- Updated dependency `@navikt/aksel-icons` to `^7.40.0`. ([#544](https://github.com/Arbeidstilsynet/design/pull/544))
+
+- Updated dependency `typescript-eslint` to `8.53.1`. ([#552](https://github.com/Arbeidstilsynet/design/pull/552))
+
+- Updated dependency `@storybook/addon-a11y` to `10.2.0`. ([#558](https://github.com/Arbeidstilsynet/design/pull/558))
+  Updated dependency `@storybook/addon-docs` to `10.2.0`.
+  Updated dependency `@storybook/addon-vitest` to `10.2.0`.
+  Updated dependency `@storybook/react-vite` to `10.2.0`.
+  Updated dependency `eslint-plugin-storybook` to `10.2.0`.
+  Updated dependency `storybook` to `10.2.0`.
+
+- Updated dependency `@testing-library/react` to `16.3.2`. ([#551](https://github.com/Arbeidstilsynet/design/pull/551))
+
+- Updated dependency `@digdir/designsystemet-css` to `1.11.0`. ([#557](https://github.com/Arbeidstilsynet/design/pull/557))
+  Updated dependency `@digdir/designsystemet` to `1.11.0`.
+  Updated dependency `@digdir/designsystemet-react` to `1.11.0`.
+  Updated dependency `@digdir/designsystemet-types` to `1.11.0`.
+
+- Updated dependency `@types/node` to `24.10.9`. ([#546](https://github.com/Arbeidstilsynet/design/pull/546))
+
+- Header: fix menu close only registering on chevron icon ([#563](https://github.com/Arbeidstilsynet/design/pull/563))
+
 ## 0.5.0
 
 Released: 2026-01-08
