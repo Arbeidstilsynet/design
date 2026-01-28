@@ -109,7 +109,7 @@ function Button({ variant, ...rest }: ButtonProps) {
 
 In addition to HTMLAttributes, we use a common generic type [DefaultProps](https://github.com/Arbeidstilsynet/design/blob/main/packages/react/src/types.ts) to ensure each component supports `data-` attributes from Designsystemet, as well as `ref`. Almost always, rest props should be added to the outermost component/element.
 
-Here is a real example of `FilePicker`'s props. Note that we don't need to explicitely define common props like `id`, `className`, `style`.
+Here is a real example of `FilePicker`'s props. Note that we don't need to explicitly define common props like `id`, `className`, `style`.
 
 ```tsx
 import type { HTMLAttributes } from "react";
