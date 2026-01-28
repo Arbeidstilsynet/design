@@ -1,6 +1,5 @@
 import "@arbeidstilsynet/design-css";
 import "@arbeidstilsynet/design-theme/arbeidstilsynet.css";
-import "../utils/add-displaynames";
 import {
   Controls,
   Description,
@@ -10,6 +9,7 @@ import {
   Title,
 } from "@storybook/addon-docs/blocks";
 import type { Preview } from "@storybook/react-vite";
+import "../utils/add-displaynames";
 import { customStylesDecorator } from "../utils/customStylesDecorator";
 import "./preview.css";
 
@@ -86,6 +86,7 @@ const preview: Preview = {
           "Usage",
           "Colors",
           "Icons",
+          "Composition",
           "Showcase",
           "Changelog",
           "Arbeidstilsynet",

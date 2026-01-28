@@ -1,0 +1,223 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Composition" />
+
+# Patterns for composing components
+
+This page covers React patterns used throughout Gnist to help you understand how our components work and how to use them effectively. This is also relevant for developers of Gnist that want to add new components.
+
+## Composition
+
+The most fundamental pattern in React is **composition**. This means that components can be used together to create more complex UIs.
+Instead of creating the entire UI in a single massive function, we can break it down into smaller, reusable components that each handle a specific part of the UI.
+
+```tsx
+function Avatar(props: { src: string; alt: string }) {
+  return <img className="avatar" src={props.src} alt={props.alt} />;
+}
+
+function UserProfile(props: { name: string; avatarSrc: string }) {
+  return (
+    <div className="user-profile">
+      <Avatar src={props.avatarSrc} alt={`${props.name}'s avatar`} />
+      <h2>{props.name}</h2>
+    </div>
+  );
+}
+```
+
+## Slots
+
+Slots are a way to pass components as arguments to other components. In React, there is a default slot called `children` that is used regularly.
+Any time we insert JSX between an opening and closing tag of a component or HTML element, we are using the `children` slot.
+Components receive this as `props.children`.
+
+```tsx
+function Card(props: { children: React.ReactNode }) {
+  return <div className="card">{props.children}</div>;
+}
+
+function InfoCard() {
+  return (
+    <Card>
+      <h2>This is a card</h2>
+      <p>Cards can be used to group related information.</p>
+    </Card>
+  );
+}
+```
+
+Other slots can be created by adding additional props of type `React.ReactNode`.
+For example, here's how we could create a `Dialog` component with `header`, `body`, and `footer` slots:
+
+```tsx
+function Dialog(props: {
+  header: React.ReactNode;
+  body: React.ReactNode;
+  footer: React.ReactNode;
+}) {
+  return (
+    <div className="dialog">
+      <div className="dialog-header">{props.header}</div>
+      <div className="dialog-body">{props.body}</div>
+      <div className="dialog-footer">{props.footer}</div>
+    </div>
+  );
+}
+```
+
+We can also use utilities like Radix UI's [Slot](https://www.radix-ui.com/docs/primitives/utilities/slot) component to let the consumer pass arbitrary components and merge its props with additional props from us. This pattern is used by many components in Designsystemet.
+
+```tsx
+import { Slot } from "@radix-ui/react-slot";
+
+function IconButton(props: { asChild?: boolean; children: React.ReactNode }) {
+  const Component = props.asChild ? Slot : "button";
+  return <Component className="icon-button">{props.children}</Component>;
+}
+```
+
+## Rest props
+
+Rest props is a pattern where we collect all remaining props and pass them down to a child component or HTML element. This is often used to allow consumers to pass additional attributes like `id`, `className`, `style`, `aria-*` attributes, event handlers, etc.
+This can be done in a typesafe way by using the `HTMLAttributes` interface from React.
+
+```tsx
+import type { HTMLAttributes } from "react";
+
+interface ButtonProps extends HTMLAttributes<HTMLButtonElement> {
+  variant: "primary" | "secondary";
+}
+
+function Button({ variant, ...rest }: ButtonProps) {
+  return (
+    <button className={`button button--${variant}`} {...rest}>
+      {rest.children}
+    </button>
+  );
+}
+
+// Usage
+<Button
+  variant="primary"
+  id="submit-button"
+  onClick={() => alert("Button clicked!")}
+>
+  Click me
+</Button>;
+```
+
+In addition to HTMLAttributes, we use a common generic type [DefaultProps](https://github.com/Arbeidstilsynet/design/blob/main/packages/react/src/types.ts) to ensure each component supports `data-` attributes from Designsystemet, as well as `ref`. Almost always, rest props should be added to the outermost component/element.
+
+Here is a real example of `FilePicker`'s props. Note that we don't need to explicitly define common props like `id`, `className`, `style`.
+
+```tsx
+import type { HTMLAttributes } from "react";
+import type { DefaultProps } from "../../types";
+
+export interface FilePickerProps<TFileId extends string | number>
+  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
+  /** Should the FilePicker be disabled */
+  disabled?: boolean;
+  /** Display spinner while processing files */
+  isWaiting?: boolean;
+
+  /** List of currently selected files
+   *
+   * https://developer.mozilla.org/en-US/docs/Web/API/File
+   */
+  files: FilePickerItem<TFileId>[] | null;
+  /** List of general validation errors. Will be displayed by `FilePicker.Errors` */
+  errors: string[] | null;
+
+  /** Function to call when adding one or more files */
+  onAdd: (files: File[]) => void | Promise<void>;
+  /** Function called when removing a file */
+  onRemove: (id: TFileId) => void | Promise<void>;
+}
+
+export interface FilePickerItem<
+  TFileId extends string | number = string | number,
+> {
+  /** Id for this file. Used as React key. Should be unique. You can use `file.name` if you prevent duplicates. */
+  id: TFileId;
+  /** The file itself. See: https://developer.mozilla.org/en-US/docs/Web/API/File */
+  file: File;
+  /** If this file has an error. Consider passing details in `errors` to `FilePicker` to show the cause. */
+  hasError?: boolean | null;
+}
+```
+
+## Compound components
+
+Compound components are a pattern where multiple components work together to provide a more complex UI.
+This is often done by creating a parent component that passes props down to child components via [context](https://react.dev/reference/react/createContext) as dependency injection.
+
+Compound components can append subcomponents as static properties on the parent component, making it easy to discover and use them together, but this is not required for the pattern to work. With React Server Components we have to import each component separately anyway, so they should all be exported.
+
+Compound components need more initial setup to work, but they have several advantages over monolithic components:
+
+- They are much more flexible, since the consumer can choose which subcomponents to use and how to arrange them.
+- Arbitrary content can be inserted _between_ subcomponents
+- Rest props and slots can be used on each subcomponent, allowing for more customization.
+- Better DX, since each subcomponent can have its own props and documentation. The JSX structure makes it clear what to expect from the rendered DOM output.
+
+Whenever we create a complex component, we should consider if it makes sense to break it down into subcomponents that can be used together.
+
+For example, here is a monolithic Tabs component from a consumer perspective:
+
+```tsx
+<Tabs
+  defaultIndex={0}
+  tabs={[
+    { label: "Tab 1", content: "content 1" },
+    { label: "Tab 2", content: "content 2" },
+    { label: "Tab 3", content: "content 3" },
+  ]}
+/>
+```
+
+And here is an example of the Tabs component from Designsystemet
+
+```tsx
+<Tabs defaultValue="value1">
+  <Tabs.List>
+    <Tabs.Tab value="value1">Tab 1</Tabs.Tab>
+    <Tabs.Tab value="value2">Tab 2</Tabs.Tab>
+    <Tabs.Tab value="value3">Tab 3</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel value="value1">content 1</Tabs.Panel>
+  <Tabs.Panel value="value2">content 2</Tabs.Panel>
+  <Tabs.Panel value="value3">content 3</Tabs.Panel>
+</Tabs>
+```
+
+While the compound component version is more verbose, it is much more flexible.
+
+Consider if want to add event handlers or attributes to the tabs, or append styles to the tab list:
+
+```tsx
+<Tabs defaultValue="value1">
+  <Tabs.List className="my-custom-class">
+    <Tabs.Tab value="value1" onClick={() => console.log("Tab 1 clicked")}>
+      Tab 1
+    </Tabs.Tab>
+    <Tabs.Tab value="value2">Tab 2</Tabs.Tab>
+    <Tabs.Tab value="value3">Tab 3</Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel value="value1">content 1</Tabs.Panel>
+  <Tabs.Panel value="value2">content 2</Tabs.Panel>
+  <Tabs.Panel value="value3">content 3</Tabs.Panel>
+</Tabs>
+```
+
+With monolithic components this would require expanding the props of the Tabs component to support every use case, leading to a bloated API that is hard to maintain and hard to understand.
+
+### Example export structure
+
+See [FilePicker](https://github.com/Arbeidstilsynet/design/blob/main/packages/react/src/components/filepicker/index.tsx) for a real example.
+
+### Further reading
+
+- [vercel.com - Compound Components and Advanced Composition](https://vercel.com/academy/shadcn-ui/compound-components-and-advanced-composition#testing-strategies)
+- [patterns.dev - Compound Pattern](https://www.patterns.dev/react/compound-pattern/)
