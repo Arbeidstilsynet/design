@@ -30,7 +30,7 @@ jobs:
           token: ${{ steps.app-token.outputs.token }}
       - uses: Arbeidstilsynet/action-pnpm-setup@f3d97993013e8b1a22061064fbc5786b3a84bfd6 # v1
 
-      - uses: changesets/action@v1.6.0
+      - uses: changesets/action@c48e67d110a68bc90ccf1098e9646092baacaa87 # v1.6.0
         id: changeset
         with:
           version: pnpm run version
