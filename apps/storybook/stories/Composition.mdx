@@ -79,7 +79,7 @@ function IconButton(props: { asChild?: boolean; children: React.ReactNode }) {
 
 ## Rest props
 
-Rest props is a pattern where we collect all unrecognized props and pass them down to a child component or HTML element. This is often used to allow consumers to pass additional attributes like `id`, `className`, `style`, `aria-*` attributes, event handlers, etc.
+Rest props is a pattern where we collect all remaining props and pass them down to a child component or HTML element. This is often used to allow consumers to pass additional attributes like `id`, `className`, `style`, `aria-*` attributes, event handlers, etc.
 This can be done in a typesafe way by using the `HTMLAttributes` interface from React.
 
 ```tsx
