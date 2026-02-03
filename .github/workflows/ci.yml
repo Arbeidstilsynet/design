@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: Arbeidstilsynet/action-pnpm-setup@f3d97993013e8b1a22061064fbc5786b3a84bfd6 # v1
       - run: pnpm format:check
 
@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: Arbeidstilsynet/action-pnpm-setup@f3d97993013e8b1a22061064fbc5786b3a84bfd6 # v1
       - run: pnpm typecheck
 
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: Arbeidstilsynet/action-pnpm-setup@f3d97993013e8b1a22061064fbc5786b3a84bfd6 # v1
       - run: pnpm build
 
@@ -39,7 +39,7 @@ jobs:
       checks: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: Arbeidstilsynet/action-pnpm-setup@f3d97993013e8b1a22061064fbc5786b3a84bfd6 # v1
       - run: pnpm lint
       - run: pnpm test
