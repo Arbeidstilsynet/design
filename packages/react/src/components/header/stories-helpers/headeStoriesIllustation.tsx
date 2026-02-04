@@ -118,3 +118,5 @@ export function HeaderStoriesIllustration({
     </svg>
   );
 }
+
+HeaderStoriesIllustration.displayName = "HeaderStoriesIllustration";
