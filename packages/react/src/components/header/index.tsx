@@ -36,7 +36,9 @@ import { HeaderTitle } from "./headerTitle";
  * <Header links={links}>
  *   <Header.Title>
  *     <Header.Illustration>
- *       <img src="/illustration.svg" alt="" />
+ *       <Link href="/">
+ *         <img src="/illustration.svg" alt="" />
+ *       </Link>
  *     </Header.Illustration>
  *     <Header.Logo>
  *       <Link href="/">
