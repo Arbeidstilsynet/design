@@ -37,7 +37,7 @@ import { HeaderTitle } from "./headerTitle";
  *   <Header.Title>
  *     <Header.Illustration>
  *       <Link href="/">
- *         <img src="/illustration.svg" alt="" />
+ *         <img src="/illustration.svg" alt="App Name" />
  *       </Link>
  *     </Header.Illustration>
  *     <Header.Logo>

@@ -48,7 +48,7 @@ export const Preview: Story = {
       <Header {...args}>
         <Header.Title>
           <Header.Illustration>
-            <Link href="/">
+            <Link href="/" alt="Fagsystem logo">
               <HeaderStoriesIllustration />
             </Link>
           </Header.Illustration>
@@ -85,7 +85,7 @@ export const NoMenu: Story = {
       <Header {...args}>
         <Header.Title>
           <Header.Illustration>
-            <Link href="/">
+            <Link href="/" alt="Fagsystem logo">
               <HeaderStoriesIllustration />
             </Link>
           </Header.Illustration>
@@ -115,7 +115,7 @@ export const NoNavigation: Story = {
       <Header {...args}>
         <Header.Title>
           <Header.Illustration>
-            <Link href="/">
+            <Link href="/" alt="Fagsystem logo">
               <HeaderStoriesIllustration />
             </Link>
           </Header.Illustration>
@@ -148,7 +148,7 @@ export const CustomMaxWidth: Story = {
       >
         <Header.Title>
           <Header.Illustration>
-            <Link href="/">
+            <Link href="/" alt="Fagsystem logo">
               <HeaderStoriesIllustration />
             </Link>
           </Header.Illustration>
@@ -181,7 +181,7 @@ export const CustomLogoFont: Story = {
       <Header {...args}>
         <Header.Title>
           <Header.Illustration>
-            <Link href="/">
+            <Link href="/" alt="Fagsystem logo">
               <HeaderStoriesIllustration />
             </Link>
           </Header.Illustration>
