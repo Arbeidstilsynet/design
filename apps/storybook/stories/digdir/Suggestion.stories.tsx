@@ -14,7 +14,7 @@ import {
   useDebounceCallback,
 } from "@arbeidstilsynet/design-react";
 import type { Meta, StoryFn } from "@storybook/react-vite";
-import { type ChangeEvent, useState } from "react";
+import { InputEventHandler, useState } from "react";
 import { expect, userEvent, waitFor, within } from "storybook/test";
 
 export default {
@@ -36,7 +36,18 @@ export default {
       // TODO: this rule should be enabled after https://github.com/dequelabs/axe-core/issues/4672 have propagated to @storybook/addon-a11y.
       config: {
         rules: [
+          // Axe can't find listbox inside shadow-dom, and thus thinks <data> elements
+          // (chips for selected items) don't have an appropriate parent element
           {
+            id: "aria-required-parent",
+            matches: (element: HTMLElement) =>
+              !(
+                element instanceof HTMLDataElement &&
+                element.className === "ds-chip"
+              ),
+          },
+          {
+            // TODO: this rule should be enabled after https://github.com/dequelabs/axe-core/issues/4672 have propagated to @storybook/addon-a11y.
             id: "aria-allowed-role",
             enabled: false,
           },
@@ -73,7 +84,7 @@ const DATA_PEOPLE = [
   { label: "James", value: "#007" },
   { label: "Nina", value: "#113" },
   { label: "Tove", value: "#110" },
-];
+] as const;
 
 export const Preview: StoryFn<typeof Suggestion> = (args) => {
   return (
@@ -240,7 +251,7 @@ ControlledMultiple.play = async ({ canvasElement, step }) => {
 export const ControlledIndependentLabelValue: StoryFn<SuggestionSingleProps> = (
   args,
 ) => {
-  const [item, setItem] = useState<SuggestionItem | null>(DATA_PEOPLE[0]!);
+  const [item, setItem] = useState<SuggestionItem | null>(DATA_PEOPLE[0]);
 
   return (
     <>
@@ -281,7 +292,7 @@ export const ControlledIndependentLabelValue: StoryFn<SuggestionSingleProps> = (
 
       <Button
         onClick={() => {
-          setItem(DATA_PEOPLE[2]!);
+          setItem(DATA_PEOPLE[2]);
         }}
       >
         Sett Nina
@@ -403,9 +414,9 @@ export const FetchExternal: StoryFn<typeof Suggestion> = (args) => {
   const [value, setValue] = useState("");
   const [options, setOptions] = useState<string[] | null>(null);
 
-  const handleInput = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = encodeURIComponent(event.target.value.trim());
-    setValue(event.target.value);
+  const handleInput: InputEventHandler<HTMLInputElement> = (event) => {
+    const value = encodeURIComponent(event.currentTarget.value.trim());
+    setValue(event.currentTarget.value);
     setOptions(null); // Clear options
 
     if (!value) return;
