@@ -48,8 +48,8 @@ export const Preview: Story = {
       <Header {...args}>
         <Header.Title>
           <Header.Illustration>
-            <Link href="/" alt="Fagsystem logo">
-              <HeaderStoriesIllustration />
+            <Link href="/">
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Link>
           </Header.Illustration>
           <Header.Logo>
@@ -85,8 +85,8 @@ export const NoMenu: Story = {
       <Header {...args}>
         <Header.Title>
           <Header.Illustration>
-            <Link href="/" alt="Fagsystem logo">
-              <HeaderStoriesIllustration />
+            <Link href="/">
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Link>
           </Header.Illustration>
           <Header.Logo>
@@ -115,8 +115,8 @@ export const NoNavigation: Story = {
       <Header {...args}>
         <Header.Title>
           <Header.Illustration>
-            <Link href="/" alt="Fagsystem logo">
-              <HeaderStoriesIllustration />
+            <Link href="/">
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Link>
           </Header.Illustration>
           <Header.Logo>
@@ -148,8 +148,8 @@ export const CustomMaxWidth: Story = {
       >
         <Header.Title>
           <Header.Illustration>
-            <Link href="/" alt="Fagsystem logo">
-              <HeaderStoriesIllustration />
+            <Link href="/">
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Link>
           </Header.Illustration>
           <Header.Logo>
@@ -181,8 +181,8 @@ export const CustomLogoFont: Story = {
       <Header {...args}>
         <Header.Title>
           <Header.Illustration>
-            <Link href="/" alt="Fagsystem logo">
-              <HeaderStoriesIllustration />
+            <Link href="/">
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Link>
           </Header.Illustration>
           <Header.Logo>
