@@ -48,15 +48,19 @@ export const Preview: Story = {
       <Header {...args}>
         <Header.Title>
           <Header.Illustration>
-            <HeaderStoriesIllustration />
+            <Link href="/">
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
+            </Link>
           </Header.Illustration>
           <Header.Logo>
             <Link href="/">
-              <Heading>Arbeidstilsynet</Heading>
+              <Heading>Fagsystem</Heading>
             </Link>
           </Header.Logo>
         </Header.Title>
+
         <Header.Navbar />
+
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
           <ProfileMenuItem />
           <InboxMenuItem />
@@ -81,14 +85,17 @@ export const NoMenu: Story = {
       <Header {...args}>
         <Header.Title>
           <Header.Illustration>
-            <HeaderStoriesIllustration />
+            <Link href="/">
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
+            </Link>
           </Header.Illustration>
           <Header.Logo>
             <Link href="/">
-              <Heading>Arbeidstilsynet</Heading>
+              <Heading>Fagsystem</Heading>
             </Link>
           </Header.Logo>
         </Header.Title>
+
         <Header.Navbar />
       </Header>
     );
@@ -108,15 +115,17 @@ export const NoNavigation: Story = {
       <Header {...args}>
         <Header.Title>
           <Header.Illustration>
-            <HeaderStoriesIllustration />
+            <Link href="/">
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
+            </Link>
           </Header.Illustration>
           <Header.Logo>
             <Link href="/">
-              <Heading>Arbeidstilsynet</Heading>
+              <Heading>Fagsystem</Heading>
             </Link>
           </Header.Logo>
         </Header.Title>
-        <Header.Navbar />
+
         <Header.Menu triggerContent="Innstillinger">
           <Switch label="Mørk modus" position="end" />
         </Header.Menu>
@@ -139,15 +148,19 @@ export const CustomMaxWidth: Story = {
       >
         <Header.Title>
           <Header.Illustration>
-            <HeaderStoriesIllustration />
+            <Link href="/">
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
+            </Link>
           </Header.Illustration>
           <Header.Logo>
             <Link href="/">
-              <Heading>Arbeidstilsynet</Heading>
+              <Heading>Fagsystem</Heading>
             </Link>
           </Header.Logo>
         </Header.Title>
+
         <Header.Navbar />
+
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
           <ProfileMenuItem />
           <InboxMenuItem />
@@ -168,17 +181,19 @@ export const CustomLogoFont: Story = {
       <Header {...args}>
         <Header.Title>
           <Header.Illustration>
-            <HeaderStoriesIllustration />
+            <Link href="/">
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
+            </Link>
           </Header.Illustration>
           <Header.Logo>
             <Link href="/">
-              <Heading style={{ fontFamily: "monospace" }}>
-                Arbeidstilsynet
-              </Heading>
+              <Heading style={{ fontFamily: "monospace" }}>Fagsystem</Heading>
             </Link>
           </Header.Logo>
         </Header.Title>
+
         <Header.Navbar />
+
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
           <ProfileMenuItem />
           <InboxMenuItem />
