@@ -55,6 +55,8 @@ export function ProfileMenuItem() {
   );
 }
 
+ProfileMenuItem.displayName = "ProfileMenuItem";
+
 /**
  * Inbox menu item example with badge.
  * @internal - Not exported to consumers
@@ -66,3 +68,5 @@ export function InboxMenuItem({ count = 15 }: Readonly<{ count?: number }>) {
     </MenuLinkItem>
   );
 }
+
+InboxMenuItem.displayName = "InboxMenuItem";

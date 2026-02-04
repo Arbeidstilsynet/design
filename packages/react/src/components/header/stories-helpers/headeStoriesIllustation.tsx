@@ -6,6 +6,7 @@ interface HeaderStoriesIllustrationProps extends React.SVGProps<SVGSVGElement> {
 export function HeaderStoriesIllustration({
   width = 48,
   height = 40,
+  ...rest
 }: Readonly<HeaderStoriesIllustrationProps>) {
   return (
     <svg
@@ -14,6 +15,7 @@ export function HeaderStoriesIllustration({
       viewBox="0 0 48 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      {...rest}
     >
       <path
         d="M39.6146 39.0748C44.2288 34.9752 47.1325 29.0195 47.1325 22.3899C47.1325 10.0245 37.0294 6.10352e-05 24.567 6.10352e-05C12.1047 6.10352e-05 2.00159 10.0245 2.00159 22.3899C2.00159 29.0189 4.90531 34.9752 9.51947 39.0748H39.6146Z"
@@ -118,3 +120,5 @@ export function HeaderStoriesIllustration({
     </svg>
   );
 }
+
+HeaderStoriesIllustration.displayName = "HeaderStoriesIllustration";
