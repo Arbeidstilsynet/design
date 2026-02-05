@@ -87,15 +87,7 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 48rem) {
-  .at-header {
-    & .ds-search {
-      max-width: 100%;
-    }
-  }
-}
-
-@container (min-width: 48rem) {
+@media (min-width: 48rem) {
   .at-header__dropdown-trigger {
     background: unset;
 
@@ -105,7 +97,13 @@
   }
 }
 
-@container (max-width: 48rem) {
+@media (max-width: 48rem) {
+  .at-header {
+    & .ds-search {
+      max-width: 100%;
+    }
+  }
+
   .at-header__container {
     justify-content: space-between;
   }
