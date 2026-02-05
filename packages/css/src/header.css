@@ -45,7 +45,7 @@
   flex: 1;
 }
 
-* > .at-header__center:not(:first-child) {
+.at-header__center:not(:first-child) {
   margin-left: var(--ds-size-22);
 }
 
