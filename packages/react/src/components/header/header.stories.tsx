@@ -14,7 +14,10 @@ const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
   component: Header,
   parameters: {
-    layout: "padded",
+    layout: "fullscreen",
+    customStyles: {
+      padding: "0",
+    }
   },
   subcomponents: {
     ["Header.Title"]: Header.Title,
