@@ -25,38 +25,51 @@ export function MenuLinkItem({
 }: Readonly<MenuLinkItemProps>) {
   return (
     <Button
-      style={{
-        "--dsc-button-background--active": "var(--ds-color-surface-tinted)",
-        "--dsc-button-background--hover": "var(--ds-color-surface-tinted)",
-        "--dsc-button-background": "unset",
-        "--dsc-button-border-width": "0",
-        "--dsc-button-color--hover": "var(--ds-color-text-default)",
-        "--dsc-button-color": "var(--ds-color-text-default)",
-        "--dsc-button-size": "var(--ds-size-8)",
-        alignItems: "center",
-        height: "var(--ds-size-10)",
-        minHeight: "unset",
-        display: "flex",
-        justifyContent: "flex-start",
-        padding: "var(--ds-size-2) var(--ds-size-4)",
-      } as React.CSSProperties}
+      style={
+        {
+          "--dsc-button-background--active": "var(--ds-color-surface-tinted)",
+          "--dsc-button-background--hover": "var(--ds-color-surface-tinted)",
+          "--dsc-button-background": "unset",
+          "--dsc-button-border-width": "0",
+          "--dsc-button-color--hover": "var(--ds-color-text-default)",
+          "--dsc-button-color": "var(--ds-color-text-default)",
+          "--dsc-button-size": "var(--ds-size-8)",
+          alignItems: "center",
+          height: "var(--ds-size-10)",
+          minHeight: "unset",
+          display: "flex",
+          justifyContent: "flex-start",
+          padding: "var(--ds-size-2) var(--ds-size-4)",
+        } as React.CSSProperties
+      }
     >
-      <div style={{ flexShrink: 0, height: "fit-content", display: "flex", alignItems: "center" }}>{icon}</div>
-      <span>{children}</span>
-      {badge !== undefined && (
-        <div style={{
+      <div
+        style={{
+          flexShrink: 0,
+          height: "fit-content",
           display: "flex",
           alignItems: "center",
-          justifyContent: "center",
-          color: `var(--ds-color-${badgeDataColor}-text-default)`,
-          backgroundColor: `var(--ds-color-${badgeDataColor}-surface-tinted)`,
-          width: "var(--ds-size-7)",
-          height: "var(--ds-size-7)",
-          borderRadius: "50%",
-          fontSize: "var(--ds-font-size-3)",
-          fontWeight: "400",
-          marginLeft: "auto",
-        }}>
+        }}
+      >
+        {icon}
+      </div>
+      <span>{children}</span>
+      {badge !== undefined && (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            color: `var(--ds-color-${badgeDataColor}-text-default)`,
+            backgroundColor: `var(--ds-color-${badgeDataColor}-surface-tinted)`,
+            width: "var(--ds-size-7)",
+            height: "var(--ds-size-7)",
+            borderRadius: "50%",
+            fontSize: "var(--ds-font-size-3)",
+            fontWeight: "400",
+            marginLeft: "auto",
+          }}
+        >
           {badge}
         </div>
       )}
@@ -84,7 +97,12 @@ ProfileMenuItem.displayName = "ProfileMenuItem";
  */
 export function InboxMenuItem({ count = 19 }: Readonly<{ count?: number }>) {
   return (
-    <MenuLinkItem icon={<InboxIcon />} href="#" badge={count} badgeDataColor="warning">
+    <MenuLinkItem
+      icon={<InboxIcon />}
+      href="#"
+      badge={count}
+      badgeDataColor="warning"
+    >
       Innboks
     </MenuLinkItem>
   );
@@ -96,7 +114,12 @@ export function InboxMenuItem({ count = 19 }: Readonly<{ count?: number }>) {
  */
 export function TODOsMenuItem({ count = 19 }: Readonly<{ count?: number }>) {
   return (
-    <MenuLinkItem icon={<TasklistIcon />} href="#" badge={count} badgeDataColor="info">
+    <MenuLinkItem
+      icon={<TasklistIcon />}
+      href="#"
+      badge={count}
+      badgeDataColor="info"
+    >
       Gjøremål
     </MenuLinkItem>
   );

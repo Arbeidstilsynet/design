@@ -46,7 +46,7 @@
 }
 
 * > .at-header__center:not(:first-child) {
-    margin-left: var(--ds-size-22);
+  margin-left: var(--ds-size-22);
 }
 
 .at-header__right {
@@ -148,7 +148,8 @@
     color: var(--ds-color-base-contrast-default);
   }
 
-  .at-header__link, .at-header__link[data-color="primary"] {
+  .at-header__link,
+  .at-header__link[data-color="primary"] {
     color: var(--ds-color-text-default);
     font-weight: var(--ds-font-weight-regular);
     width: 100%;

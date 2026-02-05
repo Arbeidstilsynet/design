@@ -51,12 +51,12 @@ export const Preview: Story = {
       <Header {...args}>
         <Link href="/">
           <Header.Title>
-              <Header.Illustration>
-                <HeaderStoriesIllustration aria-label="Fagsystem logo" />
-              </Header.Illustration>
-              <Header.Logo>
-                <HeaderStoriesTitle />
-              </Header.Logo>
+            <Header.Illustration>
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
+            </Header.Illustration>
+            <Header.Logo>
+              <HeaderStoriesTitle />
+            </Header.Logo>
           </Header.Title>
         </Link>
         <Header.Navbar />
@@ -113,7 +113,7 @@ export const NoNavigation: Story = {
         <Link href="/">
           <Header.Title>
             <Header.Illustration>
-              <HeaderStoriesIllustration aria-label="Fagsystem logo"/>
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
             <Header.Logo>
               <HeaderStoriesTitle />
@@ -144,7 +144,7 @@ export const CustomMaxWidth: Story = {
         <Link href="/">
           <Header.Title>
             <Header.Illustration>
-              <HeaderStoriesIllustration aria-label="Fagsystem logo"/>
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
             <Header.Logo>
               <HeaderStoriesTitle />
@@ -172,13 +172,19 @@ export const CustomLogoFont: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Link href="/" style={{ color: "var(--ds-color-neutral-text-default)", textDecoration: "none" }}>
+        <Link
+          href="/"
+          style={{
+            color: "var(--ds-color-neutral-text-default)",
+            textDecoration: "none",
+          }}
+        >
           <Header.Title>
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
             <Header.Logo>
-                <Heading style={{ fontFamily: "monospace" }}>Fagsystem</Heading>
+              <Heading style={{ fontFamily: "monospace" }}>Fagsystem</Heading>
             </Header.Logo>
           </Header.Title>
         </Link>
@@ -203,15 +209,19 @@ export const OnlyDarkModeInMenu: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Link href="/" style={{ color: "var(--ds-color-neutral-text-default)", textDecoration: "none" }}>
+        <Link
+          href="/"
+          style={{
+            color: "var(--ds-color-neutral-text-default)",
+            textDecoration: "none",
+          }}
+        >
           <Header.Title>
             <Header.Illustration>
               <HeaderStoriesIllustration />
             </Header.Illustration>
             <Header.Logo>
-                <Heading style={{ fontFamily: "monospace" }}>
-                  Fagsystem
-                </Heading>
+              <Heading style={{ fontFamily: "monospace" }}>Fagsystem</Heading>
             </Header.Logo>
           </Header.Title>
         </Link>
