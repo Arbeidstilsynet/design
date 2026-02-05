@@ -17,7 +17,7 @@ const meta: Meta<typeof Header> = {
     layout: "fullscreen",
     customStyles: {
       padding: "0",
-    }
+    },
   },
   subcomponents: {
     ["Header.Title"]: Header.Title,
