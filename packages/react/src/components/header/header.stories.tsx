@@ -30,13 +30,13 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const links = [
-  <Link data-color="primary" key="home" href="./#">
+  <Link data-color="primary" key="home" href="./#" aria-label="Link til første">
     Første
   </Link>,
-  <Link data-color="secondary" key="about" href="./#">
+  <Link data-color="secondary" key="about" href="./#" aria-label="Link til andre">
     Andre
   </Link>,
-  <Link data-color="secondary" key="services" href="./#">
+  <Link data-color="secondary" key="services" href="./#" aria-label="Link til tredje">
     Tredje
   </Link>,
 ];
@@ -49,7 +49,7 @@ export const Preview: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Link href="/">
+        <Link href="/" aria-label="Link til hjem">
           <Header.Title>
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
@@ -83,7 +83,7 @@ export const NoMenu: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Link href="/">
+        <Link href="/" aria-label="Link til hjem">
           <Header.Title>
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
@@ -110,7 +110,7 @@ export const NoNavigation: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Link href="/">
+        <Link href="/" aria-label="Link til hjem">
           <Header.Title>
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
@@ -141,7 +141,7 @@ export const CustomMaxWidth: Story = {
         {...args}
         style={{ "--at-header-max-width": "50rem" } as React.CSSProperties}
       >
-        <Link href="/">
+        <Link href="/" aria-label="Link til hjem">
           <Header.Title>
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
@@ -178,6 +178,7 @@ export const CustomLogoFont: Story = {
             color: "var(--ds-color-neutral-text-default)",
             textDecoration: "none",
           }}
+          aria-label="Link til hjem"
         >
           <Header.Title>
             <Header.Illustration>
@@ -209,19 +210,13 @@ export const OnlyDarkModeInMenu: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Link
-          href="/"
-          style={{
-            color: "var(--ds-color-neutral-text-default)",
-            textDecoration: "none",
-          }}
-        >
+        <Link href="/" aria-label="Link til hjem">
           <Header.Title>
             <Header.Illustration>
-              <HeaderStoriesIllustration />
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
             <Header.Logo>
-              <Heading style={{ fontFamily: "monospace" }}>Fagsystem</Heading>
+              <HeaderStoriesTitle />
             </Header.Logo>
           </Header.Title>
         </Link>
