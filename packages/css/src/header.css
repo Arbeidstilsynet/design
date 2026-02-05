@@ -95,6 +95,16 @@
   }
 }
 
+@container (min-width: 48rem) {
+  .at-header__dropdown-trigger {
+    background: unset;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 @container (max-width: 48rem) {
   .at-header__container {
     justify-content: space-between;
