@@ -31,13 +31,13 @@ type Story = StoryObj<typeof meta>;
 
 const links = [
   <Link data-color="primary" key="home" href="./#">
-    Hjem
+    Første
   </Link>,
   <Link data-color="secondary" key="about" href="./#">
-    Saker
+    Andre
   </Link>,
   <Link data-color="secondary" key="services" href="./#">
-    Virksomheter
+    Tredje
   </Link>,
 ];
 
