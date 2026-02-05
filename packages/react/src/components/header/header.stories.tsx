@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
-import { Divider, Heading, Link, Switch } from "../..";
+import { Divider, Heading, Link } from "../..";
 import { HeaderStoriesIllustration } from "./stories-helpers/headerStoriesIllustration";
 import {
+  DarkModeMenuItem,
   InboxMenuItem,
   ProfileMenuItem,
+  TODOsMenuItem,
 } from "./stories-helpers/headerStoriesMenuItems";
 import { HeaderStoriesTitle } from "./stories-helpers/headerStoriesTitle";
 
@@ -61,8 +63,9 @@ export const Preview: Story = {
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
           <ProfileMenuItem />
           <InboxMenuItem />
+          <TODOsMenuItem />
           <Divider />
-          <Switch label="Mørk modus" position="end" />
+          <DarkModeMenuItem />
         </Header.Menu>
       </Header>
     );
@@ -119,7 +122,7 @@ export const NoNavigation: Story = {
         </Link>
         <Header.Navbar />
         <Header.Menu triggerContent="Innstillinger">
-          <Switch label="Mørk modus" position="end" />
+          <DarkModeMenuItem />
         </Header.Menu>
       </Header>
     );
@@ -152,8 +155,9 @@ export const CustomMaxWidth: Story = {
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
           <ProfileMenuItem />
           <InboxMenuItem />
+          <TODOsMenuItem />
           <Divider />
-          <Switch label="Mørk modus" position="end" />
+          <DarkModeMenuItem />
         </Header.Menu>
       </Header>
     );
@@ -183,8 +187,37 @@ export const CustomLogoFont: Story = {
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
           <ProfileMenuItem />
           <InboxMenuItem />
+          <TODOsMenuItem />
           <Divider />
-          <Switch label="Mørk modus" position="end" />
+          <DarkModeMenuItem />
+        </Header.Menu>
+      </Header>
+    );
+  },
+  args: {
+    links,
+  },
+};
+
+export const OnlyDarkModeInMenu: Story = {
+  render: (args) => {
+    return (
+      <Header {...args}>
+        <Link href="/" style={{ color: "var(--ds-color-neutral-text-default)", textDecoration: "none" }}>
+          <Header.Title>
+            <Header.Illustration>
+              <HeaderStoriesIllustration />
+            </Header.Illustration>
+            <Header.Logo>
+                <Heading style={{ fontFamily: "monospace" }}>
+                  Fagsystem
+                </Heading>
+            </Header.Logo>
+          </Header.Title>
+        </Link>
+        <Header.Navbar />
+        <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
+          <DarkModeMenuItem />
         </Header.Menu>
       </Header>
     );
