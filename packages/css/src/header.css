@@ -37,13 +37,16 @@
 .at-header__left {
   justify-content: flex-start;
   gap: var(--ds-size-4);
-  margin-right: var(--ds-size-22);
 }
 
 .at-header__center {
   justify-content: flex-start;
   gap: var(--ds-size-8);
   flex: 1;
+}
+
+* > .at-header__center:not(:first-child) {
+    margin-left: var(--ds-size-22);
 }
 
 .at-header__right {

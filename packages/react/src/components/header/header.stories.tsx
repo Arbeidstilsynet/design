@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
-import { Divider, Heading, Link, Switch } from "../..";
+import { Divider, Heading, Switch } from "../..";
+import { Link } from "./stories-helpers/headerStoriesLink";
 import {
   InboxMenuItem,
   ProfileMenuItem,
 } from "./stories-helpers/headerStoriesMenuItems";
+import { HeaderStoriesTitle } from "./stories-helpers/headerStoriesTitle";
 import { HeaderStoriesIllustration } from "./stories-helpers/headeStoriesIllustation";
 
 const meta: Meta<typeof Header> = {
@@ -46,16 +48,16 @@ export const Preview: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Header.Title>
-          <Header.Illustration>
-            <HeaderStoriesIllustration />
-          </Header.Illustration>
-          <Header.Logo>
-            <Link href="/">
-              <Heading>Arbeidstilsynet</Heading>
-            </Link>
-          </Header.Logo>
-        </Header.Title>
+        <Link href="/">
+          <Header.Title>
+              <Header.Illustration>
+                <HeaderStoriesIllustration />
+              </Header.Illustration>
+              <Header.Logo>
+                <HeaderStoriesTitle />
+              </Header.Logo>
+          </Header.Title>
+        </Link>
         <Header.Navbar />
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
           <ProfileMenuItem />
@@ -79,16 +81,16 @@ export const NoMenu: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Header.Title>
-          <Header.Illustration>
-            <HeaderStoriesIllustration />
-          </Header.Illustration>
-          <Header.Logo>
-            <Link href="/">
-              <Heading>Arbeidstilsynet</Heading>
-            </Link>
-          </Header.Logo>
-        </Header.Title>
+        <Link href="/">
+          <Header.Title>
+            <Header.Illustration>
+              <HeaderStoriesIllustration />
+            </Header.Illustration>
+            <Header.Logo>
+              <HeaderStoriesTitle />
+            </Header.Logo>
+          </Header.Title>
+        </Link>
         <Header.Navbar />
       </Header>
     );
@@ -106,16 +108,16 @@ export const NoNavigation: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Header.Title>
-          <Header.Illustration>
-            <HeaderStoriesIllustration />
-          </Header.Illustration>
-          <Header.Logo>
-            <Link href="/">
-              <Heading>Arbeidstilsynet</Heading>
-            </Link>
-          </Header.Logo>
-        </Header.Title>
+        <Link href="/">
+          <Header.Title>
+            <Header.Illustration>
+              <HeaderStoriesIllustration />
+            </Header.Illustration>
+            <Header.Logo>
+              <HeaderStoriesTitle />
+            </Header.Logo>
+          </Header.Title>
+        </Link>
         <Header.Navbar />
         <Header.Menu triggerContent="Innstillinger">
           <Switch label="Mørk modus" position="end" />
@@ -137,16 +139,16 @@ export const CustomMaxWidth: Story = {
         {...args}
         style={{ "--at-header-max-width": "50rem" } as React.CSSProperties}
       >
-        <Header.Title>
-          <Header.Illustration>
-            <HeaderStoriesIllustration />
-          </Header.Illustration>
-          <Header.Logo>
-            <Link href="/">
-              <Heading>Arbeidstilsynet</Heading>
-            </Link>
-          </Header.Logo>
-        </Header.Title>
+        <Link href="/">
+          <Header.Title>
+            <Header.Illustration>
+              <HeaderStoriesIllustration />
+            </Header.Illustration>
+            <Header.Logo>
+              <HeaderStoriesTitle />
+            </Header.Logo>
+          </Header.Title>
+        </Link>
         <Header.Navbar />
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
           <ProfileMenuItem />
@@ -166,18 +168,18 @@ export const CustomLogoFont: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Header.Title>
-          <Header.Illustration>
-            <HeaderStoriesIllustration />
-          </Header.Illustration>
-          <Header.Logo>
-            <Link href="/">
-              <Heading style={{ fontFamily: "monospace" }}>
-                Arbeidstilsynet
-              </Heading>
-            </Link>
-          </Header.Logo>
-        </Header.Title>
+        <Link href="/">
+          <Header.Title>
+            <Header.Illustration>
+              <HeaderStoriesIllustration />
+            </Header.Illustration>
+            <Header.Logo>
+                <Heading style={{ fontFamily: "monospace" }}>
+                  Fagsystem
+                </Heading>
+            </Header.Logo>
+          </Header.Title>
+        </Link>
         <Header.Navbar />
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
           <ProfileMenuItem />
