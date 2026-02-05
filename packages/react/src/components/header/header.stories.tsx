@@ -33,10 +33,20 @@ const links = [
   <Link data-color="primary" key="home" href="./#" aria-label="Link til første">
     Første
   </Link>,
-  <Link data-color="secondary" key="about" href="./#" aria-label="Link til andre">
+  <Link
+    data-color="secondary"
+    key="about"
+    href="./#"
+    aria-label="Link til andre"
+  >
     Andre
   </Link>,
-  <Link data-color="secondary" key="services" href="./#" aria-label="Link til tredje">
+  <Link
+    data-color="secondary"
+    key="services"
+    href="./#"
+    aria-label="Link til tredje"
+  >
     Tredje
   </Link>,
 ];
