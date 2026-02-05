@@ -4,7 +4,6 @@ import { Button, Switch } from "../../..";
 
 interface MenuLinkItemProps {
   icon: ReactNode;
-  href: string;
   children: ReactNode;
   badge?: number;
   badgeDataColor?: "info" | "warning" | "success" | "danger";
@@ -82,11 +81,7 @@ export function MenuLinkItem({
  * @internal - Not exported to consumers
  */
 export function ProfileMenuItem() {
-  return (
-    <MenuLinkItem icon={<PersonCircleIcon />} href="#">
-      Profil
-    </MenuLinkItem>
-  );
+  return <MenuLinkItem icon={<PersonCircleIcon />}>Profil</MenuLinkItem>;
 }
 
 ProfileMenuItem.displayName = "ProfileMenuItem";
@@ -97,12 +92,7 @@ ProfileMenuItem.displayName = "ProfileMenuItem";
  */
 export function InboxMenuItem({ count = 19 }: Readonly<{ count?: number }>) {
   return (
-    <MenuLinkItem
-      icon={<InboxIcon />}
-      href="#"
-      badge={count}
-      badgeDataColor="warning"
-    >
+    <MenuLinkItem icon={<InboxIcon />} badge={count} badgeDataColor="warning">
       Innboks
     </MenuLinkItem>
   );
@@ -114,12 +104,7 @@ export function InboxMenuItem({ count = 19 }: Readonly<{ count?: number }>) {
  */
 export function TODOsMenuItem({ count = 19 }: Readonly<{ count?: number }>) {
   return (
-    <MenuLinkItem
-      icon={<TasklistIcon />}
-      href="#"
-      badge={count}
-      badgeDataColor="info"
-    >
+    <MenuLinkItem icon={<TasklistIcon />} badge={count} badgeDataColor="info">
       Gjøremål
     </MenuLinkItem>
   );
