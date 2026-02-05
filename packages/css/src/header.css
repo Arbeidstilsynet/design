@@ -56,8 +56,22 @@
 
 .at-header__logo .ds-link:not(:hover):not(:focus-visible),
 .at-header__link:not(:hover):not(:focus-visible),
-.at-header__dropdown-controls .ds-link:not(:hover):not(:focus-visible) {
+.at-header__dropdown-controls .ds-link:not(:hover):not(:focus-visible),
+.at-header__dropdown-trigger {
   text-decoration-line: none;
+  color: var(--ds-color-neutral-text-default);
+}
+
+.at-header__dropdown-trigger {
+  font-weight: var(--ds-font-weight-medium);
+}
+
+.at-header__link {
+  font-weight: var(--ds-font-weight-medium);
+
+  &[data-color="primary"] {
+    font-weight: var(--ds-font-weight-semibold);
+  }
 }
 
 /* add padding except for hr (Divider) that are either from the consumer controls prop
@@ -125,6 +139,16 @@
     border-right: 0;
     border-top-left-radius: 0%;
     border-top-right-radius: 0%;
+  }
+
+  .at-header__dropdown-trigger {
+    font-weight: var(--ds-font-weight-regular);
+    color: var(--ds-color-base-contrast-default);
+  }
+
+  .at-header__link, .at-header__link[data-color="primary"] {
+    color: var(--ds-color-text-default);
+    font-weight: var(--ds-font-weight-regular);
   }
 
   .at-header__dropdown-close-mobile {

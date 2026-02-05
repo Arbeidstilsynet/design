@@ -121,6 +121,7 @@ export function HeaderMenu({
         <Dropdown.Trigger
           data-size="sm"
           variant={isMobile ? "primary" : "tertiary"}
+          className="at-header__dropdown-trigger"
         >
           {isMobile ? (
             <>

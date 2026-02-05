@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
-import { Divider, Heading, Switch } from "../..";
-import { Link } from "./stories-helpers/headerStoriesLink";
+import { Divider, Heading, Link, Switch } from "../..";
 import {
   InboxMenuItem,
   ProfileMenuItem,
@@ -29,15 +28,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const links = [
-  <a key="home" href="./#">
-    Brukere
-  </a>,
-  <a key="about" href="./#">
+  <Link data-color="primary" key="home" href="./#">
+    Hjem
+  </Link>,
+  <Link data-color="secondary" key="about" href="./#">
     Saker
-  </a>,
-  <a key="services" href="./#">
+  </Link>,
+  <Link data-color="secondary" key="services" href="./#">
     Virksomheter
-  </a>,
+  </Link>,
 ];
 
 /**
@@ -168,7 +167,7 @@ export const CustomLogoFont: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Link href="/">
+        <Link href="/" style={{ color: "var(--ds-color-neutral-text-default)", textDecoration: "none" }}>
           <Header.Title>
             <Header.Illustration>
               <HeaderStoriesIllustration />
