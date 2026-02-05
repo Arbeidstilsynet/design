@@ -6,7 +6,7 @@
   align-items: center;
   width: 100%;
   container-type: inline-size;
-  padding: var(--ds-size-2) var(--ds-size-4);
+  padding: var(--ds-size-2) var(--ds-size-6);
 
   & .ds-search {
     align-self: self-start;
