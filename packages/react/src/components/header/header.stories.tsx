@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
 import { Divider, Heading, Link, Switch } from "../..";
+import { HeaderStoriesIllustration } from "./stories-helpers/headerStoriesIllustration";
 import {
   InboxMenuItem,
   ProfileMenuItem,
 } from "./stories-helpers/headerStoriesMenuItems";
 import { HeaderStoriesTitle } from "./stories-helpers/headerStoriesTitle";
-import { HeaderStoriesIllustration } from "./stories-helpers/headeStoriesIllustation";
 
 const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
