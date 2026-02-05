@@ -8,3 +8,6 @@ export function HeaderStoriesTitle() {
     </svg>
   );
 }
+
+
+HeaderStoriesTitle.displayName = "HeaderStoriesTitle";

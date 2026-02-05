@@ -52,7 +52,7 @@ export const Preview: Story = {
         <Link href="/">
           <Header.Title>
               <Header.Illustration>
-                <HeaderStoriesIllustration />
+                <HeaderStoriesIllustration aria-label="Fagsystem logo" />
               </Header.Illustration>
               <Header.Logo>
                 <HeaderStoriesTitle />
@@ -86,7 +86,7 @@ export const NoMenu: Story = {
         <Link href="/">
           <Header.Title>
             <Header.Illustration>
-              <HeaderStoriesIllustration />
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
             <Header.Logo>
               <HeaderStoriesTitle />
@@ -113,7 +113,7 @@ export const NoNavigation: Story = {
         <Link href="/">
           <Header.Title>
             <Header.Illustration>
-              <HeaderStoriesIllustration />
+              <HeaderStoriesIllustration aria-label="Fagsystem logo"/>
             </Header.Illustration>
             <Header.Logo>
               <HeaderStoriesTitle />
@@ -144,7 +144,7 @@ export const CustomMaxWidth: Story = {
         <Link href="/">
           <Header.Title>
             <Header.Illustration>
-              <HeaderStoriesIllustration />
+              <HeaderStoriesIllustration aria-label="Fagsystem logo"/>
             </Header.Illustration>
             <Header.Logo>
               <HeaderStoriesTitle />
@@ -152,6 +152,7 @@ export const CustomMaxWidth: Story = {
           </Header.Title>
         </Link>
         <Header.Navbar />
+
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
           <ProfileMenuItem />
           <InboxMenuItem />
@@ -174,16 +175,15 @@ export const CustomLogoFont: Story = {
         <Link href="/" style={{ color: "var(--ds-color-neutral-text-default)", textDecoration: "none" }}>
           <Header.Title>
             <Header.Illustration>
-              <HeaderStoriesIllustration />
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
             <Header.Logo>
-                <Heading style={{ fontFamily: "monospace" }}>
-                  Fagsystem
-                </Heading>
+                <Heading style={{ fontFamily: "monospace" }}>Fagsystem</Heading>
             </Header.Logo>
           </Header.Title>
         </Link>
         <Header.Navbar />
+
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
           <ProfileMenuItem />
           <InboxMenuItem />

@@ -76,6 +76,8 @@ export function ProfileMenuItem() {
   );
 }
 
+ProfileMenuItem.displayName = "ProfileMenuItem";
+
 /**
  * Inbox menu item example with badge.
  * @internal - Not exported to consumers
@@ -111,3 +113,5 @@ export function DarkModeMenuItem() {
     </div>
   );
 }
+
+InboxMenuItem.displayName = "InboxMenuItem";
