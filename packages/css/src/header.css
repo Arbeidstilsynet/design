@@ -19,9 +19,9 @@
 
   & .ds-link:has(.at-header__logo) {
     color: var(--ds-color-text-default);
-    font-weight: 500;
+    font-weight: var(--ds-font-weight-medium);
     text-decoration: none;
-    line-height: 130%;
+    line-height: var(--ds-line-height-sm);
     font-size: var(--ds-font-size-5);
     letter-spacing: 0.15%;
     font-style: medium;
@@ -150,7 +150,7 @@
   height: var(--ds-size-7);
   border-radius: 50%;
   font-size: var(--ds-font-size-3);
-  font-weight: 400;
+  font-weight: var(--ds-font-weight-regular);
   margin-left: auto;
 }
 
