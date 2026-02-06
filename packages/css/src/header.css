@@ -25,7 +25,9 @@
     font-size: var(--ds-font-size-5);
     letter-spacing: 0.15%;
     font-style: medium;
-    transform: translateY(-2.5px); /** Literata font med line is noticably lower than other fonts. This counteracts it somewhat, without looking dumb with other fonts */
+    transform: translateY(
+      -2.5px
+    ); /** Literata font med line is noticably lower than other fonts. This counteracts it somewhat, without looking dumb with other fonts */
   }
 }
 

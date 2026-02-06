@@ -32,9 +32,7 @@ export function HeaderMenuIcon({
   className,
   ...rest
 }: Readonly<HeaderMenuIconProps>) {
-  return (
-    <div className={clsx("at-header__menu-icon", className)} {...rest} />
-  );
+  return <div className={clsx("at-header__menu-icon", className)} {...rest} />;
 }
 
 export interface HeaderMenuBadgeProps

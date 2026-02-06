@@ -5,11 +5,10 @@ import { HeaderMenu } from "./headerMenu";
 import {
   HeaderMenuBadge,
   HeaderMenuIcon,
-  HeaderMenuRow
+  HeaderMenuRow,
 } from "./headerMenuRow";
 import { HeaderNavbar } from "./headerNavbar";
 import { HeaderTitle } from "./headerTitle";
-
 
 /**
  * Compound component for building responsive application headers.
@@ -97,7 +96,7 @@ const Header = Object.assign(HeaderParent, {
   Menu: HeaderMenu,
   MenuRow: HeaderMenuRow,
   MenuIcon: HeaderMenuIcon,
-  MenuBadge: HeaderMenuBadge
+  MenuBadge: HeaderMenuBadge,
 });
 
 export type { HeaderProps } from "./header";
@@ -108,7 +107,7 @@ export type { HeaderMenuProps } from "./headerMenu";
 export type {
   HeaderMenuBadgeProps,
   HeaderMenuIconProps,
-  HeaderMenuRowProps
+  HeaderMenuRowProps,
 } from "./headerMenuRow";
 export type { HeaderNavbarProps } from "./headerNavbar";
 export type { HeaderTitleProps } from "./headerTitle";
@@ -121,6 +120,5 @@ export {
   HeaderMenuIcon,
   HeaderMenuRow,
   HeaderNavbar,
-  HeaderTitle
+  HeaderTitle,
 };
-
