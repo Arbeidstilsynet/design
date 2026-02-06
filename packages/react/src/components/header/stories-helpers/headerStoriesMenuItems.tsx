@@ -1,7 +1,6 @@
 import { InboxIcon, PersonCircleIcon, TasklistIcon } from "@navikt/aksel-icons";
 import { Header } from "..";
 import { Link, Switch } from "../../..";
-import classes from "./headerStoriesHelpers.module.css";
 
 /**
  * Profile menu item example.
@@ -62,7 +61,7 @@ TODOsMenuItem.displayName = "TODOsMenuItem";
  */
 export function DarkModeMenuItem() {
   return (
-    <div className={classes.darkModeMenuItem}>
+    <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
       <Switch label="Mørk modus" position="end" />
     </div>
   );
