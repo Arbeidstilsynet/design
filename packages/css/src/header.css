@@ -19,7 +19,7 @@
 
   & .ds-link:has(.at-header__logo) {
     color: var(--ds-color-text-default);
-    font-weight: 500;
+    font-weight: var(--ds-font-weight-medium);
     text-decoration: none;
     line-height: 130%;
     font-size: var(--ds-font-size-5);
