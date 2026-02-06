@@ -1,6 +1,7 @@
+import { CircleIcon, ExternalLinkIcon, FingerButtonIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
-import { Divider, Heading, Link } from "../..";
+import { Button, Divider, Heading, Link } from "../..";
 import { HeaderStoriesIllustration } from "./stories-helpers/headerStoriesIllustration";
 import {
   DarkModeMenuItem,
@@ -244,3 +245,74 @@ export const OnlyDarkModeInMenu: Story = {
     links,
   },
 };
+
+export const DifferentMenuRows: Story = {
+  render: (args) => {
+    return (
+      <Header {...args}>
+        <Link href="/" aria-label="Link til hjem">
+          <Header.Title>
+            <Header.Illustration>
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
+            </Header.Illustration>
+            <Header.Logo>
+              <HeaderStoriesTitle />
+            </Header.Logo>
+          </Header.Title>
+        </Link>
+        <Header.Navbar />
+        <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
+          <Header.Menu.Row>
+            <Link href="#">
+              <Header.Menu.Row.Icon><ExternalLinkIcon /></Header.Menu.Row.Icon>
+              <span>Link</span>
+            </Link>
+          </Header.Menu.Row>
+          <Header.Menu.Row>
+            <Link href="#">
+              <Header.Menu.Row.Icon><CircleIcon /></Header.Menu.Row.Icon>
+              <span>Badge (info)</span>
+              <Header.Menu.Row.Badge color="info">1</Header.Menu.Row.Badge>
+            </Link>
+          </Header.Menu.Row>
+          <Header.Menu.Row>
+            <Link href="#">
+              <Header.Menu.Row.Icon><CircleIcon /></Header.Menu.Row.Icon>
+              <span>Badge (warning)</span>
+              <Header.Menu.Row.Badge color="warning">2</Header.Menu.Row.Badge>
+            </Link>
+          </Header.Menu.Row>
+          <Header.Menu.Row>
+            <Link href="#">
+              <Header.Menu.Row.Icon><CircleIcon /></Header.Menu.Row.Icon>
+              <span>Badge (success)</span>
+              <Header.Menu.Row.Badge color="success">3</Header.Menu.Row.Badge>
+            </Link>
+          </Header.Menu.Row>
+          <Header.Menu.Row>
+            <Link href="#">
+              <Header.Menu.Row.Icon><CircleIcon /></Header.Menu.Row.Icon>
+              <span>Badge (danger)</span>
+              <Header.Menu.Row.Badge color="danger">4</Header.Menu.Row.Badge>
+            </Link>
+          </Header.Menu.Row>
+          <Header.Menu.Row>
+            <Link href="#">No icon</Link>
+          </Header.Menu.Row>
+          <Header.Menu.Row padded>
+            <Link href="#">No icon (padded)</Link>
+          </Header.Menu.Row>
+          <Header.Menu.Row>
+            <Button>
+              <Header.Menu.Row.Icon><FingerButtonIcon /></Header.Menu.Row.Icon>
+              <span>Button</span>
+            </Button>
+          </Header.Menu.Row>
+        </Header.Menu>
+      </Header>
+    );
+  },
+  args: {
+    links,
+  },
+}
