@@ -114,7 +114,7 @@
   }
 }
 
-.at-header__menu-row-icon {
+.at-header__menu-icon {
   align-items: center;
   display: flex;
   flex-shrink: 0;
@@ -126,10 +126,10 @@
   }
 }
 
-.at-header__menu-row-badge-info,
-.at-header__menu-row-badge-warning,
-.at-header__menu-row-badge-success,
-.at-header__menu-row-badge-danger {
+.at-header__menu-badge-info,
+.at-header__menu-badge-warning,
+.at-header__menu-badge-success,
+.at-header__menu-badge-danger {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -141,19 +141,19 @@
   margin-left: auto;
 }
 
-.at-header__menu-row-badge-info {
+.at-header__menu-badge-info {
   color: var(--ds-color-info-text-default);
   background-color: var(--ds-color-info-surface-tinted);
 }
-.at-header__menu-row-badge-warning {
+.at-header__menu-badge-warning {
   color: var(--ds-color-warning-text-default);
   background-color: var(--ds-color-warning-surface-tinted);
 }
-.at-header__menu-row-badge-success {
+.at-header__menu-badge-success {
   color: var(--ds-color-success-text-default);
   background-color: var(--ds-color-success-surface-tinted);
 }
-.at-header__menu-row-badge-danger {
+.at-header__menu-badge-danger {
   color: var(--ds-color-danger-text-default);
   background-color: var(--ds-color-danger-surface-tinted);
 }

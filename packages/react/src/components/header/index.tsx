@@ -1,42 +1,15 @@
 import { Header as HeaderParent } from "./header";
 import { HeaderIllustration } from "./headerIllustration";
 import { HeaderLogo } from "./headerLogo";
-import { HeaderMenu as HeaderMenuParent } from "./headerMenu";
+import { HeaderMenu } from "./headerMenu";
 import {
-  HeaderMenuRowBadge,
-  HeaderMenuRowIcon,
-  HeaderMenuRow as HeaderMenuRowParent,
+  HeaderMenuBadge,
+  HeaderMenuIcon,
+  HeaderMenuRow
 } from "./headerMenuRow";
 import { HeaderNavbar } from "./headerNavbar";
 import { HeaderTitle } from "./headerTitle";
 
-/**
- * Compound component for building header menu rows, including support for icons and badges.
- * Pass any button/link component as children, which will be styled appropriately.
- *
- * ### Usage
- *
- * ```tsx
- * <Header.Menu.Row>
- *   <Link href="#">
- *     <Header.Menu.Row.Icon><ExternalLinkIcon /></Header.Menu.Row.Icon>
- *     <span>Link</span>
- *     <Header.Menu.Row.Badge color="warning">12</Header.Menu.Row.Badge>
- *   </Link>
- * </Header.Menu.Row>
- * ```
- */
-const HeaderMenuRow = Object.assign(HeaderMenuRowParent, {
-  Icon: HeaderMenuRowIcon,
-  Badge: HeaderMenuRowBadge,
-});
-
-/**
- * Compound component for building header menus.
- */
-const HeaderMenu = Object.assign(HeaderMenuParent, {
-  Row: HeaderMenuRow,
-});
 
 /**
  * Compound component for building responsive application headers.
@@ -93,6 +66,9 @@ const Header = Object.assign(HeaderParent, {
   Logo: HeaderLogo,
   Navbar: HeaderNavbar,
   Menu: HeaderMenu,
+  MenuRow: HeaderMenuRow,
+  MenuIcon: HeaderMenuIcon,
+  MenuBadge: HeaderMenuBadge
 });
 
 export type { HeaderProps } from "./header";
@@ -101,9 +77,9 @@ export type { HeaderIllustrationProps } from "./headerIllustration";
 export type { HeaderLogoProps } from "./headerLogo";
 export type { HeaderMenuProps } from "./headerMenu";
 export type {
-  HeaderMenuRowBadgeProps,
-  HeaderMenuRowIconProps,
-  HeaderMenuRowProps,
+  HeaderMenuBadgeProps,
+  HeaderMenuIconProps,
+  HeaderMenuRowProps
 } from "./headerMenuRow";
 export type { HeaderNavbarProps } from "./headerNavbar";
 export type { HeaderTitleProps } from "./headerTitle";
@@ -112,7 +88,10 @@ export {
   HeaderIllustration,
   HeaderLogo,
   HeaderMenu,
+  HeaderMenuBadge,
+  HeaderMenuIcon,
   HeaderMenuRow,
   HeaderNavbar,
-  HeaderTitle,
+  HeaderTitle
 };
+

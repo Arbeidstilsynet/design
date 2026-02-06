@@ -8,14 +8,14 @@ import { Link, Switch } from "../../..";
  */
 export function ProfileMenuItem() {
   return (
-    <Header.Menu.Row>
+    <Header.MenuRow>
       <Link href="#">
-        <Header.Menu.Row.Icon>
+        <Header.MenuIcon>
           <PersonCircleIcon aria-label="Profil ikon" />
-        </Header.Menu.Row.Icon>
+        </Header.MenuIcon>
         <span>Profil</span>
       </Link>
-    </Header.Menu.Row>
+    </Header.MenuRow>
   );
 }
 
@@ -27,15 +27,15 @@ ProfileMenuItem.displayName = "ProfileMenuItem";
  */
 export function InboxMenuItem({ count = 19 }: Readonly<{ count?: number }>) {
   return (
-    <Header.Menu.Row>
+    <Header.MenuRow>
       <Link href="#">
-        <Header.Menu.Row.Icon>
+        <Header.MenuIcon>
           <InboxIcon aria-label="Innboks ikon" />
-        </Header.Menu.Row.Icon>
+        </Header.MenuIcon>
         <span>Innboks</span>
-        <Header.Menu.Row.Badge color="warning">{count}</Header.Menu.Row.Badge>
+        <Header.MenuBadge color="warning">{count}</Header.MenuBadge>
       </Link>
-    </Header.Menu.Row>
+    </Header.MenuRow>
   );
 }
 
@@ -47,15 +47,15 @@ InboxMenuItem.displayName = "InboxMenuItem";
  */
 export function TODOsMenuItem({ count = 19 }: Readonly<{ count?: number }>) {
   return (
-    <Header.Menu.Row>
+    <Header.MenuRow>
       <Link href="#">
-        <Header.Menu.Row.Icon>
+        <Header.MenuIcon>
           <TasklistIcon aria-label="Gjøremål ikon" />
-        </Header.Menu.Row.Icon>
+        </Header.MenuIcon>
         <span>Gjøremål</span>
-        <Header.Menu.Row.Badge color="info">{count}</Header.Menu.Row.Badge>
+        <Header.MenuBadge color="info">{count}</Header.MenuBadge>
       </Link>
-    </Header.Menu.Row>
+    </Header.MenuRow>
   );
 }
 

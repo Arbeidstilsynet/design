@@ -256,64 +256,64 @@ export const DifferentMenuRows: Story = {
         </Link>
         <Header.Navbar />
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
-          <Header.Menu.Row>
+          <Header.MenuRow>
             <Link href="#">
-              <Header.Menu.Row.Icon>
+              <Header.MenuIcon>
                 <ExternalLinkIcon aria-label="External link icon" />
-              </Header.Menu.Row.Icon>
+              </Header.MenuIcon>
               <span>Link</span>
             </Link>
-          </Header.Menu.Row>
-          <Header.Menu.Row>
+          </Header.MenuRow>
+          <Header.MenuRow>
             <Link href="#">
-              <Header.Menu.Row.Icon>
+              <Header.MenuIcon>
                 <CircleIcon aria-label="Circle icon" />
-              </Header.Menu.Row.Icon>
+              </Header.MenuIcon>
               <span>Badge (info)</span>
-              <Header.Menu.Row.Badge color="info">1</Header.Menu.Row.Badge>
+              <Header.MenuBadge color="info">1</Header.MenuBadge>
             </Link>
-          </Header.Menu.Row>
-          <Header.Menu.Row>
+          </Header.MenuRow>
+          <Header.MenuRow>
             <Link href="#">
-              <Header.Menu.Row.Icon>
+              <Header.MenuIcon>
                 <CircleIcon aria-label="Circle icon" />
-              </Header.Menu.Row.Icon>
+              </Header.MenuIcon>
               <span>Badge (warning)</span>
-              <Header.Menu.Row.Badge color="warning">2</Header.Menu.Row.Badge>
+              <Header.MenuBadge color="warning">2</Header.MenuBadge>
             </Link>
-          </Header.Menu.Row>
-          <Header.Menu.Row>
+          </Header.MenuRow>
+          <Header.MenuRow>
             <Link href="#">
-              <Header.Menu.Row.Icon>
+              <Header.MenuIcon>
                 <CircleIcon aria-label="Circle icon" />
-              </Header.Menu.Row.Icon>
+              </Header.MenuIcon>
               <span>Badge (success)</span>
-              <Header.Menu.Row.Badge color="success">3</Header.Menu.Row.Badge>
+              <Header.MenuBadge color="success">3</Header.MenuBadge>
             </Link>
-          </Header.Menu.Row>
-          <Header.Menu.Row>
+          </Header.MenuRow>
+          <Header.MenuRow>
             <Link href="#">
-              <Header.Menu.Row.Icon>
+              <Header.MenuIcon>
                 <CircleIcon aria-label="Circle icon" />
-              </Header.Menu.Row.Icon>
+              </Header.MenuIcon>
               <span>Badge (danger)</span>
-              <Header.Menu.Row.Badge color="danger">4</Header.Menu.Row.Badge>
+              <Header.MenuBadge color="danger">4</Header.MenuBadge>
             </Link>
-          </Header.Menu.Row>
-          <Header.Menu.Row>
+          </Header.MenuRow>
+          <Header.MenuRow>
             <Link href="#">No icon</Link>
-          </Header.Menu.Row>
-          <Header.Menu.Row padded>
+          </Header.MenuRow>
+          <Header.MenuRow padded>
             <Link href="#">No icon (padded)</Link>
-          </Header.Menu.Row>
-          <Header.Menu.Row>
+          </Header.MenuRow>
+          <Header.MenuRow>
             <Button>
-              <Header.Menu.Row.Icon>
+              <Header.MenuIcon>
                 <FingerButtonIcon aria-label="Button icon" />
-              </Header.Menu.Row.Icon>
+              </Header.MenuIcon>
               <span>Button</span>
             </Button>
-          </Header.Menu.Row>
+          </Header.MenuRow>
         </Header.Menu>
       </Header>
     );

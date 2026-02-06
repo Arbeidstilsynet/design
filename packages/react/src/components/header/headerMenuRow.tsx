@@ -25,31 +25,31 @@ export function HeaderMenuRow({
   );
 }
 
-export interface HeaderMenuRowIconProps
+export interface HeaderMenuIconProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {}
 
-export function HeaderMenuRowIcon({
+export function HeaderMenuIcon({
   className,
   ...rest
-}: Readonly<HeaderMenuRowIconProps>) {
+}: Readonly<HeaderMenuIconProps>) {
   return (
-    <div className={clsx("at-header__menu-row-icon", className)} {...rest} />
+    <div className={clsx("at-header__menu-icon", className)} {...rest} />
   );
 }
 
-export interface HeaderMenuRowBadgeProps
+export interface HeaderMenuBadgeProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   color?: "info" | "warning" | "success" | "danger";
 }
 
-export function HeaderMenuRowBadge({
+export function HeaderMenuBadge({
   className,
   color = "info",
   ...rest
-}: Readonly<HeaderMenuRowBadgeProps>) {
+}: Readonly<HeaderMenuBadgeProps>) {
   return (
     <div
-      className={clsx(`at-header__menu-row-badge-${color}`, className)}
+      className={clsx(`at-header__menu-badge-${color}`, className)}
       {...rest}
     />
   );
