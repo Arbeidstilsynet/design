@@ -1,17 +1,25 @@
+import {
+  CircleIcon,
+  ExternalLinkIcon,
+  FingerButtonIcon,
+  InboxIcon,
+  PersonCircleIcon,
+  TasklistIcon,
+} from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
-import { Divider, Heading, Link, Switch } from "../..";
-import {
-  InboxMenuItem,
-  ProfileMenuItem,
-} from "./stories-helpers/headerStoriesMenuItems";
-import { HeaderStoriesIllustration } from "./stories-helpers/headeStoriesIllustation";
+import { Button, Divider, Link, Switch } from "../..";
+import { HeaderStoriesIllustration } from "./stories-helpers/headerStoriesIllustration";
+import { HeaderStoriesTitle } from "./stories-helpers/headerStoriesTitle";
 
 const meta: Meta<typeof Header> = {
   title: "Arbeidstilsynet/Header",
   component: Header,
   parameters: {
-    layout: "padded",
+    layout: "fullscreen",
+    customStyles: {
+      padding: "0",
+    },
   },
   subcomponents: {
     ["Header.Title"]: Header.Title,
@@ -27,15 +35,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const links = [
-  <a key="home" href="./#">
-    Brukere
-  </a>,
-  <a key="about" href="./#">
-    Saker
-  </a>,
-  <a key="services" href="./#">
-    Virksomheter
-  </a>,
+  <Link key="home" href="./#" aria-current="page">
+    Første
+  </Link>,
+  <Link key="about" href="./#">
+    Andre
+  </Link>,
+  <Link key="services" href="./#">
+    Tredje
+  </Link>,
 ];
 
 /**
@@ -46,26 +54,48 @@ export const Preview: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Header.Title>
-          <Header.Illustration>
-            <Link href="/">
+        <Link href="/" aria-label="Link til hjem">
+          <Header.Title>
+            <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
-            </Link>
-          </Header.Illustration>
-          <Header.Logo>
-            <Link href="/">
-              <Heading>Fagsystem</Heading>
-            </Link>
-          </Header.Logo>
-        </Header.Title>
-
+            </Header.Illustration>
+            <Header.Logo style={{ fontFamily: "Literata" }}>
+              Fagsystem
+            </Header.Logo>
+          </Header.Title>
+        </Link>
         <Header.Navbar />
-
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
-          <ProfileMenuItem />
-          <InboxMenuItem />
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <PersonCircleIcon aria-label="Profil ikon" />
+              </Header.MenuIcon>
+              <span>Profil</span>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <InboxIcon aria-label="Innboks ikon" />
+              </Header.MenuIcon>
+              <span>Innboks</span>
+              <Header.MenuBadge color="warning">19</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <TasklistIcon aria-label="Gjøremål ikon" />
+              </Header.MenuIcon>
+              <span>Gjøremål</span>
+              <Header.MenuBadge color="info">19</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
           <Divider />
-          <Switch label="Mørk modus" position="end" />
+          <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
+            <Switch label="Mørk modus" position="end" />
+          </div>
         </Header.Menu>
       </Header>
     );
@@ -83,19 +113,16 @@ export const NoMenu: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Header.Title>
-          <Header.Illustration>
-            <Link href="/">
+        <Link href="/" aria-label="Link til hjem">
+          <Header.Title>
+            <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
-            </Link>
-          </Header.Illustration>
-          <Header.Logo>
-            <Link href="/">
-              <Heading>Fagsystem</Heading>
-            </Link>
-          </Header.Logo>
-        </Header.Title>
-
+            </Header.Illustration>
+            <Header.Logo style={{ fontFamily: "Literata" }}>
+              Fagsystem
+            </Header.Logo>
+          </Header.Title>
+        </Link>
         <Header.Navbar />
       </Header>
     );
@@ -113,21 +140,21 @@ export const NoNavigation: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Header.Title>
-          <Header.Illustration>
-            <Link href="/">
+        <Link href="/" aria-label="Link til hjem">
+          <Header.Title>
+            <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
-            </Link>
-          </Header.Illustration>
-          <Header.Logo>
-            <Link href="/">
-              <Heading>Fagsystem</Heading>
-            </Link>
-          </Header.Logo>
-        </Header.Title>
-
+            </Header.Illustration>
+            <Header.Logo style={{ fontFamily: "Literata" }}>
+              Fagsystem
+            </Header.Logo>
+          </Header.Title>
+        </Link>
+        <Header.Navbar />
         <Header.Menu triggerContent="Innstillinger">
-          <Switch label="Mørk modus" position="end" />
+          <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
+            <Switch label="Mørk modus" position="end" />
+          </div>
         </Header.Menu>
       </Header>
     );
@@ -146,26 +173,49 @@ export const CustomMaxWidth: Story = {
         {...args}
         style={{ "--at-header-max-width": "50rem" } as React.CSSProperties}
       >
-        <Header.Title>
-          <Header.Illustration>
-            <Link href="/">
+        <Link href="/" aria-label="Link til hjem">
+          <Header.Title>
+            <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
-            </Link>
-          </Header.Illustration>
-          <Header.Logo>
-            <Link href="/">
-              <Heading>Fagsystem</Heading>
-            </Link>
-          </Header.Logo>
-        </Header.Title>
-
+            </Header.Illustration>
+            <Header.Logo style={{ fontFamily: "Literata" }}>
+              Fagsystem
+            </Header.Logo>
+          </Header.Title>
+        </Link>
         <Header.Navbar />
 
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
-          <ProfileMenuItem />
-          <InboxMenuItem />
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <PersonCircleIcon aria-label="Profil ikon" />
+              </Header.MenuIcon>
+              <span>Profil</span>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <InboxIcon aria-label="Innboks ikon" />
+              </Header.MenuIcon>
+              <span>Innboks</span>
+              <Header.MenuBadge color="warning">19</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <TasklistIcon aria-label="Gjøremål ikon" />
+              </Header.MenuIcon>
+              <span>Gjøremål</span>
+              <Header.MenuBadge color="info">19</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
           <Divider />
-          <Switch label="Mørk modus" position="end" />
+          <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
+            <Switch label="Mørk modus" position="end" />
+          </div>
         </Header.Menu>
       </Header>
     );
@@ -175,30 +225,171 @@ export const CustomMaxWidth: Story = {
   },
 };
 
-export const CustomLogoFont: Story = {
+export const SVGLogo: Story = {
   render: (args) => {
     return (
       <Header {...args}>
-        <Header.Title>
-          <Header.Illustration>
-            <Link href="/">
+        <Link
+          href="/"
+          style={{
+            color: "var(--ds-color-neutral-text-default)",
+            textDecoration: "none",
+          }}
+          aria-label="Link til hjem"
+        >
+          <Header.Title>
+            <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
-            </Link>
-          </Header.Illustration>
-          <Header.Logo>
-            <Link href="/">
-              <Heading style={{ fontFamily: "monospace" }}>Fagsystem</Heading>
-            </Link>
-          </Header.Logo>
-        </Header.Title>
-
+            </Header.Illustration>
+            <Header.Logo>
+              <HeaderStoriesTitle aria-label="Fagsystem tittel" />
+            </Header.Logo>
+          </Header.Title>
+        </Link>
         <Header.Navbar />
 
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
-          <ProfileMenuItem />
-          <InboxMenuItem />
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <PersonCircleIcon aria-label="Profil ikon" />
+              </Header.MenuIcon>
+              <span>Profil</span>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <InboxIcon aria-label="Innboks ikon" />
+              </Header.MenuIcon>
+              <span>Innboks</span>
+              <Header.MenuBadge color="warning">19</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <TasklistIcon aria-label="Gjøremål ikon" />
+              </Header.MenuIcon>
+              <span>Gjøremål</span>
+              <Header.MenuBadge color="info">19</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
           <Divider />
-          <Switch label="Mørk modus" position="end" />
+          <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
+            <Switch label="Mørk modus" position="end" />
+          </div>
+        </Header.Menu>
+      </Header>
+    );
+  },
+  args: {
+    links,
+  },
+};
+
+export const OnlyDarkModeInMenu: Story = {
+  render: (args) => {
+    return (
+      <Header {...args}>
+        <Link href="/" aria-label="Link til hjem">
+          <Header.Title>
+            <Header.Illustration>
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
+            </Header.Illustration>
+            <Header.Logo style={{ fontFamily: "Literata" }}>
+              Fagsystem
+            </Header.Logo>
+          </Header.Title>
+        </Link>
+        <Header.Navbar />
+        <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
+          <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
+            <Switch label="Mørk modus" position="end" />
+          </div>
+        </Header.Menu>
+      </Header>
+    );
+  },
+  args: {
+    links,
+  },
+};
+
+export const DifferentMenuRows: Story = {
+  render: (args) => {
+    return (
+      <Header {...args}>
+        <Link href="/" aria-label="Link til hjem">
+          <Header.Title>
+            <Header.Illustration>
+              <HeaderStoriesIllustration aria-label="Fagsystem logo" />
+            </Header.Illustration>
+            <Header.Logo style={{ fontFamily: "Literata" }}>
+              Fagsystem
+            </Header.Logo>
+          </Header.Title>
+        </Link>
+        <Header.Navbar />
+        <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <ExternalLinkIcon aria-label="External link icon" />
+              </Header.MenuIcon>
+              <span>Link</span>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <CircleIcon aria-label="Circle icon" />
+              </Header.MenuIcon>
+              <span>Badge (info)</span>
+              <Header.MenuBadge color="info">1</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <CircleIcon aria-label="Circle icon" />
+              </Header.MenuIcon>
+              <span>Badge (warning)</span>
+              <Header.MenuBadge color="warning">2</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <CircleIcon aria-label="Circle icon" />
+              </Header.MenuIcon>
+              <span>Badge (success)</span>
+              <Header.MenuBadge color="success">3</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <CircleIcon aria-label="Circle icon" />
+              </Header.MenuIcon>
+              <span>Badge (danger)</span>
+              <Header.MenuBadge color="danger">4</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">No icon</Link>
+          </Header.MenuRow>
+          <Header.MenuRow padded>
+            <Link href="#">No icon (padded)</Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Button>
+              <Header.MenuIcon>
+                <FingerButtonIcon aria-label="Button icon" />
+              </Header.MenuIcon>
+              <span>Button</span>
+            </Button>
+          </Header.MenuRow>
         </Header.Menu>
       </Header>
     );

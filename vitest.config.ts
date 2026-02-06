@@ -17,6 +17,7 @@ export default defineConfig({
         "**/*config.{mjs,ts,js}",
         "**/storybook/**",
         "**/*.stories.tsx",
+        "**/stories-helpers/**",
       ],
     },
     css: {

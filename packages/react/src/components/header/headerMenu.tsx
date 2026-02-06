@@ -15,7 +15,7 @@ import {
   type ReactNode,
 } from "react";
 import { Button, Divider, Dropdown } from "../../digdir";
-import type { DefaultProps } from "../../types";
+import type { DefaultProps, Size } from "../../types";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import { HeaderContext } from "./headerContext";
 
@@ -119,8 +119,9 @@ export function HeaderMenu({
       <Dropdown.TriggerContext>
         {/* Have to use a shared Dropdown.Trigger for desktop/mobile or the positioning in Popover becomes wrong */}
         <Dropdown.Trigger
-          data-size="sm"
+          data-size={(isMobile ? "sm" : undefined) as Size}
           variant={isMobile ? "primary" : "tertiary"}
+          className="at-header__dropdown-trigger"
         >
           {isMobile ? (
             <>
@@ -191,21 +192,21 @@ export function HeaderMenu({
                 <div className="at-header__dropdown-controls">{children}</div>
               </Dropdown.Item>
             )}
-          </Dropdown.List>
 
-          {/* Mobile-only close button */}
-          <Dropdown.Item>
-            <div className="at-header__dropdown-close-mobile">
-              <Button
-                type="button"
-                variant="secondary"
-                onClick={() => setOpen(false)}
-              >
-                <XMarkIcon aria-hidden />
-                {closeButtonText}
-              </Button>
-            </div>
-          </Dropdown.Item>
+            {/* Mobile-only close button */}
+            <Dropdown.Item>
+              <div className="at-header__dropdown-close-mobile">
+                <Button
+                  type="button"
+                  variant="secondary"
+                  onClick={() => setOpen(false)}
+                >
+                  <XMarkIcon aria-hidden />
+                  {closeButtonText}
+                </Button>
+              </div>
+            </Dropdown.Item>
+          </Dropdown.List>
         </Dropdown>
       </Dropdown.TriggerContext>
 

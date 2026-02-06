@@ -6,7 +6,7 @@
   align-items: center;
   width: 100%;
   container-type: inline-size;
-  padding: var(--ds-size-2) var(--ds-size-4);
+  padding: var(--ds-size-2) var(--ds-size-6);
 
   & .ds-search {
     align-self: self-start;
@@ -15,6 +15,18 @@
   /* disable visited color in both the navigation and dropdown menu */
   & .ds-link {
     --dsc-link-color--visited: var(--dsc-link-color);
+  }
+
+  & .ds-link:has(.at-header__logo) {
+    color: var(--ds-color-text-default);
+    font-weight: var(--ds-font-weight-medium);
+    text-decoration: none;
+    line-height: var(--ds-line-height-sm);
+    font-size: var(--ds-font-size-5);
+    letter-spacing: var(--ds-letter-spacing-8);
+    transform: translateY(
+      -2.5px
+    ); /** Literata font med line is noticably lower than other fonts. This counteracts it somewhat, without looking dumb with other fonts */
   }
 }
 
@@ -37,13 +49,16 @@
 .at-header__left {
   justify-content: flex-start;
   gap: var(--ds-size-4);
-  margin-right: var(--ds-size-22);
 }
 
 .at-header__center {
   justify-content: flex-start;
   gap: var(--ds-size-8);
   flex: 1;
+}
+
+.at-header__center:not(:first-child) {
+  margin-left: var(--ds-size-22);
 }
 
 .at-header__right {
@@ -53,14 +68,26 @@
 
 .at-header__logo .ds-link:not(:hover):not(:focus-visible),
 .at-header__link:not(:hover):not(:focus-visible),
-.at-header__dropdown-controls .ds-link:not(:hover):not(:focus-visible) {
+.at-header__dropdown-controls .ds-link:not(:hover):not(:focus-visible),
+.at-header__dropdown-trigger {
   text-decoration-line: none;
+  color: var(--ds-color-neutral-text-default);
 }
 
-/* add padding except for hr (Divider) that are either from the consumer controls prop
- or provided by us below links for mobile version */
-.at-header__dropdown-controls:not(:has(> hr:only-child)) {
-  padding: var(--ds-size-2) var(--ds-size-4);
+.at-header__logo {
+  display: flex;
+}
+
+.at-header__dropdown-trigger {
+  font-weight: var(--ds-font-weight-medium);
+}
+
+.at-header__link {
+  font-weight: var(--ds-font-weight-medium);
+
+  &[aria-current="page"] {
+    font-weight: var(--ds-font-weight-semibold);
+  }
 }
 
 .at-header__dropdown-item-mobile {
@@ -75,16 +102,92 @@
   display: none;
 }
 
+.at-header__menu-row {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  gap: var(--ds-size-2);
+  height: var(--ds-size-10);
+  justify-content: flex-start;
+  min-height: unset;
+  padding: var(--ds-size-2) var(--ds-size-4);
+  text-decoration: none;
+  width: 100%;
+  color: var(--ds-color-text-default);
+  background: unset;
+
+  &:hover {
+    color: var(--ds-color-text-default);
+    background: var(--ds-color-surface-tinted);
+  }
+
+  &.padded {
+    padding-left: var(--ds-size-11); /** row padding + icon size + gap */
+  }
+}
+
+.at-header__menu-icon {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  height: fit-content;
+
+  > svg {
+    height: var(--ds-size-5);
+    width: var(--ds-size-5);
+  }
+}
+
+.at-header__menu-badge-info,
+.at-header__menu-badge-warning,
+.at-header__menu-badge-success,
+.at-header__menu-badge-danger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--ds-size-7);
+  height: var(--ds-size-7);
+  border-radius: 50%;
+  font-size: var(--ds-font-size-3);
+  font-weight: var(--ds-font-weight-regular);
+  margin-left: auto;
+}
+
+.at-header__menu-badge-info {
+  color: var(--ds-color-info-text-default);
+  background-color: var(--ds-color-info-surface-tinted);
+}
+.at-header__menu-badge-warning {
+  color: var(--ds-color-warning-text-default);
+  background-color: var(--ds-color-warning-surface-tinted);
+}
+.at-header__menu-badge-success {
+  color: var(--ds-color-success-text-default);
+  background-color: var(--ds-color-success-surface-tinted);
+}
+.at-header__menu-badge-danger {
+  color: var(--ds-color-danger-text-default);
+  background-color: var(--ds-color-danger-surface-tinted);
+}
+
 /* Responsive adjustments */
+@media (min-width: 48rem) {
+  .at-header__dropdown-trigger {
+    background: unset;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 @media (max-width: 48rem) {
   .at-header {
     & .ds-search {
       max-width: 100%;
     }
   }
-}
 
-@container (max-width: 48rem) {
   .at-header__container {
     justify-content: space-between;
   }
@@ -122,6 +225,24 @@
     border-right: 0;
     border-top-left-radius: 0%;
     border-top-right-radius: 0%;
+  }
+
+  .at-header__dropdown-trigger {
+    font-weight: var(--ds-font-weight-regular);
+    color: var(--ds-color-base-contrast-default);
+  }
+
+  .at-header__link,
+  .at-header__link[data-color="primary"] {
+    color: var(--ds-color-text-default);
+    font-weight: var(--ds-font-weight-regular);
+    width: 100%;
+    height: var(--ds-size-10);
+    min-height: unset;
+    display: block;
+    padding: var(--ds-size-2) var(--ds-size-4);
+    margin: 0;
+    box-sizing: border-box;
   }
 
   .at-header__dropdown-close-mobile {
