@@ -27,6 +27,9 @@ const meta: Meta<typeof Header> = {
     ["Header.Logo"]: Header.Logo,
     ["Header.Navbar"]: Header.Navbar,
     ["Header.Menu"]: Header.Menu,
+    ["Header.MenuRow"]: Header.MenuRow,
+    ["Header.MenuIcon"]: Header.MenuIcon,
+    ["Header.MenuBadge"]: Header.MenuBadge,
   },
 };
 
