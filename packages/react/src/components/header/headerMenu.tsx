@@ -119,7 +119,6 @@ export function HeaderMenu({
       <Dropdown.TriggerContext>
         {/* Have to use a shared Dropdown.Trigger for desktop/mobile or the positioning in Popover becomes wrong */}
         <Dropdown.Trigger
-          data-size="sm"
           variant={isMobile ? "primary" : "tertiary"}
           className="at-header__dropdown-trigger"
         >
