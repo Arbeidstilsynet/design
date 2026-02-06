@@ -15,7 +15,7 @@ import {
   type ReactNode,
 } from "react";
 import { Button, Divider, Dropdown } from "../../digdir";
-import type { DefaultProps } from "../../types";
+import type { DefaultProps, Size } from "../../types";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import { HeaderContext } from "./headerContext";
 
@@ -119,6 +119,7 @@ export function HeaderMenu({
       <Dropdown.TriggerContext>
         {/* Have to use a shared Dropdown.Trigger for desktop/mobile or the positioning in Popover becomes wrong */}
         <Dropdown.Trigger
+          data-size={(isMobile ? "sm" : undefined) as Size}
           variant={isMobile ? "primary" : "tertiary"}
           className="at-header__dropdown-trigger"
         >
