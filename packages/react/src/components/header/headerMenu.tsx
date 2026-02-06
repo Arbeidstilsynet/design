@@ -192,7 +192,7 @@ export function HeaderMenu({
                 <div className="at-header__dropdown-controls">{children}</div>
               </Dropdown.Item>
             )}
-            
+
             {/* Mobile-only close button */}
             <Dropdown.Item>
               <div className="at-header__dropdown-close-mobile">

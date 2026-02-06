@@ -63,7 +63,7 @@ export const Preview: Story = {
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
             <Header.Logo>
-              <HeaderStoriesTitle aria-label="Fagsystem tittel"/>
+              <HeaderStoriesTitle aria-label="Fagsystem tittel" />
             </Header.Logo>
           </Header.Title>
         </Link>
