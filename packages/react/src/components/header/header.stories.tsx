@@ -2,17 +2,14 @@ import {
   CircleIcon,
   ExternalLinkIcon,
   FingerButtonIcon,
+  InboxIcon,
+  PersonCircleIcon,
+  TasklistIcon,
 } from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
-import { Button, Divider, Heading, Link } from "../..";
+import { Button, Divider, Heading, Link, Switch } from "../..";
 import { HeaderStoriesIllustration } from "./stories-helpers/headerStoriesIllustration";
-import {
-  DarkModeMenuItem,
-  InboxMenuItem,
-  ProfileMenuItem,
-  TODOsMenuItem,
-} from "./stories-helpers/headerStoriesMenuItems";
 import { HeaderStoriesTitle } from "./stories-helpers/headerStoriesTitle";
 
 const meta: Meta<typeof Header> = {
@@ -69,11 +66,36 @@ export const Preview: Story = {
         </Link>
         <Header.Navbar />
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
-          <ProfileMenuItem />
-          <InboxMenuItem />
-          <TODOsMenuItem />
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <PersonCircleIcon aria-label="Profil ikon" />
+              </Header.MenuIcon>
+              <span>Profil</span>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <InboxIcon aria-label="Innboks ikon" />
+              </Header.MenuIcon>
+              <span>Innboks</span>
+              <Header.MenuBadge color="warning">19</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <TasklistIcon aria-label="Gjøremål ikon" />
+              </Header.MenuIcon>
+              <span>Gjøremål</span>
+              <Header.MenuBadge color="info">19</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
           <Divider />
-          <DarkModeMenuItem />
+          <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
+            <Switch label="Mørk modus" position="end" />
+          </div>
         </Header.Menu>
       </Header>
     );
@@ -130,7 +152,9 @@ export const NoNavigation: Story = {
         </Link>
         <Header.Navbar />
         <Header.Menu triggerContent="Innstillinger">
-          <DarkModeMenuItem />
+          <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
+            <Switch label="Mørk modus" position="end" />
+          </div>
         </Header.Menu>
       </Header>
     );
@@ -162,11 +186,36 @@ export const CustomMaxWidth: Story = {
         <Header.Navbar />
 
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
-          <ProfileMenuItem />
-          <InboxMenuItem />
-          <TODOsMenuItem />
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <PersonCircleIcon aria-label="Profil ikon" />
+              </Header.MenuIcon>
+              <span>Profil</span>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <InboxIcon aria-label="Innboks ikon" />
+              </Header.MenuIcon>
+              <span>Innboks</span>
+              <Header.MenuBadge color="warning">19</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <TasklistIcon aria-label="Gjøremål ikon" />
+              </Header.MenuIcon>
+              <span>Gjøremål</span>
+              <Header.MenuBadge color="info">19</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
           <Divider />
-          <DarkModeMenuItem />
+          <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
+            <Switch label="Mørk modus" position="end" />
+          </div>
         </Header.Menu>
       </Header>
     );
@@ -200,11 +249,36 @@ export const CustomLogoFont: Story = {
         <Header.Navbar />
 
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
-          <ProfileMenuItem />
-          <InboxMenuItem />
-          <TODOsMenuItem />
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <PersonCircleIcon aria-label="Profil ikon" />
+              </Header.MenuIcon>
+              <span>Profil</span>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <InboxIcon aria-label="Innboks ikon" />
+              </Header.MenuIcon>
+              <span>Innboks</span>
+              <Header.MenuBadge color="warning">19</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
+          <Header.MenuRow>
+            <Link href="#">
+              <Header.MenuIcon>
+                <TasklistIcon aria-label="Gjøremål ikon" />
+              </Header.MenuIcon>
+              <span>Gjøremål</span>
+              <Header.MenuBadge color="info">19</Header.MenuBadge>
+            </Link>
+          </Header.MenuRow>
           <Divider />
-          <DarkModeMenuItem />
+          <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
+            <Switch label="Mørk modus" position="end" />
+          </div>
         </Header.Menu>
       </Header>
     );
@@ -230,7 +304,9 @@ export const OnlyDarkModeInMenu: Story = {
         </Link>
         <Header.Navbar />
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
-          <DarkModeMenuItem />
+          <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
+            <Switch label="Mørk modus" position="end" />
+          </div>
         </Header.Menu>
       </Header>
     );
