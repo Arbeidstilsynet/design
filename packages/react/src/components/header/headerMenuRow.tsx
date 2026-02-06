@@ -1,8 +1,10 @@
 import { Slot } from "@radix-ui/react-slot";
+import clsx from "clsx";
 import type { ReactNode } from "react";
 
 export interface HeaderMenuRowProps {
   children: ReactNode;
+  padded?: boolean;
 }
 
 /**
@@ -11,9 +13,10 @@ export interface HeaderMenuRowProps {
  */
 export function HeaderMenuRow({
   children,
+  padded
 }: Readonly<HeaderMenuRowProps>) {
   return (
-    <Slot className="at-header__menu-row">
+    <Slot className={clsx("at-header__menu-row", padded && "padded")}>
       {children}
     </Slot>
   );

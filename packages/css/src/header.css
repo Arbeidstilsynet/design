@@ -104,6 +104,10 @@
     color: var(--ds-color-text-default);
     background: var(--ds-color-surface-tinted);
   }
+
+  &.padded {
+    padding-left: var(--ds-size-11); /** row padding + icon size + gap */
+  }
 }
 
 .at-header__menu-row-icon {
