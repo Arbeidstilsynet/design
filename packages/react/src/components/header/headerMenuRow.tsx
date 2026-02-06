@@ -1,9 +1,10 @@
 import { Slot } from "@radix-ui/react-slot";
 import clsx from "clsx";
-import type { ReactNode } from "react";
+import type { HTMLAttributes } from "react";
+import type { DefaultProps } from "../../types";
 
-export interface HeaderMenuRowProps {
-  children: ReactNode;
+export interface HeaderMenuRowProps
+  extends DefaultProps<HTMLElement>, HTMLAttributes<HTMLElement> {
   padded?: boolean;
 }
 
@@ -12,34 +13,44 @@ export interface HeaderMenuRowProps {
  * Supports an icon, badge and custom styling.
  */
 export function HeaderMenuRow({
-  children,
+  className,
   padded,
+  ...rest
 }: Readonly<HeaderMenuRowProps>) {
   return (
-    <Slot className={clsx("at-header__menu-row", padded && "padded")}>
-      {children}
-    </Slot>
+    <Slot
+      className={clsx("at-header__menu-row", padded && "padded", className)}
+      {...rest}
+    />
   );
 }
 
-export interface HeaderMenuRowIconProps {
-  children: ReactNode;
-}
+export interface HeaderMenuRowIconProps
+  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {}
 
 export function HeaderMenuRowIcon({
-  children,
+  className,
+  ...rest
 }: Readonly<HeaderMenuRowIconProps>) {
-  return <div className="at-header__menu-row-icon">{children}</div>;
+  return (
+    <div className={clsx("at-header__menu-row-icon", className)} {...rest} />
+  );
 }
 
-export interface HeaderMenuRowBadgeProps {
+export interface HeaderMenuRowBadgeProps
+  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
   color?: "info" | "warning" | "success" | "danger";
-  children: ReactNode;
 }
 
 export function HeaderMenuRowBadge({
+  className,
   color = "info",
-  children,
+  ...rest
 }: Readonly<HeaderMenuRowBadgeProps>) {
-  return <div className={`at-header__menu-row-badge-${color}`}>{children}</div>;
+  return (
+    <div
+      className={clsx(`at-header__menu-row-badge-${color}`, className)}
+      {...rest}
+    />
+  );
 }
