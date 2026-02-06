@@ -192,21 +192,21 @@ export function HeaderMenu({
                 <div className="at-header__dropdown-controls">{children}</div>
               </Dropdown.Item>
             )}
+            
+            {/* Mobile-only close button */}
+            <Dropdown.Item>
+              <div className="at-header__dropdown-close-mobile">
+                <Button
+                  type="button"
+                  variant="secondary"
+                  onClick={() => setOpen(false)}
+                >
+                  <XMarkIcon aria-hidden />
+                  {closeButtonText}
+                </Button>
+              </div>
+            </Dropdown.Item>
           </Dropdown.List>
-
-          {/* Mobile-only close button */}
-          <Dropdown.Item>
-            <div className="at-header__dropdown-close-mobile">
-              <Button
-                type="button"
-                variant="secondary"
-                onClick={() => setOpen(false)}
-              >
-                <XMarkIcon aria-hidden />
-                {closeButtonText}
-              </Button>
-            </div>
-          </Dropdown.Item>
         </Dropdown>
       </Dropdown.TriggerContext>
 
