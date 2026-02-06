@@ -1,5 +1,19 @@
 # @arbeidstilsynet/design-css
 
+## 0.7.0
+
+Released: 2026-02-06
+
+### Minor Changes
+
+- Updated the styles of the header component + New header menu row component ([#606](https://github.com/Arbeidstilsynet/design/pull/606))
+
+### Patch Changes
+
+- Updated dependency `@types/node` to `24.10.10`. ([#613](https://github.com/Arbeidstilsynet/design/pull/613))
+
+- Updated dependency `autoprefixer` to `10.4.24`. ([#577](https://github.com/Arbeidstilsynet/design/pull/577))
+
 ## 0.6.0
 
 Released: 2026-01-28

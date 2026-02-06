@@ -1,5 +1,37 @@
 # @arbeidstilsynet/design-react
 
+## 0.7.0
+
+Released: 2026-02-06
+
+### Minor Changes
+
+- Updated the styles of the header component + New header menu row component ([#606](https://github.com/Arbeidstilsynet/design/pull/606))
+
+### Patch Changes
+
+- Updated dependency `@types/react` to `19.2.10`. ([#572](https://github.com/Arbeidstilsynet/design/pull/572))
+
+- Updated dependency `typescript-eslint` to `8.54.0`. ([#570](https://github.com/Arbeidstilsynet/design/pull/570))
+
+- Updated dependency `jsdom` to `28.0.0`. ([#590](https://github.com/Arbeidstilsynet/design/pull/590))
+
+- Updated dependency `@types/node` to `24.10.10`. ([#613](https://github.com/Arbeidstilsynet/design/pull/613))
+
+- Updated dependency `@storybook/addon-a11y` to `10.2.4`. ([#609](https://github.com/Arbeidstilsynet/design/pull/609))
+  Updated dependency `@storybook/addon-docs` to `10.2.4`.
+  Updated dependency `@storybook/addon-vitest` to `10.2.4`.
+  Updated dependency `@storybook/react-vite` to `10.2.4`.
+  Updated dependency `eslint-plugin-storybook` to `10.2.4`.
+  Updated dependency `storybook` to `10.2.4`.
+
+- Updated dependency `@vitejs/plugin-react` to `5.1.3`. ([#607](https://github.com/Arbeidstilsynet/design/pull/607))
+
+- Updated dependency `react-dropzone` to `^14.4.0`. ([#574](https://github.com/Arbeidstilsynet/design/pull/574))
+
+- Updated dependency `react` to `19.2.4`. ([#569](https://github.com/Arbeidstilsynet/design/pull/569))
+  Updated dependency `react-dom` to `19.2.4`.
+
 ## 0.6.0
 
 Released: 2026-01-28
