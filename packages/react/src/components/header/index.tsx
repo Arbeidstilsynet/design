@@ -1,9 +1,25 @@
 import { Header as HeaderParent } from "./header";
 import { HeaderIllustration } from "./headerIllustration";
 import { HeaderLogo } from "./headerLogo";
-import { HeaderMenu } from "./headerMenu";
+import { HeaderMenu as HeaderMenuParent } from "./headerMenu";
+import { HeaderMenuRowBadge, HeaderMenuRowIcon, HeaderMenuRow as HeaderMenuRowParent } from "./headerMenuRow";
 import { HeaderNavbar } from "./headerNavbar";
 import { HeaderTitle } from "./headerTitle";
+
+/**
+ * Compound component for building header menu rows, including support for icons and badges.
+ */
+const HeaderMenuRow = Object.assign(HeaderMenuRowParent, {
+  Icon: HeaderMenuRowIcon,
+  Badge: HeaderMenuRowBadge,
+});
+
+/**
+ * Compound component for building header menus.
+ */
+const HeaderMenu = Object.assign(HeaderMenuParent, {
+  Row: HeaderMenuRow,
+});
 
 /**
  * Compound component for building responsive application headers.
@@ -69,6 +85,7 @@ export { HeaderContext } from "./headerContext";
 export type { HeaderIllustrationProps } from "./headerIllustration";
 export type { HeaderLogoProps } from "./headerLogo";
 export type { HeaderMenuProps } from "./headerMenu";
+export type { HeaderMenuRowBadgeProps, HeaderMenuRowIconProps, HeaderMenuRowProps } from "./headerMenuRow";
 export type { HeaderNavbarProps } from "./headerNavbar";
 export type { HeaderTitleProps } from "./headerTitle";
 export {
@@ -76,6 +93,8 @@ export {
   HeaderIllustration,
   HeaderLogo,
   HeaderMenu,
+  HeaderMenuRow,
   HeaderNavbar,
-  HeaderTitle,
+  HeaderTitle
 };
+

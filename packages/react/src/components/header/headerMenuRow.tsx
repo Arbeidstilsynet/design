@@ -1,0 +1,45 @@
+import { Slot } from "@radix-ui/react-slot";
+import type { ReactNode } from "react";
+
+export interface HeaderMenuRowProps {
+  children: ReactNode;
+}
+
+/**
+ * Menu row that serves as a wrapper around a link in the header menu.
+ * Supports an icon, badge and custom styling.
+ */
+export function HeaderMenuRow({
+  children,
+}: Readonly<HeaderMenuRowProps>) {
+  return (
+    <Slot className="at-header__menu-row">
+      {children}
+    </Slot>
+  );
+}
+
+export interface HeaderMenuRowIconProps {
+  children: ReactNode;
+}
+
+export function HeaderMenuRowIcon({ children }: Readonly<HeaderMenuRowIconProps>) {
+  return (
+    <div className="at-header__menu-row-icon">
+      {children}
+    </div>
+  );
+}
+
+export interface HeaderMenuRowBadgeProps {
+  color?: "info" | "warning" | "success" | "danger";
+  children: ReactNode;
+}
+
+export function HeaderMenuRowBadge({ color = "info", children }: Readonly<HeaderMenuRowBadgeProps>) {
+  return (
+    <div className={`at-header__menu-row-badge-${color}`}>
+      {children}
+    </div>
+  );
+}
