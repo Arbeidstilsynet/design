@@ -38,13 +38,13 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const links = [
-  <Link key="home" href="./#" aria-label="Link til første" aria-current="page">
+  <Link key="home" href="./#" aria-current="page">
     Første
   </Link>,
-  <Link key="about" href="./#" aria-label="Link til andre">
+  <Link key="about" href="./#">
     Andre
   </Link>,
-  <Link key="services" href="./#" aria-label="Link til tredje">
+  <Link key="services" href="./#">
     Tredje
   </Link>,
 ];
@@ -63,7 +63,7 @@ export const Preview: Story = {
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
             <Header.Logo>
-              <HeaderStoriesTitle />
+              <HeaderStoriesTitle aria-label="Fagsystem tittel"/>
             </Header.Logo>
           </Header.Title>
         </Link>
@@ -97,7 +97,7 @@ export const NoMenu: Story = {
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
             <Header.Logo>
-              <HeaderStoriesTitle />
+              <HeaderStoriesTitle aria-label="Fagsystem tittel" />
             </Header.Logo>
           </Header.Title>
         </Link>
@@ -124,7 +124,7 @@ export const NoNavigation: Story = {
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
             <Header.Logo>
-              <HeaderStoriesTitle />
+              <HeaderStoriesTitle aria-label="Fagsystem tittel" />
             </Header.Logo>
           </Header.Title>
         </Link>
@@ -155,7 +155,7 @@ export const CustomMaxWidth: Story = {
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
             <Header.Logo>
-              <HeaderStoriesTitle />
+              <HeaderStoriesTitle aria-label="Fagsystem tittel" />
             </Header.Logo>
           </Header.Title>
         </Link>
@@ -224,7 +224,7 @@ export const OnlyDarkModeInMenu: Story = {
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
             <Header.Logo>
-              <HeaderStoriesTitle />
+              <HeaderStoriesTitle aria-label="Fagsystem tittel" />
             </Header.Logo>
           </Header.Title>
         </Link>
@@ -250,7 +250,7 @@ export const DifferentMenuRows: Story = {
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
             <Header.Logo>
-              <HeaderStoriesTitle />
+              <HeaderStoriesTitle aria-label="Fagsystem tittel" />
             </Header.Logo>
           </Header.Title>
         </Link>
@@ -259,7 +259,7 @@ export const DifferentMenuRows: Story = {
           <Header.Menu.Row>
             <Link href="#">
               <Header.Menu.Row.Icon>
-                <ExternalLinkIcon />
+                <ExternalLinkIcon aria-label="External link icon" />
               </Header.Menu.Row.Icon>
               <span>Link</span>
             </Link>
@@ -267,7 +267,7 @@ export const DifferentMenuRows: Story = {
           <Header.Menu.Row>
             <Link href="#">
               <Header.Menu.Row.Icon>
-                <CircleIcon />
+                <CircleIcon aria-label="Circle icon" />
               </Header.Menu.Row.Icon>
               <span>Badge (info)</span>
               <Header.Menu.Row.Badge color="info">1</Header.Menu.Row.Badge>
@@ -276,7 +276,7 @@ export const DifferentMenuRows: Story = {
           <Header.Menu.Row>
             <Link href="#">
               <Header.Menu.Row.Icon>
-                <CircleIcon />
+                <CircleIcon aria-label="Circle icon" />
               </Header.Menu.Row.Icon>
               <span>Badge (warning)</span>
               <Header.Menu.Row.Badge color="warning">2</Header.Menu.Row.Badge>
@@ -285,7 +285,7 @@ export const DifferentMenuRows: Story = {
           <Header.Menu.Row>
             <Link href="#">
               <Header.Menu.Row.Icon>
-                <CircleIcon />
+                <CircleIcon aria-label="Circle icon" />
               </Header.Menu.Row.Icon>
               <span>Badge (success)</span>
               <Header.Menu.Row.Badge color="success">3</Header.Menu.Row.Badge>
@@ -294,7 +294,7 @@ export const DifferentMenuRows: Story = {
           <Header.Menu.Row>
             <Link href="#">
               <Header.Menu.Row.Icon>
-                <CircleIcon />
+                <CircleIcon aria-label="Circle icon" />
               </Header.Menu.Row.Icon>
               <span>Badge (danger)</span>
               <Header.Menu.Row.Badge color="danger">4</Header.Menu.Row.Badge>
@@ -309,7 +309,7 @@ export const DifferentMenuRows: Story = {
           <Header.Menu.Row>
             <Button>
               <Header.Menu.Row.Icon>
-                <FingerButtonIcon />
+                <FingerButtonIcon aria-label="Button icon" />
               </Header.Menu.Row.Icon>
               <span>Button</span>
             </Button>

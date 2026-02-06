@@ -11,7 +11,7 @@ export function ProfileMenuItem() {
     <Header.Menu.Row>
       <Link href="#">
         <Header.Menu.Row.Icon>
-          <PersonCircleIcon />
+          <PersonCircleIcon aria-label="Profil ikon" />
         </Header.Menu.Row.Icon>
         <span>Profil</span>
       </Link>
@@ -30,7 +30,7 @@ export function InboxMenuItem({ count = 19 }: Readonly<{ count?: number }>) {
     <Header.Menu.Row>
       <Link href="#">
         <Header.Menu.Row.Icon>
-          <InboxIcon />
+          <InboxIcon aria-label="Innboks ikon" />
         </Header.Menu.Row.Icon>
         <span>Innboks</span>
         <Header.Menu.Row.Badge color="warning">{count}</Header.Menu.Row.Badge>
@@ -50,7 +50,7 @@ export function TODOsMenuItem({ count = 19 }: Readonly<{ count?: number }>) {
     <Header.Menu.Row>
       <Link href="#">
         <Header.Menu.Row.Icon>
-          <TasklistIcon />
+          <TasklistIcon aria-label="Gjøremål ikon" />
         </Header.Menu.Row.Icon>
         <span>Gjøremål</span>
         <Header.Menu.Row.Badge color="info">{count}</Header.Menu.Row.Badge>
