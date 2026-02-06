@@ -10,7 +10,9 @@ export function ProfileMenuItem() {
   return (
     <Header.Menu.Row>
       <Link href="#">
-        <Header.Menu.Row.Icon><PersonCircleIcon /></Header.Menu.Row.Icon>
+        <Header.Menu.Row.Icon>
+          <PersonCircleIcon />
+        </Header.Menu.Row.Icon>
         <span>Profil</span>
       </Link>
     </Header.Menu.Row>
@@ -27,7 +29,9 @@ export function InboxMenuItem({ count = 19 }: Readonly<{ count?: number }>) {
   return (
     <Header.Menu.Row>
       <Link href="#">
-        <Header.Menu.Row.Icon><InboxIcon /></Header.Menu.Row.Icon>
+        <Header.Menu.Row.Icon>
+          <InboxIcon />
+        </Header.Menu.Row.Icon>
         <span>Innboks</span>
         <Header.Menu.Row.Badge color="warning">{count}</Header.Menu.Row.Badge>
       </Link>
@@ -45,7 +49,9 @@ export function TODOsMenuItem({ count = 19 }: Readonly<{ count?: number }>) {
   return (
     <Header.Menu.Row>
       <Link href="#">
-        <Header.Menu.Row.Icon><TasklistIcon /></Header.Menu.Row.Icon>
+        <Header.Menu.Row.Icon>
+          <TasklistIcon />
+        </Header.Menu.Row.Icon>
         <span>Gjøremål</span>
         <Header.Menu.Row.Badge color="info">{count}</Header.Menu.Row.Badge>
       </Link>

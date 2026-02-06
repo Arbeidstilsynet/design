@@ -13,7 +13,7 @@ export interface HeaderMenuRowProps {
  */
 export function HeaderMenuRow({
   children,
-  padded
+  padded,
 }: Readonly<HeaderMenuRowProps>) {
   return (
     <Slot className={clsx("at-header__menu-row", padded && "padded")}>
@@ -26,12 +26,10 @@ export interface HeaderMenuRowIconProps {
   children: ReactNode;
 }
 
-export function HeaderMenuRowIcon({ children }: Readonly<HeaderMenuRowIconProps>) {
-  return (
-    <div className="at-header__menu-row-icon">
-      {children}
-    </div>
-  );
+export function HeaderMenuRowIcon({
+  children,
+}: Readonly<HeaderMenuRowIconProps>) {
+  return <div className="at-header__menu-row-icon">{children}</div>;
 }
 
 export interface HeaderMenuRowBadgeProps {
@@ -39,10 +37,9 @@ export interface HeaderMenuRowBadgeProps {
   children: ReactNode;
 }
 
-export function HeaderMenuRowBadge({ color = "info", children }: Readonly<HeaderMenuRowBadgeProps>) {
-  return (
-    <div className={`at-header__menu-row-badge-${color}`}>
-      {children}
-    </div>
-  );
+export function HeaderMenuRowBadge({
+  color = "info",
+  children,
+}: Readonly<HeaderMenuRowBadgeProps>) {
+  return <div className={`at-header__menu-row-badge-${color}`}>{children}</div>;
 }

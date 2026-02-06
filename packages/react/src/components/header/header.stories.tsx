@@ -1,4 +1,8 @@
-import { CircleIcon, ExternalLinkIcon, FingerButtonIcon } from "@navikt/aksel-icons";
+import {
+  CircleIcon,
+  ExternalLinkIcon,
+  FingerButtonIcon,
+} from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
 import { Button, Divider, Heading, Link } from "../..";
@@ -34,23 +38,13 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 const links = [
-  <Link data-color="primary" key="home" href="./#" aria-label="Link til første">
+  <Link key="home" href="./#" aria-label="Link til første" aria-current="page">
     Første
   </Link>,
-  <Link
-    data-color="secondary"
-    key="about"
-    href="./#"
-    aria-label="Link til andre"
-  >
+  <Link key="about" href="./#" aria-label="Link til andre">
     Andre
   </Link>,
-  <Link
-    data-color="secondary"
-    key="services"
-    href="./#"
-    aria-label="Link til tredje"
-  >
+  <Link key="services" href="./#" aria-label="Link til tredje">
     Tredje
   </Link>,
 ];
@@ -264,34 +258,44 @@ export const DifferentMenuRows: Story = {
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
           <Header.Menu.Row>
             <Link href="#">
-              <Header.Menu.Row.Icon><ExternalLinkIcon /></Header.Menu.Row.Icon>
+              <Header.Menu.Row.Icon>
+                <ExternalLinkIcon />
+              </Header.Menu.Row.Icon>
               <span>Link</span>
             </Link>
           </Header.Menu.Row>
           <Header.Menu.Row>
             <Link href="#">
-              <Header.Menu.Row.Icon><CircleIcon /></Header.Menu.Row.Icon>
+              <Header.Menu.Row.Icon>
+                <CircleIcon />
+              </Header.Menu.Row.Icon>
               <span>Badge (info)</span>
               <Header.Menu.Row.Badge color="info">1</Header.Menu.Row.Badge>
             </Link>
           </Header.Menu.Row>
           <Header.Menu.Row>
             <Link href="#">
-              <Header.Menu.Row.Icon><CircleIcon /></Header.Menu.Row.Icon>
+              <Header.Menu.Row.Icon>
+                <CircleIcon />
+              </Header.Menu.Row.Icon>
               <span>Badge (warning)</span>
               <Header.Menu.Row.Badge color="warning">2</Header.Menu.Row.Badge>
             </Link>
           </Header.Menu.Row>
           <Header.Menu.Row>
             <Link href="#">
-              <Header.Menu.Row.Icon><CircleIcon /></Header.Menu.Row.Icon>
+              <Header.Menu.Row.Icon>
+                <CircleIcon />
+              </Header.Menu.Row.Icon>
               <span>Badge (success)</span>
               <Header.Menu.Row.Badge color="success">3</Header.Menu.Row.Badge>
             </Link>
           </Header.Menu.Row>
           <Header.Menu.Row>
             <Link href="#">
-              <Header.Menu.Row.Icon><CircleIcon /></Header.Menu.Row.Icon>
+              <Header.Menu.Row.Icon>
+                <CircleIcon />
+              </Header.Menu.Row.Icon>
               <span>Badge (danger)</span>
               <Header.Menu.Row.Badge color="danger">4</Header.Menu.Row.Badge>
             </Link>
@@ -304,7 +308,9 @@ export const DifferentMenuRows: Story = {
           </Header.Menu.Row>
           <Header.Menu.Row>
             <Button>
-              <Header.Menu.Row.Icon><FingerButtonIcon /></Header.Menu.Row.Icon>
+              <Header.Menu.Row.Icon>
+                <FingerButtonIcon />
+              </Header.Menu.Row.Icon>
               <span>Button</span>
             </Button>
           </Header.Menu.Row>
@@ -315,4 +321,4 @@ export const DifferentMenuRows: Story = {
   args: {
     links,
   },
-}
+};

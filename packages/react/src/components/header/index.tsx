@@ -2,14 +2,18 @@ import { Header as HeaderParent } from "./header";
 import { HeaderIllustration } from "./headerIllustration";
 import { HeaderLogo } from "./headerLogo";
 import { HeaderMenu as HeaderMenuParent } from "./headerMenu";
-import { HeaderMenuRowBadge, HeaderMenuRowIcon, HeaderMenuRow as HeaderMenuRowParent } from "./headerMenuRow";
+import {
+  HeaderMenuRowBadge,
+  HeaderMenuRowIcon,
+  HeaderMenuRow as HeaderMenuRowParent,
+} from "./headerMenuRow";
 import { HeaderNavbar } from "./headerNavbar";
 import { HeaderTitle } from "./headerTitle";
 
 /**
  * Compound component for building header menu rows, including support for icons and badges.
  * Pass any button/link component as children, which will be styled appropriately.
- * 
+ *
  * ### Usage
  *
  * ```tsx
@@ -96,7 +100,11 @@ export { HeaderContext } from "./headerContext";
 export type { HeaderIllustrationProps } from "./headerIllustration";
 export type { HeaderLogoProps } from "./headerLogo";
 export type { HeaderMenuProps } from "./headerMenu";
-export type { HeaderMenuRowBadgeProps, HeaderMenuRowIconProps, HeaderMenuRowProps } from "./headerMenuRow";
+export type {
+  HeaderMenuRowBadgeProps,
+  HeaderMenuRowIconProps,
+  HeaderMenuRowProps,
+} from "./headerMenuRow";
 export type { HeaderNavbarProps } from "./headerNavbar";
 export type { HeaderTitleProps } from "./headerTitle";
 export {
@@ -106,6 +114,5 @@ export {
   HeaderMenu,
   HeaderMenuRow,
   HeaderNavbar,
-  HeaderTitle
+  HeaderTitle,
 };
-
