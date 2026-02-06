@@ -87,9 +87,6 @@
 }
 
 .at-header__menu-row {
-  --dsc-link-background--active: var(--ds-color-surface-tinted);
-  --dsc-link-color--hover: var(--ds-color-text-default);
-  --dsc-link-color: var(--ds-color-text-default);
   align-items: center;
   box-sizing: border-box;
   display: flex;
@@ -100,8 +97,11 @@
   padding: var(--ds-size-2) var(--ds-size-4);
   text-decoration: none;
   width: 100%;
+  color: var(--ds-color-text-default);
+  background: unset;
 
   &:hover {
+    color: var(--ds-color-text-default);
     background: var(--ds-color-surface-tinted);
   }
 }
@@ -111,6 +111,11 @@
   display: flex;
   flex-shrink: 0;
   height: fit-content;
+
+  > svg {
+    height: var(--ds-size-5);
+    width: var(--ds-size-5);
+  }
 }
 
 .at-header__menu-row-badge-info,
