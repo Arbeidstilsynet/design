@@ -8,6 +8,19 @@ import { HeaderTitle } from "./headerTitle";
 
 /**
  * Compound component for building header menu rows, including support for icons and badges.
+ * Pass any button/link component as children, which will be styled appropriately.
+ * 
+ * ### Usage
+ *
+ * ```tsx
+ * <Header.Menu.Row>
+ *   <Link href="#">
+ *     <Header.Menu.Row.Icon><ExternalLinkIcon /></Header.Menu.Row.Icon>
+ *     <span>Link</span>
+ *     <Header.Menu.Row.Badge color="warning">12</Header.Menu.Row.Badge>
+ *   </Link>
+ * </Header.Menu.Row>
+ * ```
  */
 const HeaderMenuRow = Object.assign(HeaderMenuRowParent, {
   Icon: HeaderMenuRowIcon,
@@ -50,24 +63,22 @@ const HeaderMenu = Object.assign(HeaderMenuParent, {
  * ];
  *
  * <Header links={links}>
- *   <Header.Title>
- *     <Header.Illustration>
- *       <Link href="/">
+ *   <Link href="/">
+ *     <Header.Title>
+ *       <Header.Illustration>
  *         <img src="/illustration.svg" alt="App Name" />
- *       </Link>
- *     </Header.Illustration>
- *     <Header.Logo>
- *       <Link href="/">
+ *       </Header.Illustration>
+ *       <Header.Logo>
  *         <img src="/logo.svg" alt="App Name" />
- *       </Link>
- *     </Header.Logo>
- *   </Header.Title>
+ *       </Header.Logo>
+ *     </Header.Title>
+ *   </Link>
  *   <Header.Navbar />
  *   <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
  *     <ProfileMenuItem />
  *     <InboxMenuItem />
  *     <Divider />
- *     <Switch label="Mørk modus" position="end" />
+ *     <DarkModeMenuItem />
  *   </Header.Menu>
  * </Header>
  * ```
