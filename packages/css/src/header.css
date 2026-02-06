@@ -62,6 +62,10 @@
   color: var(--ds-color-neutral-text-default);
 }
 
+.at-header__logo {
+  display: flex;
+}
+
 .at-header__dropdown-trigger {
   font-weight: var(--ds-font-weight-medium);
 }
