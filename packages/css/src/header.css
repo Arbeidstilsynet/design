@@ -21,9 +21,9 @@
     color: var(--ds-color-text-default);
     font-weight: var(--ds-font-weight-medium);
     text-decoration: none;
-    line-height: 130%;
+    line-height: var(--ds-line-height-sm);
     font-size: var(--ds-font-size-5);
-    letter-spacing: 0.15%;
+    letter-spacing: var(--ds-letter-spacing-8);
     font-style: medium;
     transform: translateY(
       -2.5px
