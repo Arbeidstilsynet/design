@@ -16,6 +16,17 @@
   & .ds-link {
     --dsc-link-color--visited: var(--dsc-link-color);
   }
+
+  & .ds-link:has(.at-header__logo) {
+    color: var(--ds-color-text-default);
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 130%;
+    font-size: var(--ds-font-size-5);
+    letter-spacing: 0.15%;
+    font-style: medium;
+    transform: translateY(-2.5px); /** Literata font med line is noticably lower than other fonts. This counteracts it somewhat, without looking dumb with other fonts */
+  }
 }
 
 .at-header__container {

@@ -30,7 +30,7 @@ export function MyComponent() {
 
 ## Font (optional)
 
-The design system is developed with the font Inter, but you can choose any font.
+The design system is developed with the fonts Inter and Literata, but you can choose any font.
 
 ### Example
 
@@ -61,6 +61,12 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://at-static.arbeidstilsynet.no/fonts/inter/v4.1/inter.css"
           crossOrigin=""
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,200..900;1,7..72,200..900&display=swap"
         />
       </head>
       <body>{children}</body>

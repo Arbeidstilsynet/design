@@ -48,8 +48,8 @@ import { HeaderTitle } from "./headerTitle";
  *       <Header.Illustration>
  *         <img src="/illustration.svg" alt="App Name" />
  *       </Header.Illustration>
- *       <Header.Logo>
- *         <HeaderStoriesTitle aria-label="Fagsystem tittel" />
+ *       <Header.Logo style={{ fontFamily: "Literata" }}>
+ *        Fagsystem
  *       </Header.Logo>
  *     </Header.Title>
  *   </Link>

@@ -8,7 +8,7 @@ import {
 } from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
-import { Button, Divider, Heading, Link, Switch } from "../..";
+import { Button, Divider, Link, Switch } from "../..";
 import { HeaderStoriesIllustration } from "./stories-helpers/headerStoriesIllustration";
 import { HeaderStoriesTitle } from "./stories-helpers/headerStoriesTitle";
 
@@ -59,8 +59,8 @@ export const Preview: Story = {
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
-            <Header.Logo>
-              <HeaderStoriesTitle aria-label="Fagsystem tittel" />
+            <Header.Logo style={{ fontFamily: "Literata" }}>
+              Fagsystem
             </Header.Logo>
           </Header.Title>
         </Link>
@@ -118,8 +118,8 @@ export const NoMenu: Story = {
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
-            <Header.Logo>
-              <HeaderStoriesTitle aria-label="Fagsystem tittel" />
+            <Header.Logo style={{ fontFamily: "Literata" }}>
+              Fagsystem
             </Header.Logo>
           </Header.Title>
         </Link>
@@ -145,8 +145,8 @@ export const NoNavigation: Story = {
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
-            <Header.Logo>
-              <HeaderStoriesTitle aria-label="Fagsystem tittel" />
+            <Header.Logo style={{ fontFamily: "Literata" }}>
+              Fagsystem
             </Header.Logo>
           </Header.Title>
         </Link>
@@ -178,8 +178,8 @@ export const CustomMaxWidth: Story = {
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
-            <Header.Logo>
-              <HeaderStoriesTitle aria-label="Fagsystem tittel" />
+            <Header.Logo style={{ fontFamily: "Literata" }}>
+              Fagsystem
             </Header.Logo>
           </Header.Title>
         </Link>
@@ -225,7 +225,7 @@ export const CustomMaxWidth: Story = {
   },
 };
 
-export const CustomLogoFont: Story = {
+export const SVGLogo: Story = {
   render: (args) => {
     return (
       <Header {...args}>
@@ -242,7 +242,7 @@ export const CustomLogoFont: Story = {
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
             <Header.Logo>
-              <Heading style={{ fontFamily: "monospace" }}>Fagsystem</Heading>
+              <HeaderStoriesTitle aria-label="Fagsystem tittel" />
             </Header.Logo>
           </Header.Title>
         </Link>
@@ -297,8 +297,8 @@ export const OnlyDarkModeInMenu: Story = {
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
-            <Header.Logo>
-              <HeaderStoriesTitle aria-label="Fagsystem tittel" />
+            <Header.Logo style={{ fontFamily: "Literata" }}>
+              Fagsystem
             </Header.Logo>
           </Header.Title>
         </Link>
@@ -325,8 +325,8 @@ export const DifferentMenuRows: Story = {
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
             </Header.Illustration>
-            <Header.Logo>
-              <HeaderStoriesTitle aria-label="Fagsystem tittel" />
+            <Header.Logo style={{ fontFamily: "Literata" }}>
+              Fagsystem
             </Header.Logo>
           </Header.Title>
         </Link>
