@@ -1,5 +1,20 @@
 # @arbeidstilsynet/design-react
 
+## 0.7.1
+
+Released: 2026-02-08
+
+### Patch Changes
+
+- Updated dependency `@types/react` to `19.2.13`. ([#622](https://github.com/Arbeidstilsynet/design/pull/622))
+
+- Updated dependency `@storybook/addon-a11y` to `10.2.6`. ([#620](https://github.com/Arbeidstilsynet/design/pull/620))
+  Updated dependency `@storybook/addon-docs` to `10.2.6`.
+  Updated dependency `@storybook/addon-vitest` to `10.2.6`.
+  Updated dependency `@storybook/react-vite` to `10.2.6`.
+  Updated dependency `eslint-plugin-storybook` to `10.2.6`.
+  Updated dependency `storybook` to `10.2.6`.
+
 ## 0.7.0
 
 Released: 2026-02-06
