@@ -39,11 +39,11 @@
       },
       "10": {
         "$type": "color",
-        "$value": "#4C4C4C"
+        "$value": "#085C53"
       },
       "11": {
         "$type": "color",
-        "$value": "#080808"
+        "$value": "#064640"
       },
       "12": {
         "$type": "color",
@@ -55,7 +55,7 @@
       },
       "14": {
         "$type": "color",
-        "$value": "#085C53"
+        "$value": "#064A43"
       },
       "15": {
         "$type": "color",
@@ -121,7 +121,7 @@
       },
       "14": {
         "$type": "color",
-        "$value": "#085C53"
+        "$value": "#064A43"
       },
       "15": {
         "$type": "color",
