@@ -5,7 +5,7 @@ import { getGroupedThemeColors } from "./getThemeColors";
 
 const buttonStyle: React.CSSProperties = {
   background: "var(--ds-color-background-tinted)",
-  color: "var(--ds-color-text-default)"
+  color: "var(--ds-color-text-default)",
 };
 
 export function ColorsSwatches() {
@@ -32,7 +32,12 @@ export function ColorsSwatches() {
     >
       <div
         data-color-scheme="light"
-        style={{ display: "flex", gap: "2rem", marginBottom: "1rem", alignItems: "center" }}
+        style={{
+          display: "flex",
+          gap: "2rem",
+          marginBottom: "1rem",
+          alignItems: "center",
+        }}
       >
         <Switch
           checked={scheme === "dark"}
@@ -64,8 +69,13 @@ export function ColorsSwatches() {
         </Dropdown.TriggerContext>
       </div>
       <div style={{ padding: "0.5rem 0", marginBottom: "1rem" }}>
-        <span style={{ color: "black", fontWeight: "bold" }}>Dynamic colors: </span>
-        <span style={{ color: "black" }}>Changes based on the closest ancestor with a "data-color" attribute (Defaults to Accent)</span>
+        <span style={{ color: "black", fontWeight: "bold" }}>
+          Dynamic colors:{" "}
+        </span>
+        <span style={{ color: "black" }}>
+          Changes based on the closest ancestor with a "data-color" attribute
+          (Defaults to Accent)
+        </span>
       </div>
       <ColorPalette>
         {Object.entries(colors.special).map(([name, value]) => (
@@ -73,8 +83,12 @@ export function ColorsSwatches() {
         ))}
       </ColorPalette>
       <div style={{ padding: "0.5rem 0", marginBottom: "1rem" }}>
-        <span style={{ color: "black", fontWeight: "bold" }}>Regular colors: </span>
-        <span style={{ color: "black" }}>Only changes with the dark color scheme</span>
+        <span style={{ color: "black", fontWeight: "bold" }}>
+          Regular colors:{" "}
+        </span>
+        <span style={{ color: "black" }}>
+          Only changes with the dark color scheme
+        </span>
       </div>
       <ColorPalette>
         {Object.entries(colors.ordinary).map(([name, value]) => (
