@@ -29,7 +29,7 @@
             },
             "base-active": {
               "dark": "#61AFA7",
-              "light": "#085C53"
+              "light": "#064A43"
             },
             "base-contrast-default": {
               "dark": "#080808",
@@ -77,11 +77,11 @@
             },
             "text-default": {
               "dark": "#E6EEED",
-              "light": "#080808"
+              "light": "#064640"
             },
             "text-subtle": {
               "dark": "#C3E1DE",
-              "light": "#4C4C4C"
+              "light": "#085C53"
             }
           },
           "blaa": {
@@ -378,7 +378,7 @@
             },
             "base-active": {
               "dark": "#BDDEDB",
-              "light": "#085C53"
+              "light": "#064A43"
             },
             "base-contrast-default": {
               "dark": "#080808",
