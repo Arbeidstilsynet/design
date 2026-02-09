@@ -100,11 +100,11 @@ design-tokens: v1.11.0
   --ds-color-accent-border-subtle: #9DCEC9;
   --ds-color-accent-border-default: #6DB5AD;
   --ds-color-accent-border-strong: #0B8477;
-  --ds-color-accent-text-subtle: #4C4C4C;
-  --ds-color-accent-text-default: #080808;
+  --ds-color-accent-text-subtle: #085C53;
+  --ds-color-accent-text-default: #064640;
   --ds-color-accent-base-default: #0B8477;
   --ds-color-accent-base-hover: #085C53;
-  --ds-color-accent-base-active: #085C53;
+  --ds-color-accent-base-active: #064A43;
   --ds-color-accent-base-contrast-subtle: #FCFDFD;
   --ds-color-accent-base-contrast-default: #FFFFFF;
   --ds-color-reverse-background-default: #032824;
@@ -120,7 +120,7 @@ design-tokens: v1.11.0
   --ds-color-reverse-text-default: #F8F8F8;
   --ds-color-reverse-base-default: #0B8477;
   --ds-color-reverse-base-hover: #085C53;
-  --ds-color-reverse-base-active: #085C53;
+  --ds-color-reverse-base-active: #064A43;
   --ds-color-reverse-base-contrast-subtle: #000202;
   --ds-color-reverse-base-contrast-default: #080808;
   --ds-color-neutral-background-default: #FFFFFF;
@@ -269,11 +269,11 @@ design-tokens: v1.11.0
   --ds-color-accent-border-subtle: #9DCEC9;
   --ds-color-accent-border-default: #6DB5AD;
   --ds-color-accent-border-strong: #0B8477;
-  --ds-color-accent-text-subtle: #4C4C4C;
-  --ds-color-accent-text-default: #080808;
+  --ds-color-accent-text-subtle: #085C53;
+  --ds-color-accent-text-default: #064640;
   --ds-color-accent-base-default: #0B8477;
   --ds-color-accent-base-hover: #085C53;
-  --ds-color-accent-base-active: #085C53;
+  --ds-color-accent-base-active: #064A43;
   --ds-color-accent-base-contrast-subtle: #FCFDFD;
   --ds-color-accent-base-contrast-default: #FFFFFF;
   --ds-color-reverse-background-default: #032824;
@@ -289,7 +289,7 @@ design-tokens: v1.11.0
   --ds-color-reverse-text-default: #F8F8F8;
   --ds-color-reverse-base-default: #0B8477;
   --ds-color-reverse-base-hover: #085C53;
-  --ds-color-reverse-base-active: #085C53;
+  --ds-color-reverse-base-active: #064A43;
   --ds-color-reverse-base-contrast-subtle: #000202;
   --ds-color-reverse-base-contrast-default: #080808;
   --ds-color-neutral-background-default: #FFFFFF;
