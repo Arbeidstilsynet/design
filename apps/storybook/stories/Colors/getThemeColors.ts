@@ -1,4 +1,5 @@
 const DESIGNSYSTEMET_COLOR_PREFIX = "--ds-color-";
+const SPECIAL_GROUPS = ["Background", "Surface", "Border", "Text", "Base", "Focus"];
 
 function escapeRe(s: string) {
   return s.replaceAll(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`);
@@ -76,8 +77,8 @@ export function getGroupedThemeColors(
   const groups: Record<string, Record<string, string>> = {};
 
   for (const [fullName, value] of Object.entries(flat)) {
-    // e.g. --ds-color-primary-background-default
-    const suffix = fullName.slice(prefix.length); // "primary-background-default"
+    // e.g. "--ds-color-background-default" -> "background-default"
+    const suffix = fullName.slice(prefix.length);
     const [groupRaw, ...rest] = suffix.split("-");
     if (!groupRaw || groupRaw === "brand") continue;
 
@@ -88,15 +89,21 @@ export function getGroupedThemeColors(
     groups[groupName][colorName] = value;
   }
 
-  const sortedGroupNames = Object.keys(groups).sort((a, b) => {
-    if (a === "Base") return -1;
-    if (b === "Base") return 1;
-    if (a === "Primary") return -1;
-    if (b === "Primary") return 1;
-    return a.localeCompare(b);
-  });
+  const special = Object.fromEntries(
+    Object.keys(groups)
+    .filter(x => SPECIAL_GROUPS.includes(x))
+    .sort((a, b) => {
+      return SPECIAL_GROUPS.indexOf(a) - SPECIAL_GROUPS.indexOf(b);
+    })
+    .map(groupName => [groupName, groups[groupName]!]),
+  );
+  
+  const ordinary = Object.fromEntries(
+    Object.keys(groups)
+    .filter(x => !SPECIAL_GROUPS.includes(x))
+    .sort((a, b) => a.localeCompare(b))
+    .map(groupName => [groupName, groups[groupName]!]),
+  );
 
-  const sorted: Record<string, Record<string, string>> = {};
-  for (const name of sortedGroupNames) sorted[name] = groups[name]!;
-  return sorted;
+  return { special, ordinary };
 }
