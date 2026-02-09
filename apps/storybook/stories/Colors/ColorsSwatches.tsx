@@ -32,6 +32,7 @@ export function ColorsSwatches() {
     >
       <div
         data-color-scheme="light"
+        data-color={dataColor}
         style={{
           display: "flex",
           gap: "2rem",
