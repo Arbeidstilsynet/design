@@ -25,8 +25,8 @@ const CHANGELOG_FILE_NAME = "CHANGELOG.md";
 interface ChangelogEntry {
   fullText: string;
   dependencies: Array<{ packageName: string; version: string }>;
-  prNumber?: string;
-  prUrl?: string;
+  prNumber: string | null;
+  prUrl: string | null;
 }
 
 const options: ParseArgsOptionsConfig = {
@@ -63,17 +63,10 @@ function parseEntry(entryText: string): ChangelogEntry {
   const lines = entryText.split("\n");
   const firstLine = lines[0]!;
 
-  // Extract PR info from first line
+  // Extract PR info from first line (optional - fixed changesets may not have PR numbers)
   const prMatch = /\(\[#(\d+)\]\(([^)]+)\)\)$/.exec(firstLine);
-  const prNumber = prMatch?.[1];
-  const prUrl = prMatch?.[2];
-
-  if (!prNumber) {
-    throw new Error("Expected PR number to be present in entry text");
-  }
-  if (!prUrl) {
-    throw new Error("Expected PR URL to be present in entry text");
-  }
+  const prNumber = prMatch?.[1] ?? null;
+  const prUrl = prMatch?.[2] ?? null;
 
   // Find all dependency updates in the entry
   const dependencies: Array<{ packageName: string; version: string }> = [];
