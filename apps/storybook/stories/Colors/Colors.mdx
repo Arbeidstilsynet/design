@@ -1,11 +1,61 @@
+import { Alert } from "@arbeidstilsynet/design-react";
 import { Meta } from "@storybook/addon-docs/blocks";
 import { ColorsSwatches } from "./ColorsSwatches";
 
 <Meta title="Colors" />
 
-# Colors from the Arbeidstilsynet theme
+# Colors
 
-Use with `--ds-color-` prefix.
-Example `--ds-color-primary-base-active`.
+A palet of colors has been defined as the theme colors that we strive to use in all applications of Arbeidstilsynet.
+We group colors into _semantic color categories_, to improve the UI, intuitiveness, accessibility and consistency, while enabling easier theme management.
+
+## Usage
+
+### Gnist components
+
+Components imported by Gnist adhere to the semantic color categories, and the category can be specified with the `data-color` attribute
+
+#### Example
+
+```jsx
+<Alert data-color="accent">My info message</Alert>
+```
+
+<Alert data-color="accent">My info message</Alert>
+
+### Reusable components
+
+When creating reusable components, semantic colors should be used. The set of design tokens without any specific semantic color category should then be used. Note that the `data-color` attribute can be used anywhere and will change the selected semantic color categories for all descendants.
+
+#### Example
+
+```tsx
+interface Props
+  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {}
+
+function MyReusableComponent({ ...rest }: Props) {
+  return (
+    <div {...rest}>
+      <div style={{ background: "var(--ds-color-background-tinted)" }}>
+        <span style={{ color: "var(--ds-color-text-default)" }}>
+          Reusable component that makes use of semantic colors.
+        </span>
+      </div>
+    </div>
+  );
+}
+
+<MyReusableComponent data-color="danger" />;
+```
+
+<div data-color="danger">
+  <div style={{ background: "var(--ds-color-background-tinted)" }}>
+    <span style={{ color: "var(--ds-color-text-default)" }}>
+      Reusable component that makes use of semantic colors.
+    </span>
+  </div>
+</div>
+
+## Swatches
 
 <ColorsSwatches />
