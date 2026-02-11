@@ -280,6 +280,30 @@ Released: 2025-06-13
     expect(writeFileSyncSpy).not.toHaveBeenCalled();
   });
 
+  it("handles versions with no changes (fixed changesets)", () => {
+    const changelog = `# @arbeidstilsynet/design-react
+
+## 0.0.17
+
+Released: 2025-06-13
+
+## 0.0.16
+
+Released: 2025-06-10
+
+### Patch Changes
+
+- Updated dependency \`@types/react\` to \`19.1.7\`. ([#115](https://github.com/Arbeidstilsynet/design/pull/115))
+`;
+
+    setupTest(changelog);
+    const result = dedupeChangelog(pkg);
+
+    // Should handle gracefully - no changes section means nothing to dedupe
+    expect(result.error).toBe(true);
+    expect(result.content).toBeNull();
+  });
+
   it("is idempotent - running multiple times produces same result", () => {
     const changelog = `# @arbeidstilsynet/design-react
 
