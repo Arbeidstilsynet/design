@@ -16,7 +16,7 @@ export const ColorPalette = ({ palette }: ColorPaletteV2Props) => {
           <div>
             <div className={classes.colorRow}>
               {Object.entries(colors).map(([key, value]) => (
-                <div
+                <button
                   className={classes.colorItem}
                   style={{ background: value }}
                   onClick={() =>
