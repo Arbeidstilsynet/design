@@ -29,27 +29,30 @@ When creating reusable components, semantic colors should be used. The set of de
 
 #### Example
 
-```jsx
-<div id="my-reusable-component" data-color="danger">
+```tsx
+interface Props
+  extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {}
+
+function MyReusableComponent({ ...rest }: Props) {
+  return (
+    <div {...rest}>
+      <div style={{ background: "var(--ds-color-background-tinted)" }}>
+        <span style={{ color: "var(--ds-color-text-default)" }}>
+          Reusable component that makes use of semantic colors.
+        </span>
+      </div>
+    </div>
+  );
+}
+
+<MyReusableComponent data-color="danger" />;
+```
+
+<div data-color="danger">
   <div style={{ background: "var(--ds-color-background-tinted)" }}>
     <span style={{ color: "var(--ds-color-text-default)" }}>
       Reusable component that makes use of semantic colors.
     </span>
-  </div>
-</div>
-```
-
-<div id="my-reusable-component" data-color="danger">
-  <div
-    style={{
-      background: "var(--ds-color-background-tinted)",
-      border: "1px solid var(--ds-color-border-default)",
-      borderRadius: "var(--ds-border-radius-md)",
-      color: "var(--ds-color-text-default)",
-      padding: "var(--ds-size-1) var(--ds-size-2)",
-    }}
-  >
-    <span>Reusable component that makes use of semantic colors.</span>
   </div>
 </div>
 
