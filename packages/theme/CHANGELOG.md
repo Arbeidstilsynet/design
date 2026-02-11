@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.5.0
+
+Released: 2026-02-11
+
+### Minor Changes
+
+- Updated 4 colors (3 accent-\* + base-active) ([#627](https://github.com/Arbeidstilsynet/design/pull/627))
+
 ## 0.4.0
 
 Released: 2026-01-08

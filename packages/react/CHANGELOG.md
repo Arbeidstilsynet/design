@@ -1,5 +1,18 @@
 # @arbeidstilsynet/design-react
 
+## 0.7.1
+
+Released: 2026-02-11
+
+### Patch Changes
+
+- Updated dependency `@digdir/designsystemet-css` to `1.11.1`. ([#623](https://github.com/Arbeidstilsynet/design/pull/623))
+  Updated dependency `@digdir/designsystemet` to `1.11.1`.
+  Updated dependency `@digdir/designsystemet-react` to `1.11.1`.
+  Updated dependency `@digdir/designsystemet-types` to `1.11.1`.
+
+- Updated dependency `@navikt/aksel-icons` to `^8.3.0`. ([#545](https://github.com/Arbeidstilsynet/design/pull/545))
+
 ## 0.7.0
 
 Released: 2026-02-06
