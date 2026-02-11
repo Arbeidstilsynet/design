@@ -2,7 +2,9 @@ import type { HTMLAttributes } from "react";
 import type { DefaultProps } from "../../types";
 
 export interface LightDarkImageProps
-  extends DefaultProps<HTMLSpanElement>, HTMLAttributes<HTMLSpanElement> {
+  extends
+    DefaultProps<HTMLSpanElement>,
+    Omit<HTMLAttributes<HTMLSpanElement>, "children"> {
   /** Image to show in light mode */
   light: React.ReactNode;
   /** Image to show in dark mode */
