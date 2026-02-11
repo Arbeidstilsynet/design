@@ -1,0 +1,49 @@
+/* Default behavior - follows system preference */
+.at-lightdarkimage-light {
+  display: revert;
+}
+.at-lightdarkimage-dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .at-lightdarkimage-light {
+    display: none;
+  }
+  .at-lightdarkimage-dark {
+    display: revert;
+  }
+}
+
+/* Explicit light mode */
+[data-color-scheme="light"] .at-lightdarkimage-light {
+  display: revert;
+}
+[data-color-scheme="light"] .at-lightdarkimage-dark {
+  display: none;
+}
+
+/* Explicit dark mode */
+[data-color-scheme="dark"] .at-lightdarkimage-light {
+  display: none;
+}
+[data-color-scheme="dark"] .at-lightdarkimage-dark {
+  display: revert;
+}
+
+/* Auto mode - follows system preference */
+[data-color-scheme="auto"] .at-lightdarkimage-light {
+  display: revert;
+}
+[data-color-scheme="auto"] .at-lightdarkimage-dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-color-scheme="auto"] .at-lightdarkimage-light {
+    display: none;
+  }
+  [data-color-scheme="auto"] .at-lightdarkimage-dark {
+    display: revert;
+  }
+}
