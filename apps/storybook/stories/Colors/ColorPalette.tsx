@@ -12,23 +12,27 @@ export const ColorPalette = ({ palette }: ColorPaletteV2Props) => {
     <div className={classes.palette}>
       {Object.entries(palette).map(([colorgroup, colors]) => (
         <React.Fragment key={colorgroup}>
-          <div className={classes.groupName}>
-            {colorgroup}
-          </div>
+          <div className={classes.groupName}>{colorgroup}</div>
           <div>
             <div className={classes.colorRow}>
               {Object.entries(colors).map(([key, value]) => (
                 <div
                   className={classes.colorItem}
                   style={{ background: value }}
-                  onClick={() => copyToClipboard(`var(--ds-color-${colorgroup.toLowerCase()}-${key})`)}
+                  onClick={() =>
+                    copyToClipboard(
+                      `var(--ds-color-${colorgroup.toLowerCase()}-${key})`,
+                    )
+                  }
                 />
               ))}
             </div>
             <div className={classes.bottomTextRow}>
               {Object.entries(colors).map(([key, value]) => (
                 <div key={key} className={classes.bottomTextItem}>
-                  {key}<br />{value.toUpperCase()}
+                  {key}
+                  <br />
+                  {value.toUpperCase()}
                 </div>
               ))}
             </div>
@@ -39,11 +43,12 @@ export const ColorPalette = ({ palette }: ColorPaletteV2Props) => {
   );
 };
 
-
 const copyToClipboard = (text: string) => {
   navigator.clipboard.writeText(text);
   toast(
-    <Alert data-size="sm" data-color="success" style={{ width: "100%" }}>Copied CSS variable to clipboard</Alert>,
+    <Alert data-size="sm" data-color="success" style={{ width: "100%" }}>
+      Copied CSS variable to clipboard
+    </Alert>,
     { autoClose: 1500, className: classes.toast },
   );
 };

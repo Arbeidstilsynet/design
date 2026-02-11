@@ -25,7 +25,8 @@
   padding: 0;
 }
 
-.triggerButton, .listItemButton {
+.triggerButton,
+.listItemButton {
   background: var(--ds-color-background-tinted);
   color: var(--ds-color-text-default);
 }

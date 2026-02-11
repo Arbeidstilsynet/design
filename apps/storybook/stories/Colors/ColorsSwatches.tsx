@@ -44,7 +44,10 @@ export function ColorsSwatches() {
             <Dropdown.Trigger className={classes.triggerButton} data-size="sm">
               [data-color="{dataColor}"]
             </Dropdown.Trigger>
-            <Dropdown placement="bottom-end" className={classes.dropdownContent}>
+            <Dropdown
+              placement="bottom-end"
+              className={classes.dropdownContent}
+            >
               <Dropdown.List>
                 {Object.keys(colors.ordinary).map((color) => (
                   <Dropdown.Item key={color}>
@@ -63,9 +66,7 @@ export function ColorsSwatches() {
           </Dropdown.TriggerContext>
         </div>
         <div className={classes.infoText}>
-          <span>
-            Semantic colors:{" "}
-          </span>
+          <span>Semantic colors: </span>
           <span>
             Changes based on the closest ancestor with a "data-color" attribute
             (Defaults to Accent)
@@ -74,20 +75,12 @@ export function ColorsSwatches() {
         <ColorPalette palette={colors.special} />
         <br />
         <div className={classes.infoText}>
-          <span>
-            Color palette:{" "}
-          </span>
-          <span>
-            Only changes with the dark color scheme
-          </span>
+          <span>Color palette: </span>
+          <span>Only changes with the dark color scheme</span>
         </div>
         <ColorPalette palette={colors.ordinary} />
       </div>
-      <ToastContainer
-        position="bottom-center"
-        autoClose={3000}
-        pauseOnHover
-      />
+      <ToastContainer position="bottom-center" autoClose={3000} pauseOnHover />
     </Unstyled>
   );
 }
