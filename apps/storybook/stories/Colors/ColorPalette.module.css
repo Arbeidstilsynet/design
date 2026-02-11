@@ -1,0 +1,50 @@
+.palette {
+  display: grid;
+  grid-template-columns: minmax(100px, max-content) 1fr;
+  gap: 1rem 3rem;
+}
+
+.groupName {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+.colorRow {
+  display: flex;
+  flex-direction: row;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px;
+  border-radius: var(--ds-border-radius-md);
+  overflow: hidden;
+}
+
+.colorItem {
+  height: 50px;
+  flex: 1 1 0%;
+  cursor: copy;
+  border: 1px solid transparent;
+
+  &:hover {
+    border-color: var(--ds-color-neutral-border-default);
+  }
+}
+
+.bottomTextRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  color: var(--ds-color-neutral-text-subtle);
+}
+
+.bottomTextItem {
+  text-align: center;
+  flex: 1 1 0%;
+  font-size: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.toast {
+  --toastify-toast-padding: 0;
+  --toastify-color-progress-light: var(--ds-color-success-background-default);
+}

@@ -1,0 +1,39 @@
+.container {
+  padding: 1rem;
+  background: #ffffff;
+  font-size: var(--ds-font-size-2);
+  color: black;
+}
+
+.inputs {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.infoText {
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
+
+  > :first-child {
+    font-weight: bold;
+  }
+}
+
+.dropdownContent {
+  padding: 0;
+}
+
+.triggerButton, .listItemButton {
+  background: var(--ds-color-background-tinted);
+  color: var(--ds-color-text-default);
+}
+
+.listItemButton {
+  border-radius: 0;
+
+  &:hover {
+    border: 1px solid var(--ds-color-border-default);
+  }
+}

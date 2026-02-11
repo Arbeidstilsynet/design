@@ -14,12 +14,13 @@
   },
   "dependencies": {
     "@arbeidstilsynet/design-css": "workspace:*",
-    "@arbeidstilsynet/design-theme": "workspace:*",
     "@arbeidstilsynet/design-react": "workspace:*",
+    "@arbeidstilsynet/design-theme": "workspace:*",
     "@navikt/aksel-icons": "7.40.0",
     "clsx": "2.1.1",
     "react": "19.2.4",
-    "react-dom": "19.2.4"
+    "react-dom": "19.2.4",
+    "react-toastify": "^11.0.5"
   },
   "devDependencies": {
     "@eslint/js": "9.39.2",

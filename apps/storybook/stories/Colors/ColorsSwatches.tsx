@@ -1,12 +1,10 @@
 import { Dropdown, Switch } from "@arbeidstilsynet/design-react";
-import { ColorItem, ColorPalette } from "@storybook/addon-docs/blocks";
+import { Unstyled } from "@storybook/addon-docs/blocks";
 import { useEffect, useRef, useState } from "react";
+import { ToastContainer } from "react-toastify";
+import { ColorPalette } from "./ColorPalette";
+import classes from "./ColorsSwatches.module.css";
 import { getGroupedThemeColors } from "./getThemeColors";
-
-const buttonStyle: React.CSSProperties = {
-  background: "var(--ds-color-background-tinted)",
-  color: "var(--ds-color-text-default)",
-};
 
 export function ColorsSwatches() {
   const parentRef = useRef(null);
@@ -23,79 +21,73 @@ export function ColorsSwatches() {
   }, [scheme, dataColor]);
 
   return (
-    <div
-      ref={parentRef}
-      data-color-scheme={scheme}
-      style={{ padding: "1rem", background: "#ffffff" }}
-      className="colors-demo-scope"
-      data-color={dataColor}
-    >
+    <Unstyled>
       <div
-        data-color-scheme="light"
+        ref={parentRef}
+        data-color-scheme={scheme}
+        className={classes.container}
         data-color={dataColor}
-        style={{
-          display: "flex",
-          gap: "2rem",
-          marginBottom: "1rem",
-          alignItems: "center",
-        }}
       >
-        <Switch
-          checked={scheme === "dark"}
-          label="Dark color scheme"
-          onChange={() => {
-            setScheme(scheme === "light" ? "dark" : "light");
-          }}
-        />
-        <Dropdown.TriggerContext>
-          <Dropdown.Trigger style={buttonStyle} data-size="sm">
-            [data-color="{dataColor}"]
-          </Dropdown.Trigger>
-          <Dropdown placement="bottom-end">
-            <Dropdown.List style={{ padding: "0", margin: "0" }}>
-              {Object.keys(colors.ordinary).map((color) => (
-                <Dropdown.Item style={{ display: "block" }} key={color}>
-                  <Dropdown.Button
-                    data-color={color.toLowerCase()}
-                    value={color.toLowerCase()}
-                    onClick={() => setDataColor(color.toLowerCase())}
-                    style={buttonStyle}
-                  >
-                    {color}
-                  </Dropdown.Button>
-                </Dropdown.Item>
-              ))}
-            </Dropdown.List>
-          </Dropdown>
-        </Dropdown.TriggerContext>
+        <div
+          data-color-scheme="light"
+          data-color={dataColor}
+          className={classes.inputs}
+        >
+          <Switch
+            checked={scheme === "dark"}
+            label="Dark color scheme"
+            onChange={() => {
+              setScheme(scheme === "light" ? "dark" : "light");
+            }}
+          />
+          <Dropdown.TriggerContext>
+            <Dropdown.Trigger className={classes.triggerButton} data-size="sm">
+              [data-color="{dataColor}"]
+            </Dropdown.Trigger>
+            <Dropdown placement="bottom-end" className={classes.dropdownContent}>
+              <Dropdown.List>
+                {Object.keys(colors.ordinary).map((color) => (
+                  <Dropdown.Item key={color}>
+                    <Dropdown.Button
+                      data-color={color.toLowerCase()}
+                      value={color.toLowerCase()}
+                      onClick={() => setDataColor(color.toLowerCase())}
+                      className={classes.listItemButton}
+                    >
+                      {color}
+                    </Dropdown.Button>
+                  </Dropdown.Item>
+                ))}
+              </Dropdown.List>
+            </Dropdown>
+          </Dropdown.TriggerContext>
+        </div>
+        <div className={classes.infoText}>
+          <span>
+            Semantic colors:{" "}
+          </span>
+          <span>
+            Changes based on the closest ancestor with a "data-color" attribute
+            (Defaults to Accent)
+          </span>
+        </div>
+        <ColorPalette palette={colors.special} />
+        <br />
+        <div className={classes.infoText}>
+          <span>
+            Color palette:{" "}
+          </span>
+          <span>
+            Only changes with the dark color scheme
+          </span>
+        </div>
+        <ColorPalette palette={colors.ordinary} />
       </div>
-      <div style={{ padding: "0.5rem 0", marginBottom: "1rem" }}>
-        <span style={{ color: "black", fontWeight: "bold" }}>
-          Dynamic colors:{" "}
-        </span>
-        <span style={{ color: "black" }}>
-          Changes based on the closest ancestor with a "data-color" attribute
-          (Defaults to Accent)
-        </span>
-      </div>
-      <ColorPalette>
-        {Object.entries(colors.special).map(([name, value]) => (
-          <ColorItem key={name} title={name} colors={value} subtitle="" />
-        ))}
-      </ColorPalette>
-      <div style={{ padding: "0.5rem 0", marginBottom: "1rem" }}>
-        <span style={{ color: "black", fontWeight: "bold" }}>
-          Regular colors:{" "}
-        </span>
-        <span style={{ color: "black" }}>
-          Only changes with the dark color scheme
-        </span>
-      </div>
-      <ColorPalette>
-        {Object.entries(colors.ordinary).map(([name, value]) => (
-          <ColorItem key={name} title={name} colors={value} subtitle="" />
-        ))}
-      </ColorPalette>
-    </div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={3000}
+        pauseOnHover
+      />
+    </Unstyled>
   );
 }
