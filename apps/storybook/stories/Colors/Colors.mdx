@@ -23,29 +23,6 @@ Components imported by Gnist adhere to the semantic color categories, and the ca
 
 <Alert data-color="accent">My info message</Alert>
 
-### Regular development
-
-In a typical application, the developer mostly uses explicit colors from the color palette, referenced by design tokens with the `--ds-color-` prefix.
-
-#### Example
-
-```jsx
-<div style={{ background: "var(--ds-color-blaa-background-default)" }}>
-  Blue background
-</div>
-```
-
-<div
-  style={{
-    background: "var(--ds-color-blaa-background-default)",
-    border: "1px solid var(--ds-color-blaa-border-default)",
-    borderRadius: "var(--ds-border-radius-md)",
-    padding: "var(--ds-size-1) var(--ds-size-2)",
-  }}
->
-  <span>Blue background</span>
-</div>
-
 ### Reusable components
 
 When creating reusable components, semantic colors should be used. The set of design tokens without any specific semantic color category should then be used. Note that the `data-color` attribute can be used anywhere and will change the selected semantic color categories for all descendants.
