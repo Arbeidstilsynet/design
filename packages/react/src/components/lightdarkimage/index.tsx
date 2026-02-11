@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import type { HTMLAttributes } from "react";
 import type { DefaultProps } from "../../types";
 
@@ -21,12 +22,13 @@ export interface LightDarkImageProps
  * ```
  */
 export function LightDarkImage({
+  className,
   light,
   dark,
   ...rest
 }: Readonly<LightDarkImageProps>) {
   return (
-    <span className="at-lightdarkimage" {...rest}>
+    <span className={clsx("at-lightdarkimage", className)} {...rest}>
       <span className="at-lightdarkimage-light">{light}</span>
       <span className="at-lightdarkimage-dark">{dark}</span>
     </span>
