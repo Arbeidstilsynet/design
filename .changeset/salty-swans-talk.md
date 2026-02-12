@@ -3,4 +3,4 @@
 "@arbeidstilsynet/design-react": patch
 ---
 
-**Dependencies**: Updated 'qs' dependency, which had a vulnerability that prevented package from being released.
+**Security**: Updated the transitive `qs` dependency to a patched version that fixes a reported vulnerability.
