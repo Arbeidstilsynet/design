@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-react
 
+## 0.8.1
+
+Released: 2026-02-12
+
+### Patch Changes
+
+- **Security**: Updated the transitive `qs` dependency to a patched version that fixes a reported vulnerability. ([#648](https://github.com/Arbeidstilsynet/design/pull/648))
+
 ## 0.8.0
 
 Released: 2026-02-12
