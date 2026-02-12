@@ -96,9 +96,7 @@ export const Preview: Story = {
             </Link>
           </Header.MenuRow>
           <Divider />
-          <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
-            <Switch label="Mørk modus" position="end" />
-          </div>
+          <Switch label="Mørk modus" position="end" />
         </Header.Menu>
       </Header>
     );
@@ -155,9 +153,7 @@ export const NoNavigation: Story = {
         </Link>
         <Header.Navbar />
         <Header.Menu triggerContent="Innstillinger">
-          <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
-            <Switch label="Mørk modus" position="end" />
-          </div>
+          <Switch label="Mørk modus" position="end" />
         </Header.Menu>
       </Header>
     );
@@ -216,9 +212,7 @@ export const CustomMaxWidth: Story = {
             </Link>
           </Header.MenuRow>
           <Divider />
-          <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
-            <Switch label="Mørk modus" position="end" />
-          </div>
+          <Switch label="Mørk modus" position="end" />
         </Header.Menu>
       </Header>
     );
@@ -279,9 +273,7 @@ export const SVGLogo: Story = {
             </Link>
           </Header.MenuRow>
           <Divider />
-          <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
-            <Switch label="Mørk modus" position="end" />
-          </div>
+          <Switch label="Mørk modus" position="end" />
         </Header.Menu>
       </Header>
     );
@@ -307,9 +299,7 @@ export const OnlyDarkModeInMenu: Story = {
         </Link>
         <Header.Navbar />
         <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
-          <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
-            <Switch label="Mørk modus" position="end" />
-          </div>
+          <Switch label="Mørk modus" position="end" />
         </Header.Menu>
       </Header>
     );

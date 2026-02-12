@@ -81,9 +81,7 @@ import { HeaderTitle } from "./headerTitle";
  *       </Link>
  *     </Header.MenuRow>
  *     <Divider />
- *     <div style={{ padding: "var(--ds-size-2) var(--ds-size-4)" }}>
- *       <Switch label="Mørk modus" position="end" />
- *     </div>
+ *     <Switch label="Mørk modus" position="end" />
  *   </Header.Menu>
  * </Header>
  * ```
