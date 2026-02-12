@@ -1,5 +1,17 @@
 # @arbeidstilsynet/design-css
 
+## 0.8.0
+
+Released: 2026-02-12
+
+### Minor Changes
+
+- **LightDarkImage**: new component that replaces `LightDarkLogo`. `LightDarkImage` can be used with any pair of images to alternate based on current color scheme. `LogoBlack`, `LogoWhite`, `LogoGreen` are still exported. ([#639](https://github.com/Arbeidstilsynet/design/pull/639))
+
+### Patch Changes
+
+- **Header**: updated styling, including tweaked padding and added top margin. `Header.Menu` now properly places `Switch` children. ([#644](https://github.com/Arbeidstilsynet/design/pull/644))
+
 ## 0.7.1
 
 Released: 2026-02-11
