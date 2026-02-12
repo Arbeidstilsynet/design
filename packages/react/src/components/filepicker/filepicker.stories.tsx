@@ -1,7 +1,7 @@
-import { Label, Paragraph } from "@digdir/designsystemet-react";
 import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { useRef, useState } from "react";
 import { FilePicker, type FilePickerItem } from "..";
+import { Label, Paragraph } from "../..";
 import { createMockFile, createMockFileInKb } from "./utils";
 
 const meta: Meta<typeof FilePicker> = {
