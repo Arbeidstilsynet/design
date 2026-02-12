@@ -1,5 +1,5 @@
 .at-header {
-  --at-header-max-width: 90rem;
+  --at-header-max-width: 82.5rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@
   flex-direction: row;
   box-sizing: border-box;
   align-items: center;
-  padding: 0 var(--ds-size-15);
+  margin: 0 3.75rem;
 }
 
 .at-header__left,
