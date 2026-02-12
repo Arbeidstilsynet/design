@@ -3,4 +3,4 @@
 "@arbeidstilsynet/design-css": patch
 ---
 
-Oppdatert styling i Header komponenten. Header-komponenten håndterer nå Switch styling i menyen.
+**Header**: updated styling, including tweaked padding and added top margin. `Header.Menu` now properly places `Switch` children.
