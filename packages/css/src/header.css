@@ -7,6 +7,7 @@
   width: 100%;
   container-type: inline-size;
   margin: var(--ds-size-7) 0 0 0;
+  padding: 0 3.75rem;
   color: var(--ds-color-neutral-text-default);
 
   /* disable visited color in both the navigation and dropdown menu */
@@ -34,7 +35,6 @@
   flex-direction: row;
   box-sizing: border-box;
   align-items: center;
-  margin: 0 3.75rem;
 }
 
 .at-header__left,
@@ -189,11 +189,11 @@
 @media (max-width: 48rem) {
   .at-header {
     height: var(--ds-size-18);
-    padding: 0;
+    margin: 0;
+    padding: var(--ds-size-2) var(--ds-size-4);
   }
   .at-header__container {
     justify-content: space-between;
-    padding: var(--ds-size-2) var(--ds-size-4);
   }
 
   .ds-link:has(.at-header__left) {
