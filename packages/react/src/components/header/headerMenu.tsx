@@ -46,8 +46,33 @@ export interface HeaderMenuProps
    *
    * @example
    * ```tsx
-   * <Header.Menu triggerContent="Ola Nordmann">
-   *   <ProfileMenuItem />
+   * <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
+   *   <Header.MenuRow>
+   *     <Link href="#">
+   *       <Header.MenuIcon>
+   *         <PersonCircleIcon aria-label="Profil ikon" />
+   *       </Header.MenuIcon>
+   *       <span>Profil</span>
+   *     </Link>
+   *   </Header.MenuRow>
+   *   <Header.MenuRow>
+   *     <Link href="#">
+   *       <Header.MenuIcon>
+   *         <InboxIcon aria-label="Innboks ikon" />
+   *       </Header.MenuIcon>
+   *       <span>Innboks</span>
+   *       <Header.MenuBadge color="warning">19</Header.MenuBadge>
+   *     </Link>
+   *   </Header.MenuRow>
+   *   <Header.MenuRow>
+   *     <Link href="#">
+   *       <Header.MenuIcon>
+   *         <TasklistIcon aria-label="Gjøremål ikon" />
+   *       </Header.MenuIcon>
+   *       <span>Gjøremål</span>
+   *       <Header.MenuBadge color="info">19</Header.MenuBadge>
+   *     </Link>
+   *   </Header.MenuRow>
    *   <Divider />
    *   <Switch label="Mørk modus" position="end" />
    * </Header.Menu>
@@ -71,8 +96,32 @@ export interface HeaderMenuProps
  * @example
  * ```tsx
  * <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
- *   <ProfileLink />
- *   <InboxLink />
+ *   <Header.MenuRow>
+ *     <Link href="#">
+ *       <Header.MenuIcon>
+ *         <PersonCircleIcon aria-label="Profil ikon" />
+ *       </Header.MenuIcon>
+ *       <span>Profil</span>
+ *     </Link>
+ *   </Header.MenuRow>
+ *   <Header.MenuRow>
+ *     <Link href="#">
+ *       <Header.MenuIcon>
+ *         <InboxIcon aria-label="Innboks ikon" />
+ *       </Header.MenuIcon>
+ *       <span>Innboks</span>
+ *       <Header.MenuBadge color="warning">19</Header.MenuBadge>
+ *     </Link>
+ *   </Header.MenuRow>
+ *   <Header.MenuRow>
+ *     <Link href="#">
+ *       <Header.MenuIcon>
+ *         <TasklistIcon aria-label="Gjøremål ikon" />
+ *       </Header.MenuIcon>
+ *       <span>Gjøremål</span>
+ *       <Header.MenuBadge color="info">19</Header.MenuBadge>
+ *     </Link>
+ *   </Header.MenuRow>
  *   <Divider />
  *   <Switch label="Mørk modus" position="end" />
  * </Header.Menu>

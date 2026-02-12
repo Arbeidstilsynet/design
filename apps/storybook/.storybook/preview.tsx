@@ -49,10 +49,12 @@ const atViewPorts = {
 };
 
 const preview: Preview = {
+  initialGlobals: {
+    colorScheme: "auto",
+  },
   globalTypes: {
     colorScheme: {
       description: "Set color-scheme in stories",
-      defaultValue: "auto",
       toolbar: {
         title: "Color scheme",
         icon: "contrast",
