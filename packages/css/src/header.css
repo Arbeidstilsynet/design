@@ -6,7 +6,7 @@
   align-items: center;
   width: 100%;
   container-type: inline-size;
-  padding: var(--ds-size-7) 0 0 0;
+  margin: var(--ds-size-7) 0 0 0;
   color: var(--ds-color-neutral-text-default);
 
   /* disable visited color in both the navigation and dropdown menu */
