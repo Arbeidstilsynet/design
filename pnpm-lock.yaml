@@ -54,8 +54,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/theme
       '@navikt/aksel-icons':
-        specifier: 8.3.0
-        version: 8.3.0
+        specifier: 8.4.0
+        version: 8.4.0
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -173,8 +173,8 @@ importers:
         specifier: 1.11.1
         version: 1.11.1
       '@navikt/aksel-icons':
-        specifier: ^8.3.0
-        version: 8.3.0
+        specifier: ^8.4.0
+        version: 8.4.0
       '@radix-ui/react-slot':
         specifier: ^1.2.4
         version: 1.2.4(@types/react@19.2.13)(react@19.2.4)
@@ -943,8 +943,8 @@ packages:
   '@microsoft/tsdoc@0.16.0':
     resolution: {integrity: sha512-xgAyonlVVS+q7Vc7qLW0UrJU7rSFcETRWsqdXZtjzRU8dF+6CkozTK4V4y1LwOX7j8r/vHphjDeMeGI4tNGeGA==}
 
-  '@navikt/aksel-icons@8.3.0':
-    resolution: {integrity: sha512-IDwQLQqOZiUH78g1nnvNl06m+1B4rDn1o0E747Xe9IuqQgX2qafr6HAe5g0WUxCe2y6O6uxAcOoHFZlyXqeIcg==}
+  '@navikt/aksel-icons@8.4.0':
+    resolution: {integrity: sha512-JMr7eEp+AL4qJ+I01uhZ/nFvjTdWNvhTB3dZx6Im00dCzm9SLKiJKIxKlfF/V/4/7JyQRQh1qRTph8jg5K5ZeA==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -4420,7 +4420,7 @@ snapshots:
       '@digdir/designsystemet-types': 1.11.1
       '@floating-ui/dom': 1.7.5
       '@floating-ui/react': 0.26.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@navikt/aksel-icons': 8.3.0
+      '@navikt/aksel-icons': 8.4.0
       '@radix-ui/react-slot': 1.2.4(@types/react@19.2.13)(react@19.2.4)
       '@tanstack/react-virtual': 3.13.18(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@u-elements/u-combobox': 1.0.7
@@ -4841,7 +4841,7 @@ snapshots:
 
   '@microsoft/tsdoc@0.16.0': {}
 
-  '@navikt/aksel-icons@8.3.0': {}
+  '@navikt/aksel-icons@8.4.0': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
