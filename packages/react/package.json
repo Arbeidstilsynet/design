@@ -42,7 +42,7 @@
     "@navikt/aksel-icons": "^8.3.0",
     "@radix-ui/react-slot": "^1.2.4",
     "clsx": "^2.1.1",
-    "react-dropzone": "^14.4.0"
+    "react-dropzone": "^14.4.1"
   },
   "devDependencies": {
     "@arbeidstilsynet/design-css": "workspace:*",
