@@ -42,7 +42,9 @@ const projects = ["react", "css", "theme"] as const;
 const packagesDir = path.resolve(process.cwd(), "packages");
 
 function parseVersion(version: string): number[] {
-  return version.split(".").map((v) => Number.parseInt(v, 10));
+  // Strip version range specifiers (^, ~, >, <, >=, <=, =)
+  const cleanedVersion = version.replace(/^[\^~><>=]*/, "");
+  return cleanedVersion.split(".").map((v) => Number.parseInt(v, 10));
 }
 
 function compareVersions(a: string, b: string): number {

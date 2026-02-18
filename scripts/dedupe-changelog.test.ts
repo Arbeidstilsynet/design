@@ -504,4 +504,38 @@ Released: 2025-06-13
     expect(result.error).toBe(false);
     expect(result.content).toBe(expectedOutput);
   });
+
+  it("handles version range specifiers correctly when determining duplicates", () => {
+    const input = `# @arbeidstilsynet/design-react
+
+## 0.0.17
+
+Released: 2025-06-13
+
+### Patch Changes
+
+- Updated dependency \`example-package\` to \`^14.4.0\`. ([#100](https://github.com/Arbeidstilsynet/design/pull/100))
+
+- Updated dependency \`example-package\` to \`^15.0.0\`. ([#101](https://github.com/Arbeidstilsynet/design/pull/101))
+
+`;
+
+    const expectedOutput = `# @arbeidstilsynet/design-react
+
+## 0.0.17
+
+Released: 2025-06-13
+
+### Patch Changes
+
+- Updated dependency \`example-package\` to \`^15.0.0\`. ([#101](https://github.com/Arbeidstilsynet/design/pull/101))
+
+`;
+
+    setupTest(input);
+    const result = dedupeChangelog(pkg);
+
+    expect(result.error).toBe(false);
+    expect(result.content).toBe(expectedOutput);
+  });
 });
