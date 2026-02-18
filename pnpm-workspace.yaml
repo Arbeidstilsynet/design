@@ -21,3 +21,7 @@ trustPolicy: no-downgrade
 trustPolicyExclude:
   - rxjs@7.8.2
   - semver@6.3.1
+
+auditConfig:
+  ignoreGhsas:
+    - GHSA-2g4f-4pwh-qvx6
