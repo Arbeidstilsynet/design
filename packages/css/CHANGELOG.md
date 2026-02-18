@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-css
 
+## 0.8.2
+
+Released: 2026-02-18
+
+### Patch Changes
+
+- **Header**: increased `--at-header-max-width` to 108 rem. Also reduced horizontal padding to 1 rem. ([#663](https://github.com/Arbeidstilsynet/design/pull/663))
+
 ## 0.8.1
 
 Released: 2026-02-12
