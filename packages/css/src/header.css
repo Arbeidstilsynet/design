@@ -1,5 +1,5 @@
 .at-header {
-  --at-header-max-width: 82.5rem;
+  --at-header-max-width: 108rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -7,7 +7,7 @@
   width: 100%;
   container-type: inline-size;
   margin: var(--ds-size-7) 0 0 0;
-  padding: 0 3.75rem;
+  padding: 0 1rem;
   color: var(--ds-color-neutral-text-default);
 
   /* disable visited color in both the navigation and dropdown menu */
