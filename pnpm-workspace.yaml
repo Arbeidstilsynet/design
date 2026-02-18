@@ -2,6 +2,10 @@ packages:
   - packages/*
   - apps/*
 
+auditConfig:
+  ignoreGhsas:
+    - GHSA-2g4f-4pwh-qvx6
+
 autoInstallPeers: false
 
 minimumReleaseAge: 4320
@@ -21,7 +25,3 @@ trustPolicy: no-downgrade
 trustPolicyExclude:
   - rxjs@7.8.2
   - semver@6.3.1
-
-auditConfig:
-  ignoreGhsas:
-    - GHSA-2g4f-4pwh-qvx6
