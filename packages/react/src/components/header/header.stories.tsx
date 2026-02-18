@@ -19,6 +19,7 @@ const meta: Meta<typeof Header> = {
     layout: "fullscreen",
     customStyles: {
       padding: "0",
+      paddingBottom: "var(--ds-size-4)",
     },
   },
   subcomponents: {
