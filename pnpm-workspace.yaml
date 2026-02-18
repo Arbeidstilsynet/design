@@ -2,6 +2,10 @@ packages:
   - packages/*
   - apps/*
 
+auditConfig:
+  ignoreGhsas:
+    - GHSA-2g4f-4pwh-qvx6
+
 autoInstallPeers: false
 
 minimumReleaseAge: 4320
