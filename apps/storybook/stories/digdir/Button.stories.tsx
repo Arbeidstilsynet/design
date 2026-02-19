@@ -1,6 +1,7 @@
 import { Button } from "@arbeidstilsynet/design-react";
 import { ExternalLinkIcon, LaptopIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
+import { Fragment } from "react";
 
 type Story = StoryObj<typeof Button>;
 
@@ -85,8 +86,8 @@ const ButtonGroupStory = ({
     ))}
 
     {buttonVariants.map((variant) => (
-      <>
-        <HelpText key={variant} text={variant} />
+      <Fragment key={variant}>
+        <HelpText text={variant} />
         {buttonColors.map((color) => (
           <Button
             key={`${variant}-${color}`}
@@ -99,7 +100,7 @@ const ButtonGroupStory = ({
             style={rounded ? { borderRadius: "50%" } : undefined}
           />
         ))}
-      </>
+      </Fragment>
     ))}
   </div>
 );
