@@ -1,7 +1,7 @@
 import { Button } from "@arbeidstilsynet/design-react";
 import { ExternalLinkIcon, LaptopIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
-import { Fragment } from "react";
+import { Fragment, type ReactNode } from "react";
 
 type Story = StoryObj<typeof Button>;
 
@@ -66,7 +66,7 @@ const ButtonGroupStory = ({
   ["data-size"]?: "sm" | "md" | "lg";
   disabled?: boolean;
   icon?: boolean;
-  children?: React.ReactNode;
+  children?: ReactNode;
   rounded?: boolean;
 }) => (
   <div
