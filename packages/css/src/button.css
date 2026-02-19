@@ -1,0 +1,62 @@
+/** Overrides the default button styles for the different variants. */
+
+.ds-button[data-variant="secondary"] {
+  /** Text **/
+  --dsc-button-color: var(--ds-color-text-default);
+  --dsc-button-color--hover: var(--ds-color-text-default);
+
+  /** Background ("Fill") */
+  --dsc-button-background: transparent;
+  --dsc-button-background--active: var(--ds-color-surface-tinted);
+  --dsc-button-background--hover: var(--ds-color-surface-tinted);
+  
+  /** Border ("Stroke") */
+  --dsc-button-border-color: var(--ds-color-text-default);
+}
+
+.ds-button[data-variant="secondary"][data-color="neutral"] {
+  /** Background ("Fill") */
+  --dsc-button-background--active: var(--ds-color-background-tinted);
+  --dsc-button-background--hover: var(--ds-color-background-tinted);
+}
+
+.ds-button[data-variant="secondary"][data-color="danger"] {
+  /** Background ("Fill") */
+  --dsc-button-background--active: var(--ds-color-surface-active);
+  --dsc-button-background--hover: var(--ds-color-surface-hover);
+}
+
+.ds-button[data-variant="tertiary"] {
+  /** Text **/
+  --dsc-button-color: var(--ds-color-text-default);
+  --dsc-button-color--hover: var(--ds-color-text-default);
+
+  /** Background ("Fill") */
+  --dsc-button-background: transparent;
+  --dsc-button-background--active: transparent;
+  --dsc-button-background--hover: transparent;
+
+  /** Border ("Stroke") */
+  --dsc-button-border-color: transparent;
+
+  text-decoration: none;
+
+  &:hover:not([disabled]), &:active:not([disabled]) {
+    text-decoration: underline 2px;
+    text-underline-offset: 6px; /** Hack to prevent us from having to create our own button component just to support underline on hover. */
+  }
+}
+
+.ds-button {
+  padding: var(--ds-size-2) var(--ds-size-4);
+  width: fit-content;
+}
+
+.ds-button[data-icon="true"] {
+  padding: var(--ds-size-2);
+
+  & > * {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
