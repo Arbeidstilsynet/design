@@ -105,43 +105,39 @@ const ButtonGroupStory = ({
 );
 
 export const Variants: Story = {
-  decorators: [() => <ButtonGroupStory children="Knapp" />],
+  render: () => <ButtonGroupStory children="Knapp" />,
 };
 
 export const Disabled: Story = {
-  decorators: [() => <ButtonGroupStory disabled children="Knapp" />],
+  render: () => <ButtonGroupStory disabled children="Knapp" />,
 };
 
 export const Small: Story = {
-  decorators: [() => <ButtonGroupStory data-size="sm" children="Knapp" />],
+  render: () => <ButtonGroupStory data-size="sm" children="Knapp" />,
 };
 
 export const Large: Story = {
-  decorators: [() => <ButtonGroupStory data-size="lg" children="Knapp" />],
+  render: () => <ButtonGroupStory data-size="lg" children="Knapp" />,
 };
 
 export const Icon: Story = {
-  decorators: [() => <ButtonGroupStory icon children={<LaptopIcon />} />],
+  render: () => <ButtonGroupStory icon children={<LaptopIcon />} />,
 };
 
 export const IconWithText: Story = {
-  decorators: [
-    () => (
-      <ButtonGroupStory
-        children={
-          <>
-            <LaptopIcon /> Knapp
-          </>
-        }
-      />
-    ),
-  ],
+  render: () => (
+    <ButtonGroupStory
+      children={
+        <>
+          <LaptopIcon /> Knapp
+        </>
+      }
+    />
+  ),
 };
 
 export const Rounded: Story = {
-  decorators: [
-    () => <ButtonGroupStory icon children={<LaptopIcon />} rounded />,
-  ],
+  render: () => <ButtonGroupStory icon children={<LaptopIcon />} rounded />,
 };
 
 export const AsLink: StoryFn<typeof Button> = () => (
