@@ -9,7 +9,7 @@
   --dsc-button-background: transparent;
   --dsc-button-background--active: var(--ds-color-surface-tinted);
   --dsc-button-background--hover: var(--ds-color-surface-tinted);
-  
+
   /** Border ("Stroke") */
   --dsc-button-border-color: var(--ds-color-text-default);
 }
@@ -41,7 +41,8 @@
 
   text-decoration: none;
 
-  &:hover:not([disabled]), &:active:not([disabled]) {
+  &:hover:not([disabled]),
+  &:active:not([disabled]) {
     text-decoration: underline 2px;
     text-underline-offset: 6px; /** Hack to prevent us from having to create our own button component just to support underline on hover. */
   }

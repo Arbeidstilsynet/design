@@ -1,8 +1,5 @@
 import { Button } from "@arbeidstilsynet/design-react";
-import {
-  ExternalLinkIcon,
-  LaptopIcon
-} from "@navikt/aksel-icons";
+import { ExternalLinkIcon, LaptopIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 
 type Story = StoryObj<typeof Button>;
@@ -38,12 +35,24 @@ export const Preview: Story = {
   },
 };
 
-const buttonColors = ["accent", "neutral", "info", "warning", "danger"] as const;
-// const buttonColors = ["info", "reverse", "success", "warning"] as const;
+const buttonColors = [
+  "accent",
+  "neutral",
+  "info",
+  "warning",
+  "danger",
+] as const;
 const buttonVariants = ["primary", "secondary", "tertiary"] as const;
 
 const HelpText = ({ text }: { text: string }) => (
-  <span style={{ fontSize: "var(--ds-font-size-1)", color: `var(--ds-color-neutral-text-subtle)` }}>{text}</span>
+  <span
+    style={{
+      fontSize: "var(--ds-font-size-1)",
+      color: `var(--ds-color-neutral-text-subtle)`,
+    }}
+  >
+    {text}
+  </span>
 );
 
 const ButtonGroupStory = ({
@@ -52,11 +61,19 @@ const ButtonGroupStory = ({
   icon = false,
   children,
   rounded = false,
-}: { ["data-size"]?: "sm" | "md" | "lg"; disabled?: boolean; icon?: boolean; children?: React.ReactNode; rounded?: boolean }) => (
+}: {
+  ["data-size"]?: "sm" | "md" | "lg";
+  disabled?: boolean;
+  icon?: boolean;
+  children?: React.ReactNode;
+  rounded?: boolean;
+}) => (
   <div
     style={{
       display: "grid",
-      gridTemplateColumns: new Array(buttonColors.length + 1).fill("auto").join(" "),
+      gridTemplateColumns: new Array(buttonColors.length + 1)
+        .fill("auto")
+        .join(" "),
       gap: "var(--ds-size-4)",
       placeItems: "center",
     }}
@@ -88,45 +105,43 @@ const ButtonGroupStory = ({
 );
 
 export const Variants: Story = {
-  decorators: [
-    () => <ButtonGroupStory children="Knapp" />,
-  ],
+  decorators: [() => <ButtonGroupStory children="Knapp" />],
 };
 
 export const Disabled: Story = {
-  decorators: [
-    () => <ButtonGroupStory disabled children="Knapp" />,
-  ],
+  decorators: [() => <ButtonGroupStory disabled children="Knapp" />],
 };
 
 export const Small: Story = {
-  decorators: [
-    () => <ButtonGroupStory data-size="sm" children="Knapp" />,
-  ],
+  decorators: [() => <ButtonGroupStory data-size="sm" children="Knapp" />],
 };
 
 export const Large: Story = {
-  decorators: [
-    () => <ButtonGroupStory data-size="lg" children="Knapp" />,
-  ],
+  decorators: [() => <ButtonGroupStory data-size="lg" children="Knapp" />],
 };
 
 export const Icon: Story = {
-  decorators: [
-    () => <ButtonGroupStory icon children={<LaptopIcon />} />,
-  ]
+  decorators: [() => <ButtonGroupStory icon children={<LaptopIcon />} />],
 };
 
 export const IconWithText: Story = {
   decorators: [
-    () => <ButtonGroupStory children={<><LaptopIcon /> Knapp</>} />,
-  ]
+    () => (
+      <ButtonGroupStory
+        children={
+          <>
+            <LaptopIcon /> Knapp
+          </>
+        }
+      />
+    ),
+  ],
 };
 
 export const Rounded: Story = {
   decorators: [
     () => <ButtonGroupStory icon children={<LaptopIcon />} rounded />,
-  ]
+  ],
 };
 
 export const AsLink: StoryFn<typeof Button> = () => (
