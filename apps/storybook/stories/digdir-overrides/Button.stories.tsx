@@ -94,11 +94,12 @@ const ButtonGroupStory = ({
             variant={variant}
             data-color={color}
             data-size={size}
-            children={children}
             disabled={disabled}
             icon={icon}
             style={rounded ? { borderRadius: "50%" } : undefined}
-          />
+          >
+            {children}
+          </Button>
         ))}
       </Fragment>
     ))}
@@ -108,7 +109,7 @@ const ButtonGroupStory = ({
 const codeDocs = (code: string) => ({ docs: { source: { code } } });
 
 export const Variants: Story = {
-  render: () => <ButtonGroupStory children="Knapp" />,
+  render: () => <ButtonGroupStory>Knapp</ButtonGroupStory>,
   parameters: codeDocs(`
     <Button variant={variant} data-color={color}>
       Knapp
@@ -117,7 +118,7 @@ export const Variants: Story = {
 };
 
 export const Disabled: Story = {
-  render: () => <ButtonGroupStory disabled children="Knapp" />,
+  render: () => <ButtonGroupStory disabled>Knapp</ButtonGroupStory>,
   parameters: codeDocs(`
     <Button variant={variant} data-color={color} disabled>
       Knapp
@@ -126,7 +127,7 @@ export const Disabled: Story = {
 };
 
 export const Small: Story = {
-  render: () => <ButtonGroupStory data-size="sm" children="Knapp" />,
+  render: () => <ButtonGroupStory data-size="sm">Knapp</ButtonGroupStory>,
   parameters: codeDocs(`
     <Button variant={variant} data-color={color} data-size="sm">
       Knapp
@@ -135,7 +136,7 @@ export const Small: Story = {
 };
 
 export const Large: Story = {
-  render: () => <ButtonGroupStory data-size="lg" children="Knapp" />,
+  render: () => <ButtonGroupStory data-size="lg">Knapp</ButtonGroupStory>,
   parameters: codeDocs(`
     <Button variant={variant} data-color={color} data-size="lg">
       Knapp
@@ -144,33 +145,39 @@ export const Large: Story = {
 };
 
 export const Icon: Story = {
-  render: () => <ButtonGroupStory icon children={<LaptopIcon />} />,
+  render: () => (
+    <ButtonGroupStory icon>
+      <LaptopIcon title="Laptop" />
+    </ButtonGroupStory>
+  ),
   parameters: codeDocs(`
     <Button variant={variant} data-color={color} icon>
-      <LaptopIcon />
+      <LaptopIcon title="Laptop" />
     </Button>
   `),
 };
 
 export const IconWithText: Story = {
   render: () => (
-    <ButtonGroupStory
-      children={
-        <>
-          <LaptopIcon /> Knapp
-        </>
-      }
-    />
+    <ButtonGroupStory>
+      <>
+        <LaptopIcon title="Laptop" /> Knapp
+      </>
+    </ButtonGroupStory>
   ),
   parameters: codeDocs(`
     <Button variant={variant} data-color={color}>
-      <LaptopIcon /> Knapp
+      <LaptopIcon title="Laptop" /> Knapp
     </Button>
   `),
 };
 
 export const Rounded: Story = {
-  render: () => <ButtonGroupStory icon children={<LaptopIcon />} rounded />,
+  render: () => (
+    <ButtonGroupStory icon rounded>
+      <LaptopIcon title="Laptop" />
+    </ButtonGroupStory>
+  ),
   parameters: codeDocs(`
     <Button
       variant={variant}
@@ -178,7 +185,7 @@ export const Rounded: Story = {
       icon
       style={{ borderRadius: "50%" }}
     >
-      <LaptopIcon />
+      <LaptopIcon title="Laptop" />
     </Button>
   `),
 };
