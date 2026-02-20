@@ -1,0 +1,13 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Overrides" />
+
+# Overrides to base components
+
+In some cases, we need to override styles of base components from the design system. This is done in the `at.overrides` layer in our CSS package. This will automatically apply to all components that directly or indirectly use the affected base component. For example, if we change the font size of the `Button` component, this will affect all components that use `Button`, such as `FilePicker`.
+
+## Changed components
+
+### Button
+
+Overwritten default styles (colors and padding)
