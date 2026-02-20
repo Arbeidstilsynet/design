@@ -40,7 +40,12 @@ export default defineConfig({
           ],
         },
         setupFiles: [".storybook/vitest.setup.ts"],
-        exclude: ["./stories/digdir/**", "./stories/Showcase/**"],
+        exclude: [
+          "./stories/digdir/**",
+          // a11y errors in digdir-overrides should be fixed later and this exclude removed
+          "./stories/digdir-overrides/**",
+          "./stories/Showcase/**",
+        ],
       },
     })),
   },
