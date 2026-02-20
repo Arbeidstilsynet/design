@@ -6,7 +6,6 @@
   max-width: var(--at-filepicker-max-width);
   gap: var(--ds-size-1);
   container-type: inline-size;
-  font-size: var(--ds-body-sm-font-size);
 }
 
 /**
