@@ -89,6 +89,7 @@ const preview: Preview = {
           "Colors",
           "Icons",
           "Composition",
+          "Overrides",
           "Showcase",
           "Changelog",
           "Arbeidstilsynet",
