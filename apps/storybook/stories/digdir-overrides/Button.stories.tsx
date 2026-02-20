@@ -48,7 +48,7 @@ const buttonVariants = ["primary", "secondary", "tertiary"] as const;
 const HelpText = ({ text }: { text: string }) => (
   <span
     style={{
-      fontSize: "var(--ds-font-size-1)",
+      fontSize: "var(--ds-font-size-3)",
       color: `var(--ds-color-neutral-text-subtle)`,
     }}
   >
