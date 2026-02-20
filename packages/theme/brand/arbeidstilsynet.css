@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
-build: v1.11.0
+build: v1.11.1
 design-tokens: v1.11.0
 */
 
@@ -519,7 +519,7 @@ design-tokens: v1.11.0
 }
 @layer ds.theme.size {
 :root, [data-size] {
-  --ds-size-base: 18;
+  --ds-size-base: 24;
   --ds-size-step: 4;
 
   --ds-size-0: calc(var(--ds-size-unit) * 0);
