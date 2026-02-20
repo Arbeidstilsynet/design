@@ -4,7 +4,10 @@ packages:
 
 auditConfig:
   ignoreGhsas:
+    # no fix for ajv versions in eslint packages, but as a development dependency there should be no real risk
     - GHSA-2g4f-4pwh-qvx6
+    # no fix for support for newer minimatch in various eslint packages, but there should be no real risk
+    - GHSA-3ppc-4f35-3m26
 
 autoInstallPeers: false
 
