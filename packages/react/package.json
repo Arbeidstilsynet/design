@@ -39,7 +39,7 @@
   "dependencies": {
     "@digdir/designsystemet-react": "1.11.1",
     "@digdir/designsystemet-types": "1.11.1",
-    "@navikt/aksel-icons": "^8.5.0",
+    "@navikt/aksel-icons": "^8.5.1",
     "@radix-ui/react-slot": "^1.2.4",
     "clsx": "^2.1.1",
     "react-dropzone": "^15.0.0"
