@@ -1,5 +1,15 @@
 # @arbeidstilsynet/design-css
 
+## 0.8.3
+
+Released: 2026-02-21
+
+### Patch Changes
+
+- FilePicker: change body text back from small to default medium. This is meant to be used with the new change to base size in theme package. ([#670](https://github.com/Arbeidstilsynet/design/pull/670))
+
+- **Button**: Overwritten default styles (colors and padding) + updated stories. ([#667](https://github.com/Arbeidstilsynet/design/pull/667))
+
 ## 0.8.2
 
 Released: 2026-02-18

@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.6.0
+
+Released: 2026-02-21
+
+### Minor Changes
+
+- Reduced size scale by increasing `--ds-size-base` from 18 to 24. `--ds-size-base` is a divisor for calculating `--ds-size-unit` and `--_ds-font-size-factor`. This affects all use of`--ds-size-[1-10]`tokens. It also affects all text, e.g. medium paragraph (`--ds-body-md-font-size` -> `--ds-font-size-4`) goes from 18px to 14px. ([#670](https://github.com/Arbeidstilsynet/design/pull/670))
+
 ## 0.5.0
 
 Released: 2026-02-11
