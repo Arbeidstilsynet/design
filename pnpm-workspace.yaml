@@ -7,13 +7,12 @@ autoInstallPeers: false
 minimumReleaseAge: 4320
 
 minimumReleaseAgeExclude:
-  - minimatch@10.2.4
-  - minimatch@3.1.4
+  - minimatch
 
 overrides:
   ajv@>=8.0.0: ">=8.18.0"
-  minimatch@<3.1.4: ">=3.1.4"
-  minimatch@>=8.0.0 <10.2.3: ">=10.2.4"
+  minimatch@<3.1.4: "3.1.4"
+  minimatch@>=8.0.0 <10.2.4: ">=10.2.4"
 
 trustPolicy: no-downgrade
 
