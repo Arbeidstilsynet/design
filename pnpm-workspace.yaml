@@ -2,26 +2,17 @@ packages:
   - packages/*
   - apps/*
 
-auditConfig:
-  ignoreGhsas:
-    # no fix for ajv versions in eslint packages, but as a development dependency there should be no real risk
-    - GHSA-2g4f-4pwh-qvx6
-    # no fix for support for newer minimatch in various eslint packages, but there should be no real risk
-    - GHSA-3ppc-4f35-3m26
-
 autoInstallPeers: false
 
 minimumReleaseAge: 4320
 
 minimumReleaseAgeExclude:
-  - "@isaacs/brace-expansion@5.0.1"
-  - ts-api-utils@2.4.0
+  - minimatch
 
 overrides:
-  "@isaacs/brace-expansion@<=5.0.0": ">=5.0.1"
-  glob@>=10.0.0 <11.1.0: ">=11.1.0"
-  lodash@>=4.0.0 <=4.17.22: ">=4.17.23"
-  qs@<=6.14.1: ">=6.14.2"
+  ajv@>=8.0.0: ">=8.18.0"
+  minimatch@<3.1.4: "3.1.4"
+  minimatch@>=8.0.0 <10.2.4: ">=10.2.4"
 
 trustPolicy: no-downgrade
 
