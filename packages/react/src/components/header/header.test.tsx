@@ -167,8 +167,9 @@ describe("Header", () => {
     expect(screen.getByAltText("Illustration")).toBeInTheDocument();
     expect(screen.getByText("App Name")).toBeInTheDocument();
     expect(screen.getByRole("navigation")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Home" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "About" })).toBeInTheDocument();
+    // workaround for happy-dom finding both the hidden and visible links (navbar & mobile menu)
+    expect(screen.getAllByRole("link", { name: "Home" })).toHaveLength(2);
+    expect(screen.getAllByRole("link", { name: "About" })).toHaveLength(2);
     expect(screen.getByRole("button", { name: /User/i })).toBeInTheDocument();
   });
 
