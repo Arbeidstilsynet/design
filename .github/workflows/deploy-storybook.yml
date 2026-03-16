@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
-      - uses: Arbeidstilsynet/action-pnpm-setup@f3d97993013e8b1a22061064fbc5786b3a84bfd6 # v1
+      - uses: Arbeidstilsynet/action-pnpm-setup@1d7ca70816933ed09d6bbca732be59c0c6cf63f4 # v1
 
       - name: Build Storybook
         run: pnpm build:storybook
