@@ -19,8 +19,8 @@ importers:
         specifier: 2.30.0
         version: 2.30.0(@types/node@24.12.0)
       '@digdir/designsystemet':
-        specifier: 1.12.1
-        version: 1.12.1
+        specifier: 1.13.0
+        version: 1.13.0
       '@svitejs/changesets-changelog-github-compact':
         specifier: 1.2.0
         version: 1.2.0
@@ -137,8 +137,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.12.1
-        version: 1.12.1
+        specifier: 1.13.0
+        version: 1.13.0
     devDependencies:
       '@types/node':
         specifier: 24.12.0
@@ -168,11 +168,11 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.12.1
-        version: 1.12.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: 1.13.0
+        version: 1.13.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@digdir/designsystemet-types':
-        specifier: 1.12.1
-        version: 1.12.1
+        specifier: 1.13.0
+        version: 1.13.0
       '@navikt/aksel-icons':
         specifier: ^8.7.0
         version: 8.7.0
@@ -456,24 +456,24 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.1.1
 
-  '@digdir/designsystemet-css@1.12.1':
-    resolution: {integrity: sha512-0P3QMXH/kAKJqZ5oBhLag3WiyzMCB+PgAfQzG72TjBcRzi4MEu6Cs2XH66aBhZWEBeUPR0DTeTUtGr5hyQ4rnQ==}
+  '@digdir/designsystemet-css@1.13.0':
+    resolution: {integrity: sha512-Wqo5dUpdbcyr2JmCs2n9PrYGa2P3IoVT/415shPZCk3eB7rJ2WyTSbKmNFRLzQO8iaEToCeLs+2rxhUoiuqvUA==}
 
-  '@digdir/designsystemet-react@1.12.1':
-    resolution: {integrity: sha512-PvcRWNvVNC06+tJdQLlSNdMj2o3+WIbfsB/gohgce+R3axNuaXh2lIFHl+G2+me/XIegXnUw8LJKpEGNhGAF5w==}
+  '@digdir/designsystemet-react@1.13.0':
+    resolution: {integrity: sha512-4eMUucwLYuSJn5tI3cffB7R/w08sevpj41EjwKHIKS/6u5pF8od0IJgavezXlJOmgT3H0Howhr0y+9s0Fkzqcg==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet-types@1.12.1':
-    resolution: {integrity: sha512-HE6D81h9IuNofEq1Gx1/FEVomxDID4SxCo7tcCYT16ZOQzHsUpSjirJD4Z3cIBY1SDDknwUTszyGz7QsBb5a8A==}
+  '@digdir/designsystemet-types@1.13.0':
+    resolution: {integrity: sha512-36t36fjDkzZH2GNuXSsgVoEsdBgQ2NMzdz4BbS1PXvwarXz5lT7GuloMvER+JCzvBlzx/2C3/pfWIaVoN5v6pg==}
 
-  '@digdir/designsystemet-web@1.12.1':
-    resolution: {integrity: sha512-yv4Umnlg00TyOfBY72l7YacfVJc7te5LRT5HzJYBaDauKFm1uzMxLBKJHwIqjN5BfKhnm1cWCF/pFCFvhYD2bg==}
+  '@digdir/designsystemet-web@1.13.0':
+    resolution: {integrity: sha512-wagk+PEJw8X3NrFFOSiwzkvKW9D4MPvhIArqTwRNLnDdu2GsDD32Bv73yIsjvnggp/ZxCrO2lelDCdMDgURDFA==}
 
-  '@digdir/designsystemet@1.12.1':
-    resolution: {integrity: sha512-2qWGPMLrzN86fB7FCXEXeer/XL8zWHJZR1JJAscW/qLhk30+IFRj880d14HzSShpE/jC8uHXg9i8hR7D35266w==}
-    engines: {node: '>=20 <25'}
+  '@digdir/designsystemet@1.13.0':
+    resolution: {integrity: sha512-p0BQxyVYJn8pBmXNTxKxUM9AIGP02b+3oElIvlSDpB731xVuP3Lbfc+HwZss5TMNhN8AWsnNx6CdS45ghrXkUQ==}
+    engines: {node: '>=20.20.1'}
     hasBin: true
 
   '@esbuild/aix-ppc64@0.27.3':
@@ -1200,14 +1200,14 @@ packages:
     resolution: {integrity: sha512-08eKiDAjj4zLug1taXSIJ0kGL5cawjVCyJkBb6EWSg5fEPX6L+Wtr0CH2If4j5KYylz85iaZiFlUItvgJvll5g==}
     engines: {node: ^14.13.1 || ^16.0.0 || >=18}
 
-  '@tanstack/react-virtual@3.13.20':
-    resolution: {integrity: sha512-LkFkwMMKKJ0zcbN4s37hTbj+22sHCXpaqV6+kh2x74aFg59kKCfdeeKtvCETVw8vP8oqtoWo+v+3JWkuGLqF/A==}
+  '@tanstack/react-virtual@3.13.22':
+    resolution: {integrity: sha512-EaOrBBJLi3M0bTMQRjGkxLXRw7Gizwntoy5E2Q2UnSbML7Mo2a1P/Hfkw5tw9FLzK62bj34Jl6VNbQfRV6eJcA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
-  '@tanstack/virtual-core@3.13.20':
-    resolution: {integrity: sha512-Djnq7ujPWcRAKyDpwqL4JDe6ZTN9AWAqE2wLstBlsEu4OnO7Im0p8KsHzLU7TPIvLQgNKpkn9EmgBH6xs8yjfA==}
+  '@tanstack/virtual-core@3.13.22':
+    resolution: {integrity: sha512-isuUGKsc5TAPDoHSbWTbl1SCil54zOS2MiWz/9GCWHPUQOvNTQx8qJEWC7UWR0lShhbK0Lmkcf0SZYxvch7G3g==}
 
   '@testing-library/dom@10.4.1':
     resolution: {integrity: sha512-o4PXJQidqJl82ckFaXUeoAW+XysPLauYI43Abki5hABd853iMhitooc6znOnczgbTYmEP6U6/y1ZyKAIsvMKGg==}
@@ -4223,28 +4223,28 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.1
 
-  '@digdir/designsystemet-css@1.12.1':
+  '@digdir/designsystemet-css@1.13.0':
     dependencies:
-      '@digdir/designsystemet-types': 1.12.1
+      '@digdir/designsystemet-types': 1.13.0
 
-  '@digdir/designsystemet-react@1.12.1(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@digdir/designsystemet-react@1.13.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@digdir/designsystemet-types': 1.12.1
-      '@digdir/designsystemet-web': 1.12.1
+      '@digdir/designsystemet-types': 1.13.0
+      '@digdir/designsystemet-web': 1.13.0
       '@floating-ui/dom': 1.7.6
       '@floating-ui/react': 0.26.23(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@navikt/aksel-icons': 8.7.0
       '@radix-ui/react-slot': 1.2.4(@types/react@19.2.14)(react@19.2.4)
-      '@tanstack/react-virtual': 3.13.20(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@tanstack/react-virtual': 3.13.22(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       clsx: 2.1.1
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet-types@1.12.1': {}
+  '@digdir/designsystemet-types@1.13.0': {}
 
-  '@digdir/designsystemet-web@1.12.1':
+  '@digdir/designsystemet-web@1.13.0':
     dependencies:
       '@floating-ui/dom': 1.7.6
       '@u-elements/u-combobox': 1.0.7
@@ -4254,10 +4254,10 @@ snapshots:
       '@u-elements/u-tabs': 0.1.2
       invokers-polyfill: 0.6.1
 
-  '@digdir/designsystemet@1.12.1':
+  '@digdir/designsystemet@1.13.0':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.3)
-      '@digdir/designsystemet-types': 1.12.1
+      '@digdir/designsystemet-types': 1.13.0
       '@tokens-studio/sd-transforms': 2.0.3(style-dictionary@5.3.3)
       chroma-js: 3.2.0
       colorjs.io: 0.6.1
@@ -4920,13 +4920,13 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
-  '@tanstack/react-virtual@3.13.20(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@tanstack/react-virtual@3.13.22(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@tanstack/virtual-core': 3.13.20
+      '@tanstack/virtual-core': 3.13.22
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
 
-  '@tanstack/virtual-core@3.13.20': {}
+  '@tanstack/virtual-core@3.13.22': {}
 
   '@testing-library/dom@10.4.1':
     dependencies:
