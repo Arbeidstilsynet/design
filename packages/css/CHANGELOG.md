@@ -1,5 +1,18 @@
 # @arbeidstilsynet/design-css
 
+## 0.9.1
+
+Released: 2026-03-17
+
+### Patch Changes
+
+- **Pagination**: fix missing current page styles when using `usePagination` ([#731](https://github.com/Arbeidstilsynet/design/pull/731))
+
+- Updated dependency `@digdir/designsystemet-css` to `1.13.0`. ([#729](https://github.com/Arbeidstilsynet/design/pull/729))
+  Updated dependency `@digdir/designsystemet` to `1.13.0`.
+  Updated dependency `@digdir/designsystemet-react` to `1.13.0`.
+  Updated dependency `@digdir/designsystemet-types` to `1.13.0`.
+
 ## 0.9.0
 
 Released: 2026-03-09
