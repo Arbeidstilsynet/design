@@ -3,9 +3,9 @@ import {
   usePagination,
   UsePaginationProps,
 } from "@arbeidstilsynet/design-react";
-import { useArgs } from "storybook/preview-api";
 import type { Meta, StoryFn } from "@storybook/react-vite";
 import { useState } from "react";
+import { useArgs } from "storybook/preview-api";
 
 export default {
   title: "designsystemet.no/Pagination",
@@ -13,9 +13,9 @@ export default {
 } as Meta;
 
 export const Preview: StoryFn<typeof Pagination> = (args) => {
-  const [page, setCurrentPage] = useState(4);
+  const [currentPage, setCurrentPage] = useState(4);
   const { pages, nextButtonProps, prevButtonProps } = usePagination({
-    currentPage: page,
+    currentPage,
     totalPages: 10,
     showPages: 7,
     setCurrentPage,
@@ -42,6 +42,44 @@ export const Preview: StoryFn<typeof Pagination> = (args) => {
           <Pagination.Button aria-label="Neste side" {...nextButtonProps}>
             Neste
           </Pagination.Button>
+        </Pagination.Item>
+      </Pagination.List>
+    </Pagination>
+  );
+};
+
+export const WithoutHook: StoryFn<typeof Pagination> = () => {
+  return (
+    <Pagination>
+      <Pagination.List>
+        <Pagination.Item>
+          <Pagination.Button aria-label="Forrige side">
+            Forrige
+          </Pagination.Button>
+        </Pagination.Item>
+
+        <Pagination.Item>
+          <Pagination.Button aria-label="Side 1">1</Pagination.Button>
+        </Pagination.Item>
+
+        <Pagination.Item>
+          <Pagination.Button aria-label="Side 2" aria-current="true">
+            2
+          </Pagination.Button>
+        </Pagination.Item>
+
+        <Pagination.Item />
+
+        <Pagination.Item>
+          <Pagination.Button aria-label="Side 9">9</Pagination.Button>
+        </Pagination.Item>
+
+        <Pagination.Item>
+          <Pagination.Button aria-label="Side 10">10</Pagination.Button>
+        </Pagination.Item>
+
+        <Pagination.Item>
+          <Pagination.Button aria-label="Neste side">Neste</Pagination.Button>
         </Pagination.Item>
       </Pagination.List>
     </Pagination>
@@ -100,3 +138,31 @@ WithAnchor.args = {
   totalPages: 10,
   showPages: 7,
 };
+
+export const Mobile: StoryFn = () => (
+  <Pagination>
+    <Pagination.List>
+      <Pagination.Item>
+        <Pagination.Button aria-label="Forrige side" />
+      </Pagination.Item>
+
+      <Pagination.Item>
+        <Pagination.Button aria-label="Side 2">2</Pagination.Button>
+      </Pagination.Item>
+
+      <Pagination.Item>
+        <Pagination.Button aria-label="Side 3" aria-current="true">
+          3
+        </Pagination.Button>
+      </Pagination.Item>
+
+      <Pagination.Item>
+        <Pagination.Button aria-label="Side 4">4</Pagination.Button>
+      </Pagination.Item>
+
+      <Pagination.Item>
+        <Pagination.Button aria-label="Neste side" />
+      </Pagination.Item>
+    </Pagination.List>
+  </Pagination>
+);

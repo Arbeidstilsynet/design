@@ -26,7 +26,13 @@
   --dsc-button-background--hover: var(--ds-color-surface-hover);
 }
 
-.ds-button[data-variant="tertiary"] {
+.ds-button[data-variant="tertiary"]:not(
+  /* Don't apply when inside Pagination.
+   Pagination currently has mixed docs of either setting data-variant="primary" on Pagination.Button
+    or keeping it as tertiary (returned from usePagination). If this is changed upstream we can simplify this selector.
+  */
+    .ds-pagination .ds-button[data-variant="tertiary"]
+  ) {
   /** Text **/
   --dsc-button-color: var(--ds-color-text-default);
   --dsc-button-color--hover: var(--ds-color-text-default);
