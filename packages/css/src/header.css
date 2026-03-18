@@ -3,6 +3,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  font-size: var(--ds-font-size-6);
   align-items: center;
   width: 100%;
   container-type: inline-size;
@@ -20,7 +21,7 @@
     font-weight: var(--ds-font-weight-medium);
     text-decoration: none;
     line-height: var(--ds-line-height-sm);
-    font-size: var(--ds-font-size-5);
+    font-size: var(--ds-font-size-7);
     letter-spacing: var(--ds-letter-spacing-8);
     transform: translateY(
       -2.5px
@@ -153,9 +154,10 @@
   width: var(--ds-size-7);
   height: var(--ds-size-7);
   border-radius: 50%;
-  font-size: var(--ds-font-size-3);
+  font-size: var(--ds-font-size-5);
   font-weight: var(--ds-font-weight-regular);
   margin-left: auto;
+  padding: var(--ds-size-1);
 }
 
 .at-header__menu-badge-info {
@@ -228,7 +230,7 @@
     /* Full-width dropdown overlay for mobile */
     width: 100%;
     max-width: 100%;
-    padding: calc(2 * var(--ds-size-3)) 0;
+    padding: 0 0 var(--ds-size-3) 0;
 
     /* Hide box-shadow to avoid line between dropdown menu and header on mobile */
     box-shadow: none;
@@ -237,6 +239,10 @@
     border-right: 0;
     border-top-left-radius: 0%;
     border-top-right-radius: 0%;
+
+    /* Override translate, which was set to '10px 50px' on mobile, causing the dropdown to be misaligned.
+     * The actual translation is handled in headerMenu.tsx, which provides support for arbitrary header positions. */
+    translate: 0 0 !important;
   }
 
   .at-header__dropdown-trigger {

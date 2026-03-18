@@ -392,3 +392,66 @@ export const DifferentMenuRows: Story = {
     links,
   },
 };
+
+export const ContentAboveHeader: Story = {
+  render: (args) => {
+    return (
+      <>
+        <div
+          style={{
+            backgroundColor: "var(--ds-color-background-tinted)",
+            textAlign: "center",
+          }}
+        >
+          TEST
+        </div>
+        <Header {...args}>
+          <Link href="/" aria-label="Link til hjem">
+            <Header.Title>
+              <Header.Illustration>
+                <HeaderStoriesIllustration aria-label="Fagsystem logo" />
+              </Header.Illustration>
+              <Header.Logo style={{ fontFamily: "Literata" }}>
+                Fagsystem
+              </Header.Logo>
+            </Header.Title>
+          </Link>
+          <Header.Navbar />
+          <Header.Menu triggerContent="Ola Nordmann" closeButtonText="Lukk">
+            <Header.MenuRow>
+              <Link href="#">
+                <Header.MenuIcon>
+                  <PersonCircleIcon aria-label="Profil ikon" />
+                </Header.MenuIcon>
+                <span>Profil</span>
+              </Link>
+            </Header.MenuRow>
+            <Header.MenuRow>
+              <Link href="#">
+                <Header.MenuIcon>
+                  <InboxIcon aria-label="Innboks ikon" />
+                </Header.MenuIcon>
+                <span>Innboks</span>
+                <Header.MenuBadge color="warning">19</Header.MenuBadge>
+              </Link>
+            </Header.MenuRow>
+            <Header.MenuRow>
+              <Link href="#">
+                <Header.MenuIcon>
+                  <TasklistIcon aria-label="Gjøremål ikon" />
+                </Header.MenuIcon>
+                <span>Gjøremål</span>
+                <Header.MenuBadge color="info">19</Header.MenuBadge>
+              </Link>
+            </Header.MenuRow>
+            <Divider />
+            <Switch label="Mørk modus" position="end" />
+          </Header.Menu>
+        </Header>
+      </>
+    );
+  },
+  args: {
+    links,
+  },
+};
