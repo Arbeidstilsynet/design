@@ -199,7 +199,9 @@ export function HeaderMenu({
           placement="bottom"
           className="at-header__dropdown-content"
           /* Override translate, which was set to '10px 50px' on mobile, causing the dropdown to be misaligned */
-          style={{ transform: isMobile ? `translate(0, ${headerBottom}px)` : undefined }}
+          style={{
+            transform: isMobile ? `translate(0, ${headerBottom}px)` : undefined,
+          }}
         >
           {/* Navigation menu items for mobile, including Divider */}
           <Dropdown.List>
