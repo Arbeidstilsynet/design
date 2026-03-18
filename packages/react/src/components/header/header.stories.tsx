@@ -1,10 +1,10 @@
 import {
-  CircleIcon,
-  ExternalLinkIcon,
-  FingerButtonIcon,
-  InboxIcon,
-  PersonCircleIcon,
-  TasklistIcon,
+    CircleIcon,
+    ExternalLinkIcon,
+    FingerButtonIcon,
+    InboxIcon,
+    PersonCircleIcon,
+    TasklistIcon,
 } from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { Header } from "..";
@@ -398,7 +398,7 @@ export const ContentAboveStory: Story = {
     return (
       <>
         <div style={{ backgroundColor: "var(--ds-color-background-tinted)", textAlign: "center" }}>
-          VERIFIKASJON
+          TEST
         </div>
         <Header {...args}>
           <Link href="/" aria-label="Link til hjem">
