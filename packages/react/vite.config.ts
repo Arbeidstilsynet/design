@@ -1,5 +1,3 @@
-import babel from "@rolldown/plugin-babel";
-import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import { readFileSync } from "node:fs";
 import path, { resolve } from "node:path";
 import { defineConfig } from "vite";
@@ -24,10 +22,10 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
       fileName: "index",
-      formats: ["es", "cjs"],
+      formats: ["es"],
     },
-    rollupOptions: {
-      external: externalDependencies,
+    rolldownOptions: {
+      external: externalDependencies.concat(["react/jsx-runtime"]),
       output: {
         banner: "'use client';",
         dir: "dist",
@@ -35,8 +33,6 @@ export default defineConfig({
     },
   },
   plugins: [
-    react(),
-    babel({ presets: [reactCompilerPreset()] }),
     dts({
       include: ["src/**/*"],
       exclude: ["src/**/*.{test,stories}.{ts,tsx}"],
