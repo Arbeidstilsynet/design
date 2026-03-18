@@ -240,8 +240,9 @@
     border-top-left-radius: 0%;
     border-top-right-radius: 0%;
 
-    /* Override translate, which was set to '10px 50px' on mobile, causing the dropdown to be misaligned */
-    translate: 0 var(--ds-size-18) !important;
+    /* Override translate, which was set to '10px 50px' on mobile, causing the dropdown to be misaligned.
+     * The actual translation is handled in headerMenu.tsx, which provides support for arbitrary header positions. */
+    translate: 0 0 !important;
   }
 
   .at-header__dropdown-trigger {

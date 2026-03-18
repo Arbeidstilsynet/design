@@ -136,7 +136,7 @@ export function HeaderMenu({
   ...rest
 }: Readonly<HeaderMenuProps>) {
   const [open, setOpen] = useState(false);
-  const [backdropTop, setBackdropTop] = useState(0);
+  const [headerBottom, setHeaderBottom] = useState(0);
   const { links, headerRef } = use(HeaderContext);
   const isMobile = useMediaQuery("(max-width: 48rem)");
 
@@ -147,7 +147,7 @@ export function HeaderMenu({
     const updateBackdropPosition = () => {
       const rect = headerRef.current?.getBoundingClientRect();
       if (rect) {
-        setBackdropTop(rect.bottom);
+        setHeaderBottom(rect.bottom);
       }
     };
 
@@ -198,6 +198,8 @@ export function HeaderMenu({
           onClose={() => setOpen(false)}
           placement="bottom"
           className="at-header__dropdown-content"
+          /* Override translate, which was set to '10px 50px' on mobile, causing the dropdown to be misaligned */
+          style={{ transform: isMobile ? `translate(0, ${headerBottom}px)` : undefined }}
         >
           {/* Navigation menu items for mobile, including Divider */}
           <Dropdown.List>
@@ -263,7 +265,7 @@ export function HeaderMenu({
         <div
           aria-hidden
           className="at-header__dropdown-backdrop"
-          style={{ top: backdropTop }}
+          style={{ top: headerBottom }}
         />
       ) : null}
     </div>
