@@ -1,5 +1,17 @@
 # @arbeidstilsynet/design-react
 
+## 0.10.0
+
+Released: 2026-03-18
+
+### Minor Changes
+
+- Removed [React Compiler](https://react.dev/learn/react-compiler) handling in Vite. Consumers should activate React Compiler themselves, e.g. in [Next](https://nextjs.org/docs/app/api-reference/config/next-config-js/reactCompiler). ([#738](https://github.com/Arbeidstilsynet/design/pull/738))
+
+- Publish package only as ESM. Removed `main` and `exports.require` from `package.json`. ([#738](https://github.com/Arbeidstilsynet/design/pull/738))
+
+- Removed unintentional `react/jsx-runtime` inclusion in bundle. This should have no negative impact on consumers. ([#738](https://github.com/Arbeidstilsynet/design/pull/738))
+
 ## 0.9.2
 
 Released: 2026-03-18
