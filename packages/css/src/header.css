@@ -230,7 +230,7 @@
     /* Full-width dropdown overlay for mobile */
     width: 100%;
     max-width: 100%;
-    padding: calc(2 * var(--ds-size-3)) 0;
+    padding: 0 0 var(--ds-size-3) 0;
 
     /* Hide box-shadow to avoid line between dropdown menu and header on mobile */
     box-shadow: none;
@@ -241,7 +241,7 @@
     border-top-right-radius: 0%;
 
     /* Override translate, which was set to '10px 50px' on mobile, causing the dropdown to be misaligned */
-    translate: 0 50px !important;
+    translate: 0 var(--ds-size-18) !important;
   }
 
   .at-header__dropdown-trigger {
