@@ -13,13 +13,11 @@
   },
   "type": "module",
   "module": "dist/index.js",
-  "main": "dist/index.cjs",
   "types": "dist/src/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/src/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "default": "./dist/index.js"
     }
   },
   "files": [
@@ -47,7 +45,6 @@
   "devDependencies": {
     "@arbeidstilsynet/design-css": "workspace:*",
     "@eslint/js": "9.39.4",
-    "@rolldown/plugin-babel": "0.2.1",
     "@storybook/addon-docs": "10.2.19",
     "@storybook/addon-vitest": "10.2.19",
     "@storybook/react-vite": "10.2.19",
@@ -59,8 +56,6 @@
     "@types/node": "24.12.0",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "@vitejs/plugin-react": "6.0.1",
-    "babel-plugin-react-compiler": "1.0.0",
     "eslint": "9.39.4",
     "eslint-config-prettier": "10.1.8",
     "eslint-plugin-jsx-a11y": "6.10.2",
