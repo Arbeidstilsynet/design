@@ -1,4 +1,5 @@
-import react from "@vitejs/plugin-react";
+import babel from "@rolldown/plugin-babel";
+import react, { reactCompilerPreset } from "@vitejs/plugin-react";
 import { readFileSync } from "node:fs";
 import path, { resolve } from "node:path";
 import { defineConfig } from "vite";
@@ -34,11 +35,8 @@ export default defineConfig({
     },
   },
   plugins: [
-    react({
-      babel: {
-        plugins: [["babel-plugin-react-compiler"]],
-      },
-    }),
+    react(),
+    babel({ presets: [reactCompilerPreset()] }),
     dts({
       include: ["src/**/*"],
       exclude: ["src/**/*.{test,stories}.{ts,tsx}"],
