@@ -393,7 +393,7 @@ export const DifferentMenuRows: Story = {
   },
 };
 
-export const ContentAboveStory: Story = {
+export const ContentAboveHeader: Story = {
   render: (args) => {
     return (
       <>
