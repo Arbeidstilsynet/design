@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-react
 
+## 0.9.2
+
+Released: 2026-03-18
+
+### Patch Changes
+
+- **Header**: Adjusted font sizes, increased menu button size on mobile view, added padding to menu badges and fixed misalignment issue of the menu dropdown (Regressions from recent changes). ([#735](https://github.com/Arbeidstilsynet/design/pull/735))
+
 ## 0.9.1
 
 Released: 2026-03-17
