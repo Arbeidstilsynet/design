@@ -190,7 +190,6 @@
 
 @media (max-width: 48rem) {
   .at-header {
-    height: var(--ds-size-18);
     margin: 0;
     padding: var(--ds-size-2) var(--ds-size-4);
   }
@@ -200,6 +199,7 @@
 
   .ds-link:has(.at-header__left) {
     height: 100%;
+    align-self: flex-end;
   }
 
   .at-header__left {
