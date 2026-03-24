@@ -3,7 +3,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  font-size: var(--ds-font-size-6);
+  font-size: var(--ds-font-size-5);
   align-items: center;
   width: 100%;
   container-type: inline-size;
@@ -21,7 +21,7 @@
     font-weight: var(--ds-font-weight-medium);
     text-decoration: none;
     line-height: var(--ds-line-height-sm);
-    font-size: var(--ds-font-size-7);
+    font-size: var(--ds-font-size-6);
     letter-spacing: var(--ds-letter-spacing-8);
     transform: translateY(
       -2.5px
@@ -154,7 +154,7 @@
   width: var(--ds-size-7);
   height: var(--ds-size-7);
   border-radius: 50%;
-  font-size: var(--ds-font-size-5);
+  font-size: var(--ds-font-size-4);
   font-weight: var(--ds-font-weight-regular);
   margin-left: auto;
   padding: var(--ds-size-1);
