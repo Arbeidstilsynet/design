@@ -6,7 +6,7 @@
     },
     "_base": {
       "$type": "dimension",
-      "$value": "24"
+      "$value": "20"
     },
     "_step": {
       "$type": "dimension",
