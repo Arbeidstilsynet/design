@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-css
 
+## 0.10.1
+
+Released: 2026-03-24
+
+### Patch Changes
+
+- **Header**: decreased font size to avoid overly large links with the change in theme `v0.7.0` ([#746](https://github.com/Arbeidstilsynet/design/pull/746))
+
 ## 0.10.0
 
 Released: 2026-03-18
