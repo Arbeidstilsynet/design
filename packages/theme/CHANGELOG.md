@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.7.0
+
+Released: 2026-03-24
+
+### Minor Changes
+
+- Increased size scale by reducing `--ds-size-base` from 24 to 20. `--ds-size-base` is a divisor for calculating `--ds-size-unit` and `--_ds-font-size-factor`. This affects all size tokens and all text. This is an increase back up between the previous change (version `0.6.0`) and the original default value. Body text is now `16px`, up from previous `14px` but still smaller than the original `18px`. ([#746](https://github.com/Arbeidstilsynet/design/pull/746))
+
 ## 0.6.0
 
 Released: 2026-03-09
