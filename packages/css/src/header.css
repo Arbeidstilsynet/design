@@ -202,13 +202,6 @@
     align-self: flex-end;
   }
 
-  .at-header__left {
-    height: 100%;
-    margin-right: 0;
-    flex-shrink: 0;
-    align-items: flex-end;
-  }
-
   .at-header__center {
     display: none;
   }
