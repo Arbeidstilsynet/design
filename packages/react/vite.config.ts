@@ -20,7 +20,7 @@ export default defineConfig({
     sourcemap: true,
     minify: false,
     lib: {
-      entry: resolve(__dirname, "src/index.ts"),
+      entry: resolve("src/index.ts"),
       fileName: "index",
       formats: ["es"],
     },
@@ -40,7 +40,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "src"),
+      "@": path.resolve("src"),
     },
   },
 });
