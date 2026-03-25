@@ -4,20 +4,19 @@ import {
   MenuHamburgerIcon,
   XMarkIcon,
 } from "@navikt/aksel-icons";
-import { Slot } from "@radix-ui/react-slot";
 import { clsx } from "clsx/lite";
 import {
-  isValidElement,
   use,
   useLayoutEffect,
   useState,
   type HTMLAttributes,
-  type ReactNode,
+  type ReactNode
 } from "react";
-import { Button, Divider, Dropdown } from "../../digdir";
+import { Dropdown } from "../../digdir";
 import type { DefaultProps } from "../../types";
 import { useMediaQuery } from "../hooks/useMediaQuery";
 import { HeaderContext } from "./headerContext";
+import { HeaderMenuDropdown } from "./headerMenuDropdown";
 
 export interface HeaderMenuProps
   extends DefaultProps<HTMLDivElement>, HTMLAttributes<HTMLDivElement> {
@@ -191,85 +190,14 @@ export function HeaderMenu({
             </>
           )}
         </Dropdown.Trigger>
-
-        <Dropdown
+        <HeaderMenuDropdown
+          children={children}
+          closeButtonText={closeButtonText}
+          isMobile={isMobile}
           open={open}
-          onOpen={() => setOpen(true)}
-          onClose={() => setOpen(false)}
-          placement="bottom"
-          className="at-header__dropdown-content"
-          /* Override translate, which was set to '10px 50px' on mobile, causing the dropdown to be misaligned */
-          style={{
-            transform: isMobile ? `translate(0, ${headerBottom}px)` : undefined,
-          }}
-        >
-          {/* Navigation menu items for mobile, including Divider */}
-          <Dropdown.List>
-            {links?.map((link, index) => (
-              <Dropdown.Item key={"nav-" + index}>
-                {/* Dropdown.Item does not forward className, so we wrap the control */}
-                <div
-                  className={clsx(
-                    "at-header__dropdown-controls",
-                    "at-header__dropdown-item-mobile",
-                  )}
-                >
-                  {isValidElement(link) ? (
-                    <Slot className={clsx("at-header__link", "ds-link")}>
-                      {link}
-                    </Slot>
-                  ) : (
-                    link
-                  )}
-                </div>
-              </Dropdown.Item>
-            ))}
-
-            {links && links.length > 0 && (
-              <Dropdown.Item>
-                <div
-                  className={clsx(
-                    "at-header__dropdown-item-mobile at-header__dropdown-controls",
-                  )}
-                >
-                  <Divider />
-                </div>
-              </Dropdown.Item>
-            )}
-
-            {/* Misc menu controls that are always shown */}
-            {children && (
-              <Dropdown.Item>
-                {/* Dropdown.Item does not forward className, so we wrap the control */}
-                <div className="at-header__dropdown-controls">{children}</div>
-              </Dropdown.Item>
-            )}
-
-            {/* Mobile-only close button */}
-            <Dropdown.Item>
-              <div className="at-header__dropdown-close-mobile">
-                <Button
-                  type="button"
-                  variant="secondary"
-                  onClick={() => setOpen(false)}
-                >
-                  <XMarkIcon aria-hidden />
-                  {closeButtonText}
-                </Button>
-              </div>
-            </Dropdown.Item>
-          </Dropdown.List>
-        </Dropdown>
-      </Dropdown.TriggerContext>
-
-      {/* overlay */}
-      {open ? (
-        <div
-          aria-hidden
-          className="at-header__dropdown-backdrop"
-          style={{ top: headerBottom }}
+          setOpen={setOpen}
         />
-      ) : null}
+      </Dropdown.TriggerContext>
     </div>
   );
 }

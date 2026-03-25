@@ -52,6 +52,7 @@ export function Header({
       >
         <div className="at-header__container">{children}</div>
       </header>
+      <div id="at-header__mobile-dropdown-content" />
     </HeaderContext>
   );
 }

@@ -89,7 +89,9 @@
 
 .at-header .ds-dropdown.at-header__dropdown-content {
   padding: var(--ds-size-3) var(--ds-size-2);
+}
 
+.at-header, #at-header__mobile-dropdown-content {
   & .ds-field:has(input[role="switch"]) {
     color: var(--ds-color-neutral-text-default);
     padding: var(--ds-size-2) var(--ds-size-4);
@@ -175,6 +177,10 @@
 .at-header__menu-badge-danger {
   color: var(--ds-color-danger-text-default);
   background-color: var(--ds-color-danger-surface-tinted);
+}
+
+#at-header__mobile-dropdown-content {
+  display: none;
 }
 
 /* Responsive adjustments */
@@ -274,5 +280,9 @@
     left: 0;
     background-color: rgb(0 0 0 / calc(100% - var(--ds-opacity-disabled)));
     pointer-events: none;
+  }
+
+  #at-header__mobile-dropdown-content {
+    display: unset;
   }
 }
