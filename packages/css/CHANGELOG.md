@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-css
 
+## 0.10.2
+
+Released: 2026-03-25
+
+### Patch Changes
+
+- **Header**: Remove hardcoded header height in mobile view ([#748](https://github.com/Arbeidstilsynet/design/pull/748))
+
 ## 0.10.1
 
 Released: 2026-03-24
