@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*
 build: v1.13.0
-design-tokens: v1.12.1
+design-tokens: v1.13.0
 */
 
 @layer ds.theme.size-mode {
@@ -607,7 +607,7 @@ design-tokens: v1.12.1
   --ds-color-accent-text-default: #EAEDEC;
   --ds-color-accent-base-default: #3C9D92;
   --ds-color-accent-base-hover: #17E5CA;
-  --ds-color-accent-base-active: #3C9D92;
+  --ds-color-accent-base-active: #183631;
   --ds-color-accent-base-contrast-subtle: #191C1B;
   --ds-color-accent-base-contrast-default: #000000;
   --ds-color-reverse-background-default: #183631;
@@ -776,7 +776,7 @@ design-tokens: v1.12.1
   --ds-color-accent-text-default: #EAEDEC;
   --ds-color-accent-base-default: #3C9D92;
   --ds-color-accent-base-hover: #17E5CA;
-  --ds-color-accent-base-active: #3C9D92;
+  --ds-color-accent-base-active: #183631;
   --ds-color-accent-base-contrast-subtle: #191C1B;
   --ds-color-accent-base-contrast-default: #000000;
   --ds-color-reverse-background-default: #183631;
