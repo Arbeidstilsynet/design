@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.8.0
+
+Released: 2026-03-26
+
+### Minor Changes
+
+- Changed dark mode colors for `accent`, `neutral`, `reverse` ([#756](https://github.com/Arbeidstilsynet/design/pull/756))
+
 ## 0.7.0
 
 Released: 2026-03-24
