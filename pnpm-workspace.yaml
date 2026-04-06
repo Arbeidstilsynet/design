@@ -9,6 +9,8 @@ minimumReleaseAge: 4320
 minimumReleaseAgeExclude:
   - minimatch
   - picomatch
+  # Renovate security update: vite@8.0.5
+  - vite@8.0.5
 
 overrides:
   ajv@>=8.0.0: ">=8.18.0"
