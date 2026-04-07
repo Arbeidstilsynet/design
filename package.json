@@ -20,7 +20,7 @@
     "storybook": "pnpm --filter storybook dev",
     "storybook:serve": "pnpm --filter storybook serve"
   },
-  "packageManager": "pnpm@10.32.1",
+  "packageManager": "pnpm@10.33.0",
   "devDependencies": {
     "@changesets/cli": "2.30.0",
     "@digdir/designsystemet": "1.13.0",
