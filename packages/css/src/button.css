@@ -30,8 +30,10 @@
   /* Don't apply when inside Pagination.
    Pagination currently has mixed docs of either setting data-variant="primary" on Pagination.Button
     or keeping it as tertiary (returned from usePagination). If this is changed upstream we can simplify this selector.
+
+    Also don't apply when inside ToggleGroup, which uses <label class="ds-button" data-variant="tertiary">
   */
-    .ds-pagination .ds-button[data-variant="tertiary"]
+    :is(.ds-pagination, .ds-toggle-group) .ds-button[data-variant="tertiary"]
   ) {
   /** Text **/
   --dsc-button-color: var(--ds-color-text-default);
