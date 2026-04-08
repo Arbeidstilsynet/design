@@ -1,24 +1,24 @@
 {
   "tokenSetOrder": [
-    "primitives/globals",
-    "primitives/modes/size/small",
-    "primitives/modes/size/medium",
-    "primitives/modes/size/large",
-    "primitives/modes/size/global",
-    "primitives/modes/typography/size/small",
-    "primitives/modes/typography/size/medium",
-    "primitives/modes/typography/size/large",
-    "primitives/modes/typography/primary/arbeidstilsynet",
+    "Semantic/Semantic",
+    "Size/small",
+    "Size/medium",
+    "Size/large",
+    "Typography/Primary",
+    "Typography/Secondary",
     "primitives/modes/typography/secondary/arbeidstilsynet",
-    "primitives/modes/color-scheme/dark/arbeidstilsynet",
-    "primitives/modes/color-scheme/light/arbeidstilsynet",
-    "themes/arbeidstilsynet",
-    "semantic/color",
+    "Color scheme/Dark",
+    "Color scheme/Light",
+    "Theme/arbeidstilsynet",
     "semantic/modes/main-color/accent",
     "semantic/modes/main-color/reverse",
     "semantic/modes/support-color/blaa",
     "semantic/modes/support-color/gul",
     "semantic/modes/support-color/korall",
-    "semantic/style"
+    "Main color/reverse",
+    "Main color/accent",
+    "Support color/blaa",
+    "Support color/gul",
+    "Support color/korall"
   ]
 }

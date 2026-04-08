@@ -1,0 +1,230 @@
+{
+  "color": {
+    "main": {
+      "background-default": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-background-default)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.background-default}"
+      },
+      "background-tinted": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-background-tinted)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.background-tinted}"
+      },
+      "surface-tinted": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-surface-tinted)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.surface-tinted}"
+      },
+      "surface-hover": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-surface-hover)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.surface-hover}"
+      },
+      "surface-active": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-surface-active)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.surface-active}"
+      },
+      "border-subtle": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-border-subtle)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.border-subtle}"
+      },
+      "border-default": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-border-default)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.border-default}"
+      },
+      "border-strong": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-border-strong)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.border-strong}"
+      },
+      "base-default": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-base-default)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.base-default}"
+      },
+      "base-hover": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-base-hover)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.base-hover}"
+      },
+      "base-active": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-base-active)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.base-active}"
+      },
+      "text-subtle": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-text-subtle)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.text-subtle}"
+      },
+      "text-default": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-text-default)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.text-default}"
+      },
+      "base-contrast-default": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-base-contrast-default)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.base-contrast-default}"
+      },
+      "base-contrast-subtle": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-base-contrast-subtle)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.base-contrast-subtle}"
+      },
+      "surface-default": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-surface-default)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.reverse.surface-default}"
+      }
+    }
+  }
+}

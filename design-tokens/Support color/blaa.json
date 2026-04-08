@@ -1,0 +1,230 @@
+{
+  "color": {
+    "support": {
+      "background-default": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-background-default)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.background-default}"
+      },
+      "background-tinted": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-background-tinted)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.background-tinted}"
+      },
+      "surface-tinted": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-surface-tinted)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.surface-tinted}"
+      },
+      "surface-hover": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-surface-hover)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.surface-hover}"
+      },
+      "surface-active": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-surface-active)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.surface-active}"
+      },
+      "border-subtle": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-border-subtle)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.border-subtle}"
+      },
+      "border-default": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-border-default)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.border-default}"
+      },
+      "border-strong": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-border-strong)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.border-strong}"
+      },
+      "base-default": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-base-default)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.base-default}"
+      },
+      "base-hover": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-base-hover)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.base-hover}"
+      },
+      "base-active": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-base-active)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.base-active}"
+      },
+      "text-subtle": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-text-subtle)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.text-subtle}"
+      },
+      "text-default": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-text-default)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.text-default}"
+      },
+      "base-contrast-default": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-base-contrast-default)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.base-contrast-default}"
+      },
+      "base-contrast-subtle": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-base-contrast-subtle)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.base-contrast-subtle}"
+      },
+      "surface-default": {
+        "$extensions": {
+          "com.figma.scopes": [
+            "ALL_FILLS",
+            "STROKE_COLOR"
+          ],
+          "com.figma.hiddenFromPublishing": false,
+          "com.figma.codeSyntax": {
+            "Web": "var(--ds-color-surface-default)"
+          }
+        },
+        "$type": "color",
+        "$value": "{color.blaa.surface-default}"
+      }
+    }
+  }
+}

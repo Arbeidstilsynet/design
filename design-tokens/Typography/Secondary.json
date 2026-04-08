@@ -1,0 +1,34 @@
+{
+  "arbeidstilsynet": {
+    "font-family": {
+      "$extensions": {
+        "com.figma.hiddenFromPublishing": false
+      },
+      "$type": "text",
+      "$value": "Inter"
+    },
+    "font-weight": {
+      "medium": {
+        "$extensions": {
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "text",
+        "$value": "Medium"
+      },
+      "semibold": {
+        "$extensions": {
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "text",
+        "$value": "Semi bold"
+      },
+      "regular": {
+        "$extensions": {
+          "com.figma.hiddenFromPublishing": false
+        },
+        "$type": "text",
+        "$value": "Regular"
+      }
+    }
+  }
+}
