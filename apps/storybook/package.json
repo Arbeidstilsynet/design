@@ -41,7 +41,7 @@
     "eslint-plugin-storybook": "10.3.5",
     "playwright": "1.59.1",
     "storybook": "10.3.5",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "typescript-eslint": "8.59.0",
     "vitest": "4.1.5"
   }
