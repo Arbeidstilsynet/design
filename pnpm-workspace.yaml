@@ -2,6 +2,9 @@ packages:
   - packages/*
   - apps/*
 
+allowBuilds:
+  esbuild: false
+
 autoInstallPeers: false
 
 minimumReleaseAge: 4320
