@@ -12,7 +12,8 @@ on:
 jobs:
   generate-changeset:
     runs-on: ubuntu-latest
-    if: github.actor == 'renovate[bot]' && github.repository == 'Arbeidstilsynet/design'
+    if: github.actor == 'renovate[bot]' && github.repository ==
+      'Arbeidstilsynet/design'
     steps:
       - name: Create GitHub App Token
         id: app-token
@@ -32,11 +33,10 @@ jobs:
           git config --global user.name "${{ vars.BETZY_BOT_GIT_USER_NAME }}"
           git config --global user.email "${{ vars.BETZY_BOT_GIT_USER_EMAIL }}"
 
-      - uses: pnpm/action-setup@08c4be7e2e672a47d11bd04269e27e5f3e8529cb # v6.0.0
+      - uses: pnpm/action-setup@903f9c1a6ebcba6cf41d87230be49611ac97822e # v6.0.3
       - uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
         with:
           node-version: 24
-          cache: "pnpm"
 
       - name: Run changesets-renovate
         run: pnpm dlx @scaleway/changesets-renovate
