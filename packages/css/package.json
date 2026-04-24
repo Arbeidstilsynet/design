@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "dev": "postcss ./src/*.css --base . --dir ./dist --watch",
-    "build": "del-cli ./dist && postcss ./src/*.css --base . --dir ./dist && pnpx tsx ./scripts/copy-digdir-css.ts"
+    "build": "del-cli ./dist && postcss ./src/*.css --base . --dir ./dist && tsx ./scripts/copy-digdir-css.ts"
   },
   "dependencies": {
     "@digdir/designsystemet-css": "1.13.1"
@@ -39,6 +39,7 @@
     "postcss": "8.5.10",
     "postcss-cli": "11.0.1",
     "postcss-import": "16.1.1",
-    "postcss-nesting": "14.0.0"
+    "postcss-nesting": "14.0.0",
+    "tsx": "4.21.0"
   }
 }
