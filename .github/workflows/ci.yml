@@ -12,7 +12,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
-      - uses: Arbeidstilsynet/action-pnpm-setup@0e98d6443d6688420659cad8a415674a993516bb # v1
+      - uses: Arbeidstilsynet/action-pnpm-setup@f6af8754b7e046f209b2f001f7a71c06b9ab4381 # v1
       - run: pnpm format:check
 
   typecheck:
@@ -20,7 +20,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
-      - uses: Arbeidstilsynet/action-pnpm-setup@0e98d6443d6688420659cad8a415674a993516bb # v1
+      - uses: Arbeidstilsynet/action-pnpm-setup@f6af8754b7e046f209b2f001f7a71c06b9ab4381 # v1
       - run: pnpm typecheck
 
   build:
@@ -28,7 +28,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
-      - uses: Arbeidstilsynet/action-pnpm-setup@0e98d6443d6688420659cad8a415674a993516bb # v1
+      - uses: Arbeidstilsynet/action-pnpm-setup@f6af8754b7e046f209b2f001f7a71c06b9ab4381 # v1
       - run: pnpm build
 
   lint-test:
@@ -40,7 +40,7 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
-      - uses: Arbeidstilsynet/action-pnpm-setup@0e98d6443d6688420659cad8a415674a993516bb # v1
+      - uses: Arbeidstilsynet/action-pnpm-setup@f6af8754b7e046f209b2f001f7a71c06b9ab4381 # v1
       - run: pnpm lint
       - run: pnpm test
         id: test
