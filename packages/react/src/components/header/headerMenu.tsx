@@ -173,12 +173,12 @@ export function HeaderMenu({
         >
           {isMobile ? (
             <>
+              {mobileMenuText}
               {open ? (
                 <XMarkIcon aria-hidden />
               ) : (
                 <MenuHamburgerIcon aria-hidden />
               )}
-              {mobileMenuText}
             </>
           ) : (
             <>
