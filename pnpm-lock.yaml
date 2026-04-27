@@ -48,8 +48,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/theme
       '@navikt/aksel-icons':
-        specifier: 8.10.1
-        version: 8.10.1
+        specifier: 8.10.2
+        version: 8.10.2
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -170,8 +170,8 @@ importers:
         specifier: 1.13.3
         version: 1.13.3
       '@navikt/aksel-icons':
-        specifier: ^8.10.1
-        version: 8.10.1
+        specifier: ^8.10.2
+        version: 8.10.2
       '@radix-ui/react-slot':
         specifier: ^1.2.4
         version: 1.2.4(@types/react@19.2.14)(react@19.2.5)
@@ -884,6 +884,9 @@ packages:
 
   '@navikt/aksel-icons@8.10.1':
     resolution: {integrity: sha512-nIOl9nG59kK/2hPyiZWdeTGXFj4LO41F6Y6D+Jsj+p9N2dEZEGrpyZ54BGdTXMu1+REVSsZiYmd2fip8h1EFNw==}
+
+  '@navikt/aksel-icons@8.10.2':
+    resolution: {integrity: sha512-zp5izWHDYyKDF7wFKyE5mziU6Hq/rk729bk2gDtTyni0gjIpimKiL+WbaPTjPivRofGt0JR16ZvLZCPVHKjuww==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -4687,6 +4690,8 @@ snapshots:
     optional: true
 
   '@navikt/aksel-icons@8.10.1': {}
+
+  '@navikt/aksel-icons@8.10.2': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
