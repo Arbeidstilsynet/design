@@ -1,6 +1,6 @@
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, test, vi } from "vitest";
 import { Header } from ".";
 
 // Mock useMediaQuery to control mobile/desktop behavior in tests
@@ -17,6 +17,8 @@ describe("Header", () => {
     vi.clearAllMocks();
     mockUseMediaQuery.mockReturnValue(false); // Reset to desktop view
   });
+
+  afterEach(cleanup);
 
   test("renders header with children", () => {
     render(

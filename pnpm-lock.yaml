@@ -12,8 +12,8 @@ importers:
         specifier: 2.31.0
         version: 2.31.0(@types/node@24.12.2)
       '@digdir/designsystemet':
-        specifier: 1.13.1
-        version: 1.13.1
+        specifier: 1.13.3
+        version: 1.13.3
       '@svitejs/changesets-changelog-github-compact':
         specifier: 1.2.0
         version: 1.2.0
@@ -130,8 +130,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.13.1
-        version: 1.13.1
+        specifier: 1.13.3
+        version: 1.13.3
     devDependencies:
       '@types/node':
         specifier: 24.12.2
@@ -164,11 +164,11 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.13.1
-        version: 1.13.1(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+        specifier: 1.13.3
+        version: 1.13.3(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@digdir/designsystemet-types':
-        specifier: 1.13.1
-        version: 1.13.1
+        specifier: 1.13.3
+        version: 1.13.3
       '@navikt/aksel-icons':
         specifier: ^8.10.2
         version: 8.10.2
@@ -433,24 +433,24 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.1.1
 
-  '@digdir/designsystemet-css@1.13.1':
-    resolution: {integrity: sha512-GcXbTD4aNeIf+gcqhLnraulG7tIVQVr0OMLlxeD5eDLgZiuwUyst6tGBYOe7pMLPnwZin4+fg1xpobHsv3WZBQ==}
+  '@digdir/designsystemet-css@1.13.3':
+    resolution: {integrity: sha512-ZtuygHy9xm6DVBi59pGKdbiR7vPNcwHx6e4E3xRgxL0nT6262vbYpaU+woiMS0a+krPpvkJ6K6CBmNcIqsV8IQ==}
 
-  '@digdir/designsystemet-react@1.13.1':
-    resolution: {integrity: sha512-NaZ0yWSEG0LcNF86ATzK73QtCgFVj4M6s2OSEyyF9NXCSAzPUhLFFlDaJc5cPBjUVxz4qtY3ve0VA1KylT6cdw==}
+  '@digdir/designsystemet-react@1.13.3':
+    resolution: {integrity: sha512-RwCrXiKxvFMLJAwtpiRl26PHecRlwXFu1155vJE8oVuxY1nFW/5xqUbBtuX3MsSBoy6SN2byxN22hoJhJC4q/Q==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet-types@1.13.1':
-    resolution: {integrity: sha512-oIaxQrUMhhfni3NpvG1lpOxOjCHs9Dm062VlTgbTJ8MbOizLx/W23ayGtOE79CiG77Dt5kga3TC9DMalONfDAg==}
+  '@digdir/designsystemet-types@1.13.3':
+    resolution: {integrity: sha512-yGhZoQmHhRmUGw8isyS2k3xgtI8yB+7s2wWnstdemVpls+SSZmDs3g1d3+Cj16PNNOnevDUDS6oxd+txF1zGBQ==}
 
   '@digdir/designsystemet-web@1.13.3':
     resolution: {integrity: sha512-lzyMa7uIdbd5t5C74GffZIahzQyoidJCD/eiUQXustVvI/2JxNP36rTyM6QRZcsfNMr3I5s0hewGBsGhq/ab2w==}
 
-  '@digdir/designsystemet@1.13.1':
-    resolution: {integrity: sha512-pq1BocqcHvPgMjUyVkLH/jLcIqRg5jLbMZgZZ+dUac1SUq20VdR49kxMv0lJQ+f633YB5tYsWAMBENL5cU9HMw==}
-    engines: {node: '>=20.20.1'}
+  '@digdir/designsystemet@1.13.3':
+    resolution: {integrity: sha512-Clr56SrOku6VaiUmAKkXM/e5Xvqrkp6eFdlLYto//rWjkbQnlLHkKu842H4ae9x0HSxPHXmXtuq6SH0zoq3FXA==}
+    engines: {node: '>=20.20.2'}
     hasBin: true
 
   '@emnapi/core@1.10.0':
@@ -4236,13 +4236,13 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.1
 
-  '@digdir/designsystemet-css@1.13.1':
+  '@digdir/designsystemet-css@1.13.3':
     dependencies:
-      '@digdir/designsystemet-types': 1.13.1
+      '@digdir/designsystemet-types': 1.13.3
 
-  '@digdir/designsystemet-react@1.13.1(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
+  '@digdir/designsystemet-react@1.13.3(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:
-      '@digdir/designsystemet-types': 1.13.1
+      '@digdir/designsystemet-types': 1.13.3
       '@digdir/designsystemet-web': 1.13.3
       '@floating-ui/dom': 1.7.6
       '@floating-ui/react': 0.26.23(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
@@ -4255,7 +4255,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet-types@1.13.1': {}
+  '@digdir/designsystemet-types@1.13.3': {}
 
   '@digdir/designsystemet-web@1.13.3':
     dependencies:
@@ -4265,10 +4265,10 @@ snapshots:
       '@u-elements/u-details': 1.0.0
       '@u-elements/u-tabs': 1.0.1
 
-  '@digdir/designsystemet@1.13.1':
+  '@digdir/designsystemet@1.13.3':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.3)
-      '@digdir/designsystemet-types': 1.13.1
+      '@digdir/designsystemet-types': 1.13.3
       '@tokens-studio/sd-transforms': 2.0.3(style-dictionary@5.4.0)
       chroma-js: 3.2.0
       colorjs.io: 0.6.1

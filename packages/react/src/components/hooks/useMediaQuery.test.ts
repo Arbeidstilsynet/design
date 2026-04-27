@@ -1,6 +1,6 @@
 import { renderHook } from "@testing-library/react";
 import type { VitestUtils } from "vitest";
-import { vi } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { useMediaQuery } from "./useMediaQuery";
 
