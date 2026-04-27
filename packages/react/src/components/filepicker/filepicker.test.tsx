@@ -1,6 +1,15 @@
-import { render, screen } from "@testing-library/react";
+import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { vi } from "vitest";
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  test,
+  vi,
+} from "vitest";
 import { FilePicker, type FilePickerProps } from ".";
 import { createMockFileInKb } from "./utils";
 
@@ -26,6 +35,8 @@ describe("FilePicker", () => {
   beforeEach(() => {
     vi.clearAllMocks();
   });
+
+  afterEach(cleanup);
 
   test("renders dropzone with default content", () => {
     render(
