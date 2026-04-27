@@ -1,5 +1,16 @@
 # @arbeidstilsynet/design-css
 
+## 0.10.4
+
+Released: 2026-04-27
+
+### Patch Changes
+
+- Updated dependency `@digdir/designsystemet-css` to `1.13.3`. ([#802](https://github.com/Arbeidstilsynet/design/pull/802))
+  Updated dependency `@digdir/designsystemet` to `1.13.3`.
+  Updated dependency `@digdir/designsystemet-react` to `1.13.3`.
+  Updated dependency `@digdir/designsystemet-types` to `1.13.3`.
+
 ## 0.10.3
 
 Released: 2026-04-07
