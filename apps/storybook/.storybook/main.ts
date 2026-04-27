@@ -34,6 +34,7 @@ const config: StorybookConfig = {
       shouldExtractLiteralValuesFromEnum: true,
       shouldRemoveUndefinedFromOptional: true,
       EXPERIMENTAL_useWatchProgram: true,
+      include: ["**/*.tsx", "../../packages/react/src/**/*.tsx"],
     },
   },
   async viteFinal(config) {
