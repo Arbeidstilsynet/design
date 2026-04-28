@@ -2,15 +2,16 @@
   "name": "@arbeidstilsynet/design-css",
   "version": "0.10.4",
   "description": "CSS for Designsystemet",
+  "license": "MIT",
   "author": "Arbeidstilsynet",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Arbeidstilsynet/design.git"
   },
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
+  "files": [
+    "./types.d.ts",
+    "dist"
+  ],
   "type": "module",
   "exports": {
     ".": {
@@ -20,10 +21,9 @@
     "./digdir/*": "./dist/digdir/*",
     "./*": "./dist/src/*"
   },
-  "files": [
-    "./types.d.ts",
-    "dist"
-  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "postcss ./src/*.css --base . --dir ./dist --watch",
     "build": "del-cli ./dist && postcss ./src/*.css --base . --dir ./dist && tsx ./scripts/copy-digdir-css.ts"
