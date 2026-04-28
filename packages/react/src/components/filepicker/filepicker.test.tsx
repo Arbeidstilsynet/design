@@ -16,15 +16,15 @@ import { createMockFileInKb } from "./utils";
 const defaultProps: FilePickerProps<number> = {
   files: [],
   errors: [],
-  onAdd: vi.fn(),
-  onRemove: vi.fn(),
+  onAdd: vi.fn<() => void>(),
+  onRemove: vi.fn<() => void>(),
 };
 
 describe("FilePicker", () => {
   beforeAll(() => {
     vi.stubGlobal("URL", {
-      createObjectURL: vi.fn(() => "mocked-object-url"),
-      revokeObjectURL: vi.fn(),
+      createObjectURL: vi.fn<() => string>(() => "mocked-object-url"),
+      revokeObjectURL: vi.fn<() => void>(),
     });
   });
 
@@ -109,7 +109,7 @@ describe("FilePicker", () => {
 
   test("calls onRemove when remove button is clicked", async () => {
     const user = userEvent.setup();
-    const onRemove = vi.fn();
+    const onRemove = vi.fn<() => void>();
     const files = [{ id: 1, file: createMockFileInKb("document.pdf", 1024) }];
 
     render(
@@ -175,7 +175,7 @@ describe("FilePicker", () => {
 
   test("file input accepts file uploads", async () => {
     const user = userEvent.setup();
-    const onAdd = vi.fn();
+    const onAdd = vi.fn<(files: unknown[]) => void>();
     const file = createMockFileInKb("test.pdf", 1);
 
     render(
@@ -304,7 +304,7 @@ describe("FilePicker", () => {
 
   test("handles multiple file uploads", async () => {
     const user = userEvent.setup();
-    const onAdd = vi.fn();
+    const onAdd = vi.fn<(files: unknown[]) => void>();
     const files = [
       createMockFileInKb("file1.pdf", 1),
       createMockFileInKb("file2.txt", 1),

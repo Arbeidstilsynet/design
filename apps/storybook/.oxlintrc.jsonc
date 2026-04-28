@@ -13,6 +13,7 @@
     {
       "files": ["**/*.stories.{ts,tsx}"],
       "rules": {
+        // https://storybook.js.org/docs/configure/integration/eslint-plugin#supported-rules-and-configurations
         "storybook/await-interactions": "error",
         "storybook/context-in-play-function": "error",
         "storybook/default-exports": "error",

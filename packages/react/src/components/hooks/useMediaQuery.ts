@@ -9,7 +9,7 @@ interface UseMediaQueryOptions {
   initializeWithValue?: boolean;
 }
 
-const IS_SERVER = typeof window === "undefined";
+const IS_SERVER = globalThis.window === undefined;
 
 export function useMediaQuery(
   query: string,
@@ -18,11 +18,11 @@ export function useMediaQuery(
     initializeWithValue = true,
   }: UseMediaQueryOptions = {},
 ): boolean {
-  const getMatches = (query: string): boolean => {
+  const getMatches = (q: string): boolean => {
     if (IS_SERVER) {
       return defaultValue;
     }
-    return window.matchMedia(query).matches;
+    return globalThis.matchMedia(q).matches;
   };
 
   const [matches, setMatches] = useState<boolean>(() => {
@@ -38,7 +38,7 @@ export function useMediaQuery(
   }
 
   useIsomorphicLayoutEffect(() => {
-    const matchMedia = window.matchMedia(query);
+    const matchMedia = globalThis.matchMedia(query);
 
     // Triggered at the first client-side load and if query changes
     handleChange();

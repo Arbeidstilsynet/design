@@ -23,6 +23,7 @@ export function FilePickerErrors({
   return (
     <output className={clsx("at-filepicker-errors", className)} {...rest}>
       {errors.map((error, index) => (
+        // oxlint-disable-next-line react/no-array-index-key
         <ValidationMessage key={index}>{error}</ValidationMessage>
       ))}
     </output>

@@ -5,7 +5,7 @@ import { Header } from ".";
 
 // Mock useMediaQuery to control mobile/desktop behavior in tests
 vi.mock("../hooks/useMediaQuery", () => ({
-  useMediaQuery: vi.fn(() => false), // Default to desktop view
+  useMediaQuery: vi.fn<() => boolean>(() => false), // Default to desktop view
 }));
 
 import { useMediaQuery } from "../hooks/useMediaQuery";
