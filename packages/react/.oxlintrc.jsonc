@@ -2,26 +2,21 @@
   "$schema": "../../node_modules/oxlint/configuration_schema.json",
   "extends": ["../../.oxlintrc.jsonc"],
   "plugins": ["react", "jsx-a11y"],
-  // memory issue in windows with newer version and jsplugins
-  // https://github.com/oxc-project/oxc/issues/19395#issuecomment-3994051418
-  // see "Fix Windows OOM" in https://github.com/oxc-project/oxc/issues/19918
-  // to use jsPlugins in Windows, oxlint has to be downgraded to 1.46.0
-  // "jsPlugins": [
-  //   {
-  //     "name": "react-hooks-extra",
-  //     "specifier": "eslint-plugin-react-hooks",
-  //   },
-  // ],
+  "jsPlugins": [
+    {
+      "name": "react-hooks-extra",
+      "specifier": "eslint-plugin-react-hooks",
+    },
+  ],
   "rules": {
-    // re-enable when above OOM issue is resolved and eslint-plugin-react-hooks can be re-enabled
     // https://react.dev/reference/eslint-plugin-react-hooks
-    // "react-hooks-extra/error-boundaries": "error",
-    // "react-hooks-extra/immutability": "error",
-    // "react-hooks-extra/purity": "error",
-    // "react-hooks-extra/refs": "error",
-    // "react-hooks-extra/set-state-in-effect": "error",
-    // "react-hooks-extra/set-state-in-render": "error",
-    // "react-hooks-extra/static-components": "error",
-    // "react-hooks-extra/use-memo": "error",
+    "react-hooks-extra/error-boundaries": "error",
+    "react-hooks-extra/immutability": "error",
+    "react-hooks-extra/purity": "error",
+    "react-hooks-extra/refs": "error",
+    "react-hooks-extra/set-state-in-effect": "error",
+    "react-hooks-extra/set-state-in-render": "error",
+    "react-hooks-extra/static-components": "error",
+    "react-hooks-extra/use-memo": "error",
   },
 }
