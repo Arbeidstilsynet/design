@@ -9,6 +9,12 @@ autoInstallPeers: false
 
 minimumReleaseAge: 4320
 
+minimumReleaseAgeExclude:
+  - oxlint
+  - "@oxlint/*"
+  - oxfmt
+  - "@oxfmt/*"
+
 trustPolicy: no-downgrade
 
 trustPolicyExclude:
