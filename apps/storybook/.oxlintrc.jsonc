@@ -9,12 +9,12 @@
   "jsPlugins": [
     {
       "name": "storybook",
-      "specifier": "eslint-plugin-storybook"
+      "specifier": "eslint-plugin-storybook",
     },
-        {
+    {
       "name": "react-hooks-extra",
-      "specifier": "eslint-plugin-react-hooks"
-    }
+      "specifier": "eslint-plugin-react-hooks",
+    },
   ],
   "rules": {
     // re-enable when above OOM issue is resolved and eslint-plugin-react-hooks can be re-enabled
@@ -27,5 +27,5 @@
     // "react-hooks-extra/set-state-in-render": "error",
     // "react-hooks-extra/static-components": "error",
     // "react-hooks-extra/use-memo": "error",
-  }
+  },
 }

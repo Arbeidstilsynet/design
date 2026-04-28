@@ -2,7 +2,7 @@
   "$schema": "../../node_modules/oxlint/configuration_schema.json",
   "extends": ["../../.oxlintrc.jsonc"],
   "plugins": ["react", "jsx-a11y"],
-    // memory issue in windows with newer version and jsplugins
+  // memory issue in windows with newer version and jsplugins
   // https://github.com/oxc-project/oxc/issues/19395#issuecomment-3994051418
   // see "Fix Windows OOM" in https://github.com/oxc-project/oxc/issues/19918
   // to use jsPlugins in Windows, oxlint has to be downgraded to 1.46.0

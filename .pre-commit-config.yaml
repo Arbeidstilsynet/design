@@ -24,4 +24,4 @@ repos:
     rev: v0.47.0
     hooks:
       - id: oxfmt
-        "types_or": [javascript, jsx, ts, tsx, mdx, yaml, json]
+        "types_or": [javascript, jsx, ts, tsx, html, css, mdx, yaml, json]
