@@ -9,6 +9,7 @@ repos:
       - id: detect-private-key
       - id: mixed-line-ending
       - id: check-json
+        exclude: ^.*tsconfig.*\.json$
       - id: check-yaml
         exclude: ^(\.nais/.*|pnpm-lock\.yaml)$
       - id: fix-byte-order-marker
