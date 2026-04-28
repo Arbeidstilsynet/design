@@ -1,0 +1,56 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["oxc", "eslint", "typescript", "unicorn", "vitest"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "pedantic": "off",
+    "perf": "error",
+    "style": "off",
+    "restriction": "off",
+    "nursery": "off",
+  },
+  // memory issue in windows with newer version and jsplugins
+  // https://github.com/oxc-project/oxc/issues/19395#issuecomment-3994051418
+  // see "Fix Windows OOM" in https://github.com/oxc-project/oxc/issues/19918
+  // to use jsPlugins in Windows, oxlint has to be downgraded to 1.46.0
+  // "jsPlugins": [
+  //   {
+  //     "name": "react-hooks-extra",
+  //     "specifier": "eslint-plugin-react-hooks",
+  //   },
+  // ],
+  "options": {
+    "typeAware": true,
+  },
+  "rules": {
+    // https://react.dev/reference/eslint-plugin-react-hooks
+    // "react-hooks-extra/error-boundaries": "error",
+    // "react-hooks-extra/immutability": "error",
+    // "react-hooks-extra/purity": "error",
+    // "react-hooks-extra/refs": "error",
+    // "react-hooks-extra/set-state-in-effect": "error",
+    // "react-hooks-extra/set-state-in-render": "error",
+    // "react-hooks-extra/static-components": "error",
+    // "react-hooks-extra/use-memo": "error",
+
+    "react/rules-of-hooks": "error", // pedantic
+
+    "react/react-in-jsx-scope": "off", // suspicious
+    "react/jsx-no-constructed-context-values": "off", //perf --- handled by compiler
+    "typescript/no-misused-promises": "off", // pedantic, type-aware
+    "typescript/prefer-nullish-coalescing": "off", // pedantic, type-aware
+    "typescript/strict-void-return": "off", // nursery, type-aware
+    "typescript/no-unsafe-type-assertion": "off", // suspicious, type-aware --- many semi-false positives that need refactor
+    "typescript/consistent-return": "off", // suspicious, type-aware
+    "eslint/no-await-in-loop": "off", // perf
+  },
+  "settings": {
+    "vitest": {
+      "typecheck": false,
+    },
+  },
+  "env": {
+    "builtin": true,
+  },
+}

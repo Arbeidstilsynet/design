@@ -8,7 +8,7 @@
     "build": "storybook build",
     "test": "vitest run",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint .",
+    "lint": "oxlint .",
     "serve": "pnpm dlx http-server ./storybook-static",
     "circular": "pnpm dlx madge --circular --extensions \"js,jsx,ts,tsx\" ./stories"
   },
@@ -23,7 +23,6 @@
     "react-toastify": "^11.1.0"
   },
   "devDependencies": {
-    "@eslint/js": "9.39.4",
     "@storybook/addon-a11y": "10.3.5",
     "@storybook/addon-docs": "10.3.5",
     "@storybook/addon-vitest": "10.3.5",
@@ -35,14 +34,11 @@
     "@vitest/browser-playwright": "4.1.5",
     "@vitest/coverage-v8": "4.1.5",
     "concurrently": "9.2.1",
-    "eslint": "9.39.4",
-    "eslint-config-prettier": "10.1.8",
     "eslint-plugin-react-hooks": "7.1.1",
     "eslint-plugin-storybook": "10.3.5",
     "playwright": "1.59.1",
     "storybook": "10.3.5",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.59.0",
     "vitest": "4.1.5"
   }
 }
