@@ -72,7 +72,7 @@ const ButtonGroupStory = ({
   <div
     style={{
       display: "grid",
-      gridTemplateColumns: new Array(buttonColors.length + 1)
+      gridTemplateColumns: Array.from({ length: buttonColors.length + 1 })
         .fill("auto")
         .join(" "),
       gap: "var(--ds-size-4)",

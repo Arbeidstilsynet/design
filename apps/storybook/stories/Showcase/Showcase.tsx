@@ -111,13 +111,9 @@ export function Showcase({ className, ...props }: ShowcaseProps) {
         <Table border className={classes.table}>
           <Table.Head>
             <Table.Row>
-              <Table.HeaderCell onClick={function Ya() {}} sort="none">
-                Navn
-              </Table.HeaderCell>
+              <Table.HeaderCell sort="none">Navn</Table.HeaderCell>
               <Table.HeaderCell>Epost</Table.HeaderCell>
-              <Table.HeaderCell onClick={function Ya() {}} sort="none">
-                Telefon
-              </Table.HeaderCell>
+              <Table.HeaderCell sort="none">Telefon</Table.HeaderCell>
             </Table.Row>
           </Table.Head>
           <Table.Body>

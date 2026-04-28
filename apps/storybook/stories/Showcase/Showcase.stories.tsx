@@ -52,9 +52,9 @@ export const ShowcaseStory: StoryFn = () => {
             <code data-size="xs">(data-size)</code>
           </Fieldset.Legend>
           <ToggleGroup value={size} onChange={(val) => setSize(val as Size)}>
-            {sizes.map((size) => (
-              <ToggleGroup.Item key={size} value={size}>
-                {size}
+            {sizes.map((s) => (
+              <ToggleGroup.Item key={s} value={s}>
+                {s}
               </ToggleGroup.Item>
             ))}
           </ToggleGroup>
@@ -65,9 +65,9 @@ export const ShowcaseStory: StoryFn = () => {
             <code data-size="xs">(data-color-scheme)</code>
           </Fieldset.Legend>
           <ToggleGroup value={colorMode} onChange={setColorMode}>
-            {colorModes.map((colorMode) => (
-              <ToggleGroup.Item key={colorMode} value={colorMode}>
-                {colorMode}
+            {colorModes.map((cm) => (
+              <ToggleGroup.Item key={cm} value={cm}>
+                {cm}
               </ToggleGroup.Item>
             ))}
           </ToggleGroup>
@@ -78,9 +78,9 @@ export const ShowcaseStory: StoryFn = () => {
             <code data-size="xs">(data-typography)</code>
           </Fieldset.Legend>
           <ToggleGroup value={typographyMode} onChange={setTypographyMode}>
-            {typography.map((typographyMode) => (
-              <ToggleGroup.Item key={typographyMode} value={typographyMode}>
-                {typographyMode}
+            {typography.map((tm) => (
+              <ToggleGroup.Item key={tm} value={tm}>
+                {tm}
               </ToggleGroup.Item>
             ))}
           </ToggleGroup>
