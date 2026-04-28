@@ -7,14 +7,6 @@ on:
       - main
 
 jobs:
-  format:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
-      - uses: Arbeidstilsynet/action-pnpm-setup@72d8b6a4a6492697599795caf6bf6d3862474946 # v1
-      - run: pnpm format:check
-
   prek:
     runs-on: ubuntu-latest
     timeout-minutes: 10
