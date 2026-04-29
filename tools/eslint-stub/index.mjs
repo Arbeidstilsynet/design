@@ -8,4 +8,4 @@ class Linter {} // NOSONAR
 class RuleTester {} // NOSONAR
 class SourceCode {} // NOSONAR
 
-module.exports = { ESLint, Linter, RuleTester, SourceCode };
+export { ESLint, Linter, RuleTester, SourceCode };
