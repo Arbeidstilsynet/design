@@ -37,18 +37,19 @@ const config: StorybookConfig = {
       include: ["**/*.tsx", "../../packages/react/src/**/*.tsx"],
     },
   },
-  async viteFinal(config) {
+  async viteFinal(viteConfig) {
     // use alias to resolve @arbeidstilsynet/design-react to the local package for HMR support
-    config.resolve = config.resolve || {};
-    config.resolve.alias = {
-      ...(config.resolve.alias || {}),
+    viteConfig.resolve = viteConfig.resolve || {};
+    viteConfig.resolve.alias = {
+      // oxlint-disable-next-line typescript/no-misused-spread
+      ...viteConfig.resolve.alias,
       "@arbeidstilsynet/design-react": resolve(
         __dirname,
         "../../../packages/react/src/index.ts",
       ),
     };
 
-    return config;
+    return viteConfig;
   },
 };
 export default config;

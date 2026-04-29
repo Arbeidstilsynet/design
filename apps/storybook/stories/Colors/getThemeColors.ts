@@ -99,7 +99,7 @@ export function getGroupedThemeColors(
   const special = Object.fromEntries(
     Object.keys(groups)
       .filter((x) => SPECIAL_GROUPS.includes(x))
-      .sort((a, b) => {
+      .toSorted((a, b) => {
         return SPECIAL_GROUPS.indexOf(a) - SPECIAL_GROUPS.indexOf(b);
       })
       .map((groupName) => [groupName, groups[groupName]!]),
@@ -108,7 +108,7 @@ export function getGroupedThemeColors(
   const ordinary = Object.fromEntries(
     Object.keys(groups)
       .filter((x) => !SPECIAL_GROUPS.includes(x))
-      .sort((a, b) => a.localeCompare(b))
+      .toSorted((a, b) => a.localeCompare(b))
       .map((groupName) => [groupName, groups[groupName]!]),
   );
 

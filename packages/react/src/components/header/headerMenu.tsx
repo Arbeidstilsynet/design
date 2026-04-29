@@ -206,6 +206,7 @@ export function HeaderMenu({
           {/* Navigation menu items for mobile, including Divider */}
           <Dropdown.List>
             {links?.map((link, index) => (
+              // oxlint-disable-next-line react/no-array-index-key
               <Dropdown.Item key={"nav-" + index}>
                 {/* Dropdown.Item does not forward className, so we wrap the control */}
                 <div

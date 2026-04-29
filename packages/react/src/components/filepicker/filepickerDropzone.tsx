@@ -96,8 +96,8 @@ export function FilePickerDropzone({
         ...rest,
       })}
     >
+      {/* oxlint-disable-next-line jsx_a11y/no-aria-hidden-on-focusable */}
       <input {...getInputProps()} aria-hidden />
-
       <Button
         type="button"
         disabled={isDisabled}

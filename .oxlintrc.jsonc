@@ -1,0 +1,35 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["oxc", "eslint", "typescript", "unicorn", "vitest"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "pedantic": "off",
+    "perf": "error",
+    "style": "off",
+    "restriction": "off",
+    "nursery": "off",
+  },
+  "options": {
+    "typeAware": true,
+  },
+  "rules": {
+    "react/rules-of-hooks": "error", // pedantic
+    "react/react-in-jsx-scope": "off", // suspicious
+    "react/jsx-no-constructed-context-values": "off", //perf --- handled by compiler
+    "typescript/no-misused-promises": "off", // pedantic, type-aware
+    "typescript/prefer-nullish-coalescing": "off", // pedantic, type-aware
+    "typescript/strict-void-return": "off", // nursery, type-aware
+    "typescript/no-unsafe-type-assertion": "off", // suspicious, type-aware --- many semi-false positives that need refactor
+    "typescript/consistent-return": "off", // suspicious, type-aware
+    "eslint/no-await-in-loop": "off", // perf
+  },
+  "settings": {
+    "vitest": {
+      "typecheck": false,
+    },
+  },
+  "env": {
+    "builtin": true,
+  },
+}

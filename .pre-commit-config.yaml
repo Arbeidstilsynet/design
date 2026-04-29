@@ -1,0 +1,36 @@
+repos:
+  - repo: builtin
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^packages/theme/brand/.*\.css$
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: check-symlinks
+      - id: detect-private-key
+      - id: mixed-line-ending
+      - id: check-json
+        exclude: ^.*tsconfig.*\.json$
+      - id: check-yaml
+        exclude: ^(\.nais/.*|pnpm-lock\.yaml)$
+      - id: fix-byte-order-marker
+      - id: check-case-conflict
+      - id: end-of-file-fixer
+        exclude: ^(.*\.svg|design-tokens/.*)$
+
+  # wait for fix to windows OOM issue, run lint through pnpm meanwhile
+  # https://github.com/oxc-project/oxc/issues/20513#issuecomment-4308308087
+  # - repo: https://github.com/oxc-project/mirrors-oxlint
+  #   rev: v1.62.0
+  #   hooks:
+  #     - id: oxlint
+  #       verbose: true
+
+  - repo: https://github.com/oxc-project/mirrors-oxfmt
+    rev: v0.47.0
+    hooks:
+      - id: oxfmt
+        always_run: true
+        pass_filenames: false
+        entry: oxfmt .
+        # always_run can be faster (~2s) than including all types that should be checked and passing filenames (~9s)
+        # "types_or": [javascript, jsx, ts, tsx, html, css, mdx, yaml, json]

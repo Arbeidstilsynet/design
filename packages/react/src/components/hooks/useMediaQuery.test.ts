@@ -23,6 +23,7 @@ describe("useMediaQuery", () => {
   );
 
   it("Adds event listener", () => {
+    // oxlint-disable-next-line vitest/require-mock-type-parameters
     const addEventListener = vi.fn();
     matchMediaValueMock({ addEventListener });
     renderHook(() => useMediaQuery(query), {
@@ -33,6 +34,7 @@ describe("useMediaQuery", () => {
   });
 
   it("Removes the event listener on unmount", () => {
+    // oxlint-disable-next-line vitest/require-mock-type-parameters
     const removeEventListener = vi.fn();
     matchMediaValueMock({ removeEventListener });
     const { unmount } = renderHook(() => useMediaQuery(query), {
@@ -54,14 +56,15 @@ const matchMediaValueMock = ({
   addEventListener: VitestUtils["fn"];
   removeEventListener: VitestUtils["fn"];
 }>) => {
-  const value = vi.fn().mockImplementation((query: string) => ({
+  // oxlint-disable-next-line vitest/require-mock-type-parameters
+  const value = vi.fn().mockImplementation((q: string) => ({
     matches: matches ?? false,
-    media: query,
+    media: q,
     onchange: null,
-    addEventListener: addEventListener ?? vi.fn(),
-    removeEventListener: removeEventListener ?? vi.fn(),
-    dispatchEvent: vi.fn(),
+    addEventListener: addEventListener ?? vi.fn<() => void>(),
+    removeEventListener: removeEventListener ?? vi.fn<() => void>(),
+    dispatchEvent: vi.fn<() => void>(),
   }));
-  Object.defineProperty(window, "matchMedia", { writable: true, value });
+  Object.defineProperty(globalThis, "matchMedia", { writable: true, value });
   return value;
 };

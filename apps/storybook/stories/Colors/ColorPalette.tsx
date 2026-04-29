@@ -44,8 +44,8 @@ export const ColorPalette = ({ palette }: ColorPaletteV2Props) => {
   );
 };
 
-const copyToClipboard = (text: string) => {
-  navigator.clipboard.writeText(text);
+const copyToClipboard = async (text: string) => {
+  await navigator.clipboard.writeText(text);
   toast(
     <Alert data-size="sm" data-color="success" style={{ width: "100%" }}>
       Copied CSS variable to clipboard

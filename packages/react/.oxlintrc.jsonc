@@ -1,0 +1,44 @@
+{
+  "$schema": "../../node_modules/oxlint/configuration_schema.json",
+  "extends": ["../../.oxlintrc.jsonc"],
+  "plugins": ["react", "jsx-a11y"],
+  "jsPlugins": [
+    {
+      "name": "react-hooks-extra",
+      "specifier": "eslint-plugin-react-hooks",
+    },
+    {
+      "name": "storybook",
+      "specifier": "eslint-plugin-storybook",
+    },
+  ],
+  "rules": {
+    // https://react.dev/reference/eslint-plugin-react-hooks
+    "react-hooks-extra/error-boundaries": "error",
+    "react-hooks-extra/immutability": "error",
+    "react-hooks-extra/purity": "error",
+    "react-hooks-extra/refs": "error",
+    "react-hooks-extra/set-state-in-effect": "error",
+    "react-hooks-extra/set-state-in-render": "error",
+    "react-hooks-extra/static-components": "error",
+    "react-hooks-extra/use-memo": "error",
+  },
+  "overrides": [
+    {
+      "files": ["**/*.stories.{ts,tsx}"],
+      "rules": {
+        // https://storybook.js.org/docs/configure/integration/eslint-plugin#supported-rules-and-configurations
+        "storybook/await-interactions": "error",
+        "storybook/context-in-play-function": "error",
+        "storybook/default-exports": "error",
+        "storybook/hierarchy-separator": "error",
+        "storybook/no-redundant-story-name": "error",
+        "storybook/no-renderer-packages": "error",
+        "storybook/prefer-pascal-case": "error",
+        "storybook/story-exports": "error",
+        "storybook/use-storybook-expect": "error",
+        "storybook/use-storybook-testing-library": "error",
+      },
+    },
+  ],
+}

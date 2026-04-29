@@ -7,13 +7,12 @@ on:
       - main
 
 jobs:
-  format:
+  prek:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
-      - uses: Arbeidstilsynet/action-pnpm-setup@72d8b6a4a6492697599795caf6bf6d3862474946 # v1
-      - run: pnpm format:check
+      - uses: j178/prek-action@cbc2f23eb5539cf20d82d1aabd0d0ecbcc56f4e3 # v2
 
   typecheck:
     runs-on: ubuntu-latest
@@ -48,7 +47,6 @@ jobs:
       - name: "Report Coverage"
         if: steps.test.outcome == 'success' || steps.test.outcome == 'failure'
         uses: davelosert/vitest-coverage-report-action@3c50566c523e04813df28de8f7c48dd97d663f1c # v2
-
         # known issue: status check will be attached to the wrong workflow
         # https://github.com/orgs/community/discussions/24616
         # https://github.com/EnricoMi/publish-unit-test-result-action/issues/12

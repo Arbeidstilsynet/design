@@ -5,8 +5,8 @@
   "scripts": {
     "tokens:create": "pnpm designsystemet tokens create --clean",
     "tokens:build": "pnpm designsystemet tokens build --clean -o ./packages/theme/brand",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css,scss}\"",
-    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,md,css,scss}\"",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
     "typecheck": "tsc -b",
     "typecheck:scripts": "tsc --project scripts",
     "lint": "pnpm -r lint",
@@ -20,16 +20,19 @@
     "storybook": "pnpm --filter storybook dev",
     "storybook:serve": "pnpm --filter storybook serve"
   },
-  "packageManager": "pnpm@11.0.0-rc.5",
   "devDependencies": {
     "@changesets/cli": "2.31.0",
     "@digdir/designsystemet": "1.13.3",
     "@svitejs/changesets-changelog-github-compact": "1.2.0",
     "@types/node": "24.12.2",
     "@vitest/coverage-v8": "4.1.5",
-    "prettier": "3.8.3",
+    "eslint": "workspace:*",
+    "oxfmt": "0.47.0",
+    "oxlint": "1.62.0",
+    "oxlint-tsgolint": "0.22.1",
     "tsx": "4.21.0",
     "typescript": "6.0.3",
     "vitest": "4.1.5"
-  }
+  },
+  "packageManager": "pnpm@11.0.0-rc.5"
 }
