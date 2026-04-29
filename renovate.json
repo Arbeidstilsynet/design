@@ -12,10 +12,6 @@
       "matchManagers": ["npm"],
       "matchDepTypes": ["dependencies"],
       "rangeStrategy": "bump"
-    },
-    {
-      "matchFileNames": ["tools/eslint-stub/package.json"],
-      "enabled": false
     }
   ]
 }

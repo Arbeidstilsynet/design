@@ -1,6 +1,5 @@
 {
   "name": "eslint",
-  "version": "10.0.0",
   "private": true,
   "description": "Minimal eslint stub so @typescript-eslint/utils can load without the real eslint package. Only needed because eslint-plugin-storybook depends on @typescript-eslint/utils which eagerly require('eslint') via barrel exports.",
   "main": "index.cjs",
