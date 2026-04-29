@@ -23,6 +23,9 @@ importers:
       '@vitest/coverage-v8':
         specifier: 4.1.5
         version: 4.1.5(@vitest/browser@4.1.5)(vitest@4.1.5)
+      eslint:
+        specifier: workspace:*
+        version: link:tools/eslint-stub
       oxfmt:
         specifier: 0.47.0
         version: 0.47.0
@@ -102,9 +105,6 @@ importers:
       concurrently:
         specifier: 9.2.1
         version: 9.2.1
-      eslint:
-        specifier: workspace:*
-        version: link:../../tools/eslint-stub
       eslint-plugin-storybook:
         specifier: 10.3.5
         version: 10.3.5(eslint@tools+eslint-stub)(storybook@10.3.5(@testing-library/dom@10.4.1)(prettier@3.8.3)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(typescript@6.0.3)
@@ -209,9 +209,6 @@ importers:
       '@types/react-dom':
         specifier: 19.2.3
         version: 19.2.3(@types/react@19.2.14)
-      eslint:
-        specifier: workspace:*
-        version: link:../../tools/eslint-stub
       eslint-plugin-react-hooks:
         specifier: 7.1.1
         version: 7.1.1(eslint@tools+eslint-stub)
