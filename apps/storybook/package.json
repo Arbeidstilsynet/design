@@ -23,10 +23,10 @@
     "react-toastify": "^11.1.0"
   },
   "devDependencies": {
-    "@storybook/addon-a11y": "10.3.5",
-    "@storybook/addon-docs": "10.3.5",
-    "@storybook/addon-vitest": "10.3.5",
-    "@storybook/react-vite": "10.3.5",
+    "@storybook/addon-a11y": "10.3.6",
+    "@storybook/addon-docs": "10.3.6",
+    "@storybook/addon-vitest": "10.3.6",
+    "@storybook/react-vite": "10.3.6",
     "@testing-library/dom": "10.4.1",
     "@types/node": "24.12.2",
     "@types/react": "19.2.14",
@@ -34,9 +34,9 @@
     "@vitest/browser-playwright": "4.1.5",
     "@vitest/coverage-v8": "4.1.5",
     "concurrently": "9.2.1",
-    "eslint-plugin-storybook": "10.3.5",
+    "eslint-plugin-storybook": "10.3.6",
     "playwright": "1.59.1",
-    "storybook": "10.3.5",
+    "storybook": "10.3.6",
     "typescript": "6.0.3",
     "vitest": "4.1.5"
   }
