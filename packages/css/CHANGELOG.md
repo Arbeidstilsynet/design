@@ -1,5 +1,9 @@
 # @arbeidstilsynet/design-css
 
+## 0.10.5
+
+Released: 2026-05-06
+
 ## 0.10.4
 
 Released: 2026-04-27
