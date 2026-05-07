@@ -3,12 +3,13 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  font-size: var(--ds-font-size-5);
+  font-size: var(--ds-font-size-4);
+  font-weight: var(--ds-font-weight-medium);
   align-items: center;
   width: 100%;
   container-type: inline-size;
   margin: var(--ds-size-7) 0 0 0;
-  padding: 0 1rem;
+  padding: 0 var(--ds-size-15);
   color: var(--ds-color-neutral-text-default);
 
   /* disable visited color in both the navigation and dropdown menu */
@@ -17,12 +18,15 @@
     color: var(--ds-color-neutral-text-default);
   }
 
-  & .ds-link:has(.at-header__logo) {
-    font-weight: var(--ds-font-weight-medium);
+  & .at-header__logo, .ds-link:has(.at-header__logo) {
+    display: flex;
     text-decoration: none;
     line-height: var(--ds-line-height-sm);
-    font-size: var(--ds-font-size-6);
+    font-size: var(--ds-font-size-5);
     letter-spacing: var(--ds-letter-spacing-8);
+  }
+
+  & .at-header__logo {
     transform: translateY(
       -2.5px
     ); /** Literata font med line is noticably lower than other fonts. This counteracts it somewhat, without looking dumb with other fonts */
@@ -70,24 +74,18 @@
   text-decoration-line: none;
 }
 
-.at-header__logo {
-  display: flex;
-}
-
 .at-header__dropdown-trigger {
-  font-weight: var(--ds-font-weight-medium);
   color: var(--ds-color-neutral-text-default);
 }
 
 .at-header__link {
-  font-weight: var(--ds-font-weight-medium);
-
   &[aria-current="page"] {
     font-weight: var(--ds-font-weight-semibold);
   }
 }
 
 .at-header .ds-dropdown.at-header__dropdown-content {
+  font-weight: var(--ds-font-weight-regular);
   padding: var(--ds-size-3) var(--ds-size-2);
 
   & .ds-field:has(input[role="switch"]) {
@@ -151,11 +149,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--ds-size-7);
-  height: var(--ds-size-7);
+  min-width: calc(var(--ds-size-6) - var(--ds-size-1));
+  height: calc(var(--ds-size-6) - var(--ds-size-1));
   border-radius: 50%;
-  font-size: var(--ds-font-size-4);
-  font-weight: var(--ds-font-weight-regular);
+  font-size: var(--ds-font-size-3);
+  line-height: var(--ds-line-height-sm);
   margin-left: auto;
   padding: var(--ds-size-1);
 }
@@ -192,6 +190,8 @@
   .at-header {
     margin: 0;
     padding: var(--ds-size-2) var(--ds-size-4);
+    min-height: var(--ds-size-18);
+    justify-content: flex-end;
   }
   .at-header__container {
     justify-content: space-between;
@@ -220,10 +220,12 @@
   }
 
   .at-header .ds-dropdown.at-header__dropdown-content {
+    background: var(--ds-color-neutral-surface-default);
+
     /* Full-width dropdown overlay for mobile */
     width: 100%;
     max-width: 100%;
-    padding: 0 0 var(--ds-size-3) 0;
+    padding: var(--ds-size-3) var(--ds-size-0);
 
     /* Hide box-shadow to avoid line between dropdown menu and header on mobile */
     box-shadow: none;
@@ -239,13 +241,15 @@
   }
 
   .at-header__dropdown-trigger {
-    font-weight: var(--ds-font-weight-regular);
     color: var(--ds-color-base-contrast-default);
+    min-height: unset;
+    padding: var(--ds-size-1) var(--ds-size-3);
+    line-height: var(--ds-line-height-md);
+    letter-spacing: var(--ds-letter-spacing-8);
   }
 
   .at-header__link {
     color: var(--ds-color-neutral-text-default);
-    font-weight: var(--ds-font-weight-regular);
     width: 100%;
     height: var(--ds-size-10);
     min-height: unset;
