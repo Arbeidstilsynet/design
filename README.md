@@ -101,4 +101,4 @@ You need to manually add the new component to the index.ts file as an export. An
 
 ### Design tokens
 
-See [TOKENS.md](./TOKENS.md) for how to update `design-tokens`.
+See [docs/TOKENS.md](./docs/TOKENS.md) for how to update `design-tokens`.

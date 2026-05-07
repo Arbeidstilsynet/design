@@ -45,3 +45,7 @@ To document the changes, run `pnpm changeset` from the repo root, commit & push,
 To generate the tokens locally, for example if the workflow fails, you can run `pnpm tokens:build` from the repo root.
 
 Make sure to update dependencies (Digdir CLI) with `pnpm i` first.
+
+## Tokens/Figma/Repo flow diagram
+
+![tokens-flow](./diagrams/tokens-flow.svg)
