@@ -15,6 +15,7 @@ minimumReleaseAgeExclude:
   - "@oxlint/*"
   - oxfmt
   - "@oxfmt/*"
+  - fast-uri@3.1.2
 
 trustPolicy: no-downgrade
 
