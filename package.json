@@ -15,7 +15,7 @@
     "build": "pnpm -r build",
     "build:react": "pnpm --filter @arbeidstilsynet/design-react build",
     "build:storybook": "pnpm --filter storybook... build",
-    "version": "tsx scripts/filter-renovate-changesets.ts && changeset version && tsx scripts/add-changelog-date.ts && tsx scripts/dedupe-changelog.ts",
+    "version": "changeset version && tsx scripts/add-changelog-date.ts && tsx scripts/dedupe-changelog.ts",
     "release": "pnpm build && changeset publish",
     "storybook": "pnpm --filter storybook dev",
     "storybook:serve": "pnpm --filter storybook serve"
@@ -23,6 +23,7 @@
   "devDependencies": {
     "@changesets/cli": "2.31.0",
     "@digdir/designsystemet": "1.13.3",
+    "@scaleway/changesets-renovate": "2.2.6",
     "@svitejs/changesets-changelog-github-compact": "1.2.0",
     "@types/node": "24.12.2",
     "@vitest/coverage-v8": "4.1.5",

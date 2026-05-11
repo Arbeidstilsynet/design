@@ -1,9 +1,7 @@
-## Based on https://github.com/scaleway/ultraviolet/blob/7ba5ded00462e30d5a37de90c06be49640786849/.github/workflows/changesets-renovate.yml
-
 name: Generate changeset for Renovate
 
 on:
-  pull_request_target:
+  pull_request:
     paths:
       - ".github/workflows/changesets-renovate.yml"
       - "**/pnpm-lock.yaml"
@@ -12,8 +10,7 @@ on:
 jobs:
   generate-changeset:
     runs-on: ubuntu-latest
-    if: github.actor == 'renovate[bot]' && github.repository ==
-      'Arbeidstilsynet/design'
+    if: github.event.pull_request.user.login == 'renovate[bot]' && github.repository == 'Arbeidstilsynet/design'
     steps:
       - name: Create GitHub App Token
         id: app-token
@@ -33,12 +30,29 @@ jobs:
           git config --global user.name "${{ vars.BETZY_BOT_GIT_USER_NAME }}"
           git config --global user.email "${{ vars.BETZY_BOT_GIT_USER_EMAIL }}"
 
-      - uses: pnpm/action-setup@8912a9102ac27614460f54aedde9e1e7f9aec20d # v6.0.5
-      - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+      - uses: Arbeidstilsynet/action-pnpm-setup@72d8b6a4a6492697599795caf6bf6d3862474946 # v1
         with:
-          node-version: 24
+          skip-audit: true
+          skip-install: true
 
-      - name: Run changesets-renovate
-        run: pnpm dlx @scaleway/changesets-renovate
+      - name: Install root dependencies only
+        run: pnpm install --ignore-scripts --filter root
+
+      - name: Generate changesets
+        run: pnpm exec changesets-renovate
         env:
+          SKIP_COMMIT: "TRUE"
           GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+
+      - name: Filter devDependency-only changesets
+        run: pnpm exec tsx scripts/filter-renovate-changesets.ts
+
+      - name: Commit and push changesets
+        run: |
+          git add .changeset
+          if git diff --cached --quiet; then
+            echo "No changesets to commit"
+          else
+            git commit -m "chore: add changeset for renovate"
+            git push
+          fi
