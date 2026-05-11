@@ -1,5 +1,3 @@
-## Based on https://github.com/scaleway/ultraviolet/blob/7ba5ded00462e30d5a37de90c06be49640786849/.github/workflows/changesets-renovate.yml
-
 name: Generate changeset for Renovate
 
 on:
