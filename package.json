@@ -26,14 +26,14 @@
     "@scaleway/changesets-renovate": "2.2.6",
     "@svitejs/changesets-changelog-github-compact": "1.2.0",
     "@types/node": "24.12.3",
-    "@vitest/coverage-v8": "4.1.5",
+    "@vitest/coverage-v8": "4.1.6",
     "eslint": "workspace:*",
     "oxfmt": "0.48.0",
     "oxlint": "1.63.0",
     "oxlint-tsgolint": "0.22.1",
     "tsx": "4.21.0",
     "typescript": "6.0.3",
-    "vitest": "4.1.5"
+    "vitest": "4.1.6"
   },
   "packageManager": "pnpm@11.0.9"
 }
