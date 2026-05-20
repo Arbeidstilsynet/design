@@ -31,3 +31,4 @@ trustPolicy: no-downgrade
 trustPolicyExclude:
   - rxjs@7.8.2
   - semver@6.3.1
+  - "@scaleway/changesets-renovate@2.4.0"
