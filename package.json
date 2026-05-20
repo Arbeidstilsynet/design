@@ -23,7 +23,7 @@
   "devDependencies": {
     "@changesets/cli": "2.31.0",
     "@digdir/designsystemet": "1.13.3",
-    "@scaleway/changesets-renovate": "2.2.6",
+    "@scaleway/changesets-renovate": "2.4.0",
     "@svitejs/changesets-changelog-github-compact": "1.2.0",
     "@types/node": "24.12.4",
     "@vitest/coverage-v8": "4.1.6",
