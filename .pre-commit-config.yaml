@@ -22,11 +22,6 @@ repos:
     hooks:
       - id: oxlint
         verbose: true
-        # running oxlint on all files is much faster locally
-        # than passing filenames and starting several instances of oxlint
-        always_run: true
-        pass_filenames: false
-        entry: oxlint .
 
   - repo: https://github.com/oxc-project/mirrors-oxfmt
     rev: v0.50.0
