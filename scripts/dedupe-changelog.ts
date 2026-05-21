@@ -43,7 +43,7 @@ const packagesDir = path.resolve(process.cwd(), "packages");
 
 function parseVersion(version: string): number[] {
   // Strip version range specifiers (^, ~, >, <, >=, <=, =)
-  const cleanedVersion = version.replace(/^[\^~><>=]*/, "");
+  const cleanedVersion = version.replace(/^[\^~<>=]*/, "");
   return cleanedVersion.split(".").map((v) => Number.parseInt(v, 10));
 }
 
