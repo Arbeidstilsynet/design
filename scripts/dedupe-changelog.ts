@@ -249,7 +249,7 @@ export function dedupeChangelog(pkg: string): {
     // Create a signature for this entry based on the packages it updates
     const packageSignature = entry.dependencies
       .map((d) => d.packageName)
-      .sort((a, b) => a.localeCompare(b))
+      .toSorted((a, b) => a.localeCompare(b))
       .join(",");
 
     if (!packageSetGroups.has(packageSignature)) {
