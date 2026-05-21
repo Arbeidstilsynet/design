@@ -9,7 +9,7 @@
     "format:check": "oxfmt --check",
     "typecheck": "tsc -b",
     "typecheck:scripts": "tsc --project scripts",
-    "lint": "pnpm -r lint",
+    "lint": "oxlint .",
     "dev": "pnpm storybook",
     "test": "vitest run",
     "build": "pnpm -r build",
