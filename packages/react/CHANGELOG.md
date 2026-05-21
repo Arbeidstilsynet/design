@@ -1,5 +1,16 @@
 # @arbeidstilsynet/design-react
 
+## 0.10.5
+
+Released: 2026-05-21
+
+### Patch Changes
+
+- Updated dependency `react` to `19.2.6`. ([#856](https://github.com/Arbeidstilsynet/design/pull/856))
+  Updated dependency `react-dom` to `19.2.6`.
+
+- Updated dependency `@navikt/aksel-icons` to `^8.10.5`. ([#854](https://github.com/Arbeidstilsynet/design/pull/854))
+
 ## 0.10.4
 
 Released: 2026-04-27
