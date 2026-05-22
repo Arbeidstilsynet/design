@@ -25,10 +25,10 @@ minimumReleaseAgeExclude:
   - "@rolldown/*"
   - "@oxc-project/types@0.132.0"
   - fast-uri@3.1.2
+  - "@scaleway/changesets-renovate@3.0.2"
 
 trustPolicy: no-downgrade
 
 trustPolicyExclude:
   - rxjs@7.8.2
   - semver@6.3.1
-  - "@scaleway/changesets-renovate@2.4.0"
