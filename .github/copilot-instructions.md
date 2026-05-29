@@ -68,6 +68,18 @@ Custom components extend `DefaultProps<TRef>` which provides `ref`, `data-size`,
 - Use Designsystemet CSS custom properties (`--ds-*`) for tokens
 - Add container queries for responsive behavior
 
+### Color system (Designsystemet)
+
+Designsystemet uses **contextual semantic color tokens**. Generic tokens like `--ds-color-text-default` or `--ds-color-base-hover` resolve to different values based on the current `data-color` attribute on the element or its ancestors.
+
+- By default (`:root`, `[data-color="accent"]`), generic tokens map to accent palette values (e.g., `--ds-color-text-default` → `--ds-color-accent-text-default`).
+- When `data-color="neutral"` is set, the same generic tokens map to neutral palette values (e.g., `--ds-color-text-default` → `--ds-color-neutral-text-default`).
+- This applies to all color palettes: accent, neutral, danger, success, info, warning, and any custom ones.
+
+**When writing CSS overrides for Digdir components, prefer the generic semantic tokens** (`--ds-color-text-default`, `--ds-color-base-hover`, etc.) over palette-specific tokens (`--ds-color-accent-text-default`, `--ds-color-neutral-text-default`). The generic tokens automatically adapt to the current color context, so a single override rule works for all color variants.
+
+Note: Figma designs may refer to colors as "main" — this corresponds to the "accent" palette / default color context in code.
+
 ### Testing
 
 - Framework: Vitest with happy-dom environment
