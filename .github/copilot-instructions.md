@@ -10,7 +10,7 @@ pnpm dev                  # Run Storybook locally
 pnpm build                # Build all packages
 pnpm build:react          # Build only the React package
 pnpm test                 # Run all tests
-pnpm test -- --filter @arbeidstilsynet/design-react  # Tests for one package
+pnpm --filter @arbeidstilsynet/design-react test  # Tests for one package
 pnpm vitest run packages/react/src/components/header  # Run tests for a single component
 pnpm typecheck            # Type-check all packages
 pnpm lint                 # Lint with oxlint
