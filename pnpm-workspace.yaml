@@ -8,12 +8,6 @@ allowBuilds:
 
 autoInstallPeers: false
 
-overrides:
-  # Remove when Vite depends on rolldown@1.0.2+.
-  # https://github.com/rolldown/rolldown/issues/9406
-  # https://github.com/rolldown/rolldown/releases/tag/v1.0.2
-  rolldown: 1.0.2
-
 minimumReleaseAge: 4320
 
 trustPolicy: no-downgrade
