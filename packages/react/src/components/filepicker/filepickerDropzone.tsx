@@ -6,6 +6,12 @@ import { Button, Spinner } from "../../digdir";
 import type { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 
+const defaultDropzoneLabelText: [string, string, string] = [
+  "Dra og slipp eller",
+  "Last opp fil",
+  "Filformater: pdf, txt og docx",
+];
+
 function DefaultLabel({
   defaultLabelText,
 }: Readonly<Pick<FilePickerDropzoneProps, "defaultLabelText">>) {
@@ -57,11 +63,7 @@ export interface FilePickerDropzoneProps
 export function FilePickerDropzone({
   className,
   label,
-  defaultLabelText = [
-    "Dra og slipp eller",
-    "Last opp fil",
-    "Filformater: pdf, txt og docx",
-  ],
+  defaultLabelText = defaultDropzoneLabelText,
   dropLabel = "Slipp for å legge til",
   ...rest
 }: Readonly<FilePickerDropzoneProps>) {

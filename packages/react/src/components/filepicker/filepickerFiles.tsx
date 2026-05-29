@@ -6,6 +6,8 @@ import type { DefaultProps } from "../../types";
 import { FilePickerContext } from "./filepickerContext";
 import { formatFileSize } from "./utils";
 
+const defaultColumnNames: [string, string, string] = ["Navn", "Størrelse", ""];
+
 export interface FilePickerFilesProps
   extends DefaultProps<HTMLTableElement>, HTMLAttributes<HTMLTableElement> {
   /**
@@ -24,7 +26,7 @@ export interface FilePickerFilesProps
  */
 export function FilePickerFiles({
   className,
-  columnNames = ["Navn", "Størrelse", ""],
+  columnNames = defaultColumnNames,
   removeButtonLabel = "Fjern",
   ...rest
 }: Readonly<FilePickerFilesProps>) {
