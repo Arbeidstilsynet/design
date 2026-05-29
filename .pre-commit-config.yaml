@@ -18,7 +18,7 @@ repos:
         exclude: ^(.*\.svg|design-tokens/.*)$
 
   - repo: https://github.com/oxc-project/mirrors-oxlint
-    rev: v1.65.0
+    rev: v1.66.0
     hooks:
       - id: oxlint
         verbose: true
