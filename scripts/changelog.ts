@@ -83,7 +83,7 @@ async function resolveLinks(
 
 export function linkifyIssueHints(line: string, repo: string): string {
   return line.replace(
-    /(?<=\( ?(?:fix|fixes|see) )(#\d+)(?= ?\))/g,
+    /(?<=\( ?(?:fix(?:es)?|see) )(#\d+)(?= ?\))/g,
     (issueHash) => {
       return `[${issueHash}](https://github.com/${repo}/issues/${issueHash.substring(1)})`;
     },
@@ -99,7 +99,7 @@ export function parseSummary(summary: string): {
   let commitFromSummary: string | undefined;
 
   const text = summary
-    .replace(/^\s*(?:pr|pull|pull\s+request):\s*#?(\d+)/im, (_, pr) => {
+    .replace(/^\s*(?:pull(?:\s+request)?|pr):\s*#?(\d+)/im, (_, pr) => {
       const num = Number(pr);
       if (!Number.isNaN(num)) prFromSummary = num;
       return "";

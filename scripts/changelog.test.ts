@@ -1,5 +1,11 @@
 import { describe, expect, it, vi } from "vitest";
-import { linkifyIssueHints, parseSummary } from "./changelog";
+import type { Mock } from "vitest";
+import type { ModCompWithPackage } from "@changesets/types";
+import { getInfo, getInfoFromPullRequest } from "@changesets/get-github-info";
+import changelogFunctions, {
+  linkifyIssueHints,
+  parseSummary,
+} from "./changelog";
 
 vi.mock("@changesets/get-github-info", () => ({
   getInfo: vi.fn<typeof import("@changesets/get-github-info").getInfo>(),
@@ -8,11 +14,6 @@ vi.mock("@changesets/get-github-info", () => ({
       typeof import("@changesets/get-github-info").getInfoFromPullRequest
     >(),
 }));
-
-import { getInfo, getInfoFromPullRequest } from "@changesets/get-github-info";
-import type { Mock } from "vitest";
-import type { ModCompWithPackage } from "@changesets/types";
-import changelogFunctions from "./changelog";
 
 const repo = "Arbeidstilsynet/design";
 const options = { repo };
