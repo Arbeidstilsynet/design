@@ -26,6 +26,7 @@ minimumReleaseAgeExclude:
   - "@oxc-project/types@0.132.0"
   - fast-uri@3.1.2
   - "@scaleway/changesets-renovate@3.0.2"
+  - qs@6.15.2
 
 trustPolicy: no-downgrade
 
