@@ -8,24 +8,7 @@ allowBuilds:
 
 autoInstallPeers: false
 
-overrides:
-  # Remove when Vite depends on rolldown@1.0.2+.
-  # https://github.com/rolldown/rolldown/issues/9406
-  # https://github.com/rolldown/rolldown/releases/tag/v1.0.2
-  rolldown: 1.0.2
-
 minimumReleaseAge: 4320
-
-minimumReleaseAgeExclude:
-  - oxlint
-  - "@oxlint/*"
-  - oxfmt
-  - "@oxfmt/*"
-  - rolldown@1.0.2
-  - "@rolldown/*"
-  - "@oxc-project/types@0.132.0"
-  - fast-uri@3.1.2
-  - "@scaleway/changesets-renovate@3.0.2"
 
 trustPolicy: no-downgrade
 
