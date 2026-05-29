@@ -16,18 +16,6 @@ overrides:
 
 minimumReleaseAge: 4320
 
-minimumReleaseAgeExclude:
-  - oxlint
-  - "@oxlint/*"
-  - oxfmt
-  - "@oxfmt/*"
-  - rolldown@1.0.2
-  - "@rolldown/*"
-  - "@oxc-project/types@0.132.0"
-  - fast-uri@3.1.2
-  - "@scaleway/changesets-renovate@3.0.2"
-  - qs@6.15.2
-
 trustPolicy: no-downgrade
 
 trustPolicyExclude:
