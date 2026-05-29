@@ -96,6 +96,13 @@ Note: Figma designs may refer to colors as "main" — this corresponds to the "a
 
 Use [Changesets](https://github.com/changesets/changesets). Run `pnpm changeset` after making changes to generate a changeset file. CI handles versioning and publishing to npm.
 
+Changeset descriptions must follow the format: `**ComponentName**: description of change`. For example:
+
+```
+**Link**: Override styles to match updated Gnist design.
+**Header**: Remove hardcoded header height in mobile view.
+```
+
 ### Design tokens
 
 Tokens are managed in Figma via Tokens Studio plugin and synced to the `design-tokens/` directory. Run `pnpm tokens:build` to regenerate theme CSS from tokens. See `docs/TOKENS.md` for full workflow.
