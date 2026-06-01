@@ -1,6 +1,7 @@
 @import "@digdir/designsystemet-css/dist/src/index.css";
 
 @import "./button.css" layer(at.overrides);
+@import "./link.css" layer(at.overrides);
 
 @import "./filepicker.css" layer(at.components);
 @import "./header.css" layer(at.components);
