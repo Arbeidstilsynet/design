@@ -30,7 +30,7 @@ jobs:
           git config --global user.name "${{ vars.BETZY_BOT_GIT_USER_NAME }}"
           git config --global user.email "${{ vars.BETZY_BOT_GIT_USER_EMAIL }}"
 
-      - uses: Arbeidstilsynet/action-pnpm-setup@72d8b6a4a6492697599795caf6bf6d3862474946 # v1
+      - uses: Arbeidstilsynet/action-pnpm-setup@618fbc6ee30a13d077086cafba92b4e6cdca0f78 # v1
         with:
           skip-audit: true
           skip-install: true
