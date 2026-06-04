@@ -106,3 +106,17 @@ Changeset descriptions must follow the format: `**ComponentName**: description o
 ### Design tokens
 
 Tokens are managed in Figma via Tokens Studio plugin and synced to the `design-tokens/` directory. Run `pnpm tokens:build` to regenerate theme CSS from tokens. See `docs/TOKENS.md` for full workflow.
+
+## Agent skills
+
+### Issue tracker
+
+GitHub Issues for `Arbeidstilsynet/design`, via the `gh` CLI. Note: many issues are Figma-driven and managed by designers until they are dev-ready. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default five-role vocabulary; the `triage` skill is optional here since incoming work is largely designer-managed. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context — `docs/adr/` at the repo root (no `CONTEXT.md` yet). See `docs/agents/domain.md`.
