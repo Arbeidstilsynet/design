@@ -27,14 +27,14 @@
     "@digdir/designsystemet": "1.13.3",
     "@scaleway/changesets-renovate": "3.0.2",
     "@types/node": "24.12.4",
-    "@vitest/coverage-v8": "4.1.7",
+    "@vitest/coverage-v8": "4.1.8",
     "eslint": "workspace:*",
     "oxfmt": "0.52.0",
     "oxlint": "1.67.0",
     "oxlint-tsgolint": "0.23.0",
     "tsx": "4.22.4",
     "typescript": "6.0.3",
-    "vitest": "4.1.7"
+    "vitest": "4.1.8"
   },
   "packageManager": "pnpm@11.5.0+sha512.dbfcc4f81cf48597afd4bc391ffdf12c11f1a9fb83a395bfa6b0a2d9cc2fd8ffebafdb1ccbd529632153f793904c2615b7f09fe1a345473fd1c35845172a8eb1"
 }
