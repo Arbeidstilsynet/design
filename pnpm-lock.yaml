@@ -49,7 +49,7 @@ importers:
         version: 6.0.3
       vitest:
         specifier: 4.1.8
-        version: 4.1.8(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/coverage-v8@4.1.8)(esbuild@0.28.0)(happy-dom@20.9.0)(tsx@4.22.4)(yaml@2.9.0)
+        version: 4.1.8(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/coverage-v8@4.1.8)(esbuild@0.28.0)(happy-dom@20.10.1)(tsx@4.22.4)(yaml@2.9.0)
 
   apps/storybook:
     dependencies:
@@ -125,7 +125,7 @@ importers:
         version: 6.0.3
       vitest:
         specifier: 4.1.8
-        version: 4.1.8(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/coverage-v8@4.1.8)(esbuild@0.28.0)(happy-dom@20.9.0)(tsx@4.22.4)(yaml@2.9.0)
+        version: 4.1.8(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/coverage-v8@4.1.8)(esbuild@0.28.0)(happy-dom@20.10.1)(tsx@4.22.4)(yaml@2.9.0)
 
   packages/css:
     dependencies:
@@ -222,8 +222,8 @@ importers:
         specifier: 10.4.2
         version: 10.4.2(eslint@tools+eslint-stub)(storybook@10.4.2(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@testing-library/dom@10.4.1)(@types/react@19.2.16)(prettier@3.8.3)(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@6.0.3)
       happy-dom:
-        specifier: 20.9.0
-        version: 20.9.0
+        specifier: 20.10.1
+        version: 20.10.1
       react:
         specifier: 19.2.7
         version: 19.2.7
@@ -2092,6 +2092,10 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
 
+  buffer-image-size@0.6.4:
+    resolution: {integrity: sha512-nEh+kZOPY1w+gcCMobZ6ETUp9WfibndnosbpwB1iJk/8Gt5ZF2bhS6+B6bPYz424KtwsR6Rflc3tCz1/ghX2dQ==}
+    engines: {node: '>=4.0'}
+
   buffer@6.0.3:
     resolution: {integrity: sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==}
 
@@ -2565,8 +2569,8 @@ packages:
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
 
-  happy-dom@20.9.0:
-    resolution: {integrity: sha512-GZZ9mKe8r646NUAf/zemnGbjYh4Bt8/MqASJY+pSm5ZDtc3YQox+4gsLI7yi1hba6o+eCsGxpHn5+iEVn31/FQ==}
+  happy-dom@20.10.1:
+    resolution: {integrity: sha512-awPoqPjx8CgjapJllyDlgzgVHjBExcitKK5ZJkxwhQJyQpHFkyS2bEcqCm7IeW20cQvuCI0cz2Ifq79CJKqtiw==}
     engines: {node: '>=20.0.0'}
 
   has-flag@4.0.0:
@@ -5204,7 +5208,7 @@ snapshots:
       '@vitest/browser': 4.1.8(vite@8.0.16(@types/node@24.12.4)(esbuild@0.28.0)(tsx@4.22.4)(yaml@2.9.0))(vitest@4.1.8)
       '@vitest/browser-playwright': 4.1.8(playwright@1.60.0)(vite@8.0.16(@types/node@24.12.4)(esbuild@0.28.0)(tsx@4.22.4)(yaml@2.9.0))(vitest@4.1.8)
       '@vitest/runner': 4.1.8
-      vitest: 4.1.8(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/coverage-v8@4.1.8)(esbuild@0.28.0)(happy-dom@20.9.0)(tsx@4.22.4)(yaml@2.9.0)
+      vitest: 4.1.8(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/coverage-v8@4.1.8)(esbuild@0.28.0)(happy-dom@20.10.1)(tsx@4.22.4)(yaml@2.9.0)
     transitivePeerDependencies:
       - react
       - react-dom
@@ -5466,7 +5470,7 @@ snapshots:
       '@vitest/mocker': 4.1.8(vite@8.0.16(@types/node@24.12.4)(esbuild@0.28.0)(tsx@4.22.4)(yaml@2.9.0))
       playwright: 1.60.0
       tinyrainbow: 3.1.0
-      vitest: 4.1.8(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/coverage-v8@4.1.8)(esbuild@0.28.0)(happy-dom@20.9.0)(tsx@4.22.4)(yaml@2.9.0)
+      vitest: 4.1.8(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/coverage-v8@4.1.8)(esbuild@0.28.0)(happy-dom@20.10.1)(tsx@4.22.4)(yaml@2.9.0)
     transitivePeerDependencies:
       - bufferutil
       - msw
@@ -5482,7 +5486,7 @@ snapshots:
       pngjs: 7.0.0
       sirv: 3.0.2
       tinyrainbow: 3.1.0
-      vitest: 4.1.8(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/coverage-v8@4.1.8)(esbuild@0.28.0)(happy-dom@20.9.0)(tsx@4.22.4)(yaml@2.9.0)
+      vitest: 4.1.8(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/coverage-v8@4.1.8)(esbuild@0.28.0)(happy-dom@20.10.1)(tsx@4.22.4)(yaml@2.9.0)
       ws: 8.20.1
     transitivePeerDependencies:
       - bufferutil
@@ -5502,7 +5506,7 @@ snapshots:
       obug: 2.1.1
       std-env: 4.1.0
       tinyrainbow: 3.1.0
-      vitest: 4.1.8(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/coverage-v8@4.1.8)(esbuild@0.28.0)(happy-dom@20.9.0)(tsx@4.22.4)(yaml@2.9.0)
+      vitest: 4.1.8(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/coverage-v8@4.1.8)(esbuild@0.28.0)(happy-dom@20.10.1)(tsx@4.22.4)(yaml@2.9.0)
     optionalDependencies:
       '@vitest/browser': 4.1.8(vite@8.0.16(@types/node@24.12.4)(esbuild@0.28.0)(tsx@4.22.4)(yaml@2.9.0))(vitest@4.1.8)
 
@@ -5682,6 +5686,10 @@ snapshots:
       electron-to-chromium: 1.5.356
       node-releases: 2.0.44
       update-browserslist-db: 1.2.3(browserslist@4.28.2)
+
+  buffer-image-size@0.6.4:
+    dependencies:
+      '@types/node': 24.12.4
 
   buffer@6.0.3:
     dependencies:
@@ -6218,11 +6226,12 @@ snapshots:
 
   graceful-fs@4.2.11: {}
 
-  happy-dom@20.9.0:
+  happy-dom@20.10.1:
     dependencies:
       '@types/node': 24.12.4
       '@types/whatwg-mimetype': 3.0.2
       '@types/ws': 8.18.1
+      buffer-image-size: 0.6.4
       entities: 7.0.1
       whatwg-mimetype: 3.0.0
       ws: 8.20.1
@@ -7515,7 +7524,7 @@ snapshots:
       tsx: 4.22.4
       yaml: 2.9.0
 
-  vitest@4.1.8(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/coverage-v8@4.1.8)(esbuild@0.28.0)(happy-dom@20.9.0)(tsx@4.22.4)(yaml@2.9.0):
+  vitest@4.1.8(@types/node@24.12.4)(@vitest/browser-playwright@4.1.8)(@vitest/coverage-v8@4.1.8)(esbuild@0.28.0)(happy-dom@20.10.1)(tsx@4.22.4)(yaml@2.9.0):
     dependencies:
       '@vitest/expect': 4.1.8
       '@vitest/mocker': 4.1.8(vite@8.0.16(@types/node@24.12.4)(esbuild@0.28.0)(tsx@4.22.4)(yaml@2.9.0))
@@ -7541,7 +7550,7 @@ snapshots:
       '@types/node': 24.12.4
       '@vitest/browser-playwright': 4.1.8(playwright@1.60.0)(vite@8.0.16(@types/node@24.12.4)(esbuild@0.28.0)(tsx@4.22.4)(yaml@2.9.0))(vitest@4.1.8)
       '@vitest/coverage-v8': 4.1.8(@vitest/browser@4.1.8)(vitest@4.1.8)
-      happy-dom: 20.9.0
+      happy-dom: 20.10.1
     transitivePeerDependencies:
       - '@vitejs/devtools'
       - esbuild
