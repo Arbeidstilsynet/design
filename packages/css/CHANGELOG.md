@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-css
 
+## 0.10.5
+
+Released: 2026-06-09
+
+### Patch Changes
+
+- **Link**: Override styles to match updated Gnist design. Changes default text color from `text-subtle` to `text-default`, hover color to `base-hover`, and visited color to match default. ([#918](https://github.com/Arbeidstilsynet/design/pull/918))
+
 ## 0.10.4
 
 Released: 2026-04-27
