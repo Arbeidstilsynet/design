@@ -1,0 +1,241 @@
+.at-steps {
+  --at-steps-dot-size: var(--ds-size-7);
+  --at-steps-gap: var(--ds-size-4);
+  --at-steps-padding: 0px;
+  --at-steps-stroke-color: var(--ds-color-border-subtle);
+  --at-steps-stroke-size: 2px;
+  --at-steps-icon-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M230 78 102 206a8 8 0 0 1-12 0l-56-56a8 8 0 0 1 12-12l50 51L218 66a8 8 0 0 1 12 12Z'/%3E%3C/svg%3E");
+  --at-steps-icon-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M205.7 194.3a8 8 0 0 1-11.4 11.4L128 139.3l-66.3 66.4a8 8 0 0 1-11.4-11.4l66.4-66.3-66.4-66.3a8 8 0 0 1 11.4-11.4l66.3 66.4 66.3-66.4a8 8 0 0 1 11.4 11.4L139.3 128Z'/%3E%3C/svg%3E");
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.at-steps:not([hidden]) {
+  display: flex;
+  gap: var(--at-steps-gap);
+}
+.at-steps > li {
+  --dot-after: var(--at-steps-stroke-color);
+  --dot-before: var(--at-steps-stroke-color);
+  --dot-text: initial;
+  --dot-fill: initial;
+  --dot-icon: linear-gradient(transparent);
+
+  border-radius: var(--ds-border-radius-md);
+  box-sizing: border-box;
+  flex: 1;
+  padding: var(--at-steps-padding);
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+}
+
+/*
+ * Line
+ */
+.at-steps > li::before,
+.at-steps > li::after {
+  background: linear-gradient(to right, transparent, var(--dot-before));
+  content: "";
+  height: var(--at-steps-stroke-size);
+  inset: var(--at-steps-padding) 50% auto -50%;
+  margin: calc(var(--at-steps-dot-size) / 2);
+  position: absolute;
+  translate: 0 -50%;
+}
+.at-steps > li::after {
+  background: linear-gradient(to right, var(--dot-after), transparent);
+  inset-inline: 50% -50%;
+}
+.at-steps > li:first-child::before {
+  left: 0;
+}
+.at-steps > li:last-child::after {
+  right: 0;
+}
+
+/*
+ * Dot
+ */
+.at-steps > li mark {
+  background: var(--dot-fill);
+  border-radius: var(--ds-border-radius-full);
+  border: var(--at-steps-stroke-size) solid
+    var(--dot-fill, var(--at-steps-stroke-color));
+  box-sizing: border-box;
+  color: var(--dot-text); /* Let it be affected by data-color */
+  height: var(--at-steps-dot-size);
+  place-items: center;
+  margin: 0 auto var(--at-steps-gap);
+  position: relative;
+  transition: 0.2s scale;
+  width: var(--at-steps-dot-size);
+  z-index: 2; /* Place above line */
+}
+.at-steps > li mark:not([hidden]) {
+  display: grid;
+}
+.at-steps > li mark > svg,
+.at-steps > li mark:empty::before {
+  display: block;
+  fill: currentColor; /* In case using non-Phosphor icons */
+  width: 75%;
+  height: 75%;
+}
+.at-steps > li mark:empty::before {
+  background: currentColor;
+  content: "";
+  mask: var(--dot-icon) center / contain no-repeat;
+}
+
+/*
+ * Interaction 
+ */
+.at-steps > li > :is(a, button):not([hidden]):only-child {
+  background: none;
+  border-radius: inherit;
+  border: 0;
+  box-sizing: border-box;
+  color: inherit;
+  cursor: pointer;
+  display: block;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+  text-decoration: none;
+  width: 100%;
+}
+.at-steps > li > :is(a, button):only-child:focus-visible {
+  box-shadow: var(--dsc-focus-boxShadow);
+  outline: var(--dsc-focus-outline);
+  outline-offset: var(--ds-border-width-focus);
+}
+.at-steps > li > :is(a, button):only-child:hover:not(:active) mark {
+  scale: 1.175;
+}
+
+/*
+ * States
+ */
+.at-steps:not([data-direction="up"]) > li[aria-current="step"] {
+  z-index: 1; /* Let lines from other steps enter the current one */
+}
+.at-steps:not([data-direction="up"]) > li[aria-current="step"],
+.at-steps:not([data-direction="up"]) > li:has(~ li[aria-current="step"]),
+.at-steps[data-direction="up"] > [aria-current="step"] ~ li,
+.at-steps[data-state="complete"] > li {
+  --dot-before: var(--dot-fill);
+}
+.at-steps:not([data-direction="up"]) > li:has(~ li[aria-current="step"]),
+.at-steps[data-direction="up"] > li[aria-current="step"] ~ li,
+.at-steps[data-direction="up"] > li[aria-current="step"],
+.at-steps[data-state="complete"] > li {
+  --dot-after: var(--dot-fill);
+}
+.at-steps > li[aria-current="step"] mark {
+  box-shadow:
+    0 0 0 var(--at-steps-stroke-size) var(--dot-text),
+    0 0 0 calc(var(--at-steps-stroke-size) * 2) var(--dot-fill);
+}
+.at-steps[data-state="complete"] > li,
+.at-steps:not([data-direction="up"]) > li:where(:has(~ li[aria-current="step"])),
+.at-steps[data-direction="up"] > li:where([aria-current="step"] ~ li) {
+  --dot-icon: var(--at-steps-icon-check);
+}
+.at-steps[data-state="complete"] > li,
+.at-steps[data-direction="up"] > li[aria-current="step"] ~ li,
+.at-steps:not([data-direction="up"]) > li:has(~ li[aria-current="step"]),
+.at-steps > li[aria-current="step"],
+.at-steps > li[data-color] {
+  --dot-text: var(--ds-color-base-contrast-default);
+  --dot-fill: var(--ds-color-base-default);
+}
+.at-steps > li[data-color="danger"],
+.at-steps > li[data-color="warning"] {
+  --dot-icon: var(--at-steps-icon-close);
+}
+
+/*
+ * Filled variant
+ */
+.at-steps[data-variant="filled"] > li {
+  --at-steps-padding: var(--ds-size-4);
+}
+.at-steps[data-variant="filled"] > li[aria-current="step"] {
+  background: var(--ds-color-surface-tinted);
+}
+
+/*
+ * Fade
+ */
+.at-steps:is(
+  :not([data-fade]),
+  [data-fade="false"],
+  [data-fade="none"],
+  [data-fade="end"]:not([data-direction="up"]),
+  [data-fade="start"][data-direction="up"]
+)
+> li:first-child::before {
+  display: none;
+}
+.at-steps:is(
+    :not([data-fade]),
+    [data-fade="false"],
+    [data-fade="none"],
+    [data-fade="start"]:not([data-direction="up"]),
+    [data-fade="end"][data-direction="up"]
+  )
+  > li:last-child::after {
+  display: none;
+}
+
+/*
+ * Vertical
+ */
+.at-steps[data-direction]:not([data-direction="right"]) {
+  flex-wrap: wrap;
+  text-align: left;
+  gap: var(--at-steps-gap);
+}
+.at-steps[data-direction]:not([data-direction="right"]) > li {
+  flex: 1 0 100%;
+  min-height: calc(var(--at-steps-dot-size) * 2);
+  padding-block: var(--at-steps-padding);
+  padding-inline: calc(
+      var(--at-steps-dot-size) +
+      var(--at-steps-gap) +
+      var(--at-steps-padding)
+    )
+    var(--at-steps-padding);
+}
+.at-steps[data-direction]:not([data-direction="right"]) > li mark {
+  inset: var(--at-steps-padding);
+  margin: 0;
+  position: absolute;
+}
+.at-steps[data-direction]:not([data-direction="right"]) > li::before,
+.at-steps[data-direction]:not([data-direction="right"]) > li::after {
+  background: linear-gradient(transparent, var(--dot-before));
+  height: auto;
+  margin-block: 0;
+  width: var(--at-steps-stroke-size);
+  inset: calc(var(--at-steps-dot-size) * -1) var(--at-steps-padding)
+    100%;
+  translate: -50% var(--at-steps-padding);
+}
+.at-steps[data-direction]:not([data-direction="right"]) > li::after {
+  inset-block: var(--at-steps-dot-size) calc(var(--at-steps-gap) * -1);
+
+  background: linear-gradient(
+    var(--dot-after)
+      calc(100% - var(--at-steps-padding) - var(--at-steps-gap)),
+    transparent
+  );
+}
+.at-steps[data-direction]:not([data-direction="right"]) > li:last-child::after {
+  background: linear-gradient(var(--dot-after), transparent);
+  inset-block-end: 0;
+}
