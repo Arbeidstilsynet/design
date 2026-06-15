@@ -79,7 +79,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <ol className="at-steps">
+    <Steps>
       <li>
         <mark>
           <HeartIcon />
@@ -106,7 +106,7 @@ export const Default: Story = {
         <mark />
         <strong>Steg 5</strong>
       </li>
-    </ol>
+    </Steps>
   ),
 };
 
@@ -135,7 +135,7 @@ export const React: Story = {
 
 export const WithStateComplete: Story = {
   render: () => (
-    <ol className="at-steps" data-state="complete">
+    <Steps data-state="complete">
       <li>
         <mark />
         <strong>Steg 1</strong>
@@ -160,7 +160,7 @@ export const WithStateComplete: Story = {
         <mark />
         <strong>Steg 5</strong>
       </li>
-    </ol>
+    </Steps>
   ),
 };
 
@@ -171,7 +171,7 @@ export const WithDirection: Story = {
         <strong>
           With <code>data-direction="right"</code>:
         </strong>
-        <ol className="at-steps" data-direction="right">
+        <Steps data-direction="right">
           <li>
             <mark>
               <HeartIcon />
@@ -194,13 +194,13 @@ export const WithDirection: Story = {
             <mark />
             <strong>Steg 5</strong>
           </li>
-        </ol>
+        </Steps>
       </Grid>
       <Grid>
         <strong>
           With <code>data-direction="down"</code>:
         </strong>
-        <ol className="at-steps" data-direction="down">
+        <Steps data-direction="down">
           <li>
             <mark>
               <HeartIcon />
@@ -230,13 +230,13 @@ export const WithDirection: Story = {
             <mark />
             <strong>Steg 5</strong>
           </li>
-        </ol>
+        </Steps>
       </Grid>
       <Grid>
         <strong>
           With <code>data-direction="up"</code>:
         </strong>
-        <ol className="at-steps" data-direction="up">
+        <Steps data-direction="up">
           <li>
             <mark>
               <HeartIcon />
@@ -266,7 +266,7 @@ export const WithDirection: Story = {
             <mark />
             <strong>Steg 1</strong>
           </li>
-        </ol>
+        </Steps>
       </Grid>
     </Flex>
   ),
@@ -278,7 +278,7 @@ export const WithFade: Story = {
       <strong>
         No <code>data-fade</code>:
       </strong>
-      <ol className="at-steps">
+      <Steps>
         <li>
           <mark />
           <strong>Steg 1</strong>
@@ -291,11 +291,11 @@ export const WithFade: Story = {
           <mark />
           <strong>Steg 3</strong>
         </li>
-      </ol>
+      </Steps>
       <strong>
         With <code>data-fade</code>:
       </strong>
-      <ol className="at-steps" data-fade>
+      <Steps data-fade>
         <li>
           <mark />
           <strong>Steg 1</strong>
@@ -308,11 +308,11 @@ export const WithFade: Story = {
           <mark />
           <strong>Steg 3</strong>
         </li>
-      </ol>
+      </Steps>
       <strong>
         With <code>data-fade="start"</code>:
       </strong>
-      <ol className="at-steps" data-fade="start">
+      <Steps data-fade="start">
         <li>
           <mark />
           <strong>Steg 1</strong>
@@ -325,11 +325,11 @@ export const WithFade: Story = {
           <mark />
           <strong>Steg 3</strong>
         </li>
-      </ol>
+      </Steps>
       <strong>
         With <code>data-fade="end"</code>:
       </strong>
-      <ol className="at-steps" data-fade="end">
+      <Steps data-fade="end">
         <li>
           <mark />
           <strong>Steg 1</strong>
@@ -342,7 +342,7 @@ export const WithFade: Story = {
           <mark />
           <strong>Steg 3</strong>
         </li>
-      </ol>
+      </Steps>
     </>
   ),
 };
@@ -354,7 +354,7 @@ export const WithFadeAndDirection: Story = {
         <strong>
           With <code>data-direction="down"</code> and <code>data-fade</code>:
         </strong>
-        <ol className="at-steps" data-fade data-direction="down">
+        <Steps data-fade data-direction="down">
           <li>
             <mark />
             <strong>Steg 1</strong>
@@ -367,12 +367,12 @@ export const WithFadeAndDirection: Story = {
             <mark />
             <strong>Steg 3</strong>
           </li>
-        </ol>
+        </Steps>
         <strong>
           With <code>data-direction="down"</code> and{" "}
           <code>data-fade="start"</code>:
         </strong>
-        <ol className="at-steps" data-fade="start" data-direction="down">
+        <Steps data-fade="start" data-direction="down">
           <li>
             <mark />
             <strong>Steg 1</strong>
@@ -385,12 +385,12 @@ export const WithFadeAndDirection: Story = {
             <mark />
             <strong>Steg 3</strong>
           </li>
-        </ol>
+        </Steps>
         <strong>
           With <code>data-direction="down"</code> and{" "}
           <code>data-fade="end"</code>:
         </strong>
-        <ol className="at-steps" data-fade="end" data-direction="down">
+        <Steps data-fade="end" data-direction="down">
           <li>
             <mark />
             <strong>Steg 1</strong>
@@ -403,13 +403,13 @@ export const WithFadeAndDirection: Story = {
             <mark />
             <strong>Steg 3</strong>
           </li>
-        </ol>
+        </Steps>
       </Grid>
       <Grid data-gap="14">
         <strong>
           With <code>data-direction="up"</code> and <code>data-fade</code>:
         </strong>
-        <ol className="at-steps" data-fade data-direction="up">
+        <Steps data-fade data-direction="up">
           <li>
             <mark />
             <strong>Steg 3</strong>
@@ -422,12 +422,12 @@ export const WithFadeAndDirection: Story = {
             <mark />
             <strong>Steg 1</strong>
           </li>
-        </ol>
+        </Steps>
         <strong>
           With <code>data-direction="up"</code> and{" "}
           <code>data-fade="start"</code>:
         </strong>
-        <ol className="at-steps" data-fade="start" data-direction="up">
+        <Steps data-fade="start" data-direction="up">
           <li>
             <mark />
             <strong>Steg 3</strong>
@@ -440,12 +440,12 @@ export const WithFadeAndDirection: Story = {
             <mark />
             <strong>Steg 1</strong>
           </li>
-        </ol>
+        </Steps>
         <strong>
           With <code>data-direction="up"</code> and <code>data-fade="end"</code>
           :
         </strong>
-        <ol className="at-steps" data-fade="end" data-direction="up">
+        <Steps data-fade="end" data-direction="up">
           <li>
             <mark />
             <strong>Steg 3</strong>
@@ -458,7 +458,7 @@ export const WithFadeAndDirection: Story = {
             <mark />
             <strong>Steg 1</strong>
           </li>
-        </ol>
+        </Steps>
       </Grid>
     </Flex>
   ),
@@ -466,7 +466,7 @@ export const WithFadeAndDirection: Story = {
 
 export const WithColors: Story = {
   render: () => (
-    <ol className="at-steps">
+    <Steps>
       <li>
         <mark />
         <strong>Steg 1</strong>
@@ -491,14 +491,14 @@ export const WithColors: Story = {
         <mark />
         <strong>Steg 5</strong>
       </li>
-    </ol>
+    </Steps>
   ),
 };
 
 export const WithVariantFilled: Story = {
   render: () => (
     <>
-      <ol className="at-steps" data-variant="filled">
+      <Steps data-variant="filled">
         <li>
           <mark />
           <strong>Steg 1</strong>
@@ -515,8 +515,8 @@ export const WithVariantFilled: Story = {
           <mark />
           <strong>Steg 3</strong>
         </li>
-      </ol>
-      <ol className="at-steps" data-variant="filled" data-direction="down">
+      </Steps>
+      <Steps data-variant="filled" data-direction="down">
         <li>
           <mark />
           <strong>Steg 1</strong>
@@ -533,8 +533,8 @@ export const WithVariantFilled: Story = {
           <mark />
           <strong>Steg 3</strong>
         </li>
-      </ol>
-      <ol className="at-steps" data-variant="filled" data-direction="up">
+      </Steps>
+      <Steps data-variant="filled" data-direction="up">
         <li>
           <mark />
           <strong>Steg 1</strong>
@@ -551,14 +551,14 @@ export const WithVariantFilled: Story = {
           <mark />
           <strong>Steg 3</strong>
         </li>
-      </ol>
+      </Steps>
     </>
   ),
 };
 
 export const WithInteraction: Story = {
   render: () => (
-    <ol className="at-steps">
+    <Steps>
       <li>
         <a href="#none">
           <mark />
@@ -587,14 +587,14 @@ export const WithInteraction: Story = {
           <strong>Steg 4</strong>
         </button>
       </li>
-    </ol>
+    </Steps>
   ),
 };
 
 export const Timeline: Story = {
   parameters: { showInOverview: true },
   render: () => (
-    <ol className="at-steps" data-direction="up">
+    <Steps data-direction="up">
       <li data-color="main">
         <mark>
           <HeartIcon />
@@ -620,6 +620,6 @@ export const Timeline: Story = {
         </mark>
         <strong>01.02.2025</strong> Sak opprettet
       </li>
-    </ol>
+    </Steps>
   ),
 };
