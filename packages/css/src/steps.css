@@ -239,3 +239,15 @@
   background: linear-gradient(var(--dot-after), transparent);
   inset-block-end: 0;
 }
+
+.at-steps__title {
+  color: var(--ds-color-accent-text-default);
+  font-size: var(--ds-font-size-4);
+  font-weight: var(--ds-font-weight-semibold);
+}
+
+.at-steps__description {
+  display: block;
+  color: var(--ds-color-neutral-text-default);
+  font-size: var(--ds-font-size-3);
+}

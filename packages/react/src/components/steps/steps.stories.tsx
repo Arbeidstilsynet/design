@@ -84,27 +84,25 @@ export const Default: Story = {
         <Steps.StepMark>
           <HeartIcon />
         </Steps.StepMark>
-        <strong>Steg 1</strong>
-        <br />
-        <small>Beskrivelse</small>
+        <Steps.StepTitle>Steg 1</Steps.StepTitle>
+        <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark />
-        <strong>Steg 2</strong>
-        <br />
-        <small>Donec et odio</small>
+        <Steps.StepTitle>Steg 2</Steps.StepTitle>
+        <Steps.StepDescription>Donec et odio</Steps.StepDescription>
       </Steps.Step>
       <Steps.Step aria-current="step" data-color="danger">
         <Steps.StepMark />
-        <strong>Steg 3</strong>
+        <Steps.StepTitle>Steg 3</Steps.StepTitle>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark />
-        <strong>Steg 4</strong>
+        <Steps.StepTitle>Steg 4</Steps.StepTitle>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark />
-        <strong>Steg 5</strong>
+        <Steps.StepTitle>Steg 5</Steps.StepTitle>
       </Steps.Step>
     </Steps>
   ),
@@ -115,19 +113,19 @@ export const React: Story = {
     <Steps>
       <Steps.Step>
         <Steps.StepMark />
-        <strong>Steg 1</strong>
+        <Steps.StepTitle>Steg 1</Steps.StepTitle>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark />
-        <strong>Steg 2</strong>
+        <Steps.StepTitle>Steg 2</Steps.StepTitle>
       </Steps.Step>
       <Steps.Step aria-current="step">
         <Steps.StepMark />
-        <strong>Steg 3</strong>
+        <Steps.StepTitle>Steg 3</Steps.StepTitle>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark />
-        <strong>Steg 4</strong>
+        <Steps.StepTitle>Steg 4</Steps.StepTitle>
       </Steps.Step>
     </Steps>
   ),
@@ -138,27 +136,25 @@ export const WithStateComplete: Story = {
     <Steps data-state="complete">
       <Steps.Step>
         <Steps.StepMark />
-        <strong>Steg 1</strong>
-        <br />
-        <small>Beskrivelse</small>
+        <Steps.StepTitle>Steg 1</Steps.StepTitle>
+        <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark />
-        <strong>Steg 2</strong>
-        <br />
-        <small>Donec et odio</small>
+        <Steps.StepTitle>Steg 2</Steps.StepTitle>
+        <Steps.StepDescription>Donec et odio</Steps.StepDescription>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark />
-        <strong>Steg 3</strong>
+        <Steps.StepTitle>Steg 3</Steps.StepTitle>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark />
-        <strong>Steg 4</strong>
+        <Steps.StepTitle>Steg 4</Steps.StepTitle>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark />
-        <strong>Steg 5</strong>
+        <Steps.StepTitle>Steg 5</Steps.StepTitle>
       </Steps.Step>
     </Steps>
   ),
@@ -176,23 +172,23 @@ export const WithDirection: Story = {
             <Steps.StepMark>
               <HeartIcon />
             </Steps.StepMark>
-            <strong>Steg 1</strong> Beskrivelse
+            <Steps.StepTitle>Steg 1</Steps.StepTitle> Beskrivelse
           </Steps.Step>
           <Steps.Step data-color="danger">
             <Steps.StepMark />
-            <strong>Steg 2</strong>
+            <Steps.StepTitle>Steg 2</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step aria-current="step">
             <Steps.StepMark />
-            <strong>Steg 3</strong>
+            <Steps.StepTitle>Steg 3</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 4</strong>
+            <Steps.StepTitle>Steg 4</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 5</strong>
+            <Steps.StepTitle>Steg 5</Steps.StepTitle>
           </Steps.Step>
         </Steps>
       </Grid>
@@ -205,11 +201,11 @@ export const WithDirection: Story = {
             <Steps.StepMark>
               <HeartIcon />
             </Steps.StepMark>
-            <strong>Steg 1</strong> Beskrivelse
+            <Steps.StepTitle>Steg 1</Steps.StepTitle> Beskrivelse
           </Steps.Step>
           <Steps.Step data-color="danger">
             <Steps.StepMark />
-            <strong>Steg 2</strong>
+            <Steps.StepTitle>Steg 2</Steps.StepTitle>
             <br />
             Donec sagittis et odio in consequat. Nullam rutrum erat in euismod
             scelerisque. Nullam imperdiet lorem mauris, ut dapibus sem efficitur
@@ -220,15 +216,15 @@ export const WithDirection: Story = {
           </Steps.Step>
           <Steps.Step aria-current="step">
             <Steps.StepMark />
-            <strong>Steg 3</strong>
+            <Steps.StepTitle>Steg 3</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 4</strong>
+            <Steps.StepTitle>Steg 4</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 5</strong>
+            <Steps.StepTitle>Steg 5</Steps.StepTitle>
           </Steps.Step>
         </Steps>
       </Grid>
@@ -241,11 +237,11 @@ export const WithDirection: Story = {
             <Steps.StepMark>
               <HeartIcon />
             </Steps.StepMark>
-            <strong>Steg 5</strong> Beskrivelse
+            <Steps.StepTitle>Steg 5</Steps.StepTitle> Beskrivelse
           </Steps.Step>
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 4</strong>
+            <Steps.StepTitle>Steg 4</Steps.StepTitle>
             <br />
             Donec sagittis et odio in consequat. Nullam rutrum erat in euismod
             scelerisque. Nullam imperdiet lorem mauris, ut dapibus sem efficitur
@@ -256,15 +252,15 @@ export const WithDirection: Story = {
           </Steps.Step>
           <Steps.Step aria-current="step">
             <Steps.StepMark />
-            <strong>Steg 3</strong>
+            <Steps.StepTitle>Steg 3</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 2</strong>
+            <Steps.StepTitle>Steg 2</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 1</strong>
+            <Steps.StepTitle>Steg 1</Steps.StepTitle>
           </Steps.Step>
         </Steps>
       </Grid>
@@ -281,15 +277,15 @@ export const WithFade: Story = {
       <Steps>
         <Steps.Step>
           <Steps.StepMark />
-          <strong>Steg 1</strong>
+          <Steps.StepTitle>Steg 1</Steps.StepTitle>
         </Steps.Step>
         <Steps.Step aria-current="step">
           <Steps.StepMark />
-          <strong>Steg 2</strong>
+          <Steps.StepTitle>Steg 2</Steps.StepTitle>
         </Steps.Step>
         <Steps.Step>
           <Steps.StepMark />
-          <strong>Steg 3</strong>
+          <Steps.StepTitle>Steg 3</Steps.StepTitle>
         </Steps.Step>
       </Steps>
       <strong>
@@ -298,15 +294,15 @@ export const WithFade: Story = {
       <Steps data-fade>
         <Steps.Step>
           <Steps.StepMark />
-          <strong>Steg 1</strong>
+          <Steps.StepTitle>Steg 1</Steps.StepTitle>
         </Steps.Step>
         <Steps.Step aria-current="step">
           <Steps.StepMark />
-          <strong>Steg 2</strong>
+          <Steps.StepTitle>Steg 2</Steps.StepTitle>
         </Steps.Step>
         <Steps.Step>
           <Steps.StepMark />
-          <strong>Steg 3</strong>
+          <Steps.StepTitle>Steg 3</Steps.StepTitle>
         </Steps.Step>
       </Steps>
       <strong>
@@ -315,15 +311,15 @@ export const WithFade: Story = {
       <Steps data-fade="start">
         <Steps.Step>
           <Steps.StepMark />
-          <strong>Steg 1</strong>
+          <Steps.StepTitle>Steg 1</Steps.StepTitle>
         </Steps.Step>
         <Steps.Step aria-current="step">
           <Steps.StepMark />
-          <strong>Steg 2</strong>
+          <Steps.StepTitle>Steg 2</Steps.StepTitle>
         </Steps.Step>
         <Steps.Step>
           <Steps.StepMark />
-          <strong>Steg 3</strong>
+          <Steps.StepTitle>Steg 3</Steps.StepTitle>
         </Steps.Step>
       </Steps>
       <strong>
@@ -332,15 +328,15 @@ export const WithFade: Story = {
       <Steps data-fade="end">
         <Steps.Step>
           <Steps.StepMark />
-          <strong>Steg 1</strong>
+          <Steps.StepTitle>Steg 1</Steps.StepTitle>
         </Steps.Step>
         <Steps.Step aria-current="step">
           <Steps.StepMark />
-          <strong>Steg 2</strong>
+          <Steps.StepTitle>Steg 2</Steps.StepTitle>
         </Steps.Step>
         <Steps.Step>
           <Steps.StepMark />
-          <strong>Steg 3</strong>
+          <Steps.StepTitle>Steg 3</Steps.StepTitle>
         </Steps.Step>
       </Steps>
     </>
@@ -357,15 +353,15 @@ export const WithFadeAndDirection: Story = {
         <Steps data-fade data-direction="down">
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 1</strong>
+            <Steps.StepTitle>Steg 1</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step aria-current="step">
             <Steps.StepMark />
-            <strong>Steg 2</strong>
+            <Steps.StepTitle>Steg 2</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 3</strong>
+            <Steps.StepTitle>Steg 3</Steps.StepTitle>
           </Steps.Step>
         </Steps>
         <strong>
@@ -375,15 +371,15 @@ export const WithFadeAndDirection: Story = {
         <Steps data-fade="start" data-direction="down">
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 1</strong>
+            <Steps.StepTitle>Steg 1</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step aria-current="step">
             <Steps.StepMark />
-            <strong>Steg 2</strong>
+            <Steps.StepTitle>Steg 2</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 3</strong>
+            <Steps.StepTitle>Steg 3</Steps.StepTitle>
           </Steps.Step>
         </Steps>
         <strong>
@@ -393,15 +389,15 @@ export const WithFadeAndDirection: Story = {
         <Steps data-fade="end" data-direction="down">
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 1</strong>
+            <Steps.StepTitle>Steg 1</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step aria-current="step">
             <Steps.StepMark />
-            <strong>Steg 2</strong>
+            <Steps.StepTitle>Steg 2</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 3</strong>
+            <Steps.StepTitle>Steg 3</Steps.StepTitle>
           </Steps.Step>
         </Steps>
       </Grid>
@@ -412,15 +408,15 @@ export const WithFadeAndDirection: Story = {
         <Steps data-fade data-direction="up">
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 3</strong>
+            <Steps.StepTitle>Steg 3</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step aria-current="step">
             <Steps.StepMark />
-            <strong>Steg 2</strong>
+            <Steps.StepTitle>Steg 2</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 1</strong>
+            <Steps.StepTitle>Steg 1</Steps.StepTitle>
           </Steps.Step>
         </Steps>
         <strong>
@@ -430,15 +426,15 @@ export const WithFadeAndDirection: Story = {
         <Steps data-fade="start" data-direction="up">
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 3</strong>
+            <Steps.StepTitle>Steg 3</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step aria-current="step">
             <Steps.StepMark />
-            <strong>Steg 2</strong>
+            <Steps.StepTitle>Steg 2</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 1</strong>
+            <Steps.StepTitle>Steg 1</Steps.StepTitle>
           </Steps.Step>
         </Steps>
         <strong>
@@ -448,15 +444,15 @@ export const WithFadeAndDirection: Story = {
         <Steps data-fade="end" data-direction="up">
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 3</strong>
+            <Steps.StepTitle>Steg 3</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step aria-current="step">
             <Steps.StepMark />
-            <strong>Steg 2</strong>
+            <Steps.StepTitle>Steg 2</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step>
             <Steps.StepMark />
-            <strong>Steg 1</strong>
+            <Steps.StepTitle>Steg 1</Steps.StepTitle>
           </Steps.Step>
         </Steps>
       </Grid>
@@ -469,27 +465,27 @@ export const WithColors: Story = {
     <Steps>
       <Steps.Step>
         <Steps.StepMark />
-        <strong>Steg 1</strong>
+        <Steps.StepTitle>Steg 1</Steps.StepTitle>
         <br />
         <small>Beskrivelse</small>
       </Steps.Step>
       <Steps.Step data-color="danger">
         <Steps.StepMark />
-        <strong>Steg 2</strong>
+        <Steps.StepTitle>Steg 2</Steps.StepTitle>
         <br />
         <small>Donec et odio</small>
       </Steps.Step>
       <Steps.Step aria-current="step">
         <Steps.StepMark />
-        <strong>Steg 3</strong>
+        <Steps.StepTitle>Steg 3</Steps.StepTitle>
       </Steps.Step>
       <Steps.Step data-color="warning">
         <Steps.StepMark />
-        <strong>Steg 4</strong>
+        <Steps.StepTitle>Steg 4</Steps.StepTitle>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark />
-        <strong>Steg 5</strong>
+        <Steps.StepTitle>Steg 5</Steps.StepTitle>
       </Steps.Step>
     </Steps>
   ),
@@ -501,55 +497,49 @@ export const WithVariantFilled: Story = {
       <Steps data-variant="filled">
         <Steps.Step>
           <Steps.StepMark />
-          <strong>Steg 1</strong>
-          <br />
-          <small>Beskrivelse</small>
+          <Steps.StepTitle>Steg 1</Steps.StepTitle>
+          <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
         </Steps.Step>
         <Steps.Step aria-current="step">
           <Steps.StepMark />
-          <strong>Steg 2</strong>
-          <br />
-          <small>Donec et odio</small>
+          <Steps.StepTitle>Steg 2</Steps.StepTitle>
+          <Steps.StepDescription>Donec et odio</Steps.StepDescription>
         </Steps.Step>
         <Steps.Step>
           <Steps.StepMark />
-          <strong>Steg 3</strong>
+          <Steps.StepTitle>Steg 3</Steps.StepTitle>
         </Steps.Step>
       </Steps>
       <Steps data-variant="filled" data-direction="down">
         <Steps.Step>
           <Steps.StepMark />
-          <strong>Steg 1</strong>
-          <br />
-          <small>Beskrivelse</small>
+          <Steps.StepTitle>Steg 1</Steps.StepTitle>
+          <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
         </Steps.Step>
         <Steps.Step data-color="danger" aria-current="step">
           <Steps.StepMark />
-          <strong>Steg 2</strong>
-          <br />
-          <small>Donec et odio</small>
+          <Steps.StepTitle>Steg 2</Steps.StepTitle>
+          <Steps.StepDescription>Donec et odio</Steps.StepDescription>
         </Steps.Step>
         <Steps.Step>
           <Steps.StepMark />
-          <strong>Steg 3</strong>
+          <Steps.StepTitle>Steg 3</Steps.StepTitle>
         </Steps.Step>
       </Steps>
       <Steps data-variant="filled" data-direction="up">
         <Steps.Step>
           <Steps.StepMark />
-          <strong>Steg 1</strong>
-          <br />
-          <small>Beskrivelse</small>
+          <Steps.StepTitle>Steg 1</Steps.StepTitle>
+          <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
         </Steps.Step>
         <Steps.Step data-color="danger" aria-current="step">
           <Steps.StepMark />
-          <strong>Steg 2</strong>
-          <br />
-          <small>Donec et odio</small>
+          <Steps.StepTitle>Steg 2</Steps.StepTitle>
+          <Steps.StepDescription>Donec et odio</Steps.StepDescription>
         </Steps.Step>
         <Steps.Step data-color="danger">
           <Steps.StepMark />
-          <strong>Steg 3</strong>
+          <Steps.StepTitle>Steg 3</Steps.StepTitle>
         </Steps.Step>
       </Steps>
     </>
@@ -562,29 +552,27 @@ export const WithInteraction: Story = {
       <Steps.Step>
         <a href="#none">
           <Steps.StepMark />
-          <strong>Steg 1</strong>
-          <br />
-          <small>Beskrivelse</small>
+          <Steps.StepTitle>Steg 1</Steps.StepTitle>
+          <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
         </a>
       </Steps.Step>
       <Steps.Step>
         <a href="#none">
           <Steps.StepMark />
-          <strong>Steg 2</strong>
-          <br />
-          <small>Donec et odio</small>
+          <Steps.StepTitle>Steg 2</Steps.StepTitle>
+          <Steps.StepDescription>Donec et odio</Steps.StepDescription>
         </a>
       </Steps.Step>
       <Steps.Step aria-current="step">
         <button type="button">
           <Steps.StepMark />
-          <strong>Steg 3</strong>
+          <Steps.StepTitle>Steg 3</Steps.StepTitle>
         </button>
       </Steps.Step>
       <Steps.Step>
         <button type="button">
           <Steps.StepMark />
-          <strong>Steg 4</strong>
+          <Steps.StepTitle>Steg 4</Steps.StepTitle>
         </button>
       </Steps.Step>
     </Steps>
@@ -599,13 +587,13 @@ export const Timeline: Story = {
         <Steps.StepMark>
           <HeartIcon />
         </Steps.StepMark>
-        <strong>06.04.2025</strong> Enighet om løsning
+        <Steps.StepTitle>06.04.2025</Steps.StepTitle> Enighet om løsning
       </Steps.Step>
       <Steps.Step data-color="main">
         <Steps.StepMark>
           <HandshakeIcon />
         </Steps.StepMark>
-        <strong>05.04.2025</strong> Oppfølgingsmøte gjennomført
+        <Steps.StepTitle>05.04.2025</Steps.StepTitle> Oppfølgingsmøte gjennomført
         <br />
         Donec sagittis et odio in consequat. Nullam rutrum erat in euismod
         scelerisque. Nullam imperdiet lorem mauris, ut dapibus sem efficitur a.
@@ -618,7 +606,7 @@ export const Timeline: Story = {
         <Steps.StepMark>
           <FilePlusIcon />
         </Steps.StepMark>
-        <strong>01.02.2025</strong> Sak opprettet
+        <Steps.StepTitle>01.02.2025</Steps.StepTitle> Sak opprettet
       </Steps.Step>
     </Steps>
   ),
