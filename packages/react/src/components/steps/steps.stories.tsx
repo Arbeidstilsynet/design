@@ -108,29 +108,6 @@ export const Default: Story = {
   ),
 };
 
-export const React: Story = {
-  render: () => (
-    <Steps>
-      <Steps.Step>
-        <Steps.StepMark />
-        <Steps.StepTitle>Steg 1</Steps.StepTitle>
-      </Steps.Step>
-      <Steps.Step>
-        <Steps.StepMark />
-        <Steps.StepTitle>Steg 2</Steps.StepTitle>
-      </Steps.Step>
-      <Steps.Step aria-current="step">
-        <Steps.StepMark />
-        <Steps.StepTitle>Steg 3</Steps.StepTitle>
-      </Steps.Step>
-      <Steps.Step>
-        <Steps.StepMark />
-        <Steps.StepTitle>Steg 4</Steps.StepTitle>
-      </Steps.Step>
-    </Steps>
-  ),
-};
-
 export const WithStateComplete: Story = {
   render: () => (
     <Steps data-state="complete">
