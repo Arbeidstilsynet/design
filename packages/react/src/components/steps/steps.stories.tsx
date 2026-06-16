@@ -60,7 +60,7 @@ function Grid({
 }
 
 const meta: Meta<typeof Steps> = {
-  title: "Designsystem/Steps",
+  title: "Arbeidstilsynet/Steps",
   component: Steps,
   parameters: {
     layout: "padded",
