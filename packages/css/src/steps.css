@@ -16,7 +16,7 @@
   display: flex;
   gap: var(--at-steps-gap);
 }
-.at-steps > li {
+.at-steps > .at-steps__step {
   --dot-after: var(--at-steps-stroke-color);
   --dot-before: var(--at-steps-stroke-color);
   --dot-text: initial;
@@ -35,8 +35,8 @@
 /*
  * Line
  */
-.at-steps > li::before,
-.at-steps > li::after {
+.at-steps > .at-steps__step::before,
+.at-steps > .at-steps__step::after {
   background: linear-gradient(to right, transparent, var(--dot-before));
   content: "";
   height: var(--at-steps-stroke-size);
@@ -45,21 +45,21 @@
   position: absolute;
   translate: 0 -50%;
 }
-.at-steps > li::after {
+.at-steps > .at-steps__step::after {
   background: linear-gradient(to right, var(--dot-after), transparent);
   inset-inline: 50% -50%;
 }
-.at-steps > li:first-child::before {
+.at-steps > .at-steps__step:first-child::before {
   left: 0;
 }
-.at-steps > li:last-child::after {
+.at-steps > .at-steps__step:last-child::after {
   right: 0;
 }
 
 /*
  * Dot
  */
-.at-steps > li mark {
+.at-steps > .at-steps__step mark {
   background: var(--dot-fill);
   border-radius: var(--ds-border-radius-full);
   border: var(--at-steps-stroke-size) solid
@@ -74,17 +74,17 @@
   width: var(--at-steps-dot-size);
   z-index: 2; /* Place above line */
 }
-.at-steps > li mark:not([hidden]) {
+.at-steps > .at-steps__step mark:not([hidden]) {
   display: grid;
 }
-.at-steps > li mark > svg,
-.at-steps > li mark:empty::before {
+.at-steps > .at-steps__step mark > svg,
+.at-steps > .at-steps__step mark:empty::before {
   display: block;
   fill: currentColor; /* In case using non-Phosphor icons */
   width: 75%;
   height: 75%;
 }
-.at-steps > li mark:empty::before {
+.at-steps > .at-steps__step mark:empty::before {
   background: currentColor;
   content: "";
   mask: var(--dot-icon) center / contain no-repeat;
@@ -93,7 +93,7 @@
 /*
  * Interaction 
  */
-.at-steps > li > :is(a, button):not([hidden]):only-child {
+.at-steps > .at-steps__step > :is(a, button):not([hidden]):only-child {
   background: none;
   border-radius: inherit;
   border: 0;
@@ -108,63 +108,63 @@
   text-decoration: none;
   width: 100%;
 }
-.at-steps > li > :is(a, button):only-child:focus-visible {
+.at-steps > .at-steps__step > :is(a, button):only-child:focus-visible {
   box-shadow: var(--dsc-focus-boxShadow);
   outline: var(--dsc-focus-outline);
   outline-offset: var(--ds-border-width-focus);
 }
-.at-steps > li > :is(a, button):only-child:hover:not(:active) mark {
+.at-steps > .at-steps__step > :is(a, button):only-child:hover:not(:active) mark {
   scale: 1.175;
 }
 
 /*
  * States
  */
-.at-steps:not([data-direction="up"]) > li[aria-current="step"] {
+.at-steps:not([data-direction="up"]) > .at-steps__step[aria-current="step"] {
   z-index: 1; /* Let lines from other steps enter the current one */
 }
-.at-steps:not([data-direction="up"]) > li[aria-current="step"],
-.at-steps:not([data-direction="up"]) > li:has(~ li[aria-current="step"]),
-.at-steps[data-direction="up"] > [aria-current="step"] ~ li,
-.at-steps[data-state="complete"] > li {
+.at-steps:not([data-direction="up"]) > .at-steps__step[aria-current="step"],
+.at-steps:not([data-direction="up"]) > .at-steps__step:has(~ .at-steps__step[aria-current="step"]),
+.at-steps[data-direction="up"] > [aria-current="step"] ~ .at-steps__step,
+.at-steps[data-state="complete"] > .at-steps__step {
   --dot-before: var(--dot-fill);
 }
-.at-steps:not([data-direction="up"]) > li:has(~ li[aria-current="step"]),
-.at-steps[data-direction="up"] > li[aria-current="step"] ~ li,
-.at-steps[data-direction="up"] > li[aria-current="step"],
-.at-steps[data-state="complete"] > li {
+.at-steps:not([data-direction="up"]) > .at-steps__step:has(~ .at-steps__step[aria-current="step"]),
+.at-steps[data-direction="up"] > .at-steps__step[aria-current="step"] ~ .at-steps__step,
+.at-steps[data-direction="up"] > .at-steps__step[aria-current="step"],
+.at-steps[data-state="complete"] > .at-steps__step {
   --dot-after: var(--dot-fill);
 }
-.at-steps > li[aria-current="step"] mark {
+.at-steps > .at-steps__step[aria-current="step"] mark {
   box-shadow:
     0 0 0 var(--at-steps-stroke-size) var(--dot-text),
     0 0 0 calc(var(--at-steps-stroke-size) * 2) var(--dot-fill);
 }
-.at-steps[data-state="complete"] > li,
-.at-steps:not([data-direction="up"]) > li:where(:has(~ li[aria-current="step"])),
-.at-steps[data-direction="up"] > li:where([aria-current="step"] ~ li) {
+.at-steps[data-state="complete"] > .at-steps__step,
+.at-steps:not([data-direction="up"]) > .at-steps__step:where(:has(~ .at-steps__step[aria-current="step"])),
+.at-steps[data-direction="up"] > .at-steps__step:where([aria-current="step"] ~ .at-steps__step) {
   --dot-icon: var(--at-steps-icon-check);
 }
-.at-steps[data-state="complete"] > li,
-.at-steps[data-direction="up"] > li[aria-current="step"] ~ li,
-.at-steps:not([data-direction="up"]) > li:has(~ li[aria-current="step"]),
-.at-steps > li[aria-current="step"],
-.at-steps > li[data-color] {
+.at-steps[data-state="complete"] > .at-steps__step,
+.at-steps[data-direction="up"] > .at-steps__step[aria-current="step"] ~ .at-steps__step,
+.at-steps:not([data-direction="up"]) > .at-steps__step:has(~ .at-steps__step[aria-current="step"]),
+.at-steps > .at-steps__step[aria-current="step"],
+.at-steps > .at-steps__step[data-color] {
   --dot-text: var(--ds-color-base-contrast-default);
   --dot-fill: var(--ds-color-base-default);
 }
-.at-steps > li[data-color="danger"],
-.at-steps > li[data-color="warning"] {
+.at-steps > .at-steps__step[data-color="danger"],
+.at-steps > .at-steps__step[data-color="warning"] {
   --dot-icon: var(--at-steps-icon-close);
 }
 
 /*
  * Filled variant
  */
-.at-steps[data-variant="filled"] > li {
+.at-steps[data-variant="filled"] > .at-steps__step {
   --at-steps-padding: var(--ds-size-4);
 }
-.at-steps[data-variant="filled"] > li[aria-current="step"] {
+.at-steps[data-variant="filled"] > .at-steps__step[aria-current="step"] {
   background: var(--ds-color-surface-tinted);
 }
 
@@ -178,7 +178,7 @@
   [data-fade="end"]:not([data-direction="up"]),
   [data-fade="start"][data-direction="up"]
 )
-> li:first-child::before {
+> .at-steps__step:first-child::before {
   display: none;
 }
 .at-steps:is(
@@ -188,7 +188,7 @@
     [data-fade="start"]:not([data-direction="up"]),
     [data-fade="end"][data-direction="up"]
   )
-  > li:last-child::after {
+  > .at-steps__step:last-child::after {
   display: none;
 }
 
@@ -200,7 +200,7 @@
   text-align: left;
   gap: var(--at-steps-gap);
 }
-.at-steps[data-direction]:not([data-direction="right"]) > li {
+.at-steps[data-direction]:not([data-direction="right"]) > .at-steps__step {
   flex: 1 0 100%;
   min-height: calc(var(--at-steps-dot-size) * 2);
   padding-block: var(--at-steps-padding);
@@ -211,13 +211,13 @@
     )
     var(--at-steps-padding);
 }
-.at-steps[data-direction]:not([data-direction="right"]) > li mark {
+.at-steps[data-direction]:not([data-direction="right"]) > .at-steps__step mark {
   inset: var(--at-steps-padding);
   margin: 0;
   position: absolute;
 }
-.at-steps[data-direction]:not([data-direction="right"]) > li::before,
-.at-steps[data-direction]:not([data-direction="right"]) > li::after {
+.at-steps[data-direction]:not([data-direction="right"]) > .at-steps__step::before,
+.at-steps[data-direction]:not([data-direction="right"]) > .at-steps__step::after {
   background: linear-gradient(transparent, var(--dot-before));
   height: auto;
   margin-block: 0;
@@ -226,7 +226,7 @@
     100%;
   translate: -50% var(--at-steps-padding);
 }
-.at-steps[data-direction]:not([data-direction="right"]) > li::after {
+.at-steps[data-direction]:not([data-direction="right"]) > .at-steps__step::after {
   inset-block: var(--at-steps-dot-size) calc(var(--at-steps-gap) * -1);
 
   background: linear-gradient(
@@ -235,7 +235,7 @@
     transparent
   );
 }
-.at-steps[data-direction]:not([data-direction="right"]) > li:last-child::after {
+.at-steps[data-direction]:not([data-direction="right"]) > .at-steps__step:last-child::after {
   background: linear-gradient(var(--dot-after), transparent);
   inset-block-end: 0;
 }
