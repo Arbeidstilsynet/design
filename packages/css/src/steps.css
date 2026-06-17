@@ -16,7 +16,8 @@
   display: flex;
   gap: var(--at-steps-gap);
 }
-.at-steps > .at-steps__step {
+
+.at-steps__step {
   --dot-after: var(--at-steps-stroke-color);
   --dot-before: var(--at-steps-stroke-color);
   --dot-text: initial;
@@ -35,9 +36,8 @@
 /*
  * Line
  */
-.at-steps > .at-steps__step::before,
-.at-steps > .at-steps__step::after {
-  background: linear-gradient(to right, transparent, var(--dot-before));
+.at-steps__step::before,
+.at-steps__step::after {
   content: "";
   height: var(--at-steps-stroke-size);
   inset: var(--at-steps-padding) 50% auto -50%;
@@ -45,21 +45,25 @@
   position: absolute;
   translate: 0 -50%;
 }
-.at-steps > .at-steps__step::after {
+.at-steps__step::before {
+  background: linear-gradient(to right, transparent, var(--dot-before));
+}
+.at-steps__step::after {
   background: linear-gradient(to right, var(--dot-after), transparent);
   inset-inline: 50% -50%;
 }
-.at-steps > .at-steps__step:first-child::before {
+
+.at-steps__step:first-child::before {
   left: 0;
 }
-.at-steps > .at-steps__step:last-child::after {
+.at-steps__step:last-child::after {
   right: 0;
 }
 
 /*
  * Dot
  */
-.at-steps > .at-steps__step mark {
+.at-steps__step-mark {
   background: var(--dot-fill);
   border-radius: var(--ds-border-radius-full);
   border: var(--at-steps-stroke-size) solid
@@ -74,17 +78,17 @@
   width: var(--at-steps-dot-size);
   z-index: 2; /* Place above line */
 }
-.at-steps > .at-steps__step mark:not([hidden]) {
+.at-steps__step-mark:not([hidden]) {
   display: grid;
 }
-.at-steps > .at-steps__step mark > svg,
-.at-steps > .at-steps__step mark:empty::before {
+.at-steps__step-mark > svg,
+.at-steps__step-mark:empty::before {
   display: block;
-  fill: currentColor; /* In case using non-Phosphor icons */
+  fill: currentColor;
   width: 75%;
   height: 75%;
 }
-.at-steps > .at-steps__step mark:empty::before {
+.at-steps__step-mark:empty::before {
   background: currentColor;
   content: "";
   mask: var(--dot-icon) center / contain no-repeat;
@@ -93,7 +97,7 @@
 /*
  * Interaction 
  */
-.at-steps > .at-steps__step > :is(a, button):not([hidden]):only-child {
+.at-steps__step > :is(a, button):not([hidden]):only-child {
   background: none;
   border-radius: inherit;
   border: 0;
@@ -108,12 +112,12 @@
   text-decoration: none;
   width: 100%;
 }
-.at-steps > .at-steps__step > :is(a, button):only-child:focus-visible {
+.at-steps__step > :is(a, button):only-child:focus-visible {
   box-shadow: var(--dsc-focus-boxShadow);
   outline: var(--dsc-focus-outline);
   outline-offset: var(--ds-border-width-focus);
 }
-.at-steps > .at-steps__step > :is(a, button):only-child:hover:not(:active) mark {
+.at-steps__step > :is(a, button):only-child:hover:not(:active) .at-steps__step-mark {
   scale: 1.175;
 }
 
@@ -135,7 +139,7 @@
 .at-steps[data-state="complete"] > .at-steps__step {
   --dot-after: var(--dot-fill);
 }
-.at-steps > .at-steps__step[aria-current="step"] mark {
+.at-steps__step[aria-current="step"] .at-steps__step-mark {
   box-shadow:
     0 0 0 var(--at-steps-stroke-size) var(--dot-text),
     0 0 0 calc(var(--at-steps-stroke-size) * 2) var(--dot-fill);
@@ -148,13 +152,13 @@
 .at-steps[data-state="complete"] > .at-steps__step,
 .at-steps[data-direction="up"] > .at-steps__step[aria-current="step"] ~ .at-steps__step,
 .at-steps:not([data-direction="up"]) > .at-steps__step:has(~ .at-steps__step[aria-current="step"]),
-.at-steps > .at-steps__step[aria-current="step"],
-.at-steps > .at-steps__step[data-color] {
+.at-steps__step[aria-current="step"],
+.at-steps__step[data-color] {
   --dot-text: var(--ds-color-base-contrast-default);
   --dot-fill: var(--ds-color-base-default);
 }
-.at-steps > .at-steps__step[data-color="danger"],
-.at-steps > .at-steps__step[data-color="warning"] {
+.at-steps__step[data-color="danger"],
+.at-steps__step[data-color="warning"] {
   --dot-icon: var(--at-steps-icon-close);
 }
 
@@ -250,4 +254,10 @@
   display: block;
   color: var(--ds-color-neutral-text-default);
   font-size: var(--ds-font-size-3);
+}
+
+.at-steps__details {
+  display: block;
+  color: var(--ds-color-neutral-text-subtle);
+  font-size: var(--ds-font-size-2);
 }
