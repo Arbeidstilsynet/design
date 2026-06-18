@@ -130,12 +130,14 @@
 .at-steps:not([data-direction="up"]) > .at-steps__step[aria-current="step"],
 .at-steps:not([data-direction="up"]) > .at-steps__step:has(~ .at-steps__step[aria-current="step"]),
 .at-steps[data-direction="up"] > [aria-current="step"] ~ .at-steps__step,
+.at-steps__step[data-state="complete"],
 .at-steps[data-state="complete"] > .at-steps__step {
   --dot-before: var(--dot-fill);
 }
 .at-steps:not([data-direction="up"]) > .at-steps__step:has(~ .at-steps__step[aria-current="step"]),
 .at-steps[data-direction="up"] > .at-steps__step[aria-current="step"] ~ .at-steps__step,
 .at-steps[data-direction="up"] > .at-steps__step[aria-current="step"],
+.at-steps__step[data-state="complete"],
 .at-steps[data-state="complete"] > .at-steps__step {
   --dot-after: var(--dot-fill);
 }
@@ -144,11 +146,15 @@
     0 0 0 var(--at-steps-stroke-size) var(--dot-text),
     0 0 0 calc(var(--at-steps-stroke-size) * 2) var(--dot-fill);
 }
+
+.at-steps__step[data-state="complete"],
 .at-steps[data-state="complete"] > .at-steps__step,
 .at-steps:not([data-direction="up"]) > .at-steps__step:where(:has(~ .at-steps__step[aria-current="step"])),
 .at-steps[data-direction="up"] > .at-steps__step:where([aria-current="step"] ~ .at-steps__step) {
   --dot-icon: var(--at-steps-icon-check);
 }
+
+.at-steps__step[data-state="complete"],
 .at-steps[data-state="complete"] > .at-steps__step,
 .at-steps[data-direction="up"] > .at-steps__step[aria-current="step"] ~ .at-steps__step,
 .at-steps:not([data-direction="up"]) > .at-steps__step:has(~ .at-steps__step[aria-current="step"]),

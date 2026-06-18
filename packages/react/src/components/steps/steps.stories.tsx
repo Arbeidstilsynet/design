@@ -127,23 +127,37 @@ export const WithStateComplete: Story = {
         <Steps.StepMark />
         <Steps.StepTitle>Steg 1</Steps.StepTitle>
         <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+        <Steps.StepDetails>Detaljer</Steps.StepDetails>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark />
         <Steps.StepTitle>Steg 2</Steps.StepTitle>
-        <Steps.StepDescription>Donec et odio</Steps.StepDescription>
+        <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+        <Steps.StepDetails>Detaljer</Steps.StepDetails>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark />
         <Steps.StepTitle>Steg 3</Steps.StepTitle>
+        <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+        <Steps.StepDetails>Detaljer</Steps.StepDetails>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark />
         <Steps.StepTitle>Steg 4</Steps.StepTitle>
+        <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+        <Steps.StepDetails>Detaljer</Steps.StepDetails>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark />
         <Steps.StepTitle>Steg 5</Steps.StepTitle>
+        <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+        <Steps.StepDetails>Detaljer</Steps.StepDetails>
+      </Steps.Step>
+      <Steps.Step>
+        <Steps.StepMark />
+        <Steps.StepTitle>Steg 6</Steps.StepTitle>
+        <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+        <Steps.StepDetails>Detaljer</Steps.StepDetails>
       </Steps.Step>
     </Steps>
   ),
