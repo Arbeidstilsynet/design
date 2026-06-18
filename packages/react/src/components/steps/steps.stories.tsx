@@ -1,4 +1,9 @@
-import { FilePlusIcon, HandshakeIcon, HeartIcon } from "@navikt/aksel-icons";
+import {
+  ExclamationmarkTriangleIcon,
+  HeartIcon,
+  InformationIcon,
+  PersonChatIcon,
+} from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import React, { type ComponentPropsWithoutRef } from "react";
 import { Steps } from "..";
@@ -645,32 +650,49 @@ export const WithInteraction: Story = {
 export const Timeline: Story = {
   parameters: { showInOverview: true },
   render: () => (
-    <Steps data-direction="up">
+    <Steps data-direction="up" data-state="complete">
       <Steps.Step>
         <Steps.StepMark>
-          <HeartIcon />
+          <ExclamationmarkTriangleIcon />
         </Steps.StepMark>
-        <Steps.StepTitle>06.04.2025</Steps.StepTitle> Enighet om løsning
+        <Steps.StepTitle>Varsel om nedetid</Steps.StepTitle>
+        <Steps.StepDescription>
+          Tidskontroll vil være utilgjengelig fra fredag 17.04.2026 kl 21 til
+          lørdag 18.04.2026 ca. kl 14.
+        </Steps.StepDescription>
+        <Steps.StepDetails>I går av Per Hansen</Steps.StepDetails>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark>
-          <HandshakeIcon />
+          <InformationIcon />
         </Steps.StepMark>
-        <Steps.StepTitle>05.04.2025</Steps.StepTitle> Oppfølgingsmøte
-        gjennomført
-        <br />
-        Donec sagittis et odio in consequat. Nullam rutrum erat in euismod
-        scelerisque. Nullam imperdiet lorem mauris, ut dapibus sem efficitur a.
-        Proin nec vulputate erat. Proin venenatis aliquam justo at venenatis.
-        Proin pharetra turpis sem, et consectetur nunc fringilla vitae. Morbi
-        molestie eleifend libero, et posuere magna semper non. Nullam dictum
-        massa non nibh sagittis vestibulum.
+        <Steps.StepTitle>Ny versjon</Steps.StepTitle>
+        <Steps.StepDescription>
+          Sortering av brudd i vedleggsrapporter er nå kronologisk, mm. Se
+          versjonshistorikk.
+        </Steps.StepDescription>
+        <Steps.StepDetails>05.05.2026 kl 16.33</Steps.StepDetails>
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark>
-          <FilePlusIcon />
+          <PersonChatIcon />
         </Steps.StepMark>
-        <Steps.StepTitle>01.02.2025</Steps.StepTitle> Sak opprettet
+        <Steps.StepTitle>Søker testere</Steps.StepTitle>
+        <Steps.StepDescription>
+          Til å teste ny funksjonalitet i Tidskontroll.
+        </Steps.StepDescription>
+        <Steps.StepDetails>02.04.2026 kl 09.30</Steps.StepDetails>
+      </Steps.Step>
+      <Steps.Step>
+        <Steps.StepMark>
+          <InformationIcon />
+        </Steps.StepMark>
+        <Steps.StepTitle>Ny versjon</Steps.StepTitle>
+        <Steps.StepDescription>
+          Sortering av brudd i vedleggsrapporter er nå kronologisk, mm. Se
+          versjonshistorikk.
+        </Steps.StepDescription>
+        <Steps.StepDetails>21.02.2026 kl 15.45</Steps.StepDetails>
       </Steps.Step>
     </Steps>
   ),
