@@ -6,29 +6,24 @@ packages:
 allowBuilds:
   esbuild: false
 
+auditConfig:
+  ignoreGhsas:
+    # js-yaml@3.x used through @changesets/cli, not realistically exploitable without repo access
+    # intermediary deps would need overrides to resolve, wait and see if they get updates
+    # or wait for @changesets/cli v3 which upgrades intermediary @manypkg/get-packages to not depend on js-yaml
+    - GHSA-h67p-54hq-rp68
+
 autoInstallPeers: false
 
 minimumReleaseAge: 4320
 
 minimumReleaseAgeExclude:
-  - '@storybook/addon-a11y@10.4.6'
-  - '@storybook/addon-docs@10.4.6'
-  - '@storybook/addon-vitest@10.4.6'
-  - '@storybook/builder-vite@10.4.6'
-  - '@storybook/csf-plugin@10.4.6'
-  - '@storybook/react-dom-shim@10.4.6'
-  - '@storybook/react-vite@10.4.6'
-  - '@storybook/react@10.4.6'
-  - eslint-plugin-storybook@10.4.6
+  - shell-quote@1.8.4
   - esbuild@0.28.1
   - js-yaml@4.1.2
-  - shell-quote@1.8.4
 
 overrides:
-  esbuild@>=0.17.0 <0.28.1: ^0.28.1
-  esbuild@>=0.27.3 <0.28.1: ^0.28.1
-  js-yaml@<=4.1.1: ^4.1.2
-  shell-quote@>=1.1.0 <=1.8.3: ^1.8.4
+  esbuild: "0.28.1"
 
 trustPolicy: no-downgrade
 
