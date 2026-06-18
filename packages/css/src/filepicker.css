@@ -142,6 +142,8 @@
 }
 
 .at-filepicker-files-file__button {
+  --dsc-button-color: var(--ds-color-text-subtle);
+  --dsc-button-color--hover: var(--ds-color-text-default);
   --dsc-button-padding: var(--ds-size-1) var(--ds-size-4);
   min-height: unset;
 }
