@@ -668,26 +668,26 @@ export const WithVariantFilled: Story = {
 };
 
 const InteractiveStepsComponent = () => {
-    const [activeStep, setActiveStep] = useState(2);
+  const [activeStep, setActiveStep] = useState(2);
 
-    return (
-      <Steps>
-        {[1, 2, 3, 4, 5, 6].map((step) => (
-          <Steps.Step
-            aria-current={activeStep === step ? "step" : undefined}
-            key={step}
-          >
-            <button type="button" onClick={() => setActiveStep(step)}>
-              <Steps.StepMark data-color={step === 2 ? "warning" : undefined} />
-              <Steps.StepTitle>Steg {step}</Steps.StepTitle>
-              <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
-              <Steps.StepDetails>Detaljer</Steps.StepDetails>
-            </button>
-          </Steps.Step>
-        ))}
-      </Steps>
-    );
-}
+  return (
+    <Steps>
+      {[1, 2, 3, 4, 5, 6].map((step) => (
+        <Steps.Step
+          aria-current={activeStep === step ? "step" : undefined}
+          key={step}
+        >
+          <button type="button" onClick={() => setActiveStep(step)}>
+            <Steps.StepMark data-color={step === 2 ? "warning" : undefined} />
+            <Steps.StepTitle>Steg {step}</Steps.StepTitle>
+            <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+            <Steps.StepDetails>Detaljer</Steps.StepDetails>
+          </button>
+        </Steps.Step>
+      ))}
+    </Steps>
+  );
+};
 
 /**
  * Interactive example where clicking a step mark sets it as the active step.
