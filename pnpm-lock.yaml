@@ -24,8 +24,8 @@ importers:
         specifier: 1.13.3
         version: 1.13.3
       '@scaleway/changesets-renovate':
-        specifier: 3.0.2
-        version: 3.0.2
+        specifier: 3.0.3
+        version: 3.0.3
       '@types/node':
         specifier: 24.13.1
         version: 24.13.1
@@ -1487,8 +1487,8 @@ packages:
       rollup:
         optional: true
 
-  '@scaleway/changesets-renovate@3.0.2':
-    resolution: {integrity: sha512-fCZKdfccLnbkgRnKvnUkhX8s9jWh+N5tCv356atAHHZAGLCawTVkiOjd+VWCtwrdr5Qc30KJXRObeZGRqgjMkA==}
+  '@scaleway/changesets-renovate@3.0.3':
+    resolution: {integrity: sha512-rt7hZQe0p8hCwnMPTGFZADeXa1kxcju65cKozxfyoh8U2osMFxy7kmdSQOjghedtgJPLLg943pyhkO9Ia3UZdQ==}
     engines: {node: '>=24.x'}
     hasBin: true
 
@@ -3578,10 +3578,6 @@ packages:
     resolution: {integrity: sha512-SHf/r48b7vOrjve9PxJo3MN5v5yuyjHvdUcrQffT3WXMUfnGmHDVbC4k3sHJaJTgZCwpUplIaAo5ANtMyp3YHg==}
     engines: {node: '>=18'}
 
-  tinyglobby@0.2.16:
-    resolution: {integrity: sha512-pn99VhoACYR8nFHhxqix+uvsbXineAasWm5ojXoN8xEwK5Kd3/TrhNn1wByuD52UxWRLy8pu+kRMniEi6Eq9Zg==}
-    engines: {node: '>=12.0.0'}
-
   tinyglobby@0.2.17:
     resolution: {integrity: sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==}
     engines: {node: '>=12.0.0'}
@@ -4969,11 +4965,11 @@ snapshots:
       estree-walker: 2.0.2
       picomatch: 4.0.4
 
-  '@scaleway/changesets-renovate@3.0.2':
+  '@scaleway/changesets-renovate@3.0.3':
     dependencies:
       '@changesets/config': 3.1.4
       simple-git: 3.36.0
-      tinyglobby: 0.2.16
+      tinyglobby: 0.2.17
       yaml: 2.9.0
     transitivePeerDependencies:
       - supports-color
@@ -7167,11 +7163,6 @@ snapshots:
   tinycolor2@1.6.0: {}
 
   tinyexec@1.2.4: {}
-
-  tinyglobby@0.2.16:
-    dependencies:
-      fdir: 6.5.0(picomatch@4.0.4)
-      picomatch: 4.0.4
 
   tinyglobby@0.2.17:
     dependencies:
