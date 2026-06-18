@@ -4,6 +4,12 @@
   --at-steps-padding: 0px;
   --at-steps-stroke-color: var(--ds-color-border-subtle);
   --at-steps-stroke-size: 2px;
+  --at-steps-line-active: var(--ds-color-accent-base-default);
+  --at-steps-line-faint: color-mix(
+    in oklab,
+    var(--ds-color-accent-base-default) 30%,
+    transparent
+  );
   --at-steps-icon-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M230 78 102 206a8 8 0 0 1-12 0l-56-56a8 8 0 0 1 12-12l50 51L218 66a8 8 0 0 1 12 12Z'/%3E%3C/svg%3E");
   --at-steps-icon-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M205.7 194.3a8 8 0 0 1-11.4 11.4L128 139.3l-66.3 66.4a8 8 0 0 1-11.4-11.4l66.4-66.3-66.4-66.3a8 8 0 0 1 11.4-11.4l66.3 66.4 66.3-66.4a8 8 0 0 1 11.4 11.4L139.3 128Z'/%3E%3C/svg%3E");
 
@@ -18,8 +24,8 @@
 }
 
 .at-steps__step {
-  --dot-after: var(--at-steps-stroke-color);
-  --dot-before: var(--at-steps-stroke-color);
+  --dot-after: var(--at-steps-line-faint);
+  --dot-before: var(--at-steps-line-faint);
   --dot-text: initial;
   --dot-fill: initial;
   --dot-icon: linear-gradient(transparent);
@@ -132,14 +138,14 @@
 .at-steps[data-direction="up"] > [aria-current="step"] ~ .at-steps__step,
 .at-steps__step[data-state="complete"],
 .at-steps[data-state="complete"] > .at-steps__step {
-  --dot-before: var(--dot-fill);
+  --dot-before: var(--at-steps-line-active);
 }
 .at-steps:not([data-direction="up"]) > .at-steps__step:has(~ .at-steps__step[aria-current="step"]),
 .at-steps[data-direction="up"] > .at-steps__step[aria-current="step"] ~ .at-steps__step,
 .at-steps[data-direction="up"] > .at-steps__step[aria-current="step"],
 .at-steps__step[data-state="complete"],
 .at-steps[data-state="complete"] > .at-steps__step {
-  --dot-after: var(--dot-fill);
+  --dot-after: var(--at-steps-line-active);
 }
 .at-steps__step[aria-current="step"] .at-steps__step-mark {
   box-shadow:
