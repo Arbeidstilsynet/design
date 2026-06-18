@@ -25,7 +25,10 @@ const Steps = Object.assign(StepsParent, {
 
 export {
   Steps,
-  StepsStep, StepsStepDescription, StepsStepDetails, StepsStepFill, StepsStepMark,
-  StepsStepTitle
+  StepsStep,
+  StepsStepDescription,
+  StepsStepDetails,
+  StepsStepFill,
+  StepsStepMark,
+  StepsStepTitle,
 };
-

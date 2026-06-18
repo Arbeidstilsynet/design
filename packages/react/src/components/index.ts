@@ -5,4 +5,3 @@ export { LogoBlack } from "./logo/logoblack";
 export { LogoGreen } from "./logo/logogreen";
 export { LogoWhite } from "./logo/logowhite";
 export * from "./steps";
-

@@ -125,7 +125,9 @@
   outline: var(--dsc-focus-outline);
   outline-offset: var(--ds-border-width-focus);
 }
-.at-steps__step > :is(a, button):only-child:hover:not(:active) .at-steps__step-mark {
+.at-steps__step
+  > :is(a, button):only-child:hover:not(:active)
+  .at-steps__step-mark {
   scale: 1.175;
 }
 
@@ -136,14 +138,18 @@
   z-index: 1; /* Let lines from other steps enter the current one */
 }
 .at-steps:not([data-direction="up"]) > .at-steps__step[aria-current="step"],
-.at-steps:not([data-direction="up"]) > .at-steps__step:has(~ .at-steps__step[aria-current="step"]),
+.at-steps:not([data-direction="up"])
+  > .at-steps__step:has(~ .at-steps__step[aria-current="step"]),
 .at-steps[data-direction="up"] > [aria-current="step"] ~ .at-steps__step,
 .at-steps__step[data-state="complete"],
 .at-steps[data-state="complete"] > .at-steps__step {
   --dot-before: var(--at-steps-line-active);
 }
-.at-steps:not([data-direction="up"]) > .at-steps__step:has(~ .at-steps__step[aria-current="step"]),
-.at-steps[data-direction="up"] > .at-steps__step[aria-current="step"] ~ .at-steps__step,
+.at-steps:not([data-direction="up"])
+  > .at-steps__step:has(~ .at-steps__step[aria-current="step"]),
+.at-steps[data-direction="up"]
+  > .at-steps__step[aria-current="step"]
+  ~ .at-steps__step,
 .at-steps[data-direction="up"] > .at-steps__step[aria-current="step"],
 .at-steps__step[data-state="complete"],
 .at-steps[data-state="complete"] > .at-steps__step {
@@ -157,15 +163,20 @@
 
 .at-steps__step[data-state="complete"],
 .at-steps[data-state="complete"] > .at-steps__step,
-.at-steps:not([data-direction="up"]) > .at-steps__step:where(:has(~ .at-steps__step[aria-current="step"])),
-.at-steps[data-direction="up"] > .at-steps__step:where([aria-current="step"] ~ .at-steps__step) {
+.at-steps:not([data-direction="up"])
+  > .at-steps__step:where(:has(~ .at-steps__step[aria-current="step"])),
+.at-steps[data-direction="up"]
+  > .at-steps__step:where([aria-current="step"] ~ .at-steps__step) {
   --dot-icon: var(--at-steps-icon-check);
 }
 
 .at-steps__step[data-state="complete"],
 .at-steps[data-state="complete"] > .at-steps__step,
-.at-steps[data-direction="up"] > .at-steps__step[aria-current="step"] ~ .at-steps__step,
-.at-steps:not([data-direction="up"]) > .at-steps__step:has(~ .at-steps__step[aria-current="step"]),
+.at-steps[data-direction="up"]
+  > .at-steps__step[aria-current="step"]
+  ~ .at-steps__step,
+.at-steps:not([data-direction="up"])
+  > .at-steps__step:has(~ .at-steps__step[aria-current="step"]),
 .at-steps__step[aria-current="step"],
 .at-steps__step-mark[data-color] {
   --dot-text: var(--ds-color-base-contrast-default);
@@ -191,7 +202,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  
+
   background: var(--ds-color-surface-tinted);
 
   border-radius: inherit;
@@ -204,13 +215,13 @@
  * Fade
  */
 .at-steps:is(
-  :not([data-fade]),
-  [data-fade="false"],
-  [data-fade="none"],
-  [data-fade="end"]:not([data-direction="up"]),
-  [data-fade="start"][data-direction="up"]
-)
-> .at-steps__step:first-child::before {
+    :not([data-fade]),
+    [data-fade="false"],
+    [data-fade="none"],
+    [data-fade="end"]:not([data-direction="up"]),
+    [data-fade="start"][data-direction="up"]
+  )
+  > .at-steps__step:first-child::before {
   display: none;
 }
 .at-steps:is(
@@ -237,9 +248,7 @@
   min-height: calc(var(--at-steps-dot-size) * 2);
   padding-block: var(--at-steps-padding);
   padding-inline: calc(
-      var(--at-steps-dot-size) +
-      var(--at-steps-gap) +
-      var(--at-steps-padding)
+      var(--at-steps-dot-size) + var(--at-steps-gap) + var(--at-steps-padding)
     )
     var(--at-steps-padding);
 }
@@ -248,26 +257,28 @@
   margin: 0;
   position: absolute;
 }
-.at-steps[data-direction]:not([data-direction="right"]) > .at-steps__step::before,
-.at-steps[data-direction]:not([data-direction="right"]) > .at-steps__step::after {
+.at-steps[data-direction]:not([data-direction="right"])
+  > .at-steps__step::before,
+.at-steps[data-direction]:not([data-direction="right"])
+  > .at-steps__step::after {
   background: linear-gradient(transparent, var(--dot-before));
   height: auto;
   margin-block: 0;
   width: var(--at-steps-stroke-size);
-  inset: calc(var(--at-steps-dot-size) * -1) var(--at-steps-padding)
-    100%;
+  inset: calc(var(--at-steps-dot-size) * -1) var(--at-steps-padding) 100%;
   translate: -50% var(--at-steps-padding);
 }
-.at-steps[data-direction]:not([data-direction="right"]) > .at-steps__step::after {
+.at-steps[data-direction]:not([data-direction="right"])
+  > .at-steps__step::after {
   inset-block: var(--at-steps-dot-size) calc(var(--at-steps-gap) * -1);
 
   background: linear-gradient(
-    var(--dot-after)
-      calc(100% - var(--at-steps-padding) - var(--at-steps-gap)),
+    var(--dot-after) calc(100% - var(--at-steps-padding) - var(--at-steps-gap)),
     transparent
   );
 }
-.at-steps[data-direction]:not([data-direction="right"]) > .at-steps__step:last-child::after {
+.at-steps[data-direction]:not([data-direction="right"])
+  > .at-steps__step:last-child::after {
   background: linear-gradient(var(--dot-after), transparent);
   inset-block-end: 0;
 }

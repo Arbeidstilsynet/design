@@ -3,8 +3,7 @@ import type { HTMLAttributes } from "react";
 import type { DefaultProps } from "../../types";
 
 export interface StepsStepDescriptionProps
-  extends DefaultProps<HTMLElement>, HTMLAttributes<HTMLElement> {
-}
+  extends DefaultProps<HTMLElement>, HTMLAttributes<HTMLElement> {}
 
 export function StepsStepDescription({
   className,

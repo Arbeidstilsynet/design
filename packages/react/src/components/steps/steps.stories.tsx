@@ -512,7 +512,8 @@ export const WithColors: Story = {
         {["info", "warning", "neutral"].map((color) => (
           <React.Fragment key={color}>
             <strong>
-              With <code>data-color="{color}"</code> and <code>aria-current="step"</code>:
+              With <code>data-color="{color}"</code> and{" "}
+              <code>aria-current="step"</code>:
             </strong>
             <Steps>
               <Steps.Step>
@@ -624,12 +625,15 @@ export const WithInteraction: Story = {
     return (
       <Steps>
         {[1, 2, 3, 4, 5, 6].map((step) => (
-          <Steps.Step aria-current={activeStep === step ? "step" : undefined} key={step}>
+          <Steps.Step
+            aria-current={activeStep === step ? "step" : undefined}
+            key={step}
+          >
             <button type="button" onClick={() => setActiveStep(step)}>
-            <Steps.StepMark data-color={step === 2 ? "warning" : undefined} />
-            <Steps.StepTitle>Steg {step}</Steps.StepTitle>
-            <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
-            <Steps.StepDetails>Detaljer</Steps.StepDetails>
+              <Steps.StepMark data-color={step === 2 ? "warning" : undefined} />
+              <Steps.StepTitle>Steg {step}</Steps.StepTitle>
+              <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+              <Steps.StepDetails>Detaljer</Steps.StepDetails>
             </button>
           </Steps.Step>
         ))}
@@ -652,7 +656,8 @@ export const Timeline: Story = {
         <Steps.StepMark>
           <HandshakeIcon />
         </Steps.StepMark>
-        <Steps.StepTitle>05.04.2025</Steps.StepTitle> Oppfølgingsmøte gjennomført
+        <Steps.StepTitle>05.04.2025</Steps.StepTitle> Oppfølgingsmøte
+        gjennomført
         <br />
         Donec sagittis et odio in consequat. Nullam rutrum erat in euismod
         scelerisque. Nullam imperdiet lorem mauris, ut dapibus sem efficitur a.
