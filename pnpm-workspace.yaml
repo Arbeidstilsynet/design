@@ -6,9 +6,24 @@ packages:
 allowBuilds:
   esbuild: false
 
+auditConfig:
+  ignoreGhsas:
+    # js-yaml@3.x used through @changesets/cli, not realistically exploitable without repo access
+    # intermediary deps would need overrides to resolve, wait and see if they get updates
+    # or wait for @changesets/cli v3 which upgrades intermediary @manypkg/get-packages to not depend on js-yaml
+    - GHSA-h67p-54hq-rp68
+
 autoInstallPeers: false
 
 minimumReleaseAge: 4320
+
+minimumReleaseAgeExclude:
+  - shell-quote@1.8.4
+  - esbuild@0.28.1
+  - js-yaml@4.1.2
+
+overrides:
+  esbuild: "0.28.1"
 
 trustPolicy: no-downgrade
 
