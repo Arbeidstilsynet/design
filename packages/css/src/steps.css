@@ -5,10 +5,10 @@
   --at-steps-bg: var(--ds-color-neutral-background-default);
   --at-steps-stroke-color: var(--ds-color-border-subtle);
   --at-steps-stroke-size: 2px;
-  --at-steps-line-active: var(--ds-color-accent-base-default);
+  --at-steps-line-active: var(--ds-color-base-default);
   --at-steps-line-faint: color-mix(
     in oklab,
-    var(--ds-color-accent-base-default) 30%,
+    var(--ds-color-base-default) 30%,
     transparent
   );
   --at-steps-icon-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M230 78 102 206a8 8 0 0 1-12 0l-56-56a8 8 0 0 1 12-12l50 51L218 66a8 8 0 0 1 12 12Z'/%3E%3C/svg%3E");
@@ -167,27 +167,37 @@
 .at-steps[data-direction="up"] > .at-steps__step[aria-current="step"] ~ .at-steps__step,
 .at-steps:not([data-direction="up"]) > .at-steps__step:has(~ .at-steps__step[aria-current="step"]),
 .at-steps__step[aria-current="step"],
-.at-steps__step[data-color] {
+.at-steps__step-mark[data-color] {
   --dot-text: var(--ds-color-base-contrast-default);
   --dot-fill: var(--ds-color-base-default);
 }
-.at-steps__step[data-color="danger"],
-.at-steps__step[data-color="warning"] {
+.at-steps__step-mark[data-color="danger"],
+.at-steps__step-mark[data-color="warning"] {
   --dot-icon: var(--at-steps-icon-close);
 }
-.at-steps__step[data-color="info"] {
+.at-steps__step-mark[data-color="info"] {
   --dot-icon: var(--at-steps-icon-info);
 }
 
 /*
- * Filled variant
+ * Filled step
  */
-.at-steps[data-variant="filled"] > .at-steps__step {
+.at-steps:has(.at-steps__step > .at-steps__fill) {
   --at-steps-padding: var(--ds-size-4);
 }
-.at-steps[data-variant="filled"] > .at-steps__step[aria-current="step"] {
+.at-steps__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
   background: var(--ds-color-surface-tinted);
-  --at-steps-bg: var(--ds-color-surface-tinted);
+
+  border-radius: inherit;
+
+  /** Push the div visually behind content of step */
+  z-index: -1;
 }
 
 /*
@@ -263,19 +273,19 @@
 }
 
 .at-steps__title {
-  color: var(--ds-color-accent-text-default);
+  color: var(--ds-color-text-default);
   font-size: var(--ds-font-size-4);
   font-weight: var(--ds-font-weight-semibold);
 }
 
 .at-steps__description {
   display: block;
-  color: var(--ds-color-neutral-text-default);
+  color: var(--ds-color-text-default);
   font-size: var(--ds-font-size-3);
 }
 
 .at-steps__details {
   display: block;
-  color: var(--ds-color-neutral-text-subtle);
+  color: var(--ds-color-text-subtle);
   font-size: var(--ds-font-size-2);
 }

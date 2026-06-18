@@ -175,10 +175,11 @@ export const WithDirection: Story = {
             <Steps.StepMark>
               <HeartIcon />
             </Steps.StepMark>
-            <Steps.StepTitle>Steg 1</Steps.StepTitle> Beskrivelse
+            <Steps.StepTitle>Steg 1</Steps.StepTitle>
+            <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
           </Steps.Step>
-          <Steps.Step data-color="danger">
-            <Steps.StepMark />
+          <Steps.Step>
+            <Steps.StepMark data-color="danger" />
             <Steps.StepTitle>Steg 2</Steps.StepTitle>
           </Steps.Step>
           <Steps.Step aria-current="step">
@@ -206,8 +207,8 @@ export const WithDirection: Story = {
             </Steps.StepMark>
             <Steps.StepTitle>Steg 1</Steps.StepTitle> Beskrivelse
           </Steps.Step>
-          <Steps.Step data-color="danger">
-            <Steps.StepMark />
+          <Steps.Step>
+            <Steps.StepMark data-color="danger" />
             <Steps.StepTitle>Steg 2</Steps.StepTitle>
             <br />
             Donec sagittis et odio in consequat. Nullam rutrum erat in euismod
@@ -477,8 +478,8 @@ export const WithColors: Story = {
             <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
             <Steps.StepDetails>Detaljer</Steps.StepDetails>
           </Steps.Step>
-          <Steps.Step data-color="danger">
-            <Steps.StepMark />
+          <Steps.Step>
+            <Steps.StepMark data-color="danger" />
             <Steps.StepTitle>Steg 2</Steps.StepTitle>
             <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
             <Steps.StepDetails>Detaljer</Steps.StepDetails>
@@ -489,8 +490,8 @@ export const WithColors: Story = {
             <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
             <Steps.StepDetails>Detaljer</Steps.StepDetails>
           </Steps.Step>
-          <Steps.Step data-color="warning">
-            <Steps.StepMark />
+          <Steps.Step>
+            <Steps.StepMark data-color="warning" />
             <Steps.StepTitle>Steg 4</Steps.StepTitle>
             <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
             <Steps.StepDetails>Detaljer</Steps.StepDetails>
@@ -520,8 +521,8 @@ export const WithColors: Story = {
                 <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
                 <Steps.StepDetails>Detaljer</Steps.StepDetails>
               </Steps.Step>
-              <Steps.Step data-color="danger">
-                <Steps.StepMark />
+              <Steps.Step>
+                <Steps.StepMark data-color="danger" />
                 <Steps.StepTitle>Steg 2</Steps.StepTitle>
                 <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
                 <Steps.StepDetails>Detaljer</Steps.StepDetails>
@@ -532,8 +533,8 @@ export const WithColors: Story = {
                 <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
                 <Steps.StepDetails>Detaljer</Steps.StepDetails>
               </Steps.Step>
-              <Steps.Step data-color={color} aria-current="step">
-                <Steps.StepMark />
+              <Steps.Step aria-current="step">
+                <Steps.StepMark data-color={color} />
                 <Steps.StepTitle>Steg 4</Steps.StepTitle>
                 <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
                 <Steps.StepDetails>Detaljer</Steps.StepDetails>
@@ -561,7 +562,7 @@ export const WithColors: Story = {
 export const WithVariantFilled: Story = {
   render: () => (
     <>
-      <Steps data-variant="filled">
+      <Steps>
         <Steps.Step>
           <Steps.StepMark />
           <Steps.StepTitle>Steg 1</Steps.StepTitle>
@@ -569,6 +570,7 @@ export const WithVariantFilled: Story = {
         </Steps.Step>
         <Steps.Step aria-current="step">
           <Steps.StepMark />
+          <Steps.StepFill />
           <Steps.StepTitle>Steg 2</Steps.StepTitle>
           <Steps.StepDescription>Donec et odio</Steps.StepDescription>
         </Steps.Step>
@@ -577,14 +579,15 @@ export const WithVariantFilled: Story = {
           <Steps.StepTitle>Steg 3</Steps.StepTitle>
         </Steps.Step>
       </Steps>
-      <Steps data-variant="filled" data-direction="down">
+      <Steps data-direction="down">
         <Steps.Step>
           <Steps.StepMark />
           <Steps.StepTitle>Steg 1</Steps.StepTitle>
           <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
         </Steps.Step>
-        <Steps.Step data-color="danger" aria-current="step">
-          <Steps.StepMark />
+        <Steps.Step aria-current="step">
+          <Steps.StepMark data-color="danger" />
+          <Steps.StepFill data-color="danger" />
           <Steps.StepTitle>Steg 2</Steps.StepTitle>
           <Steps.StepDescription>Donec et odio</Steps.StepDescription>
         </Steps.Step>
@@ -593,19 +596,20 @@ export const WithVariantFilled: Story = {
           <Steps.StepTitle>Steg 3</Steps.StepTitle>
         </Steps.Step>
       </Steps>
-      <Steps data-variant="filled" data-direction="up">
+      <Steps data-direction="up">
         <Steps.Step>
           <Steps.StepMark />
           <Steps.StepTitle>Steg 1</Steps.StepTitle>
           <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
         </Steps.Step>
-        <Steps.Step data-color="warning" aria-current="step">
-          <Steps.StepMark />
+        <Steps.Step aria-current="step">
+          <Steps.StepMark data-color="warning" />
+          <Steps.StepFill data-color="warning" />
           <Steps.StepTitle>Steg 2</Steps.StepTitle>
           <Steps.StepDescription>Donec et odio</Steps.StepDescription>
         </Steps.Step>
-        <Steps.Step data-color="danger">
-          <Steps.StepMark />
+        <Steps.Step>
+          <Steps.StepMark data-color="danger" />
           <Steps.StepTitle>Steg 3</Steps.StepTitle>
         </Steps.Step>
       </Steps>
@@ -650,13 +654,13 @@ export const Timeline: Story = {
   parameters: { showInOverview: true },
   render: () => (
     <Steps data-direction="up">
-      <Steps.Step data-color="main">
+      <Steps.Step>
         <Steps.StepMark>
           <HeartIcon />
         </Steps.StepMark>
         <Steps.StepTitle>06.04.2025</Steps.StepTitle> Enighet om løsning
       </Steps.Step>
-      <Steps.Step data-color="main">
+      <Steps.Step>
         <Steps.StepMark>
           <HandshakeIcon />
         </Steps.StepMark>
@@ -669,7 +673,7 @@ export const Timeline: Story = {
         molestie eleifend libero, et posuere magna semper non. Nullam dictum
         massa non nibh sagittis vestibulum.
       </Steps.Step>
-      <Steps.Step data-color="main">
+      <Steps.Step>
         <Steps.StepMark>
           <FilePlusIcon />
         </Steps.StepMark>
