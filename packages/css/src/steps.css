@@ -2,6 +2,7 @@
   --at-steps-dot-size: var(--ds-size-7);
   --at-steps-gap: var(--ds-size-4);
   --at-steps-padding: 0px;
+  --at-steps-bg: var(--ds-color-neutral-background-default);
   --at-steps-stroke-color: var(--ds-color-border-subtle);
   --at-steps-stroke-size: 2px;
   --at-steps-line-active: var(--ds-color-accent-base-default);
@@ -150,7 +151,7 @@
 }
 .at-steps__step[aria-current="step"] .at-steps__step-mark {
   box-shadow:
-    0 0 0 var(--at-steps-stroke-size) var(--dot-text),
+    0 0 0 var(--at-steps-stroke-size) var(--at-steps-bg),
     0 0 0 calc(var(--at-steps-stroke-size) * 2) var(--dot-fill);
 }
 
@@ -186,6 +187,7 @@
 }
 .at-steps[data-variant="filled"] > .at-steps__step[aria-current="step"] {
   background: var(--ds-color-surface-tinted);
+  --at-steps-bg: var(--ds-color-surface-tinted);
 }
 
 /*
