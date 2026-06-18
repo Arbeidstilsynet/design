@@ -303,10 +303,11 @@ export const WithDirection: Story = {
 /**
  * Demonstrates the `data-fade` prop which dims steps away from the active one.
  *
- * - No `data-fade`: all steps are equally visible.
- * - `data-fade`: both preceding and following steps are faded.
- * - `data-fade="start"`: only steps before the current one are faded.
- * - `data-fade="end"`: only steps after the current one are faded.
+ * - No `data-fade`: No fade effect is applied
+ * - `data-fade="start"`: Apply fade effect before first step
+ * - `data-fade="end"`: Apply fade effect after last step
+ * - `data-fade="both"`: Apply fade effect before first step and after last step
+ * - `data-fade="none"`: No fade effect is applied
  */
 export const WithFade: Story = {
   render: () => (
@@ -331,7 +332,7 @@ export const WithFade: Story = {
       <strong>
         With <code>data-fade</code>:
       </strong>
-      <Steps data-fade>
+      <Steps data-fade="both">
         <Steps.Step>
           <Steps.StepMark />
           <Steps.StepTitle>Steg 1</Steps.StepTitle>
@@ -394,7 +395,7 @@ export const WithFadeAndDirection: Story = {
         <strong>
           With <code>data-direction="down"</code> and <code>data-fade</code>:
         </strong>
-        <Steps data-fade data-direction="down">
+        <Steps data-fade="both" data-direction="down">
           <Steps.Step>
             <Steps.StepMark />
             <Steps.StepTitle>Steg 1</Steps.StepTitle>
@@ -449,7 +450,7 @@ export const WithFadeAndDirection: Story = {
         <strong>
           With <code>data-direction="up"</code> and <code>data-fade</code>:
         </strong>
-        <Steps data-fade data-direction="up">
+        <Steps data-fade="both" data-direction="up">
           <Steps.Step>
             <Steps.StepMark />
             <Steps.StepTitle>Steg 3</Steps.StepTitle>

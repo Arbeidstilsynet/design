@@ -14,14 +14,14 @@ export interface StepsProps
   "data-direction"?: "right" | "up" | "down";
 
   /**
-   * Fades out steps that are not the current one (`aria-current="step"`).
+   * Adds fade effect before first or after last step.
    *
-   * - `true` / `"true"`: fades both before and after the active step.
-   * - `"start"`: fades only the steps before the active step.
-   * - `"end"`: fades only the steps after the active step.
-   * - `"none"` / `false` / `"false"`: no fading (default).
+   * - `"both"`: Apply fade effect before first step and after last step.
+   * - `"start"`: Apply fade effect before first step.
+   * - `"end"`: Apply fade effect after last step.
+   * - `"none"`: No fade effect is applied.
    */
-  "data-fade"?: boolean | "true" | "false" | "none" | "start" | "end";
+  "data-fade"?: "start" | "end" | "both" | "none";
 
   /**
    * Set to `"complete"` to mark all steps as completed.

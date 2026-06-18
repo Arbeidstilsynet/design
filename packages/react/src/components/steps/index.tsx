@@ -29,7 +29,7 @@ export type { StepsStepTitleProps } from "./stepsStepTitle";
  * ## Props
  *
  * - `data-direction` — Layout direction: `"right"` (default, horizontal), `"down"`, or `"up"` (vertical)
- * - `data-fade` — Fades inactive steps: `true`, `"start"`, `"end"`, or `"none"`
+ * - `data-fade` — Fades inactive steps: `"start"`, `"end"`, `"both"`, or `"none"`
  * - `data-state` — Set to `"complete"` to mark all steps as finished
  *
  * Mark the active step with `aria-current="step"` on `Steps.Step`.
@@ -71,5 +71,6 @@ export {
   StepsStepDetails,
   StepsStepFill,
   StepsStepMark,
-  StepsStepTitle,
+  StepsStepTitle
 };
+
