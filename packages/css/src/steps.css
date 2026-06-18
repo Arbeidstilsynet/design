@@ -254,7 +254,7 @@
     )
     var(--at-steps-padding);
 }
-.at-steps[data-direction]:not([data-direction="right"]) > .at-steps__step mark {
+.at-steps[data-direction]:not([data-direction="right"]) > .at-steps__step .at-steps__step-mark {
   inset: var(--at-steps-padding);
   margin: 0;
   position: absolute;
