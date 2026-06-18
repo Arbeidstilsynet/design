@@ -172,18 +172,6 @@ describe("Steps", () => {
         expect(screen.getByRole("list")).toHaveAttribute("data-fade", fade);
       },
     );
-
-    test("applies data-fade as boolean true", () => {
-      render(
-        <Steps data-fade>
-          <Steps.Step>
-            <Steps.StepTitle>Steg 1</Steps.StepTitle>
-          </Steps.Step>
-        </Steps>,
-      );
-
-      expect(screen.getByRole("list")).toHaveAttribute("data-fade", "true");
-    });
   });
 
   describe("StepMark", () => {

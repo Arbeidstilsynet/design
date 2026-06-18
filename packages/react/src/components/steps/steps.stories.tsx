@@ -678,7 +678,9 @@ const InteractiveStepsComponent = () => {
           key={step}
         >
           <button type="button" onClick={() => setActiveStep(step)}>
-            <Steps.StepMark data-color={step === 2 ? "warning" : undefined} />
+            <Steps.StepMark
+              {...(step === 2 ? { "data-color": "warning" } : {})}
+            />
             <Steps.StepTitle>Steg {step}</Steps.StepTitle>
             <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
             <Steps.StepDetails>Detaljer</Steps.StepDetails>
