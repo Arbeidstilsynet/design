@@ -697,7 +697,7 @@ export const WithInteraction: Story = {
 export const Timeline: Story = {
   parameters: { showInOverview: true },
   render: () => (
-    <Steps data-direction="up" data-state="complete">
+    <Steps data-direction="up" data-state="complete" data-fade="start">
       <Steps.Step>
         <Steps.StepMark>
           <ExclamationmarkTriangleIcon />
