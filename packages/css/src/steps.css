@@ -1,5 +1,5 @@
 .at-steps {
-  --at-steps-dot-size: var(--ds-size-7);
+  --at-steps-dot-size: var(--ds-size-8);
   --at-steps-gap: var(--ds-size-4);
   --at-steps-padding: 0px;
   --at-steps-bg: var(--ds-color-neutral-background-default);
@@ -241,6 +241,8 @@
 .at-steps[data-direction]:not([data-direction="right"]) {
   flex-wrap: wrap;
   text-align: left;
+
+  --at-steps-gap: var(--ds-size-5);
   gap: var(--at-steps-gap);
 }
 .at-steps[data-direction]:not([data-direction="right"]) > .at-steps__step {
