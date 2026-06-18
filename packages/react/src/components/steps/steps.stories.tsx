@@ -70,6 +70,14 @@ const meta: Meta<typeof Steps> = {
   parameters: {
     layout: "padded",
   },
+  subcomponents: {
+    ["Steps.Step"]: Steps.Step,
+    ["Steps.StepMark"]: Steps.StepMark,
+    ["Steps.StepTitle"]: Steps.StepTitle,
+    ["Steps.StepDescription"]: Steps.StepDescription,
+    ["Steps.StepDetails"]: Steps.StepDetails,
+    ["Steps.StepFill"]: Steps.StepFill,
+  },
   decorators: [
     (Story) => (
       <Grid data-gap="14">
@@ -82,9 +90,13 @@ const meta: Meta<typeof Steps> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+/**
+ * Default Steps with all sub-components: `StepMark`, `StepTitle`, `StepDescription`, and `StepDetails`.
+ * The third step is marked as the current step with `aria-current="step"`.
+ */
 export const Default: Story = {
-  render: () => (
-    <Steps>
+  render: (args) => (
+    <Steps {...args}>
       <Steps.Step>
         <Steps.StepMark />
         <Steps.StepTitle>Steg 1</Steps.StepTitle>
@@ -125,6 +137,10 @@ export const Default: Story = {
   ),
 };
 
+/**
+ * All steps are marked as completed using `data-state="complete"`.
+ * Use this to indicate a finished process.
+ */
 export const WithStateComplete: Story = {
   render: () => (
     <Steps data-state="complete">
@@ -168,6 +184,13 @@ export const WithStateComplete: Story = {
   ),
 };
 
+/**
+ * Demonstrates all three `data-direction` values.
+ *
+ * - `"right"` (default): horizontal layout.
+ * - `"down"`: vertical layout, progressing top to bottom.
+ * - `"up"`: vertical layout, progressing bottom to top.
+ */
 export const WithDirection: Story = {
   render: () => (
     <Flex data-items="500" data-gap="14">
@@ -277,6 +300,14 @@ export const WithDirection: Story = {
   ),
 };
 
+/**
+ * Demonstrates the `data-fade` prop which dims steps away from the active one.
+ *
+ * - No `data-fade`: all steps are equally visible.
+ * - `data-fade`: both preceding and following steps are faded.
+ * - `data-fade="start"`: only steps before the current one are faded.
+ * - `data-fade="end"`: only steps after the current one are faded.
+ */
 export const WithFade: Story = {
   render: () => (
     <>
@@ -352,6 +383,10 @@ export const WithFade: Story = {
   ),
 };
 
+/**
+ * Combines `data-fade` with vertical `data-direction` values.
+ * Shows how fading works alongside `"down"` and `"up"` layouts.
+ */
 export const WithFadeAndDirection: Story = {
   render: () => (
     <Flex data-items="500" data-gap="14">
@@ -469,6 +504,10 @@ export const WithFadeAndDirection: Story = {
   ),
 };
 
+/**
+ * Uses `data-color` on individual `Steps.Step` or `Steps.StepMark` elements
+ * to highlight specific steps (e.g., warnings, errors, or informational steps).
+ */
 export const WithColors: Story = {
   render: () => (
     <Flex data-items="500" data-gap="14">
@@ -565,6 +604,10 @@ export const WithColors: Story = {
   ),
 };
 
+/**
+ * Uses `Steps.StepFill` inside the active step to render a filled progress indicator
+ * instead of the default dot mark.
+ */
 export const WithVariantFilled: Story = {
   render: () => (
     <>
@@ -623,6 +666,10 @@ export const WithVariantFilled: Story = {
   ),
 };
 
+/**
+ * Interactive example where clicking a step mark sets it as the active step.
+ * Demonstrates controlled usage with `aria-current="step"`.
+ */
 export const WithInteraction: Story = {
   render: () => {
     const [activeStep, setActiveStep] = React.useState(2);
