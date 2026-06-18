@@ -71,6 +71,5 @@ export {
   StepsStepDetails,
   StepsStepFill,
   StepsStepMark,
-  StepsStepTitle
+  StepsStepTitle,
 };
-
