@@ -26,13 +26,13 @@
   justify-content: center;
   gap: var(--ds-size-0);
   border-radius: var(--ds-border-radius-default);
-  border: 2px dashed var(--ds-color-accent-border-default);
-  background-color: var(--ds-color-neutral-surface-default);
+  border: 2px dashed var(--ds-color-border-default);
+  background-color: var(--ds-color-surface-default);
   color: var(--ds-color-text-default);
   cursor: pointer;
 
   &:hover:not(:disabled) {
-    background-color: var(--ds-color-accent-surface-tinted);
+    background-color: var(--ds-color-surface-tinted);
   }
 
   & span {
@@ -61,8 +61,8 @@
 
   &.is-drag {
     border-style: solid; /* switch from dashed while dragging */
-    border-color: var(--ds-color-accent-border-default);
-    background-color: var(--ds-color-accent-surface-tinted);
+    border-color: var(--ds-color-border-default);
+    background-color: var(--ds-color-surface-tinted);
   }
 }
 
@@ -119,7 +119,7 @@
   }
 
   tr:not([data-error="true"]):has(.at-filepicker-files-file__name:hover) {
-    background: var(--ds-color-neutral-surface-tinted);
+    background: var(--ds-color-surface-tinted);
   }
 }
 

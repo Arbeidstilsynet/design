@@ -37,11 +37,7 @@ export function FilePickerFiles({
   }
 
   return (
-    <Table
-      data-color="neutral"
-      className={clsx("at-filepicker-files-table", className)}
-      {...rest}
-    >
+    <Table className={clsx("at-filepicker-files-table", className)} {...rest}>
       <Table.Head>
         <Table.Row>
           <Table.HeaderCell title={columnNames[0]}>

@@ -252,6 +252,24 @@ describe("FilePicker", () => {
     expect(element).toHaveAttribute("title", "foo");
   });
 
+  test("uses the default color context and allows overrides", () => {
+    const { container, rerender } = render(
+      <FilePicker {...defaultProps}>
+        <FilePicker.Dropzone />
+      </FilePicker>,
+    );
+
+    expect(container.firstChild).not.toHaveAttribute("data-color");
+
+    rerender(
+      <FilePicker {...defaultProps} data-color="neutral">
+        <FilePicker.Dropzone />
+      </FilePicker>,
+    );
+
+    expect(container.firstChild).toHaveAttribute("data-color", "neutral");
+  });
+
   test("handles null files gracefully", () => {
     render(
       <FilePicker {...defaultProps} files={null}>
