@@ -618,36 +618,24 @@ export const WithVariantFilled: Story = {
 };
 
 export const WithInteraction: Story = {
-  render: () => (
-    <Steps>
-      <Steps.Step>
-        <a href="#none">
-          <Steps.StepMark />
-          <Steps.StepTitle>Steg 1</Steps.StepTitle>
-          <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
-        </a>
-      </Steps.Step>
-      <Steps.Step>
-        <a href="#none">
-          <Steps.StepMark />
-          <Steps.StepTitle>Steg 2</Steps.StepTitle>
-          <Steps.StepDescription>Donec et odio</Steps.StepDescription>
-        </a>
-      </Steps.Step>
-      <Steps.Step aria-current="step">
-        <button type="button">
-          <Steps.StepMark />
-          <Steps.StepTitle>Steg 3</Steps.StepTitle>
-        </button>
-      </Steps.Step>
-      <Steps.Step>
-        <button type="button">
-          <Steps.StepMark />
-          <Steps.StepTitle>Steg 4</Steps.StepTitle>
-        </button>
-      </Steps.Step>
-    </Steps>
-  ),
+  render: () => {
+    const [activeStep, setActiveStep] = React.useState(2);
+
+    return (
+      <Steps>
+        {[1, 2, 3, 4, 5, 6].map((step) => (
+          <Steps.Step aria-current={activeStep === step ? "step" : undefined} key={step}>
+            <button type="button" onClick={() => setActiveStep(step)}>
+            <Steps.StepMark data-color={step === 2 ? "warning" : undefined} />
+            <Steps.StepTitle>Steg {step}</Steps.StepTitle>
+            <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+            <Steps.StepDetails>Detaljer</Steps.StepDetails>
+            </button>
+          </Steps.Step>
+        ))}
+      </Steps>
+    );
+  },
 };
 
 export const Timeline: Story = {

@@ -14,7 +14,7 @@ export interface DefaultProps<TRef> {
    * Changes color for descendant Designsystemet components.
    * Select from predefined colors and colors defined using theme.designsystemet.no.
    */
-  "data-color"?: Color;
+  "data-color"?: Color | undefined;
 }
 
 export type { Color, Size };
