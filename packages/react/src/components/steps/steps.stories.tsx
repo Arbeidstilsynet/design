@@ -5,7 +5,7 @@ import {
   PersonChatIcon,
 } from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import React, { type ComponentPropsWithoutRef } from "react";
+import React, { useState, type ComponentPropsWithoutRef } from "react";
 import { Steps } from "..";
 
 type StoryLayoutProps = ComponentPropsWithoutRef<"div"> & {
@@ -667,13 +667,8 @@ export const WithVariantFilled: Story = {
   ),
 };
 
-/**
- * Interactive example where clicking a step mark sets it as the active step.
- * Demonstrates controlled usage with `aria-current="step"`.
- */
-export const WithInteraction: Story = {
-  render: () => {
-    const [activeStep, setActiveStep] = React.useState(2);
+const InteractiveStepsComponent = () => {
+    const [activeStep, setActiveStep] = useState(2);
 
     return (
       <Steps>
@@ -692,7 +687,14 @@ export const WithInteraction: Story = {
         ))}
       </Steps>
     );
-  },
+}
+
+/**
+ * Interactive example where clicking a step mark sets it as the active step.
+ * Demonstrates controlled usage with `aria-current="step"`.
+ */
+export const WithInteraction: Story = {
+  render: () => <InteractiveStepsComponent />,
 };
 
 export const Timeline: Story = {
