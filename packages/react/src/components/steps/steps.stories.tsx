@@ -1,6 +1,6 @@
 import { FilePlusIcon, HandshakeIcon, HeartIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import type { ComponentPropsWithoutRef } from "react";
+import React, { type ComponentPropsWithoutRef } from "react";
 import { Steps } from "..";
 
 type StoryLayoutProps = ComponentPropsWithoutRef<"div"> & {
@@ -465,32 +465,96 @@ export const WithFadeAndDirection: Story = {
 
 export const WithColors: Story = {
   render: () => (
-    <Steps>
-      <Steps.Step>
-        <Steps.StepMark />
-        <Steps.StepTitle>Steg 1</Steps.StepTitle>
-        <br />
-        <small>Beskrivelse</small>
-      </Steps.Step>
-      <Steps.Step data-color="danger">
-        <Steps.StepMark />
-        <Steps.StepTitle>Steg 2</Steps.StepTitle>
-        <br />
-        <small>Donec et odio</small>
-      </Steps.Step>
-      <Steps.Step aria-current="step">
-        <Steps.StepMark />
-        <Steps.StepTitle>Steg 3</Steps.StepTitle>
-      </Steps.Step>
-      <Steps.Step data-color="warning">
-        <Steps.StepMark />
-        <Steps.StepTitle>Steg 4</Steps.StepTitle>
-      </Steps.Step>
-      <Steps.Step>
-        <Steps.StepMark />
-        <Steps.StepTitle>Steg 5</Steps.StepTitle>
-      </Steps.Step>
-    </Steps>
+    <Flex data-items="500" data-gap="14">
+      <Grid data-gap="14">
+        <strong>
+          With <code>data-color="warning"</code>:
+        </strong>
+        <Steps>
+          <Steps.Step>
+            <Steps.StepMark />
+            <Steps.StepTitle>Steg 1</Steps.StepTitle>
+            <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+            <Steps.StepDetails>Detaljer</Steps.StepDetails>
+          </Steps.Step>
+          <Steps.Step data-color="danger">
+            <Steps.StepMark />
+            <Steps.StepTitle>Steg 2</Steps.StepTitle>
+            <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+            <Steps.StepDetails>Detaljer</Steps.StepDetails>
+          </Steps.Step>
+          <Steps.Step aria-current="step">
+            <Steps.StepMark />
+            <Steps.StepTitle>Steg 3</Steps.StepTitle>
+            <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+            <Steps.StepDetails>Detaljer</Steps.StepDetails>
+          </Steps.Step>
+          <Steps.Step data-color="warning">
+            <Steps.StepMark />
+            <Steps.StepTitle>Steg 4</Steps.StepTitle>
+            <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+            <Steps.StepDetails>Detaljer</Steps.StepDetails>
+          </Steps.Step>
+          <Steps.Step>
+            <Steps.StepMark />
+            <Steps.StepTitle>Steg 5</Steps.StepTitle>
+            <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+            <Steps.StepDetails>Detaljer</Steps.StepDetails>
+          </Steps.Step>
+          <Steps.Step>
+            <Steps.StepMark />
+            <Steps.StepTitle>Steg 6</Steps.StepTitle>
+            <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+            <Steps.StepDetails>Detaljer</Steps.StepDetails>
+          </Steps.Step>
+        </Steps>
+        {["info", "warning", "neutral"].map((color) => (
+          <React.Fragment key={color}>
+            <strong>
+              With <code>data-color="{color}"</code> and <code>aria-current="step"</code>:
+            </strong>
+            <Steps>
+              <Steps.Step>
+                <Steps.StepMark />
+                <Steps.StepTitle>Steg 1</Steps.StepTitle>
+                <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+                <Steps.StepDetails>Detaljer</Steps.StepDetails>
+              </Steps.Step>
+              <Steps.Step data-color="danger">
+                <Steps.StepMark />
+                <Steps.StepTitle>Steg 2</Steps.StepTitle>
+                <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+                <Steps.StepDetails>Detaljer</Steps.StepDetails>
+              </Steps.Step>
+              <Steps.Step>
+                <Steps.StepMark />
+                <Steps.StepTitle>Steg 3</Steps.StepTitle>
+                <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+                <Steps.StepDetails>Detaljer</Steps.StepDetails>
+              </Steps.Step>
+              <Steps.Step data-color={color} aria-current="step">
+                <Steps.StepMark />
+                <Steps.StepTitle>Steg 4</Steps.StepTitle>
+                <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+                <Steps.StepDetails>Detaljer</Steps.StepDetails>
+              </Steps.Step>
+              <Steps.Step>
+                <Steps.StepMark />
+                <Steps.StepTitle>Steg 5</Steps.StepTitle>
+                <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+                <Steps.StepDetails>Detaljer</Steps.StepDetails>
+              </Steps.Step>
+              <Steps.Step>
+                <Steps.StepMark />
+                <Steps.StepTitle>Steg 6</Steps.StepTitle>
+                <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
+                <Steps.StepDetails>Detaljer</Steps.StepDetails>
+              </Steps.Step>
+            </Steps>
+          </React.Fragment>
+        ))}
+      </Grid>
+    </Flex>
   ),
 };
 
@@ -535,7 +599,7 @@ export const WithVariantFilled: Story = {
           <Steps.StepTitle>Steg 1</Steps.StepTitle>
           <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
         </Steps.Step>
-        <Steps.Step data-color="danger" aria-current="step">
+        <Steps.Step data-color="warning" aria-current="step">
           <Steps.StepMark />
           <Steps.StepTitle>Steg 2</Steps.StepTitle>
           <Steps.StepDescription>Donec et odio</Steps.StepDescription>
