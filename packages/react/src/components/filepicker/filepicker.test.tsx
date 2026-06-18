@@ -162,6 +162,25 @@ describe("FilePicker", () => {
     expect(removeButton).toBeDisabled();
   });
 
+  test("uses danger color context on remove buttons", () => {
+    const files = [{ id: 1, file: createMockFileInKb("document.pdf", 1024) }];
+
+    render(
+      <FilePicker {...defaultProps} files={files}>
+        <FilePicker.Files />
+      </FilePicker>,
+    );
+
+    const removeButton = screen.getByRole("button", {
+      name: "Remove document.pdf",
+    });
+    expect(removeButton).toHaveAttribute("data-color", "danger");
+    expect(removeButton.closest("td")).not.toHaveAttribute(
+      "data-color",
+      "danger",
+    );
+  });
+
   test("disables dropzone when disabled", () => {
     render(
       <FilePicker {...defaultProps} disabled>

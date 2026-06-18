@@ -72,8 +72,9 @@ export function FilePickerFiles({
                 </Link>
               </Table.Cell>
               <Table.Cell title={size}>{size}</Table.Cell>
-              <Table.Cell data-color="danger">
+              <Table.Cell>
                 <Button
+                  data-color="danger"
                   variant="tertiary"
                   disabled={disabled}
                   aria-label={`Remove ${file.name}`}

@@ -1,5 +1,5 @@
 ---
-"@arbeidstilsynet/design-css": patch
+"@arbeidstilsynet/design-react": patch
 ---
 
-**FilePicker**: Use the standard danger color for file remove buttons in the files table.
+**FilePicker**: Use the standard danger color context for file remove buttons in the files table.

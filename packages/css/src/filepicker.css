@@ -142,9 +142,6 @@
 }
 
 .at-filepicker-files-file__button {
-  /* Keep the action button on the cell color context instead of the table text color. */
-  --dsc-button-color: var(--ds-color-text-default);
-  --dsc-button-color--hover: var(--ds-color-text-default);
   --dsc-button-padding: var(--ds-size-1) var(--ds-size-4);
   min-height: unset;
 }
