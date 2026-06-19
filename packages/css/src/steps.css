@@ -360,11 +360,12 @@
 /*
  * Disabled
  */
-.at-steps__step[data-disabled] {
+.at-steps__step:has(> button:disabled:only-child, > a[disabled]:only-child) {
   opacity: 0.4;
+}
 
-  & > :is(a, button) {
-    pointer-events: none;
-    cursor: default;
-  }
+.at-steps__step > button:disabled:only-child,
+.at-steps__step > a[disabled]:only-child {
+  pointer-events: none;
+  cursor: default;
 }
