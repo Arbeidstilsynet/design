@@ -103,7 +103,7 @@
 }
 
 /*
- * Interaction 
+ * Interaction
  */
 .at-steps__step > :is(a, button):not([hidden]):only-child {
   background: none;
