@@ -2,7 +2,7 @@
   "$schema": "./node_modules/oxlint/configuration_schema.json",
   "ignorePatterns": [
     // ignore generated files
-    "packages/theme/brand/colors.d.ts",
+    "packages/theme/brand/**/*",
   ],
   "plugins": ["oxc", "eslint", "typescript", "unicorn", "vitest"],
   "categories": {
