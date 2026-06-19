@@ -327,7 +327,7 @@ describe("Steps", () => {
 
     test("button inside a step fires onClick when clicked", async () => {
       const user = userEvent.setup();
-      const onClick = vi.fn();
+      const onClick = vi.fn<() => void>();
 
       render(
         <Steps>
@@ -346,7 +346,7 @@ describe("Steps", () => {
 
     test("button inside a step can be activated with Enter key", async () => {
       const user = userEvent.setup();
-      const onClick = vi.fn();
+      const onClick = vi.fn<() => void>();
 
       render(
         <Steps>
@@ -406,7 +406,7 @@ describe("Steps", () => {
 
     test("disabled button inside a disabled step cannot be clicked", async () => {
       const user = userEvent.setup();
-      const onClick = vi.fn();
+      const onClick = vi.fn<() => void>();
 
       render(
         <Steps>
