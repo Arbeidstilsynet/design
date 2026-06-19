@@ -29,7 +29,7 @@
     "build": "del-cli ./dist && postcss ./src/*.css --base . --dir ./dist && tsx ./scripts/copy-digdir-css.ts"
   },
   "dependencies": {
-    "@digdir/designsystemet-css": "1.13.3"
+    "@digdir/designsystemet-css": "1.14.0"
   },
   "devDependencies": {
     "@types/node": "24.13.1",

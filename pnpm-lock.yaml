@@ -21,8 +21,8 @@ importers:
         specifier: 6.1.0
         version: 6.1.0
       '@digdir/designsystemet':
-        specifier: 1.13.3
-        version: 1.13.3
+        specifier: 1.14.0
+        version: 1.14.0
       '@scaleway/changesets-renovate':
         specifier: 3.0.3
         version: 3.0.3
@@ -133,8 +133,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.13.3
-        version: 1.13.3
+        specifier: 1.14.0
+        version: 1.14.0
     devDependencies:
       '@types/node':
         specifier: 24.13.1
@@ -167,11 +167,11 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.13.3
-        version: 1.13.3(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: 1.14.0
+        version: 1.14.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@digdir/designsystemet-types':
-        specifier: 1.13.3
-        version: 1.13.3
+        specifier: 1.14.0
+        version: 1.14.0
       '@navikt/aksel-icons':
         specifier: ^8.11.1
         version: 8.11.1
@@ -420,23 +420,23 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.1.1
 
-  '@digdir/designsystemet-css@1.13.3':
-    resolution: {integrity: sha512-ZtuygHy9xm6DVBi59pGKdbiR7vPNcwHx6e4E3xRgxL0nT6262vbYpaU+woiMS0a+krPpvkJ6K6CBmNcIqsV8IQ==}
+  '@digdir/designsystemet-css@1.14.0':
+    resolution: {integrity: sha512-qAIpcrFgO80p5TrVWcRUC8xO1ZAEp1j39kQ+WLyBuM/BBsgLXBZVIUaju3ZI1rsQFNyY/QZ9CKQslnoOVAeCkQ==}
 
-  '@digdir/designsystemet-react@1.13.3':
-    resolution: {integrity: sha512-RwCrXiKxvFMLJAwtpiRl26PHecRlwXFu1155vJE8oVuxY1nFW/5xqUbBtuX3MsSBoy6SN2byxN22hoJhJC4q/Q==}
+  '@digdir/designsystemet-react@1.14.0':
+    resolution: {integrity: sha512-m4lYxbWv0bY5ayg0L+DueSrrhk2W+A0ovs443MteABwcx6pLDYPQMVl0FGZ/Wtn2gB92ZivvWuVhUxdom13dKg==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet-types@1.13.3':
-    resolution: {integrity: sha512-yGhZoQmHhRmUGw8isyS2k3xgtI8yB+7s2wWnstdemVpls+SSZmDs3g1d3+Cj16PNNOnevDUDS6oxd+txF1zGBQ==}
+  '@digdir/designsystemet-types@1.14.0':
+    resolution: {integrity: sha512-d/JZhwebAgclFsE7ax0Z8mWotEk3GE4e9+iC8Cq8EN5BQ+bOptwFrVipSrL+NAt8/7AX9WzrnAScPuxCb4vvgQ==}
 
-  '@digdir/designsystemet-web@1.13.3':
-    resolution: {integrity: sha512-lzyMa7uIdbd5t5C74GffZIahzQyoidJCD/eiUQXustVvI/2JxNP36rTyM6QRZcsfNMr3I5s0hewGBsGhq/ab2w==}
+  '@digdir/designsystemet-web@1.14.0':
+    resolution: {integrity: sha512-dmUnV/0wzTOSPnSGqQwjYyneuO+/QqfugAr2SP1N1m/VzfMal3Y5hD+AkDWWzWhJ7EJrhGtYwG5JVRM8iYuVeQ==}
 
-  '@digdir/designsystemet@1.13.3':
-    resolution: {integrity: sha512-Clr56SrOku6VaiUmAKkXM/e5Xvqrkp6eFdlLYto//rWjkbQnlLHkKu842H4ae9x0HSxPHXmXtuq6SH0zoq3FXA==}
+  '@digdir/designsystemet@1.14.0':
+    resolution: {integrity: sha512-y+CWrrjzlEBbu0DmcdhwC5167rz+l5qUIb0l4dLMkxIrkQKXSC0dt/aoxATFsHhVTehbKuYUrGZdCkZTW+/bSA==}
     engines: {node: '>=20.20.2'}
     hasBin: true
 
@@ -1344,26 +1344,8 @@ packages:
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
 
-  '@radix-ui/react-compose-refs@1.1.2':
-    resolution: {integrity: sha512-z4eqJvfiNnFMHIIvXP3CY57y2WJs5g2v3X0zm9mEJkrkNv4rDxu+sg9Jh8EkXyeqBkB7SOcboo9dMVqhyrACIg==}
-    peerDependencies:
-      '@types/react': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-
   '@radix-ui/react-compose-refs@1.1.3':
     resolution: {integrity: sha512-rYOP8OMnuuPMQF1uhPVlGNcCDlkokKqGFE3JcxFViIkAXP7EvFWUliJAstrapypaBLJNHbZL6jGhbVDGTwmVhA==}
-    peerDependencies:
-      '@types/react': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-
-  '@radix-ui/react-slot@1.2.4':
-    resolution: {integrity: sha512-Jl+bCv8HxKnlTLVrcDE8zTMJ09R9/ukw4qBs/oZClOfoQk/cOTbDn+NceXfV7j09YPVQUryJPHurafcSg6EVKA==}
     peerDependencies:
       '@types/react': '*'
       react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
@@ -1749,11 +1731,11 @@ packages:
     resolution: {integrity: sha512-EbGRQg4FhrmwLodl+t3JNAnXHWVr9Vp+Zl1QBZVPY4ByfkzIT8cX3K6QWODHtkIZqqJVEWvhHSx3v5PDHsaQag==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@u-elements/u-combobox@1.0.7':
-    resolution: {integrity: sha512-rueG+Wof9ycmbjIW2omS4bLite5BkH87SWfkBrvSjrR1GWn4wgpjnUQ1lORDRalYcPYlgFWy2uGFEqqKPx3Yqw==}
+  '@u-elements/u-combobox@2.0.4':
+    resolution: {integrity: sha512-+X4w54dgySFJWer2n5Q5wYm48vSYW2kiM0fibjFINU8hXeejf+A4qYy4s56g9StHyH3b2Ar/2ZEWgZALGE2zLA==}
 
-  '@u-elements/u-datalist@1.1.0':
-    resolution: {integrity: sha512-t8H3OddziXmq0YBuXodVWnvRi56WW4sfbJEIO1fx4i39sZ0s/0xjHBsoAsTZkb9mXJEtpgrsH8IkDYP0ZSgSXQ==}
+  '@u-elements/u-datalist@2.0.1':
+    resolution: {integrity: sha512-xfbSiTZApvbqCt6W3LUtoyAArxOYq17Em9mYyjStiq5/XpshTVsN1JkqSqo+OjVOwDieggyAQsRwgloZgtHB7Q==}
 
   '@u-elements/u-details@1.0.0':
     resolution: {integrity: sha512-CA0w0VTH/vWWouFWEw7XIws3RUCBm2dh7ity+sbDXgpc6yz5NkoMpeDTdB/DHpI+/YInULz0XLOTrw8b7KX3Qg==}
@@ -4218,18 +4200,18 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.1
 
-  '@digdir/designsystemet-css@1.13.3':
+  '@digdir/designsystemet-css@1.14.0':
     dependencies:
-      '@digdir/designsystemet-types': 1.13.3
+      '@digdir/designsystemet-types': 1.14.0
 
-  '@digdir/designsystemet-react@1.13.3(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@digdir/designsystemet-react@1.14.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@digdir/designsystemet-types': 1.13.3
-      '@digdir/designsystemet-web': 1.13.3
+      '@digdir/designsystemet-types': 1.14.0
+      '@digdir/designsystemet-web': 1.14.0
       '@floating-ui/dom': 1.7.6
       '@floating-ui/react': 0.26.23(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@navikt/aksel-icons': 8.11.1
-      '@radix-ui/react-slot': 1.2.4(@types/react@19.2.17)(react@19.2.7)
+      '@radix-ui/react-slot': 1.2.5(@types/react@19.2.17)(react@19.2.7)
       '@tanstack/react-virtual': 3.14.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       clsx: 2.1.1
       react: 19.2.7
@@ -4237,20 +4219,20 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet-types@1.13.3': {}
+  '@digdir/designsystemet-types@1.14.0': {}
 
-  '@digdir/designsystemet-web@1.13.3':
+  '@digdir/designsystemet-web@1.14.0':
     dependencies:
       '@floating-ui/dom': 1.7.6
-      '@u-elements/u-combobox': 1.0.7
-      '@u-elements/u-datalist': 1.1.0
+      '@u-elements/u-combobox': 2.0.4
+      '@u-elements/u-datalist': 2.0.1
       '@u-elements/u-details': 1.0.0
       '@u-elements/u-tabs': 1.0.3
 
-  '@digdir/designsystemet@1.13.3':
+  '@digdir/designsystemet@1.14.0':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.3)
-      '@digdir/designsystemet-types': 1.13.3
+      '@digdir/designsystemet-types': 1.14.0
       '@tokens-studio/sd-transforms': 2.0.3(style-dictionary@5.4.3)
       chroma-js: 3.2.0
       colorjs.io: 0.6.1
@@ -4882,21 +4864,8 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@radix-ui/react-compose-refs@1.1.2(@types/react@19.2.17)(react@19.2.7)':
-    dependencies:
-      react: 19.2.7
-    optionalDependencies:
-      '@types/react': 19.2.17
-
   '@radix-ui/react-compose-refs@1.1.3(@types/react@19.2.17)(react@19.2.7)':
     dependencies:
-      react: 19.2.7
-    optionalDependencies:
-      '@types/react': 19.2.17
-
-  '@radix-ui/react-slot@1.2.4(@types/react@19.2.17)(react@19.2.7)':
-    dependencies:
-      '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.2.17)(react@19.2.7)
       react: 19.2.7
     optionalDependencies:
       '@types/react': 19.2.17
@@ -5266,9 +5235,9 @@ snapshots:
       '@typescript-eslint/types': 8.60.1
       eslint-visitor-keys: 5.0.1
 
-  '@u-elements/u-combobox@1.0.7': {}
+  '@u-elements/u-combobox@2.0.4': {}
 
-  '@u-elements/u-datalist@1.1.0': {}
+  '@u-elements/u-datalist@2.0.1': {}
 
   '@u-elements/u-details@1.0.0': {}
 
