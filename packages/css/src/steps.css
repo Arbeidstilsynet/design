@@ -16,8 +16,15 @@
     var(--ds-color-base-default) 30%,
     transparent
   );
-  --at-steps-icon-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M230 78 102 206a8 8 0 0 1-12 0l-56-56a8 8 0 0 1 12-12l50 51L218 66a8 8 0 0 1 12 12Z'/%3E%3C/svg%3E");
-  --at-steps-icon-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M205.7 194.3a8 8 0 0 1-11.4 11.4L128 139.3l-66.3 66.4a8 8 0 0 1-11.4-11.4l66.4-66.3-66.4-66.3a8 8 0 0 1 11.4-11.4l66.3 66.4 66.3-66.4a8 8 0 0 1 11.4 11.4L139.3 128Z'/%3E%3C/svg%3E");
+
+  /* Temporary value, which is displayed in Storybook docs */
+  --at-steps-icon-check: url("data:image/svg+xml, <svg />");
+  --at-steps-icon-close: url("data:image/svg+xml, <svg />");
+  --at-steps-icon-info: url("data:image/svg+xml, <svg />");
+  
+  /** Actual icons */
+  --at-steps-icon-check: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M13.3144 5.12704C13.5895 4.81749 14.0634 4.78947 14.373 5.06454C14.6824 5.33971 14.7105 5.81358 14.4355 6.12313L8.43547 12.8731C8.29835 13.0274 8.10365 13.1189 7.89738 13.1251C7.69096 13.1312 7.4907 13.0514 7.34465 12.9054L3.59465 9.15536C3.30177 8.86248 3.3018 8.38771 3.59465 8.09481C3.88754 7.80192 4.3623 7.80192 4.65519 8.09481L7.8427 11.2823L13.3144 5.12704Z'/%3E%3C/svg%3E");
+  --at-steps-icon-close: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18'%3E%3Cpath d='M12.9697 3.96967C13.2626 3.67678 13.7373 3.67678 14.0302 3.96967C14.3231 4.26256 14.3231 4.73732 14.0302 5.03022L10.0605 8.99994L14.0302 12.9697C14.3231 13.2626 14.3231 13.7373 14.0302 14.0302C13.7373 14.3231 13.2626 14.3231 12.9697 14.0302L8.99994 10.0605L5.03022 14.0302C4.73732 14.3231 4.26256 14.3231 3.96967 14.0302C3.67678 13.7373 3.67678 13.2626 3.96967 12.9697L7.9394 8.99994L3.96967 5.03022C3.67678 4.73732 3.67678 4.26256 3.96967 3.96967C4.26256 3.67678 4.73732 3.67678 5.03022 3.96967L8.99994 7.9394L12.9697 3.96967Z'/%3E%3C/svg%3E");
   --at-steps-icon-info: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath d='M128 24a16 16 0 0 1 16 16v104a16 16 0 0 1-32 0V40a16 16 0 0 1 16-16Zm0 176a20 20 0 1 0 20 20 20 20 0 0 0-20-20Z'/%3E%3C/svg%3E");
 
   list-style: none;
@@ -98,8 +105,14 @@
 .at-steps__step-mark:empty::before {
   display: block;
   fill: currentColor;
-  width: 75%;
-  height: 75%;
+  /*
+   * Icon (18px) inside the dot's bounding box (--ds-size-8 = 28px).
+   * Sized off the dot variable rather than a percentage, because a percentage
+   * resolves against the mark's content box (28px − 2×2px border = 24px), which
+   * would render the icon smaller than intended.
+   */
+  width: calc(var(--at-steps-dot-size) * 18 / 28);
+  height: calc(var(--at-steps-dot-size) * 18 / 28);
 }
 .at-steps__step-mark:empty::before {
   background: currentColor;
