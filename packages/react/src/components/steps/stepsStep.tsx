@@ -5,7 +5,12 @@ import type { DefaultProps } from "../../types";
 export interface StepsStepProps
   extends DefaultProps<HTMLLIElement>, HTMLAttributes<HTMLLIElement> {
   /**
-   * When true, the step is non-interactive and visually faint.
+   * When true, the step appears visually faint via `data-disabled`.
+   *
+   * This only affects appearance. To actually disable an interactive step,
+   * also disable the element inside it — e.g. `disabled` on a `<button>` or
+   * `aria-disabled` on an `<a>`. (`aria-disabled` is not valid on the `<li>`
+   * itself.)
    */
   disabled?: boolean;
 
@@ -38,7 +43,6 @@ export function StepsStep({
     <li
       className={clsx("at-steps__step", className)}
       data-disabled={disabled || undefined}
-      aria-disabled={disabled || undefined}
       {...rest}
     />
   );

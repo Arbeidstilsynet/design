@@ -366,7 +366,7 @@ describe("Steps", () => {
   });
 
   describe("disabled", () => {
-    test("sets aria-disabled on the step list item", () => {
+    test("does not set aria-disabled on the step list item", () => {
       render(
         <Steps>
           <Steps.Step disabled>
@@ -375,10 +375,9 @@ describe("Steps", () => {
         </Steps>,
       );
 
-      expect(screen.getByRole("listitem")).toHaveAttribute(
-        "aria-disabled",
-        "true",
-      );
+      // aria-disabled is not valid on the implicit `listitem` role, so the
+      // disabled appearance is conveyed via data-disabled instead.
+      expect(screen.getByRole("listitem")).not.toHaveAttribute("aria-disabled");
     });
 
     test("sets data-disabled on the step list item", () => {
