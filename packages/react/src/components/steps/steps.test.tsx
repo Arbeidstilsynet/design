@@ -53,20 +53,6 @@ describe("Steps", () => {
     expect(screen.getByText("Detaljer")).toBeInTheDocument();
   });
 
-  test("renders StepFill inside a step", () => {
-    const { container } = render(
-      <Steps>
-        <Steps.Step aria-current="step">
-          <Steps.StepMark />
-          <Steps.StepFill />
-          <Steps.StepTitle>Steg 1</Steps.StepTitle>
-        </Steps.Step>
-      </Steps>,
-    );
-
-    expect(container.querySelector(".at-steps__fill")).toBeInTheDocument();
-  });
-
   test("passes through HTML attributes to the list", () => {
     render(
       <Steps data-testid="steps-list" aria-label="Progress steps">

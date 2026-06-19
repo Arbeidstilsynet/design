@@ -82,7 +82,6 @@ const meta: Meta<typeof Steps> = {
     ["Steps.StepTitle"]: Steps.StepTitle,
     ["Steps.StepDescription"]: Steps.StepDescription,
     ["Steps.StepDetails"]: Steps.StepDetails,
-    ["Steps.StepFill"]: Steps.StepFill,
   },
   decorators: [
     (Story) => (
@@ -698,68 +697,6 @@ export const WithColors: Story = {
         ))}
       </Grid>
     </Flex>
-  ),
-};
-
-/**
- * Uses `Steps.StepFill` inside the active step to render a filled progress indicator
- * instead of the default dot mark.
- */
-export const WithVariantFilled: Story = {
-  render: () => (
-    <>
-      <Steps>
-        <Steps.Step>
-          <Steps.StepMark />
-          <Steps.StepTitle>Steg 1</Steps.StepTitle>
-          <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
-        </Steps.Step>
-        <Steps.Step aria-current="step">
-          <Steps.StepMark />
-          <Steps.StepFill />
-          <Steps.StepTitle>Steg 2</Steps.StepTitle>
-          <Steps.StepDescription>Donec et odio</Steps.StepDescription>
-        </Steps.Step>
-        <Steps.Step>
-          <Steps.StepMark />
-          <Steps.StepTitle>Steg 3</Steps.StepTitle>
-        </Steps.Step>
-      </Steps>
-      <Steps data-direction="down">
-        <Steps.Step>
-          <Steps.StepMark />
-          <Steps.StepTitle>Steg 1</Steps.StepTitle>
-          <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
-        </Steps.Step>
-        <Steps.Step aria-current="step">
-          <Steps.StepMark data-color="danger" />
-          <Steps.StepFill data-color="danger" />
-          <Steps.StepTitle>Steg 2</Steps.StepTitle>
-          <Steps.StepDescription>Donec et odio</Steps.StepDescription>
-        </Steps.Step>
-        <Steps.Step>
-          <Steps.StepMark />
-          <Steps.StepTitle>Steg 3</Steps.StepTitle>
-        </Steps.Step>
-      </Steps>
-      <Steps data-direction="up">
-        <Steps.Step>
-          <Steps.StepMark />
-          <Steps.StepTitle>Steg 1</Steps.StepTitle>
-          <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
-        </Steps.Step>
-        <Steps.Step aria-current="step">
-          <Steps.StepMark data-color="warning" />
-          <Steps.StepFill data-color="warning" />
-          <Steps.StepTitle>Steg 2</Steps.StepTitle>
-          <Steps.StepDescription>Donec et odio</Steps.StepDescription>
-        </Steps.Step>
-        <Steps.Step>
-          <Steps.StepMark data-color="danger" />
-          <Steps.StepTitle>Steg 3</Steps.StepTitle>
-        </Steps.Step>
-      </Steps>
-    </>
   ),
 };
 

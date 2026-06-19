@@ -2,7 +2,6 @@ import { Steps as StepsParent } from "./steps";
 import { StepsStep } from "./stepsStep";
 import { StepsStepDescription } from "./stepsStepDescription";
 import { StepsStepDetails } from "./stepsStepDetails";
-import { StepsStepFill } from "./stepsStepFill";
 import { StepsStepMark } from "./stepsStepMark";
 import { StepsStepTitle } from "./stepsStepTitle";
 
@@ -10,7 +9,6 @@ export type { StepsProps } from "./steps";
 export type { StepsStepProps } from "./stepsStep";
 export type { StepsStepDescriptionProps } from "./stepsStepDescription";
 export type { StepsStepDetailsProps } from "./stepsStepDetails";
-export type { StepsStepFillProps } from "./stepsStepFill";
 export type { StepsStepMarkProps } from "./stepsStepMark";
 export type { StepsStepTitleProps } from "./stepsStepTitle";
 
@@ -24,7 +22,6 @@ export type { StepsStepTitleProps } from "./stepsStepTitle";
  * - `Steps.StepTitle` — Label for the step
  * - `Steps.StepDescription` — Short secondary text below the title
  * - `Steps.StepDetails` — Additional detail text (e.g. body copy inside a vertical step)
- * - `Steps.StepFill` — Filled progress bar variant for the active step
  *
  * ## Props
  *
@@ -59,7 +56,6 @@ const Steps = Object.assign(StepsParent, {
   Step: StepsStep,
   StepDescription: StepsStepDescription,
   StepDetails: StepsStepDetails,
-  StepFill: StepsStepFill,
   StepMark: StepsStepMark,
   StepTitle: StepsStepTitle,
 });
@@ -69,7 +65,6 @@ export {
   StepsStep,
   StepsStepDescription,
   StepsStepDetails,
-  StepsStepFill,
   StepsStepMark,
   StepsStepTitle,
 };
