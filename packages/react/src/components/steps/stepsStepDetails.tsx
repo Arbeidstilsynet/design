@@ -1,5 +1,8 @@
-// Based on the Steps component by Mattilsynet
-// https://github.com/Mattilsynet/design/tree/next/designsystem/steps
+/*
+ * Portions of this file are based on Steps from Mattilsynet Design System (https://github.com/Mattilsynet/design)
+ * Copyright (c) 2024 Mattilsynet
+ * Licensed under the MIT License
+ */
 
 import { clsx } from "clsx";
 import type { HTMLAttributes } from "react";
