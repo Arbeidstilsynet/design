@@ -1,9 +1,3 @@
-/*
- * Portions of this file are based on Steps from Mattilsynet Design System (https://github.com/Mattilsynet/design)
- * Copyright (c) 2024 Mattilsynet
- * Licensed under the MIT License
- */
-
 import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, test, vi } from "vitest";
