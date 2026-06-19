@@ -8,7 +8,6 @@
   --at-steps-dot-size: var(--ds-size-8);
   --at-steps-gap: var(--ds-size-4);
   --at-steps-padding: 0px;
-  --at-steps-bg: var(--ds-color-neutral-background-default);
   --at-steps-stroke-color: var(--ds-color-border-subtle);
   --at-steps-stroke-size: 2px;
   --at-steps-line-active: var(--ds-color-base-default);
@@ -161,10 +160,36 @@
 .at-steps[data-state="complete"] > .at-steps__step {
   --dot-after: var(--at-steps-line-active);
 }
+/*
+ * The current step's mark gets an extra ring detached from the dot by a
+ * genuinely transparent gap. `outline` + `outline-offset` draws the ring
+ * outside the border-box with a see-through gap between them, so the real
+ * background shows through (unlike a box-shadow gap, which can only fake it
+ * with a solid color).
+ */
 .at-steps__step[aria-current="step"] .at-steps__step-mark {
-  box-shadow:
-    0 0 0 var(--at-steps-stroke-size) var(--at-steps-bg),
-    0 0 0 calc(var(--at-steps-stroke-size) * 2) var(--dot-fill);
+  outline: var(--at-steps-stroke-size) solid var(--dot-fill);
+  outline-offset: var(--at-steps-stroke-size);
+}
+
+/*
+ * Keep the see-through gap clean: stop the current step's connector lines at the
+ * outer edge of the ring instead of letting them run under the transparent gap
+ * to the dot. Horizontal layouts — vertical is handled in the direction section.
+ */
+.at-steps:not([data-direction]) > .at-steps__step[aria-current="step"]::before,
+.at-steps[data-direction="right"]
+  > .at-steps__step[aria-current="step"]::before {
+  margin-right: calc(
+    var(--at-steps-dot-size) / 2 + var(--at-steps-stroke-size) * 2
+  );
+}
+.at-steps:not([data-direction]) > .at-steps__step[aria-current="step"]::after,
+.at-steps[data-direction="right"]
+  > .at-steps__step[aria-current="step"]::after {
+  margin-left: calc(
+    var(--at-steps-dot-size) / 2 + var(--at-steps-stroke-size) * 2
+  );
 }
 
 .at-steps__step[data-state="complete"],
@@ -303,6 +328,22 @@
   > .at-steps__step:last-child::after {
   background: linear-gradient(var(--dot-after), transparent);
   inset-block-end: 0;
+}
+
+/*
+ * Vertical counterpart of the horizontal rule above: pull the current step's
+ * connector lines back to the outer edge of the ring so the see-through gap
+ * stays clean above and below the dot.
+ */
+.at-steps[data-direction]:not([data-direction="right"])
+  > .at-steps__step[aria-current="step"]::before {
+  inset-block-end: calc(100% + var(--at-steps-stroke-size) * 2);
+}
+.at-steps[data-direction]:not([data-direction="right"])
+  > .at-steps__step[aria-current="step"]::after {
+  inset-block-start: calc(
+    var(--at-steps-dot-size) + var(--at-steps-stroke-size) * 2
+  );
 }
 
 .at-steps__title {
