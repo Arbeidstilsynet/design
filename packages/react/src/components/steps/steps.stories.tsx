@@ -201,7 +201,7 @@ export const WithDirection: Story = {
         <Steps data-direction="right">
           <Steps.Step>
             <Steps.StepMark>
-              <HeartIcon />
+              <HeartIcon aria-label="Heart icon" />
             </Steps.StepMark>
             <Steps.StepTitle>Steg 1</Steps.StepTitle>
             <Steps.StepDescription>Beskrivelse</Steps.StepDescription>
@@ -231,7 +231,7 @@ export const WithDirection: Story = {
         <Steps data-direction="down">
           <Steps.Step>
             <Steps.StepMark>
-              <HeartIcon />
+              <HeartIcon aria-label="Heart icon" />
             </Steps.StepMark>
             <Steps.StepTitle>Steg 1</Steps.StepTitle> Beskrivelse
           </Steps.Step>
@@ -267,7 +267,7 @@ export const WithDirection: Story = {
         <Steps data-direction="up">
           <Steps.Step>
             <Steps.StepMark>
-              <HeartIcon />
+              <HeartIcon aria-label="Heart icon" />
             </Steps.StepMark>
             <Steps.StepTitle>Steg 5</Steps.StepTitle> Beskrivelse
           </Steps.Step>
@@ -705,7 +705,7 @@ export const Timeline: Story = {
     <Steps data-direction="up" data-state="complete" data-fade="start">
       <Steps.Step>
         <Steps.StepMark>
-          <ExclamationmarkTriangleIcon />
+          <ExclamationmarkTriangleIcon aria-label="Exclamation mark triangle icon" />
         </Steps.StepMark>
         <Steps.StepTitle>Varsel om nedetid</Steps.StepTitle>
         <Steps.StepDescription>
@@ -716,7 +716,7 @@ export const Timeline: Story = {
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark>
-          <InformationIcon />
+          <InformationIcon aria-label="Information icon" />
         </Steps.StepMark>
         <Steps.StepTitle>Ny versjon</Steps.StepTitle>
         <Steps.StepDescription>
@@ -727,7 +727,7 @@ export const Timeline: Story = {
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark>
-          <PersonChatIcon />
+          <PersonChatIcon aria-label="Person chat icon" />
         </Steps.StepMark>
         <Steps.StepTitle>Søker testere</Steps.StepTitle>
         <Steps.StepDescription>
@@ -737,7 +737,7 @@ export const Timeline: Story = {
       </Steps.Step>
       <Steps.Step>
         <Steps.StepMark>
-          <InformationIcon />
+          <InformationIcon aria-label="Information icon" />
         </Steps.StepMark>
         <Steps.StepTitle>Ny versjon</Steps.StepTitle>
         <Steps.StepDescription>
