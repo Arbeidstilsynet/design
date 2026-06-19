@@ -84,6 +84,10 @@ export const Preview: StoryFn<typeof FilePicker> = (args) => {
       onAdd={handleAdd}
       onRemove={handleRemove}
     >
+      <Label>Last opp fil</Label>
+      <Paragraph data-size="sm" data-color="neutral">
+        Last opp dokumentene vi har bedt om.
+      </Paragraph>
       <Paragraph data-size="xs">Maks filstørrelse {maxSizeInMb} MB</Paragraph>
       <FilePicker.Dropzone />
       <Paragraph data-size="xs">

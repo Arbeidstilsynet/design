@@ -103,6 +103,12 @@ Changeset descriptions must follow the format: `**ComponentName**: description o
 **Header**: Remove hardcoded header height in mobile view.
 ```
 
+### Pull requests
+
+PR titles must follow [Conventional Commits](https://www.conventionalcommits.org): `type(scope): description` (e.g. `fix(FilePicker): restyle dropzone to updated Gnist design`). Use the component name as the scope. Common types: `feat`, `fix`, `docs`, `refactor`, `chore`.
+
+Note: `gh pr edit --title` can fail with a "Projects (classic) is being deprecated" GraphQL error. If that happens, set the title via the REST API instead: `gh api -X PATCH repos/Arbeidstilsynet/design/pulls/<n> -f title="..."`.
+
 ### Design tokens
 
 Tokens are managed in Figma via Tokens Studio plugin and synced to the `design-tokens/` directory. Run `pnpm tokens:build` to regenerate theme CSS from tokens. See `docs/TOKENS.md` for full workflow.
