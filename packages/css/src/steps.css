@@ -236,10 +236,9 @@
 }
 
 /*
- * Incomplete override
- * — Explicitly force a step to appear unchecked. The four [data-state]
- *   attribute selectors give (0,5,0), matching the :has()-based auto-complete
- *   rule; placement after it wins by cascade order.
+ * Overrides default step state, to force a step to appear unchecked.
+ * The four [data-state] attribute selectors give (0,5,0), matching the
+ * :has()-based auto-complete rule; placement after it wins by cascade order.
  */
 .at-steps__step[data-state][data-state][data-state][data-state="incomplete"] {
   --dot-before: var(--at-steps-line-faint);
