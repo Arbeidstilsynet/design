@@ -313,4 +313,88 @@ describe("Steps", () => {
       expect(onClick).toHaveBeenCalledTimes(1);
     });
   });
+
+  describe("disabled", () => {
+    test("sets aria-disabled on the step list item", () => {
+      render(
+        <Steps>
+          <Steps.Step disabled>
+            <Steps.StepTitle>Steg 1</Steps.StepTitle>
+          </Steps.Step>
+        </Steps>,
+      );
+
+      expect(screen.getByRole("listitem")).toHaveAttribute(
+        "aria-disabled",
+        "true",
+      );
+    });
+
+    test("sets data-disabled on the step list item", () => {
+      render(
+        <Steps>
+          <Steps.Step disabled>
+            <Steps.StepTitle>Steg 1</Steps.StepTitle>
+          </Steps.Step>
+        </Steps>,
+      );
+
+      expect(screen.getByRole("listitem")).toHaveAttribute("data-disabled");
+    });
+
+    test("does not set aria-disabled when disabled is false", () => {
+      render(
+        <Steps>
+          <Steps.Step disabled={false}>
+            <Steps.StepTitle>Steg 1</Steps.StepTitle>
+          </Steps.Step>
+        </Steps>,
+      );
+
+      expect(screen.getByRole("listitem")).not.toHaveAttribute("aria-disabled");
+    });
+
+    test("disabled button inside a disabled step cannot be clicked", async () => {
+      const user = userEvent.setup();
+      const onClick = vi.fn();
+
+      render(
+        <Steps>
+          <Steps.Step disabled>
+            <button type="button" disabled onClick={onClick}>
+              <Steps.StepMark />
+              <Steps.StepTitle>Steg 1</Steps.StepTitle>
+            </button>
+          </Steps.Step>
+        </Steps>,
+      );
+
+      await user.click(screen.getByRole("button"));
+      expect(onClick).not.toHaveBeenCalled();
+    });
+
+    test("disabled button inside a disabled step cannot be reached by keyboard", async () => {
+      const user = userEvent.setup();
+
+      render(
+        <Steps>
+          <Steps.Step disabled>
+            <button type="button" disabled>
+              <Steps.StepMark />
+              <Steps.StepTitle>Steg 1</Steps.StepTitle>
+            </button>
+          </Steps.Step>
+          <Steps.Step>
+            <button type="button">
+              <Steps.StepMark />
+              <Steps.StepTitle>Steg 2</Steps.StepTitle>
+            </button>
+          </Steps.Step>
+        </Steps>,
+      );
+
+      await user.tab();
+      expect(screen.getByRole("button", { name: /steg 2/i })).toHaveFocus();
+    });
+  });
 });

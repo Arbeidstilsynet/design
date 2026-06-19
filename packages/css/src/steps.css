@@ -302,3 +302,15 @@
   color: var(--ds-color-text-subtle);
   font-size: var(--ds-font-size-2);
 }
+
+/*
+ * Disabled
+ */
+.at-steps__step[data-disabled] {
+  opacity: 0.4;
+
+  & > :is(a, button) {
+    pointer-events: none;
+    cursor: default;
+  }
+}

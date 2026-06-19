@@ -675,9 +675,14 @@ const InteractiveStepsComponent = () => {
       {[1, 2, 3, 4, 5, 6].map((step) => (
         <Steps.Step
           aria-current={activeStep === step ? "step" : undefined}
+          disabled={step === 4}
           key={step}
         >
-          <button type="button" onClick={() => setActiveStep(step)}>
+          <button
+            type="button"
+            onClick={() => setActiveStep(step)}
+            disabled={step === 4}
+          >
             <Steps.StepMark
               {...(step === 2 ? { "data-color": "warning" } : {})}
             />
