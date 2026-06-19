@@ -1,0 +1,8 @@
+/** Overrides the default link styles to match Gnist design. */
+
+.ds-link {
+  /** Text **/
+  --dsc-link-color: var(--ds-color-text-default);
+  --dsc-link-color--hover: var(--ds-color-base-hover);
+  --dsc-link-color--visited: var(--dsc-link-color);
+}

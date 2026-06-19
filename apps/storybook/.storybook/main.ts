@@ -2,8 +2,8 @@ import type { StorybookConfig } from "@storybook/react-vite";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const storybookConfigFile = fileURLToPath(import.meta.url);
+const storybookConfigDir = dirname(storybookConfigFile);
 
 const config: StorybookConfig = {
   framework: {
@@ -44,7 +44,7 @@ const config: StorybookConfig = {
       // oxlint-disable-next-line typescript/no-misused-spread
       ...viteConfig.resolve.alias,
       "@arbeidstilsynet/design-react": resolve(
-        __dirname,
+        storybookConfigDir,
         "../../../packages/react/src/index.ts",
       ),
     };

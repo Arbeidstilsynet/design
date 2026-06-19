@@ -1,5 +1,10 @@
 import { Link, Paragraph } from "@arbeidstilsynet/design-react";
-import { EnvelopeClosedIcon } from "@navikt/aksel-icons";
+import {
+  BookIcon,
+  ComponentIcon,
+  EnvelopeClosedIcon,
+  ExternalLinkIcon,
+} from "@navikt/aksel-icons";
 import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 
 type Story = StoryObj<typeof Link>;
@@ -31,7 +36,7 @@ export const InText: StoryFn = (args) => (
     <Paragraph>
       Vi bruker komponenter fra{" "}
       <Link href={designsystemetLink} {...args}>
-        et fantastisk designsystem
+        designsystemet.no
       </Link>
       .
     </Paragraph>
@@ -40,7 +45,28 @@ export const InText: StoryFn = (args) => (
 
 export const WithIcon: StoryFn = (args) => (
   <Link href="mailto:designsystem@digdir.no" {...args}>
-    <EnvelopeClosedIcon aria-hidden /> Kontakt oss
+    <EnvelopeClosedIcon aria-hidden height={"1.5rem"} width={"1.5rem"} />
+    <span>Kontakt oss</span>
+  </Link>
+);
+export const WithIconRight: StoryFn = (args) => (
+  <Link href="mailto:designsystem@digdir.no" {...args}>
+    <span>Kontakt oss</span>
+    <EnvelopeClosedIcon aria-hidden height={"1.5rem"} width={"1.5rem"} />
+  </Link>
+);
+export const WithMultipleIcons: StoryFn = (args) => (
+  <Link href={designsystemetLink} {...args}>
+    <ComponentIcon aria-hidden height={"1.5rem"} width={"1.5rem"} />
+    <span>Komponenter og</span>
+    <BookIcon aria-hidden height={"1.5rem"} width={"1.5rem"} />
+    <span>dokumentasjon på designsystemet.no</span>
+    <ExternalLinkIcon aria-hidden height={"1.5rem"} width={"1.5rem"} />
+  </Link>
+);
+export const WithOnlyIcon: StoryFn = (args) => (
+  <Link href={designsystemetLink} {...args}>
+    <ComponentIcon title="Designsystemet" height={"1.5rem"} width={"1.5rem"} />
   </Link>
 );
 
@@ -61,5 +87,13 @@ export const Neutral: Story = {
     children: "Gå til designsystemet",
     href: designsystemetLink,
     "data-color": "neutral",
+  },
+};
+
+export const AsButton: Story = {
+  args: {
+    children: <button type="button">Gå til designsystemet</button>,
+    href: designsystemetLink,
+    asChild: true,
   },
 };

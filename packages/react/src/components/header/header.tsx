@@ -33,11 +33,13 @@ export interface HeaderProps
   children?: ReactNode;
 }
 
+const defaultLinks: ReactNode[] = [];
+
 export function Header({
   ref,
   className,
   children,
-  links = [],
+  links = defaultLinks,
   ...rest
 }: Readonly<HeaderProps>) {
   const internalRef = useRef<HTMLElement>(null);

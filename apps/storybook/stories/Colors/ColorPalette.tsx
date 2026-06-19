@@ -18,6 +18,7 @@ export const ColorPalette = ({ palette }: ColorPaletteV2Props) => {
               {Object.entries(colors).map(([key, value]) => (
                 <button
                   key={key}
+                  aria-label={`Copy ${colorgroup} ${key} CSS variable`}
                   className={classes.colorItem}
                   style={{ background: value }}
                   onClick={() =>
