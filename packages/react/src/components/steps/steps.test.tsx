@@ -1,3 +1,6 @@
+// Based on the Steps component by Mattilsynet
+// https://github.com/Mattilsynet/design/tree/next/designsystem/steps
+
 import { cleanup, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, test, vi } from "vitest";

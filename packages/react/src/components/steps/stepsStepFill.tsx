@@ -1,3 +1,6 @@
+// Based on the Steps component by Mattilsynet
+// https://github.com/Mattilsynet/design/tree/next/designsystem/steps
+
 import { clsx } from "clsx";
 import type { HTMLAttributes } from "react";
 import type { DefaultProps } from "../../types";

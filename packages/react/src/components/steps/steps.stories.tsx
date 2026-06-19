@@ -1,3 +1,6 @@
+// Based on the Steps component by Mattilsynet
+// https://github.com/Mattilsynet/design/tree/next/designsystem/steps
+
 import {
   ExclamationmarkTriangleIcon,
   HeartIcon,
