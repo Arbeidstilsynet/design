@@ -796,6 +796,15 @@ const InteractiveStepsComponent = () => {
 /**
  * Interactive example where clicking a step mark sets it as the active step.
  * Demonstrates controlled usage with `aria-current="step"`.
+ *
+ * Step 4 is disabled: `data-disabled` is set on the `Steps.Step` and the
+ * inner `<button>` has `disabled`, preventing interaction. `data-state="incomplete"`
+ * is also applied to ensure the step never renders as checked regardless of
+ * the active step position.
+ *
+ * Step 2 overrides the default mark appearance with `data-color="warning"` on
+ * `Steps.StepMark`, replacing the auto-check icon with the warning colour and
+ * close icon.
  */
 export const WithInteraction: Story = {
   render: () => <InteractiveStepsComponent />,
