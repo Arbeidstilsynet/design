@@ -76,12 +76,12 @@
               "light": "#CFF3EF"
             },
             "text-default": {
-              "dark": "#37887F",
+              "dark": "#EAEDEC",
               "light": "#064640"
             },
             "text-subtle": {
-              "dark": "#62928D",
-              "light": "#2C6C64"
+              "dark": "#7BCCC3",
+              "light": "#085C53"
             }
           },
           "blaa": {

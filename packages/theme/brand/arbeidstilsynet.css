@@ -100,7 +100,7 @@ design-tokens: v1.13.3
   --ds-color-accent-border-subtle: #9DCEC9;
   --ds-color-accent-border-default: #6DB5AD;
   --ds-color-accent-border-strong: #0B8477;
-  --ds-color-accent-text-subtle: #2C6C64;
+  --ds-color-accent-text-subtle: #085C53;
   --ds-color-accent-text-default: #064640;
   --ds-color-accent-base-default: #0B8477;
   --ds-color-accent-base-hover: #085C53;
@@ -269,7 +269,7 @@ design-tokens: v1.13.3
   --ds-color-accent-border-subtle: #9DCEC9;
   --ds-color-accent-border-default: #6DB5AD;
   --ds-color-accent-border-strong: #0B8477;
-  --ds-color-accent-text-subtle: #2C6C64;
+  --ds-color-accent-text-subtle: #085C53;
   --ds-color-accent-text-default: #064640;
   --ds-color-accent-base-default: #0B8477;
   --ds-color-accent-base-hover: #085C53;
@@ -603,8 +603,8 @@ design-tokens: v1.13.3
   --ds-color-accent-border-subtle: #45736E;
   --ds-color-accent-border-default: #9DCEC9;
   --ds-color-accent-border-strong: #CFF3EF;
-  --ds-color-accent-text-subtle: #62928D;
-  --ds-color-accent-text-default: #37887F;
+  --ds-color-accent-text-subtle: #7BCCC3;
+  --ds-color-accent-text-default: #EAEDEC;
   --ds-color-accent-base-default: #3C9D92;
   --ds-color-accent-base-hover: #17E5CA;
   --ds-color-accent-base-active: #3C9D92;
@@ -772,8 +772,8 @@ design-tokens: v1.13.3
   --ds-color-accent-border-subtle: #45736E;
   --ds-color-accent-border-default: #9DCEC9;
   --ds-color-accent-border-strong: #CFF3EF;
-  --ds-color-accent-text-subtle: #62928D;
-  --ds-color-accent-text-default: #37887F;
+  --ds-color-accent-text-subtle: #7BCCC3;
+  --ds-color-accent-text-default: #EAEDEC;
   --ds-color-accent-base-default: #3C9D92;
   --ds-color-accent-base-hover: #17E5CA;
   --ds-color-accent-base-active: #3C9D92;
