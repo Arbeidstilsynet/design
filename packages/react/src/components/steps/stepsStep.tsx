@@ -17,10 +17,16 @@ export interface StepsStepProps
   "aria-current"?: "step" | HTMLAttributes<HTMLLIElement>["aria-current"];
 
   /**
-   * Set to `"complete"` to mark this individual step as completed,
-   * regardless of the current active step. Shows a checkmark icon.
+   * Controls the completion appearance of this step's mark, overriding
+   * automatic state derived from `aria-current`.
+   *
+   * - `"complete"`: Force the mark to appear checked (filled circle with
+   *   checkmark), regardless of where the active step is.
+   * - `"incomplete"`: Force the mark to appear unchecked (empty circle),
+   *   even when the step would normally be auto-completed because a later
+   *   step carries `aria-current="step"`.
    */
-  "data-state"?: "complete";
+  "data-state"?: "complete" | "incomplete";
 }
 
 export function StepsStep({

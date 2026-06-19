@@ -135,6 +135,57 @@ describe("Steps", () => {
         "complete",
       );
     });
+
+    test('applies data-state="complete" to an individual step', () => {
+      render(
+        <Steps>
+          <Steps.Step data-state="complete">
+            <Steps.StepTitle>Steg 1</Steps.StepTitle>
+          </Steps.Step>
+        </Steps>,
+      );
+
+      expect(screen.getByRole("listitem")).toHaveAttribute(
+        "data-state",
+        "complete",
+      );
+    });
+
+    test('applies data-state="incomplete" to an individual step', () => {
+      render(
+        <Steps>
+          <Steps.Step data-state="incomplete">
+            <Steps.StepTitle>Steg 1</Steps.StepTitle>
+          </Steps.Step>
+        </Steps>,
+      );
+
+      expect(screen.getByRole("listitem")).toHaveAttribute(
+        "data-state",
+        "incomplete",
+      );
+    });
+
+    test('data-state="incomplete" overrides data-state="complete" on the parent list', () => {
+      render(
+        <Steps data-state="complete">
+          <Steps.Step>
+            <Steps.StepTitle>Steg 1</Steps.StepTitle>
+          </Steps.Step>
+          <Steps.Step data-state="incomplete">
+            <Steps.StepTitle>Steg 2</Steps.StepTitle>
+          </Steps.Step>
+          <Steps.Step>
+            <Steps.StepTitle>Steg 3</Steps.StepTitle>
+          </Steps.Step>
+        </Steps>,
+      );
+
+      const items = screen.getAllByRole("listitem");
+      expect(items[0]).not.toHaveAttribute("data-state");
+      expect(items[1]).toHaveAttribute("data-state", "incomplete");
+      expect(items[2]).not.toHaveAttribute("data-state");
+    });
   });
 
   describe("data-direction", () => {

@@ -185,6 +185,96 @@ export const WithStateComplete: Story = {
 };
 
 /**
+ * `data-state="incomplete"` manually forces a step's mark to appear unchecked,
+ * overriding the automatic completion that would normally occur for steps
+ * before `aria-current="step"`.
+ *
+ * Useful when a previous step was skipped or is known to be unfinished despite
+ * the user having moved past it.
+ */
+export const WithStateIncomplete: Story = {
+  render: () => (
+    <>
+      <strong>
+        Step 1 forced <code>data-state="incomplete"</code> — overrides
+        auto-complete from <code>aria-current</code>:
+      </strong>
+      <Steps>
+        <Steps.Step data-state="incomplete">
+          <Steps.StepMark />
+          <Steps.StepTitle>Steg 1</Steps.StepTitle>
+          <Steps.StepDescription>Hoppet over</Steps.StepDescription>
+        </Steps.Step>
+        <Steps.Step>
+          <Steps.StepMark />
+          <Steps.StepTitle>Steg 2</Steps.StepTitle>
+          <Steps.StepDescription>Fullført</Steps.StepDescription>
+        </Steps.Step>
+        <Steps.Step aria-current="step">
+          <Steps.StepMark />
+          <Steps.StepTitle>Steg 3</Steps.StepTitle>
+          <Steps.StepDescription>Aktiv</Steps.StepDescription>
+        </Steps.Step>
+        <Steps.Step>
+          <Steps.StepMark />
+          <Steps.StepTitle>Steg 4</Steps.StepTitle>
+          <Steps.StepDescription>Kommende</Steps.StepDescription>
+        </Steps.Step>
+      </Steps>
+      <strong>
+        Mixed: one step <code>data-state="complete"</code>, one{" "}
+        <code>data-state="incomplete"</code> inside a fully-complete parent:
+      </strong>
+      <Steps data-state="complete">
+        <Steps.Step>
+          <Steps.StepMark />
+          <Steps.StepTitle>Steg 1</Steps.StepTitle>
+        </Steps.Step>
+        <Steps.Step data-state="incomplete">
+          <Steps.StepMark />
+          <Steps.StepTitle>Steg 2</Steps.StepTitle>
+          <Steps.StepDescription>Ikke fullført</Steps.StepDescription>
+        </Steps.Step>
+        <Steps.Step>
+          <Steps.StepMark />
+          <Steps.StepTitle>Steg 3</Steps.StepTitle>
+        </Steps.Step>
+        <Steps.Step>
+          <Steps.StepMark />
+          <Steps.StepTitle>Steg 4</Steps.StepTitle>
+        </Steps.Step>
+      </Steps>
+      <strong>
+        Vertical (<code>data-direction="down"</code>) with{" "}
+        <code>data-state="incomplete"</code>:
+      </strong>
+      <Steps data-direction="down">
+        <Steps.Step>
+          <Steps.StepMark />
+          <Steps.StepTitle>Steg 1</Steps.StepTitle>
+          <Steps.StepDescription>Fullført</Steps.StepDescription>
+        </Steps.Step>
+        <Steps.Step data-state="incomplete">
+          <Steps.StepMark />
+          <Steps.StepTitle>Steg 2</Steps.StepTitle>
+          <Steps.StepDescription>Hoppet over</Steps.StepDescription>
+        </Steps.Step>
+        <Steps.Step aria-current="step">
+          <Steps.StepMark />
+          <Steps.StepTitle>Steg 3</Steps.StepTitle>
+          <Steps.StepDescription>Aktiv</Steps.StepDescription>
+        </Steps.Step>
+        <Steps.Step>
+          <Steps.StepMark />
+          <Steps.StepTitle>Steg 4</Steps.StepTitle>
+          <Steps.StepDescription>Kommende</Steps.StepDescription>
+        </Steps.Step>
+      </Steps>
+    </>
+  ),
+};
+
+/**
  * Demonstrates all three `data-direction` values.
  *
  * - `"right"` (default): horizontal layout.
@@ -677,6 +767,7 @@ const InteractiveStepsComponent = () => {
           aria-current={activeStep === step ? "step" : undefined}
           disabled={step === 4}
           key={step}
+          {...(step === 4 ? { "data-state": "incomplete" } : {})}
         >
           <button
             type="button"
