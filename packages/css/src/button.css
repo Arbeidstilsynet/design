@@ -7,33 +7,16 @@
 
   /** Background ("Fill") */
   --dsc-button-background: transparent;
-  --dsc-button-background--active: var(--ds-color-surface-tinted);
-  --dsc-button-background--hover: var(--ds-color-surface-tinted);
+  --dsc-button-background--active: var(--ds-color-surface-active);
+  --dsc-button-background--hover: var(--ds-color-surface-hover);
 
   /** Border ("Stroke") */
   --dsc-button-border-color: var(--ds-color-text-default);
 }
 
-.ds-button[data-variant="secondary"][data-color="neutral"] {
-  /** Background ("Fill") */
-  --dsc-button-background--active: var(--ds-color-background-tinted);
-  --dsc-button-background--hover: var(--ds-color-background-tinted);
-}
-
-.ds-button[data-variant="secondary"][data-color="danger"] {
-  /** Background ("Fill") */
-  --dsc-button-background--active: var(--ds-color-surface-active);
-  --dsc-button-background--hover: var(--ds-color-surface-hover);
-}
-
 .ds-button[data-variant="tertiary"]:not(
-  /* Don't apply when inside Pagination.
-   Pagination currently has mixed docs of either setting data-variant="primary" on Pagination.Button
-    or keeping it as tertiary (returned from usePagination). If this is changed upstream we can simplify this selector.
-
-    Also don't apply when inside ToggleGroup, which uses <label class="ds-button" data-variant="tertiary">
-  */
-    :is(.ds-pagination, .ds-toggle-group) .ds-button[data-variant="tertiary"]
+  /* Don't apply when inside ToggleGroup, which uses <label class="ds-button" data-variant="tertiary"> */
+    .ds-toggle-group .ds-button[data-variant="tertiary"]
   ) {
   /** Text **/
   --dsc-button-color: var(--ds-color-text-default);
@@ -43,6 +26,11 @@
   --dsc-button-background: transparent;
   --dsc-button-background--active: transparent;
   --dsc-button-background--hover: transparent;
+
+  &[data-icon="true"] {
+    --dsc-button-background--active: var(--ds-color-surface-active);
+    --dsc-button-background--hover: var(--ds-color-surface-hover);
+  }
 
   /** Border ("Stroke") */
   --dsc-button-border-color: transparent;
