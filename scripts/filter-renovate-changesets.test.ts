@@ -72,6 +72,12 @@ Updated 4 colors (3 accent-* + base-active)
         {
           dependencies: new Set(["@digdir/designsystemet-react", "clsx"]),
           peerDependencies: new Set(["react", "react-dom"]),
+          devDependencies: new Set([
+            "react",
+            "react-dom",
+            "@types/react",
+            "@storybook/addon-docs",
+          ]),
         },
       ],
       [
@@ -79,6 +85,7 @@ Updated 4 colors (3 accent-* + base-active)
         {
           dependencies: new Set(["@digdir/designsystemet-css"]),
           peerDependencies: new Set<string>(),
+          devDependencies: new Set<string>(),
         },
       ],
       [
@@ -86,6 +93,7 @@ Updated 4 colors (3 accent-* + base-active)
         {
           dependencies: new Set<string>(),
           peerDependencies: new Set<string>(),
+          devDependencies: new Set<string>(),
         },
       ],
     ]);
@@ -100,14 +108,34 @@ Updated 4 colors (3 accent-* + base-active)
       ).toBe(true);
     });
 
-    it("keeps changeset that updates peer dependency", () => {
+    it("keeps changeset that updates a peer-only dependency", () => {
+      const peerOnlyDeps = new Map([
+        [
+          "react",
+          {
+            dependencies: new Set<string>(),
+            peerDependencies: new Set(["react"]),
+            devDependencies: new Set<string>(),
+          },
+        ],
+      ]);
+      expect(
+        shouldKeepChangeset(
+          ["@arbeidstilsynet/design-react"],
+          ["react"],
+          peerOnlyDeps,
+        ),
+      ).toBe(true);
+    });
+
+    it("removes changeset that updates a devDependency that is also a peer dependency", () => {
       expect(
         shouldKeepChangeset(
           ["@arbeidstilsynet/design-react"],
           ["react"],
           mockPackageDeps,
         ),
-      ).toBe(true);
+      ).toBe(false);
     });
 
     it("removes changeset that only updates devDependencies", () => {
