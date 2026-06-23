@@ -21,8 +21,8 @@ importers:
         specifier: 6.1.0
         version: 6.1.0
       '@digdir/designsystemet':
-        specifier: 1.14.0
-        version: 1.14.0
+        specifier: 1.16.1
+        version: 1.16.1
       '@scaleway/changesets-renovate':
         specifier: 3.0.3
         version: 3.0.3
@@ -133,8 +133,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.14.0
-        version: 1.14.0
+        specifier: 1.16.1
+        version: 1.16.1
     devDependencies:
       '@types/node':
         specifier: 24.13.1
@@ -167,11 +167,11 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.14.0
-        version: 1.14.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
+        specifier: 1.16.1
+        version: 1.16.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       '@digdir/designsystemet-types':
-        specifier: 1.14.0
-        version: 1.14.0
+        specifier: 1.16.1
+        version: 1.16.1
       '@navikt/aksel-icons':
         specifier: ^8.11.1
         version: 8.11.1
@@ -420,23 +420,23 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.1.1
 
-  '@digdir/designsystemet-css@1.14.0':
-    resolution: {integrity: sha512-qAIpcrFgO80p5TrVWcRUC8xO1ZAEp1j39kQ+WLyBuM/BBsgLXBZVIUaju3ZI1rsQFNyY/QZ9CKQslnoOVAeCkQ==}
+  '@digdir/designsystemet-css@1.16.1':
+    resolution: {integrity: sha512-aNlIUpZEU+YgGD8CmzoNDqBwAP/R95LC5EYr9jioWA82XBY+LUdBqtl7xQLyOOjTZe17fgJIvmzIss1mkOLgmw==}
 
-  '@digdir/designsystemet-react@1.14.0':
-    resolution: {integrity: sha512-m4lYxbWv0bY5ayg0L+DueSrrhk2W+A0ovs443MteABwcx6pLDYPQMVl0FGZ/Wtn2gB92ZivvWuVhUxdom13dKg==}
+  '@digdir/designsystemet-react@1.16.1':
+    resolution: {integrity: sha512-zlYXXbme5ySIxWPrZxDONdgCh4Qn5wVF+lAVeCJKaNiUXmvO/mIjy0YW7UT0OqQiOuKwRp5cvEB3kEcaUFG7Hg==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet-types@1.14.0':
-    resolution: {integrity: sha512-d/JZhwebAgclFsE7ax0Z8mWotEk3GE4e9+iC8Cq8EN5BQ+bOptwFrVipSrL+NAt8/7AX9WzrnAScPuxCb4vvgQ==}
+  '@digdir/designsystemet-types@1.16.1':
+    resolution: {integrity: sha512-DzOphWx2B7U7msyKsF9JXJidriodZGOCTSjpzddQ/AgWVrajPxuEGkM/nEFZaBYoT+jbKOw7wKrzPfHfgtrCsw==}
 
-  '@digdir/designsystemet-web@1.14.0':
-    resolution: {integrity: sha512-dmUnV/0wzTOSPnSGqQwjYyneuO+/QqfugAr2SP1N1m/VzfMal3Y5hD+AkDWWzWhJ7EJrhGtYwG5JVRM8iYuVeQ==}
+  '@digdir/designsystemet-web@1.16.1':
+    resolution: {integrity: sha512-X8Rh5Ienr1lFJZLMq7spYkNC9Uqmrq5ub+vBKYedw8zOEL9n44umxgMoIuJCiJXiV8IYDl5Evk5lGbPYPfCxxg==}
 
-  '@digdir/designsystemet@1.14.0':
-    resolution: {integrity: sha512-y+CWrrjzlEBbu0DmcdhwC5167rz+l5qUIb0l4dLMkxIrkQKXSC0dt/aoxATFsHhVTehbKuYUrGZdCkZTW+/bSA==}
+  '@digdir/designsystemet@1.16.1':
+    resolution: {integrity: sha512-pPiL0nru0W8ASho2/t0H0k1Ra/cD0FKUn8JBqfB7MEKdShO65Ny+8lP/k9fXMiY8ndK7VlGn+tVYr/bQEdO1+A==}
     engines: {node: '>=20.20.2'}
     hasBin: true
 
@@ -818,6 +818,9 @@ packages:
 
   '@navikt/aksel-icons@8.11.1':
     resolution: {integrity: sha512-hXvm/5T8s7fcSlZpg2RWrs870PkH2SeCSQBMmDgI4rm+t5gsw+nDa4qOSCrQQJLiNjMx3jbCO10rL4po9QtfdQ==}
+
+  '@navikt/aksel-icons@8.13.0':
+    resolution: {integrity: sha512-z2r80EAuKX6W1XUSaBjAvQCAyyjir41XCmXPlmnvvNqOINfV8RFf2LYUx2+FwCqVfuPOdh7sdPLUtzwMl7QNmQ==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -1731,8 +1734,8 @@ packages:
     resolution: {integrity: sha512-EbGRQg4FhrmwLodl+t3JNAnXHWVr9Vp+Zl1QBZVPY4ByfkzIT8cX3K6QWODHtkIZqqJVEWvhHSx3v5PDHsaQag==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@u-elements/u-combobox@2.0.4':
-    resolution: {integrity: sha512-+X4w54dgySFJWer2n5Q5wYm48vSYW2kiM0fibjFINU8hXeejf+A4qYy4s56g9StHyH3b2Ar/2ZEWgZALGE2zLA==}
+  '@u-elements/u-combobox@2.0.5':
+    resolution: {integrity: sha512-MTvfd9Nl5sR4jHMaAWogTvi6xrpUhhI4wv5NdpkNasfJgPaY8Y9/shR6Q01LrMCZcHZDY8/UYd1d5obus3Ekzw==}
 
   '@u-elements/u-datalist@2.0.1':
     resolution: {integrity: sha512-xfbSiTZApvbqCt6W3LUtoyAArxOYq17Em9mYyjStiq5/XpshTVsN1JkqSqo+OjVOwDieggyAQsRwgloZgtHB7Q==}
@@ -3501,8 +3504,8 @@ packages:
     resolution: {integrity: sha512-SlyRoSkdh1dYP0PzclLE7r0M9sgbFKKMFXpFRUMNuKhQSbC6VQIGzq3E0qsfvGJaUFJPGv6Ws1NZ/haTAjfbMA==}
     engines: {node: '>=12'}
 
-  style-dictionary@5.4.3:
-    resolution: {integrity: sha512-VpIXPFqIJXR5bLzWhV9PjB7NBteyAVHq9THk5Hyw6zRqAjgfJkH9zalC9szLthkQlS+S8szmmq6tlnLWFksmTQ==}
+  style-dictionary@5.4.4:
+    resolution: {integrity: sha512-Sd7dkEOLn33EpvlMyS8ykUu0us2EIFUqsysf4DSwZQ46nqQkZ2Q9o5mozu8cSizj3t7E220HaPk7EV1O7LjvDQ==}
     engines: {node: '>=22.0.0'}
     hasBin: true
 
@@ -4198,17 +4201,17 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.1
 
-  '@digdir/designsystemet-css@1.14.0':
+  '@digdir/designsystemet-css@1.16.1':
     dependencies:
-      '@digdir/designsystemet-types': 1.14.0
+      '@digdir/designsystemet-types': 1.16.1
 
-  '@digdir/designsystemet-react@1.14.0(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
+  '@digdir/designsystemet-react@1.16.1(@types/react@19.2.17)(react-dom@19.2.7(react@19.2.7))(react@19.2.7)':
     dependencies:
-      '@digdir/designsystemet-types': 1.14.0
-      '@digdir/designsystemet-web': 1.14.0
+      '@digdir/designsystemet-types': 1.16.1
+      '@digdir/designsystemet-web': 1.16.1
       '@floating-ui/dom': 1.7.6
       '@floating-ui/react': 0.26.23(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
-      '@navikt/aksel-icons': 8.11.1
+      '@navikt/aksel-icons': 8.13.0
       '@radix-ui/react-slot': 1.2.5(@types/react@19.2.17)(react@19.2.7)
       '@tanstack/react-virtual': 3.14.2(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       clsx: 2.1.1
@@ -4217,21 +4220,21 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet-types@1.14.0': {}
+  '@digdir/designsystemet-types@1.16.1': {}
 
-  '@digdir/designsystemet-web@1.14.0':
+  '@digdir/designsystemet-web@1.16.1':
     dependencies:
       '@floating-ui/dom': 1.7.6
-      '@u-elements/u-combobox': 2.0.4
+      '@u-elements/u-combobox': 2.0.5
       '@u-elements/u-datalist': 2.0.1
       '@u-elements/u-details': 1.0.0
       '@u-elements/u-tabs': 1.0.3
 
-  '@digdir/designsystemet@1.14.0':
+  '@digdir/designsystemet@1.16.1':
     dependencies:
       '@commander-js/extra-typings': 14.0.0(commander@14.0.3)
-      '@digdir/designsystemet-types': 1.14.0
-      '@tokens-studio/sd-transforms': 2.0.3(style-dictionary@5.4.3)
+      '@digdir/designsystemet-types': 1.16.1
+      '@tokens-studio/sd-transforms': 2.0.3(style-dictionary@5.4.4)
       chroma-js: 3.2.0
       colorjs.io: 0.6.1
       commander: 14.0.3
@@ -4241,7 +4244,7 @@ snapshots:
       picocolors: 1.1.1
       postcss: 8.5.15
       ramda: 0.32.0
-      style-dictionary: 5.4.3
+      style-dictionary: 5.4.4
       zod: 4.4.3
       zod-validation-error: 5.0.0(zod@4.4.3)
 
@@ -4586,6 +4589,8 @@ snapshots:
     optional: true
 
   '@navikt/aksel-icons@8.11.1': {}
+
+  '@navikt/aksel-icons@8.13.0': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -5107,7 +5112,7 @@ snapshots:
     dependencies:
       '@testing-library/dom': 10.4.1
 
-  '@tokens-studio/sd-transforms@2.0.3(style-dictionary@5.4.3)':
+  '@tokens-studio/sd-transforms@2.0.3(style-dictionary@5.4.4)':
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.2
       '@bundled-es-modules/postcss-calc-ast-parser': 0.1.6
@@ -5115,7 +5120,7 @@ snapshots:
       colorjs.io: 0.5.2
       expr-eval-fork: 3.0.3
       is-mergeable-object: 1.1.1
-      style-dictionary: 5.4.3
+      style-dictionary: 5.4.4
 
   '@tokens-studio/types@0.5.2': {}
 
@@ -5233,7 +5238,7 @@ snapshots:
       '@typescript-eslint/types': 8.60.1
       eslint-visitor-keys: 5.0.1
 
-  '@u-elements/u-combobox@2.0.4': {}
+  '@u-elements/u-combobox@2.0.5': {}
 
   '@u-elements/u-datalist@2.0.1': {}
 
@@ -7072,7 +7077,7 @@ snapshots:
 
   strip-indent@4.1.1: {}
 
-  style-dictionary@5.4.3:
+  style-dictionary@5.4.4:
     dependencies:
       '@bundled-es-modules/deepmerge': 4.3.2
       '@bundled-es-modules/glob': 13.0.6
