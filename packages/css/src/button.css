@@ -7,33 +7,20 @@
 
   /** Background ("Fill") */
   --dsc-button-background: transparent;
-  --dsc-button-background--active: var(--ds-color-surface-tinted);
-  --dsc-button-background--hover: var(--ds-color-surface-tinted);
+  --dsc-button-background--active: var(--ds-color-surface-active);
+  --dsc-button-background--hover: var(--ds-color-surface-hover);
 
   /** Border ("Stroke") */
   --dsc-button-border-color: var(--ds-color-text-default);
 }
 
-.ds-button[data-variant="secondary"][data-color="neutral"] {
-  /** Background ("Fill") */
-  --dsc-button-background--active: var(--ds-color-background-tinted);
-  --dsc-button-background--hover: var(--ds-color-background-tinted);
-}
-
-.ds-button[data-variant="secondary"][data-color="danger"] {
-  /** Background ("Fill") */
-  --dsc-button-background--active: var(--ds-color-surface-active);
-  --dsc-button-background--hover: var(--ds-color-surface-hover);
-}
-
-/* Don't apply special styling for tertiary buttons when inside Pagination.
-  Pagination currently has mixed docs of either setting data-variant="primary" on Pagination.Button
-  or keeping it as tertiary (returned from usePagination). If this is changed upstream we can simplify this selector.
-
-  Also don't apply when inside ToggleGroup, which uses <label class="ds-button" data-variant="tertiary">
-*/
-
 .ds-button[data-variant="tertiary"]:not(
+  /* Don't apply when inside Pagination.
+   Pagination currently has mixed docs of either setting data-variant="primary" on Pagination.Button
+    or keeping it as tertiary (returned from usePagination). If this is changed upstream we can simplify this selector.
+
+    Also don't apply when inside ToggleGroup, which uses <label class="ds-button" data-variant="tertiary">
+  */
     :is(.ds-pagination, .ds-toggle-group) .ds-button[data-variant="tertiary"]
   ) {
   /** Text **/
@@ -42,8 +29,8 @@
 
   /** Background ("Fill") */
   --dsc-button-background: transparent;
-  --dsc-button-background--active: var(--ds-color-background-tinted);
-  --dsc-button-background--hover: var(--ds-color-surface-tinted);
+  --dsc-button-background--active: var(--ds-color-surface-active);
+  --dsc-button-background--hover: var(--ds-color-surface-hover);
 
   /** Border ("Stroke") */
   --dsc-button-border-color: transparent;
@@ -55,22 +42,6 @@
     text-decoration: underline 2px;
     text-underline-offset: 6px; /** Hack to prevent us from having to create our own button component just to support underline on hover. */
   }
-}
-
-.ds-button[data-variant="tertiary"][data-color="neutral"]:not(
-    :is(.ds-pagination, .ds-toggle-group) .ds-button[data-variant="tertiary"]
-  ) {
-  /** Background ("Fill") */
-  --dsc-button-background--active: var(--ds-color-surface-active);
-  --dsc-button-background--hover: var(--ds-color-surface-hover);
-}
-
-.ds-button[data-variant="tertiary"][data-color="danger"]:not(
-    :is(.ds-pagination, .ds-toggle-group) .ds-button[data-variant="tertiary"]
-  ) {
-  /** Background ("Fill") */
-  --dsc-button-background--active: var(--ds-color-surface-active);
-  --dsc-button-background--hover: var(--ds-color-surface-hover);
 }
 
 .ds-button {
