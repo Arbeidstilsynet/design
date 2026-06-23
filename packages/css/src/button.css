@@ -29,8 +29,13 @@
 
   /** Background ("Fill") */
   --dsc-button-background: transparent;
-  --dsc-button-background--active: var(--ds-color-surface-active);
-  --dsc-button-background--hover: var(--ds-color-surface-hover);
+  --dsc-button-background--active: transparent;
+  --dsc-button-background--hover: transparent;
+
+  &[data-icon="true"] {
+    --dsc-button-background--active: var(--ds-color-surface-active);
+    --dsc-button-background--hover: var(--ds-color-surface-hover);
+  }
 
   /** Border ("Stroke") */
   --dsc-button-border-color: transparent;
