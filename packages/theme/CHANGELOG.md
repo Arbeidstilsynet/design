@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.8.1
+
+Released: 2026-06-23
+
+### Patch Changes
+
+- **Colors**: Updated color palettes with distinct hover/active colors as well as darker grey for `--ds-color-neutral-surface-tinted` ([#951](https://github.com/Arbeidstilsynet/design/pull/951))
+
 ## 0.8.0
 
 Released: 2026-03-26

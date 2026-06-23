@@ -1,5 +1,28 @@
 # @arbeidstilsynet/design-css
 
+## 0.11.0
+
+Released: 2026-06-23
+
+### Minor Changes
+
+- **Steps**: New component 🎉 Based on the [Steps component by Mattilsynet](https://github.com/Mattilsynet/design/tree/next/designsystem/steps). ([#958](https://github.com/Arbeidstilsynet/design/pull/958))
+
+### Patch Changes
+
+- **FilePicker**: Use the standard danger color context for file remove buttons in the files table. ([#935](https://github.com/Arbeidstilsynet/design/pull/935))
+
+- **FilePicker**: Restyle the dropzone to match the updated Gnist design. FilePicker now uses the default main color context and contextual color tokens for the dropzone outline and backgrounds, while the hover state keeps the dashed border and the drag state drops the elevation shadow. ([#935](https://github.com/Arbeidstilsynet/design/pull/935))
+
+- **Link**: Override styles to match updated Gnist design. Changes default text color from `text-subtle` to `text-default`, hover color to `base-hover`, and visited color to match default. ([#918](https://github.com/Arbeidstilsynet/design/pull/918))
+
+- Updated dependency `@digdir/designsystemet-css` to `1.16.1`. ([#964](https://github.com/Arbeidstilsynet/design/pull/964))
+  Updated dependency `@digdir/designsystemet` to `1.16.1`.
+  Updated dependency `@digdir/designsystemet-react` to `1.16.1`.
+  Updated dependency `@digdir/designsystemet-types` to `1.16.1`.
+
+- **Suggestion**: upstream redesign for Suggestion from [@digdir/designsystemet-css@1.14.0](https://github.com/digdir/designsystemet/releases/tag/v1.14.0) ([#861](https://github.com/Arbeidstilsynet/design/pull/861))
+
 ## 0.10.4
 
 Released: 2026-04-27
