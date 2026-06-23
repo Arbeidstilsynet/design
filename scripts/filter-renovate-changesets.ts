@@ -17,7 +17,11 @@ const PACKAGE_NAME_TO_DIR: Record<string, string> = {
   "@arbeidstilsynet/design-theme": "theme",
 };
 
-type PackageDeps = { dependencies: Set<string>; peerDependencies: Set<string> };
+type PackageDeps = {
+  dependencies: Set<string>;
+  peerDependencies: Set<string>;
+  devDependencies: Set<string>;
+};
 
 export function parseChangesetFile(content: string) {
   const lines = content
@@ -73,10 +77,12 @@ function loadPackageDeps(packageDir: string): PackageDeps | null {
     const pkg = JSON.parse(fs.readFileSync(packageJsonPath, "utf8")) as {
       dependencies?: Record<string, string>;
       peerDependencies?: Record<string, string>;
+      devDependencies?: Record<string, string>;
     };
     return {
       dependencies: new Set(Object.keys(pkg.dependencies ?? {})),
       peerDependencies: new Set(Object.keys(pkg.peerDependencies ?? {})),
+      devDependencies: new Set(Object.keys(pkg.devDependencies ?? {})),
     };
   } catch {
     return null;
@@ -99,7 +105,15 @@ export function shouldKeepChangeset(
     const deps = packageDepsCache.get(pkgDir);
     if (!deps) continue;
     for (const dep of updatedDependencies) {
-      if (deps.dependencies.has(dep) || deps.peerDependencies.has(dep)) {
+      // A production dependency always affects consumers of the published package.
+      if (deps.dependencies.has(dep)) {
+        return true;
+      }
+      // A peer dependency only affects consumers when its range changes. When the
+      // dependency is also a devDependency (e.g. `react`), Renovate bumps the exact
+      // devDependency version while the peerDependency range stays the same, so the
+      // update does not affect consumers and the changeset can be dropped.
+      if (deps.peerDependencies.has(dep) && !deps.devDependencies.has(dep)) {
         return true;
       }
     }
