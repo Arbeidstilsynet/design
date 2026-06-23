@@ -1,6 +1,6 @@
 {
   "name": "@arbeidstilsynet/design-css",
-  "version": "0.10.4",
+  "version": "0.11.0",
   "description": "CSS for Designsystemet",
   "license": "MIT",
   "author": "Arbeidstilsynet",
@@ -29,12 +29,12 @@
     "build": "del-cli ./dist && postcss ./src/*.css --base . --dir ./dist && tsx ./scripts/copy-digdir-css.ts"
   },
   "dependencies": {
-    "@digdir/designsystemet-css": "1.14.0"
+    "@digdir/designsystemet-css": "1.16.1"
   },
   "devDependencies": {
     "@types/node": "24.13.1",
     "autoprefixer": "10.5.0",
-    "cssnano": "8.0.1",
+    "cssnano": "8.0.2",
     "del-cli": "7.0.0",
     "postcss": "8.5.15",
     "postcss-cli": "11.0.1",

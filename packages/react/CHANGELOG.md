@@ -1,5 +1,26 @@
 # @arbeidstilsynet/design-react
 
+## 0.11.0
+
+Released: 2026-06-23
+
+### Minor Changes
+
+- **Steps**: New component 🎉 Based on the [Steps component by Mattilsynet](https://github.com/Mattilsynet/design/tree/next/designsystem/steps). ([#958](https://github.com/Arbeidstilsynet/design/pull/958))
+
+### Patch Changes
+
+- **FilePicker**: Use the standard danger color context for file remove buttons in the files table. ([#935](https://github.com/Arbeidstilsynet/design/pull/935))
+
+- Updated dependency `@digdir/designsystemet-css` to `1.16.1`. ([#964](https://github.com/Arbeidstilsynet/design/pull/964))
+  Updated dependency `@digdir/designsystemet` to `1.16.1`.
+  Updated dependency `@digdir/designsystemet-react` to `1.16.1`.
+  Updated dependency `@digdir/designsystemet-types` to `1.16.1`.
+
+- Updated dependency `@radix-ui/react-slot` to `^1.3.0`. ([#972](https://github.com/Arbeidstilsynet/design/pull/972))
+
+- Updated dependency `@navikt/aksel-icons` to `^8.13.0`. ([#970](https://github.com/Arbeidstilsynet/design/pull/970))
+
 ## 0.10.4
 
 Released: 2026-04-27
