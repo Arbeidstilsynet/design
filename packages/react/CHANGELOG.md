@@ -1,5 +1,9 @@
 # @arbeidstilsynet/design-react
 
+## 0.11.1
+
+Released: 2026-06-23
+
 ## 0.11.0
 
 Released: 2026-06-23

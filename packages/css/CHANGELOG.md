@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-css
 
+## 0.11.1
+
+Released: 2026-06-23
+
+### Patch Changes
+
+- **Button**: Updated background color of hovered/active buttons. ([#973](https://github.com/Arbeidstilsynet/design/pull/973))
+
 ## 0.11.0
 
 Released: 2026-06-23
