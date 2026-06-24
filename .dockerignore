@@ -2,7 +2,9 @@
 **/node_modules
 
 # Build outputs and generated artifacts
-build
+**/build
+**/dist
+**/storybook-static
 .cache
 coverage
 
