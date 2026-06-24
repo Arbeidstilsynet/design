@@ -64,3 +64,23 @@ jobs:
   storybook-tests:
     name: Storybook Tests
     uses: ./.github/workflows/storybook-tests.yml
+
+  validate-nais:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: .nais
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - name: Install nais-cli
+        run: |
+          NAIS_GPG_KEY="/etc/apt/keyrings/nav_nais_gar.asc"
+          curl -sfSL "https://europe-north1-apt.pkg.dev/doc/repo-signing-key.gpg" | sudo dd of="$NAIS_GPG_KEY"
+          echo "deb [arch=amd64 signed-by=$NAIS_GPG_KEY] https://europe-north1-apt.pkg.dev/projects/nais-io nais-ppa main" | sudo tee /etc/apt/sources.list.d/nav_nais_gar.list
+          sudo apt update
+          sudo apt install nais
+      - run: nais --version
+      - run: nais validate --vars-file vars-dev.yml storybook.yml
+      - run: nais validate --vars-file vars-prod.yml storybook.yml
+      - run: nais validate --vars-file vars-demo.yml storybook.yml
