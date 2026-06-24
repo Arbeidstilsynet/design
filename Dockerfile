@@ -11,6 +11,11 @@ WORKDIR /app
 
 RUN corepack enable
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY apps/storybook/package.json ./apps/storybook/package.json
+COPY packages/css/package.json ./packages/css/package.json
+COPY packages/react/package.json ./packages/react/package.json
+COPY packages/theme/package.json ./packages/theme/package.json
+COPY tools/eslint-stub/package.json ./tools/eslint-stub/package.json
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile --ignore-scripts --filter=storybook...
 
 COPY . /app
