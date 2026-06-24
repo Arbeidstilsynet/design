@@ -4,7 +4,7 @@
 import cl from "clsx/lite";
 import { toast, ToastContainer } from "react-toastify";
 import { Alert, Heading, Table, Tooltip } from "..";
-// @ts-ignore - Exception for CSS modules - Ordinary, exported CSS files are defined in the CSS repo.
+// @ts-ignore - Exception for CSS modules - Ordinary, exported CSS files are defined in the CSS project.
 import classes from "./CssVariables.module.css";
 
 type CssVariablesProps = {
