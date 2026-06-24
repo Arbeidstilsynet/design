@@ -1,0 +1,30 @@
+name: Deploy Storybook preview to Nais
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  deploy_dev:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - uses: nais/docker-build-push@05dbb6091b30bd84279c6d64a45ef8782fd410a5 # v0
+        id: docker
+        with:
+          team: plattform
+      - uses: nais/deploy/actions/deploy@2d18f050f07b6a007864c6a57070ed915d571beb # v2
+        env:
+          CLUSTER: dev
+          RESOURCE: .nais/storybook.yml
+          WORKLOAD_IMAGE: ${{ steps.docker.outputs.image }}
+          VARS: .nais/vars-dev.yml

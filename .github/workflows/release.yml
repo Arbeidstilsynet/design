@@ -17,6 +17,8 @@ jobs:
       contents: write
       pull-requests: write
       id-token: write
+    outputs:
+      published: ${{ steps.changeset.outputs.published }}
     steps:
       - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
         id: app-token
@@ -72,3 +74,25 @@ jobs:
             echo "Slack notification failed"
             exit 1
           }
+
+  deploy_prod:
+    needs: release
+    if: needs.release.outputs.published == 'true'
+    name: Deploy Storybook
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - uses: nais/docker-build-push@05dbb6091b30bd84279c6d64a45ef8782fd410a5 # v0
+        id: docker
+        with:
+          team: plattform
+      - uses: nais/deploy/actions/deploy@2d18f050f07b6a007864c6a57070ed915d571beb # v2
+        env:
+          CLUSTER: prod
+          RESOURCE: .nais/storybook.yml
+          WORKLOAD_IMAGE: ${{ steps.docker.outputs.image }}
+          VARS: .nais/vars-prod.yml
