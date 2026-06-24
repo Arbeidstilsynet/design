@@ -117,7 +117,7 @@ function CssVariableValue({ value }: { value: string }) {
           aria-label="Copy SVG value to clipboard"
           className={classes.svgButton}
         >
-          <img src={svgDataURL} alt="SVG Icon" className={classes.svgImage} />
+          <img src={svgDataURL} alt="" className={classes.svgImage} />
         </button>
       </Tooltip>
     );
