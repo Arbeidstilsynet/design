@@ -1,0 +1,20 @@
+apiVersion: nais.io/v1alpha1
+kind: Application
+metadata:
+  name: "{{app.name}}"
+  namespace: "{{team}}"
+  labels:
+    team: "{{team}}"
+spec:
+  ingresses:
+    - "{{app.ingress}}"
+  port: 6006
+  replicas:
+    max: 2
+    min: 2
+  resources:
+    requests:
+      cpu: 50m
+      memory: 128Mi
+    limits:
+      memory: 192Mi
