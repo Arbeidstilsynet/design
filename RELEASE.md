@@ -8,11 +8,28 @@ We currently use [Changesets](https://github.com/changesets/changesets) and [Cha
 
 - Merge the PR after checks pass.
 
+- The merge deploys the current `main` branch Storybook to
+  [gnist.dev.arbeidstilsynet.no](https://gnist.dev.arbeidstilsynet.no).
+
 - [Changeset Release Action](https://github.com/changesets/action) should notice the changesets (inside `.changeset/`) and generate or update a PR with bumped version and changelog.
 
 - Approve and merge the changesets versioning PR.
 
 - [Changeset Release Action](https://github.com/changesets/action) will now publish the new package version to [NPM](https://www.npmjs.com/org/arbeidstilsynet), add a git tag and create [GitHub releases](https://github.com/Arbeidstilsynet/design/releases).
+
+- After packages are published, Storybook is deployed to
+  [gnist.arbeidstilsynet.no](https://gnist.arbeidstilsynet.no), so production
+  Storybook tracks the latest published package versions.
+
+- For initial bootstrap or break-glass deploys, run the manual
+  `Deploy Storybook prod (manual)` workflow from `main`. The normal production
+  Storybook deploy should still happen through package publishing.
+
+- To share an ad hoc Storybook from a feature branch, run the manual
+  `Deploy Storybook ad hoc to Nais` workflow from that branch. It deploys a
+  separate dev-cluster app to
+  [gnist.demo.dev.arbeidstilsynet.no](https://gnist.demo.dev.arbeidstilsynet.no)
+  with a 24-hour TTL, and fails if run from `main`.
 
 - Verify that new version is available in [NPM](https://www.npmjs.com/org/arbeidstilsynet) and on [GitHub releases](https://github.com/Arbeidstilsynet/design/releases)
 

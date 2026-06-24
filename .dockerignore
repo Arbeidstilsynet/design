@@ -1,0 +1,54 @@
+# Dependency directories
+**/node_modules
+
+# Build outputs and generated artifacts
+**/build
+**/dist
+**/storybook-static
+.cache
+coverage
+
+# Logs and temp files
+*.log
+npm-debug.log*
+pnpm-debug.log*
+*.tmp
+*.temp
+
+# VCS and editor metadata
+.git
+.gitignore
+.gitattributes
+.vscode
+.idea
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Documentation
+docs
+*.md
+packages/**/*.md
+!packages/**/CHANGELOG.md
+LICENSE
+
+# Tests
+**/vitest.*.ts
+
+# CI/CD
+.changeset
+.github
+.nais
+scripts
+
+# Raw tokens (JSON)
+design-tokens
+
+# Misc config
+renovate.json
+mise.toml
+.sonarcloud.properties
+**/.pre-commit-config.yaml
+**/.oxfmtrc.json*
+**/.oxlintrc.json*
