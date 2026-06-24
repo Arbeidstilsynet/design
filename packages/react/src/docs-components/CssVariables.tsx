@@ -2,7 +2,10 @@
 // https://github.com/digdir/designsystemet/blob/7d233fbf6841ff1839607ec93984d5aec049a5b5/apps/storybook/docs-components/CssVariables/CssVariables.tsx
 
 import cl from "clsx/lite";
-import { Heading, Table } from "..";
+import { toast, ToastContainer } from "react-toastify";
+import { Alert, Heading, Table, Tooltip } from "..";
+// @ts-expect-error - Exception for CSS modules - Ordinary, exported CSS files are defined in the CSS repo.
+import classes from "./CssVariables.module.css";
 
 type CssVariablesProps = {
   css: string;
@@ -34,13 +37,73 @@ export function CssVariables({ css, className, ...rest }: CssVariablesProps) {
           {Object.entries(cssVariables).map(([name, value]) => (
             <Table.Row key={name}>
               <Table.Cell>{name}</Table.Cell>
-              <Table.Cell>{value}</Table.Cell>
+              <Table.Cell>
+                <CssVariableValue value={value} />
+              </Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
       </Table>
+      <ToastContainer position="bottom-center" autoClose={1500} pauseOnHover />
     </>
   );
+}
+
+/**
+ * Extracts SVG data from CSS value if present.
+ *
+ * Matches:
+ * - double quoted URLs: url("data:image/svg+xml,...")
+ * - single quoted URLs: url('data:image/svg+xml,...')
+ * - unquoted URLs: url(data:image/svg+xml,...)
+ */
+const getSvgDataURL = (value: string): string | null => {
+  const match = value.match(
+    /url\(\s*(?:"(data:image\/svg\+xml[^"]*)"|'(data:image\/svg\+xml[^']*)'|(data:image\/svg\+xml[^)]*))\s*\)/i,
+  );
+  if (!match) return null;
+  return match[1] ?? match[2] ?? match[3] ?? null;
+};
+
+/**
+ * Copies value to clipboard and shows a toast notification.
+ */
+const copyToClipboard = (value: string) => {
+  void navigator.clipboard?.writeText(value);
+
+  toast(
+    <Alert data-size="sm" data-color="success" style={{ width: "100%" }}>
+      Copied to clipboard.
+    </Alert>,
+    { autoClose: 1500, className: classes.toast! },
+  );
+};
+
+/**
+ * Parses CSS variable value and renders it.
+ *
+ * SVG data URLs are rendered as interactible icons.
+ * Other values are rendered as plain text.
+ */
+function CssVariableValue({ value }: { value: string }) {
+  const svgDataURL = getSvgDataURL(value);
+  if (svgDataURL) {
+    const trimmedValue = value.trim();
+    return (
+      <Tooltip content={trimmedValue}>
+        <button
+          type="button"
+          onClick={() => copyToClipboard(trimmedValue)}
+          aria-label="Copy SVG value to clipboard"
+          className={classes.svgButton}
+        >
+          <img src={svgDataURL} alt="SVG Icon" className={classes.svgImage} />
+        </button>
+      </Tooltip>
+    );
+  }
+
+  return value;
 }
 
 /* get variables and its value from css file */
