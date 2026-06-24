@@ -13,6 +13,8 @@ ChangesetBot: "Changeset Bot"
 Detect: "Release workflow\n(detects changesets)"
 VersionPR: "Versioning PR"
 Publish: "Release workflow\n(publish new versions)"
+PreviewStorybook: "Storybook preview\n(gnist.dev)"
+ProdStorybook: "Storybook prod\n(gnist)"
 NPM: "NPM"
 Tag: "Git Tag"
 GHRel: "GitHub Release"
@@ -25,12 +27,14 @@ PR -> ChangesetBot: triggers
 ChangesetBot -> PR: "comment status"
 Maintainer -> PR: "review & approve"
 PR -> Detect: merge triggers
+PR -> PreviewStorybook: "merge deploys"
 Detect -> VersionPR: create/update
 Maintainer -> VersionPR: "review & approve"
 VersionPR -> Publish: merge triggers
 Publish -> NPM
 Publish -> Tag
 Publish -> GHRel
+Publish -> ProdStorybook: "published deploys"
 
 classes: {
   person: {
@@ -65,3 +69,5 @@ Publish.class: workflow
 NPM.class: artifact
 Tag.class: artifact
 GHRel.class: artifact
+PreviewStorybook.class: artifact
+ProdStorybook.class: artifact
