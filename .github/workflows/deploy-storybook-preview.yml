@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - feat/deploy-nais-preview
 
 concurrency:
   group: ${{ github.workflow }}
