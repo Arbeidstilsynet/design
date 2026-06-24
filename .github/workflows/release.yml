@@ -78,21 +78,11 @@ jobs:
   deploy_prod:
     needs: release
     if: needs.release.outputs.published == 'true'
-    name: Deploy Storybook
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
+    name: Deploy Storybook prod
     permissions:
       contents: read
       id-token: write
-    steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
-      - uses: nais/docker-build-push@05dbb6091b30bd84279c6d64a45ef8782fd410a5 # v0
-        id: docker
-        with:
-          team: plattform
-      - uses: nais/deploy/actions/deploy@2d18f050f07b6a007864c6a57070ed915d571beb # v2
-        env:
-          CLUSTER: prod
-          RESOURCE: .nais/storybook.yml
-          WORKLOAD_IMAGE: ${{ steps.docker.outputs.image }}
-          VARS: .nais/vars-prod.yml
+    uses: ./.github/workflows/deploy-storybook-nais.yml
+    with:
+      cluster: prod
+      vars: .nais/vars-prod.yml
