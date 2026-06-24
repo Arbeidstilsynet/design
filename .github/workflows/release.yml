@@ -86,3 +86,4 @@ jobs:
     with:
       cluster: prod
       vars: .nais/vars-prod.yml
+      workload_name: gnist-storybook

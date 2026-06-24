@@ -25,6 +25,12 @@ We currently use [Changesets](https://github.com/changesets/changesets) and [Cha
   `Deploy Storybook prod (manual)` workflow from `main`. The normal production
   Storybook deploy should still happen through package publishing.
 
+- To share an ad hoc Storybook from a feature branch, run the manual
+  `Deploy Storybook ad hoc to Nais` workflow from that branch. It deploys a
+  separate dev-cluster app to
+  [gnist.demo.dev.arbeidstilsynet.no](https://gnist.demo.dev.arbeidstilsynet.no)
+  and fails if run from `main`.
+
 - Verify that new version is available in [NPM](https://www.npmjs.com/org/arbeidstilsynet) and on [GitHub releases](https://github.com/Arbeidstilsynet/design/releases)
 
 ![Release process diagram](./docs/diagrams/release.svg)

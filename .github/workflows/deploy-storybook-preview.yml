@@ -18,3 +18,4 @@ jobs:
     with:
       cluster: dev
       vars: .nais/vars-dev.yml
+      workload_name: gnist-storybook

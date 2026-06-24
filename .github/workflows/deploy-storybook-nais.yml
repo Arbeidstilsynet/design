@@ -9,6 +9,9 @@ on:
       vars:
         required: true
         type: string
+      workload_name:
+        required: true
+        type: string
 
 jobs:
   deploy:
@@ -28,4 +31,5 @@ jobs:
           CLUSTER: ${{ inputs.cluster }}
           RESOURCE: .nais/storybook.yml
           WORKLOAD_IMAGE: ${{ steps.docker.outputs.image }}
+          WORKLOAD_NAME: ${{ inputs.workload_name }}
           VARS: ${{ inputs.vars }}
