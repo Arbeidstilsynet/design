@@ -27,4 +27,3 @@ jobs:
     with:
       cluster: dev
       vars: .nais/vars-demo.yml
-      workload_name: gnist-storybook-demo
