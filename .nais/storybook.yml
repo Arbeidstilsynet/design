@@ -9,6 +9,7 @@ spec:
   ingresses:
     - "{{app.ingress}}"
   port: 6006
+  ttl: "{{app.ttl}}"
   replicas:
     max: 2
     min: 2
