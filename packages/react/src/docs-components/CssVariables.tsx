@@ -102,7 +102,7 @@ const copyToClipboard = async (value: string) => {
 /**
  * Parses CSS variable value and renders it.
  *
- * SVG data URLs are rendered as interactible icons.
+ * SVG data URLs are rendered as interactable icons.
  * Other values are rendered as plain text.
  */
 function CssVariableValue({ value }: { value: string }) {
