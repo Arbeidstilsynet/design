@@ -70,7 +70,11 @@ const getSvgDataURL = (value: string): string | null => {
  */
 const copyToClipboard = async (value: string) => {
   try {
-    await navigator.clipboard?.writeText(value);
+    if (!navigator.clipboard?.writeText) {
+      throw new Error("Clipboard API not available");
+    }
+
+    await navigator.clipboard.writeText(value);
 
     toast(
       <Alert data-size="sm" data-color="success" style={{ width: "100%" }}>
