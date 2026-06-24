@@ -17,6 +17,8 @@ jobs:
       contents: write
       pull-requests: write
       id-token: write
+    outputs:
+      published: ${{ steps.changeset.outputs.published }}
     steps:
       - uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3
         id: app-token
@@ -24,7 +26,7 @@ jobs:
           client-id: ${{ vars.BETZY_BOT_CLIENT_ID }}
           private-key: ${{ secrets.BETZY_BOT_PRIVATE_KEY }}
 
-      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
         with:
           fetch-depth: 0
           token: ${{ steps.app-token.outputs.token }}
@@ -72,3 +74,15 @@ jobs:
             echo "Slack notification failed"
             exit 1
           }
+
+  deploy_prod:
+    needs: release
+    if: needs.release.outputs.published == 'true'
+    name: Deploy Storybook prod
+    permissions:
+      contents: read
+      id-token: write
+    uses: ./.github/workflows/deploy-storybook-nais.yml
+    with:
+      cluster: prod
+      vars: .nais/vars-prod.yml

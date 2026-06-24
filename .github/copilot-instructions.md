@@ -26,7 +26,10 @@ The repo is a **pnpm workspace monorepo** with three publishable packages and a 
 - **`packages/react`** — React components (`@arbeidstilsynet/design-react`). Re-exports all components from `@digdir/designsystemet-react` plus custom components (Header, FilePicker, LightDarkImage, Logo).
 - **`packages/css`** — CSS for custom components (`@arbeidstilsynet/design-css`). Uses PostCSS with nesting. CSS is organized in layers: `at.overrides` for Digdir overrides, `at.components` for custom components.
 - **`packages/theme`** — Generated theme tokens (`@arbeidstilsynet/design-theme`). Built from Figma design tokens via `pnpm tokens:build`.
-- **`apps/storybook`** — Storybook documentation site deployed to gnist.arbeidstilsynet.no.
+- **`apps/storybook`** — Storybook documentation site. Every merge to `main`
+  deploys Storybook to gnist.dev.arbeidstilsynet.no; when Changesets publishes
+  packages, the same `main` branch Storybook is deployed to
+  gnist.arbeidstilsynet.no.
 
 The `design-react` and `design-css` packages are version-locked together via Changesets `fixed` config.
 

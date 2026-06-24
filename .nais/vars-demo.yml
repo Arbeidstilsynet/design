@@ -1,0 +1,5 @@
+team: plattform
+app:
+  name: gnist-storybook-demo
+  ingress: https://gnist.demo.dev.arbeidstilsynet.no
+  ttl: 24h
