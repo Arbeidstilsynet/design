@@ -22,7 +22,7 @@ We currently use [Changesets](https://github.com/changesets/changesets) and [Cha
   Storybook tracks the latest published package versions.
 
 - For initial bootstrap or break-glass deploys, run the manual
-  `Deploy Storybook prod to Nais` workflow from `main`. The normal production
+  `Deploy Storybook prod (manual)` workflow from `main`. The normal production
   Storybook deploy should still happen through package publishing.
 
 - Verify that new version is available in [NPM](https://www.npmjs.com/org/arbeidstilsynet) and on [GitHub releases](https://github.com/Arbeidstilsynet/design/releases)
