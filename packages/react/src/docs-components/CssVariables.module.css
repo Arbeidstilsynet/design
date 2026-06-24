@@ -24,4 +24,6 @@
 .toast {
   --toastify-toast-padding: 0;
   --toastify-color-progress-light: var(--ds-color-success-background-default);
+  --toastify-color-progress-success: var(--ds-color-success-background-default);
+  --toastify-color-progress-error: var(--ds-color-danger-background-default);
 }

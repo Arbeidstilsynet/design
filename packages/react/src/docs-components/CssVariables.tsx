@@ -68,15 +68,31 @@ const getSvgDataURL = (value: string): string | null => {
 /**
  * Copies value to clipboard and shows a toast notification.
  */
-const copyToClipboard = (value: string) => {
-  void navigator.clipboard?.writeText(value);
+const copyToClipboard = async (value: string) => {
+  try {
+    await navigator.clipboard?.writeText(value);
 
-  toast(
-    <Alert data-size="sm" data-color="success" style={{ width: "100%" }}>
-      Copied to clipboard.
-    </Alert>,
-    { autoClose: 1500, className: classes.toast! },
-  );
+    toast(
+      <Alert data-size="sm" data-color="success" style={{ width: "100%" }}>
+        Copied to clipboard.
+      </Alert>,
+      {
+        autoClose: 1500,
+        className: classes.toast,
+        icon: false,
+        type: "success",
+      },
+    );
+  } catch (error) {
+    console.error("Failed to copy to clipboard:", error);
+
+    toast(
+      <Alert data-size="sm" data-color="danger" style={{ width: "100%" }}>
+        Failed to copy to clipboard.
+      </Alert>,
+      { autoClose: 1500, className: classes.toast, icon: false, type: "error" },
+    );
+  }
 };
 
 /**
@@ -93,7 +109,7 @@ function CssVariableValue({ value }: { value: string }) {
       <Tooltip content={trimmedValue}>
         <button
           type="button"
-          onClick={() => copyToClipboard(trimmedValue)}
+          onClick={() => void copyToClipboard(trimmedValue)}
           aria-label="Copy SVG value to clipboard"
           className={classes.svgButton}
         >
