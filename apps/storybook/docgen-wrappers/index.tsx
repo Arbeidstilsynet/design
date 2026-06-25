@@ -17,6 +17,9 @@
 //   local declaration shadows the matching name from `export *`, so there is no clash.
 // - Compound components re-attach their sub-components (pointing at the wrapped
 //   siblings, so `Card.Block` etc. keep working and also gain docgen).
+// - Unstable components are wrapped under their clean name (e.g. `Suggestion`) so
+//   the autodocs heading reads cleanly, then re-exported under their original
+//   `EXPERIMENTAL_`-prefixed name so the package API stays unchanged.
 //
 // Constraints:
 // - This folder must NOT live under `.storybook/` (or any dot-folder): the docgen
@@ -216,42 +219,49 @@ export function DropdownTriggerContext(props: ComponentProps<typeof Base.Dropdow
   return <Base.DropdownTriggerContext {...props} />;
 }
 
-export function EXPERIMENTAL_AvatarStack(props: ComponentProps<typeof Base.EXPERIMENTAL_AvatarStack>) {
+function AvatarStack(props: ComponentProps<typeof Base.EXPERIMENTAL_AvatarStack>) {
   return <Base.EXPERIMENTAL_AvatarStack {...props} />;
 }
+export { AvatarStack as EXPERIMENTAL_AvatarStack };
 
-export const EXPERIMENTAL_Suggestion = Object.assign(
-  function EXPERIMENTAL_Suggestion(props: ComponentProps<typeof Base.EXPERIMENTAL_Suggestion>) {
+const Suggestion = Object.assign(
+  function Suggestion(props: ComponentProps<typeof Base.EXPERIMENTAL_Suggestion>) {
     return <Base.EXPERIMENTAL_Suggestion {...props} />;
   },
   {
-    List: EXPERIMENTAL_SuggestionList,
-    Input: EXPERIMENTAL_SuggestionInput,
-    Empty: EXPERIMENTAL_SuggestionEmpty,
-    Option: EXPERIMENTAL_SuggestionOption,
-    Clear: EXPERIMENTAL_SuggestionClear,
+    List: SuggestionList,
+    Input: SuggestionInput,
+    Empty: SuggestionEmpty,
+    Option: SuggestionOption,
+    Clear: SuggestionClear,
   },
 );
+export { Suggestion as EXPERIMENTAL_Suggestion };
 
-export function EXPERIMENTAL_SuggestionClear(props: ComponentProps<typeof Base.EXPERIMENTAL_SuggestionClear>) {
+function SuggestionClear(props: ComponentProps<typeof Base.EXPERIMENTAL_SuggestionClear>) {
   return <Base.EXPERIMENTAL_SuggestionClear {...props} />;
 }
+export { SuggestionClear as EXPERIMENTAL_SuggestionClear };
 
-export function EXPERIMENTAL_SuggestionEmpty(props: ComponentProps<typeof Base.EXPERIMENTAL_SuggestionEmpty>) {
+function SuggestionEmpty(props: ComponentProps<typeof Base.EXPERIMENTAL_SuggestionEmpty>) {
   return <Base.EXPERIMENTAL_SuggestionEmpty {...props} />;
 }
+export { SuggestionEmpty as EXPERIMENTAL_SuggestionEmpty };
 
-export function EXPERIMENTAL_SuggestionInput(props: ComponentProps<typeof Base.EXPERIMENTAL_SuggestionInput>) {
+function SuggestionInput(props: ComponentProps<typeof Base.EXPERIMENTAL_SuggestionInput>) {
   return <Base.EXPERIMENTAL_SuggestionInput {...props} />;
 }
+export { SuggestionInput as EXPERIMENTAL_SuggestionInput };
 
-export function EXPERIMENTAL_SuggestionList(props: ComponentProps<typeof Base.EXPERIMENTAL_SuggestionList>) {
+function SuggestionList(props: ComponentProps<typeof Base.EXPERIMENTAL_SuggestionList>) {
   return <Base.EXPERIMENTAL_SuggestionList {...props} />;
 }
+export { SuggestionList as EXPERIMENTAL_SuggestionList };
 
-export function EXPERIMENTAL_SuggestionOption(props: ComponentProps<typeof Base.EXPERIMENTAL_SuggestionOption>) {
+function SuggestionOption(props: ComponentProps<typeof Base.EXPERIMENTAL_SuggestionOption>) {
   return <Base.EXPERIMENTAL_SuggestionOption {...props} />;
 }
+export { SuggestionOption as EXPERIMENTAL_SuggestionOption };
 
 export const ErrorSummary = Object.assign(
   function ErrorSummary(props: ComponentProps<typeof Base.ErrorSummary>) {

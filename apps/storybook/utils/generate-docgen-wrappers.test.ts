@@ -16,7 +16,11 @@ describe("docgen wrappers", () => {
       .map((wrapper) => wrapper.name)
       .filter(
         (name) =>
-          !new RegExp(`export (?:function|const) ${name}\\b`).test(generated),
+          !new RegExp(
+            // Wrapped directly, or declared under a clean name and re-exported
+            // under the original (e.g. EXPERIMENTAL_-prefixed) name.
+            `export (?:function|const) ${name}\\b|export \\{ \\w+ as ${name} \\}`,
+          ).test(generated),
       );
 
     expect(missing).toEqual([]);

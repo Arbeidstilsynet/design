@@ -25,6 +25,20 @@ const outFile = path.join(here, "../docgen-wrappers/index.tsx");
 /** Namespace alias the generated file binds the base package source to. */
 const BASE_NS = "Base";
 
+/** Upstream marks unstable components with this prefix (e.g. EXPERIMENTAL_Suggestion). */
+const EXPERIMENTAL_PREFIX = "EXPERIMENTAL_";
+
+/**
+ * The name a wrapper is declared under. We drop the EXPERIMENTAL_ marker so the
+ * docgen displayName (and thus the autodocs heading) reads cleanly, then re-export
+ * the wrapper under its original name so the package's public API is unchanged.
+ */
+function declName(name: string): string {
+  return name.startsWith(EXPERIMENTAL_PREFIX)
+    ? name.slice(EXPERIMENTAL_PREFIX.length)
+    : name;
+}
+
 const reactComponentSymbols = new Set([
   "Symbol(react.forward_ref)",
   "Symbol(react.memo)",
@@ -140,7 +154,9 @@ function subTarget(
   wrappedNames: Set<string>,
 ): string {
   const flat = `${rootName}${sub}`;
-  return wrappedNames.has(flat) ? flat : `${BASE_NS}.${rootName}.${sub}`;
+  return wrappedNames.has(flat)
+    ? declName(flat)
+    : `${BASE_NS}.${rootName}.${sub}`;
 }
 
 export async function buildSource(): Promise<string> {
@@ -165,6 +181,9 @@ export async function buildSource(): Promise<string> {
 //   local declaration shadows the matching name from \`export *\`, so there is no clash.
 // - Compound components re-attach their sub-components (pointing at the wrapped
 //   siblings, so \`Card.Block\` etc. keep working and also gain docgen).
+// - Unstable components are wrapped under their clean name (e.g. \`Suggestion\`) so
+//   the autodocs heading reads cleanly, then re-exported under their original
+//   \`EXPERIMENTAL_\`-prefixed name so the package API stays unchanged.
 //
 // Constraints:
 // - This folder must NOT live under \`.storybook/\` (or any dot-folder): the docgen
@@ -184,8 +203,14 @@ export * from "../../../packages/react/src";
 `;
 
   const componentBlocks = components.map(({ name, subs }) => {
+    const decl = declName(name);
+    // Re-export under the original (e.g. EXPERIMENTAL_-prefixed) name so the
+    // package's public API and story imports are unchanged.
+    const aliasExport = decl === name ? "" : `\nexport { ${decl} as ${name} };`;
+
     if (subs.length === 0) {
-      return `export function ${name}(props: ComponentProps<typeof ${BASE_NS}.${name}>) {\n  return <${BASE_NS}.${name} {...props} />;\n}`;
+      const fn = `function ${decl}(props: ComponentProps<typeof ${BASE_NS}.${name}>) {\n  return <${BASE_NS}.${name} {...props} />;\n}`;
+      return decl === name ? `export ${fn}` : `${fn}${aliasExport}`;
     }
     // Attach sub-components via Object.assign (not `Name.Sub = …` statements):
     // RDT treats member assignments as docgen entries and a sub named like a
@@ -195,7 +220,10 @@ export * from "../../../packages/react/src";
     const members = subs
       .map((sub) => `    ${sub}: ${subTarget(name, sub, wrappedNames)},`)
       .join("\n");
-    return `export const ${name} = Object.assign(\n  function ${name}(props: ComponentProps<typeof ${BASE_NS}.${name}>) {\n    return <${BASE_NS}.${name} {...props} />;\n  },\n  {\n${members}\n  },\n);`;
+    const assign = `Object.assign(\n  function ${decl}(props: ComponentProps<typeof ${BASE_NS}.${name}>) {\n    return <${BASE_NS}.${name} {...props} />;\n  },\n  {\n${members}\n  },\n)`;
+    return decl === name
+      ? `export const ${decl} = ${assign};`
+      : `const ${decl} = ${assign};${aliasExport}`;
   });
 
   const namespaceBlocks = namespaces.map(({ name, subs }) => {
