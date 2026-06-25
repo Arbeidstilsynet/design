@@ -35,6 +35,12 @@ const config: StorybookConfig = {
       shouldRemoveUndefinedFromOptional: true,
       EXPERIMENTAL_useWatchProgram: true,
       include: ["**/*.tsx", "../../packages/react/src/**/*.tsx"],
+      // Don't let the docgen plugin append `Component.displayName = "<name>"`
+      // after the module: that clobbers the dotted displayNames we set on
+      // compound sub-components (e.g. `Table.Head`, `FilePicker.Files`), which
+      // Storybook's "Show code" reads first. `__docgenInfo.displayName` still
+      // provides the name for components without a runtime displayName.
+      setDisplayName: false,
     },
   },
   async viteFinal(viteConfig) {

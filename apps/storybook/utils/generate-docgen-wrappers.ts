@@ -233,6 +233,9 @@ export * from "../../../packages/react/src";
     return `export const ${name} = Object.assign({}, ${BASE_NS}.${name}, {\n${members}\n});`;
   });
 
+  // Dotted displayNames for compound sub-components (e.g. "Table.Head") are set
+  // at runtime by apps/storybook/utils/add-displaynames.ts, which walks this
+  // barrel. That keeps all displayName handling in one place.
   return `${header}\n${[...componentBlocks, ...namespaceBlocks].join("\n\n")}\n`;
 }
 
