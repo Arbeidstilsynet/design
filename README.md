@@ -100,6 +100,18 @@ export default function RootLayout({
 
 You need to manually add the new component to the index.ts file as an export. And you need to manually add the css file to the index.css file as an export.
 
+### Adding an upstream Digdir component
+
+To expose another component from `@digdir/designsystemet-react`, add a named
+export to [packages/react/src/digdir.ts](./packages/react/src/digdir.ts), then
+regenerate the Storybook docgen wrappers so autodocs show its real prop types:
+
+`pnpm --filter @arbeidstilsynet/storybook gen:docgen-wrappers`
+
+A vitest test fails if the wrappers are stale. See
+[docs/adr/adr-0004-storybook-docgen-wrappers.md](./docs/adr/adr-0004-storybook-docgen-wrappers.md)
+for background.
+
 ### Design tokens
 
 See [docs/TOKENS.md](./docs/TOKENS.md) for how to update `design-tokens`.
