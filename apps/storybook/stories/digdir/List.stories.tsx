@@ -6,6 +6,10 @@ type Story = StoryFn<typeof List.Unordered>;
 export default {
   title: "designsystemet.no/List",
   component: List.Unordered,
+  subcomponents: {
+    "List.Ordered": List.Ordered,
+    "List.Item": List.Item,
+  },
 } satisfies Meta;
 
 export const Preview: Story = (args) => (

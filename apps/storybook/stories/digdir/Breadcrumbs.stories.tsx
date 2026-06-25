@@ -4,6 +4,11 @@ import type { Meta, StoryFn } from "@storybook/react-vite";
 export default {
   title: "designsystemet.no/Breadcrumbs",
   component: Breadcrumbs,
+  subcomponents: {
+    "Breadcrumbs.List": Breadcrumbs.List,
+    "Breadcrumbs.Item": Breadcrumbs.Item,
+    "Breadcrumbs.Link": Breadcrumbs.Link,
+  },
 } as Meta;
 
 export const Preview: StoryFn<typeof Breadcrumbs> = (args) => (

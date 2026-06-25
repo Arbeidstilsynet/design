@@ -2,7 +2,7 @@
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
     "paths": {
-      "@arbeidstilsynet/design-react": ["../../packages/react/src/index.ts"]
+      "@arbeidstilsynet/design-react": ["./docgen-wrappers/index.tsx"]
     },
 
     "verbatimModuleSyntax": false, // too much hassle to fix type imports in the upstream stories right now
@@ -10,6 +10,7 @@
   },
   "include": [
     ".storybook/**/*",
+    "docgen-wrappers/**/*",
     "stories/**/*",
     "utils/**/*",
     "*.ts",

@@ -12,6 +12,11 @@ import { useState } from "react";
 export default {
   title: "designsystemet.no/Search",
   component: Search,
+  subcomponents: {
+    "Search.Input": Search.Input,
+    "Search.Clear": Search.Clear,
+    "Search.Button": Search.Button,
+  },
 } as Meta;
 
 export const Preview: StoryFn<typeof Search> = (args) => (

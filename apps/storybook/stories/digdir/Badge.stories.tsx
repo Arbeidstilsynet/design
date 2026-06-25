@@ -15,6 +15,9 @@ type Story = StoryFn<typeof Badge>;
 const meta: Meta<typeof Badge> = {
   title: "designsystemet.no/Badge",
   component: Badge,
+  subcomponents: {
+    "Badge.Position": Badge.Position,
+  },
   parameters: {
     customStyles: {
       flexWrap: "wrap",

@@ -13,6 +13,14 @@ type Story = StoryFn<typeof Table>;
 export default {
   title: "designsystemet.no/Table",
   component: Table,
+  subcomponents: {
+    "Table.Head": Table.Head,
+    "Table.Body": Table.Body,
+    "Table.Foot": Table.Foot,
+    "Table.Row": Table.Row,
+    "Table.HeaderCell": Table.HeaderCell,
+    "Table.Cell": Table.Cell,
+  },
 } as Meta;
 
 export const Preview: Story = (args) => {

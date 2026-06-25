@@ -60,6 +60,8 @@ New components must be:
 
 Components from `@digdir/designsystemet-react` are re-exported with **named exports** (not `export *`) to support React Server Components. When adding a new Digdir component, add a named export here.
 
+Storybook generates a docgen wrapper per component in this list so autodocs show real prop types (see `docs/adr/adr-0004-storybook-docgen-wrappers.md`). After adding a component here, run `pnpm --filter @arbeidstilsynet/storybook gen:docgen-wrappers`; a vitest test fails if the wrappers are stale.
+
 ### Props pattern
 
 Custom components extend `DefaultProps<TRef>` which provides `ref`, `data-size`, and `data-color` props consistent with Designsystemet conventions.

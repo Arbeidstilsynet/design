@@ -20,6 +20,13 @@ import { expect, userEvent, waitFor, within } from "storybook/test";
 export default {
   title: "designsystemet.no/Suggestion",
   component: Suggestion,
+  subcomponents: {
+    "Suggestion.Input": Suggestion.Input,
+    "Suggestion.Clear": Suggestion.Clear,
+    "Suggestion.List": Suggestion.List,
+    "Suggestion.Option": Suggestion.Option,
+    "Suggestion.Empty": Suggestion.Empty,
+  },
   /* add height by default */
   decorators: [
     (Story) => (
@@ -33,7 +40,6 @@ export default {
       disableSnapshot: false,
     },
     a11y: {
-      // TODO: this rule should be enabled after https://github.com/dequelabs/axe-core/issues/4672 have propagated to @storybook/addon-a11y.
       config: {
         rules: [
           // Axe can't find listbox inside shadow-dom, and thus thinks <data> elements
@@ -41,10 +47,7 @@ export default {
           {
             id: "aria-required-parent",
             matches: (element: HTMLElement) =>
-              !(
-                element instanceof HTMLDataElement &&
-                element.className === "ds-chip"
-              ),
+              !(element instanceof HTMLDataElement),
           },
           {
             // TODO: this rule should be enabled after https://github.com/dequelabs/axe-core/issues/4672 have propagated to @storybook/addon-a11y.
@@ -60,7 +63,7 @@ export default {
     // Refactored out the play function for easier reuse in the InModal story
     await testSuggestion(storyRoot);
   },
-} as Meta;
+} satisfies Meta;
 
 async function testSuggestion(el: HTMLElement) {
   /* wait for role to be added */
@@ -84,7 +87,7 @@ const DATA_PEOPLE = [
   { label: "James", value: "#007" },
   { label: "Nina", value: "#113" },
   { label: "Tove", value: "#110" },
-] as const;
+];
 
 export const Preview: StoryFn<typeof Suggestion> = (args) => {
   return (
@@ -251,7 +254,9 @@ ControlledMultiple.play = async ({ canvasElement, step }) => {
 export const ControlledIndependentLabelValue: StoryFn<SuggestionSingleProps> = (
   args,
 ) => {
-  const [item, setItem] = useState<SuggestionItem | null>(DATA_PEOPLE[0]);
+  const [item, setItem] = useState<SuggestionItem | null>(
+    DATA_PEOPLE[0] ?? null,
+  );
 
   return (
     <>
@@ -292,7 +297,7 @@ export const ControlledIndependentLabelValue: StoryFn<SuggestionSingleProps> = (
 
       <Button
         onClick={() => {
-          setItem(DATA_PEOPLE[2]);
+          setItem(DATA_PEOPLE[2] ?? null);
         }}
       >
         Sett Nina

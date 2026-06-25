@@ -9,12 +9,17 @@ import {
   Textfield,
 } from "@arbeidstilsynet/design-react";
 import type { Meta, StoryFn } from "@storybook/react-vite";
-import { expect, userEvent, within } from "storybook/test";
 import { useRef, useState } from "react";
+import { expect, userEvent, within } from "storybook/test";
 
 export default {
   title: "designsystemet.no/Dialog",
   component: Dialog,
+  subcomponents: {
+    "Dialog.Block": Dialog.Block,
+    "Dialog.TriggerContext": Dialog.TriggerContext,
+    "Dialog.Trigger": Dialog.Trigger,
+  },
   parameters: {
     layout: "fullscreen",
     customStyles: {

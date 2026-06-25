@@ -1,13 +1,19 @@
 import { Button, ErrorSummary, Textfield } from "@arbeidstilsynet/design-react";
 import type { Meta, StoryFn } from "@storybook/react-vite";
-import { expect, userEvent, within } from "storybook/test";
 import { useState } from "react";
+import { expect, userEvent, within } from "storybook/test";
 
 type Story = StoryFn<typeof ErrorSummary>;
 
 export default {
   title: "designsystemet.no/ErrorSummary",
   component: ErrorSummary,
+  subcomponents: {
+    "ErrorSummary.Heading": ErrorSummary.Heading,
+    "ErrorSummary.List": ErrorSummary.List,
+    "ErrorSummary.Item": ErrorSummary.Item,
+    "ErrorSummary.Link": ErrorSummary.Link,
+  },
 } as Meta;
 
 export const Preview: Story = (args) => (

@@ -1,12 +1,20 @@
 import { Button, Dropdown } from "@arbeidstilsynet/design-react";
 import { ChevronDownIcon, ChevronUpIcon, LinkIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn } from "@storybook/react-vite";
-import { expect, userEvent, within } from "storybook/test";
 import { useState } from "react";
+import { expect, userEvent, within } from "storybook/test";
 
 export default {
   title: "designsystemet.no/Dropdown",
   component: Dropdown,
+  subcomponents: {
+    "Dropdown.TriggerContext": Dropdown.TriggerContext,
+    "Dropdown.Trigger": Dropdown.Trigger,
+    "Dropdown.Heading": Dropdown.Heading,
+    "Dropdown.List": Dropdown.List,
+    "Dropdown.Item": Dropdown.Item,
+    "Dropdown.Button": Dropdown.Button,
+  },
   parameters: {
     layout: "fullscreen",
     customStyles: {

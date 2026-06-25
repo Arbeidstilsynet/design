@@ -35,17 +35,22 @@ const config: StorybookConfig = {
       shouldRemoveUndefinedFromOptional: true,
       EXPERIMENTAL_useWatchProgram: true,
       include: ["**/*.tsx", "../../packages/react/src/**/*.tsx"],
+      // Don't append `Component.displayName`: it would clobber the dotted
+      // displayNames set in utils/add-displaynames.ts that "Show code" reads
+      // first. `__docgenInfo.displayName` still names components without one.
+      setDisplayName: false,
     },
   },
   async viteFinal(viteConfig) {
-    // use alias to resolve @arbeidstilsynet/design-react to the local package for HMR support
+    // Alias @arbeidstilsynet/design-react to the Storybook-only wrapper barrel
+    // (for HMR and so upstream Digdir components get docgen via local wrappers).
     viteConfig.resolve = viteConfig.resolve || {};
     viteConfig.resolve.alias = {
       // oxlint-disable-next-line typescript/no-misused-spread
       ...viteConfig.resolve.alias,
       "@arbeidstilsynet/design-react": resolve(
         storybookConfigDir,
-        "../../../packages/react/src/index.ts",
+        "../docgen-wrappers/index.tsx",
       ),
     };
 

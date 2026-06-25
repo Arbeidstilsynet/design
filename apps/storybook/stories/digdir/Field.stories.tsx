@@ -14,6 +14,12 @@ type Story = StoryFn<typeof Field>;
 export default {
   title: "designsystemet.no/Field",
   component: Field,
+  subcomponents: {
+    "Field.Description": Field.Description,
+    "Field.Affixes": Field.Affixes,
+    "Field.Affix": Field.Affix,
+    "Field.Counter": Field.Counter,
+  },
   parameters: {
     customStyles: {
       maxWidth: 600,

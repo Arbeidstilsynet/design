@@ -19,6 +19,9 @@ type Story = StoryFn<typeof Card>;
 export default {
   title: "designsystemet.no/Card",
   component: Card,
+  subcomponents: {
+    "Card.Block": Card.Block,
+  },
   parameters: {
     layout: "fullscreen",
     customStyles: {

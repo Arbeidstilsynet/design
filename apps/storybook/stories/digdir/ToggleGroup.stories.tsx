@@ -20,6 +20,9 @@ import { useState } from "react";
 export default {
   title: "designsystemet.no/ToggleGroup",
   component: ToggleGroup,
+  subcomponents: {
+    "ToggleGroup.Item": ToggleGroup.Item,
+  },
   decorators: [
     (Story) => (
       /* 80vw since storybook has padding, and does not stop elements from overflowing the x-axis */

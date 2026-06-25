@@ -15,13 +15,6 @@ const designsystemetLink = "https://designsystemet.no/?=" + randomNum;
 export default {
   title: "designsystemet.no/Link",
   component: Link,
-  parameters: {
-    customStyles: { padding: "var(--ds-size-6)" },
-    status: {
-      type: "beta",
-      url: "http://www.url.com/status",
-    },
-  },
 } as Meta;
 
 export const Normal: Story = {
@@ -32,15 +25,13 @@ export const Normal: Story = {
 };
 
 export const InText: StoryFn = (args) => (
-  <>
-    <Paragraph>
-      Vi bruker komponenter fra{" "}
-      <Link href={designsystemetLink} {...args}>
-        designsystemet.no
-      </Link>
-      .
-    </Paragraph>
-  </>
+  <Paragraph>
+    Vi bruker komponenter fra{" "}
+    <Link href={designsystemetLink} {...args}>
+      designsystemet.no
+    </Link>
+    .
+  </Paragraph>
 );
 
 export const WithIcon: StoryFn = (args) => (

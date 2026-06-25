@@ -10,6 +10,11 @@ import { useArgs } from "storybook/preview-api";
 export default {
   title: "designsystemet.no/Pagination",
   component: Pagination,
+  subcomponents: {
+    "Pagination.List": Pagination.List,
+    "Pagination.Item": Pagination.Item,
+    "Pagination.Button": Pagination.Button,
+  },
 } as Meta;
 
 export const Preview: StoryFn<typeof Pagination> = (args) => {

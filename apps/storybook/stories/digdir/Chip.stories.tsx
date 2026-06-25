@@ -4,6 +4,11 @@ import type { Meta, StoryFn } from "@storybook/react-vite";
 export default {
   title: "designsystemet.no/Chip",
   component: Chip.Radio,
+  subcomponents: {
+    "Chip.Button": Chip.Button,
+    "Chip.Checkbox": Chip.Checkbox,
+    "Chip.Removable": Chip.Removable,
+  },
   parameters: {
     customStyles: { display: "flex", gap: "var(--ds-size-2)" },
   },
