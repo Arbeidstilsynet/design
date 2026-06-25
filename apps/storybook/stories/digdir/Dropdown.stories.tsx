@@ -1,8 +1,8 @@
 import { Button, Dropdown } from "@arbeidstilsynet/design-react";
 import { ChevronDownIcon, ChevronUpIcon, LinkIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn } from "@storybook/react-vite";
-import { expect, userEvent, within } from "storybook/test";
 import { useState } from "react";
+import { expect, userEvent, within } from "storybook/test";
 
 export default {
   title: "designsystemet.no/Dropdown",
