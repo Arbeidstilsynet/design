@@ -171,6 +171,12 @@ export async function buildSource(): Promise<string> {
 //   plugin discovers its TS program by globbing \`**/*.tsx\` with dotfiles excluded.
 // - Wrappers import via the relative source path, never the package specifier, to
 //   avoid the alias redirecting back into this barrel.
+// - Compound sub-components are attached with \`Object.assign(fn, {...})\`, not
+//   \`fn.Sub = …\` statements. RDT registers every \`X.Sub = …\` member assignment as
+//   a docgen entry keyed by the bare sub-name, and a sub named like a top-level
+//   wrapper (e.g. \`Breadcrumbs.Link\`) then clobbers that wrapper's docgen (\`Link\`).
+//   \`Object.assign\` is a call expression RDT ignores, and its return type keeps the
+//   expando typing so \`Breadcrumbs.Link\` is still typed for consumers.
 import * as ${BASE_NS} from "../../../packages/react/src";
 import type { ComponentProps } from "react";
 
@@ -178,11 +184,18 @@ export * from "../../../packages/react/src";
 `;
 
   const componentBlocks = components.map(({ name, subs }) => {
-    const fn = `export function ${name}(props: ComponentProps<typeof ${BASE_NS}.${name}>) {\n  return <${BASE_NS}.${name} {...props} />;\n}`;
-    const attachments = subs
-      .map((sub) => `${name}.${sub} = ${subTarget(name, sub, wrappedNames)};`)
+    if (subs.length === 0) {
+      return `export function ${name}(props: ComponentProps<typeof ${BASE_NS}.${name}>) {\n  return <${BASE_NS}.${name} {...props} />;\n}`;
+    }
+    // Attach sub-components via Object.assign (not `Name.Sub = …` statements):
+    // RDT treats member assignments as docgen entries and a sub named like a
+    // top-level wrapper (e.g. Breadcrumbs.Link) would clobber that wrapper's
+    // docgen. Object.assign is a call expression RDT ignores, and its return
+    // type preserves the expando typing.
+    const members = subs
+      .map((sub) => `    ${sub}: ${subTarget(name, sub, wrappedNames)},`)
       .join("\n");
-    return attachments ? `${fn}\n${attachments}` : fn;
+    return `export const ${name} = Object.assign(\n  function ${name}(props: ComponentProps<typeof ${BASE_NS}.${name}>) {\n    return <${BASE_NS}.${name} {...props} />;\n  },\n  {\n${members}\n  },\n);`;
   });
 
   const namespaceBlocks = namespaces.map(({ name, subs }) => {

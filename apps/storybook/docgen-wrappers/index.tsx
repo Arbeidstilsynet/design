@@ -23,6 +23,12 @@
 //   plugin discovers its TS program by globbing `**/*.tsx` with dotfiles excluded.
 // - Wrappers import via the relative source path, never the package specifier, to
 //   avoid the alias redirecting back into this barrel.
+// - Compound sub-components are attached with `Object.assign(fn, {...})`, not
+//   `fn.Sub = …` statements. RDT registers every `X.Sub = …` member assignment as
+//   a docgen entry keyed by the bare sub-name, and a sub named like a top-level
+//   wrapper (e.g. `Breadcrumbs.Link`) then clobbers that wrapper's docgen (`Link`).
+//   `Object.assign` is a call expression RDT ignores, and its return type keeps the
+//   expando typing so `Breadcrumbs.Link` is still typed for consumers.
 import * as Base from "../../../packages/react/src";
 import type { ComponentProps } from "react";
 
@@ -36,21 +42,29 @@ export function Avatar(props: ComponentProps<typeof Base.Avatar>) {
   return <Base.Avatar {...props} />;
 }
 
-export function Badge(props: ComponentProps<typeof Base.Badge>) {
-  return <Base.Badge {...props} />;
-}
-Badge.Position = BadgePosition;
+export const Badge = Object.assign(
+  function Badge(props: ComponentProps<typeof Base.Badge>) {
+    return <Base.Badge {...props} />;
+  },
+  {
+    Position: BadgePosition,
+  },
+);
 
 export function BadgePosition(props: ComponentProps<typeof Base.BadgePosition>) {
   return <Base.BadgePosition {...props} />;
 }
 
-export function Breadcrumbs(props: ComponentProps<typeof Base.Breadcrumbs>) {
-  return <Base.Breadcrumbs {...props} />;
-}
-Breadcrumbs.List = BreadcrumbsList;
-Breadcrumbs.Item = BreadcrumbsItem;
-Breadcrumbs.Link = BreadcrumbsLink;
+export const Breadcrumbs = Object.assign(
+  function Breadcrumbs(props: ComponentProps<typeof Base.Breadcrumbs>) {
+    return <Base.Breadcrumbs {...props} />;
+  },
+  {
+    List: BreadcrumbsList,
+    Item: BreadcrumbsItem,
+    Link: BreadcrumbsLink,
+  },
+);
 
 export function BreadcrumbsItem(props: ComponentProps<typeof Base.BreadcrumbsItem>) {
   return <Base.BreadcrumbsItem {...props} />;
@@ -68,10 +82,14 @@ export function Button(props: ComponentProps<typeof Base.Button>) {
   return <Base.Button {...props} />;
 }
 
-export function Card(props: ComponentProps<typeof Base.Card>) {
-  return <Base.Card {...props} />;
-}
-Card.Block = CardBlock;
+export const Card = Object.assign(
+  function Card(props: ComponentProps<typeof Base.Card>) {
+    return <Base.Card {...props} />;
+  },
+  {
+    Block: CardBlock,
+  },
+);
 
 export function CardBlock(props: ComponentProps<typeof Base.CardBlock>) {
   return <Base.CardBlock {...props} />;
@@ -97,11 +115,15 @@ export function ChipRemovable(props: ComponentProps<typeof Base.ChipRemovable>) 
   return <Base.ChipRemovable {...props} />;
 }
 
-export function Combobox(props: ComponentProps<typeof Base.Combobox>) {
-  return <Base.Combobox {...props} />;
-}
-Combobox.Option = ComboboxOption;
-Combobox.Empty = ComboboxEmpty;
+export const Combobox = Object.assign(
+  function Combobox(props: ComponentProps<typeof Base.Combobox>) {
+    return <Base.Combobox {...props} />;
+  },
+  {
+    Option: ComboboxOption,
+    Empty: ComboboxEmpty,
+  },
+);
 
 export function ComboboxEmpty(props: ComponentProps<typeof Base.ComboboxEmpty>) {
   return <Base.ComboboxEmpty {...props} />;
@@ -111,11 +133,15 @@ export function ComboboxOption(props: ComponentProps<typeof Base.ComboboxOption>
   return <Base.ComboboxOption {...props} />;
 }
 
-export function Details(props: ComponentProps<typeof Base.Details>) {
-  return <Base.Details {...props} />;
-}
-Details.Summary = DetailsSummary;
-Details.Content = DetailsContent;
+export const Details = Object.assign(
+  function Details(props: ComponentProps<typeof Base.Details>) {
+    return <Base.Details {...props} />;
+  },
+  {
+    Summary: DetailsSummary,
+    Content: DetailsContent,
+  },
+);
 
 export function DetailsContent(props: ComponentProps<typeof Base.DetailsContent>) {
   return <Base.DetailsContent {...props} />;
@@ -125,12 +151,16 @@ export function DetailsSummary(props: ComponentProps<typeof Base.DetailsSummary>
   return <Base.DetailsSummary {...props} />;
 }
 
-export function Dialog(props: ComponentProps<typeof Base.Dialog>) {
-  return <Base.Dialog {...props} />;
-}
-Dialog.Block = DialogBlock;
-Dialog.TriggerContext = DialogTriggerContext;
-Dialog.Trigger = DialogTrigger;
+export const Dialog = Object.assign(
+  function Dialog(props: ComponentProps<typeof Base.Dialog>) {
+    return <Base.Dialog {...props} />;
+  },
+  {
+    Block: DialogBlock,
+    TriggerContext: DialogTriggerContext,
+    Trigger: DialogTrigger,
+  },
+);
 
 export function DialogBlock(props: ComponentProps<typeof Base.DialogBlock>) {
   return <Base.DialogBlock {...props} />;
@@ -148,15 +178,19 @@ export function Divider(props: ComponentProps<typeof Base.Divider>) {
   return <Base.Divider {...props} />;
 }
 
-export function Dropdown(props: ComponentProps<typeof Base.Dropdown>) {
-  return <Base.Dropdown {...props} />;
-}
-Dropdown.TriggerContext = DropdownTriggerContext;
-Dropdown.Heading = DropdownHeading;
-Dropdown.List = DropdownList;
-Dropdown.Item = DropdownItem;
-Dropdown.Button = DropdownButton;
-Dropdown.Trigger = DropdownTrigger;
+export const Dropdown = Object.assign(
+  function Dropdown(props: ComponentProps<typeof Base.Dropdown>) {
+    return <Base.Dropdown {...props} />;
+  },
+  {
+    TriggerContext: DropdownTriggerContext,
+    Heading: DropdownHeading,
+    List: DropdownList,
+    Item: DropdownItem,
+    Button: DropdownButton,
+    Trigger: DropdownTrigger,
+  },
+);
 
 export function DropdownButton(props: ComponentProps<typeof Base.DropdownButton>) {
   return <Base.DropdownButton {...props} />;
@@ -186,14 +220,18 @@ export function EXPERIMENTAL_AvatarStack(props: ComponentProps<typeof Base.EXPER
   return <Base.EXPERIMENTAL_AvatarStack {...props} />;
 }
 
-export function EXPERIMENTAL_Suggestion(props: ComponentProps<typeof Base.EXPERIMENTAL_Suggestion>) {
-  return <Base.EXPERIMENTAL_Suggestion {...props} />;
-}
-EXPERIMENTAL_Suggestion.List = EXPERIMENTAL_SuggestionList;
-EXPERIMENTAL_Suggestion.Input = EXPERIMENTAL_SuggestionInput;
-EXPERIMENTAL_Suggestion.Empty = EXPERIMENTAL_SuggestionEmpty;
-EXPERIMENTAL_Suggestion.Option = EXPERIMENTAL_SuggestionOption;
-EXPERIMENTAL_Suggestion.Clear = EXPERIMENTAL_SuggestionClear;
+export const EXPERIMENTAL_Suggestion = Object.assign(
+  function EXPERIMENTAL_Suggestion(props: ComponentProps<typeof Base.EXPERIMENTAL_Suggestion>) {
+    return <Base.EXPERIMENTAL_Suggestion {...props} />;
+  },
+  {
+    List: EXPERIMENTAL_SuggestionList,
+    Input: EXPERIMENTAL_SuggestionInput,
+    Empty: EXPERIMENTAL_SuggestionEmpty,
+    Option: EXPERIMENTAL_SuggestionOption,
+    Clear: EXPERIMENTAL_SuggestionClear,
+  },
+);
 
 export function EXPERIMENTAL_SuggestionClear(props: ComponentProps<typeof Base.EXPERIMENTAL_SuggestionClear>) {
   return <Base.EXPERIMENTAL_SuggestionClear {...props} />;
@@ -215,13 +253,17 @@ export function EXPERIMENTAL_SuggestionOption(props: ComponentProps<typeof Base.
   return <Base.EXPERIMENTAL_SuggestionOption {...props} />;
 }
 
-export function ErrorSummary(props: ComponentProps<typeof Base.ErrorSummary>) {
-  return <Base.ErrorSummary {...props} />;
-}
-ErrorSummary.Heading = ErrorSummaryHeading;
-ErrorSummary.Item = ErrorSummaryItem;
-ErrorSummary.List = ErrorSummaryList;
-ErrorSummary.Link = ErrorSummaryLink;
+export const ErrorSummary = Object.assign(
+  function ErrorSummary(props: ComponentProps<typeof Base.ErrorSummary>) {
+    return <Base.ErrorSummary {...props} />;
+  },
+  {
+    Heading: ErrorSummaryHeading,
+    Item: ErrorSummaryItem,
+    List: ErrorSummaryList,
+    Link: ErrorSummaryLink,
+  },
+);
 
 export function ErrorSummaryHeading(props: ComponentProps<typeof Base.ErrorSummaryHeading>) {
   return <Base.ErrorSummaryHeading {...props} />;
@@ -239,13 +281,17 @@ export function ErrorSummaryList(props: ComponentProps<typeof Base.ErrorSummaryL
   return <Base.ErrorSummaryList {...props} />;
 }
 
-export function Field(props: ComponentProps<typeof Base.Field>) {
-  return <Base.Field {...props} />;
-}
-Field.Description = FieldDescription;
-Field.Affixes = FieldAffixes;
-Field.Affix = FieldAffix;
-Field.Counter = FieldCounter;
+export const Field = Object.assign(
+  function Field(props: ComponentProps<typeof Base.Field>) {
+    return <Base.Field {...props} />;
+  },
+  {
+    Description: FieldDescription,
+    Affixes: FieldAffixes,
+    Affix: FieldAffix,
+    Counter: FieldCounter,
+  },
+);
 
 export function FieldAffix(props: ComponentProps<typeof Base.FieldAffix>) {
   return <Base.FieldAffix {...props} />;
@@ -263,11 +309,15 @@ export function FieldDescription(props: ComponentProps<typeof Base.FieldDescript
   return <Base.FieldDescription {...props} />;
 }
 
-export function Fieldset(props: ComponentProps<typeof Base.Fieldset>) {
-  return <Base.Fieldset {...props} />;
-}
-Fieldset.Legend = FieldsetLegend;
-Fieldset.Description = FieldsetDescription;
+export const Fieldset = Object.assign(
+  function Fieldset(props: ComponentProps<typeof Base.Fieldset>) {
+    return <Base.Fieldset {...props} />;
+  },
+  {
+    Legend: FieldsetLegend,
+    Description: FieldsetDescription,
+  },
+);
 
 export function FieldsetDescription(props: ComponentProps<typeof Base.FieldsetDescription>) {
   return <Base.FieldsetDescription {...props} />;
@@ -305,12 +355,16 @@ export function ListUnordered(props: ComponentProps<typeof Base.ListUnordered>) 
   return <Base.ListUnordered {...props} />;
 }
 
-export function Pagination(props: ComponentProps<typeof Base.Pagination>) {
-  return <Base.Pagination {...props} />;
-}
-Pagination.List = PaginationList;
-Pagination.Item = PaginationItem;
-Pagination.Button = PaginationButton;
+export const Pagination = Object.assign(
+  function Pagination(props: ComponentProps<typeof Base.Pagination>) {
+    return <Base.Pagination {...props} />;
+  },
+  {
+    List: PaginationList,
+    Item: PaginationItem,
+    Button: PaginationButton,
+  },
+);
 
 export function PaginationButton(props: ComponentProps<typeof Base.PaginationButton>) {
   return <Base.PaginationButton {...props} />;
@@ -328,11 +382,15 @@ export function Paragraph(props: ComponentProps<typeof Base.Paragraph>) {
   return <Base.Paragraph {...props} />;
 }
 
-export function Popover(props: ComponentProps<typeof Base.Popover>) {
-  return <Base.Popover {...props} />;
-}
-Popover.TriggerContext = PopoverTriggerContext;
-Popover.Trigger = PopoverTrigger;
+export const Popover = Object.assign(
+  function Popover(props: ComponentProps<typeof Base.Popover>) {
+    return <Base.Popover {...props} />;
+  },
+  {
+    TriggerContext: PopoverTriggerContext,
+    Trigger: PopoverTrigger,
+  },
+);
 
 export function PopoverTrigger(props: ComponentProps<typeof Base.PopoverTrigger>) {
   return <Base.PopoverTrigger {...props} />;
@@ -354,12 +412,16 @@ export function RovingFocusRoot(props: ComponentProps<typeof Base.RovingFocusRoo
   return <Base.RovingFocusRoot {...props} />;
 }
 
-export function Search(props: ComponentProps<typeof Base.Search>) {
-  return <Base.Search {...props} />;
-}
-Search.Clear = SearchClear;
-Search.Button = SearchButton;
-Search.Input = SearchInput;
+export const Search = Object.assign(
+  function Search(props: ComponentProps<typeof Base.Search>) {
+    return <Base.Search {...props} />;
+  },
+  {
+    Clear: SearchClear,
+    Button: SearchButton,
+    Input: SearchInput,
+  },
+);
 
 export function SearchButton(props: ComponentProps<typeof Base.SearchButton>) {
   return <Base.SearchButton {...props} />;
@@ -373,11 +435,15 @@ export function SearchInput(props: ComponentProps<typeof Base.SearchInput>) {
   return <Base.SearchInput {...props} />;
 }
 
-export function Select(props: ComponentProps<typeof Base.Select>) {
-  return <Base.Select {...props} />;
-}
-Select.Option = SelectOption;
-Select.Optgroup = SelectOptgroup;
+export const Select = Object.assign(
+  function Select(props: ComponentProps<typeof Base.Select>) {
+    return <Base.Select {...props} />;
+  },
+  {
+    Option: SelectOption,
+    Optgroup: SelectOptgroup,
+  },
+);
 
 export function SelectOptgroup(props: ComponentProps<typeof Base.SelectOptgroup>) {
   return <Base.SelectOptgroup {...props} />;
@@ -403,15 +469,19 @@ export function Switch(props: ComponentProps<typeof Base.Switch>) {
   return <Base.Switch {...props} />;
 }
 
-export function Table(props: ComponentProps<typeof Base.Table>) {
-  return <Base.Table {...props} />;
-}
-Table.Head = TableHead;
-Table.Body = TableBody;
-Table.Row = TableRow;
-Table.Cell = TableCell;
-Table.HeaderCell = TableHeaderCell;
-Table.Foot = TableFoot;
+export const Table = Object.assign(
+  function Table(props: ComponentProps<typeof Base.Table>) {
+    return <Base.Table {...props} />;
+  },
+  {
+    Head: TableHead,
+    Body: TableBody,
+    Row: TableRow,
+    Cell: TableCell,
+    HeaderCell: TableHeaderCell,
+    Foot: TableFoot,
+  },
+);
 
 export function TableBody(props: ComponentProps<typeof Base.TableBody>) {
   return <Base.TableBody {...props} />;
@@ -437,12 +507,16 @@ export function TableRow(props: ComponentProps<typeof Base.TableRow>) {
   return <Base.TableRow {...props} />;
 }
 
-export function Tabs(props: ComponentProps<typeof Base.Tabs>) {
-  return <Base.Tabs {...props} />;
-}
-Tabs.List = TabsList;
-Tabs.Tab = TabsTab;
-Tabs.Panel = TabsPanel;
+export const Tabs = Object.assign(
+  function Tabs(props: ComponentProps<typeof Base.Tabs>) {
+    return <Base.Tabs {...props} />;
+  },
+  {
+    List: TabsList,
+    Tab: TabsTab,
+    Panel: TabsPanel,
+  },
+);
 
 export function TabsList(props: ComponentProps<typeof Base.TabsList>) {
   return <Base.TabsList {...props} />;
@@ -468,10 +542,14 @@ export function Textfield(props: ComponentProps<typeof Base.Textfield>) {
   return <Base.Textfield {...props} />;
 }
 
-export function ToggleGroup(props: ComponentProps<typeof Base.ToggleGroup>) {
-  return <Base.ToggleGroup {...props} />;
-}
-ToggleGroup.Item = ToggleGroupItem;
+export const ToggleGroup = Object.assign(
+  function ToggleGroup(props: ComponentProps<typeof Base.ToggleGroup>) {
+    return <Base.ToggleGroup {...props} />;
+  },
+  {
+    Item: ToggleGroupItem,
+  },
+);
 
 export function ToggleGroupItem(props: ComponentProps<typeof Base.ToggleGroupItem>) {
   return <Base.ToggleGroupItem {...props} />;
