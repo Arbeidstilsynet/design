@@ -7,6 +7,10 @@ import { expect, userEvent, within } from "storybook/test";
 export default {
   title: "designsystemet.no/Popover",
   component: Popover,
+  subcomponents: {
+    "Popover.TriggerContext": Popover.TriggerContext,
+    "Popover.Trigger": Popover.Trigger,
+  },
   parameters: {
     layout: "fullscreen",
     customStyles: {

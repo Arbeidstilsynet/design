@@ -15,6 +15,11 @@ import { useRef, useState } from "react";
 export default {
   title: "designsystemet.no/Dialog",
   component: Dialog,
+  subcomponents: {
+    "Dialog.Block": Dialog.Block,
+    "Dialog.TriggerContext": Dialog.TriggerContext,
+    "Dialog.Trigger": Dialog.Trigger,
+  },
   parameters: {
     layout: "fullscreen",
     customStyles: {

@@ -8,6 +8,12 @@ type Story = StoryFn<typeof ErrorSummary>;
 export default {
   title: "designsystemet.no/ErrorSummary",
   component: ErrorSummary,
+  subcomponents: {
+    "ErrorSummary.Heading": ErrorSummary.Heading,
+    "ErrorSummary.List": ErrorSummary.List,
+    "ErrorSummary.Item": ErrorSummary.Item,
+    "ErrorSummary.Link": ErrorSummary.Link,
+  },
 } as Meta;
 
 export const Preview: Story = (args) => (

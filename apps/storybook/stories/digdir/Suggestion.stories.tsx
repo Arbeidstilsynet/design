@@ -20,6 +20,13 @@ import { expect, userEvent, waitFor, within } from "storybook/test";
 export default {
   title: "designsystemet.no/Suggestion",
   component: Suggestion,
+  subcomponents: {
+    "Suggestion.Input": Suggestion.Input,
+    "Suggestion.Clear": Suggestion.Clear,
+    "Suggestion.List": Suggestion.List,
+    "Suggestion.Option": Suggestion.Option,
+    "Suggestion.Empty": Suggestion.Empty,
+  },
   /* add height by default */
   decorators: [
     (Story) => (

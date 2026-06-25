@@ -7,6 +7,14 @@ import { useState } from "react";
 export default {
   title: "designsystemet.no/Dropdown",
   component: Dropdown,
+  subcomponents: {
+    "Dropdown.TriggerContext": Dropdown.TriggerContext,
+    "Dropdown.Trigger": Dropdown.Trigger,
+    "Dropdown.Heading": Dropdown.Heading,
+    "Dropdown.List": Dropdown.List,
+    "Dropdown.Item": Dropdown.Item,
+    "Dropdown.Button": Dropdown.Button,
+  },
   parameters: {
     layout: "fullscreen",
     customStyles: {

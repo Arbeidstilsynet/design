@@ -11,6 +11,10 @@ import { useState } from "react";
 export default {
   title: "designsystemet.no/Details",
   component: Details,
+  subcomponents: {
+    "Details.Summary": Details.Summary,
+    "Details.Content": Details.Content,
+  },
   parameters: {
     layout: "padded",
   },

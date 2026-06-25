@@ -12,6 +12,10 @@ type Story = StoryFn<typeof Fieldset>;
 export default {
   title: "designsystemet.no/Fieldset",
   component: Fieldset,
+  subcomponents: {
+    "Fieldset.Legend": Fieldset.Legend,
+    "Fieldset.Description": Fieldset.Description,
+  },
 } as Meta;
 
 export const Preview: Story = (args) => (

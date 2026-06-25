@@ -13,6 +13,11 @@ import { useState } from "react";
 export default {
   title: "designsystemet.no/Tabs",
   component: Tabs,
+  subcomponents: {
+    "Tabs.List": Tabs.List,
+    "Tabs.Tab": Tabs.Tab,
+    "Tabs.Panel": Tabs.Panel,
+  },
 } as Meta;
 
 export const Preview: StoryFn<typeof Tabs> = (args) => (

@@ -9,6 +9,10 @@ import type { Meta, StoryFn } from "@storybook/react-vite";
 export default {
   title: "designsystemet.no/Select",
   component: Select,
+  subcomponents: {
+    "Select.Option": Select.Option,
+    "Select.Optgroup": Select.Optgroup,
+  },
   parameters: {
     layout: "padded",
   },
