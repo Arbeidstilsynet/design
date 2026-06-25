@@ -254,7 +254,9 @@ ControlledMultiple.play = async ({ canvasElement, step }) => {
 export const ControlledIndependentLabelValue: StoryFn<SuggestionSingleProps> = (
   args,
 ) => {
-  const [item, setItem] = useState<SuggestionItem | null>(DATA_PEOPLE[0]);
+  const [item, setItem] = useState<SuggestionItem | null>(
+    DATA_PEOPLE[0] ?? null,
+  );
 
   return (
     <>
@@ -295,7 +297,7 @@ export const ControlledIndependentLabelValue: StoryFn<SuggestionSingleProps> = (
 
       <Button
         onClick={() => {
-          setItem(DATA_PEOPLE[2]);
+          setItem(DATA_PEOPLE[2] ?? null);
         }}
       >
         Sett Nina
