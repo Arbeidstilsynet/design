@@ -212,11 +212,7 @@ export * from "../../../packages/react/src";
       const fn = `function ${decl}(props: ComponentProps<typeof ${BASE_NS}.${name}>) {\n  return <${BASE_NS}.${name} {...props} />;\n}`;
       return decl === name ? `export ${fn}` : `${fn}${aliasExport}`;
     }
-    // Attach sub-components via Object.assign (not `Name.Sub = …` statements):
-    // RDT treats member assignments as docgen entries and a sub named like a
-    // top-level wrapper (e.g. Breadcrumbs.Link) would clobber that wrapper's
-    // docgen. Object.assign is a call expression RDT ignores, and its return
-    // type preserves the expando typing.
+    // Attach subs via Object.assign, not `Name.Sub = …` (see header Constraints).
     const members = subs
       .map((sub) => `    ${sub}: ${subTarget(name, sub, wrappedNames)},`)
       .join("\n");
@@ -233,9 +229,8 @@ export * from "../../../packages/react/src";
     return `export const ${name} = Object.assign({}, ${BASE_NS}.${name}, {\n${members}\n});`;
   });
 
-  // Dotted displayNames for compound sub-components (e.g. "Table.Head") are set
-  // at runtime by apps/storybook/utils/add-displaynames.ts, which walks this
-  // barrel. That keeps all displayName handling in one place.
+  // Dotted displayNames for compound subs (e.g. "Table.Head") are set at runtime
+  // by utils/add-displaynames.ts, which walks this barrel.
   return `${header}\n${[...componentBlocks, ...namespaceBlocks].join("\n\n")}\n`;
 }
 

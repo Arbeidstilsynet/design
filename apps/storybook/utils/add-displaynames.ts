@@ -4,9 +4,9 @@ import * as akselIcons from "@navikt/aksel-icons";
 // Read from the package source, not `@arbeidstilsynet/design-react`: that is
 // aliased to the docgen wrappers, which hide the real forwardRef instances.
 import * as designsystemet from "../../../packages/react/src";
-// The docgen-wrapper barrel: digdir compounds resolve to wrapper functions
-// here, and `export *` re-exports the custom components from package source, so
-// walking it covers every compound sub-component a story can render.
+// The docgen-wrapper barrel: digdir compounds are wrapper functions here, and
+// `export *` re-exports our custom components, so walking it covers every
+// compound sub a story can render.
 import * as wrappers from "../docgen-wrappers";
 
 const addDisplaynames = (pkg: Record<string, unknown>): void => {

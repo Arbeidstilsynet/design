@@ -35,18 +35,15 @@ const config: StorybookConfig = {
       shouldRemoveUndefinedFromOptional: true,
       EXPERIMENTAL_useWatchProgram: true,
       include: ["**/*.tsx", "../../packages/react/src/**/*.tsx"],
-      // Don't let the docgen plugin append `Component.displayName = "<name>"`
-      // after the module: that clobbers the dotted displayNames we set on
-      // compound sub-components (e.g. `Table.Head`, `FilePicker.Files`), which
-      // Storybook's "Show code" reads first. `__docgenInfo.displayName` still
-      // provides the name for components without a runtime displayName.
+      // Don't append `Component.displayName`: it would clobber the dotted
+      // displayNames set in utils/add-displaynames.ts that "Show code" reads
+      // first. `__docgenInfo.displayName` still names components without one.
       setDisplayName: false,
     },
   },
   async viteFinal(viteConfig) {
-    // use alias to resolve @arbeidstilsynet/design-react to a Storybook-only
-    // barrel for HMR support and so upstream (Digdir) components get docgen via
-    // local wrappers.
+    // Alias @arbeidstilsynet/design-react to the Storybook-only wrapper barrel
+    // (for HMR and so upstream Digdir components get docgen via local wrappers).
     viteConfig.resolve = viteConfig.resolve || {};
     viteConfig.resolve.alias = {
       // oxlint-disable-next-line typescript/no-misused-spread
