@@ -38,14 +38,16 @@ const config: StorybookConfig = {
     },
   },
   async viteFinal(viteConfig) {
-    // use alias to resolve @arbeidstilsynet/design-react to the local package for HMR support
+    // use alias to resolve @arbeidstilsynet/design-react to a Storybook-only
+    // barrel (see .storybook/design-react) for HMR support and so upstream
+    // (Digdir) components get docgen via local wrappers.
     viteConfig.resolve = viteConfig.resolve || {};
     viteConfig.resolve.alias = {
       // oxlint-disable-next-line typescript/no-misused-spread
       ...viteConfig.resolve.alias,
       "@arbeidstilsynet/design-react": resolve(
         storybookConfigDir,
-        "../../../packages/react/src/index.ts",
+        "../docgen-wrappers/index.tsx",
       ),
     };
 

@@ -6,6 +6,11 @@ export type * from "@digdir/designsystemet-react";
 
 // use named re-exports instead of export * to fix error with RSC:
 // "It's currently unsupported to use "export *" in a client boundary. Please use named exports instead."
+//
+// NB: Storybook generates a docgen wrapper per component in this list so autodocs
+// show real prop types (see docs/adr/adr-0004-storybook-docgen-wrappers.md).
+// After adding a component here, run `pnpm --filter @arbeidstilsynet/storybook
+// gen:docgen-wrappers`. A vitest test fails if the wrappers are stale.
 export {
   Alert,
   Avatar,
@@ -42,11 +47,6 @@ export {
   DropdownList,
   DropdownTrigger,
   DropdownTriggerContext,
-  ErrorSummary,
-  ErrorSummaryHeading,
-  ErrorSummaryItem,
-  ErrorSummaryLink,
-  ErrorSummaryList,
   EXPERIMENTAL_AvatarStack,
   EXPERIMENTAL_Suggestion,
   EXPERIMENTAL_SuggestionClear,
@@ -54,6 +54,11 @@ export {
   EXPERIMENTAL_SuggestionInput,
   EXPERIMENTAL_SuggestionList,
   EXPERIMENTAL_SuggestionOption,
+  ErrorSummary,
+  ErrorSummaryHeading,
+  ErrorSummaryItem,
+  ErrorSummaryLink,
+  ErrorSummaryList,
   Field,
   FieldAffix,
   FieldAffixes,
@@ -70,7 +75,6 @@ export {
   ListItem,
   ListOrdered,
   ListUnordered,
-  omit,
   Pagination,
   PaginationButton,
   PaginationItem,
@@ -110,6 +114,8 @@ export {
   ToggleGroup,
   ToggleGroupItem,
   Tooltip,
+  ValidationMessage,
+  omit,
   useCheckboxGroup,
   useDebounceCallback,
   useIsomorphicLayoutEffect,
@@ -117,5 +123,4 @@ export {
   usePagination,
   useRadioGroup,
   useSynchronizedAnimation,
-  ValidationMessage,
 } from "@digdir/designsystemet-react";

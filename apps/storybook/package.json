@@ -7,7 +7,10 @@
     "dev:only": "storybook dev -p 6006",
     "build": "storybook build",
     "test": "vitest run",
+    "test:node": "vitest run --project node",
+    "test:browser": "vitest run --project storybook-light --project storybook-dark",
     "typecheck": "tsc --noEmit",
+    "gen:docgen-wrappers": "tsx utils/generate-docgen-wrappers.ts",
     "lint": "oxlint .",
     "serve": "pnpm dlx http-server ./storybook-static",
     "circular": "pnpm dlx madge --circular --extensions \"js,jsx,ts,tsx\" ./stories"

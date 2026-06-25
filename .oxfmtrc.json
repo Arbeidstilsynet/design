@@ -5,6 +5,7 @@
     "pnpm-*.yaml",
     ".changeset",
     "design-tokens",
-    "packages/theme/brand"
+    "packages/theme/brand",
+    "apps/storybook/docgen-wrappers/index.tsx"
   ]
 }
