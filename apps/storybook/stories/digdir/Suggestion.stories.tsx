@@ -40,7 +40,6 @@ export default {
       disableSnapshot: false,
     },
     a11y: {
-      // TODO: this rule should be enabled after https://github.com/dequelabs/axe-core/issues/4672 have propagated to @storybook/addon-a11y.
       config: {
         rules: [
           // Axe can't find listbox inside shadow-dom, and thus thinks <data> elements
@@ -48,10 +47,7 @@ export default {
           {
             id: "aria-required-parent",
             matches: (element: HTMLElement) =>
-              !(
-                element instanceof HTMLDataElement &&
-                element.className === "ds-chip"
-              ),
+              !(element instanceof HTMLDataElement),
           },
           {
             // TODO: this rule should be enabled after https://github.com/dequelabs/axe-core/issues/4672 have propagated to @storybook/addon-a11y.
@@ -67,7 +63,7 @@ export default {
     // Refactored out the play function for easier reuse in the InModal story
     await testSuggestion(storyRoot);
   },
-} as Meta;
+} satisfies Meta;
 
 async function testSuggestion(el: HTMLElement) {
   /* wait for role to be added */
@@ -91,7 +87,7 @@ const DATA_PEOPLE = [
   { label: "James", value: "#007" },
   { label: "Nina", value: "#113" },
   { label: "Tove", value: "#110" },
-] as const;
+];
 
 export const Preview: StoryFn<typeof Suggestion> = (args) => {
   return (
