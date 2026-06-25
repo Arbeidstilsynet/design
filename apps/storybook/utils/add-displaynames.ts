@@ -1,6 +1,9 @@
 // Make sure all React components have a displayName for better debugging in Storybook
-import * as designsystemet from "@arbeidstilsynet/design-react";
+
 import * as akselIcons from "@navikt/aksel-icons";
+// Read from the package source, not `@arbeidstilsynet/design-react`: that is
+// aliased to the docgen wrappers, which hide the real forwardRef instances.
+import * as designsystemet from "../../../packages/react/src";
 
 const addDisplaynames = (pkg: Record<string, unknown>): void => {
   Object.keys(pkg).forEach((key) => {
