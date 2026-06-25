@@ -108,10 +108,6 @@ regenerate the Storybook docgen wrappers so autodocs show its real prop types:
 
 `pnpm --filter @arbeidstilsynet/storybook gen:docgen-wrappers`
 
-A vitest test fails if the wrappers are stale. See
-[docs/adr/adr-0004-storybook-docgen-wrappers.md](./docs/adr/adr-0004-storybook-docgen-wrappers.md)
-for background.
-
 ### Design tokens
 
 See [docs/TOKENS.md](./docs/TOKENS.md) for how to update `design-tokens`.
