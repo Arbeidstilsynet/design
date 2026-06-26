@@ -1,0 +1,29 @@
+.svgButton {
+  background: none;
+  padding: var(--ds-size-1);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--ds-border-radius-md);
+  border: var(--ds-border-width-default) solid transparent;
+  outline: none;
+}
+
+.svgButton:hover,
+.svgButton:focus-visible {
+  outline: var(--ds-border-width-default) solid var(--ds-color-border-default);
+}
+
+.svgImage {
+  height: 2rem;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.toast {
+  --toastify-toast-padding: 0;
+  --toastify-color-progress-light: var(--ds-color-success-background-default);
+  --toastify-color-progress-success: var(--ds-color-success-background-default);
+  --toastify-color-progress-error: var(--ds-color-danger-background-default);
+}
