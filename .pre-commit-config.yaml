@@ -18,13 +18,13 @@ repos:
         exclude: ^(.*\.svg|design-tokens/.*)$
 
   - repo: https://github.com/oxc-project/mirrors-oxlint
-    rev: v1.71.0
+    rev: v1.72.0
     hooks:
       - id: oxlint
         verbose: true
 
   - repo: https://github.com/oxc-project/mirrors-oxfmt
-    rev: v0.56.0
+    rev: v0.57.0
     hooks:
       - id: oxfmt
         always_run: true
