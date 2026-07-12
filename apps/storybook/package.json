@@ -19,7 +19,7 @@
     "@arbeidstilsynet/design-css": "workspace:*",
     "@arbeidstilsynet/design-react": "workspace:*",
     "@arbeidstilsynet/design-theme": "workspace:*",
-    "@navikt/aksel-icons": "8.14.0",
+    "@navikt/aksel-icons": "8.15.0",
     "clsx": "2.1.1",
     "react": "19.2.7",
     "react-dom": "19.2.7",
