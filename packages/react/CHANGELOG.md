@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-react
 
+## 0.11.2
+
+Released: 2026-07-20
+
+### Patch Changes
+
+- Updated dependency `@navikt/aksel-icons` to `^8.15.0`. ([#1019](https://github.com/Arbeidstilsynet/design/pull/1019))
+
 ## 0.11.1
 
 Released: 2026-06-23
