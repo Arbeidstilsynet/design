@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       # install JS plugins used by oxlint
       - uses: Arbeidstilsynet/action-pnpm-setup@618fbc6ee30a13d077086cafba92b4e6cdca0f78 # v1
       - uses: j178/prek-action@bdca6f102f98e2b4c7029491a53dfd366469e33d # v2
@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: Arbeidstilsynet/action-pnpm-setup@618fbc6ee30a13d077086cafba92b4e6cdca0f78 # v1
       - run: pnpm typecheck
 
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: Arbeidstilsynet/action-pnpm-setup@618fbc6ee30a13d077086cafba92b4e6cdca0f78 # v1
       - run: pnpm build
 
@@ -44,7 +44,7 @@ jobs:
       checks: write
       pull-requests: write
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: Arbeidstilsynet/action-pnpm-setup@618fbc6ee30a13d077086cafba92b4e6cdca0f78 # v1
       - run: pnpm test
         id: test
@@ -72,7 +72,7 @@ jobs:
       run:
         working-directory: .nais
     steps:
-      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - name: Install nais-cli
         run: |
           NAIS_GPG_KEY="/etc/apt/keyrings/nav_nais_gar.asc"
