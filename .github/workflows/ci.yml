@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       # install JS plugins used by oxlint
       - uses: Arbeidstilsynet/action-pnpm-setup@185ab3d9b56f355b842d4efab78e52f4ec58242d # v2
-      - uses: j178/prek-action@5337cb91e0fa35a7ff31b9ca345126d8bbbcdf16 # v2
+      - uses: j178/prek-action@4e14d07f9231acabce116ccfca13b13dd9755ece # v3.0.0
 
   typecheck:
     runs-on: ubuntu-latest
