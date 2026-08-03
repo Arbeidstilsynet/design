@@ -23,7 +23,7 @@ jobs:
         id: docker
         with:
           team: plattform
-      - uses: nais/deploy/actions/deploy@2d18f050f07b6a007864c6a57070ed915d571beb # v2
+      - uses: nais/deploy/actions/deploy@fc3eae3edebabdf67f7592102ae16176d5ba3b5f # v2
         env:
           CLUSTER: ${{ inputs.cluster }}
           RESOURCE: .nais/storybook.yml
