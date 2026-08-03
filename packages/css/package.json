@@ -39,7 +39,7 @@
     "postcss": "8.5.25",
     "postcss-cli": "11.0.1",
     "postcss-import": "16.1.1",
-    "postcss-nesting": "14.0.0",
+    "postcss-nesting": "14.0.1",
     "tsx": "4.23.1"
   }
 }
