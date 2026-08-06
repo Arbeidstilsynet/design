@@ -1,8 +1,8 @@
 import { Button, Paragraph, Popover } from "@arbeidstilsynet/design-react";
 import { TrashIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn } from "@storybook/react-vite";
-import { useState } from "react";
-import { expect, userEvent, within } from "storybook/test";
+import { useEffect, useState } from "react";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 
 export default {
   title: "designsystemet.no/Popover",
@@ -24,20 +24,23 @@ export default {
     },
   },
   play: async (ctx) => {
-    // When not in Docs mode, automatically open the popover
-    const canvas = within(ctx.canvasElement);
-    const button = canvas.getByRole("button");
-    await userEvent.click(button);
-    const popover = ctx.canvasElement.querySelector("[popover]");
-    await expect(popover).toBeVisible();
+    // When not in Docs mode, automatically open the dropdown
+    const button = within(ctx.canvasElement).getByRole("button");
+    await new Promise((resolve) => {
+      document.addEventListener("animationend", resolve, true); // <== Merk at vi binder event-listener før vi gjør click
+      userEvent.click(button);
+    });
+    const dropdown = ctx.canvasElement.querySelector(".ds-popover");
+    await expect(dropdown).toBeInTheDocument();
+    await waitFor(() => expect(dropdown).toBeVisible());
   },
 } satisfies Meta;
 
 export const Preview: StoryFn<typeof Popover> = (args) => {
   return (
     <Popover.TriggerContext>
-      <Popover.Trigger>My trigger!</Popover.Trigger>
-      <Popover {...args}>popover content</Popover>
+      <Popover.Trigger>Mine varsler</Popover.Trigger>
+      <Popover {...args}>Du har ingen varsler</Popover>
     </Popover.TriggerContext>
   );
 };
@@ -85,27 +88,25 @@ Interactive.parameters = {
 
 export const DottedUnderline: StoryFn<typeof Popover> = () => {
   return (
-    <>
-      <Popover.TriggerContext>
+    <Popover.TriggerContext>
+      <Paragraph>
+        Vi bruker <Popover.Trigger inline>design tokens</Popover.Trigger> for å
+        sikre at vi har en konsistent design.
+      </Paragraph>
+      <Popover data-color="neutral">
         <Paragraph>
-          Vi bruker <Popover.Trigger inline>design tokens</Popover.Trigger> for
-          å sikre at vi har en konsistent design.
+          <strong
+            style={{
+              display: "block",
+            }}
+          >
+            Design tokens
+          </strong>
+          Design tokens er en samling av variabler som definerer designet i et
+          designsystem.
         </Paragraph>
-        <Popover data-color="neutral">
-          <Paragraph>
-            <strong
-              style={{
-                display: "block",
-              }}
-            >
-              Design tokens
-            </strong>
-            Design tokens er en samling av variabler som definerer designet i et
-            designsystem.
-          </Paragraph>
-        </Popover>
-      </Popover.TriggerContext>
-    </>
+      </Popover>
+    </Popover.TriggerContext>
   );
 };
 DottedUnderline.parameters = {
@@ -148,13 +149,17 @@ const VariantsMap: {
 };
 
 export const Variants: StoryFn<typeof Popover> = () => {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => setOpen(true), []);
+
   return (
     <>
       {Object.entries(VariantsMap).map(([key, props], index) => (
         <Popover.TriggerContext key={key}>
           <Popover.Trigger>popover</Popover.Trigger>
           <Popover
-            open={true}
+            open={open}
             placement={index >= 4 ? "bottom" : "top"}
             autoPlacement={false}
             {...props}
@@ -189,19 +194,37 @@ export const Controlled: StoryFn<typeof Popover> = () => {
 
   return (
     <Popover.TriggerContext>
-      <Popover.Trigger onClick={() => setOpen(!open)}>
-        My trigger
-      </Popover.Trigger>
-      <Popover open={open} onClose={() => setOpen(false)} data-color="neutral">
+      <Popover.Trigger>Slett</Popover.Trigger>
+      <Popover
+        open={open}
+        onOpen={() => setOpen(true)}
+        onClose={() => setOpen(false)}
+        data-color="neutral"
+      >
         <Paragraph>Er du sikker på at du vil slette?</Paragraph>
-        <Button
-          data-color="danger"
-          onClick={() => setOpen(false)}
-          data-size="sm"
-          style={{ marginTop: "var(--ds-size-2)" }}
+        <div
+          style={{
+            display: "flex",
+            gap: "var(--ds-size-2)",
+            marginTop: "var(--ds-size-2)",
+          }}
         >
-          Slett
-        </Button>
+          <Button
+            data-color="danger"
+            onClick={() => setOpen(false)}
+            data-size="sm"
+          >
+            Slett
+          </Button>
+          <Button
+            data-variant="tertiary"
+            data-color="danger"
+            onClick={() => setOpen(false)}
+            data-size="sm"
+          >
+            Avbryt
+          </Button>
+        </div>
       </Popover>
     </Popover.TriggerContext>
   );

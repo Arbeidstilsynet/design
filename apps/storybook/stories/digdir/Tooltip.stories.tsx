@@ -1,10 +1,16 @@
-import { Button, Tooltip } from "@arbeidstilsynet/design-react";
+import { Button, Link, Tooltip } from "@arbeidstilsynet/design-react";
+import { FilesIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
-import { expect, userEvent, within } from "storybook/test";
+import { useEffect, useRef, useState } from "react";
+import { expect, fireEvent, userEvent, waitFor } from "storybook/test";
 
 type Story = StoryObj<typeof Tooltip>;
+type FnStory = StoryFn<typeof Tooltip>;
 
-const defaultChildren = <Button>My trigger</Button>;
+function isInViewport(el: Element) {
+  const { height, width } = el.getBoundingClientRect();
+  return height > 1 && width > 1;
+}
 
 export default {
   title: "designsystemet.no/Tooltip",
@@ -16,60 +22,183 @@ export default {
     },
   },
   play: async (ctx) => {
-    // When not in Docs mode, automatically open the tooltip
-    const canvas = within(ctx.canvasElement);
-    const button = canvas.getByRole("button");
-    /* wait 1s for tooltip to show */
-    await userEvent.hover(button);
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(true);
-      }, 1000);
-    });
-    const tooltip = canvas.getByRole("tooltip");
-    await expect(tooltip).toBeInTheDocument();
-    await expect(tooltip).toBeVisible();
+    const tooltips =
+      ctx.canvasElement.querySelectorAll<HTMLElement>("[data-tooltip]");
+    const fakeFocus = (e: HTMLElement) => {
+      fireEvent.focus(e); // shows up in interaction log in Storybook
+      e.focus({ focusVisible: true } as Record<string, unknown>); // necessary to get focusVisible styling, but doesn't show up in interaction log
+    };
+    for (const event of [userEvent.hover, fakeFocus])
+      for (const tooltipTrigger of tooltips) {
+        await event(tooltipTrigger);
+        await waitFor(async () => {
+          const text = tooltipTrigger.getAttribute("data-tooltip");
+          if (!text) {
+            throw new Error("Tooltip trigger has no data-tooltip attribute");
+          }
+          const tooltipRenderer = document.body.querySelector(".ds-tooltip");
+          await expect(tooltipRenderer).toBeVisible();
+          await expect(tooltipRenderer).toSatisfy(isInViewport); // toBeVisible() doesn't check if the element is in the viewport
+          await expect(tooltipRenderer).toHaveTextContent(text);
+          if (tooltipTrigger.textContent.trim()) {
+            await expect(tooltipTrigger).toHaveAttribute(
+              "aria-description",
+              text,
+            );
+          } else {
+            await expect(tooltipTrigger).toHaveAttribute("aria-label", text);
+          }
+        });
+      }
   },
 } satisfies Meta;
 
 export const Preview: StoryFn<typeof Tooltip> = (args) => (
   <Tooltip {...args}>
-    <Button>My trigger</Button>
+    <Button icon>
+      <FilesIcon aria-hidden />
+    </Button>
   </Tooltip>
 );
 
 Preview.args = {
-  content: "Tooltip text",
+  content: "Kopier",
   placement: "top",
+};
+
+export const WithLink: FnStory = () => {
+  return (
+    <Tooltip content="Gå til en annen side..." placement="top">
+      <Link href="#">En lenke</Link>
+    </Tooltip>
+  );
+};
+
+export const WithSpan: FnStory = () => {
+  return (
+    <Tooltip content="Innholdet i tooltipen" placement="top">
+      <span>Tekst med tooltip</span>
+    </Tooltip>
+  );
+};
+
+export const WithPlainText: FnStory = () => {
+  return (
+    <Tooltip content="Innholdet i tooltipen" placement="top">
+      Tekst med tooltip
+    </Tooltip>
+  );
 };
 
 export const WithString: Story = {
   args: {
-    content: "Tooltip text",
-    children: "My trigger",
+    content: "Organisasjonsnummer",
+    children: "Org.nr.",
+    tabIndex: 0,
   },
-};
-
-WithString.play = async (ctx) => {
-  // When not in Docs mode, automatically open the tooltip
-  const canvas = within(ctx.canvasElement);
-  const button = canvas.getByText("My trigger");
-  await userEvent.hover(button);
-  /* wait 1s for tooltip to show */
-  await new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(true);
-    }, 1000);
-  });
-  const tooltip = canvas.getByRole("tooltip");
-  await expect(tooltip).toBeInTheDocument();
-  await expect(tooltip).toBeVisible();
 };
 
 export const Placement: Story = {
   args: {
-    content: "Tooltip text",
+    content: "Kopier",
     placement: "bottom",
-    children: defaultChildren,
+    children: (
+      <Button icon>
+        <FilesIcon aria-hidden />
+      </Button>
+    ),
+  },
+};
+
+export const Aria: FnStory = () => {
+  return (
+    <>
+      <Tooltip content="Beskrivelse for aria-description">
+        <Button>Eg er aria-description</Button>
+      </Tooltip>
+      <Tooltip content="Beskrivelse for aria-description">
+        <Button>
+          <FilesIcon aria-hidden />
+          <span>Eg er også aria-description</span>
+        </Button>
+      </Tooltip>
+      <Tooltip content="Eg er aria-label">
+        <Button icon>
+          <FilesIcon aria-hidden />
+        </Button>
+      </Tooltip>
+    </>
+  );
+};
+
+Aria.parameters = {
+  customStyles: {
+    display: "flex",
+    gap: "var(--ds-size-2)",
+    alignItems: "center",
+  },
+};
+
+export const WithDynamicTooltipText: Story = {
+  args: {
+    content: "Kopier",
+  },
+  render: () => {
+    const [content, setContent] = useState("Kopier");
+
+    return (
+      <Tooltip content={content}>
+        <Button
+          icon
+          onClick={() => setContent("Kopiert")}
+          onBlur={() => setContent("Kopier")}
+        >
+          <FilesIcon aria-hidden />
+        </Button>
+      </Tooltip>
+    );
+  },
+};
+
+export const WithCSSTooltipText: Story = {
+  args: {
+    content: "Kopier",
+  },
+  render: () => (
+    <Tooltip content="">
+      <Button style={{ "--ds-tooltip": '"Kopier"' } as React.CSSProperties}>
+        <FilesIcon aria-hidden />
+      </Button>
+    </Tooltip>
+  ),
+};
+
+export const WithDynamicCSSTooltipText: Story = {
+  args: {
+    content: "Kopier",
+  },
+  render: () => {
+    const tooltipRef = useRef<HTMLDivElement>(null);
+    const [tooltipContent, setTooltipContent] = useState("");
+
+    // Tooltip text from css variable
+    useEffect(() => {
+      if (typeof window === "undefined" || !tooltipRef.current) return;
+      const content = getComputedStyle(tooltipRef.current)
+        .getPropertyValue("--ds-tooltip-content")
+        .replace(/^["']|["']$/g, "")
+        .trim();
+      setTooltipContent(content);
+    }, []);
+
+    return (
+      <Tooltip content={tooltipContent} ref={tooltipRef}>
+        <Button
+          style={{ "--ds-tooltip-content": '"Kopier"' } as React.CSSProperties}
+        >
+          <FilesIcon aria-hidden />
+        </Button>
+      </Tooltip>
+    );
   },
 };

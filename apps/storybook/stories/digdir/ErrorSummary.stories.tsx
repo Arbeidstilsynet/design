@@ -1,6 +1,6 @@
 import { Button, ErrorSummary, Textfield } from "@arbeidstilsynet/design-react";
 import type { Meta, StoryFn } from "@storybook/react-vite";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { expect, userEvent, within } from "storybook/test";
 
 type Story = StoryFn<typeof ErrorSummary>;
@@ -74,12 +74,28 @@ export const WithForm: Story = () => (
   </>
 );
 
-WithForm.parameters = {
-  customStyles: { display: "grid", gap: "var(--ds-size-4)" },
-};
+WithForm.decorators = [
+  (Story) => (
+    <div
+      style={{
+        display: "grid",
+        alignItems: "stretch",
+        gap: "var(--ds-size-4)",
+      }}
+    >
+      <Story />
+    </div>
+  ),
+];
 
-export const ShowHide: Story = () => {
+export const ShowHideReact: Story = () => {
   const [show, setShow] = useState(false);
+  const summaryRef = useRef<any>(null);
+  useEffect(() => {
+    if (show) {
+      summaryRef.current?.focus();
+    }
+  }, [show]);
 
   return (
     <>
@@ -90,10 +106,12 @@ export const ShowHide: Story = () => {
           marginBottom: "var(--ds-size-4)",
         }}
       >
-        <Button onClick={() => setShow(!show)}>{show ? "Skjul" : "Vis"}</Button>
+        <Button onClick={() => setShow(!show)}>
+          {show ? "Skjul" : "Send inn skjema"}
+        </Button>
       </div>
       {show && (
-        <ErrorSummary>
+        <ErrorSummary data-testid="show-hide" ref={summaryRef}>
           <ErrorSummary.Heading>
             For å gå videre må du rette opp følgende feil:
           </ErrorSummary.Heading>
@@ -115,10 +133,14 @@ export const ShowHide: Story = () => {
   );
 };
 
-ShowHide.play = async (ctx) => {
+ShowHideReact.play = async (ctx) => {
   const canvas = within(ctx.canvasElement);
   const button = canvas.getByRole("button");
   await userEvent.click(button);
-  const errorSummary = canvas.getByRole("alert");
+  const errorSummary = canvas.getByTestId("show-hide");
   await expect(errorSummary).toBeVisible();
+};
+
+ShowHideReact.parameters = {
+  docs: { source: { type: "code" } },
 };
