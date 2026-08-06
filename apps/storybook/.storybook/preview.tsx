@@ -119,6 +119,8 @@ const preview: Preview = {
       test: "error",
     },
     chromatic: {
+      // make snapshots opt-in per file/story
+      disableSnapshot: true,
       modes: {
         light: { colorScheme: "light" },
         dark: { colorScheme: "dark" },
