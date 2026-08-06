@@ -7,6 +7,7 @@ import {
   TasklistIcon,
 } from "@navikt/aksel-icons";
 import type { Meta, StoryObj } from "@storybook/react-vite";
+import { expect, waitFor } from "storybook/test";
 import { Header } from "..";
 import { Button, Divider, Link, Switch } from "../..";
 import { HeaderStoriesIllustration } from "./stories-helpers/headerStoriesIllustration";
@@ -102,6 +103,9 @@ export const Preview: Story = {
       </Header>
     );
   },
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
   args: {
     links,
   },
@@ -128,6 +132,9 @@ export const NoMenu: Story = {
         <Header.Navbar />
       </Header>
     );
+  },
+  parameters: {
+    chromatic: { disableSnapshot: false },
   },
   args: {
     links,
@@ -158,6 +165,9 @@ export const NoNavigation: Story = {
         </Header.Menu>
       </Header>
     );
+  },
+  parameters: {
+    chromatic: { disableSnapshot: false },
   },
 };
 
@@ -387,6 +397,16 @@ export const DifferentMenuRows: Story = {
         </Header.Menu>
       </Header>
     );
+  },
+  play: async ({ canvas, userEvent }) => {
+    const menuButton = canvas.getByRole("button", { name: "Ola Nordmann" });
+    await userEvent.click(menuButton);
+
+    const menuRow = canvas.getByRole("link", { name: /Badge \(info\)/ });
+    await waitFor(() => expect(menuRow).toBeVisible());
+  },
+  parameters: {
+    chromatic: { disableSnapshot: false },
   },
   args: {
     links,

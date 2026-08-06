@@ -99,6 +99,10 @@ export const Preview: StoryFn<typeof FilePicker> = (args) => {
   );
 };
 
+Preview.parameters = {
+  chromatic: { disableSnapshot: false },
+};
+
 export const WithFiles: Story = {
   render: (args) => (
     <FilePicker {...args}>
@@ -108,6 +112,10 @@ export const WithFiles: Story = {
       <FilePicker.Files />
     </FilePicker>
   ),
+
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
 
   args: {
     files: [
@@ -136,6 +144,10 @@ export const WithErrors: Story = {
       <FilePicker.Files />
     </FilePicker>
   ),
+
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
 
   args: {
     files: [
@@ -171,6 +183,9 @@ export const Disabled: Story = {
       <FilePicker.Files />
     </FilePicker>
   ),
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
   args: {
     files: [{ id: 1, file: createMockFileInKb("document.pdf", 1) }],
     errors: [],
@@ -240,6 +255,7 @@ export const SideBySide: Story = {
       </FilePicker>
     </div>
   ),
+
   args: {
     files: [
       {

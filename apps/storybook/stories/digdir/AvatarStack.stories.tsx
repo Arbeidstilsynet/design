@@ -17,7 +17,6 @@ const meta: Meta<typeof AvatarStack> = {
   component: AvatarStack,
   parameters: {
     layout: "fullscreen",
-    chromatic: { disableSnapshot: true },
   },
   args: {
     "aria-label": "Test av aria label",
