@@ -118,6 +118,12 @@ const preview: Preview = {
     a11y: {
       test: "error",
     },
+    chromatic: {
+      modes: {
+        light: { colorScheme: "light" },
+        dark: { colorScheme: "dark" },
+      },
+    },
   },
   decorators: [customStylesDecorator],
   tags: ["autodocs"],
