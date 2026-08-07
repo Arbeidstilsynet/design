@@ -106,3 +106,8 @@ export const WithOptgroup: StoryFn<typeof Select> = (args) => (
     </Select>
   </Field>
 );
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

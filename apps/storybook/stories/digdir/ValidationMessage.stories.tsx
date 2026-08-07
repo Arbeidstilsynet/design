@@ -15,3 +15,8 @@ export const Preview: Story = {
     children: "Dette er en valideringsmelding.",
   },
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

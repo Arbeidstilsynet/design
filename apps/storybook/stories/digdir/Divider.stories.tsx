@@ -19,3 +19,8 @@ export const Preview: Story = (args) => (
     </Paragraph>
   </>
 );
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

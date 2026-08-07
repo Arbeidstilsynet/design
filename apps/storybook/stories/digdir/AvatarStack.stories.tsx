@@ -418,3 +418,8 @@ export const Playground: Story = () => {
     </div>
   );
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

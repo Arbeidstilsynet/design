@@ -131,3 +131,8 @@ MobileViewport.parameters = {
     defaultViewport: "375px", // Large mobile default viewport
   },
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

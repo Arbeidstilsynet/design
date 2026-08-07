@@ -144,3 +144,8 @@ ShowHideReact.play = async (ctx) => {
 ShowHideReact.parameters = {
   docs: { source: { type: "code" } },
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

@@ -101,3 +101,8 @@ export const Controlled: StoryFn<typeof Textfield> = () => {
     </>
   );
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

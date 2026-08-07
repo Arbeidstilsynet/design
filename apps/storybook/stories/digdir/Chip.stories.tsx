@@ -51,3 +51,8 @@ Button.parameters = {
     justifyContent: "center",
   },
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

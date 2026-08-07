@@ -113,3 +113,8 @@ export const Text: StoryFn<typeof Skeleton> = () => (
 Text.parameters = {
   customStyles: { display: "flex", gap: "20px", maxWidth: 300 },
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

@@ -29,20 +29,14 @@ export default {
         maxHeight: "800px",
       },
     },
-    chromatic: {
-      disableSnapshot: false,
-    },
   },
   play: async (ctx) => {
     // When not in Docs mode, automatically open the dropdown
     const button = within(ctx.canvasElement).getByRole("button");
-    await new Promise((resolve) => {
-      document.addEventListener("animationend", resolve, true); // <== Merk at vi binder event-listener før vi gjør click
-      userEvent.click(button);
-    });
-    const dropdown = ctx.canvasElement.querySelector(".ds-dropdown");
-    await expect(dropdown).toBeInTheDocument();
-    await waitFor(() => expect(dropdown).toBeVisible());
+    await userEvent.click(button);
+    await waitFor(() =>
+      expect(ctx.canvasElement.querySelector(".ds-dropdown")).toBeVisible(),
+    );
   },
 } satisfies Meta;
 
@@ -275,4 +269,9 @@ export const WithNestedDropdown: StoryFn<typeof Dropdown> = (args) => {
       </Dropdown>
     </Dropdown.TriggerContext>
   );
+};
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
 };

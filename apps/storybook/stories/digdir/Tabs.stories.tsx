@@ -129,3 +129,8 @@ export const Controlled: StoryFn<typeof Tabs> = () => {
     </>
   );
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

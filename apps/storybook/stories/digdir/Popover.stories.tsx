@@ -19,20 +19,14 @@ export default {
       placeContent: "center",
       padding: "1rem 2rem",
     },
-    chromatic: {
-      disableSnapshot: false,
-    },
   },
   play: async (ctx) => {
     // When not in Docs mode, automatically open the dropdown
     const button = within(ctx.canvasElement).getByRole("button");
-    await new Promise((resolve) => {
-      document.addEventListener("animationend", resolve, true); // <== Merk at vi binder event-listener før vi gjør click
-      userEvent.click(button);
-    });
-    const dropdown = ctx.canvasElement.querySelector(".ds-popover");
-    await expect(dropdown).toBeInTheDocument();
-    await waitFor(() => expect(dropdown).toBeVisible());
+    await userEvent.click(button);
+    await waitFor(() =>
+      expect(ctx.canvasElement.querySelector(".ds-popover")).toBeVisible(),
+    );
   },
 } satisfies Meta;
 
@@ -266,4 +260,9 @@ WithoutContext.parameters = {
   customStyles: {
     padding: "8rem 6rem 1rem",
   },
+};
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
 };

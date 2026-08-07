@@ -15,3 +15,8 @@ export const Preview: Story = {
     children: "Tittel tekst",
   },
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

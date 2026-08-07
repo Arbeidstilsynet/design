@@ -10,7 +10,7 @@ import {
 } from "@arbeidstilsynet/design-react";
 import type { Meta, StoryFn } from "@storybook/react-vite";
 import { useRef, useState } from "react";
-import { expect, userEvent, within } from "storybook/test";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 
 export default {
   title: "designsystemet.no/Dialog",
@@ -32,34 +32,16 @@ export default {
         width: "100cqw",
       },
     },
-
-    chromatic: {
-      disableSnapshot: false,
-      modes: {
-        mobile: {
-          viewport: { height: 600 },
-        },
-        desktop: {
-          viewport: { height: 1080 },
-        },
-      },
-    },
   },
   play: async (ctx) => {
     // When not in Docs mode, automatically open the dialog
     const canvas = within(ctx.canvasElement);
     const button = canvas.getByRole("button");
     await userEvent.click(button);
-    // Wait for dialog to fade in before running tests
     const dialog = canvas.getByRole("dialog");
-    await new Promise<void>((resolve) => {
-      dialog.addEventListener("animationend", () => {
-        resolve();
-      });
-    });
-
     await expect(dialog).toBeInTheDocument();
     await expect(dialog).toHaveAttribute("open");
+    await waitFor(() => expect(dialog).toBeVisible());
   },
 } satisfies Meta;
 
@@ -334,4 +316,9 @@ export const DialogNonModal: StoryFn<typeof Dialog> = () => {
 
 DialogNonModal.parameters = {
   curstomStyles: { padding: "var(--ds-size-18)" },
+};
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
 };

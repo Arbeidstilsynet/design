@@ -362,3 +362,8 @@ export const AsGrid: Story = (args) => (
     </Card.Block>
   </Card>
 );
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

@@ -47,3 +47,8 @@ function isVisibleOnScreen(el: Element) {
   const { height, width } = el.getBoundingClientRect();
   return height > 1 && width > 1;
 }
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

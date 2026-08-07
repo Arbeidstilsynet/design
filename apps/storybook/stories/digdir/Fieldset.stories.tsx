@@ -36,3 +36,8 @@ export const Preview: Story = (args) => (
     </Fieldset>
   </form>
 );
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

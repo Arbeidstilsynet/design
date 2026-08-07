@@ -155,3 +155,8 @@ export const Position: Story = () => (
     </Fieldset>
   </>
 );
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

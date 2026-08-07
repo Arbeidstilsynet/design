@@ -89,3 +89,8 @@ export const Controlled: StoryFn<typeof Textarea> = (args) => {
 Controlled.args = {
   id: "my-textarea",
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

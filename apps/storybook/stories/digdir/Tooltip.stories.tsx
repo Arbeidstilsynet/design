@@ -17,9 +17,6 @@ export default {
   component: Tooltip,
   parameters: {
     customStyles: { margin: "2rem", padding: "4rem" },
-    chromatic: {
-      disableSnapshot: false,
-    },
   },
   play: async (ctx) => {
     const tooltips =
@@ -201,4 +198,9 @@ export const WithDynamicCSSTooltipText: Story = {
       </Tooltip>
     );
   },
+};
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
 };

@@ -117,3 +117,8 @@ export const Form: StoryFn<typeof Search> = () => {
     </>
   );
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

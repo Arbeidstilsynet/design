@@ -368,3 +368,8 @@ Switch.parameters = {
     gap: "2rem",
   },
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};
