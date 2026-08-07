@@ -24,7 +24,7 @@ repos:
         verbose: true
 
   - repo: https://github.com/oxc-project/mirrors-oxfmt
-    rev: v0.60.0
+    rev: v0.61.0
     hooks:
       - id: oxfmt
         always_run: true
