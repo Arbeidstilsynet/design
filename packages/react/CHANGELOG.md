@@ -1,5 +1,17 @@
 # @arbeidstilsynet/design-react
 
+## 0.11.2
+
+Released: 2026-08-07
+
+### Patch Changes
+
+- Updated dependency `@radix-ui/react-slot` to `^1.3.3`. ([#1057](https://github.com/Arbeidstilsynet/design/pull/1057))
+
+- Updated dependency `react-dropzone` to `^20.0.0`. ([#1069](https://github.com/Arbeidstilsynet/design/pull/1069))
+
+- Updated dependency `@navikt/aksel-icons` to `^8.16.1`. ([#1063](https://github.com/Arbeidstilsynet/design/pull/1063))
+
 ## 0.11.1
 
 Released: 2026-06-23
