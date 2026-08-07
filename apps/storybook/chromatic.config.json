@@ -1,7 +1,7 @@
 {
   "onlyChanged": true,
   "projectId": "Project:6a747b70c60cab7dc310093f",
-  "storybookBaseDir": "apps\\storybook",
+  "storybookBaseDir": "apps/storybook",
   "zip": true,
   "buildScriptName": "build",
   "externals": ["packages/css/**/*.css", "packages/theme/**/*.css"]
