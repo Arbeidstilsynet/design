@@ -71,3 +71,8 @@ Colors.parameters = {
     placeItems: "center",
   },
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

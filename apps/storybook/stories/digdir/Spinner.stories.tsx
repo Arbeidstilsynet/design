@@ -41,3 +41,8 @@ export const Sizes: Story = (args) => (
     <Spinner aria-label="Henter kaffi" {...args} data-size="xl" />
   </>
 );
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

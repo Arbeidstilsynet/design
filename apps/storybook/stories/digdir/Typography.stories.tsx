@@ -162,3 +162,8 @@ export const EksempelTekstDark: StoryFn = () => (
     </Paragraph>
   </div>
 );
+
+EksempelTekst.parameters = {
+  ...EksempelTekst.parameters,
+  chromatic: { disableSnapshot: false },
+};

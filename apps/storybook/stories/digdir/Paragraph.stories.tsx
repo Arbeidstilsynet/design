@@ -17,3 +17,8 @@ export const Preview: Story = {
     variant: "default",
   },
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

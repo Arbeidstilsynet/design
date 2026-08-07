@@ -36,9 +36,6 @@ export default {
     ),
   ],
   parameters: {
-    chromatic: {
-      disableSnapshot: false,
-    },
     a11y: {
       config: {
         rules: [
@@ -580,4 +577,9 @@ export const Creatable: StoryFn<typeof Suggestion> = (args) => {
 Creatable.args = {
   multiple: true,
   creatable: true,
+};
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
 };

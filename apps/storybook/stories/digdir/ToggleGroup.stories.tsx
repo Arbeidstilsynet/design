@@ -153,3 +153,8 @@ export const AriaDisabled: StoryFn<typeof ToggleGroup> = () => {
     </ToggleGroup>
   );
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

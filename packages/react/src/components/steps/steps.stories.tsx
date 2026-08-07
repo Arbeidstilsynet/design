@@ -140,6 +140,9 @@ export const Default: Story = {
       </Steps.Step>
     </Steps>
   ),
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
 };
 
 /**
@@ -198,6 +201,9 @@ export const WithStateComplete: Story = {
  * the user having moved past it.
  */
 export const WithStateIncomplete: Story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
   render: () => (
     <>
       <strong>
@@ -287,6 +293,9 @@ export const WithStateIncomplete: Story = {
  * - `"up"`: vertical layout, progressing bottom to top.
  */
 export const WithDirection: Story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
   render: () => (
     <Flex data-items="500" data-gap="14">
       <Grid style={{ flexBasis: "100%" }}>
@@ -742,11 +751,17 @@ const InteractiveStepsComponent = () => {
  * close icon.
  */
 export const WithInteraction: Story = {
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
   render: () => <InteractiveStepsComponent />,
 };
 
 export const Timeline: Story = {
-  parameters: { showInOverview: true },
+  parameters: {
+    showInOverview: true,
+    chromatic: { disableSnapshot: false },
+  },
   render: () => (
     <Steps data-direction="up" data-state="complete" data-fade="start">
       <Steps.Step>

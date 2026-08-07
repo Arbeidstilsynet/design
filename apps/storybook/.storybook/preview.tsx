@@ -11,6 +11,7 @@ import {
 import type { Preview } from "@storybook/react-vite";
 import "../utils/add-displaynames";
 import { customStylesDecorator } from "../utils/customStylesDecorator";
+import { chromaticModes } from "./modes";
 import "./preview.css";
 
 const atViewPorts = {
@@ -117,6 +118,11 @@ const preview: Preview = {
     },
     a11y: {
       test: "error",
+    },
+    chromatic: {
+      // make snapshots opt-in per file/story
+      disableSnapshot: true,
+      modes: chromaticModes,
     },
   },
   decorators: [customStylesDecorator],

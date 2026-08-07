@@ -176,3 +176,8 @@ export const Conditional: StoryFn<UseRadioGroupProps> = (args) => {
     </>
   );
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

@@ -124,3 +124,8 @@ export const AsLink: Story = () => (
     <Avatar aria-label="Ola Nordmann" />
   </a>
 );
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

@@ -170,3 +170,8 @@ export const MedAria: Story = (args) => (
     </Paragraph>
   </Alert>
 );
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

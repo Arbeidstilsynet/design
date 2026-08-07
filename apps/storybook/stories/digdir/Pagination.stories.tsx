@@ -171,3 +171,8 @@ export const Mobile: StoryFn = () => (
     </Pagination.List>
   </Pagination>
 );
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

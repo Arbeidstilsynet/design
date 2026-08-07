@@ -54,3 +54,8 @@ export const GroupEnd: Story = {
     position: "end",
   },
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

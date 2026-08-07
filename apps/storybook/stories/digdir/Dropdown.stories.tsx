@@ -1,8 +1,8 @@
-import { Button, Dropdown } from "@arbeidstilsynet/design-react";
+import { Button, Dialog, Dropdown } from "@arbeidstilsynet/design-react";
 import { ChevronDownIcon, ChevronUpIcon, LinkIcon } from "@navikt/aksel-icons";
 import type { Meta, StoryFn } from "@storybook/react-vite";
 import { useState } from "react";
-import { expect, userEvent, within } from "storybook/test";
+import { expect, userEvent, waitFor, within } from "storybook/test";
 
 export default {
   title: "designsystemet.no/Dropdown",
@@ -29,16 +29,14 @@ export default {
         maxHeight: "800px",
       },
     },
-    chromatic: {
-      disableSnapshot: false,
-    },
   },
   play: async (ctx) => {
     // When not in Docs mode, automatically open the dropdown
     const button = within(ctx.canvasElement).getByRole("button");
     await userEvent.click(button);
-    const dropdown = ctx.canvasElement.querySelector("[popover]");
-    await expect(dropdown).toBeVisible();
+    await waitFor(() =>
+      expect(ctx.canvasElement.querySelector(".ds-dropdown")).toBeVisible(),
+    );
   },
 } satisfies Meta;
 
@@ -117,11 +115,15 @@ export const Controlled: StoryFn<typeof Dropdown> = () => {
 
   return (
     <Dropdown.TriggerContext>
-      <Dropdown.Trigger onClick={() => setOpen(!open)}>
+      <Dropdown.Trigger>
         Dropdown
         {open ? <ChevronDownIcon aria-hidden /> : <ChevronUpIcon aria-hidden />}
       </Dropdown.Trigger>
-      <Dropdown open={open} onClose={() => setOpen(false)}>
+      <Dropdown
+        open={open}
+        onClose={() => setOpen(false)}
+        onOpen={() => setOpen(true)}
+      >
         <Dropdown.List>
           <Dropdown.Item>
             <Dropdown.Button onClick={() => setOpen(false)}>
@@ -139,6 +141,28 @@ export const Controlled: StoryFn<typeof Dropdown> = () => {
   );
 };
 
+export const ControlledExternalTrigger: StoryFn<typeof Dropdown> = () => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <>
+      <Button popovertarget="dropdown">Dropdown</Button>
+      <Dropdown
+        id="dropdown"
+        open={open}
+        onClose={() => setOpen(false)}
+        onOpen={() => setOpen(true)}
+      >
+        <Dropdown.List>
+          <Dropdown.Item>
+            <Dropdown.Button>Item</Dropdown.Button>
+          </Dropdown.Item>
+        </Dropdown.List>
+      </Dropdown>
+    </>
+  );
+};
+
 export const WithoutTrigger: StoryFn<typeof Dropdown> = () => {
   return (
     <>
@@ -152,4 +176,102 @@ export const WithoutTrigger: StoryFn<typeof Dropdown> = () => {
       </Dropdown>
     </>
   );
+};
+
+export const WithNestedDialog: StoryFn<typeof Dropdown> = (args) => {
+  return (
+    <Dropdown.TriggerContext>
+      <Dropdown.Trigger data-color={args["data-color"]}>
+        Dropdown
+      </Dropdown.Trigger>
+      <Dropdown {...args}>
+        <Dropdown.List>
+          <Dropdown.Item>
+            <Dialog.TriggerContext>
+              <Dialog.Trigger asChild>
+                <Dropdown.Button>Dialog</Dropdown.Button>
+              </Dialog.Trigger>
+              <Dialog>Min dialog</Dialog>
+            </Dialog.TriggerContext>
+          </Dropdown.Item>
+        </Dropdown.List>
+      </Dropdown>
+    </Dropdown.TriggerContext>
+  );
+};
+
+WithNestedDialog.play = async (ctx) => {
+  // When not in Docs mode, automatically open the dropdown
+  const button = within(ctx.canvasElement).getByRole("button");
+  await new Promise((resolve) => {
+    document.addEventListener("animationend", resolve, true); // <== Merk at vi binder event-listener før vi gjør click
+    userEvent.click(button);
+  });
+  const dropdown = ctx.canvasElement.querySelector(".ds-dropdown");
+  await expect(dropdown).toBeInTheDocument();
+  await waitFor(() => expect(dropdown).toBeVisible());
+
+  if (!dropdown) return;
+
+  /* open dialog */
+  const dialogButton = within(dropdown as HTMLElement).getByRole("button", {
+    name: "Dialog",
+  });
+  userEvent.click(dialogButton);
+  const dialog = ctx.canvasElement.querySelector(".ds-dialog");
+  await expect(dialog).toBeInTheDocument();
+  await waitFor(() => expect(dialog).toBeVisible());
+};
+
+export const WithAdjacentDialog: StoryFn<typeof Dropdown> = (args) => {
+  return (
+    <>
+      <Dropdown.TriggerContext>
+        <Dropdown.Trigger data-color={args["data-color"]}>
+          Dropdown
+        </Dropdown.Trigger>
+        <Dropdown {...args}>
+          <Dropdown.List>
+            <Dropdown.Item>
+              <Dropdown.Button command="show-modal" commandFor="adjacent-modal">
+                Dialog
+              </Dropdown.Button>
+            </Dropdown.Item>
+          </Dropdown.List>
+        </Dropdown>
+      </Dropdown.TriggerContext>
+      <Dialog id="adjacent-modal">Min dialog</Dialog>
+    </>
+  );
+};
+
+export const WithNestedDropdown: StoryFn<typeof Dropdown> = (args) => {
+  return (
+    <Dropdown.TriggerContext>
+      <Dropdown.Trigger data-color={args["data-color"]}>
+        Dropdown
+      </Dropdown.Trigger>
+      <Dropdown {...args}>
+        <Dropdown.List>
+          <Dropdown.Item>
+            <Dropdown.TriggerContext>
+              <Dropdown.Trigger variant="tertiary">Dropdown</Dropdown.Trigger>
+              <Dropdown>
+                <Dropdown.List>
+                  <Dropdown.Item>
+                    <Dropdown.Button>Nested</Dropdown.Button>
+                  </Dropdown.Item>
+                </Dropdown.List>
+              </Dropdown>
+            </Dropdown.TriggerContext>
+          </Dropdown.Item>
+        </Dropdown.List>
+      </Dropdown>
+    </Dropdown.TriggerContext>
+  );
+};
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
 };

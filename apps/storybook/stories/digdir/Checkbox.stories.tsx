@@ -369,3 +369,8 @@ export const ContentEx3: StoryFn<typeof Fieldset> = () => (
     <Checkbox label="Kolleger" value="kolleger" />
   </Fieldset>
 );
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

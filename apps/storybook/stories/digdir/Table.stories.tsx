@@ -356,3 +356,8 @@ WithBorder.args = {
 WithBorder.parameters = {
   customStyles: { display: "grid", gap: "1rem" },
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

@@ -232,3 +232,8 @@ Variants.parameters = {
     width: "100%",
   },
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

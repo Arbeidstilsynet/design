@@ -7,6 +7,7 @@ import {
 } from "@arbeidstilsynet/design-react";
 import type { Meta, StoryFn } from "@storybook/react-vite";
 import { useState } from "react";
+import { userEvent, within } from "storybook/test";
 
 export default {
   title: "designsystemet.no/Details",
@@ -140,5 +141,17 @@ export const Controlled: StoryFn<typeof Details> = () => {
         </Details>
       </>
     </>
+  );
+};
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};
+Preview.play = async ({ canvasElement }) => {
+  await userEvent.click(
+    within(canvasElement).getByText(
+      "Hvem kan registrere seg i Frivillighetsregisteret?",
+    ),
   );
 };

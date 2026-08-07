@@ -92,6 +92,23 @@ Note: Figma designs may refer to colors as "main" — this corresponds to the "a
 - Rendering: `@testing-library/react` + `@testing-library/user-event`
 - Tests are co-located with components
 
+### Chromatic visual tests
+
+- Snapshots are globally disabled and explicitly enabled per selected story.
+- Keep one primary snapshot for every visual Designsystemet component. Select
+  Gnist stories explicitly and prefer visual-matrix stories for static
+  variants.
+- Selected interactive stories must use deterministic `play` functions that
+  expose the meaningful state; play failures must not be bypassed.
+- Active modes are light and dark at desktop width. Mobile modes are defined
+  but intentionally inactive.
+- Keep a full build at or below the documented 200-snapshot operating budget.
+- Maintain copied upstream stories and their plays when Designsystemet is
+  updated. See `apps/storybook/README.md` for the complete policy.
+- Real Chromatic builds run only for the Changesets release PR after approval
+  of the `chromatic-release` environment, or by protected manual dispatch.
+  Ordinary same-repository PRs use Chromatic's skip mode.
+
 ### Linting & formatting
 
 - **Linter**: oxlint (not ESLint) — config at `.oxlintrc.jsonc`. The `packages/react` package extends the root config with React, JSX-a11y, and Storybook plugins.

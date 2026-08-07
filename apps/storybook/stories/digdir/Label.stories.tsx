@@ -16,3 +16,8 @@ export const Preview: Story = {
     weight: "medium",
   },
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};

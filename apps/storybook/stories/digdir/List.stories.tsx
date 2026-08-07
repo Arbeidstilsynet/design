@@ -242,3 +242,8 @@ export const ListeMedOverskrift: Story = () => (
 ListeMedOverskrift.parameters = {
   customStyles: { display: "flex", gap: "2rem", flexWrap: "wrap" },
 };
+
+Preview.parameters = {
+  ...Preview.parameters,
+  chromatic: { disableSnapshot: false },
+};
