@@ -192,8 +192,8 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       react-dropzone:
-        specifier: ^20.0.0
-        version: 20.0.0(@types/react@19.2.18)(react@19.2.8)
+        specifier: ^20.1.0
+        version: 20.1.0(@types/react@19.2.18)(react@19.2.8)
     devDependencies:
       '@arbeidstilsynet/design-css':
         specifier: workspace:*
@@ -3582,8 +3582,8 @@ packages:
     peerDependencies:
       react: ^19.2.8
 
-  react-dropzone@20.0.0:
-    resolution: {integrity: sha512-Xw8tvvVPJQzj8ir5wivUMzA+G6R+aGhdU5KQzUMvVBlJNb26AW/0137VoYVmb5UgZcbhM9OCpjE4KOqqSL9QuQ==}
+  react-dropzone@20.1.0:
+    resolution: {integrity: sha512-id1t9JDYNQeFzzIfB5/C6TrpLchy29rTSDxsBH/pcxhILyv/6bSOTJwOlvUsTWXkC2GduuHIldDV6UQXNWfIuA==}
     engines: {node: '>= 22'}
     peerDependencies:
       '@types/react': '*'
@@ -7338,7 +7338,7 @@ snapshots:
       react: 19.2.8
       scheduler: 0.27.0
 
-  react-dropzone@20.0.0(@types/react@19.2.18)(react@19.2.8):
+  react-dropzone@20.1.0(@types/react@19.2.18)(react@19.2.8):
     dependencies:
       attr-accept: 2.2.5
       file-selector: 4.1.0
