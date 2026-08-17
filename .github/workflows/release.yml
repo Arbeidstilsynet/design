@@ -35,18 +35,18 @@ jobs:
       - uses: changesets/action@22ccf9aa43179fe9e27dc62e575971d28cce197c # v2.0.0
         id: changeset
         with:
-          version: pnpm run version
-          publish: pnpm run release
-          commit: "chore(release): 📦 version packages"
-          title: "chore(release): 📦 version packages"
-        env:
-          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
+          github-token: ${{ steps.app-token.outputs.token }}
+          version-script: pnpm run version
+          publish-script: pnpm run release
+          commit-message: "chore(release): 📦 version packages"
+          pr-title: "chore(release): 📦 version packages"
+          push-with-git-cli: true
 
       - name: Notify Slack about published packages
         if: steps.changeset.outputs.published == 'true'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-          PUBLISHED_PACKAGES: ${{ steps.changeset.outputs.publishedPackages }}
+          PUBLISHED_PACKAGES: ${{ steps.changeset.outputs.published-packages }}
           CHANNEL_NAME: "#plattform"
         run: |
           if [ -z "$SLACK_WEBHOOK_URL" ]; then
