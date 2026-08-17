@@ -28,7 +28,7 @@
  *   SOFTWARE.
  */
 
-import { getInfo, getInfoFromPullRequest } from "@changesets/get-github-info";
+import { getCommitInfo, getPullRequestInfo } from "@changesets/get-github-info";
 import type { ChangelogFunctions } from "@changesets/types";
 
 interface ChangelogOptions {
@@ -58,25 +58,38 @@ async function resolveLinks(
   changesetCommit: string | undefined,
 ): Promise<GithubLinks> {
   if (prFromSummary !== undefined) {
-    const prInfo = await getInfoFromPullRequest({
+    const prInfo = await getPullRequestInfo({
       repo,
       pull: prFromSummary,
     });
-    if (commitFromSummary) {
+    if (prInfo && commitFromSummary) {
       return {
-        ...prInfo.links,
+        pull: prInfo.pull.markdownLink,
+        user: prInfo.author?.markdownLink ?? null,
         commit: `[\`${commitFromSummary.slice(0, 7)}\`](https://github.com/${repo}/commit/${commitFromSummary})`,
       };
     }
-    return prInfo.links;
+    if (prInfo) {
+      return {
+        pull: prInfo.pull.markdownLink,
+        user: prInfo.author?.markdownLink ?? null,
+        commit: prInfo.commit?.markdownLink ?? null,
+      };
+    }
   }
   const commitToFetchFrom = commitFromSummary ?? changesetCommit;
   if (commitToFetchFrom) {
-    const commitInfo = await getInfo({
+    const commitInfo = await getCommitInfo({
       repo,
       commit: commitToFetchFrom,
     });
-    return commitInfo.links;
+    if (commitInfo) {
+      return {
+        commit: commitInfo.commit.markdownLink,
+        pull: commitInfo.pull?.markdownLink ?? null,
+        user: commitInfo.author?.markdownLink ?? null,
+      };
+    }
   }
   return { commit: null, pull: null, user: null };
 }
@@ -127,11 +140,12 @@ const changelogFunctions: ChangelogFunctions = {
       await Promise.all(
         changesets.map(async (cs) => {
           if (cs.commit) {
-            const { links } = await getInfo({
+            const info = await getCommitInfo({
               repo: options.repo,
               commit: cs.commit,
             });
-            return links.commit;
+
+            return info?.commit.markdownLink;
           }
         }),
       )

@@ -1,18 +1,17 @@
-import { describe, expect, it, vi } from "vitest";
-import type { Mock } from "vitest";
+import { getCommitInfo, getPullRequestInfo } from "@changesets/get-github-info";
 import type { ModCompWithPackage } from "@changesets/types";
-import { getInfo, getInfoFromPullRequest } from "@changesets/get-github-info";
+import type { Mock } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import changelogFunctions, {
   linkifyIssueHints,
   parseSummary,
 } from "./changelog";
 
 vi.mock("@changesets/get-github-info", () => ({
-  getInfo: vi.fn<typeof import("@changesets/get-github-info").getInfo>(),
-  getInfoFromPullRequest:
-    vi.fn<
-      typeof import("@changesets/get-github-info").getInfoFromPullRequest
-    >(),
+  getCommitInfo:
+    vi.fn<typeof import("@changesets/get-github-info").getCommitInfo>(),
+  getPullRequestInfo:
+    vi.fn<typeof import("@changesets/get-github-info").getPullRequestInfo>(),
 }));
 
 const repo = "Arbeidstilsynet/design";
@@ -86,11 +85,12 @@ describe("changelog", () => {
 
   describe("getReleaseLine", () => {
     it("formats a release line with PR link", async () => {
-      (getInfoFromPullRequest as Mock).mockResolvedValue({
-        links: {
-          pull: "[#42](https://github.com/Arbeidstilsynet/design/pull/42)",
-          commit: null,
-          user: null,
+      (getPullRequestInfo as Mock).mockResolvedValue({
+        pull: {
+          number: 42,
+          url: "https://github.com/Arbeidstilsynet/design/pull/42",
+          markdownLink:
+            "[#42](https://github.com/Arbeidstilsynet/design/pull/42)",
         },
       });
 
@@ -107,12 +107,12 @@ describe("changelog", () => {
     });
 
     it("formats a release line with commit link when no PR", async () => {
-      (getInfo as Mock).mockResolvedValue({
-        links: {
-          commit:
+      (getCommitInfo as Mock).mockResolvedValue({
+        commit: {
+          sha: "abc1234",
+          url: "https://github.com/Arbeidstilsynet/design/commit/abc1234",
+          markdownLink:
             "[`abc1234`](https://github.com/Arbeidstilsynet/design/commit/abc1234)",
-          pull: null,
-          user: null,
         },
       });
 
@@ -134,12 +134,18 @@ describe("changelog", () => {
     });
 
     it("uses PR link over commit link when both available", async () => {
-      (getInfoFromPullRequest as Mock).mockResolvedValue({
-        links: {
-          pull: "[#10](https://github.com/Arbeidstilsynet/design/pull/10)",
-          commit:
+      (getPullRequestInfo as Mock).mockResolvedValue({
+        pull: {
+          number: 10,
+          url: "https://github.com/Arbeidstilsynet/design/pull/10",
+          markdownLink:
+            "[#10](https://github.com/Arbeidstilsynet/design/pull/10)",
+        },
+        commit: {
+          sha: "deadbeef",
+          url: "https://github.com/Arbeidstilsynet/design/commit/deadbeef",
+          markdownLink:
             "[`deadbee`](https://github.com/Arbeidstilsynet/design/commit/deadbeef)",
-          user: null,
         },
       });
 
@@ -159,11 +165,12 @@ describe("changelog", () => {
     });
 
     it("overrides commit link from summary when PR is provided", async () => {
-      (getInfoFromPullRequest as Mock).mockResolvedValue({
-        links: {
-          pull: "[#10](https://github.com/Arbeidstilsynet/design/pull/10)",
-          commit: null,
-          user: null,
+      (getPullRequestInfo as Mock).mockResolvedValue({
+        pull: {
+          number: 10,
+          url: "https://github.com/Arbeidstilsynet/design/pull/10",
+          markdownLink:
+            "[#10](https://github.com/Arbeidstilsynet/design/pull/10)",
         },
       });
 
@@ -180,6 +187,50 @@ describe("changelog", () => {
       expect(result).toContain(
         "([#10](https://github.com/Arbeidstilsynet/design/pull/10))",
       );
+    });
+
+    it("falls back to the changeset commit when the PR is unavailable", async () => {
+      (getPullRequestInfo as Mock).mockResolvedValue(undefined);
+      (getCommitInfo as Mock).mockResolvedValue({
+        commit: {
+          sha: "abc1234",
+          url: "https://github.com/Arbeidstilsynet/design/commit/abc1234",
+          markdownLink:
+            "[`abc1234`](https://github.com/Arbeidstilsynet/design/commit/abc1234)",
+        },
+      });
+
+      const result = await changelogFunctions.getReleaseLine(
+        {
+          id: "missing-pr",
+          summary: "pr: #404\nSome change",
+          releases: [],
+          commit: "abc1234",
+        },
+        "patch",
+        options,
+      );
+
+      expect(result).toContain(
+        "([`abc1234`](https://github.com/Arbeidstilsynet/design/commit/abc1234))",
+      );
+    });
+
+    it("omits the suffix when the commit is unavailable", async () => {
+      (getCommitInfo as Mock).mockResolvedValue(undefined);
+
+      const result = await changelogFunctions.getReleaseLine(
+        {
+          id: "missing-commit",
+          summary: "Some change",
+          releases: [],
+          commit: "abc1234",
+        },
+        "patch",
+        options,
+      );
+
+      expect(result).toBe("\n- Some change\n");
     });
 
     it("returns no suffix when no commit and no PR", async () => {
@@ -246,11 +297,12 @@ describe("changelog", () => {
     });
 
     it("formats dependency update lines with commit links", async () => {
-      (getInfo as Mock).mockResolvedValue({
-        links: {
-          commit: "[`abc1234`](https://github.com/org/repo/commit/abc1234)",
-          pull: null,
-          user: null,
+      (getCommitInfo as Mock).mockResolvedValue({
+        commit: {
+          sha: "abc1234",
+          url: "https://github.com/org/repo/commit/abc1234",
+          markdownLink:
+            "[`abc1234`](https://github.com/org/repo/commit/abc1234)",
         },
       });
 
@@ -274,11 +326,11 @@ describe("changelog", () => {
     });
 
     it("lists multiple updated dependencies", async () => {
-      (getInfo as Mock).mockResolvedValue({
-        links: {
-          commit: "[`abc`](url)",
-          pull: null,
-          user: null,
+      (getCommitInfo as Mock).mockResolvedValue({
+        commit: {
+          sha: "abc",
+          url: "url",
+          markdownLink: "[`abc`](url)",
         },
       });
 
@@ -307,8 +359,29 @@ describe("changelog", () => {
       expect(result).toContain("  - pkg-b@3.0.0");
     });
 
+    it("omits links for unavailable commits", async () => {
+      (getCommitInfo as Mock).mockResolvedValue(undefined);
+
+      const result = await changelogFunctions.getDependencyReleaseLine(
+        [{ id: "cs1", summary: "bump", releases: [], commit: "abc1234" }],
+        [
+          {
+            name: "pkg",
+            newVersion: "1.0.1",
+            oldVersion: "1.0.0",
+            type: "patch",
+            changesets: ["cs1"],
+          } as ModCompWithPackage,
+        ],
+        options,
+      );
+
+      expect(result).toContain("Updated dependencies []:");
+      expect(result).toContain("  - pkg@1.0.1");
+    });
+
     it("skips changesets without a commit", async () => {
-      (getInfo as Mock).mockClear();
+      (getCommitInfo as Mock).mockClear();
 
       const result = await changelogFunctions.getDependencyReleaseLine(
         [{ id: "cs1", summary: "bump", releases: [] }],
@@ -326,7 +399,7 @@ describe("changelog", () => {
 
       expect(result).toContain("Updated dependencies []:");
       expect(result).toContain("  - pkg@1.0.1");
-      expect(getInfo).not.toHaveBeenCalled();
+      expect(getCommitInfo).not.toHaveBeenCalled();
     });
 
     it("throws if options are missing repo", async () => {
