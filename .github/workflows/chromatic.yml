@@ -27,7 +27,7 @@ jobs:
           fetch-depth: 0
       - uses: Arbeidstilsynet/action-pnpm-setup@4aeb1a864b04a516dde352e3675d5ab96f1741b2 # v3
       - name: Mark Chromatic as skipped
-        uses: chromaui/action@14cfaef73576e69f95f47f60058063f46ca38719 # v18
+        uses: chromaui/action@534eebfc19023579541d106f7b61d5ad70ed65c7 # v18
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: apps/storybook
@@ -54,7 +54,7 @@ jobs:
       - name: Build CSS
         run: pnpm --filter @arbeidstilsynet/design-css build
       - name: Run Chromatic
-        uses: chromaui/action@14cfaef73576e69f95f47f60058063f46ca38719 # v18
+        uses: chromaui/action@534eebfc19023579541d106f7b61d5ad70ed65c7 # v18
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: apps/storybook
