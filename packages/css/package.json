@@ -34,7 +34,7 @@
   "devDependencies": {
     "@types/node": "24.13.3",
     "autoprefixer": "10.5.4",
-    "cssnano": "8.0.7",
+    "cssnano": "8.0.8",
     "del-cli": "7.0.0",
     "postcss": "8.5.26",
     "postcss-cli": "11.0.1",
