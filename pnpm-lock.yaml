@@ -22,8 +22,8 @@ importers:
         specifier: 7.0.0
         version: 7.0.0
       '@digdir/designsystemet':
-        specifier: 1.16.1
-        version: 1.16.1
+        specifier: 1.20.0
+        version: 1.20.0(@types/node@24.13.3)
       '@scaleway/changesets-renovate':
         specifier: 3.0.3
         version: 3.0.3(supports-color@10.2.2)
@@ -143,8 +143,8 @@ importers:
   packages/css:
     dependencies:
       '@digdir/designsystemet-css':
-        specifier: 1.16.1
-        version: 1.16.1
+        specifier: 1.20.0
+        version: 1.20.0
     devDependencies:
       '@types/node':
         specifier: 24.13.3
@@ -177,11 +177,11 @@ importers:
   packages/react:
     dependencies:
       '@digdir/designsystemet-react':
-        specifier: 1.16.1
-        version: 1.16.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
+        specifier: 1.20.0
+        version: 1.20.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@digdir/designsystemet-types':
-        specifier: 1.16.1
-        version: 1.16.1
+        specifier: 1.20.0
+        version: 1.20.0
       '@navikt/aksel-icons':
         specifier: ^8.16.1
         version: 8.16.1
@@ -464,10 +464,10 @@ packages:
   '@colordx/core@5.6.0':
     resolution: {integrity: sha512-EDlcg/Hmlj1WuFh/Os9YhA+A2aasB2XlgwFfGePUDuW7fVHC07HBi5AFIMx0Ct1eM8kHM9NRyOtZ0MuVYa8xvg==}
 
-  '@commander-js/extra-typings@14.0.0':
-    resolution: {integrity: sha512-hIn0ncNaJRLkZrxBIp5AsW/eXEHNKYQBh0aPdoUqNgD+Io3NIykQqpKFyKcuasZhicGaEZJX/JBSIkZ4e5x8Dg==}
+  '@commander-js/extra-typings@15.0.0':
+    resolution: {integrity: sha512-yeJlba62xqmkgELUsn7356MEnzLLu/fw2x4lofFqGnXh6YysRdEs2BaLeLtg1+KU0AXvMeqQvTTp+3hBEBK+EA==}
     peerDependencies:
-      commander: ~14.0.0
+      commander: ~15.0.0
 
   '@csstools/selector-resolve-nested@4.0.1':
     resolution: {integrity: sha512-j3vdQu0XwLME5qOTWxm8cnmvsf423R2YL6DbKklCHZwkDm7UdKNu6RPlw4REIJhSlKBICY3B70/7QZdicLqZgg==}
@@ -481,24 +481,24 @@ packages:
     peerDependencies:
       postcss-selector-parser: ^7.1.1
 
-  '@digdir/designsystemet-css@1.16.1':
-    resolution: {integrity: sha512-aNlIUpZEU+YgGD8CmzoNDqBwAP/R95LC5EYr9jioWA82XBY+LUdBqtl7xQLyOOjTZe17fgJIvmzIss1mkOLgmw==}
+  '@digdir/designsystemet-css@1.20.0':
+    resolution: {integrity: sha512-B8Ze0MY2Ry8Adng2PMglHiF9lni+h7WWRQCKnFpFURddJR6s35pMXS03Ih1DsEjp3fWkg9L+0zUfaT5xFgYWdg==}
 
-  '@digdir/designsystemet-react@1.16.1':
-    resolution: {integrity: sha512-zlYXXbme5ySIxWPrZxDONdgCh4Qn5wVF+lAVeCJKaNiUXmvO/mIjy0YW7UT0OqQiOuKwRp5cvEB3kEcaUFG7Hg==}
+  '@digdir/designsystemet-react@1.20.0':
+    resolution: {integrity: sha512-L7RNUmx/h9aCsf59mLPm9RzDhG2Dj07LwsTv2Z/9t3QmEWiMHQv4dHQO4J9sP6fFa7ZDK0D1UBcsMu+GCU1+ow==}
     peerDependencies:
       react: '>=18.3.1 || ^19.0.0'
       react-dom: '>=18.3.1 || ^19.0.0'
 
-  '@digdir/designsystemet-types@1.16.1':
-    resolution: {integrity: sha512-DzOphWx2B7U7msyKsF9JXJidriodZGOCTSjpzddQ/AgWVrajPxuEGkM/nEFZaBYoT+jbKOw7wKrzPfHfgtrCsw==}
+  '@digdir/designsystemet-types@1.20.0':
+    resolution: {integrity: sha512-JELcUdR1UdNbIEgpwuFUfbGo0ynPe8tme4nqBeMKFkVQQ2eq5P/WdWbU2gYlGwXNqFcGv4uTLUupYspejiQlHg==}
 
-  '@digdir/designsystemet-web@1.16.1':
-    resolution: {integrity: sha512-X8Rh5Ienr1lFJZLMq7spYkNC9Uqmrq5ub+vBKYedw8zOEL9n44umxgMoIuJCiJXiV8IYDl5Evk5lGbPYPfCxxg==}
+  '@digdir/designsystemet-web@1.20.0':
+    resolution: {integrity: sha512-sdvfHlKvONY2hoCGAhDjR9DhoTuAXYP/eI/YP4+cxJiU/42mOCkg10ajFKrcEzI+2dVIw6NX0tWG6ukCMvOQwg==}
 
-  '@digdir/designsystemet@1.16.1':
-    resolution: {integrity: sha512-pPiL0nru0W8ASho2/t0H0k1Ra/cD0FKUn8JBqfB7MEKdShO65Ny+8lP/k9fXMiY8ndK7VlGn+tVYr/bQEdO1+A==}
-    engines: {node: '>=20.20.2'}
+  '@digdir/designsystemet@1.20.0':
+    resolution: {integrity: sha512-lu0/LS0Jtq+zT0HFksfq8uNLC8zvG0XppkF4cn5Def4IoKMEllSkPEzoajKRSv7gqUTBm2cRJdmz5NUTl36EsQ==}
+    engines: {node: '>=22.12.0'}
     hasBin: true
 
   '@emnapi/core@1.11.0':
@@ -701,6 +701,41 @@ packages:
 
   '@floating-ui/utils@0.2.12':
     resolution: {integrity: sha512-HpCo8tmWzLVad5s2d19EhAz5zqrrQ6s69qd6moPMQvkOuSwDT1YgRfWSVuc4ennqrgv3OHppiOGMQ7oC13yIww==}
+
+  '@inquirer/ansi@2.0.7':
+    resolution: {integrity: sha512-3eTuUO1vH2cZm2ZKHeQxnOqlTi9EfZDGgIe3BL3I4u+rJHocr9Fz86M4fjYABPvFnQG/gGK551HqDiIcETwU6Q==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
+
+  '@inquirer/confirm@6.2.0':
+    resolution: {integrity: sha512-SKXarWrYhtpqOEctf9XGCGy29QjsvJAM0Aq9ZR9z4Ns94OmpqudOly+aSEfNqUf9SwsQaUgY9+Z8hyzG0xX8fw==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
+    peerDependencies:
+      '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+
+  '@inquirer/core@12.0.0':
+    resolution: {integrity: sha512-+nnvFEXIB08CZNVXpvW3B+zHW96QXvGUjNKJ8NJIPqAZi5Kd4WhYt2S3C234ReepG1qw2HOlEUbjYVHBowXObA==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
+    peerDependencies:
+      '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+
+  '@inquirer/figures@2.0.8':
+    resolution: {integrity: sha512-tApbon79GM9ry56ja/Ud3SY2CL4TQsao9fIwDQbgTeNY55025GdMzQ2+UdegV/lx51VNGUB59M0v0nMpybYY4Q==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
+
+  '@inquirer/type@4.0.7':
+    resolution: {integrity: sha512-t28inv14nMQ1PhKpsJPY+kEs/c00qzeCOS2gTNRyTjG5d6qsVA2fItxW4hkvGZ5lvanGLdtCzVIx5dwdRpN1+g==}
+    engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
+    peerDependencies:
+      '@types/node': '>=18'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
 
   '@joshwooding/vite-plugin-react-docgen-typescript@0.7.0':
     resolution: {integrity: sha512-qvsTEwEFefhdirGOPnu9Wp6ChfIwy2dBCRuETU3uE+4cC+PFoxMSiiEhxk4lOluA34eARHA0OxqsEUYDqRMgeQ==}
@@ -2221,6 +2256,10 @@ packages:
       '@chromatic-com/vitest':
         optional: true
 
+  cli-width@4.1.0:
+    resolution: {integrity: sha512-ouuZd4/dm2Sw5Gmqy6bGyNNNe1qt9RpmxveLSO7KcgsTnU7RXfsw+/bukWGo1abgBiMAic068rclZsO4IWmmxQ==}
+    engines: {node: '>= 12'}
+
   cliui@8.0.1:
     resolution: {integrity: sha512-BSeNnyus75C4//NQ9gQt1/csTXyo/8Sb+afLAkzAptFuMsod9HFokGNudZpi/oQV73hnVK+sR+5PVRMd+Dr7YQ==}
     engines: {node: '>=12'}
@@ -2243,8 +2282,8 @@ packages:
   colorjs.io@0.5.2:
     resolution: {integrity: sha512-twmVoizEW7ylZSN32OgKdXRmo1qg+wT5/6C3xu5b9QsWzSFAhHLn2xd8ro0diCsKfCj1RdaTP/nrcW+vAoQPIw==}
 
-  colorjs.io@0.6.1:
-    resolution: {integrity: sha512-8lyR2wHzuIykCpqHKgluGsqQi5iDm3/a2IgP2GBZrasn2sBRkE4NOGsglZxWLs/jZQoNkmA/KM/8NV16rLUdBg==}
+  colorjs.io@0.7.1:
+    resolution: {integrity: sha512-LY7OHnJZxHwT5UlzNa9bbhHHDbzB6yE5+3MIPwJEQKRvSCt/T4G7epsj+9j2BExUIIfXFIJGsIXUKdfrK9Q5tA==}
 
   commander@11.1.0:
     resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
@@ -2254,9 +2293,9 @@ packages:
     resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
     engines: {node: '>=18'}
 
-  commander@14.0.3:
-    resolution: {integrity: sha512-H+y0Jo/T1RZ9qPP4Eh1pkcQcLRglraJaSLoyOtHxu6AapkjWVCy2Sit1QQ4x3Dng8qDlSsZEet7g5Pq06MvTgw==}
-    engines: {node: '>=20'}
+  commander@15.0.0:
+    resolution: {integrity: sha512-z67u4ZhzCL/Tydu1lJARtEZYWbWaN7oYLHbsuzocr6y4N6WZAagG3RQ4FW61V1/0+jImpj293XfrcYnd1qxtPg==}
+    engines: {node: '>=22.12.0'}
 
   compare-versions@6.1.1:
     resolution: {integrity: sha512-4hm4VPpIecmlg59CHXnRDnqGplJFrbLG4aFEl5vl6cK1u76ws3LLvX7ikFnTDl5vo39sjWD6AaDPYodJp/NNHg==}
@@ -2992,6 +3031,10 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
+  mute-stream@3.0.0:
+    resolution: {integrity: sha512-dkEJPVvun4FryqBmZ5KhDo0K9iDXAwn08tMLDinNdRBNPcYEDiWYysLcc6k3mjTMlbP9KyylvRpd4wFtwrT9rw==}
+    engines: {node: ^20.17.0 || >=22.9.0}
+
   nanoid@3.3.18:
     resolution: {integrity: sha512-DTg4MJbGMWkfi6VZFdNt2/caMbQy4Ou+Op/hJQvGEWcnVfoA1QA+xzRKAzw9jD6+GVOOeYr/mIcuDSdug6F6+w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -3681,6 +3724,10 @@ packages:
 
   siginfo@2.0.0:
     resolution: {integrity: sha512-ybx0WO1/8bSBLEWXZvEd7gMW3Sn3JFlW3TvX1nREbDLRNQNaeNN8WK0meBwPdAaOI7TtRRRJn/Es1zhrrCHu7g==}
+
+  signal-exit@4.1.0:
+    resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
+    engines: {node: '>=14'}
 
   simple-git@3.36.0:
     resolution: {integrity: sha512-cGQjLjK8bxJw4QuYT7gxHw3/IouVESbhahSsHrX97MzCL1gu2u7oy38W6L2ZIGECEfIBG4BabsWDPjBxJENv9Q==}
@@ -4455,9 +4502,9 @@ snapshots:
 
   '@colordx/core@5.6.0': {}
 
-  '@commander-js/extra-typings@14.0.0(commander@14.0.3)':
+  '@commander-js/extra-typings@15.0.0(commander@15.0.0)':
     dependencies:
-      commander: 14.0.3
+      commander: 15.0.0
 
   '@csstools/selector-resolve-nested@4.0.1(postcss-selector-parser@7.1.5)':
     dependencies:
@@ -4467,14 +4514,14 @@ snapshots:
     dependencies:
       postcss-selector-parser: 7.1.5
 
-  '@digdir/designsystemet-css@1.16.1':
+  '@digdir/designsystemet-css@1.20.0':
     dependencies:
-      '@digdir/designsystemet-types': 1.16.1
+      '@digdir/designsystemet-types': 1.20.0
 
-  '@digdir/designsystemet-react@1.16.1(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
+  '@digdir/designsystemet-react@1.20.0(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)':
     dependencies:
-      '@digdir/designsystemet-types': 1.16.1
-      '@digdir/designsystemet-web': 1.16.1
+      '@digdir/designsystemet-types': 1.20.0
+      '@digdir/designsystemet-web': 1.20.0
       '@floating-ui/dom': 1.8.0
       '@floating-ui/react': 0.26.23(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@navikt/aksel-icons': 8.16.1
@@ -4486,9 +4533,9 @@ snapshots:
     transitivePeerDependencies:
       - '@types/react'
 
-  '@digdir/designsystemet-types@1.16.1': {}
+  '@digdir/designsystemet-types@1.20.0': {}
 
-  '@digdir/designsystemet-web@1.16.1':
+  '@digdir/designsystemet-web@1.20.0':
     dependencies:
       '@floating-ui/dom': 1.8.0
       '@u-elements/u-combobox': 2.1.3
@@ -4496,16 +4543,19 @@ snapshots:
       '@u-elements/u-details': 1.0.0
       '@u-elements/u-tabs': 1.0.4
 
-  '@digdir/designsystemet@1.16.1':
+  '@digdir/designsystemet@1.20.0(@types/node@24.13.3)':
     dependencies:
-      '@commander-js/extra-typings': 14.0.0(commander@14.0.3)
-      '@digdir/designsystemet-types': 1.16.1
+      '@commander-js/extra-typings': 15.0.0(commander@15.0.0)
+      '@digdir/designsystemet-types': 1.20.0
+      '@inquirer/confirm': 6.2.0(@types/node@24.13.3)
       '@tokens-studio/sd-transforms': 2.0.3(style-dictionary@5.5.2)
+      '@tokens-studio/types': 0.5.2
       chroma-js: 3.2.0
-      colorjs.io: 0.6.1
-      commander: 14.0.3
+      colorjs.io: 0.7.1
+      commander: 15.0.0
       fast-glob: 3.3.3
       hsluv: 1.0.2
+      jsonc-parser: 3.3.1
       object-hash: 3.0.0
       picocolors: 1.1.1
       postcss: 8.5.26
@@ -4513,6 +4563,8 @@ snapshots:
       style-dictionary: 5.5.2
       zod: 4.4.3
       zod-validation-error: 5.0.0(zod@4.4.3)
+    transitivePeerDependencies:
+      - '@types/node'
 
   '@emnapi/core@1.11.0':
     dependencies:
@@ -4653,6 +4705,33 @@ snapshots:
       tabbable: 6.5.0
 
   '@floating-ui/utils@0.2.12': {}
+
+  '@inquirer/ansi@2.0.7': {}
+
+  '@inquirer/confirm@6.2.0(@types/node@24.13.3)':
+    dependencies:
+      '@inquirer/core': 12.0.0(@types/node@24.13.3)
+      '@inquirer/type': 4.0.7(@types/node@24.13.3)
+    optionalDependencies:
+      '@types/node': 24.13.3
+
+  '@inquirer/core@12.0.0(@types/node@24.13.3)':
+    dependencies:
+      '@inquirer/ansi': 2.0.7
+      '@inquirer/figures': 2.0.8
+      '@inquirer/type': 4.0.7(@types/node@24.13.3)
+      cli-width: 4.1.0
+      fast-wrap-ansi: 0.2.2
+      mute-stream: 3.0.0
+      signal-exit: 4.1.0
+    optionalDependencies:
+      '@types/node': 24.13.3
+
+  '@inquirer/figures@2.0.8': {}
+
+  '@inquirer/type@4.0.7(@types/node@24.13.3)':
+    optionalDependencies:
+      '@types/node': 24.13.3
 
   '@joshwooding/vite-plugin-react-docgen-typescript@0.7.0(@typescript/typescript6@6.0.2)(vite@8.2.2(@types/node@24.13.3)(esbuild@0.28.2)(tsx@4.23.12)(yaml@2.9.0))':
     dependencies:
@@ -5981,6 +6060,8 @@ snapshots:
     dependencies:
       semver: 7.8.5
 
+  cli-width@4.1.0: {}
+
   cliui@8.0.1:
     dependencies:
       string-width: 4.2.3
@@ -6003,13 +6084,13 @@ snapshots:
 
   colorjs.io@0.5.2: {}
 
-  colorjs.io@0.6.1: {}
+  colorjs.io@0.7.1: {}
 
   commander@11.1.0: {}
 
   commander@12.1.0: {}
 
-  commander@14.0.3: {}
+  commander@15.0.0: {}
 
   compare-versions@6.1.1: {}
 
@@ -6740,6 +6821,8 @@ snapshots:
 
   ms@2.1.3: {}
 
+  mute-stream@3.0.0: {}
+
   nanoid@3.3.18: {}
 
   node-releases@2.0.53: {}
@@ -7371,6 +7454,8 @@ snapshots:
       side-channel-weakmap: 1.0.2
 
   siginfo@2.0.0: {}
+
+  signal-exit@4.1.0: {}
 
   simple-git@3.36.0(supports-color@10.2.2):
     dependencies:
