@@ -25,8 +25,8 @@ importers:
         specifier: 1.16.1
         version: 1.16.1
       '@scaleway/changesets-renovate':
-        specifier: 3.0.3
-        version: 3.0.3(supports-color@10.2.2)
+        specifier: 3.0.4
+        version: 3.0.4(supports-color@10.2.2)
       '@types/node':
         specifier: 24.13.3
         version: 24.13.3
@@ -1545,9 +1545,9 @@ packages:
       rollup:
         optional: true
 
-  '@scaleway/changesets-renovate@3.0.3':
-    resolution: {integrity: sha512-rt7hZQe0p8hCwnMPTGFZADeXa1kxcju65cKozxfyoh8U2osMFxy7kmdSQOjghedtgJPLLg943pyhkO9Ia3UZdQ==}
-    engines: {node: '>=24.x'}
+  '@scaleway/changesets-renovate@3.0.4':
+    resolution: {integrity: sha512-DEqFJq51j9hf2+Eu7Qq+Qu1hthE65XvY8fV12DK7nUYMg3+83fvUnFr318BMfEgJpOXzBZYm0o4nlZIRcY98DA==}
+    engines: {node: 24.x || 25.x || 26.x}
     hasBin: true
 
   '@simple-git/args-pathspec@1.0.3':
@@ -5223,7 +5223,7 @@ snapshots:
       estree-walker: 2.0.2
       picomatch: 4.0.5
 
-  '@scaleway/changesets-renovate@3.0.3(supports-color@10.2.2)':
+  '@scaleway/changesets-renovate@3.0.4(supports-color@10.2.2)':
     dependencies:
       '@changesets/config': 3.1.4
       simple-git: 3.36.0(supports-color@10.2.2)
