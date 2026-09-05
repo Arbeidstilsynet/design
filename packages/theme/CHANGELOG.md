@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.9.0
+
+Released: 2026-09-05
+
+### Minor Changes
+
+- **Colors**: updated light and dark mode colors for `neutral` ([#1138](https://github.com/Arbeidstilsynet/design/pull/1138))
+
 ## 0.8.1
 
 Released: 2026-06-23
