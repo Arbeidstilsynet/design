@@ -24,7 +24,7 @@
     "@changesets/cli": "3.0.2",
     "@changesets/get-github-info": "1.0.1",
     "@changesets/types": "7.0.0",
-    "@digdir/designsystemet": "1.16.1",
+    "@digdir/designsystemet": "1.21.0",
     "@scaleway/changesets-renovate": "4.0.0",
     "@types/node": "24.13.3",
     "@vitest/coverage-v8": "4.1.11",
