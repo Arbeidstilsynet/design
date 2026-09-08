@@ -673,7 +673,7 @@
       },
       "outer": {
         "$type": "color",
-        "$value": "#ececec"
+        "$value": "#ECECEC"
       }
     }
   }

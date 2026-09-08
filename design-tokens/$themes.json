@@ -93,7 +93,6 @@
     "name": "Semantic",
     "selectedTokenSets": {
       "semantic/style": "enabled",
-      "semantic/color": "enabled",
       "primitives/globals": "source"
     },
     "$figmaCollectionId": "VariableCollectionId:34811:5976",
@@ -101,43 +100,83 @@
     "group": "Semantic"
   },
   {
-    "id": "77029e975ec86efe4b92eb0be546d61959085bd1",
+    "id": "50f8438e2eea35c78499ec80a31e3dc3ee65a3ea",
     "name": "accent",
     "selectedTokenSets": {
-      "semantic/modes/main-color/accent": "enabled"
+      "semantic/color/accent": "enabled"
     },
-    "group": "Main color"
+    "group": "Color"
   },
   {
-    "id": "d0a940ae7a378422c0ee94c9317eba5eb8a8084e",
+    "id": "75470a3076d8da06e21a0f542f3a535af3f72e94",
     "name": "reverse",
     "selectedTokenSets": {
-      "semantic/modes/main-color/reverse": "enabled"
+      "semantic/color/reverse": "enabled"
     },
-    "group": "Main color"
+    "group": "Color"
   },
   {
-    "id": "85ff04220e989b77c2982520d1288146e6850c18",
+    "id": "d52236d8eb266fd081274119b605f1f8912ee4be",
     "name": "blaa",
     "selectedTokenSets": {
-      "semantic/modes/support-color/blaa": "enabled"
+      "semantic/color/blaa": "enabled"
     },
-    "group": "Support color"
+    "group": "Color"
   },
   {
-    "id": "a82e45656680e483b67b4d5c2ecceb732ecb1f9c",
+    "id": "552dafc798f92c8fd6c0b757af5bf6633a197f38",
     "name": "gul",
     "selectedTokenSets": {
-      "semantic/modes/support-color/gul": "enabled"
+      "semantic/color/gul": "enabled"
     },
-    "group": "Support color"
+    "group": "Color"
   },
   {
-    "id": "7590e211e08baa97ee2794a0f883bb53d24a5049",
+    "id": "80fdade129c030fd5dd06e02c95978c06a6598c0",
     "name": "korall",
     "selectedTokenSets": {
-      "semantic/modes/support-color/korall": "enabled"
+      "semantic/color/korall": "enabled"
     },
-    "group": "Support color"
+    "group": "Color"
+  },
+  {
+    "id": "e7fb41a6a0544d8a8aa178232034311f9d725555",
+    "name": "neutral",
+    "selectedTokenSets": {
+      "semantic/color/neutral": "enabled"
+    },
+    "group": "Color"
+  },
+  {
+    "id": "59bd0a3ff43b32849b319e645d4798d8a5d1e889",
+    "name": "info",
+    "selectedTokenSets": {
+      "semantic/color/info": "enabled"
+    },
+    "group": "Color"
+  },
+  {
+    "id": "53a5687cb26dc41f2ab4033e97e13adefd3740d6",
+    "name": "success",
+    "selectedTokenSets": {
+      "semantic/color/success": "enabled"
+    },
+    "group": "Color"
+  },
+  {
+    "id": "383fd7bf84aa027bdc40159c5d7c5805664a8eb2",
+    "name": "warning",
+    "selectedTokenSets": {
+      "semantic/color/warning": "enabled"
+    },
+    "group": "Color"
+  },
+  {
+    "id": "222b3e11200d82d61f1b89533e59175f71d23972",
+    "name": "danger",
+    "selectedTokenSets": {
+      "semantic/color/danger": "enabled"
+    },
+    "group": "Color"
   }
 ]
