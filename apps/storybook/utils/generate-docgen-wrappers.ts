@@ -92,8 +92,12 @@ async function importDigdir(): Promise<Record<string, unknown>> {
   }
   const pkgJson = JSON.parse(
     readFileSync(path.join(dir, "package.json"), "utf8"),
-  ) as { exports: { ".": { import: string } } };
-  const esmEntry = path.join(dir, pkgJson.exports["."].import);
+  ) as { exports: { ".": { import: string | { default: string } } } };
+  const importEntry = pkgJson.exports["."].import;
+  const esmEntry = path.join(
+    dir,
+    typeof importEntry === "string" ? importEntry : importEntry.default,
+  );
   return import(pathToFileURL(esmEntry).href) as Promise<
     Record<string, unknown>
   >;
