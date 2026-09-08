@@ -5,16 +5,12 @@
     "arbeidstilsynet": {
       "borderRadius": 4,
       "colors": {
-        "main": {
-          "accent": "#0B8477",
-          "reverse": "#0B8477"
-        },
-        "neutral": "#535353",
-        "support": {
-          "blaa": "#81AFD9",
-          "gul": "#FFD366",
-          "korall": "#F26561"
-        }
+        "accent": "#0B8477",
+        "reverse": "#0B8477",
+        "blaa": "#81AFD9",
+        "gul": "#FFD366",
+        "korall": "#F26561",
+        "neutral": "#535353"
       },
       "overrides": {
         "colors": {
@@ -303,15 +299,15 @@
           },
           "neutral": {
             "background-default": {
-              "dark": "#19191C",
+              "dark": "#181818",
               "light": "#FFFFFF"
             },
             "background-tinted": {
-              "dark": "#1B1D1F",
-              "light": "#ECECEC"
+              "dark": "#1F1F1F",
+              "light": "#F3F3F3"
             },
             "base-active": {
-              "dark": "#8D8E91",
+              "dark": "#818181",
               "light": "#404040"
             },
             "base-contrast-default": {
@@ -319,52 +315,52 @@
               "light": "#FFFFFF"
             },
             "base-contrast-subtle": {
-              "dark": "#212121",
-              "light": "#F1F1F1"
+              "dark": "#1B1B1B",
+              "light": "#969696"
             },
             "base-default": {
-              "dark": "#B6B7B9",
-              "light": "#535353"
+              "dark": "#ABABAB",
+              "light": "#080808"
             },
             "base-hover": {
-              "dark": "#A2A3A4",
-              "light": "#404040"
+              "dark": "#969696",
+              "light": "#2F2F2F"
             },
             "border-default": {
-              "dark": "#949496",
-              "light": "#B6B4B4"
+              "dark": "#818181",
+              "light": "#797979"
             },
             "border-strong": {
-              "dark": "#AFB1B2",
-              "light": "#535353"
+              "dark": "#A8A8A8",
+              "light": "#5D5D5D"
             },
             "border-subtle": {
-              "dark": "#636466",
-              "light": "#DDDDDD"
-            },
-            "surface-active": {
-              "dark": "#36383D",
+              "dark": "#505050",
               "light": "#BCBCBC"
             },
+            "surface-active": {
+              "dark": "#434343",
+              "light": "#CACACA"
+            },
             "surface-default": {
-              "dark": "#26282B",
+              "dark": "#282828",
               "light": "#FFFFFF"
             },
             "surface-hover": {
-              "dark": "#27292D",
-              "light": "#E6E6E6"
+              "dark": "#353535",
+              "light": "#DADADA"
             },
             "surface-tinted": {
-              "dark": "#3B3E45",
-              "light": "#D8D8D8"
+              "dark": "#2E2E2E",
+              "light": "#EEEEEE"
             },
             "text-default": {
-              "dark": "#F7F7F7",
+              "dark": "#ECECEC",
               "light": "#080808"
             },
             "text-subtle": {
               "dark": "#B9BBBB",
-              "light": "#4C4C4C"
+              "light": "#424242"
             }
           },
           "reverse": {
