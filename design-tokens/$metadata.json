@@ -13,12 +13,16 @@
     "primitives/modes/color-scheme/dark/arbeidstilsynet",
     "primitives/modes/color-scheme/light/arbeidstilsynet",
     "themes/arbeidstilsynet",
-    "semantic/color",
-    "semantic/modes/main-color/accent",
-    "semantic/modes/main-color/reverse",
-    "semantic/modes/support-color/blaa",
-    "semantic/modes/support-color/gul",
-    "semantic/modes/support-color/korall",
+    "semantic/color/accent",
+    "semantic/color/reverse",
+    "semantic/color/blaa",
+    "semantic/color/gul",
+    "semantic/color/korall",
+    "semantic/color/neutral",
+    "semantic/color/info",
+    "semantic/color/success",
+    "semantic/color/warning",
+    "semantic/color/danger",
     "semantic/style"
   ]
 }

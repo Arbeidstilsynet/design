@@ -5,16 +5,12 @@
     "arbeidstilsynet": {
       "borderRadius": 4,
       "colors": {
-        "main": {
-          "accent": "#0B8477",
-          "reverse": "#0B8477"
-        },
-        "neutral": "#535353",
-        "support": {
-          "blaa": "#81AFD9",
-          "gul": "#FFD366",
-          "korall": "#F26561"
-        }
+        "accent": "#0B8477",
+        "reverse": "#0B8477",
+        "blaa": "#81AFD9",
+        "gul": "#FFD366",
+        "korall": "#F26561",
+        "neutral": "#535353"
       },
       "overrides": {
         "colors": {
