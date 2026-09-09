@@ -1,6 +1,6 @@
 ---
-'@arbeidstilsynet/design-css': patch
-'@arbeidstilsynet/design-react': patch
+'@arbeidstilsynet/design-css': minor
+'@arbeidstilsynet/design-react': minor
 ---
 
 Updated dependency `@digdir/designsystemet-css` to `1.21.0`.
