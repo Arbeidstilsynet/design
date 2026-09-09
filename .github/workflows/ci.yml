@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       # install JS plugins used by oxlint
-      - uses: Arbeidstilsynet/action-pnpm-setup@444e7145c433049678332616ef8f5b076c2dec8b # v4
+      - uses: Arbeidstilsynet/action-pnpm-setup@1dab2f070c59cdc7fc25c2c1f437069cefccf530 # v4
       - uses: j178/prek-action@4e14d07f9231acabce116ccfca13b13dd9755ece # v3.0.0
 
   typecheck:
@@ -25,7 +25,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: Arbeidstilsynet/action-pnpm-setup@444e7145c433049678332616ef8f5b076c2dec8b # v4
+      - uses: Arbeidstilsynet/action-pnpm-setup@1dab2f070c59cdc7fc25c2c1f437069cefccf530 # v4
       - run: pnpm typecheck
 
   build:
@@ -33,7 +33,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: Arbeidstilsynet/action-pnpm-setup@444e7145c433049678332616ef8f5b076c2dec8b # v4
+      - uses: Arbeidstilsynet/action-pnpm-setup@1dab2f070c59cdc7fc25c2c1f437069cefccf530 # v4
       - run: pnpm build
 
   test:
@@ -45,7 +45,7 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - uses: Arbeidstilsynet/action-pnpm-setup@444e7145c433049678332616ef8f5b076c2dec8b # v4
+      - uses: Arbeidstilsynet/action-pnpm-setup@1dab2f070c59cdc7fc25c2c1f437069cefccf530 # v4
       - run: pnpm test
         id: test
 
