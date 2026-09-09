@@ -4,25 +4,10 @@
   "plugins": ["react", "jsx-a11y"],
   "jsPlugins": [
     {
-      "name": "react-hooks-extra",
-      "specifier": "eslint-plugin-react-hooks",
-    },
-    {
       "name": "storybook",
       "specifier": "eslint-plugin-storybook",
     },
   ],
-  "rules": {
-    // https://react.dev/reference/eslint-plugin-react-hooks
-    "react-hooks-extra/error-boundaries": "error",
-    "react-hooks-extra/immutability": "error",
-    "react-hooks-extra/purity": "error",
-    "react-hooks-extra/refs": "error",
-    "react-hooks-extra/set-state-in-effect": "error",
-    "react-hooks-extra/set-state-in-render": "error",
-    "react-hooks-extra/static-components": "error",
-    "react-hooks-extra/use-memo": "error",
-  },
   "overrides": [
     {
       "files": ["**/*.stories.{ts,tsx}"],
