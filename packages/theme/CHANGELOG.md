@@ -1,5 +1,15 @@
 # @arbeidstilsynet/design-theme
 
+## 0.9.0
+
+Released: 2026-09-09
+
+### Minor Changes
+
+- Regenerate design-tokens with CLI v1.21.0 and migrate colors to flat structure. Generated CSS tokens are unchanged except for `--ds-color-focus-outer`. ([#1183](https://github.com/Arbeidstilsynet/design/pull/1183))
+
+- **Colors**: updated light and dark mode colors for `neutral` ([#1138](https://github.com/Arbeidstilsynet/design/pull/1138))
+
 ## 0.8.1
 
 Released: 2026-06-23
