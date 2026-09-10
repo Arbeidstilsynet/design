@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
-      - uses: Arbeidstilsynet/action-pnpm-setup@4aeb1a864b04a516dde352e3675d5ab96f1741b2 # v3
+      - uses: pnpm/setup@703c52620218391530e48b9e8870d5c0082e1b9b # v2.1.0
       - name: Mark Chromatic as skipped
         uses: chromaui/action@2a0b63f30233c48591844a46d451b9cf68128186 # v18
         with:
@@ -50,7 +50,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           fetch-depth: 0
-      - uses: Arbeidstilsynet/action-pnpm-setup@4aeb1a864b04a516dde352e3675d5ab96f1741b2 # v3
+      - uses: pnpm/setup@703c52620218391530e48b9e8870d5c0082e1b9b # v2.1.0
       - name: Build CSS
         run: pnpm --filter @arbeidstilsynet/design-css build
       - name: Run Chromatic
