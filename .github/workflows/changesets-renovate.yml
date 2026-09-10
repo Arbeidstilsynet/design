@@ -30,10 +30,9 @@ jobs:
           git config --global user.name "${{ vars.BETZY_BOT_GIT_USER_NAME }}"
           git config --global user.email "${{ vars.BETZY_BOT_GIT_USER_EMAIL }}"
 
-      - uses: Arbeidstilsynet/action-pnpm-setup@4aeb1a864b04a516dde352e3675d5ab96f1741b2 # v3
+      - uses: pnpm/setup@703c52620218391530e48b9e8870d5c0082e1b9b # v2.1.0
         with:
-          skip-audit: true
-          skip-install: true
+          install: false
 
       - name: Install root dependencies only
         run: pnpm install --ignore-scripts --filter root
