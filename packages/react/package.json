@@ -51,7 +51,7 @@
     "@types/react": "19.2.18",
     "@types/react-dom": "19.2.7",
     "@typescript/typescript6": "6.0.2",
-    "happy-dom": "20.14.0",
+    "happy-dom": "20.14.3",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "react-toastify": "11.1.0",
