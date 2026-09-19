@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-react
 
+## 0.12.1
+
+Released: 2026-09-19
+
+### Patch Changes
+
+- Updated dependency `react-dropzone` to `^20.1.2`. ([#1212](https://github.com/Arbeidstilsynet/design/pull/1212))
+
 ## 0.12.0
 
 Released: 2026-09-09
