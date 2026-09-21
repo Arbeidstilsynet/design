@@ -92,9 +92,10 @@ export const Preview: StoryFn<typeof Suggestion> = (args) => {
       <Label>Velg en destinasjon</Label>
       <Suggestion {...args}>
         <Suggestion.Input />
+        <Suggestion.Toggle />
         <Suggestion.Clear />
         <Suggestion.List id="123">
-          <Suggestion.Empty>Tomt</Suggestion.Empty>
+          <Suggestion.Empty />
           {DATA_PLACES.map((place) => (
             <Suggestion.Option key={place} label={place} value={place}>
               {place}
@@ -120,9 +121,10 @@ export const ControlledSingle: StoryFn<SuggestionSingleProps> = (args) => {
           onSelectedChange={(item) => setSelected(item?.value)}
         >
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((place) => (
               <Suggestion.Option key={place} label={place} value={place}>
                 {place}
@@ -147,6 +149,53 @@ export const ControlledSingle: StoryFn<SuggestionSingleProps> = (args) => {
       </Button>
     </>
   );
+};
+
+export const ControlledCreatable: StoryFn<SuggestionSingleProps> = (args) => {
+  const [selected, setSelected] = useState<string | undefined>("");
+
+  return (
+    <>
+      <Field>
+        <Label>Velg destinasjon</Label>
+        <Suggestion
+          {...args}
+          selected={selected}
+          onSelectedChange={(item) => setSelected(item?.value)}
+        >
+          <Suggestion.Input />
+          <Suggestion.Toggle />
+          <Suggestion.Clear />
+          <Suggestion.List>
+            <Suggestion.Empty />
+            {DATA_PLACES.map((place) => (
+              <Suggestion.Option key={place} label={place} value={place}>
+                {place}
+                <div>Kommune</div>
+              </Suggestion.Option>
+            ))}
+          </Suggestion.List>
+        </Suggestion>
+      </Field>
+      <Divider style={{ marginTop: "var(--ds-size-4)" }} />
+
+      <Paragraph style={{ margin: "var(--ds-size-2) 0" }}>
+        Valgte reisemål: {selected}
+      </Paragraph>
+
+      <Button
+        onClick={() => {
+          setSelected("Sogndal");
+        }}
+      >
+        Sett reisemål til Sogndal
+      </Button>
+    </>
+  );
+};
+
+ControlledCreatable.args = {
+  creatable: true,
 };
 ControlledSingle.play = async ({ canvasElement, step }) => {
   const input = await waitFor(() =>
@@ -188,9 +237,10 @@ export const ControlledMultiple: StoryFn<SuggestionMultipleProps> = (args) => {
           }
         >
           <Suggestion.Input />
+          <Suggestion.Toggle />
           <Suggestion.Clear />
           <Suggestion.List>
-            <Suggestion.Empty>Tomt</Suggestion.Empty>
+            <Suggestion.Empty />
             {DATA_PLACES.map((place) => (
               <Suggestion.Option key={place} label={place} value={place}>
                 {place}
@@ -439,7 +489,12 @@ export const FetchExternal: StoryFn<typeof Suggestion> = (args) => {
   return (
     <Field lang="en">
       <Label>Search for countries (in english)</Label>
-      <Suggestion {...args} filter={false}>
+      <Suggestion
+        {...args}
+        filter={false}
+        data-sr-singular="%d country"
+        data-sr-plural="%d countries"
+      >
         <Suggestion.Input onInput={handleInput} />
         <Suggestion.Clear />
         <Suggestion.List singular="%d country" plural="%d countries">
@@ -560,11 +615,10 @@ export const Creatable: StoryFn<typeof Suggestion> = (args) => {
       <Label>Velg eller legg til en destinasjon</Label>
       <Suggestion {...args}>
         <Suggestion.Input />
+        <Suggestion.Toggle />
         <Suggestion.Clear />
         <Suggestion.List>
-          <Suggestion.Empty>
-            Ingen treff, trykk enter for å legge til
-          </Suggestion.Empty>
+          <Suggestion.Empty />
           {DATA_PLACES.map((place) => (
             <Suggestion.Option key={place}>{place}</Suggestion.Option>
           ))}
@@ -577,6 +631,48 @@ export const Creatable: StoryFn<typeof Suggestion> = (args) => {
 Creatable.args = {
   multiple: true,
   creatable: true,
+};
+
+export const WithoutToggleButton: StoryFn<typeof Suggestion> = (args) => {
+  return (
+    <Field>
+      <Label>Velg eller legg til en destinasjon</Label>
+      <Suggestion {...args}>
+        <Suggestion.Input />
+        <Suggestion.Clear />
+        <Suggestion.List>
+          <Suggestion.Empty />
+          {DATA_PLACES.map((place) => (
+            <Suggestion.Option key={place}>{place}</Suggestion.Option>
+          ))}
+        </Suggestion.List>
+      </Suggestion>
+    </Field>
+  );
+};
+
+WithoutToggleButton.args = {
+  multiple: true,
+  creatable: true,
+};
+
+export const WithDeprecatedDel: StoryFn<typeof Suggestion> = (args) => {
+  return (
+    <Field>
+      <Label>Velg eller legg til en destinasjon</Label>
+      <Suggestion {...args}>
+        <Suggestion.Input />
+        {/** biome-ignore lint/a11y/useSemanticElements: deprecated */}
+        <del role="button" aria-label="Tøm" tabIndex={0} />
+        <Suggestion.List>
+          <Suggestion.Empty />
+          {DATA_PLACES.map((place) => (
+            <Suggestion.Option key={place}>{place}</Suggestion.Option>
+          ))}
+        </Suggestion.List>
+      </Suggestion>
+    </Field>
+  );
 };
 
 Preview.parameters = {
