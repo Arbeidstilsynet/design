@@ -1,15 +1,12 @@
-FROM node:24-slim@sha256:2fe369e969550cde8e867afc3fe370b260140cab4a23d467074295b42163d553 AS base
+FROM ghcr.io/pnpm/pnpm:12@sha256:0a4219f2ae582bce0e52073876c20e6387147f0809d8546744d87243797633ed AS base
 
 FROM base AS builder
 
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME/bin:$PATH"
 # mute update notifications
 ENV CI="true"
 
 WORKDIR /app
 
-RUN corepack enable
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY apps/storybook/package.json ./apps/storybook/package.json
 COPY packages/css/package.json ./packages/css/package.json
