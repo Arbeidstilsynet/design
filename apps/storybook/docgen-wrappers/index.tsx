@@ -233,6 +233,7 @@ const Suggestion = Object.assign(
     Input: SuggestionInput,
     Empty: SuggestionEmpty,
     Option: SuggestionOption,
+    Toggle: SuggestionToggle,
     Clear: SuggestionClear,
   },
 );
@@ -262,6 +263,11 @@ function SuggestionOption(props: ComponentProps<typeof Base.EXPERIMENTAL_Suggest
   return <Base.EXPERIMENTAL_SuggestionOption {...props} />;
 }
 export { SuggestionOption as EXPERIMENTAL_SuggestionOption };
+
+function SuggestionToggle(props: ComponentProps<typeof Base.EXPERIMENTAL_SuggestionToggle>) {
+  return <Base.EXPERIMENTAL_SuggestionToggle {...props} />;
+}
+export { SuggestionToggle as EXPERIMENTAL_SuggestionToggle };
 
 export const ErrorSummary = Object.assign(
   function ErrorSummary(props: ComponentProps<typeof Base.ErrorSummary>) {

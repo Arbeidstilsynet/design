@@ -49,6 +49,7 @@ export {
   EXPERIMENTAL_SuggestionInput,
   EXPERIMENTAL_SuggestionList,
   EXPERIMENTAL_SuggestionOption,
+  EXPERIMENTAL_SuggestionToggle,
   ErrorSummary,
   ErrorSummaryHeading,
   ErrorSummaryItem,
