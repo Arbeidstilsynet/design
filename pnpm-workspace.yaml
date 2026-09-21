@@ -31,6 +31,9 @@ overrides:
 trustPolicy: no-downgrade
 
 trustPolicyExclude:
+  - cssnano*
+  - postcss-*
+  - stylehacks@9.0.4
   - rxjs@7.8.2
   - semver@6.3.1
   - semver@5.7.2
