@@ -43,6 +43,10 @@ const browserProjects: TestProjectConfiguration[] = colorSchemes.map(
         enabled: true,
         headless: true,
         provider: playwright(),
+        viewport: {
+          width: 1600,
+          height: 1000,
+        },
         instances: [
           {
             browser: "chromium",

@@ -11,7 +11,7 @@
     "typecheck:scripts": "tsc --project scripts",
     "lint": "oxlint .",
     "dev": "pnpm storybook",
-    "test": "vitest run",
+    "test": "vitest run --project '!@arbeidstilsynet/storybook (storybook-*)'",
     "build": "pnpm -r build",
     "build:react": "pnpm --filter @arbeidstilsynet/design-react build",
     "build:storybook": "pnpm --filter storybook... build",
@@ -27,7 +27,7 @@
     "@digdir/designsystemet": "1.22.0",
     "@scaleway/changesets-renovate": "4.0.0",
     "@types/node": "24.13.5",
-    "@vitest/coverage-v8": "4.1.11",
+    "@vitest/coverage-v8": "5.0.1",
     "eslint": "workspace:*",
     "eslint-plugin-storybook": "10.6.0",
     "oxfmt": "0.68.0",
@@ -35,7 +35,7 @@
     "oxlint-tsgolint": "7.0.2002",
     "tsx": "4.23.13",
     "typescript": "7.0.2",
-    "vitest": "4.1.11"
+    "vitest": "5.0.1"
   },
   "devEngines": {
     "runtime": {
