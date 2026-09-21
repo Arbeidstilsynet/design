@@ -1,6 +1,7 @@
 import {
   Button,
   Checkbox,
+  Chip,
   Divider,
   Fieldset,
   Pagination,
@@ -20,6 +21,9 @@ type Story = StoryObj<typeof Checkbox>;
 export default {
   title: "designsystemet.no/Checkbox",
   component: Checkbox,
+  args: {
+    label: "",
+  },
 } as Meta;
 
 export const Preview: Story = {
@@ -39,7 +43,7 @@ export const AriaLabel: Story = {
   },
 };
 
-export const Group: StoryFn<UseCheckboxGroupProps> = (args) => {
+const CheckboxGroupStory = (args: UseCheckboxGroupProps) => {
   const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
     value: ["epost"],
     ...args,
@@ -53,13 +57,17 @@ export const Group: StoryFn<UseCheckboxGroupProps> = (args) => {
       <Fieldset.Description>
         Velg alle alternativene som er relevante for deg.
       </Fieldset.Description>
-      <Checkbox label="E-post" {...getCheckboxProps("epost")} />
-      <Checkbox label="Telefon" {...getCheckboxProps("telefon")} />
-      <Checkbox label="SMS" {...getCheckboxProps("sms")} />
+      <Checkbox {...getCheckboxProps("epost")} label="E-post" />
+      <Checkbox {...getCheckboxProps("telefon")} label="Telefon" />
+      <Checkbox {...getCheckboxProps("sms")} label="SMS" />
       <ValidationMessage {...validationMessageProps} />
     </Fieldset>
   );
 };
+
+export const Group: StoryFn<UseCheckboxGroupProps> = (args) => (
+  <CheckboxGroupStory {...args} />
+);
 
 Group.args = {
   name: "my-group",
@@ -79,18 +87,27 @@ export const OneOption: StoryFn<typeof Fieldset> = () => (
 );
 
 export const WithError = {
-  render: Group,
+  render: CheckboxGroupStory,
   args: {
-    ...Group.args,
+    disabled: false,
     name: "my-error",
-    error: "Du må velge minst to kontaktalternativ", // TODO: useCheckbox when hook is ready
+    error: "Du må velge minst to kontaktalternativ",
   },
 };
 
-export const Controlled: StoryFn<UseCheckboxGroupProps> = (args) => {
+type Choices = Record<string, { label: string }>;
+
+export const Controlled: StoryFn<UseCheckboxGroupProps> = (args, context) => {
+  const choices: Choices = {
+    barnehage: { label: "Barnehage" },
+    grunnskole: { label: "Grunnskole" },
+    videregaende: { label: "Videregående" },
+  };
+
   const { getCheckboxProps, validationMessageProps, value, setValue } =
     useCheckboxGroup({
       name: "my-controlled",
+      value: ["barnehage", "videregaende"],
       ...args,
     });
 
@@ -99,85 +116,128 @@ export const Controlled: StoryFn<UseCheckboxGroupProps> = (args) => {
       ? haystack.filter((value) => value !== needle)
       : haystack.concat(needle);
 
+  const isFiltered = value.length > 0;
+
   return (
     <>
       <Fieldset>
-        <Fieldset.Legend>
-          Skal du reise til noen av disse landene?
-        </Fieldset.Legend>
-        <Fieldset.Description>
-          Velg alle landene du skal innom.
-        </Fieldset.Description>
-        <Checkbox label="Kroatia" {...getCheckboxProps("kroatia")} />
-        <Checkbox label="Slovakia" {...getCheckboxProps("slovakia")} />
-        <Checkbox label="Hobsyssel" {...getCheckboxProps("hobsyssel")} />
+        <Fieldset.Legend>Utdanningsnivå</Fieldset.Legend>
+        {Object.entries(choices).map(([value, { label }]) => (
+          <Checkbox
+            {...getCheckboxProps(value)}
+            key={value}
+            id={`${context.id}-${value}`}
+            label={label}
+          />
+        ))}
       </Fieldset>
       <ValidationMessage {...validationMessageProps} />
-      <Divider style={{ marginTop: "var(--ds-size-4)" }} />
-      <Paragraph style={{ margin: "var(--ds-size-2) 0" }}>
-        Du har valgt: {value.toString()}
-      </Paragraph>
-      <div style={{ display: "flex", gap: "1rem" }}>
-        <Button onClick={() => setValue(toggle(value, "kroatia"))}>
-          Toggle Kroatia
-        </Button>
-        <Button onClick={() => setValue(toggle(value, "hobsyssel"))}>
-          Toggle Hobsyssel
-        </Button>
+      <Divider />
+      <Paragraph>(Annet innhold)</Paragraph>
+      <Divider />
+      <div style={{ display: "flex", gap: "var(--ds-size-2)" }}>
+        <Paragraph>
+          {isFiltered ? "Viser innhold for:" : "Viser alt innhold"}
+        </Paragraph>
+        {isFiltered &&
+          value.map((selectedValue) => {
+            const choice = choices[selectedValue];
+
+            if (!choice) {
+              throw new Error(`Unknown checkbox choice: ${selectedValue}`);
+            }
+
+            return (
+              <Chip.Removable
+                key={selectedValue}
+                aria-label={`Slett ${choice.label}`}
+                onClick={() => setValue(toggle(value, selectedValue))}
+              >
+                {choice.label}
+              </Chip.Removable>
+            );
+          })}
       </div>
+      {isFiltered && (
+        <Button
+          style={{ width: "fit-content" }}
+          variant="secondary"
+          onClick={() => setValue([])}
+        >
+          Tøm filtre
+        </Button>
+      )}
     </>
   );
 };
 
+Controlled.parameters = {
+  layout: "padded",
+  customStyles: {
+    display: "flex",
+    gap: "var(--ds-size-4)",
+    flexDirection: "column",
+  },
+};
+
 export const ReadOnly = {
   args: {
-    ...Group.args,
     name: "my-readonly",
     readOnly: true,
   },
-  render: Group,
+  render: CheckboxGroupStory,
 };
 
 export const Disabled = {
   args: {
-    ...Preview.args,
     name: "my-disabled",
     disabled: true,
   },
-  render: Group,
+  render: CheckboxGroupStory,
 };
 
-export const InTable: StoryFn<UseCheckboxGroupProps> = (args) => {
+export const InTable: StoryFn<UseCheckboxGroupProps> = (args, context) => {
   const { getCheckboxProps } = useCheckboxGroup({
-    name: "my-checkbox",
+    name: context.id,
+    value: ["2", "3"],
     ...args,
   });
+
   return (
     <Table>
+      <colgroup>
+        <col style={{ width: "1px" }} />
+        <col />
+        <col />
+      </colgroup>
       <Table.Head>
         <Table.Row>
           <Table.HeaderCell>
             <Checkbox
-              aria-label="Select all"
+              aria-label="Velg alle"
               {...getCheckboxProps({
                 allowIndeterminate: true,
                 value: "all",
               })}
             />
           </Table.HeaderCell>
-          <Table.HeaderCell>Header</Table.HeaderCell>
+          <Table.HeaderCell>Navn</Table.HeaderCell>
+          <Table.HeaderCell>E-post</Table.HeaderCell>
         </Table.Row>
       </Table.Head>
       <Table.Body>
-        {[1, 2, 3, 4].map((row) => (
-          <Table.Row key={row}>
+        {tableData.map((person) => (
+          <Table.Row key={person.id}>
             <Table.Cell>
               <Checkbox
-                aria-label={`Check ${row}`}
-                {...getCheckboxProps(`${row}`)}
+                aria-labelledby={`${context.id}-${person.id}-name`}
+                {...getCheckboxProps(person.id.toString())}
               />
             </Table.Cell>
-            <Table.Cell>Content</Table.Cell>
+            <Table.Cell id={`${context.id}-${person.id}-name`}>
+              {person.navn}
+            </Table.Cell>
+            <Table.Cell>{person.epost}</Table.Cell>
           </Table.Row>
         ))}
       </Table.Body>
@@ -190,25 +250,25 @@ const tableData = [
     id: 1,
     navn: "Lise Nordmann",
     epost: "lise@nordmann.no",
-    telefon: "22345678",
+    telefon: "68051156",
   },
   {
     id: 2,
     navn: "Kari Nordmann",
     epost: "kari@nordmann.no",
-    telefon: "87654321",
+    telefon: "68059679",
   },
   {
     id: 3,
     navn: "Ola Nordmann",
     epost: "ola@nordmann.no",
-    telefon: "32345678",
+    telefon: "68055731",
   },
   {
     id: 4,
     navn: "Per Nordmann",
     epost: "per@nordmann.no",
-    telefon: "12345678",
+    telefon: "68059631",
   },
 ];
 
@@ -234,9 +294,9 @@ export const Conditional: StoryFn<UseCheckboxGroupProps> = (args) => {
             <Fieldset.Description>
               Velg alle alternativene som er relevante for deg.
             </Fieldset.Description>
-            <Checkbox label="E-post" {...getCheckboxProps("epost")} />
-            <Checkbox label="Telefon" {...getCheckboxProps("telefon")} />
-            <Checkbox label="SMS" {...getCheckboxProps("sms")} />
+            <Checkbox {...getCheckboxProps("epost")} label="E-post" />
+            <Checkbox {...getCheckboxProps("telefon")} label="Telefon" />
+            <Checkbox {...getCheckboxProps("sms")} label="SMS" />
             <ValidationMessage {...validationMessageProps} />
           </Fieldset>
         </>
@@ -253,9 +313,7 @@ export const InTableWithPagination: StoryFn<UseCheckboxGroupProps> = (args) => {
   const itemsPerPage = 3;
   const [currentPage, setCurrentPage] = useState(1);
 
-  const { getCheckboxProps } = useCheckboxGroup({
-    ...args,
-  });
+  const { getCheckboxProps } = useCheckboxGroup(args);
 
   const totalPages = Math.ceil(tableData.length / itemsPerPage);
 
@@ -369,6 +427,91 @@ export const ContentEx3: StoryFn<typeof Fieldset> = () => (
     <Checkbox label="Kolleger" value="kolleger" />
   </Fieldset>
 );
+
+export const hiddenLegend: StoryFn<typeof Fieldset> = () => (
+  <Fieldset>
+    <Fieldset.Legend className="ds-sr-only">
+      Tekst for skjermleser
+    </Fieldset.Legend>
+    <Checkbox label="Test av skjermleser legend" value="selvstendige" />
+  </Fieldset>
+);
+
+export const Outline: StoryFn<typeof Fieldset> = () => (
+  <Fieldset>
+    <Fieldset.Legend>Using variant="outline"</Fieldset.Legend>
+    <Checkbox
+      variant="outline"
+      label="with description"
+      description="description text"
+      value="description"
+    />
+    <Checkbox
+      variant="outline"
+      label="Checked"
+      value="checked"
+      defaultChecked
+    />
+    <Checkbox
+      variant="outline"
+      label="with error state"
+      value="error"
+      error="the error message"
+    />
+    <Checkbox
+      variant="outline"
+      disabled
+      label="disabled not checked"
+      value="disabled"
+    />
+    <Checkbox
+      variant="outline"
+      disabled
+      label="disabled"
+      value="disabled"
+      defaultChecked
+    />
+    <Checkbox
+      variant="outline"
+      readOnly
+      label="readonly not checked"
+      value="readonly2"
+    />
+    <Checkbox
+      variant="outline"
+      readOnly
+      label="readonly checked"
+      value="readonly"
+      defaultChecked
+    />
+  </Fieldset>
+);
+
+export const End: StoryFn<UseCheckboxGroupProps> = (args) => {
+  const { getCheckboxProps, validationMessageProps } = useCheckboxGroup({
+    value: ["epost"],
+    ...args,
+  });
+
+  return (
+    <Fieldset>
+      <Fieldset.Legend>
+        Hvordan vil du helst at vi skal kontakte deg?
+      </Fieldset.Legend>
+      <Fieldset.Description>
+        Velg alle alternativene som er relevante for deg.
+      </Fieldset.Description>
+      <Checkbox {...getCheckboxProps("epost")} position="end" label="E-post" />
+      <Checkbox
+        {...getCheckboxProps("telefon")}
+        position="end"
+        label="Telefon"
+      />
+      <Checkbox {...getCheckboxProps("sms")} position="end" label="SMS" />
+      <ValidationMessage {...validationMessageProps} />
+    </Fieldset>
+  );
+};
 
 Preview.parameters = {
   ...Preview.parameters,
