@@ -1,5 +1,19 @@
 # @arbeidstilsynet/design-react
 
+## 0.12.1
+
+Released: 2026-09-21
+
+### Patch Changes
+
+- Updated dependency `react-dropzone` to `^20.1.2`. ([#1212](https://github.com/Arbeidstilsynet/design/pull/1212))
+
+- Updated dependency `@digdir/designsystemet-css` to `1.22.0`. ([#1200](https://github.com/Arbeidstilsynet/design/pull/1200))
+  Updated dependency `@digdir/designsystemet` to `1.22.0`.
+  Updated dependency `@digdir/designsystemet-react` to `1.22.0`.
+  Updated dependency `@digdir/designsystemet-types` to `1.22.0`.
+- Add missing `EXPERIMENTAL_SuggestionToggle` to exports, upstream added in `@digdir/designsystemet-react@1.19.0`. Updated `Suggestion` stories to show usage. ([#1200](https://github.com/Arbeidstilsynet/design/pull/1200))
+
 ## 0.12.0
 
 Released: 2026-09-09
