@@ -11,7 +11,7 @@
     "typecheck:scripts": "tsc --project scripts",
     "lint": "oxlint .",
     "dev": "pnpm storybook",
-    "test": "vitest run",
+    "test": "vitest run --project '!@arbeidstilsynet/storybook (storybook-*)'",
     "build": "pnpm -r build",
     "build:react": "pnpm --filter @arbeidstilsynet/design-react build",
     "build:storybook": "pnpm --filter storybook... build",
