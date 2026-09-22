@@ -1,0 +1,58 @@
+.matrix {
+  border-collapse: separate;
+  border-spacing: var(--ds-size-2) var(--ds-size-6);
+  min-width: 42rem;
+  table-layout: fixed;
+  width: 100%;
+
+  caption {
+    font-size: var(--ds-heading-sm-font-size);
+    font-weight: var(--ds-font-weight-semibold);
+    padding-block-end: var(--ds-size-2);
+    text-align: left;
+  }
+
+  th {
+    color: var(--ds-color-text-subtle);
+    font-size: var(--ds-body-sm-font-size);
+    font-weight: var(--ds-font-weight-medium);
+    text-align: center;
+  }
+
+  th:first-child {
+    text-align: left;
+    width: 7rem;
+  }
+
+  tbody th {
+    color: var(--ds-color-text-default);
+
+    span {
+      display: block;
+      color: var(--ds-color-text-subtle);
+      font-weight: var(--ds-font-weight-regular);
+    }
+  }
+}
+
+.cell {
+  text-align: center;
+}
+
+.hover :global(.ds-chip) {
+  --dsc-chip-background: var(--dsc-chip-background--hover);
+  --dsc-chip-background--active: var(--dsc-chip-background--hover);
+  --dsc-chip-background--checked: var(--dsc-chip-background--checked--hover);
+  --dsc-chip-background--checked--active: var(
+    --dsc-chip-background--checked--hover
+  );
+}
+
+.active :global(.ds-chip) {
+  --dsc-chip-background: var(--dsc-chip-background--active);
+  --dsc-chip-background--hover: var(--dsc-chip-background--active);
+  --dsc-chip-background--checked: var(--dsc-chip-background--checked--active);
+  --dsc-chip-background--checked--hover: var(
+    --dsc-chip-background--checked--active
+  );
+}
