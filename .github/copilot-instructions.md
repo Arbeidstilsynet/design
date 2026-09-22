@@ -72,6 +72,8 @@ Custom components extend `DefaultProps<TRef>` which provides `ref`, `data-size`,
 - Class names are prefixed with `at-` (e.g., `.at-header`, `.at-filepicker`)
 - Use Designsystemet CSS custom properties (`--ds-*`) for tokens
 - Add container queries for responsive behavior
+- **Overrides**: Before adding or changing a Digdir CSS or React override, read
+  `apps/storybook/stories/Overrides.mdx` for the strategy and current inventory.
 
 ### Color system (Designsystemet)
 

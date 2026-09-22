@@ -1,0 +1,5 @@
+/** Overrides the default Chip styles to match Gnist design. */
+
+.ds-chip {
+  --dsc-chip-background: var(--ds-color-surface-default);
+}
