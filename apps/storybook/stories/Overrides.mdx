@@ -4,13 +4,28 @@ import { Meta } from "@storybook/addon-docs/blocks";
 
 # Overrides to base components
 
-In some cases, we need to override styles of base components from the design system. This is done in the `at.overrides` layer in our CSS package. This will automatically apply to all components that directly or indirectly use the affected base component. For example, if we change the font size of the `Button` component, this will affect all components that use `Button`, such as `FilePicker`.
+In some cases, we need to override base components from the design system.
+Prefer a CSS override when styling is sufficient. Add it to the `at.overrides`
+layer in our CSS package so it automatically applies to all components that
+directly or indirectly use the affected base component. For example, changing
+the font size of `Button` also affects components that use `Button`, such as
+`FilePicker`.
+
+All current overrides are CSS-only because they do not need different markup,
+behavior, or props. When they do, we can instead override the React component
+in our React package and preserve the upstream API where possible.
 
 ## Changed components
 
 ### Button
 
 Overwritten default styles (colors and padding)
+
+### Chip
+
+Overwritten default style:
+
+- **Background color**: `surface-tinted` → `surface-default`
 
 ### Link
 
