@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-css
 
+## 0.12.2
+
+Released: 2026-09-23
+
+### Patch Changes
+
+- **Chip**: Changed the default background color from `surface-tinted` to `surface-default`. ([#1231](https://github.com/Arbeidstilsynet/design/pull/1231))
+
 ## 0.12.1
 
 Released: 2026-09-21
