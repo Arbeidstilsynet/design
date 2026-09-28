@@ -1,4 +1,4 @@
-FROM ghcr.io/pnpm/pnpm:12@sha256:cf5d993f730e3afc2fb1eeb99bc4a0cb0d310a93878903a747ad3da552ed2c29 AS base
+FROM ghcr.io/pnpm/pnpm:12@sha256:e6247edbaab71cccb0a81ca2b74d3a576efd0200cd61d2f1927de3e62d98bdde AS base
 
 FROM base AS builder
 
