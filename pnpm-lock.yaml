@@ -163,8 +163,9 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  esbuild: 0.28.2
   nanoid@<3.3.17: 3.3.19
+  simple-git@<=3.36.0: ^4.0.0
+  source-map-js@>=1.0.0 <1.2.2: ^1.2.2
 
 importers:
 
@@ -1719,11 +1720,11 @@ packages:
     peerDependencies:
       '@changesets/cli': 3.x
 
-  '@simple-git/args-pathspec@1.0.3':
-    resolution: {integrity: sha512-ngJMaHlsWDTfjyq9F3VIQ8b7NXbBLq5j9i5bJ6XLYtD6qlDXT7fdKY2KscWWUF8t18xx052Y/PUO1K1TRc9yKA==}
+  '@simple-git/args-pathspec@1.0.4':
+    resolution: {integrity: sha512-EtMX6XjRWSastG2SdkmSQByPtJ9dx/NIjnHbpQPCYt62j4RmSx5rgLTGpw0YCjF5h191gZOmBfheOT23cRSFdw==}
 
-  '@simple-git/argv-parser@1.1.1':
-    resolution: {integrity: sha512-Q9lBcfQ+VQCpQqGJFHe5yooOS5hGdLFFbJ5R+R5aDsnkPCahtn1hSkMcORX65J2Z5lxSkD0lQorMsncuBQxYUw==}
+  '@simple-git/argv-parser@2.0.1':
+    resolution: {integrity: sha512-M++IaVWrN+vYalilOHfwvT2IL3wYZtVEBQpmX6DLSOJLtxbZ+SUeIDE3IiPogzhPACLajwtxfa5rp+ZX1FczzQ==}
 
   '@sindresorhus/merge-streams@2.3.0':
     resolution: {integrity: sha512-LtoMMhxAlorcGhmFYI+LhPgbPZCkgP6ra1YL604EeF6U98pLlQ3iWIGMdWSC+vWmPBWBNgmDBAhnAobLROJmwg==}
@@ -3233,17 +3234,6 @@ packages:
             archive: tarball
             bin:
               node: bin/node
-            integrity: sha256-0mAnv/MZcFDSorC/oVGxjoN47YGv+iv1CTgE2xWJebY=
-            type: binary
-            url: https://unofficial-builds.nodejs.org/download/release/v26.10.0/node-v26.10.0-linux-arm64-musl.tar.gz
-          targets:
-            - cpu: arm64
-              os: linux
-              libc: musl
-        - resolution:
-            archive: tarball
-            bin:
-              node: bin/node
             integrity: sha256-5C2pSCG5Qi63a/Wq9N4Jd+BLoyC4r/YUjYlalLCO4iM=
             type: binary
             url: https://unofficial-builds.nodejs.org/download/release/v26.10.0/node-v26.10.0-linux-x64-musl.tar.gz
@@ -3785,8 +3775,8 @@ packages:
     resolution: {integrity: sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==}
     engines: {node: '>=14'}
 
-  simple-git@3.36.0:
-    resolution: {integrity: sha512-cGQjLjK8bxJw4QuYT7gxHw3/IouVESbhahSsHrX97MzCL1gu2u7oy38W6L2ZIGECEfIBG4BabsWDPjBxJENv9Q==}
+  simple-git@4.0.2:
+    resolution: {integrity: sha512-l0sIsv9VrPwovKELFDBOj/lhmIcbMvxBk2B+hRhsMM4/VL3gKtuZvYnBNixVo+N/0HnqQx2cBdLvxnAbygHpqA==}
 
   sirv@3.0.2:
     resolution: {integrity: sha512-2wcC/oGxHis/BoHkkPwldgiPSYcpZK3JU28WoMVv55yHJgcZ8rlXvuG9iZggz+sU1d4bRgIGASwyWqjxu3FM0g==}
@@ -3799,8 +3789,8 @@ packages:
     resolution: {integrity: sha512-ZA6oR3T/pEyuqwMgAKT0/hAv8oAXckzbkmR0UkUosQ+Mc4RxGoJkRmwHgHufaenlyAgE1Mxgpdcrf75y6XcnDg==}
     engines: {node: '>=14.16'}
 
-  source-map-js@1.2.1:
-    resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
+  source-map-js@1.2.2:
+    resolution: {integrity: sha512-KGj/8Y43x35aZVDtt+J4mK1hoLGHULMYfSkODJNQjNDC3oW1PqPoxMwo0pLUsWM/UEGzON/NxeHywEfNXNP3Vw==}
     engines: {node: '>=0.10.0'}
 
   source-map@0.6.1:
@@ -4009,7 +3999,7 @@ packages:
       '@microsoft/api-extractor': '>=7'
       '@rspack/core': ^1
       '@vue/language-core': ^3.1.5
-      esbuild: 0.28.2
+      esbuild: '*'
       rolldown: '*'
       rollup: '>=3'
       typescript: '>=4'
@@ -4082,7 +4072,7 @@ packages:
     peerDependencies:
       '@types/node': ^20.19.0 || >=22.12.0
       '@vitejs/devtools': ^0.7.1
-      esbuild: 0.28.2
+      esbuild: ^0.27.0 || ^0.28.0
       jiti: '>=1.21.0'
       less: ^4.0.0
       sass: ^1.70.0
@@ -5337,17 +5327,17 @@ snapshots:
     dependencies:
       '@changesets/cli': 3.0.3
       '@changesets/config': 4.0.1
-      simple-git: 3.36.0(supports-color@10.2.2)
+      simple-git: 4.0.2(supports-color@10.2.2)
       tinyglobby: 0.2.17
       yaml: 2.9.1
     transitivePeerDependencies:
       - supports-color
 
-  '@simple-git/args-pathspec@1.0.3': {}
+  '@simple-git/args-pathspec@1.0.4': {}
 
-  '@simple-git/argv-parser@1.1.1':
+  '@simple-git/argv-parser@2.0.1':
     dependencies:
-      '@simple-git/args-pathspec': 1.0.3
+      '@simple-git/args-pathspec': 1.0.4
 
   '@sindresorhus/merge-streams@2.3.0': {}
 
@@ -6161,12 +6151,12 @@ snapshots:
   css-tree@2.2.1:
     dependencies:
       mdn-data: 2.0.28
-      source-map-js: 1.2.1
+      source-map-js: 1.2.2
 
   css-tree@3.2.1:
     dependencies:
       mdn-data: 2.27.1
-      source-map-js: 1.2.1
+      source-map-js: 1.2.2
 
   css-what@7.0.0: {}
 
@@ -6726,7 +6716,7 @@ snapshots:
     dependencies:
       '@babel/parser': 7.29.8
       '@babel/types': 7.29.8
-      source-map-js: 1.2.1
+      source-map-js: 1.2.2
 
   make-dir@4.0.0:
     dependencies:
@@ -7197,7 +7187,7 @@ snapshots:
     dependencies:
       nanoid: 3.3.19
       picocolors: 1.1.1
-      source-map-js: 1.2.1
+      source-map-js: 1.2.2
 
   presentable-error@0.0.1: {}
 
@@ -7390,12 +7380,12 @@ snapshots:
 
   signal-exit@4.1.0: {}
 
-  simple-git@3.36.0(supports-color@10.2.2):
+  simple-git@4.0.2(supports-color@10.2.2):
     dependencies:
       '@kwsites/file-exists': 1.1.1(supports-color@10.2.2)
       '@kwsites/promise-deferred': 1.1.1
-      '@simple-git/args-pathspec': 1.0.3
-      '@simple-git/argv-parser': 1.1.1
+      '@simple-git/args-pathspec': 1.0.4
+      '@simple-git/argv-parser': 2.0.1
       debug: 4.4.3(supports-color@10.2.2)
     transitivePeerDependencies:
       - supports-color
@@ -7410,7 +7400,7 @@ snapshots:
 
   slash@5.1.0: {}
 
-  source-map-js@1.2.1: {}
+  source-map-js@1.2.2: {}
 
   source-map@0.6.1: {}
 
