@@ -165,7 +165,6 @@ settings:
 overrides:
   nanoid@<3.3.17: 3.3.19
   simple-git@<=3.36.0: ^4.0.0
-  source-map-js@>=1.0.0 <1.2.2: ^1.2.2
 
 importers:
 
