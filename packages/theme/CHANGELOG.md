@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-theme
 
+## 0.10.0
+
+Released: 2026-10-06
+
+### Minor Changes
+
+- Regenerate design-tokens and theme with `@digdir/designsystemet` CLI `v1.23.0`. Adds a `ds.theme.forced-colors` layer that maps color tokens to system colors when `forced-colors: active`. ([#1279](https://github.com/Arbeidstilsynet/design/pull/1279))
+
 ## 0.9.0
 
 Released: 2026-09-09
