@@ -311,8 +311,8 @@ importers:
         specifier: 10.6.1
         version: 10.6.1(postcss@8.5.28)
       cssnano:
-        specifier: 9.0.5
-        version: 9.0.5(postcss@8.5.28)
+        specifier: 9.2.0
+        version: 9.2.0(postcss@8.5.28)
       del-cli:
         specifier: 7.0.0
         version: 7.0.0
@@ -2434,8 +2434,8 @@ packages:
     peerDependencies:
       postcss: ^8.5.28
 
-  cssnano@9.0.5:
-    resolution: {integrity: sha512-D25KanNkgIIcJnFvbm1xinel2YWULKjOao+4pv1m2qCR6KPRxOWh4yRQboxhwVVtifwdVa3cVnSL651sAvHQoA==}
+  cssnano@9.2.0:
+    resolution: {integrity: sha512-NYVVsZN5PHe3prTVEg9ILN/N4+k9x6EstsSdFM02tO2nX+C0wb4zfoUGyMELwodTHMFus6N7rPb1ZDWiA/PAJw==}
     engines: {node: ^22.22.3 || ^24.15.0 || >=26.0}
     peerDependencies:
       postcss: ^8.5.28
@@ -5959,7 +5959,7 @@ snapshots:
       '@csstools/css-tokenizer': 4.0.2
       postcss: 8.5.28
 
-  cssnano@9.0.5(postcss@8.5.28):
+  cssnano@9.2.0(postcss@8.5.28):
     dependencies:
       cssnano-preset-default: 9.2.0(postcss@8.5.28)
       postcss: 8.5.28
