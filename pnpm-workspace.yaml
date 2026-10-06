@@ -16,12 +16,7 @@ autoInstallPeers: false
 
 minimumReleaseAge: 4320
 
-minimumReleaseAgeExclude:
-  - shell-quote@1.8.5
-  - svgo@4.0.2
-  - brace-expansion@5.0.8
-  - '@chromatic-com/storybook@5.3.0'
-  - js-yaml@3.15.1 || 4.3.1
+minimumReleaseAgeExcludePrune: true
 
 overrides:
   nanoid@<3.3.17: "3.3.19"
@@ -35,4 +30,5 @@ trustPolicyExclude:
   - stylehacks@9.0.4
   - rxjs@7.8.2
   - semver@6.3.1
-  - semver@5.7.2
+
+trustPolicyExcludePrune: true
