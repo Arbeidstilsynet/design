@@ -183,8 +183,8 @@ importers:
         specifier: 1.23.0
         version: 1.23.0(@types/node@24.19.0)
       '@scaleway/changesets-renovate':
-        specifier: 4.0.4
-        version: 4.0.4(@changesets/cli@3.0.3)(supports-color@10.2.2)
+        specifier: 4.0.5
+        version: 4.0.5(@changesets/cli@3.0.3)(supports-color@10.2.2)
       '@types/node':
         specifier: 24.19.0
         version: 24.19.0
@@ -1709,8 +1709,8 @@ packages:
       rollup:
         optional: true
 
-  '@scaleway/changesets-renovate@4.0.4':
-    resolution: {integrity: sha512-4pG4LQ9PyzBi2MuBQm697puz8FVLSSSMcA6cezYWb+ZRFmYOxsMz6IGaOMYJEUwri6v16YnzzdzsIyj42bvrCw==}
+  '@scaleway/changesets-renovate@4.0.5':
+    resolution: {integrity: sha512-3CtSh4XX9DGvR/aelWAKuNHqPrEPdZW5gKlBAa+s9WO8u6SDqZztJpfFPMsU9DPuz1J52eWM0NReolZHNWqADw==}
     engines: {node: 24.x || 25.x || 26.x}
     hasBin: true
     peerDependencies:
@@ -5198,7 +5198,7 @@ snapshots:
       estree-walker: 2.0.2
       picomatch: 4.0.7
 
-  '@scaleway/changesets-renovate@4.0.4(@changesets/cli@3.0.3)(supports-color@10.2.2)':
+  '@scaleway/changesets-renovate@4.0.5(@changesets/cli@3.0.3)(supports-color@10.2.2)':
     dependencies:
       '@changesets/cli': 3.0.3
       '@changesets/config': 4.0.1
