@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-react
 
+## 0.12.4
+
+Released: 2026-10-11
+
+### Patch Changes
+
+- Updated dependency `@radix-ui/react-slot` to `^1.4.0`. ([#1293](https://github.com/Arbeidstilsynet/design/pull/1293))
+
 ## 0.12.3
 
 Released: 2026-10-06
