@@ -1,5 +1,17 @@
 # @arbeidstilsynet/design-react
 
+## 0.12.4
+
+Released: 2026-10-12
+
+### Patch Changes
+
+- **Header**: Hide entire mobile-only dropdown items on desktop to prevent empty rows before resizing. ([#1315](https://github.com/Arbeidstilsynet/design/pull/1315))
+
+- Updated dependency `@navikt/aksel-icons` to `^8.19.0`. ([#1312](https://github.com/Arbeidstilsynet/design/pull/1312))
+
+- Updated dependency `@radix-ui/react-slot` to `^1.4.0`. ([#1293](https://github.com/Arbeidstilsynet/design/pull/1293))
+
 ## 0.12.3
 
 Released: 2026-10-06
