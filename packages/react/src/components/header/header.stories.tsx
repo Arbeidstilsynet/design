@@ -407,6 +407,11 @@ export const DifferentMenuRows: Story = {
   },
   parameters: {
     chromatic: { disableSnapshot: false },
+    customStyles: {
+      story: {
+        minHeight: "32rem",
+      },
+    },
   },
   args: {
     links,
