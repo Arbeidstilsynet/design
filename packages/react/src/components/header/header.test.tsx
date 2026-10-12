@@ -10,13 +10,15 @@ vi.mock("../../digdir", async () => {
     createElement(Fragment, null, children);
   const Button = ({ children, ...props }: ComponentProps<"button">) =>
     createElement("button", props, children);
+  const Item = ({ children, ...props }: ComponentProps<"li">) =>
+    createElement("li", props, children);
   const Divider = () => createElement("hr");
 
   return {
     Button,
     Divider,
     Dropdown: Object.assign(Container, {
-      Item: Container,
+      Item,
       List: Container,
       Trigger: Button,
       TriggerContext: Container,
@@ -89,6 +91,32 @@ describe("Header", () => {
   });
 
   describe("Header.Menu", () => {
+    test("applies mobile-only visibility to entire dropdown items", () => {
+      render(
+        <Header
+          links={[
+            <a key="home" href="/">
+              Home
+            </a>,
+          ]}
+        >
+          <Header.Menu triggerContent="Menu">
+            <span>Profile</span>
+          </Header.Menu>
+        </Header>,
+      );
+
+      const items = screen.getAllByRole("listitem");
+      expect(items).toHaveLength(4);
+      expect(items[0]).toHaveClass("at-header__dropdown-item-mobile");
+      expect(items[1]).toHaveClass("at-header__dropdown-item-mobile");
+      expect(items[2]).not.toHaveClass("at-header__dropdown-item-mobile");
+      expect(items[3]).toHaveClass("at-header__dropdown-item-mobile");
+      expect(
+        screen.getByRole("button", { name: "Lukk" }).parentElement,
+      ).toHaveClass("at-header__dropdown-close-mobile");
+    });
+
     test("shows triggerContent on desktop", () => {
       mockUseMediaQuery.mockReturnValue(false);
 

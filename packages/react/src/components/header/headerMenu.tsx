@@ -206,15 +206,12 @@ export function HeaderMenu({
           {/* Navigation menu items for mobile, including Divider */}
           <Dropdown.List>
             {links?.map((link, index) => (
-              // oxlint-disable-next-line react/no-array-index-key
-              <Dropdown.Item key={"nav-" + index}>
-                {/* Dropdown.Item does not forward className, so we wrap the control */}
-                <div
-                  className={clsx(
-                    "at-header__dropdown-controls",
-                    "at-header__dropdown-item-mobile",
-                  )}
-                >
+              <Dropdown.Item
+                // oxlint-disable-next-line react/no-array-index-key
+                key={"nav-" + index}
+                className="at-header__dropdown-item-mobile"
+              >
+                <div className="at-header__dropdown-controls">
                   {isValidElement(link) ? (
                     <Slot className={clsx("at-header__link", "ds-link")}>
                       {link}
@@ -227,12 +224,8 @@ export function HeaderMenu({
             ))}
 
             {links && links.length > 0 && (
-              <Dropdown.Item>
-                <div
-                  className={clsx(
-                    "at-header__dropdown-item-mobile at-header__dropdown-controls",
-                  )}
-                >
+              <Dropdown.Item className="at-header__dropdown-item-mobile">
+                <div className="at-header__dropdown-controls">
                   <Divider />
                 </div>
               </Dropdown.Item>
@@ -241,13 +234,12 @@ export function HeaderMenu({
             {/* Misc menu controls that are always shown */}
             {children && (
               <Dropdown.Item>
-                {/* Dropdown.Item does not forward className, so we wrap the control */}
                 <div className="at-header__dropdown-controls">{children}</div>
               </Dropdown.Item>
             )}
 
             {/* Mobile-only close button */}
-            <Dropdown.Item>
+            <Dropdown.Item className="at-header__dropdown-item-mobile">
               <div className="at-header__dropdown-close-mobile">
                 <Button
                   type="button"
