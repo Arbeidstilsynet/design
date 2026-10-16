@@ -6,11 +6,13 @@ packages:
 allowBuilds:
   esbuild: false
 
-auditConfig:
-  ignoreGhsas:
-    # no fix
-    - GHSA-vfj7-8cjw-p6xm
+autoDedupe: true
 
+audit:
+  level: high
+  ignore:
+    # no fix for braces
+    - GHSA-vfj7-8cjw-p6xm
 
 autoInstallPeers: false
 
