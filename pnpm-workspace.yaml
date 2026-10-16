@@ -6,11 +6,12 @@ packages:
 allowBuilds:
   esbuild: false
 
+autoDedupe: true
+
 auditConfig:
   ignoreGhsas:
     # no fix
     - GHSA-vfj7-8cjw-p6xm
-
 
 autoInstallPeers: false
 
