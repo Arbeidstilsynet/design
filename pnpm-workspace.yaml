@@ -8,9 +8,10 @@ allowBuilds:
 
 autoDedupe: true
 
-auditConfig:
-  ignoreGhsas:
-    # no fix
+audit:
+  level: high
+  ignore:
+    # no fix for braces
     - GHSA-vfj7-8cjw-p6xm
 
 autoInstallPeers: false
