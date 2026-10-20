@@ -16,5 +16,5 @@ jobs:
       id-token: write
     uses: ./.github/workflows/deploy-storybook-nais.yml
     with:
-      cluster: dev
-      vars: .nais/vars-dev.yml
+      environment: dev
+      mixin: .nais/storybook.dev.yml

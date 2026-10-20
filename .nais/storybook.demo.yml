@@ -1,0 +1,6 @@
+metadata:
+  name: gnist-storybook-demo
+spec:
+  ingresses:
+    - https://gnist-demo.dev.arbeidstilsynet.no
+  ttl: 24h
