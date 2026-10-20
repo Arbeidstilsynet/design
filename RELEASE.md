@@ -33,4 +33,25 @@ We currently use [Changesets](https://github.com/changesets/changesets) and [Cha
 
 - Verify that new version is available in [NPM](https://www.npmjs.com/org/arbeidstilsynet) and on [GitHub releases](https://github.com/Arbeidstilsynet/design/releases)
 
+## Storybook deployment configuration
+
+All Storybook deploys use the reusable
+[Nais workflow](./.github/workflows/deploy-storybook-nais.yml), which installs
+the Nais CLI with `nais/setup` and deploys with `nais apply --wait`. The newly
+built container image is supplied through `--set spec.image`.
+
+The shared [application manifest](./.nais/storybook.yml) is merged with a
+plain YAML mixin selected by the caller:
+
+- [Development](./.nais/storybook.dev.yml) and
+  [production](./.nais/storybook.prod.yml) set the ingress for their Nais
+  environment.
+- [Demo](./.nais/storybook.demo.yml) overrides the app name and ingress and
+  sets the 24-hour TTL. It deploys to the `dev` environment, so its mixin is
+  passed explicitly rather than selected by environment name.
+
+Mixins replace the previous Handlebars variables files. Lists are appended
+during merging, so environment-specific ingresses belong only in the mixins.
+CI validates the merged manifest for each mixin.
+
 ![Release process diagram](./docs/diagrams/release.svg)

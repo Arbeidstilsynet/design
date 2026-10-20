@@ -84,5 +84,5 @@ jobs:
       id-token: write
     uses: ./.github/workflows/deploy-storybook-nais.yml
     with:
-      cluster: prod
-      vars: .nais/vars-prod.yml
+      environment: prod
+      mixin: .nais/storybook.prod.yml

@@ -80,14 +80,12 @@ jobs:
         working-directory: .nais
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
-      - name: Install nais-cli
-        run: |
-          NAIS_GPG_KEY="/etc/apt/keyrings/nav_nais_gar.asc"
-          curl -sfSL "https://europe-north1-apt.pkg.dev/doc/repo-signing-key.gpg" | sudo dd of="$NAIS_GPG_KEY"
-          echo "deb [arch=amd64 signed-by=$NAIS_GPG_KEY] https://europe-north1-apt.pkg.dev/projects/nais-io nais-ppa main" | sudo tee /etc/apt/sources.list.d/nav_nais_gar.list
-          sudo apt update
-          sudo apt install nais
+      - uses: nais/setup@fb8692f65df9c904e2cdac5d395630ac876abdcf # v1.0.3
       - run: nais --version
-      - run: nais validate --vars-file vars-dev.yml storybook.yml
-      - run: nais validate --vars-file vars-prod.yml storybook.yml
-      - run: nais validate --vars-file vars-demo.yml storybook.yml
+      - name: Validate manifests with environment mixins
+        run: |
+          for mixin in storybook.dev.yml storybook.prod.yml storybook.demo.yml; do
+            yq eval-all '. as $item ireduce ({}; . *+ $item)' \
+              storybook.yml "$mixin" > "$RUNNER_TEMP/storybook.yml"
+            nais validate "$RUNNER_TEMP/storybook.yml"
+          done
