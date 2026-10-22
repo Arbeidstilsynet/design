@@ -69,8 +69,9 @@ Accepted release-branch baselines follow the pull request into `main`, so
 
 ### Maintaining copied upstream stories
 
-The Designsystemet stories are maintained copies, not an automatic mirror.
-When updating `@digdir/designsystemet`, compare relevant upstream story changes
-and adapt the local stories and `play` functions. Preserve the visual selection
+The Designsystemet docs and stories are adapted copies of designsystemet.no,
+not an automatic mirror. Bring them up to date with the `sync-designsystemet`
+skill (`.agents/skills/sync-designsystemet/SKILL.md`), which also carries the
+`play` functions and Gnist matrices forward. Preserve the visual selection
 rules above: every visual upstream component needs a combined snapshot, and
 interactive snapshots must finish in a stable meaningful state.

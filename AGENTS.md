@@ -62,6 +62,8 @@ Components from `@digdir/designsystemet-react` are re-exported with **named expo
 
 Storybook generates a docgen wrapper per component in this list so autodocs show real prop types (see `docs/adr/adr-0004-storybook-docgen-wrappers.md`). After adding a component here, run `pnpm --filter @arbeidstilsynet/storybook gen:docgen-wrappers`; a vitest test fails if the wrappers are stale.
 
+Their Storybook docs and stories are adapted copies of designsystemet.no; change them with the `sync-designsystemet` skill (`.agents/skills/sync-designsystemet/SKILL.md`).
+
 ### Props pattern
 
 Custom components extend `DefaultProps<TRef>` which provides `ref`, `data-size`, and `data-color` props consistent with Designsystemet conventions.
@@ -107,8 +109,9 @@ Note: Figma designs may refer to colors as "main" — this corresponds to the "a
 - Active modes are light and dark at desktop width. Mobile modes are defined
   but intentionally inactive.
 - Keep a full build at or below the documented 200-snapshot operating budget.
-- Maintain copied upstream stories and their plays when Designsystemet is
-  updated. See `apps/storybook/README.md` for the complete policy.
+- Upstream stories, their plays and Chromatic files are kept current with the
+  `sync-designsystemet` skill. See `apps/storybook/README.md` for the complete
+  policy.
 - Real Chromatic builds run only for the Changesets release PR after approval
   of the `chromatic-release` environment, or by protected manual dispatch.
   Ordinary same-repository PRs use Chromatic's skip mode.
