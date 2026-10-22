@@ -1,0 +1,50 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/paragraph/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/paragraph.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as ParagraphStories from "./Paragraph.stories";
+
+<Meta of={ParagraphStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={ParagraphStories.Preview} sourceState="shown" />
+
+## Usage
+
+Use the class name `ds-paragraph` on `<p>`.
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## Example
+
+### Sizes
+
+<Canvas of={ParagraphStories.Sizes} />
+
+## React
+
+```tsx
+import { Paragraph } from "@arbeidstilsynet/design-react";
+
+<Paragraph>This is a paragraph.</Paragraph>;
+```
+
+<Canvas of={ParagraphStories.Preview} />
+
+<Controls of={ParagraphStories.Preview} sort="requiredFirst" />

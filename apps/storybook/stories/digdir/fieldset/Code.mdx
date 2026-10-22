@@ -1,0 +1,89 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/fieldset/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/fieldset.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as FieldsetStories from "./Fieldset.stories";
+
+<Meta of={FieldsetStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+It is common to get confused between fieldset and field.
+A good rule of thumb is that **fieldset is a set of fields**
+
+<Canvas of={FieldsetStories.Preview} sourceState="shown" />
+
+## Usage
+
+Use `ds-fieldset` on the `<fieldset>` element, and place `<legend>` and `<ds-field>` elements inside.
+
+```html
+<fieldset class="ds-fieldset">
+  <legend class="ds-label">Do you accept the terms?</legend>
+  <!-- your fields -->
+</fieldset>
+```
+
+## Examples
+
+### With checkbox or radio
+
+Build the group with [checkbox](?path=/docs/designsystemet-no-checkbox--code) or [radio](?path=/docs/designsystemet-no-radio--code) as children of `<fieldset>`. This also applies when the group has only one element.
+
+<Canvas of={FieldsetStories.WithCheckbox} />
+
+### With validation message
+
+When a [validation message](?path=/docs/designsystemet-no-typography-validationmessage--code) with `data-field="validation"` is a child of `<fieldset>`, the containing `<ds-field>` elements will
+automatically be updated to reflect the validation state.
+
+<Canvas of={FieldsetStories.WithValidation} />
+
+### Multiple field types
+
+A fieldset can also group other fields, for example [field](?path=/docs/designsystemet-no-field--code) with [input](?path=/docs/designsystemet-no-input--code) and [select](?path=/docs/designsystemet-no-select--code).
+
+<Canvas of={FieldsetStories.WithFields} />
+
+### Readonly
+
+Fields with the `readonly` attribute are included in the tab order. Users can copy the content but not edit it. Information is included when the form is submitted.
+
+`Readonly` fields can be confusing for some users. Not everyone will understand why they cannot change the content of the field. We therefore recommend avoiding `readonly` as much as possible.
+
+<Canvas of={FieldsetStories.ReadOnly} />
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors).
+The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## React
+
+```tsx
+import { Fieldset, Radio } from "@arbeidstilsynet/design-react";
+
+<Fieldset>
+  <Fieldset.Legend>Question</Fieldset.Legend>
+  <Fieldset.Description>Description</Fieldset.Description>
+  <Radio label="Option 1" name="radio" value="1" />
+  <Radio label="Option 2" name="radio" value="2" />
+</Fieldset>;
+```
+
+<Canvas of={FieldsetStories.Preview} />
+
+<Controls of={FieldsetStories.Preview} sort="requiredFirst" />

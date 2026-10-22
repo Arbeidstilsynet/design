@@ -1,0 +1,64 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components-docs/en/utilities/roving-focus.mdx */}
+
+import { Meta } from "@storybook/addon-docs/blocks";
+import { Alert } from "@arbeidstilsynet/design-react";
+
+<Meta title="designsystemet.no utilities/RovingFocus" />
+
+# RovingFocus
+
+<Alert data-color="warning" className="sb-unstyled">
+  This component is deprecated, please use
+  [focusgroup](https://designsystemet.no/en/components/utilities/focusgroup)
+  instead.
+</Alert>
+
+To create a list of items that will use arrow keys to move focus.
+
+## Usage
+
+You must always have `RovingFocusRoot` around `RovingFocusItem` for it to work.
+The element of `RovingFocusItem` must be able to be focused.
+
+```tsx
+import {
+  RovingFocusRoot,
+  RovingFocusItem,
+} from "@arbeidstilsynet/design-react";
+
+<RovingFocusRoot>
+  <RovingFocusItem>Item 1</RovingFocusItem>
+  <RovingFocusItem>Item 2</RovingFocusItem>
+  <RovingFocusItem>Item 3</RovingFocusItem>
+</RovingFocusRoot>;
+```
+
+### Using custom items
+
+If you need to use custom items, you can use `asChild`, both on `RovingFocusRoot` and `RovingFocusItem`.
+
+```tsx
+<RovingFocusRoot asChild>
+  <MyComponent>
+    <RovingFocusItem asChild>
+      <MyButton>Item 1</MyButton>
+    </RovingFocusItem>
+    <RovingFocusItem asChild>
+      <MyButton>Item 2</MyButton>
+    </RovingFocusItem>
+    <RovingFocusItem asChild>
+      <MyButton>Item 3</MyButton>
+    </RovingFocusItem>
+  </MyComponent>
+</RovingFocusRoot>
+```
+
+## Props
+
+### `RovingFocusRoot`
+
+Must be around `RovingFocusItem`.
+
+### `RovingFocusItem`
+
+Must be inside `RovingFocusRoot`, but doesn't have to be a direct child.

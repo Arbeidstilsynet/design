@@ -1,0 +1,46 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/skeleton/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/skeleton.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as SkeletonStories from "./Skeleton.stories";
+
+<Meta of={SkeletonStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={SkeletonStories.Preview} sourceState="shown" />
+
+## Usage
+
+Add the class name `ds-skeleton` to a `<span>` with `aria-hidden="true"`.
+Change the variant with `data-variant`, and use `data-text` for the text variant.
+You can set the size with the `style` attribute or CSS.
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## React
+
+```tsx
+import { Skeleton } from "@arbeidstilsynet/design-react";
+
+<Skeleton width={200} height={100} />;
+```
+
+<Canvas of={SkeletonStories.Preview} />
+
+<Controls of={SkeletonStories.Preview} sort="requiredFirst" />

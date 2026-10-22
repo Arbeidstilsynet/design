@@ -1,0 +1,39 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/heading/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import * as HeadingStories from "./Heading.stories";
+
+<Meta of={HeadingStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={HeadingStories.Preview} sourceState="shown" />
+
+## Usage
+
+Use the class name `ds-heading` to style an HTML `<h1>`-`<h6>` element.
+
+## Example
+
+### Sizes
+
+<Canvas of={HeadingStories.Sizes} />
+
+## React
+
+```tsx
+import { Heading } from "@arbeidstilsynet/design-react";
+
+<Heading>Title text</Heading>;
+```
+
+<Canvas of={HeadingStories.Preview} />
+
+<Controls of={HeadingStories.Preview} sort="requiredFirst" />

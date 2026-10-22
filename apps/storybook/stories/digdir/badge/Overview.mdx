@@ -1,0 +1,56 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/badge/en/overview.mdx */}
+
+import { Canvas, Meta, Subtitle, Title } from "@storybook/addon-docs/blocks";
+import * as BadgeStories from "./Badge.stories";
+
+<Meta of={BadgeStories} name="Overview" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={BadgeStories.Preview} />
+
+**Use badge when**
+
+- displaying numbers that show the count of new messages, notifications or tasks
+- indicating status using a circular marker, such as showing whether a person is busy, away or active
+
+**Avoid badge when**
+
+- text is needed, use [tag](?path=/docs/designsystemet-no-tag--overview) instead
+- interactive actions are required, use [chip](?path=/docs/designsystemet-no-chip--overview) or [button](?path=/docs/designsystemet-no-button--overview) instead
+
+## Examples
+
+### Colours and variants
+
+All colours in your theme can be used with badge.
+The component comes in two variants: `base` and `tinted`.
+
+<Canvas of={BadgeStories.Variants} />
+
+### Next to text
+
+Badge can be placed next to other text or components.
+
+<Canvas of={BadgeStories.InTabs} />
+
+### Floating
+
+Badge can be placed floating above other elements.
+
+<Canvas of={BadgeStories.Floating} />
+
+### Without text
+
+Badge can be used without text inside it, but it must then have accompanying text next to it. Information should not be communicated through colour or shape alone.<sup>1</sup>
+
+<Canvas of={BadgeStories.Bullet} />
+
+## Guidelines
+
+Use badge to draw attention to statuses, notifications or numbers.
+
+## Text
+
+This component is not intended for text. If you need to display words or short phrases, use [`Tag`](?path=/docs/designsystemet-no-tag--overview) instead.

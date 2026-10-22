@@ -1,0 +1,40 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/spinner/en/overview.mdx */}
+
+import { Canvas, Meta, Subtitle, Title } from "@storybook/addon-docs/blocks";
+import * as SpinnerStories from "./Spinner.stories";
+
+<Meta of={SpinnerStories} name="Overview" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={SpinnerStories.Preview} />
+
+**Use spinner when**
+
+- you need to indicate that the system is working on a task the user must wait for
+- a local action is being performed, such as submitting a form or updating a table
+- loading will take more than one second
+
+**Avoid spinner when**
+
+- only specific parts of the page are loading — consider using [skeleton](?path=/docs/designsystemet-no-skeleton--overview) instead
+- loading takes less than one second
+
+## Example
+
+### Sizes
+
+You can adjust the size of the spinner depending on where it is placed.
+
+<Canvas of={SpinnerStories.Sizes} />
+
+## Guidelines
+
+The purpose of spinner is to reassure the user that the system is working and has not stopped. It can be used in a button, a field, or another defined area where the user is waiting for something to happen, such as saving or updating content.
+
+## Text
+
+In some cases, it may improve the user experience to show explanatory text alongside the spinner, describing why the user has to wait. A clear explanation helps reduce uncertainty and confusion.
+
+<Canvas of={SpinnerStories.Text} />

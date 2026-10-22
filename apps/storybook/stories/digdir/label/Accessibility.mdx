@@ -1,0 +1,21 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/label/en/accessibility.mdx */}
+
+import { Meta, Subtitle, Title } from "@storybook/addon-docs/blocks";
+import { Alert } from "@arbeidstilsynet/design-react";
+import * as LabelStories from "./Label.stories";
+
+<Meta of={LabelStories} name="Accessibility" />
+
+<Title />
+<Subtitle />
+
+<Alert data-color="info" className="sb-unstyled">
+  We are working to improve the accessibility documentation for this component.
+  If you have questions or see something that should be prioritised, please
+  contact us on
+  [Github](https://github.com/digdir/designsystemet/issues/new?template=1bug_report.yml)
+  or [Slack](https://designsystemet.no/slack).
+</Alert>
+
+A `<label>` must always be associated with a form element to ensure good accessibility.
+This is done by using the `for` attribute (`htmlFor` in React), which points to the `id` attribute of the corresponding form element.

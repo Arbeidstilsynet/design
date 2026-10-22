@@ -1,0 +1,81 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/input/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/input.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as InputStories from "./Input.stories";
+
+<Meta of={InputStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={InputStories.Preview} sourceState="shown" />
+
+## Usage
+
+The class `ds-input` is used on most form controls, such as `<input>`, `<textarea>`, and `<select>`.
+
+```html
+<input class="ds-input" />
+<textarea class="ds-input" />
+<select class="ds-input" />
+```
+
+For a valid form element, we recommend using `<ds-field>` together with a `<label>`.
+
+```html
+<ds-field class="ds-field">
+  <label class="ds-label">Checkbox</label>
+  <input class="ds-input" />
+</ds-field>
+```
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors).
+The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## Validation and error state
+
+By design, the Input does not automatically receive error styling based on the browser's built-in `:invalid` state.
+To give you control over when the error state is displayed, we recommend instead showing and hiding an associated [Validation message](?path=/docs/designsystemet-no-typography-validationmessage--overview) with the `hidden` attribute.
+When the [Validation message](?path=/docs/designsystemet-no-typography-validationmessage--overview) and the Input are placed within the same [Field](?path=/docs/designsystemet-no-field--overview), the Input automatically receives `aria-invalid="true"` when necessary.
+
+## Examples
+
+### ReadOnly
+
+<Canvas of={InputStories.ReadOnly} />
+
+## React
+
+```tsx
+import { Input, Label } from "@arbeidstilsynet/design-react";
+
+<>
+  <Label htmlFor="my-input">Label</Label>
+  <Input id="my-input" />
+</>;
+```
+
+<Canvas of={InputStories.Preview} />
+
+<Controls of={InputStories.Preview} sort="requiredFirst" />
+
+### Type values
+
+`Input` exposes only supported `type` values. You can see the valid type values in the dropdown below.
+
+<Canvas of={InputStories.InputType} />

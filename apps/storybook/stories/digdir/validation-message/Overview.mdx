@@ -1,0 +1,27 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/validation-message/en/overview.mdx */}
+
+import { Canvas, Meta, Subtitle, Title } from "@storybook/addon-docs/blocks";
+import * as ValidationMessageStories from "./ValidationMessage.stories";
+
+<Meta of={ValidationMessageStories} name="Overview" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={ValidationMessageStories.Preview} />
+
+Validation message is a typography component used to display short, clear messages that help users understand the status of a form field. Use it to show errors, warnings, success messages, or information. Validation messages are designed to be easy to notice while still fitting naturally into the form layout.
+
+## Example
+
+### All colours
+
+<Canvas of={ValidationMessageStories.AllColors} />
+
+## Guidelines
+
+Use validation message to provide immediate, context-specific feedback. Messages should be placed close to the field they relate to, so that both visual users and users of assistive technologies can easily understand the connection. See the article on [user-triggered error messages](https://designsystemet.no/en/patterns/errors) for more guidance on good practice.
+
+## Text
+
+Validation messages should be short, specific, and help the user move forward. Learn more about how to write [good error messages](https://designsystemet.no/en/patterns/errors#language).

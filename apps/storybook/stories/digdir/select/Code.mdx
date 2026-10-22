@@ -1,0 +1,71 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/select/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/input.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as SelectStories from "./Select.stories";
+
+<Meta of={SelectStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={SelectStories.Preview} sourceState="shown" />
+
+## Usage
+
+Append the class name `ds-input` to `<select>`.
+
+If you want `readonly` on a select, you must stop `onKeyDown` and `onMouseDown` yourself to prevent changing the state.
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit from the closest parent where these are set.
+
+The `ds-input` class can also be used to style [input](?path=/docs/designsystemet-no-input--overview) and [textarea](?path=/docs/designsystemet-no-textarea--overview).
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## Example
+
+### Grouping
+
+You can use `<optgroup>` to group options into categories, making long lists more manageable and easier to navigate.
+
+<Canvas of={SelectStories.WithOptgroup} />
+
+### ReadOnly
+
+`<select>` is always `:read-only`, and does not support this in the same way as input types you can type into.
+
+If you set `aria-readonly` on a `<select>`, we ensure that it behaves as if it has read-only access, by preventing `onKeyDown` and `onMouseDown`.
+
+The user will still be able to focus on the element.
+
+<Canvas of={SelectStories.ReadOnly} />
+
+## React
+
+```tsx
+import { Select, Label } from "@arbeidstilsynet/design-react";
+
+<>
+  <Label>Select a mountain</Label>
+  <Select>
+    <Select.Option value="everest">Mount Everest</Select.Option>
+  </Select>
+</>;
+```
+
+<Canvas of={SelectStories.Preview} />
+
+<Controls of={SelectStories.Preview} sort="requiredFirst" />

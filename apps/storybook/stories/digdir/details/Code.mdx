@@ -1,0 +1,83 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/details/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/details.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as DetailsStories from "./Details.stories";
+
+<Meta of={DetailsStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={DetailsStories.Preview} sourceState="shown" />
+
+## Usage
+
+Details is a native `<details>` element.
+We polyfill a bug in Firefox when used with Android Talkback screen reader to announce state and role correctly.
+
+```html
+<!-- without frame -->
+<details class="ds-details">
+  <summary>Details heading text</summary>
+  <div>Details content</div>
+</details>
+
+<!-- with frame -->
+<div class="ds-card">
+  <details class="ds-details">
+    <summary>Details heading text</summary>
+    <div>Details content</div>
+  </details>
+</div>
+```
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors).
+The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## React
+
+```tsx
+/* Without frame */
+import { Details } from "@arbeidstilsynet/design-react";
+
+<Details>
+  <Details.Summary>Details heading text</Details.Summary>
+  <Details.Content>Details content</Details.Content>
+</Details>;
+
+/* With frame */
+
+import { Details, Card } from "@arbeidstilsynet/design-react";
+
+<Card>
+  <Details>
+    <Details.Summary>Details heading text</Details.Summary>
+    <Details.Content>Details content</Details.Content>
+  </Details>
+</Card>;
+```
+
+### Controlled example
+
+Details keeps track of whether it is open or closed, but this can also be controlled externally.
+
+<Canvas of={DetailsStories.Controlled} />
+
+<Canvas of={DetailsStories.Preview} />
+
+<Controls of={DetailsStories.Preview} sort="requiredFirst" />

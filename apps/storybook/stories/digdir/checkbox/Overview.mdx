@@ -1,0 +1,104 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/checkbox/en/overview.mdx */}
+
+import { Canvas, Meta, Subtitle, Title } from "@storybook/addon-docs/blocks";
+import { DoDont } from "../../../../../packages/react/src/docs-components/DoDont";
+import * as CheckboxStories from "./Checkbox.stories";
+import * as DoDontStories from "./Checkbox.dodont.stories";
+
+<Meta of={CheckboxStories} name="Overview" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={CheckboxStories.Preview} />
+
+**Use checkbox when**
+
+- the user should be able to select one or more options
+- the user needs to confirm something, for example that they have read and understood information
+
+**Avoid checkbox when**
+
+- the user should choose only one of several options; use a [radio](?path=/docs/designsystemet-no-radio--overview) instead
+- the user has many options to choose from; use a [select](?path=/docs/designsystemet-no-select--overview) or [suggestion](?path=/docs/designsystemet-no-suggestion--overview) instead
+- the user should turn a feature or setting on or off; use a [switch](?path=/docs/designsystemet-no-switch--overview) instead
+
+## Example
+
+### Confirmation with checkbox
+
+If the user must confirm something rather than choose between alternatives, a single checkbox can stand alone. For example, when the user needs to confirm that something is correct or give consent to terms and conditions.
+
+A checkbox for consent must always require an active action, and you should never preselect the box. This ensures that the consent is given voluntarily.
+
+<Canvas of={CheckboxStories.OneOption} />
+
+### Grouping
+
+Most of the time, checkbox is used in groups where the user can select more than one option.
+
+<Canvas of={CheckboxStories.Group} />
+
+### With error
+
+When checkboxes are used in groups, the error message should be shown collectively for the entire group.
+
+<Canvas of={CheckboxStories.WithError} />
+
+### Outline
+
+In some cases, it may be appropriate to emphasise options by using a larger click area around the checkbox.
+
+This can for example be appropriate when:
+
+- the option represents a clear decision point that should stand out in the interface
+- related information (such as descriptions and additional details) should be perceived as a single, coherent interaction
+- standard checkboxes would result in a visually weak layout
+
+<Canvas of={CheckboxStories.Outline} />
+
+### Read-only checkbox
+
+Checkbox supports the `readonly` attribute on the `input` element to make the field non-editable and gives a visual indication that distinguishes it from editable fields. Although they cannot be changed, fields with the `readonly` attribute are still part of the tab order, and the information is included when the form is submitted.
+
+We avoid using `readonly` whenever possible because such fields can be confusing. Not all users will understand why they cannot change the content.
+
+<Canvas of={CheckboxStories.ReadOnly} />
+
+### Disabled
+
+We should avoid disabling (`disabled`) checkbox, because it can be difficult to perceive.
+Some users will not understand what the option means or why it is not clickable. If a checkbox or group of checkbox options is not relevant, it is usually better to remove them rather than disable them. If possible, give users an explanation of why options are unavailable.
+
+Nav has a helpful explanation of [why disabled states are problematic (nav.no)](https://aksel.nav.no/god-praksis/artikler/deaktiverte-tilstander) and which alternatives exist.
+
+<Canvas of={CheckboxStories.Disabled} />
+
+## Guidelines
+
+### Sort the options
+
+Sort the answer options alphabetically unless there is a good reason to do otherwise. Be careful about placing the most common answer option first if the question is personal or value-based, such as sexual orientation or party affiliation.
+
+### Placement
+
+Preferably place the response options vertically. This makes it easier to scan the list and read the options. For users who need to enlarge the text, horizontal lists can be challenging. If you need horizontal placement, use [chip with checkbox](?path=/docs/designsystemet-no-chip--overview#chip-as-checkbox).
+
+<div className="dodont-row">
+  <DoDont of={DoDontStories.DoPlacement} variant="do">
+    Place checkbox vertically for improved readability.
+  </DoDont>
+  <DoDont of={DoDontStories.DontPlacement} variant="dont">
+    Avoid placing checkbox horizontally, as it reduces readability.
+  </DoDont>
+</div>
+
+## Text
+
+- The question should connect well with the response options. Think of the text as a conversation, and use “you” in the question and “I” in the options.
+
+- Make it clear that users can choose multiple options, and specify it if they can only choose a limited number of options.
+
+- Response options should always start with a capital letter.
+
+Read more about how to write [labels, questions and answer options in forms](https://designsystemet.no/en/best-practices/content-work/questions).

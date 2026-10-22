@@ -1,0 +1,57 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/list/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/list.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as ListStories from "./List.stories";
+
+<Meta of={ListStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={ListStories.Preview} sourceState="shown" />
+
+## Usage
+
+You use either `<ul>` or `<ol>` with the class name `ds-list`.
+`<li>` is used for each list item, and does not need a class name.
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes). The component will inherit the closest parent where this is set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## Example
+
+### Unordered list
+
+<Canvas of={ListStories.Unordered} />
+
+### Ordered list
+
+<Canvas of={ListStories.Ordered} />
+
+## React
+
+```tsx
+import { List } from "@arbeidstilsynet/design-react";
+
+<List.Unordered>
+  <List.Item>Item</List.Item>
+</List.Unordered>;
+```
+
+<Canvas of={ListStories.Preview} />
+
+<Controls of={ListStories.Preview} sort="requiredFirst" />

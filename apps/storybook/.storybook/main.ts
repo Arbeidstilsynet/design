@@ -1,6 +1,7 @@
 import { defineMain } from "@storybook/react-vite/node";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import remarkGfm from "remark-gfm";
 
 const storybookConfigFile = fileURLToPath(import.meta.url);
 const storybookConfigDir = dirname(storybookConfigFile);
@@ -20,7 +21,13 @@ export default defineMain({
   ],
   staticDirs: ["../stories/assets"],
   addons: [
-    "@storybook/addon-docs",
+    {
+      name: "@storybook/addon-docs",
+      options: {
+        // Upstream designsystemet.no MDX uses GitHub-flavoured tables.
+        mdxPluginOptions: { mdxCompileOptions: { remarkPlugins: [remarkGfm] } },
+      },
+    },
     "@storybook/addon-a11y",
     "@storybook/addon-vitest",
     "@chromatic-com/storybook",

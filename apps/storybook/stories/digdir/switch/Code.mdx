@@ -1,0 +1,86 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/switch/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/input.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as SwitchStories from "./Switch.stories";
+
+<Meta of={SwitchStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={SwitchStories.Preview} sourceState="shown" />
+
+## Usage
+
+Use the classname `ds-input` on `<input>` along with `type="checkbox"` and `role="switch"`.
+
+```html
+<input class="ds-input" role="switch" type="checkbox" />
+```
+
+For a valid form element, we recommend using `<ds-field>` together with a `<label>`.
+
+```html
+<ds-field>
+  <label class="ds-label">Switch</label>
+  <input class="ds-input" role="switch" type="checkbox" />
+</ds-field>
+```
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors).
+The component will inherit from the closest parent where these are set.
+
+Switch is `ds-input` with `type="checkbox"`, so variables and data attributes that apply to [input](?path=/docs/designsystemet-no-input--overview) also apply to switch.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+### Right-aligned
+
+To right-align the switch, add `data-position="end"` to `<ds-field>`.
+
+<Canvas of={SwitchStories.RightAligned} />
+
+### Outline
+
+`data-variant="outline"` adds extra padding and a border around the selection to create a larger clickable area.
+
+<Canvas of={SwitchStories.Outline} />
+
+### ReadOnly
+
+`type="checkbox"` is always `:read-only` and does not support this in the same way as input types you can type into.
+
+If you set `readonly` on a switch, we ensure that it behaves as if it has read-only access by stopping `onClick` and `onChange`.
+
+The user will still be able to focus on the element.
+
+<Canvas of={SwitchStories.ReadOnly} />
+
+## React
+
+In React, building a switch is easier because we have a ready-made component that handles most of the logic and state management for us.
+
+`Switch` is a composite component that uses [field](?path=/docs/designsystemet-no-field--overview), [label](?path=/docs/designsystemet-no-typography-label--overview), and [input](?path=/docs/designsystemet-no-input--overview) to create a switch.
+
+```tsx
+import { Switch } from "@arbeidstilsynet/design-react";
+
+<Switch label="Dark mode" value="dark" />;
+```
+
+<Canvas of={SwitchStories.Preview} />
+
+<Controls of={SwitchStories.Preview} sort="requiredFirst" />

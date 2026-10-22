@@ -1,0 +1,116 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/popover/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/popover.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as PopoverStories from "./Popover.stories";
+
+<Meta of={PopoverStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={PopoverStories.Preview} sourceState="shown" />
+
+## Use
+
+You can use Popover in plain HTML by using the `popover` attribute on an element with the class `ds-popover`, and connecting it to a trigger with `popovertarget="ID-OF-POPOVER-HERE"`.
+Designsystemet automatically adds [popover-polyfill (npmjs.com)](https://www.npmjs.com/package/@oddbird/popover-polyfill) to support the native [Popover API (mozilla.org)](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using) in older browsers if needed.
+
+You can control positioning with attributes on the popover itself:
+
+| attribute          | type                                                                                                                                                                           | default     |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- |
+| data-placement     | `'top' \| 'top-start' \| 'top-end' \| 'right' \| 'right-start' \| 'right-end' \| 'bottom' \| 'bottom-start' \| 'bottom-end' \| 'left' \| 'left-start' \| 'left-end' \| 'none'` | `'top'`     |
+| data-overscroll    | `'contain' \| undefined`                                                                                                                                                       | `undefined` |
+| data-autoplacement | `boolean`                                                                                                                                                                      | `true`      |
+
+**If you don't use the class `ds-popover` you need to add the attribute `data-placement` to the popover element.**
+
+```html
+<button popovertarget="my-popover">Trigger</button>
+<div id="my-popover" popover class="ds-popover">Content</div>
+```
+
+### Polyfill
+
+Popover uses [popover (mozilla.org)](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover).
+We automatically add [popover-polyfill (npmjs.com)](https://www.npmjs.com/package/@oddbird/popover-polyfill) to support older browsers if needed.
+
+## Examples
+
+### Without TriggerContext
+
+You can also use Popover without TriggerContext by using `popovertarget`:
+
+<Canvas of={PopoverStories.WithoutContext} />
+
+### Inline popover
+
+If you want the trigger inline in text, you still have to use `<button>`, but you can add `data-popover="inline"` to get the correct styling.
+
+```html
+<p>
+  We use
+  <button popovertarget="my-popover" data-popover="inline">
+    design tokens
+  </button>
+  to ensure that we have a consistent design.
+</p>
+<div class="ds-popover" id="my-popover" popover="manual">
+  <p>
+    Design tokens are a collection of variables that define the design in a
+    design system.
+  </p>
+</div>
+```
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors).
+The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## React
+
+```tsx
+import { Popover } from '@arbeidstilsynet/design-react';
+
+// with context
+<Popover.TriggerContext>
+  <Popover.Trigger>Trigger</Popover.Trigger>
+  <Popover>Content</Popover>
+</Popover.TriggerContext>
+
+// without context with own trigger
+<Button popovertarget="my-popover">Trigger</Button>
+<Popover id="my-popover">Content</Popover>
+```
+
+### React and `popovertarget`
+
+When you use popover without `TriggerContext`, you connect the trigger and popover yourself.
+In this case, `popovertarget` is used in lowercase, so that all versions of React correctly render the attribute.
+When you use `@arbeidstilsynet/design-react` we extend `@types/react-dom` to accept this.
+
+### Controlled example
+
+You can control when the popover is opened or closed.
+
+Note that we do not use `onClick` on the trigger, the dropdown handles this internally and sends to `onOpen` and `onClose`.
+
+<Canvas of={PopoverStories.Controlled} />
+
+<Canvas of={PopoverStories.Preview} />
+
+<Controls of={PopoverStories.Preview} sort="requiredFirst" />

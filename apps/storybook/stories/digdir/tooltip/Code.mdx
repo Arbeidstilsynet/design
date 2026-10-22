@@ -1,0 +1,98 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/tooltip/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/tooltip.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as TooltipStories from "./Tooltip.stories";
+
+<Meta of={TooltipStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={TooltipStories.Preview} sourceState="shown" />
+
+## Usage
+
+Use the `@digdir/designsystemet-web` package to implement `Tooltip`.
+You only need to add the `data-tooltip` attribute to the element that will trigger the tooltip.
+For accessibility, the element will automatically receive either `aria-label` or `aria-description`, depending on whether it contains text content.
+
+```html
+<button data-placement="left" data-tooltip="left" class="ds-button">
+  left
+</button>
+```
+
+## Custom element
+
+Use the `setTooltipElement` function to set a custom tooltip element.
+The element will auto automatically be added do `document.body` if it is not already in the document.
+
+```js
+import { setTooltipElement } from @digdir/designsystemet-web
+
+const myTooltip = document.createElement('div');
+myTooltip.className = 'ds-tooltip my-custom-tooltip';
+setTooltipElement(myTooltip);
+```
+
+## Text from another HTML element
+
+You can use the `data-tooltip` attribute with a CSS ID selector to point to another element that contains tooltip text.
+
+```html
+<button data-tooltip="#tooltip-content" class="ds-button">Button</button>
+<div id="tooltip-content" class="ds-sr-only">This is the tooltip content.</div>
+```
+
+## Tooltip inside Shadow DOM / Web component
+
+When using `data-tooltip` inside a Shadow DOM, you must manually provide an accessible name or description:
+
+- Use `aria-label` when the element contains visuals only (for example, an icon button).
+- Use `aria-description` when the element already contains visible text and the tooltip provides additional information.
+
+This is required because the tooltip `MutationObserver` cannot detect or initialize tooltips inside a Shadow DOM.
+
+Alternatively, you can manually initialize tooltips inside your Shadow DOM by using the `initTooltips` function:
+
+```js
+import { initTooltips } from "@digdir/designsystemet-web";
+
+class MyComponent extends HTMLElement {
+  connectedCallback() {
+    setTimeout(initTooltips, 0, this.shadowRoot); // Using setTimeout to let children mount before initializing
+  }
+}
+```
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors).
+The component will inherit from the nearest parent with these set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## React
+
+```tsx
+import { Tooltip, Button } from "@arbeidstilsynet/design-react";
+
+<Tooltip content="Help text">
+  <Button>Hover me</Button>
+</Tooltip>;
+```
+
+<Canvas of={TooltipStories.Preview} />
+
+<Controls of={TooltipStories.Preview} sort="requiredFirst" />
