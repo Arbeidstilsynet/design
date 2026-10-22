@@ -3,30 +3,43 @@
 
 import cl from "clsx/lite";
 import { toast, ToastContainer } from "react-toastify";
-import { Alert, Heading, Table, Tooltip } from "..";
+import { Alert, Table, Tooltip } from "..";
 // @ts-ignore - Exception for CSS modules - Ordinary, exported CSS files are defined in the CSS project.
 import classes from "./CssVariables.module.css";
 
 type CssVariablesProps = {
   css: string;
+  /** Only variables starting with this prefix are listed, e.g. `--dsc-` for Designsystemet components. */
+  prefix?: string;
+  /** Set to `false` when a heading right above already names the table. */
+  caption?: string | false;
 } & React.HTMLAttributes<HTMLTableElement>;
 
-export function CssVariables({ css, className, ...rest }: CssVariablesProps) {
-  const cssVariables = getCssVariables(css);
+export function CssVariables({
+  css,
+  prefix = "--at-",
+  caption = "CSS variables",
+  className,
+  ...rest
+}: CssVariablesProps) {
+  const cssVariables = getCssVariables(css, prefix);
 
   return (
     <>
-      <Heading data-size="sm" className="sb-unstyled">
-        CSS-variables
-      </Heading>
       <Table
         zebra
         className={cl("sb-unstyled", className)}
         style={{
           tableLayout: "fixed",
+          marginBlockEnd: "var(--ds-size-8)",
         }}
         {...rest}
       >
+        {caption && (
+          <caption style={{ marginBottom: "var(--ds-size-4)" }}>
+            {caption}
+          </caption>
+        )}
         <Table.Head>
           <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
@@ -127,7 +140,7 @@ function CssVariableValue({ value }: { value: string }) {
 }
 
 /* get variables and its value from css file */
-function getCssVariables(css: string) {
+function getCssVariables(css: string, prefix: string) {
   const res: Record<string, string> = {};
 
   // temporarily remove inline strings, as they may contain ; and } characters
@@ -139,9 +152,12 @@ function getCssVariables(css: string) {
     (prev, curr, idx) => prev.replace(curr, `<placeholder-${idx}>`),
     css,
   );
-  // get all --at-* property declarations
+  // get all property declarations starting with the prefix
+  const escapedPrefix = prefix.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const cssVars = Array.from(
-    cssWithRemovedStrings.matchAll(/(?<!var\()(--at-[^;}]+)[;}]/g),
+    cssWithRemovedStrings.matchAll(
+      new RegExp(`(?<!var\\()(${escapedPrefix}[^;}]+)[;}]`, "g"),
+    ),
   ).map((matches) => matches[1]);
 
   /* Iterate over the CSS properties */

@@ -1,0 +1,94 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/button/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/button.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as ButtonStories from "./Button.stories";
+
+<Meta of={ButtonStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={ButtonStories.Preview} sourceState="shown" />
+
+## Usage
+
+The class name `ds-button` is set on `<button>`.
+
+There are three data attributes you can use for customization:
+
+- `data-icon` - add if the button only has an icon.
+- `data-variant` - sets the variant of the button (`primary`, `secondary`, `tertiary`).
+- `data-fullwidth` - add if the button should be full width.
+
+## CSS variables and data attributes
+
+Sizes are controlled with [`data-size`](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [`data-color`](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit the closest parent where these are set.
+
+<CssAttributes css={css} />
+
+<CssVariables css={css} prefix="--dsc-" />
+
+## Example
+
+### Variants
+
+`variant` is used to change the appearance of the button.
+
+<Canvas of={ButtonStories.Variants} />
+
+### Icon
+
+If you only have an icon in the button, you can set `data-icon="true"` to make it square. If you have other content, such as text, the button will automatically get spacing around the icon.
+
+<Canvas of={ButtonStories.Icons} />
+
+### Buttons that load
+
+If you want a button that loads, you have to add a loading indicator and `aria-busy="true"` yourself.
+
+Note: `aria-busy` does not prevent the button from triggering interactions. It only affects appearance and accessibility, not functionality.
+If the button should not be able to perform actions, you must add logic yourself to prevent the callback function from running.
+
+## Disabled buttons
+
+As far as possible, you should [avoid disabled buttons](?path=/docs/designsystemet-no-button--accessibility#avoid-using-disabled-buttons).
+If you have a `<button>`, you can disable it with the `disabled` attribute. If you have an `<a>`, you can disable it with the `aria-disabled="true"` attribute.
+Note: `aria-disabled` does not prevent the button from triggering interactions. It only affects appearance and accessibility, not functionality.
+If the button should not be able to perform actions, you must add logic yourself to prevent the callback function from running.
+
+## React
+
+In React, we also set `type="button"` by default, to avoid unexpected submits in forms.
+
+```tsx
+import { Button } from "@arbeidstilsynet/design-react";
+
+<Button>Button</Button>;
+```
+
+<Canvas of={ButtonStories.Preview} />
+
+<Controls of={ButtonStories.Preview} sort="requiredFirst" />
+
+### Extra logic for buttons that load
+
+In React, we use `loading={true}` to show that the button is loading something. Here you can also pass in your own loading component if our [`Spinner`](?path=/docs/designsystemet-no-spinner--code) does not fit.
+
+<Canvas of={ButtonStories.Loading} />
+
+In the example above, `aria-busy="true"` is automatically set when `loading={true}`. This is the recommended way to show that a button is loading.
+
+### Button as link
+
+Links can be styled to look like a button, but consider whether the [`Link`](?path=/docs/designsystemet-no-link--overview) component is a better choice first. To change the button to a link, use `asChild`. Read more about [composition in Gnist](?path=/docs/composition--docs#slots).
+
+<Canvas of={ButtonStories.AsLink} />

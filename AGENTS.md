@@ -97,9 +97,11 @@ Note: Figma designs may refer to colors as "main" — this corresponds to the "a
 ### Chromatic visual tests
 
 - Snapshots are globally disabled and explicitly enabled per selected story.
-- Keep one primary snapshot for every visual Designsystemet component. Select
-  Gnist stories explicitly and prefer visual-matrix stories for static
-  variants.
+- Every visual Designsystemet component has one combined `Snapshots` story in
+  `<Name>.chromatic.stories.tsx` that stacks all its stories
+  (`createSingleStory`). An override adds one Gnist matrix story; don't add
+  more. Select Gnist stories explicitly and prefer visual-matrix stories for
+  static variants.
 - Selected interactive stories must use deterministic `play` functions that
   expose the meaningful state; play failures must not be bypassed.
 - Active modes are light and dark at desktop width. Mobile modes are defined

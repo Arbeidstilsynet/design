@@ -10,18 +10,27 @@ snapshots, and selected stories override `chromatic.disableSnapshot` to
 
 ### Selecting stories
 
-- Keep one representative primary story for every visual Designsystemet
-  component. Hook-only stories are not visual test cases.
-- Select Gnist stories explicitly. Do not opt an entire story file in.
-- Add hand-picked stories when the primary story does not cover a materially
-  different state.
-- Prefer one stable visual-matrix story that renders several static variants
+- Every visual Designsystemet component has one combined snapshot, like
+  upstream: `<Name>.chromatic.stories.tsx` next to the stories exports a
+  `Snapshots` story built with `createSingleStory` from
+  `utils/create-single-story.tsx`. It renders all stories of the component
+  stacked, costs one snapshot per mode, and is tagged `chromatic` so it is
+  hidden from the published sidebar. Hook-only stories are not visual test
+  cases.
+- An overridden component keeps exactly one Gnist matrix story in its stories
+  file, covering what the override changes. The combined snapshot includes
+  it. Don't add more matrices or separate opt-ins for static variants.
+- Select Gnist stories explicitly. Do not opt an entire story file in. Add
+  hand-picked Gnist stories when they cover a materially different state, and
+  prefer one stable visual-matrix story that renders several static variants
   over separate snapshots for each variant.
-- Interactive stories must use a deterministic `play` function to reach the
-  state that is captured. A failing `play` function is a failing visual test.
+- `play` functions don't run inside the combined snapshot. Interactive
+  stories opt in to their own snapshot with
+  `parameters.chromatic.disableSnapshot: false` and must use a deterministic
+  `play` function to reach the state that is captured. A failing `play`
+  function is a failing visual test.
 - For components such as Dialog, Dropdown, Popover, Suggestion, and Tooltip,
-  the selected story must expose the meaningful open state. The primary story
-  is sufficient when its `play` function already does this.
+  an opted-in story must expose the meaningful open state.
 
 The active modes are `light desktop` and `dark desktop`. All four light/dark
 and mobile/desktop combinations are defined in `.storybook/modes.ts` so mobile
@@ -63,5 +72,5 @@ Accepted release-branch baselines follow the pull request into `main`, so
 The Designsystemet stories are maintained copies, not an automatic mirror.
 When updating `@digdir/designsystemet`, compare relevant upstream story changes
 and adapt the local stories and `play` functions. Preserve the visual selection
-rules above: every visual upstream component needs a representative primary
-snapshot, and interactive snapshots must finish in a stable meaningful state.
+rules above: every visual upstream component needs a combined snapshot, and
+interactive snapshots must finish in a stable meaningful state.

@@ -1,11 +1,11 @@
-import type { StorybookConfig } from "@storybook/react-vite";
+import { defineMain } from "@storybook/react-vite/node";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const storybookConfigFile = fileURLToPath(import.meta.url);
 const storybookConfigDir = dirname(storybookConfigFile);
 
-const config: StorybookConfig = {
+export default defineMain({
   framework: {
     name: "@storybook/react-vite",
     options: {
@@ -28,6 +28,16 @@ const config: StorybookConfig = {
   core: {
     disableTelemetry: true,
   },
+  tags: (tagOptions, options) => ({
+    ...tagOptions,
+    // Combined snapshot stories are for Chromatic, not for readers: visible
+    // in development, hidden from the published sidebar.
+    chromatic: {
+      excludeFromDocsStories: true,
+      excludeFromSidebar: options.configType === "PRODUCTION",
+      ...tagOptions?.chromatic,
+    },
+  }),
   typescript: {
     check: true,
     reactDocgen: "react-docgen-typescript",
@@ -57,5 +67,4 @@ const config: StorybookConfig = {
 
     return viteConfig;
   },
-};
-export default config;
+});

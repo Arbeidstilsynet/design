@@ -1,5 +1,7 @@
 import "@arbeidstilsynet/design-css";
 import "@arbeidstilsynet/design-theme/arbeidstilsynet.css";
+import addonA11y from "@storybook/addon-a11y";
+import addonDocs from "@storybook/addon-docs";
 import {
   Controls,
   Description,
@@ -8,13 +10,14 @@ import {
   Subtitle,
   Title,
 } from "@storybook/addon-docs/blocks";
-import type { Preview } from "@storybook/react-vite";
+import { definePreview } from "@storybook/react-vite";
+import type { ViewportMap } from "storybook/viewport";
 import "../utils/add-displaynames";
 import { customStylesDecorator } from "../utils/customStylesDecorator";
 import { chromaticModes } from "./modes";
 import "./preview.css";
 
-const atViewPorts = {
+const atViewPorts: ViewportMap = {
   atmobile: {
     name: "AT mobil 400px",
     styles: {
@@ -49,7 +52,8 @@ const atViewPorts = {
   },
 };
 
-const preview: Preview = {
+export default definePreview({
+  addons: [addonA11y(), addonDocs()],
   initialGlobals: {
     colorScheme: "auto",
   },
@@ -82,9 +86,9 @@ const preview: Preview = {
       },
     },
     options: {
-      storySort: {
-        method: "alphabetical",
-        order: [
+      // Must be self-contained plain JS: Storybook serializes this function.
+      storySort: (a, b) => {
+        const rootOrder = [
           "Overview",
           "Usage",
           "Colors",
@@ -96,13 +100,56 @@ const preview: Preview = {
           "Arbeidstilsynet",
           "designsystemet.no",
           "designsystemet.no utilities",
-        ],
+        ];
+        const docsOrder = ["Overview", "Code", "Accessibility"];
+
+        if (a.title === b.title) {
+          const rankA =
+            a.type === "docs" && docsOrder.includes(a.name)
+              ? docsOrder.indexOf(a.name)
+              : docsOrder.length;
+          const rankB =
+            b.type === "docs" && docsOrder.includes(b.name)
+              ? docsOrder.indexOf(b.name)
+              : docsOrder.length;
+          return rankA - rankB;
+        }
+
+        const partsA = a.title.split("/").map((part) => part.trim());
+        const partsB = b.title.split("/").map((part) => part.trim());
+        for (
+          let depth = 0;
+          depth < Math.max(partsA.length, partsB.length);
+          depth++
+        ) {
+          const nameA = partsA[depth];
+          const nameB = partsB[depth];
+          if (nameA === undefined) return -1;
+          if (nameB === undefined) return 1;
+          if (nameA === nameB) continue;
+          if (depth === 0) {
+            const indexA = rootOrder.indexOf(nameA);
+            const indexB = rootOrder.indexOf(nameB);
+            if (indexA !== -1 || indexB !== -1) {
+              return (
+                (indexA === -1 ? rootOrder.length : indexA) -
+                (indexB === -1 ? rootOrder.length : indexB)
+              );
+            }
+          }
+          return nameA.localeCompare(nameB, undefined, {
+            numeric: true,
+            sensitivity: "accent",
+          });
+        }
+        return 0;
       },
     },
     docs: {
       codePanel: true,
       toc: {
         headingSelector: "h2, h3",
+        ignoreSelector: ".docs-story *, .skip-toc, .sbdocs-subtitle",
       },
       // customize autodocs template to sort required props first in the props table
       page: () => (
@@ -127,6 +174,4 @@ const preview: Preview = {
   },
   decorators: [customStylesDecorator],
   tags: ["autodocs"],
-};
-
-export default preview;
+});
