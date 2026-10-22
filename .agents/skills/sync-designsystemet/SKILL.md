@@ -216,6 +216,8 @@ and `<Subtitle />`. Drop the frontmatter.
   data) is translated; an anchor points at the English heading's slug.
 - The `metadata.json` subtitle renders as plain text: strip markdown links.
 - Markdown tables stay markdown (remark-gfm is enabled).
+- A hard break written as two trailing spaces becomes a trailing `\`; the
+  pre-commit hook strips trailing whitespace.
 - A colour Gnist's theme lacks (`brand1`, `brand3`) becomes the closest Gnist
   palette, with a Gnist comment.
 - Assets a story loads by site-relative path are copied into the folder;
