@@ -10,9 +10,16 @@ Bring every **adapted copy** in `apps/storybook/stories/digdir/` and
 Designsystemet version. Vocabulary is in `GLOSSARY.md`; the reasons are in
 `docs/adr/adr-0005-upstream-dokumentasjon.md`.
 
-`apps/storybook/stories/digdir-overrides/button/` is the worked example of
-every rule below. Read all of its files before the first component and match
-their shape.
+Worked examples, one per kind of component. Read every file of the matching
+one before the first component of that kind, and match its shape:
+
+- override: `apps/storybook/stories/digdir-overrides/button/`
+- plain, static: `apps/storybook/stories/digdir/alert/`
+- plain, interactive: `apps/storybook/stories/digdir/dialog/` (subcomponents,
+  `useId`, Preview `play`)
+
+When a rule is ambiguous or wrong for a case, take the reading closest to the
+worked examples and report it as a skill gap.
 
 ## Steps
 
@@ -21,9 +28,12 @@ their shape.
    upstream at that tag only:
 
    ```sh
-   gh api "repos/digdir/designsystemet/git/trees/v<version>?recursive=1" --jq '.tree[].path'
+   gh api "repos/digdir/designsystemet/git/trees/v<version>?recursive=1" --jq '.tree[] | "\(.sha) \(.path)"'
    gh api -H "Accept: application/vnd.github.raw" "repos/digdir/designsystemet/contents/<path>?ref=v<version>"
    ```
+
+   The upstream **changed paths** are the paths whose line differs between
+   the tree listing at a component's header version and at `v<version>`.
 
 2. **Build the work list.** One row per upstream component folder
    (`apps/www/app/content/components/<name>/`), per upstream utility page
@@ -39,8 +49,20 @@ their shape.
      re-export). These stay on designsystemet.no.
    - **remove**: local folder with no upstream counterpart.
    - **current**: every upstream header already names the installed version.
+   - **unchanged**: headers name an older version, no changed path is named
+     in its headers or is its upstream `packages/css/src/<name>.css`, and its
+     upstream folder gained no files. Only the version in its headers
+     changes.
 
-   The list is done when every row has an outcome. Track it as todos.
+   Override status is checked for every row, since it can change locally
+   without an upstream change. The list is done when every row has an
+   outcome. Track it as todos.
+
+   Plain and override rows are independent of each other. When more than a
+   handful remain, hand them to subagents in batches if the runner has them:
+   each batch reads the matching worked example, touches only its own
+   folders and returns its step 9 report; shared files (`Overrides.mdx`,
+   `.storybook/`, `digdir.ts`, this skill) and steps 7–8 stay with the lead.
 
 3. **Sync each plain component** into `stories/digdir/<name>/`:
    1. Harvest the Gnist additions from the current files: `// Gnist:` blocks
@@ -97,18 +119,25 @@ their shape.
    ```sh
    pnpm typecheck && pnpm lint && pnpm format
    pnpm --filter @arbeidstilsynet/storybook test
+   pnpm --filter @arbeidstilsynet/storybook test:upstream
    pnpm --filter @arbeidstilsynet/storybook build
    ```
 
-   Then open the built Storybook and check every synced component: three docs
-   entries in order, canvases render, Controls drive the Preview, internal
-   links land on the right page and heading, and the `Chromatic/<Name>`
-   story renders all stories. `stories/digdir*/**` sit outside `pnpm lint`
-   and the vitest browser projects, so run every Gnist `play` in the browser
-   and watch it end on its open state.
+   `stories/digdir*/**` sit outside `pnpm lint` and the default vitest
+   projects; `test:upstream` renders every story there and runs every `play`
+   in a headless browser, with axe off.
 
-9. **Report**, grouped by outcome: synced, removed, skipped, stopped for
-   review (with hunks), dropped Gnist additions, missing exports.
+   Then check `apps/storybook/storybook-static/index.json`. For every synced
+   component: `Overview`, `Code` and `Accessibility` docs entries in that
+   order, its stories, and `Chromatic/<Name>` when upstream has a chromatic
+   file; for every removed one, no entries. With a browser, also open each
+   synced component: canvases render, Controls drive the Preview, internal
+   links land on the right page and heading, the `Chromatic/<Name>` story
+   shows every story, and each Gnist `play` ends on its open state.
+
+9. **Report**, grouped by outcome: synced, unchanged, removed, skipped,
+   stopped for review (with hunks), dropped Gnist additions, missing exports,
+   skill gaps.
 
 ## Folder layout
 
