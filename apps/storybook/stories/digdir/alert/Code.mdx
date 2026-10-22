@@ -1,0 +1,49 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/alert/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/alert.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as AlertStories from "./Alert.stories";
+
+<Meta of={AlertStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={AlertStories.Preview} />
+
+## Usage
+
+Use the attribute `data-color="info | success | warning | danger"` to change the type of alert.
+
+Use `role="alert"` for critical messages that require immediate attention.
+Use `role="status"` for less critical messages.
+
+## CSS variables and data attributes
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## React
+
+```jsx
+<Alert data-color="info">This is an information message.</Alert>
+```
+
+{/* Gnist: start */}
+
+## Props
+
+<Canvas of={AlertStories.Preview} />
+
+<Controls of={AlertStories.Preview} sort="requiredFirst" />
+
+{/* Gnist: end */}

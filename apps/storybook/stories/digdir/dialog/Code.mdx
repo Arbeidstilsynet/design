@@ -1,0 +1,153 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/dialog/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/dialog.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as DialogStories from "./Dialog.stories";
+
+<Meta of={DialogStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={DialogStories.Preview} />
+
+## Usage
+
+Dialog has two class names you can use.
+
+- `ds-dialog`: The main class to use on the `<dialog>` element.
+- `ds-dialog__block`: The class used for each section in the dialog.
+
+```html
+<dialog class="ds-dialog">Content</dialog>
+
+<!-- with dividers -->
+<dialog class="ds-dialog">
+  <div class="ds-dialog__block">Header</div>
+  <div class="ds-dialog__block">Content</div>
+  <div class="ds-dialog__block">Footer</div>
+</dialog>
+```
+
+### Open and close the dialog
+
+Use `command` and `commandfor` to connect the `<dialog>` element to a trigger.
+Use the values `command="show-modal"` or `command="--show-non-modal"` for a modal with or without background dimming and `commandfor="DIALOG-ID"` to connect the trigger to the dialog.
+
+The attribute `aria-haspopup="dialog"` should be added to the element that opens the dialog to make it clear to screen reader users that it will open a dialog. We do this automatically for you when you use `@digdir/designsystemet-web` or `@arbeidstilsynet/design-react`.
+
+```html
+<button
+  type="button"
+  aria-haspopup="dialog"
+  command="show-modal"
+  commandfor="my-dialog"
+>
+  Open Dialog
+</button>
+<dialog id="my-dialog" class="ds-dialog">
+  <div>Content</div>
+  <button command="close" commandfor="my-dialog">Close</button>
+</dialog>
+```
+
+### Polyfill
+
+Dialog depends on the attributes [`command` and `commandfor` (mozilla.org)](https://developer.mozilla.org/en-US/docs/Web/API/HTMLButtonElement/command) which are a relatively new part of the web platform that allow [button](?path=/docs/designsystemet-no-button--overview) to perform actions on other elements declaratively. We automatically add [invokers-polyfill (npmjs.com)](https://www.npmjs.com/package/invokers-polyfill) to support older browsers if needed.
+
+We also add a polyfill for `closedby="any"` to support older Safari, which does not support this natively.
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit from the closest parent where these are set.
+
+All CSS variables used by `ds-dialog__block` are set on `ds-dialog`.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## Examples
+
+### With form and focus
+
+If you want a field in a form inside the dialog to get focus when the dialog opens, you can use the native `autofocus` attribute on the input element.
+
+When using this with React, you must write it in lowercase as `autofocus`, not `autoFocus`.
+
+This prop does not exist in React's type definitions, so we have ignored the error with an `@ts-expect-error` comment in the example below.
+
+<Canvas of={DialogStories.WithForm} />
+
+### With blocks
+
+Use multiple `ds-dialog__block` if you want to divide the dialog with dividers into, for example, a top and bottom area.
+
+Note that content cannot be placed directly in dialog if you use `ds-dialog__block`; then all content should be inside one of the dialog's `ds-dialog__block` sections.
+
+<Canvas of={DialogStories.WithBlocks} />
+
+### Close on click outside
+
+Use `closedby="any"` to close the dialog when the user clicks outside.
+
+We add polyfill so `closedby="any"` also works in older Safari.
+
+<Canvas of={DialogStories.CloseWithClickOutside} />
+
+### Close with button
+
+To add your own close button, you can either use `command="close" commandfor="DIALOG-ID"` or `ref` and `Dialog.close()` on a button you create yourself.
+
+If the button is empty it will get an icon.
+
+If the button is a direct child of the dialog and the first element, it will float to the top right.
+
+## React
+
+```tsx
+import { Button, Dialog } from "@arbeidstilsynet/design-react";
+
+/* with context */
+<Dialog.TriggerContext>
+  <Dialog.Trigger>Open Dialog</Dialog.Trigger>
+  <Dialog>
+    Dialog content
+  </Dialog>
+</Dialog.TriggerContext>
+
+/* without context */
+<Button command="show-modal" commandfor="my-dialog">Open Dialog</Button>
+<Dialog id="my-dialog">
+  Dialog content
+</Dialog>
+```
+
+### `TriggerContext`
+
+Use `Dialog.TriggerContext` and `Dialog.Trigger` together, so `Dialog` can communicate without having to use `id` and `commandfor`.
+
+<Canvas of={DialogStories.TriggerContext} />
+
+### With ref and without context
+
+If you don't want to use `Dialog.TriggerContext`, you can use `ref` to open the dialog from an external trigger.
+You then use native methods on the `<dialog>` element, such as `showModal()` or `show()`.
+
+<Canvas of={DialogStories.WithRef} />
+
+### Props
+
+### Dialog
+
+<Canvas of={DialogStories.Preview} />
+
+<Controls of={DialogStories.Preview} sort="requiredFirst" />

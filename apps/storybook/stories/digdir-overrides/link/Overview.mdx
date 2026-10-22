@@ -1,0 +1,130 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/link/en/overview.mdx */}
+
+import { Canvas, Meta, Subtitle, Title } from "@storybook/addon-docs/blocks";
+import { Alert } from "@arbeidstilsynet/design-react";
+import { DoDont } from "../../../../../packages/react/src/docs-components/DoDont";
+import * as LinkStories from "./Link.stories";
+import * as DoDontStories from "./Link.dodont.stories";
+
+<Meta of={LinkStories} name="Overview" />
+
+<Title />
+<Subtitle />
+
+{/* Gnist: start */}
+
+<Alert data-color="info" className="sb-unstyled">
+  Gnist overrides the styles of Link. See [Gnist overrides](#gnist-overrides)
+  and [Overrides](?path=/docs/overrides--docs).
+</Alert>
+
+{/* Gnist: end */}
+
+<Canvas of={LinkStories.Preview} />
+
+**Use link when**
+
+- navigating to a new page, internally or externally
+- linking to another location on the same page
+- a file should be downloaded
+
+**Avoid link when**
+
+- the user should perform an action on the same page, for example “Save” or “Submit”, use a [button](?path=/docs/designsystemet-no-button--overview) instead
+- the action changes the state of the solution, such as opening a dialog, starting a process or saving data, use a [button](?path=/docs/designsystemet-no-button--overview) instead
+
+## Example
+
+### With icon
+
+Links can have an icon placed either to the left or the right of the text. As a general rule, we recommend placing the icon on the left.
+
+<Canvas of={LinkStories.WithIcon} />
+
+### Links in text
+
+A link is often used as part of a text.
+
+<Canvas of={LinkStories.InText} />
+
+### Neutral colour
+
+Links can also be displayed in a neutral colour. This can be useful when the link is placed in an area with its own background colour.
+
+<Canvas of={LinkStories.Neutral} />
+
+## Guidelines
+
+The link must point to information the user needs, or to a place where they can complete their task. Avoid linking to general pages where the user must search for the relevant information themselves.
+
+It is important not to overuse links, as this can make it harder for users to find their way forward.
+
+### Link or button?
+
+Links are used when the user is navigated to a new URL, while buttons are used when an action should be performed.
+
+#### Log in
+
+Use a link when “Log in” sends the user to a login page or external authentication service. Use a [button](?path=/docs/designsystemet-no-button--overview) when “Log in” actually logs the user in, for example by submitting a login form.
+
+### Do not use an external link icon
+
+The icon can easily be misunderstood and lead to a poor user experience. Many interpret it as “opens in a new tab”, while others think it means “external site”. Instead, we always recommend using text to explain where the link leads. This makes the function clear both for users and for screen readers. Read more about this in the article [Labelling links](https://designsystemet.no/en/patterns/external-links/#unngå-ekstern-lenke-ikon), which Digdir has developed together with the Norwegian Labour and Welfare Administration, the Norwegian Tax Administration, the City of Oslo and the Brønnøysund Register Centre.
+
+<div className="dodont-row">
+  <DoDont of={DoDontStories.DoIcon} variant="do">
+    Use text to explain where the link leads.
+  </DoDont>
+  <DoDont of={DoDontStories.DontIcon} variant="dont">
+    Do not use an icon for external links.
+  </DoDont>
+</div>
+
+### Avoid opening links in a new tab
+
+Both internal and external links should open in the same tab or window. This ensures a predictable user experience.
+
+There are, however, some exceptions where a link should open in a new tab:
+
+- If the system needs to log the user out when navigating to another page, and it is beneficial to avoid logging them out.
+- When the user is in the middle of a process and risks losing content by clicking the link. A new tab should be considered if the system cannot save the user's input.
+- When linking to content users need while completing a task, for example guidance.
+
+In these cases, we recommend adding “opens in a new tab” as part of the link text so that it is clear to the user.
+
+Read more about this in the article [Labelling links](https://designsystemet.no/en/patterns/external-links).
+
+## Text
+
+Good links are self-explanatory and make it clear where the user will end up when selecting them. When writing link text, imagine it being read aloud by a screen reader. The text must make sense on its own, whether it appears in a sentence, menu or list.
+
+### Principles for link text
+
+- Use the important words (trigger words) early in the link text.
+- “Go to”, “Click here”, “Link to” or “Read more” should never be the entire link text.
+- All links on the same page must have unique link text.
+- A verb should appear early in the link text.
+
+<div className="dodont-row">
+  <DoDont of={DoDontStories.DoIcon2} variant="do">
+    Write link texts that make sense when read on their own
+  </DoDont>
+  <DoDont of={DoDontStories.DontIcon2} variant="dont">
+    Avoid unclear and generic texts
+  </DoDont>
+</div>
+
+Find more guidance in the article [Labelling links](https://designsystemet.no/en/patterns/external-links#spr%C3%A5k).
+
+{/* Gnist: start */}
+
+## Gnist overrides
+
+Gnist changes the link colour from `text-subtle` to `text-default` and the
+hover colour from `text-default` to `base-hover`, in every `data-color`,
+including `neutral`. Visited links keep the link colour. This matrix shows a
+link alone and in text in a selection of colours with our overrides applied.
+
+<Canvas of={LinkStories.ColorMatrix} />
+
+{/* Gnist: end */}
