@@ -1,15 +1,17 @@
-import type { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { useRef, useState } from "react";
-import { FilePicker, type FilePickerItem } from "..";
+import preview from "../../../../../apps/storybook/.storybook/preview";
+import { FilePicker, type FilePickerItem, type FilePickerProps } from "..";
 import { Label, Paragraph } from "../..";
 import { createMockFile, createMockFileInKb } from "./utils";
 
-const meta: Meta<typeof FilePicker> = {
+const meta = preview.meta({
   title: "Arbeidstilsynet/FilePicker",
   component: FilePicker,
   parameters: {
     layout: "padded",
   },
+  // `files` and `errors` are required props, but several stories leave them
+  // unset. Typing them as provided here keeps them optional per story.
   args: {
     onAdd: (files) => {
       console.log(`onAdd called with ${files.length} files`);
@@ -17,93 +19,93 @@ const meta: Meta<typeof FilePicker> = {
     onRemove: (id) => {
       console.log(`onRemove called with id ${id}`);
     },
-  },
+  } as Pick<
+    FilePickerProps<string | number>,
+    "onAdd" | "onRemove" | "files" | "errors"
+  >,
   subcomponents: {
     ["FilePicker.Dropzone"]: FilePicker.Dropzone,
     ["FilePicker.Files"]: FilePicker.Files,
     ["FilePicker.Errors"]: FilePicker.Errors,
   },
-};
+});
 
-export default meta;
+export const Preview = meta.story({
+  render: function Preview(args) {
+    const fileId = useRef(0);
+    const [files, setFiles] = useState<FilePickerItem<number>[]>([]);
+    const [errors, setErrors] = useState<string[]>([]);
 
-type Story = StoryObj<typeof meta>;
+    const maxFiles = 5;
+    const maxSizeInMb = 10;
 
-export const Preview: StoryFn<typeof FilePicker> = (args) => {
-  const fileId = useRef(0);
-  const [files, setFiles] = useState<FilePickerItem<number>[]>([]);
-  const [errors, setErrors] = useState<string[]>([]);
+    const handleAdd = async (newFiles: File[]) => {
+      // Simple validation for demo
+      const validationErrors: string[] = [];
+      const maxSize = maxSizeInMb * 1024 * 1024;
 
-  const maxFiles = 5;
-  const maxSizeInMb = 10;
-
-  const handleAdd = async (newFiles: File[]) => {
-    // Simple validation for demo
-    const validationErrors: string[] = [];
-    const maxSize = maxSizeInMb * 1024 * 1024;
-
-    if (files.length + newFiles.length > maxFiles) {
-      validationErrors.push(`Maksimalt ${maxFiles} filer tillatt`);
-    }
-
-    for (const file of newFiles) {
-      if (file.size > maxSize) {
-        validationErrors.push(
-          `${file.name} overskrider maksimal filstørrelse (10 MB)`,
-        );
+      if (files.length + newFiles.length > maxFiles) {
+        validationErrors.push(`Maksimalt ${maxFiles} filer tillatt`);
       }
-    }
 
-    if (validationErrors.length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
+      for (const file of newFiles) {
+        if (file.size > maxSize) {
+          validationErrors.push(
+            `${file.name} overskrider maksimal filstørrelse (10 MB)`,
+          );
+        }
+      }
 
-    const addedFiles = newFiles.map((file) => ({
-      id: fileId.current++,
-      file,
-      error: null,
-    }));
+      if (validationErrors.length > 0) {
+        setErrors(validationErrors);
+        return;
+      }
 
-    setErrors([]);
-    setFiles((prev) => [...prev, ...addedFiles]);
-    await args.onAdd?.(newFiles);
-  };
+      const addedFiles = newFiles.map((file) => ({
+        id: fileId.current++,
+        file,
+        error: null,
+      }));
 
-  const handleRemove = async (id: number) => {
-    setFiles((prev) => prev.filter((file) => file.id !== id));
-    setErrors([]);
-    await args.onRemove?.(id);
-  };
+      setErrors([]);
+      setFiles((prev) => [...prev, ...addedFiles]);
+      await args.onAdd?.(newFiles);
+    };
 
-  return (
-    <FilePicker
-      {...args}
-      files={files}
-      errors={errors}
-      onAdd={handleAdd}
-      onRemove={handleRemove}
-    >
-      <Label>Last opp fil</Label>
-      <Paragraph data-size="sm" data-color="neutral">
-        Last opp dokumentene vi har bedt om.
-      </Paragraph>
-      <Paragraph data-size="xs">Maks filstørrelse {maxSizeInMb} MB</Paragraph>
-      <FilePicker.Dropzone />
-      <Paragraph data-size="xs">
-        Antall filer {files.length}/{maxFiles}
-      </Paragraph>
-      <FilePicker.Errors />
-      <FilePicker.Files />
-    </FilePicker>
-  );
-};
+    const handleRemove = async (id: number) => {
+      setFiles((prev) => prev.filter((file) => file.id !== id));
+      setErrors([]);
+      await args.onRemove?.(id);
+    };
 
-Preview.parameters = {
-  chromatic: { disableSnapshot: false },
-};
+    return (
+      <FilePicker
+        {...args}
+        files={files}
+        errors={errors}
+        onAdd={handleAdd}
+        onRemove={handleRemove}
+      >
+        <Label>Last opp fil</Label>
+        <Paragraph data-size="sm" data-color="neutral">
+          Last opp dokumentene vi har bedt om.
+        </Paragraph>
+        <Paragraph data-size="xs">Maks filstørrelse {maxSizeInMb} MB</Paragraph>
+        <FilePicker.Dropzone />
+        <Paragraph data-size="xs">
+          Antall filer {files.length}/{maxFiles}
+        </Paragraph>
+        <FilePicker.Errors />
+        <FilePicker.Files />
+      </FilePicker>
+    );
+  },
+  parameters: {
+    chromatic: { disableSnapshot: false },
+  },
+});
 
-export const WithFiles: Story = {
+export const WithFiles = meta.story({
   render: (args) => (
     <FilePicker {...args}>
       <FilePicker.Dropzone />
@@ -133,9 +135,9 @@ export const WithFiles: Story = {
     ],
     errors: null,
   },
-};
+});
 
-export const WithErrors: Story = {
+export const WithErrors = meta.story({
   render: (args) => (
     <FilePicker {...args}>
       <FilePicker.Dropzone />
@@ -172,9 +174,9 @@ export const WithErrors: Story = {
       "file2.doc has an unsupported file type",
     ],
   },
-};
+});
 
-export const Disabled: Story = {
+export const Disabled = meta.story({
   render: (args) => (
     <FilePicker {...args}>
       <Paragraph data-size="xs">Maks filstørrelse 1 MB</Paragraph>
@@ -193,9 +195,9 @@ export const Disabled: Story = {
     onAdd: () => {},
     onRemove: () => {},
   },
-};
+});
 
-export const ChangedDefaultText: Story = {
+export const ChangedDefaultText = meta.story({
   render: (args) => (
     <FilePicker {...args}>
       <FilePicker.Dropzone
@@ -211,9 +213,9 @@ export const ChangedDefaultText: Story = {
   args: {
     files: [{ id: 1, file: createMockFileInKb("Some file.pdf", 500) }],
   },
-};
+});
 
-export const CustomLabelNode: Story = {
+export const CustomLabelNode = meta.story({
   render: (args) => (
     <FilePicker {...args}>
       <FilePicker.Dropzone
@@ -223,9 +225,9 @@ export const CustomLabelNode: Story = {
       <FilePicker.Files />
     </FilePicker>
   ),
-};
+});
 
-export const IsWaiting: Story = {
+export const IsWaiting = meta.story({
   render: (args) => (
     <FilePicker {...args}>
       <FilePicker.Dropzone />
@@ -238,9 +240,9 @@ export const IsWaiting: Story = {
       { id: 1, file: createMockFileInKb("file being processed.doc", 500) },
     ],
   },
-};
+});
 
-export const SideBySide: Story = {
+export const SideBySide = meta.story({
   render: (args) => (
     <div style={{ display: "flex", gap: "1rem" }}>
       <FilePicker {...args}>
@@ -271,9 +273,9 @@ export const SideBySide: Story = {
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae nulla diam. Curabitur rutrum ante metus, sed molestie erat sagittis quis.",
     ],
   },
-};
+});
 
-export const SizeVariants: Story = {
+export const SizeVariants = meta.story({
   render: (args) => (
     <div style={{ display: "flex", flexFlow: "column", gap: "1rem" }}>
       <FilePicker {...args} data-size="sm">
@@ -309,4 +311,4 @@ export const SizeVariants: Story = {
     ],
     errors: [],
   },
-};
+});

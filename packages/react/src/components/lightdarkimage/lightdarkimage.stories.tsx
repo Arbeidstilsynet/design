@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { LightDarkImage } from ".";
 import { LogoBlack } from "../logo/logoblack";
 import { LogoWhite } from "../logo/logowhite";
 
-const meta: Meta<typeof LightDarkImage> = {
+const meta = preview.meta({
   title: "Arbeidstilsynet/LightDarkImage",
   component: LightDarkImage,
   parameters: {
@@ -17,20 +17,16 @@ const meta: Meta<typeof LightDarkImage> = {
       control: false,
     },
   },
-};
-
-export default meta;
-
-type Story = StoryObj<typeof meta>;
+});
 
 /**
  * Toggle between dark and light mode in the toolbar to see the image switch.
  * If storybook is set to "auto" color scheme, it will follow your system settings.
  */
-export const Preview: Story = {
+export const Preview = meta.story({
   render: (args) => <LightDarkImage {...args} />,
   args: {
     light: <LogoBlack width={200} />,
     dark: <LogoWhite width={200} />,
   },
-};
+});

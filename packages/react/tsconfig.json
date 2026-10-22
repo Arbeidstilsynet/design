@@ -4,5 +4,8 @@
     "composite": true,
     "types": []
   },
-  "include": ["src/**/*", "*.ts", "*.mjs"]
+  "include": ["src/**/*", "*.ts", "*.mjs"],
+  // Stories import the Storybook app's CSF Next `preview`, which lives outside
+  // this project. They are type-checked by apps/storybook/tsconfig.json.
+  "exclude": ["src/**/*.stories.tsx"]
 }

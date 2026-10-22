@@ -5,12 +5,12 @@ import {
   type Size,
   ToggleGroup,
 } from "@arbeidstilsynet/design-react";
-import type { Meta, StoryFn } from "@storybook/react-vite";
 import { useState } from "react";
+import preview from "../../.storybook/preview";
 import { Showcase } from "./Showcase";
 import classes from "./Showcase.stories.module.css";
 
-export default {
+const meta = preview.meta({
   title: "Showcase",
   parameters: {
     chromatic: {
@@ -32,13 +32,13 @@ export default {
       },
     },
   },
-} as Meta;
+});
 
 const sizes: Size[] = ["sm", "md", "lg"];
 const colorModes = ["light", "dark", "auto"];
 const typography = ["primary", "secondary"];
 
-export const ShowcaseStory: StoryFn = () => {
+export const ShowcaseStory = meta.story(() => {
   const [size, setSize] = useState<Size>("sm");
   const [colorMode, setColorMode] = useState("auto");
   const [typographyMode, setTypographyMode] = useState("primary");
@@ -93,4 +93,4 @@ export const ShowcaseStory: StoryFn = () => {
       />
     </div>
   );
-};
+});
