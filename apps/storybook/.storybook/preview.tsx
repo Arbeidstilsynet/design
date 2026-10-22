@@ -164,7 +164,8 @@ export default definePreview({
       ),
     },
     a11y: {
-      test: "error",
+      // vitest.upstream.config.ts runs upstream stories' plays without axe.
+      test: import.meta.env.STORYBOOK_SKIP_A11Y === "true" ? "off" : "error",
     },
     chromatic: {
       // make snapshots opt-in per file/story

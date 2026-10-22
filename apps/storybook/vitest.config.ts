@@ -10,7 +10,7 @@ const dirname =
     ? path.dirname(fileURLToPath(import.meta.url))
     : __dirname;
 
-const colorSchemes = ["light", "dark"] as const;
+export const colorSchemes = ["light", "dark"] as const;
 
 // Node-side tooling tests (e.g. docgen-wrapper coverage). These need fs and
 // module resolution, so they run in node rather than the browser project.
@@ -23,12 +23,23 @@ const nodeProject: TestProjectConfiguration = {
   },
 };
 
-const browserProjects: TestProjectConfiguration[] = colorSchemes.map(
-  (colorScheme) => ({
+export function browserProject({
+  name,
+  colorScheme,
+  skipA11y = false,
+  exclude = [],
+}: {
+  name: string;
+  colorScheme: (typeof colorSchemes)[number];
+  skipA11y?: boolean;
+  exclude?: string[];
+}): TestProjectConfiguration {
+  return {
     extends: true,
     // Use define for compile-time replacement — guaranteed to work in browser mode
     define: {
       "process.env.STORYBOOK_COLOR_SCHEME": JSON.stringify(colorScheme),
+      "import.meta.env.STORYBOOK_SKIP_A11Y": JSON.stringify(String(skipA11y)),
     },
     plugins: [
       // The plugin will run tests for the stories defined in your Storybook config
@@ -38,7 +49,7 @@ const browserProjects: TestProjectConfiguration[] = colorSchemes.map(
       }),
     ],
     test: {
-      name: `storybook-${colorScheme}`,
+      name,
       browser: {
         enabled: true,
         headless: true,
@@ -54,14 +65,21 @@ const browserProjects: TestProjectConfiguration[] = colorSchemes.map(
         ],
       },
       setupFiles: [".storybook/vitest.setup.ts"],
-      exclude: [
-        "./utils/**",
-        "./stories/digdir/**",
-        // a11y errors in digdir-overrides should be fixed later and this exclude removed
-        "./stories/digdir-overrides/**",
-        "./stories/Showcase/**",
-      ],
+      exclude: ["./utils/**", ...exclude],
     },
+  };
+}
+
+const browserProjects = colorSchemes.map((colorScheme) =>
+  browserProject({
+    name: `storybook-${colorScheme}`,
+    colorScheme,
+    exclude: [
+      "./stories/digdir/**",
+      // a11y errors in digdir-overrides should be fixed later and this exclude removed
+      "./stories/digdir-overrides/**",
+      "./stories/Showcase/**",
+    ],
   }),
 );
 
