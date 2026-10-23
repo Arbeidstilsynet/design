@@ -3,6 +3,7 @@
 
 import { composeStories } from "@storybook/react-vite";
 import type { CSSProperties, ReactNode } from "react";
+import { useGlobals } from "storybook/preview-api";
 
 /**
  * Combines all stories from a CSF Next story module into a single story that
@@ -15,12 +16,17 @@ import type { CSSProperties, ReactNode } from "react";
  *   export const Snapshots = meta.story(createSingleStory(ButtonStories));
  */
 export function createSingleStory(stories: Record<string, unknown>) {
-  const composed: Record<string, () => ReactNode> = composeStories(
-    stories as Parameters<typeof composeStories>[0],
-  );
+  function SingleStory() {
+    const [globals] = useGlobals();
+    // Composed stories freeze their globals at compose time, so compose with
+    // the active ones. Otherwise each nested decorator resets the colour
+    // scheme to the initial "auto" and the Chromatic dark mode is lost.
+    const composed: Record<string, () => ReactNode> = composeStories(
+      stories as Parameters<typeof composeStories>[0],
+      { initialGlobals: globals },
+    );
 
-  return {
-    render: () => (
+    return (
       <>
         {/* Fewer diff pixels: remove the padding of nested decorators */}
         <style>{`[data-storybook-decorator="true"] [data-storybook-decorator="true"][style*="padding"]{
@@ -33,7 +39,11 @@ export function createSingleStory(stories: Record<string, unknown>) {
           </div>
         ))}
       </>
-    ),
+    );
+  }
+
+  return {
+    render: SingleStory,
     parameters: {
       chromatic: {
         disableSnapshot: false,
