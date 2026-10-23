@@ -41,6 +41,9 @@ LICENSE
 .github
 .nais
 scripts
+# The root tsconfig.json references it; Vite falls back to the root project for
+# Gnist stories, which packages/react/tsconfig.json excludes.
+!scripts/tsconfig.json
 
 # Raw tokens (JSON)
 design-tokens
