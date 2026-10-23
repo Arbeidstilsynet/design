@@ -1,4 +1,6 @@
 import { defineMain } from "@storybook/react-vite/node";
+import { readFileSync } from "node:fs";
+import { createRequire } from "node:module";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import remarkGfm from "remark-gfm";
@@ -35,6 +37,15 @@ export default defineMain({
   core: {
     disableTelemetry: true,
   },
+  // The manager theme reads its colors from the Gnist tokens (see theme.ts).
+  // The CSS sits in an inert <template> so it doesn't style the manager.
+  managerHead: (head) => `${head}
+<template id="gnist-theme-tokens"><style>${readFileSync(
+    createRequire(import.meta.url).resolve(
+      "@arbeidstilsynet/design-theme/arbeidstilsynet.css",
+    ),
+    "utf8",
+  )}</style></template>`,
   tags: (tagOptions, options) => ({
     ...tagOptions,
     // Combined snapshot stories are for Chromatic, not for readers: visible

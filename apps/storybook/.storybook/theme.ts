@@ -1,97 +1,93 @@
 import { create, type ThemeVars } from "storybook/theming";
 
-// Literal colors copied from @arbeidstilsynet/design-theme/arbeidstilsynet.css.
-// Storybook derives extra shades from these values, which it skips for CSS
-// variables, so one theme per color scheme is used instead.
+/*
+ * Colors are read from @arbeidstilsynet/design-theme tokens at runtime.
+ * Storybook derives extra shades from theme colors, which it skips for CSS
+ * variables, so the resolved values are passed instead of `var(--ds-*)`.
+ */
 
-const brand = {
-  brandTitle: "Gnist, Arbeidstilsynet Design",
-  brandUrl: "https://gnist.arbeidstilsynet.no/",
-  brandTarget: "_self",
-} satisfies Partial<ThemeVars>;
+/** Id of the <template> holding the theme CSS in the manager (see main.ts). */
+export const themeTokensTemplateId = "gnist-theme-tokens";
 
-const typography = {
-  fontBase: '"Inter", sans-serif',
-  fontCode:
-    'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace',
-} satisfies Partial<ThemeVars>;
+const readColorToken = (scheme: "light" | "dark") => {
+  // The probe lives in a shadow root so the theme CSS doesn't style the
+  // manager page. In the preview the theme CSS is already loaded, and the
+  // tokens inherit from the host.
+  const host = document.createElement("div");
+  host.dataset.colorScheme = scheme;
+  const shadow = host.attachShadow({ mode: "open" });
+  const template = document.getElementById(themeTokensTemplateId);
+  if (template instanceof HTMLTemplateElement) {
+    shadow.append(template.content.cloneNode(true));
+  }
+  const probe = document.createElement("div");
+  probe.dataset.colorScheme = scheme;
+  shadow.append(probe);
+  document.documentElement.append(host);
+  const style = getComputedStyle(probe);
+  const token = (name: string) => {
+    const value = style.getPropertyValue(`--ds-color-${name}`).trim();
+    if (!value) throw new Error(`Storybook theme: missing --ds-color-${name}`);
+    return value;
+  };
+  return { token, dispose: () => host.remove() };
+};
 
-const shape = {
-  appBorderRadius: 4,
-  inputBorderRadius: 4,
-} satisfies Partial<ThemeVars>;
+const createTheme = (scheme: "light" | "dark"): ThemeVars => {
+  const { token, dispose } = readColorToken(scheme);
+  const dark = scheme === "dark";
+  const theme = create({
+    base: scheme,
+    brandTitle: "Gnist, Arbeidstilsynet Design",
+    brandUrl: "https://gnist.arbeidstilsynet.no/",
+    brandTarget: "_self",
+    brandImage: dark
+      ? "https://at-static.arbeidstilsynet.no/logos/at-logo-horizontal-white.svg"
+      : "https://at-static.arbeidstilsynet.no/logos/at-logo-horizontal.svg",
 
-export const lightTheme = create({
-  base: "light",
-  ...brand,
-  ...typography,
-  ...shape,
-  brandImage:
-    "https://at-static.arbeidstilsynet.no/logos/at-logo-horizontal.svg",
+    fontBase: '"Inter", sans-serif',
+    fontCode:
+      'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace',
 
-  colorPrimary: "#0B8477", // accent-base-default
-  colorSecondary: "#0B8477", // accent-base-default
+    appBorderRadius: 4,
+    inputBorderRadius: 4,
 
-  appBg: "#F3F3F3", // neutral-background-tinted
-  appContentBg: "#FFFFFF", // neutral-background-default
-  appPreviewBg: "#FFFFFF", // neutral-background-default
-  appHoverBg: "#D6F1EE", // accent-background-tinted
-  appBorderColor: "#BCBCBC", // neutral-border-subtle
+    colorPrimary: token("accent-base-default"),
+    colorSecondary: token("accent-base-default"),
 
-  textColor: "#080808", // neutral-text-default
-  textMutedColor: "#424242", // neutral-text-subtle
-  textInverseColor: "#FFFFFF", // neutral-base-contrast-default
+    appBg: token("neutral-background-tinted"),
+    appContentBg: token("neutral-background-default"),
+    appPreviewBg: token("neutral-background-default"),
+    appHoverBg: token(
+      dark ? "accent-surface-tinted" : "accent-background-tinted",
+    ),
+    appBorderColor: token("neutral-border-subtle"),
 
-  barBg: "#FFFFFF", // neutral-surface-default
-  barTextColor: "#424242", // neutral-text-subtle
-  barSelectedColor: "#0B8477", // accent-base-default
-  barHoverColor: "#085C53", // accent-base-hover
+    textColor: token("neutral-text-default"),
+    textMutedColor: token("neutral-text-subtle"),
+    textInverseColor: token("neutral-base-contrast-default"),
 
-  buttonBg: "#FFFFFF", // neutral-surface-default
-  buttonBorder: "#BCBCBC", // neutral-border-subtle
-  booleanBg: "#EEEEEE", // neutral-surface-tinted
-  booleanSelectedBg: "#FFFFFF", // neutral-surface-default
+    barBg: token("neutral-surface-default"),
+    barTextColor: token("neutral-text-subtle"),
+    barSelectedColor: token(
+      dark ? "accent-text-subtle" : "accent-base-default",
+    ),
+    barHoverColor: token("accent-base-hover"),
 
-  inputBg: "#FFFFFF", // neutral-surface-default
-  inputBorder: "#797979", // neutral-border-default
-  inputTextColor: "#080808", // neutral-text-default
-});
+    buttonBg: token("neutral-surface-default"),
+    buttonBorder: token("neutral-border-subtle"),
+    booleanBg: token("neutral-surface-tinted"),
+    booleanSelectedBg: token(
+      dark ? "neutral-surface-active" : "neutral-surface-default",
+    ),
 
-export const darkTheme = create({
-  base: "dark",
-  ...brand,
-  ...typography,
-  ...shape,
-  brandImage:
-    "https://at-static.arbeidstilsynet.no/logos/at-logo-horizontal-white.svg",
-
-  colorPrimary: "#3C9D92", // accent-base-default
-  colorSecondary: "#3C9D92", // accent-base-default
-
-  appBg: "#1F1F1F", // neutral-background-tinted
-  appContentBg: "#181818", // neutral-background-default
-  appPreviewBg: "#181818", // neutral-background-default
-  appHoverBg: "#1C4D44", // accent-surface-tinted
-  appBorderColor: "#505050", // neutral-border-subtle
-
-  textColor: "#ECECEC", // neutral-text-default
-  textMutedColor: "#B9BBBB", // neutral-text-subtle
-  textInverseColor: "#080808", // neutral-base-contrast-default
-
-  barBg: "#282828", // neutral-surface-default
-  barTextColor: "#B9BBBB", // neutral-text-subtle
-  barSelectedColor: "#7BCCC3", // accent-text-subtle
-  barHoverColor: "#17E5CA", // accent-base-hover
-
-  buttonBg: "#282828", // neutral-surface-default
-  buttonBorder: "#505050", // neutral-border-subtle
-  booleanBg: "#2E2E2E", // neutral-surface-tinted
-  booleanSelectedBg: "#434343", // neutral-surface-active
-
-  inputBg: "#282828", // neutral-surface-default
-  inputBorder: "#818181", // neutral-border-default
-  inputTextColor: "#ECECEC", // neutral-text-default
-});
+    inputBg: token("neutral-surface-default"),
+    inputBorder: token("neutral-border-default"),
+    inputTextColor: token("neutral-text-default"),
+  });
+  dispose();
+  return theme;
+};
 
 /** Mirrors Designsystemet's `data-color-scheme`. */
 export type ColorScheme = "light" | "dark" | "auto";
@@ -118,5 +114,14 @@ export const resolveColorScheme = (scheme: unknown): "light" | "dark" => {
     : "light";
 };
 
-export const getTheme = (scheme: unknown) =>
-  resolveColorScheme(scheme) === "dark" ? darkTheme : lightTheme;
+const themes = new Map<"light" | "dark", ThemeVars>();
+
+export const getTheme = (scheme: unknown) => {
+  const resolved = resolveColorScheme(scheme);
+  let theme = themes.get(resolved);
+  if (!theme) {
+    theme = createTheme(resolved);
+    themes.set(resolved, theme);
+  }
+  return theme;
+};
