@@ -289,7 +289,7 @@ importers:
         specifier: 1.64.1
         version: 1.64.1
       remark-gfm:
-        specifier: ^4.0.1
+        specifier: 4.0.1
         version: 4.0.1(supports-color@10.2.2)
       storybook:
         specifier: 10.6.2
