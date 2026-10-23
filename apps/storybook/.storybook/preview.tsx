@@ -16,6 +16,13 @@ import "../utils/add-displaynames";
 import { customStylesDecorator } from "../utils/customStylesDecorator";
 import { chromaticModes } from "./modes";
 import "./preview.css";
+import {
+  colorSchemeDecorator,
+  syncColorSchemeWithGlobals,
+} from "./colorScheme";
+import { ThemedDocsContainer } from "./docsContainer";
+
+syncColorSchemeWithGlobals();
 
 const atViewPorts: ViewportMap = {
   atmobile: {
@@ -59,7 +66,7 @@ export default definePreview({
   },
   globalTypes: {
     colorScheme: {
-      description: "Set color-scheme in stories",
+      description: "Set color scheme for Storybook and stories",
       toolbar: {
         title: "Color scheme",
         icon: "contrast",
@@ -146,6 +153,7 @@ export default definePreview({
       },
     },
     docs: {
+      container: ThemedDocsContainer,
       codePanel: true,
       toc: {
         headingSelector: "h2, h3",
@@ -173,6 +181,6 @@ export default definePreview({
       modes: chromaticModes,
     },
   },
-  decorators: [customStylesDecorator],
+  decorators: [customStylesDecorator, colorSchemeDecorator],
   tags: ["autodocs"],
 });
