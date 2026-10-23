@@ -93,10 +93,22 @@ export const darkTheme = create({
   inputTextColor: "#ECECEC", // neutral-text-default
 });
 
-/** Value of the `colorScheme` global, mirroring Designsystemet's `data-color-scheme`. */
+/** Mirrors Designsystemet's `data-color-scheme`. */
 export type ColorScheme = "light" | "dark" | "auto";
 
 export const darkColorSchemeQuery = "(prefers-color-scheme: dark)";
+
+/*
+ * The toolbar choice is stored in localStorage, which the manager and the
+ * preview iframe share. Unlike Storybook globals, changing it doesn't
+ * re-render the preview, so docs pages don't flash.
+ */
+export const colorSchemeStorageKey = "gnist-storybook-color-scheme";
+
+export const readStoredColorScheme = (): ColorScheme => {
+  const stored = window.localStorage.getItem(colorSchemeStorageKey);
+  return stored === "light" || stored === "dark" ? stored : "auto";
+};
 
 export const resolveColorScheme = (scheme: unknown): "light" | "dark" => {
   if (scheme === "light" || scheme === "dark") return scheme;
