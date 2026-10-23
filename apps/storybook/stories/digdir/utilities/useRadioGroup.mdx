@@ -39,11 +39,15 @@ return (
 
 In response you get the object:
 
+{/* Gnist: start, fixes upstream: the type of setValue */}
+
 ```ts
 {
   getRadioProps: (value: string | RadioProps) => RadioProps, // Returns props you can spread on <Radio /> or <input type="radio" />
   validationMessageProps: ValidationMessageProps, // Props you optionally spread on ValidationMessage to link error message to radio group
-  setValue: string, // Function to set radio group value
+  setValue: Dispatch<SetStateAction<string>>, // Function to set radio group value
   value: string, // Current value of radio group
 }
 ```
+
+{/* Gnist: end */}

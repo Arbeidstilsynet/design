@@ -176,6 +176,12 @@ Everything else Gnist adds is marked: a `// Gnist: <why>` comment above the
 addition in TSX; `{/* Gnist: start */}` and `{/* Gnist: end */}` around it in
 MDX. Mechanical translations are not marked.
 
+Correct factual errors upstream ships, such as a return type, prop name or
+label association that doesn't match the installed package, and mark the
+corrected block as a Gnist addition that says what it fixes:
+`{/* Gnist: start, fixes upstream: <what> */}`. When reapplying it, it replaces
+upstream's version of the block. Drop it once upstream has the fix.
+
 ## Translation rules
 
 English only: read `en/`, ignore `no/`.

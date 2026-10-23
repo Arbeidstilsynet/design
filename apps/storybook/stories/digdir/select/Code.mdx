@@ -55,16 +55,20 @@ The user will still be able to focus on the element.
 
 ## React
 
+{/* Gnist: start, fixes upstream: the label was not associated with the select */}
+
 ```tsx
 import { Select, Label } from "@arbeidstilsynet/design-react";
 
 <>
-  <Label>Select a mountain</Label>
-  <Select>
+  <Label htmlFor="mountain">Select a mountain</Label>
+  <Select id="mountain">
     <Select.Option value="everest">Mount Everest</Select.Option>
   </Select>
 </>;
 ```
+
+{/* Gnist: end */}
 
 <Canvas of={SelectStories.Preview} />
 

@@ -37,14 +37,18 @@ return (
 <br />
 In response you get the object:
 
+{/* Gnist: start, fixes upstream: the types of value and setValue */}
+
 ```ts
 {
   getCheckboxProps: (value: string | CheckboxProps) => CheckboxProps, // Returns props you can spread on <Checkbox /> or <input type="checkbox" />
   validationMessageProps: ValidationMessageProps, // Props you optionally spread on ValidationMessage to link error message to checkbox group
-  setValue: string, // Function to set checkbox group value
-  value: string, // Current value of checkbox group
+  setValue: Dispatch<SetStateAction<string[]>>, // Function to set checkbox group value
+  value: string[], // Current value of checkbox group
 }
 ```
+
+{/* Gnist: end */}
 
 ## Allow indeterminate
 

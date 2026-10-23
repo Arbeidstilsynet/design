@@ -31,10 +31,12 @@ const pagination = {
 
 ## Use
 
+{/* Gnist: start, fixes upstream: hasPrevious is named hasPrev */}
+
 ```tsx
 const onChange = (event, page: number) => console.log(`Going to page ${page}`);
 const [currentPage, setCurrentPage] = useState(4);
-const { pages, prevButtonProps, nextButtonProps, hasNext, hasPrevious } =
+const { pages, prevButtonProps, nextButtonProps, hasNext, hasPrev } =
   usePagination({
     currentPage,
     setCurrentPage,
@@ -43,6 +45,8 @@ const { pages, prevButtonProps, nextButtonProps, hasNext, hasPrevious } =
     showPages: 7,
   });
 ```
+
+{/* Gnist: end */}
 
 ### On `Pagination.Button`
 
