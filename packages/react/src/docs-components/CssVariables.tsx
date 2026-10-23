@@ -153,10 +153,10 @@ function getCssVariables(css: string, prefix: string) {
     css,
   );
   // get all property declarations starting with the prefix
-  const escapedPrefix = prefix.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const escapedPrefix = prefix.replace(/[.*+?^${}()|[\]\\]/g, String.raw`\$&`);
   const cssVars = Array.from(
     cssWithRemovedStrings.matchAll(
-      new RegExp(`(?<!var\\()(${escapedPrefix}[^;}]+)[;}]`, "g"),
+      new RegExp(String.raw`(?<!var\()(${escapedPrefix}[^;}]+)[;}]`, "g"),
     ),
   ).map((matches) => matches[1]);
 
