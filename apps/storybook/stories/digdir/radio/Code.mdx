@@ -1,0 +1,96 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/radio/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/input.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as RadioStories from "./Radio.stories";
+
+<Meta of={RadioStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={RadioStories.Preview} sourceState="shown" />
+
+## Usage
+
+Use the class `ds-input` on `<input>` together with `type="radio"`.
+
+```html
+<input class="ds-input" type="radio" />
+```
+
+For a valid form element, we recommend using `<ds-field>` together with a `<label>`.
+
+```html
+<ds-field>
+  <label class="ds-label">Radio</label>
+  <input class="ds-input" type="radio" value="value" name="name" />
+</ds-field>
+```
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors).
+The component will inherit from the closest parent where these are set.
+
+Radio is `ds-input` with `type="radio"`, so variables and data attributes that apply to [input](?path=/docs/designsystemet-no-input--overview) also apply to radio.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## Examples
+
+### Grouping
+
+Use [fieldset](?path=/docs/designsystemet-no-fieldset--code) for grouping multiple choices.
+
+<Canvas of={RadioStories.Group} />
+
+### Outline
+
+`data-variant="outline"` adds extra padding and a border around the option to create a larger clickable area.
+
+<Canvas of={RadioStories.Outline} />
+
+### Inline
+
+Radio _can_ be positioned horizontally with `flex`, but should generally be [placed vertically](?path=/docs/designsystemet-no-radio--overview#placement).
+
+<Canvas of={RadioStories.Inline} />
+
+### ReadOnly
+
+`type="radio"` is always `:read-only` and does not support this in the same way as input types you can type into.
+
+If you set `readonly` on radio, we ensure that it behaves as if it has read-only access by stopping `onClick` and `onChange`.
+
+The user will still be able to focus on the element.
+
+<Canvas of={RadioStories.ReadOnly} />
+
+## React
+
+In React, building a radio is easier, because we have a ready-made component that handles most of the logic and state management for us.
+
+`Radio` is a composite component that uses [field](?path=/docs/designsystemet-no-field--overview), [label](?path=/docs/designsystemet-no-typography-label--overview), [validation message](?path=/docs/designsystemet-no-typography-validationmessage--overview), and [input](?path=/docs/designsystemet-no-input--overview) to create a radio.
+
+In addition, we have a dedicated [useRadioGroup](?path=/docs/designsystemet-no-utilities-useradiogroup--docs) React hook to make it easier to manage a group of Radio components.
+
+```tsx
+import { Radio } from "@arbeidstilsynet/design-react";
+
+<Radio label="Radio" value="value" name="name" />;
+```
+
+<Canvas of={RadioStories.Preview} />
+
+<Controls of={RadioStories.Preview} sort="requiredFirst" />

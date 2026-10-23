@@ -1,0 +1,53 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/error-summary/en/overview.mdx */}
+
+import { Canvas, Meta, Subtitle, Title } from "@storybook/addon-docs/blocks";
+import * as ErrorSummaryStories from "./ErrorSummary.stories";
+
+<Meta of={ErrorSummaryStories} name="Overview" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={ErrorSummaryStories.Preview} />
+
+**Use error summary when**
+
+- you need to present a clear overview of the errors that must be corrected before a form can be submitted
+- a form contains many fields, making it difficult for users to understand where the errors are located
+
+**Avoid error summary when**
+
+- the feedback does not prevent submission, such as warnings or recommendations
+- you need to display system-level messages; use [alert](?path=/docs/designsystemet-no-alert--overview) instead
+
+## Example
+
+### Use in forms
+
+In the example below, each link in the error summary lets you navigate directly to the field containing an error.
+
+<Canvas of={ErrorSummaryStories.WithForm} />
+
+## Guidelines
+
+Error summary is used to display a summary when there are errors or omissions in something the user has done. A summary may include one or several errors.\
+Error summary should contain all error messages present on the page, so users can navigate directly to them by clicking the links in the summary.
+
+### Placement
+
+We recommend placing error summary just above the Next/Submit button. This helps users understand the connection between the errors and why they cannot proceed.
+
+In some cases, it may be better to show the summary at the top of the page.\
+You can read more about this in the [article on error messages](https://designsystemet.no/en/patterns/errors).
+
+### Visibility
+
+The summary should not be visible before the user has taken an action that triggers an error. It should become visible only after the user performs an action that results in errors. The summary automatically receives focus when it becomes visible and when its content changes.
+
+- If validation happens continuously (for example using `onBlur` on each field), wait to show error summary until the user attempts to submit the form.
+- Error messages must link directly to the relevant field.
+- If the error applies to several fields, for example when two fields are validated together, link to the first instance of the error.
+
+## Text
+
+Ensure that the heading “To continue, you must correct the following errors” is used in error summary. The error messages in the summary should be phrased exactly the same as the error messages displayed at the relevant fields.

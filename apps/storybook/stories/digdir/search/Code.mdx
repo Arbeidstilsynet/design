@@ -1,0 +1,64 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/search/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/search.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as SearchStories from "./Search.stories";
+
+<Meta of={SearchStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={SearchStories.Preview} sourceState="shown" />
+
+## Usage
+
+Use the class name `ds-search` on a `<ds-suggestion>` around `<input>`.
+If you want a clear button, add a `<button type="reset">` after the `<input>`. It is automatically shown and hidden based on the input's value.
+
+You can change the `variant` on the button to adjust its appearance.
+The magnifying icon is shown when `input` has `type="search"`, and hidden when `input` has `type="text"`.
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## Examples
+
+### With label
+
+If you want a label on the search field, add a label that you connect with `Search.Input`. In the example, we have used field to get a connection between label and `Search.Input`.
+
+<Canvas of={SearchStories.WithLabel} />
+
+### `<form>`
+
+<Canvas of={SearchStories.Form} />
+
+## React
+
+```tsx
+import { Search } from "@arbeidstilsynet/design-react";
+
+<Search>
+  <Search.Input aria-label="Search" />
+  <Search.Clear />
+  <Search.Button />
+</Search>;
+```
+
+<Canvas of={SearchStories.Preview} />
+
+<Controls of={SearchStories.Preview} sort="requiredFirst" />

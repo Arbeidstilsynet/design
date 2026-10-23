@@ -1,0 +1,86 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/pagination/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/pagination.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as PaginationStories from "./Pagination.stories";
+
+<Meta of={PaginationStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={PaginationStories.Preview} sourceState="shown" />
+
+## Usage
+
+Add the class name `ds-pagination` to the `<ds-pagination>` element.
+The web component automatically fills the buttons or anchors based on the data attributes `data-current` and `data-total`.
+
+If you wish to use your own buttons, you can add `<a>` or `<button>` elements inside `<ds-pagination>`. If you fill these with text and do not pass any attributes, the web component will not change the buttons.
+
+### With links
+
+You can use pagination with links (anchor tags).
+
+<Canvas of={PaginationStories.WithAnchor} />
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## React
+
+Pagination is a stateless component, and you must control which pages are displayed.
+
+Use `usePagination` for pagination logic together with the single-part components.
+[Read more about `usePagination`](?path=/docs/designsystemet-no-utilities-usepagination--docs).
+
+```tsx
+import { Pagination } from "@arbeidstilsynet/design-react";
+
+<Pagination>
+  <Pagination.List>
+    <Pagination.Item>
+      <Pagination.Button aria-label="Previous page">Previous</Pagination.Button>
+    </Pagination.Item>
+
+    <Pagination.Item>
+      <Pagination.Button aria-label="Page 1">1</Pagination.Button>
+    </Pagination.Item>
+
+    <Pagination.Item />
+
+    <Pagination.Item>
+      <Pagination.Button aria-label="Page 10">10</Pagination.Button>
+    </Pagination.Item>
+
+    <Pagination.Item>
+      <Pagination.Button aria-label="Next page">Next</Pagination.Button>
+    </Pagination.Item>
+  </Pagination.List>
+</Pagination>;
+```
+
+<Canvas of={PaginationStories.Preview} />
+
+<Controls of={PaginationStories.Preview} sort="requiredFirst" />
+
+### Additional logic for creating pagination with links
+
+Below you see `usePagination` used with pagination to create pagination with links.
+
+You use `asChild` to change `Pagination.Button` to `<a>`.
+
+<Canvas of={PaginationStories.WithAnchor} />

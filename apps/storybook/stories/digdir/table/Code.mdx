@@ -1,0 +1,98 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/table/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/table.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as TableStories from "./Table.stories";
+
+<Meta of={TableStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={TableStories.Preview} sourceState="shown" />
+
+## Usage
+
+It is recommended to read about [`<table>` on MDN (mozilla.org)](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/table) for a thorough review of HTML tables and their semantics.
+
+The class name `ds-table` is applied to the `<table>` element.
+
+By placing `<button>` in a `<th>` with `aria-sort="*"`, you create a visual button for sorting. You connect the logic for sorting to the button yourself. Add `type="button"` to avoid the button behaving like a submit button.
+
+You can add `data-clickdelegatefor` to a `<tr>` to delegate click events to an element in the row, such as an `<a>` tag.
+
+Use `data-border="true"` to add a visible border around the table.
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## Example
+
+### Sorting
+
+You can use props on `Table.HeaderCell` to show that the table can be sorted by the contents of a column.
+
+- Use the `sort` prop to indicate the sort direction:
+- `"none"` - no sorting
+- `"ascending"` - ascending order
+- `"descending"` - descending order
+- Use `onClick` to handle what happens when the user clicks on the column header.
+
+<Canvas of={TableStories.Sortable} />
+
+### Fixed column width
+
+You can use `table-layout: fixed` to prevent column widths from changing when the table content is updated.
+This provides a smoother layout, and helps the browser draw the table faster.
+
+This is especially useful in tables with pagination or other dynamically updated content, where stable column widths provide a better user experience.
+
+<Canvas of={TableStories.FixedTable} />
+
+### Clickable rows
+
+Use [data-clickdelegatefor](https://designsystemet.no/en/components/utilities/clickdelegatefor) to make an entire row clickable, while maintaining good accessibility.
+
+<Canvas of={TableStories.HTMLClickableRows} />
+
+### Scrollable
+
+Use an element around the `table` with `overflow-x: auto` to ensure horizontal scrolling when needed.
+
+<Canvas of={TableStories.Scrollable} />
+
+## React
+
+```tsx
+import { Table } from "@arbeidstilsynet/design-react";
+
+<Table>
+  <Table.Head>
+    <Table.Row>
+      <Table.HeaderCell>Header</Table.HeaderCell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>Cell</Table.Cell>
+    </Table.Row>
+  </Table.Body>
+</Table>;
+```
+
+<Canvas of={TableStories.Preview} />
+
+<Controls of={TableStories.Preview} sort="requiredFirst" />

@@ -1,0 +1,63 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/textarea/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/input.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as TextareaStories from "./Textarea.stories";
+
+<Meta of={TextareaStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={TextareaStories.Preview} sourceState="shown" />
+
+## Use
+
+Apply the class name `ds-input` to `<textarea>`.
+
+```html
+<textarea class="ds-input"></textarea>
+```
+
+## Example
+
+### With Rows
+
+Use the `rows` attribute to set the number of visible rows in the text area.
+This only affects the initial height of the field.
+
+<Canvas of={TextareaStories.WithRows} />
+
+## CSS variables and data attributes
+
+Textarea gets styling from `ds-input`, so we show variables and data attributes from that class here.
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors).
+The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## React
+
+```tsx
+import { Textarea, Label } from "@arbeidstilsynet/design-react";
+
+<>
+  <Label htmlFor="my-textarea">Label</Label>
+  <Textarea id="my-textarea" />
+</>;
+```
+
+<Canvas of={TextareaStories.Preview} />
+
+<Controls of={TextareaStories.Preview} sort="requiredFirst" />

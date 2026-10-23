@@ -1,0 +1,101 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/avatar-stack/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import { Alert } from "@arbeidstilsynet/design-react";
+import css from "@arbeidstilsynet/design-css/digdir/avatar-stack.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as AvatarStackStories from "./AvatarStack.stories";
+
+<Meta of={AvatarStackStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Alert data-color="info" className="sb-unstyled">
+  Avatar stack is under development. If you have feedback or suggestions, please
+  report them on
+  [Github](https://github.com/digdir/designsystemet/issues/new?template=BLANK_ISSUE&title=Feedback:%20AvatarStack)
+  or in [Slack](https://designsystemet.no/slack).
+</Alert>
+
+<Canvas of={AvatarStackStories.Preview} sourceState="shown" />
+
+## Usage
+
+To create an avatar stack in plain HTML, use the `ds-avatar-stack` class on a `<ul>`. Inside this, place `<li>` elements wrapping elements with the `ds-avatar` class. Use a trailing `<li>` with text to add an indicator for hidden avatars.
+
+`aria-label` or `aria-description` can be used on avatar stack to provide context to screen readers about what the stack represents.
+
+## CSS variables and data attributes
+
+Avatar stack uses its own CSS variables to control gap, size and overlap.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## Examples
+
+### Expandable
+
+`data-expandable` animates overlap to 0 on hover or focus. Use `data-expandable="fixed"` to expand with overflow without changing the physical width. `tabindex="0"` should be added, this is automatically added with `expandable` in React.
+
+**Note:** In [browsers that do not support `sibling-index()`](https://caniuse.com/wf-sibling-count), `data-expandable="fixed"` will not render correctly if it contains more than 12 avatars.
+
+<Canvas of={AvatarStackStories.Expandable} />
+
+### Indicating avatars not shown
+
+Avatar stack does not support wrapping across multiple lines. If there are more avatars than can fit in the stack, you can use a trailing `<li>` with text to indicate i.e. `+5`.
+You can also use an avatar with content `+xx`.
+
+<Canvas of={AvatarStackStories.AdditionalAvatars} />
+
+### Sizes
+
+Set the avatar stack size using `data-size` or `--dsc-avatar-stack-size`. The size must be set on the avatar stack itself, rather than on the individual avatars, to ensure the overlap masking works correctly.
+
+<Canvas of={AvatarStackStories.DataSize} />
+
+### Gap
+
+Avatar stack uses CSS `mask` to create the visible space between avatars. This can be adjusted by setting the `--dsc-avatar-stack-gap` variable.
+
+<Canvas of={AvatarStackStories.Gap} />
+
+## React
+
+```tsx
+import {
+  EXPERIMENTAL_AvatarStack as AvatarStack,
+  Avatar,
+} from "@arbeidstilsynet/design-react";
+
+<AvatarStack aria-label="contributors">
+  <li>
+    <Avatar aria-label="Ola Nordmann">ON</Avatar>
+  </li>
+  <li>
+    <Avatar aria-label="Ola Nordmann">
+      <img src="..." />
+    </Avatar>
+  </li>
+</AvatarStack>;
+```
+
+<Canvas of={AvatarStackStories.Preview} />
+
+<Controls of={AvatarStackStories.Preview} sort="requiredFirst" />
+
+### Extra logic for links
+
+Use `asChild` to make an avatar a link.
+
+<Canvas of={AvatarStackStories.WithTooltipAndLink} />

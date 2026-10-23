@@ -1,0 +1,35 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/label/en/overview.mdx */}
+
+import { Canvas, Meta, Subtitle, Title } from "@storybook/addon-docs/blocks";
+import * as LabelStories from "./Label.stories";
+
+<Meta of={LabelStories} name="Overview" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={LabelStories.Preview} />
+
+Label is a typography component used to describe the content of form fields that the user needs to complete or interact with. Use it to provide short, precise, and understandable information about what a field contains or what the user is expected to do.
+
+## Example
+
+### Weights
+
+Label uses semibold `font-weight` by default. This provides a balanced and clear appearance in most forms. Font weight should always be used with a clear purpose and contribute to a meaningful visual hierarchy.
+
+When Label is used within [Radio](?path=/docs/designsystemet-no-radio--overview) or [Checkbox](?path=/docs/designsystemet-no-checkbox--overview), the font weight is automatically reduced. This creates a natural hierarchy between the Label and any legend text in the associated [Fieldset](?path=/docs/designsystemet-no-fieldset--overview).
+
+<Canvas of={LabelStories.Weights} />
+
+## Guidelines
+
+Label must be clearly connected to the associated field so that both visual users and users of assistive technologies understand the relationship.
+
+If the field requires a specific format or limitations, this can be supplemented with a description (`description`) underneath rather than making the label unnecessarily long.
+
+<Canvas of={LabelStories.TextFieldLabel} />
+
+## Text
+
+Text in label should be simple, consistent, and easy to understand. Write in plain language so that all users immediately know what to enter or select. Avoid abbreviations and internal terminology unless the target audience is already familiar with them.

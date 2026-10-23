@@ -1,0 +1,76 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/error-summary/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/error-summary.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as ErrorSummaryStories from "./ErrorSummary.stories";
+
+<Meta of={ErrorSummaryStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={ErrorSummaryStories.Preview} sourceState="shown" />
+
+## Usage
+
+The class name `ds-error-summary` is used on the `<ds-error-summary>` element.
+The web component handles focus when it becomes visible and `aria-labelledby` automatically.
+
+We add a `<ul class="ds-list">` after the heading which contains a list of errors.
+Each error is a `<li>` with a link (`<a>`) that has the class `ds-link` and an `href` to the relevant field with the error.
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## Example
+
+### Use with text fields
+
+In order for `ErrorSummary.Link` to navigate to the fields with errors, the fields must have a unique `id` that matches the `href` in the link.
+
+<Canvas of={ErrorSummaryStories.WithForm} />
+
+### Moving focus
+
+Below is an example of how focus is automatically moved to error summary when it becomes visible.
+
+<Canvas of={ErrorSummaryStories.ShowHide} />
+
+## React
+
+Error summary consists of several subcomponents:
+
+- `ErrorSummary.Heading` defines the heading.
+- `ErrorSummary.List` defines the list of errors.
+- Each error is represented as an `ErrorSummary.Item` containing an `ErrorSummary.Link`.
+- Each `ErrorSummary.Link` must have an `href` to the unique identifier for a form field, so that the user can navigate to the correct place in the form.
+
+```tsx
+import { ErrorSummary } from "@arbeidstilsynet/design-react";
+
+<ErrorSummary>
+  <ErrorSummary.Heading>Heading</ErrorSummary.Heading>
+  <ErrorSummary.List>
+    <ErrorSummary.Item>
+      <ErrorSummary.Link href="#some-field-id">Item</ErrorSummary.Link>
+    </ErrorSummary.Item>
+  </ErrorSummary.List>
+</ErrorSummary>;
+```
+
+<Canvas of={ErrorSummaryStories.Preview} />
+
+<Controls of={ErrorSummaryStories.Preview} sort="requiredFirst" />

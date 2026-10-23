@@ -1,0 +1,30 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/dropdown/en/accessibility.mdx */}
+
+import { Meta, Subtitle, Title } from "@storybook/addon-docs/blocks";
+import { Alert } from "@arbeidstilsynet/design-react";
+import * as DropdownStories from "./Dropdown.stories";
+
+<Meta of={DropdownStories} name="Accessibility" />
+
+<Title />
+<Subtitle />
+
+<Alert data-color="info" className="sb-unstyled">
+  We are working to improve the accessibility documentation for this component.
+  If you have questions or see something that should be prioritised, please
+  contact us on
+  [Github](https://github.com/digdir/designsystemet/issues/new?template=1bug_report.yml)
+  or [Slack](https://designsystemet.no/slack).
+</Alert>
+
+There is built-in accessibility in the [Popover API](https://developer.mozilla.org/en-US/docs/Web/API/Popover_API) for open and closed state, as well as keyboard navigation.
+
+### Keyboard navigation
+
+- <kbd>Enter</kbd> or <kbd>Space</kbd> opens or closes the menu
+- <kbd>Enter</kbd> or <kbd>Space</kbd> selects the highlighted item
+- <kbd>Esc</kbd> closes the menu
+
+### Arrow key navigation
+
+You can combine Dropdown with [focusgroup](https://designsystemet.no/en/components/utilities/focusgroup) to enable arrow navigation between items.

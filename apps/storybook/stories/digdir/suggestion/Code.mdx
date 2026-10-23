@@ -1,0 +1,155 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/suggestion/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import { Alert } from "@arbeidstilsynet/design-react";
+import css from "@arbeidstilsynet/design-css/digdir/suggestion.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as SuggestionStories from "./Suggestion.stories";
+
+<Meta of={SuggestionStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Alert data-color="warning" className="sb-unstyled">
+
+Suggestion is under development. If you find any errors or bugs, please report them on Github or Slack.
+
+</Alert>
+
+<Canvas of={SuggestionStories.Preview} sourceState="shown" />
+
+## Usage
+
+Suggestion is based on [open-ui's combobox pattern (open-ui.org)](https://open-ui.org/components/combobox.explainer/) and uses [u-combobox from u-elements (github.io)](https://u-elements.github.io/u-elements/elements/u-combobox) to provide core combobox functionality.
+
+Use the class `ds-suggestion` on the custom element `<ds-suggestion>`.
+Add `<input class="ds-input" />` and `<u-datalist>` with `<u-option>` children to get a working suggestion.
+
+```html
+<ds-suggestion class="ds-suggestion">
+  <input class="ds-input" />
+  <u-datalist>
+    <u-option label="Sogndal" value="Sogndal">Sogndal</u-option>
+    <u-option label="Oslo" value="Oslo">Oslo</u-option>
+    <u-option label="Brønnøysund" value="Brønnøysund">Brønnøysund</u-option>
+  </u-datalist>
+</ds-suggestion>
+```
+
+For a valid form control, we recommend using `<ds-suggestion>` inside `<ds-field>` together with a `<label>`.
+
+```html
+<ds-field>
+  <label class="ds-label">Suggestion</label>
+  <ds-suggestion class="ds-suggestion">
+    <input class="ds-input" />
+    <button type="reset" aria-label="Clear" />
+    <u-datalist>
+      <u-option label="Sogndal" value="Sogndal">Sogndal</u-option>
+      <u-option label="Oslo" value="Oslo">Oslo</u-option>
+      <u-option label="Brønnøysund" value="Brønnøysund">Brønnøysund</u-option>
+    </u-datalist>
+  </ds-suggestion>
+</ds-field>
+```
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors).
+The component will inherit from the closest parent where these are set.
+
+Suggestion uses elements from `u-elements` and therefore supports many of the same custom elements, data attributes, and CSS variables.
+You can read more about how to use these in the [u-elements `u-combobox` documentation](https://u-elements.github.io/u-elements/elements/u-combobox#attributes-and-props).
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} exclude={["activedescendant"]} />
+
+## Examples
+
+<Alert className="sb-unstyled">
+
+Check the [u-combobox documentation](https://u-elements.github.io/u-elements/elements/u-combobox) for more examples of how you can use suggestion.
+
+</Alert>
+
+### Multiple choice
+
+To allow users to select multiple options, use `data-multiple` on suggestion.
+
+<Canvas of={SuggestionStories.Multiple} />
+
+### Adding new options
+
+With `data-creatable` on suggestion, a user can create new selected options by entering text in the input and pressing <kbd>Enter</kbd>.
+
+<Canvas of={SuggestionStories.Creatable} />
+
+### Clear selection
+
+Add a button with `type="reset"` and `aria-label` to allow users to clear the selection.
+
+<Canvas of={SuggestionStories.Preview} />
+
+### Toggle list
+
+Add a button with `type="button" aria-expanded="false"` and `aria-label` to allow users to toggle the list.
+
+<Canvas of={SuggestionStories.Preview} />
+
+### With external data
+
+<Canvas of={SuggestionStories.FetchExternal} />
+
+### With dynamic suggestions
+
+<Canvas of={SuggestionStories.EmailSuggestions} />
+
+### Click to navigate
+
+<Canvas of={SuggestionStories.ClickToNavigate} />
+
+## React
+
+```tsx
+import { EXPERIMENTAL_Suggestion as Suggestion } from "@arbeidstilsynet/design-react";
+
+<Suggestion>
+  <Suggestion.Input />
+  <Suggestion.Toggle />
+  <Suggestion.Clear />
+  <Suggestion.List>
+    <Suggestion.Empty>Empty</Suggestion.Empty>
+    <Suggestion.Option label="Sogndal" value="sogndal">
+      Sogndal
+    </Suggestion.Option>
+    <Suggestion.Option label="Oslo" value="oslo">
+      Oslo
+    </Suggestion.Option>
+  </Suggestion.List>
+</Suggestion>;
+```
+
+<Canvas of={SuggestionStories.Preview} />
+
+<Controls of={SuggestionStories.Preview} sort="requiredFirst" />
+
+### Controlled multiple choice example
+
+If you need to control which options are selected, you can use `selected` and `onSelectedChange` on `Suggestion`.
+
+<Canvas of={SuggestionStories.ControlledMultiple} />
+
+### Filter
+
+Filter is enabled by default, and the filter searches based on the text in the input. You can pass your own filter. The example below shows how to turn the filter off entirely.
+
+<Canvas of={SuggestionStories.Filter} />

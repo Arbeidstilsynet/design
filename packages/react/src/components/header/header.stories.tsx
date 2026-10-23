@@ -6,14 +6,14 @@ import {
   PersonCircleIcon,
   TasklistIcon,
 } from "@navikt/aksel-icons";
-import type { Meta, StoryObj } from "@storybook/react-vite";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { expect, waitFor } from "storybook/test";
 import { Header } from "..";
 import { Button, Divider, Link, Switch } from "../..";
 import { HeaderStoriesIllustration } from "./stories-helpers/headerStoriesIllustration";
 import { HeaderStoriesTitle } from "./stories-helpers/headerStoriesTitle";
 
-const meta: Meta<typeof Header> = {
+const meta = preview.meta({
   title: "Arbeidstilsynet/Header",
   component: Header,
   parameters: {
@@ -33,11 +33,7 @@ const meta: Meta<typeof Header> = {
     ["Header.MenuIcon"]: Header.MenuIcon,
     ["Header.MenuBadge"]: Header.MenuBadge,
   },
-};
-
-export default meta;
-
-type Story = StoryObj<typeof meta>;
+});
 
 const links = [
   <Link key="home" href="./#" aria-current="page">
@@ -55,7 +51,7 @@ const links = [
  * Default header with all compound components.
  * Shows illustration, logo, navbar, and menu with profile items.
  */
-export const Preview: Story = {
+export const Preview = meta.story({
   render: (args) => {
     return (
       <Header {...args}>
@@ -109,13 +105,13 @@ export const Preview: Story = {
   args: {
     links,
   },
-};
+});
 
 /**
  * Header without menu - only navigation links.
  * Useful for simple applications without user controls.
  */
-export const NoMenu: Story = {
+export const NoMenu = meta.story({
   render: (args) => {
     return (
       <Header {...args}>
@@ -139,13 +135,13 @@ export const NoMenu: Story = {
   args: {
     links,
   },
-};
+});
 
 /**
  * Header without navigation links - only menu controls.
  * Useful for simple applications or landing pages.
  */
-export const NoNavigation: Story = {
+export const NoNavigation = meta.story({
   render: (args) => {
     return (
       <Header {...args}>
@@ -169,14 +165,14 @@ export const NoNavigation: Story = {
   parameters: {
     chromatic: { disableSnapshot: false },
   },
-};
+});
 
 /**
  * Header with custom max-width.
  * Demonstrates overriding the `--at-header-max-width` CSS variable
  * to constrain the header content to a narrower width.
  */
-export const CustomMaxWidth: Story = {
+export const CustomMaxWidth = meta.story({
   render: (args) => {
     return (
       <Header
@@ -231,9 +227,9 @@ export const CustomMaxWidth: Story = {
   args: {
     links,
   },
-};
+});
 
-export const SVGLogo: Story = {
+export const SVGLogo = meta.story({
   render: (args) => {
     return (
       <Header {...args}>
@@ -292,9 +288,9 @@ export const SVGLogo: Story = {
   args: {
     links,
   },
-};
+});
 
-export const OnlyDarkModeInMenu: Story = {
+export const OnlyDarkModeInMenu = meta.story({
   render: (args) => {
     return (
       <Header {...args}>
@@ -318,9 +314,9 @@ export const OnlyDarkModeInMenu: Story = {
   args: {
     links,
   },
-};
+});
 
-export const DifferentMenuRows: Story = {
+export const DifferentMenuRows = meta.story({
   render: (args) => {
     return (
       <Header {...args}>
@@ -416,9 +412,9 @@ export const DifferentMenuRows: Story = {
   args: {
     links,
   },
-};
+});
 
-export const ContentAboveHeader: Story = {
+export const ContentAboveHeader = meta.story({
   render: (args) => {
     return (
       <>
@@ -479,4 +475,4 @@ export const ContentAboveHeader: Story = {
   args: {
     links,
   },
-};
+});

@@ -1,0 +1,74 @@
+/* based on upstream https://github.com/digdir/designsystemet/blob/v1.23.0/apps/www/app/_components/do-dont/do-dont.module.css */
+
+.dodont {
+  border: var(--ds-border-width-default) solid
+    var(--ds-color-neutral-border-subtle);
+  border-radius: var(--ds-border-radius-md);
+  display: grid;
+  overflow: hidden;
+  grid-template-rows: auto 1fr auto;
+  margin-block: var(--ds-size-6);
+
+  .preview {
+    background-color: var(--ds-color-neutral-surface-default);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* the Story block adds its own margin */
+    > * {
+      margin: 0;
+    }
+  }
+
+  .header {
+    border-bottom: var(--ds-border-width-default) solid
+      var(--ds-color-neutral-border-subtle);
+    padding: var(--ds-size-4) var(--ds-size-6);
+    background-color: var(--ds-color-surface-tinted);
+    color: var(--ds-color-text-default);
+    display: flex;
+    align-items: center;
+    gap: var(--ds-size-2);
+
+    p {
+      margin: 0;
+      font-weight: 500;
+    }
+
+    svg {
+      color: var(--ds-color-base-default);
+      height: 2rem;
+      width: auto;
+    }
+  }
+
+  .footer {
+    background-color: var(--ds-color-neutral-surface-default);
+    border-top: var(--ds-border-width-default) solid
+      var(--ds-color-neutral-border-subtle);
+    padding: var(--ds-size-4) var(--ds-size-6);
+    color: var(--ds-color-neutral-text-subtle);
+    font-family: var(--ds-font-family);
+
+    > p {
+      margin: 0;
+      max-width: 65ch;
+      text-wrap: pretty;
+    }
+  }
+}
+
+:global(.dodont-row) {
+  gap: var(--ds-size-6);
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    flex: 1 1 min(100%, 350px);
+  }
+
+  > .dodont {
+    margin-block: 0;
+  }
+}

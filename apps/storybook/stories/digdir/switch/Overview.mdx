@@ -1,0 +1,82 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/switch/en/overview.mdx */}
+
+import { Canvas, Meta, Subtitle, Title } from "@storybook/addon-docs/blocks";
+import { DoDont } from "../../../../../packages/react/src/docs-components/DoDont";
+import * as SwitchStories from "./Switch.stories";
+import * as DoDontStories from "./Switch.dodont.stories";
+
+<Meta of={SwitchStories} name="Overview" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={SwitchStories.Preview} />
+
+**Use switch when**
+
+- users need to turn a feature or setting on or off
+- you want the action to take immediate effect
+
+**Avoid switch when**
+
+- users are answering questions in forms, use [radio](?path=/docs/designsystemet-no-radio--overview) or [checkbox](?path=/docs/designsystemet-no-checkbox--overview) instead
+- users are switching between different content views, such as list and graph, use [toggleGroup](?path=/docs/designsystemet-no-togglegroup--overview) instead
+- content needs to be filtered, use [chip](?path=/docs/designsystemet-no-chip--overview) instead
+
+## Example
+
+### Grouping
+
+Use [fieldset](?path=/docs/designsystemet-no-fieldset--overview) to group multiple switch components together.
+
+<Canvas of={SwitchStories.Group} />
+
+### Outline
+
+The outline variant adds extra padding and a border around the selection, increasing the clickable area.
+
+<Canvas of={SwitchStories.Outline} />
+
+### Right-aligned
+
+Sometimes it can be useful to right-align a switch, for example when it is placed in a table or a fixed layout.
+
+<Canvas of={SwitchStories.RightAligned2} />
+
+## Guidelines
+
+Whether the switch is shown as on or off depends on the context.
+
+## Text
+
+The label for a switch should be short and precise, often just one or two words.
+
+The text should make sense when you read it aloud and add an on/off switch at the end.
+
+The label should describe what the feature is about, not whether it is on or off.
+
+<div className="dodont-row">
+  <DoDont of={DoDontStories.DoIcon} variant="do">
+    Describe what the feature is about.
+  </DoDont>
+  <DoDont of={DoDontStories.DontIcon} variant="dont">
+    Never include whether the switch is on or off in the label.
+  </DoDont>
+</div>
+
+If you have multiple switches in a group, make sure the labels are written in a consistent way. The example below shows consistent wording when there are several switches in the same group.
+
+<div className="dodont-row">
+  <DoDont of={DoDontStories.DoIcon2} variant="do">
+    Write labels for each switch in a consistent way.
+  </DoDont>
+  <DoDont of={DoDontStories.DontIcon2} variant="dont">
+    Avoid inconsistent wording.
+  </DoDont>
+</div>
+
+### Where should the label be placed?
+
+As a rule, the switch is placed on the left and the label on the right. This makes it easy to see which label belongs to which switch.
+
+In some cases, switches are fixed on the right side of the interface. In those situations, it is best to place the label on the left, so all switches align neatly on the right.

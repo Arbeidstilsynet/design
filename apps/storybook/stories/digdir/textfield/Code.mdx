@@ -1,0 +1,89 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/textfield/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/input.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as TextfieldStories from "./Textfield.stories";
+
+<Meta of={TextfieldStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={TextfieldStories.Preview} sourceState="shown" />
+
+## Usage
+
+This is a composite component, which uses [field](?path=/docs/designsystemet-no-field--code), [input](?path=/docs/designsystemet-no-input--code) or [textarea](?path=/docs/designsystemet-no-textarea--code) and [label](?path=/docs/designsystemet-no-typography-label--code) under the hood.
+
+Since this component is built from multiple components, we recommend reading the documentation for the underlying components to get a full overview of the HTML structure.
+
+```html
+<!-- input -->
+<div class="ds-field">
+<label class="ds-label" for="my-input">Label</label>
+<div class="ds-field-affixes">
+<input class="ds-input" type="text" id="my-input">
+</div>
+</div>
+
+<!-- textarea -->
+<div class="ds-field">
+<label class="ds-label" for="my-textarea">Label</label>
+<div class="ds-field-affixes">
+<textarea class="ds-input" type="text" id="my-textarea">
+</div>
+</div>
+```
+
+## Examples
+
+### Multiline
+
+You can switch to a `textarea` by setting `multiline` to `true`. This allows users to write longer text.
+
+<Canvas of={TextfieldStories.WithRows} />
+
+### Type
+
+Since textfield is based on native `input`, you can use most of the `type` values that `input` supports, but we have chosen to remove some of them from our exported type. You can see the valid type values in the select menu below.
+
+<Canvas of={TextfieldStories.InputType} />
+
+### Required and optional fields
+
+When placing a tag inside a `<label>`, we recommend using `margin-inline-start: var(--ds-size-2)` to add space between the text and the tag.
+
+<Canvas of={TextfieldStories.Required} />
+
+## CSS variables and data attributes
+
+Textfield is a composite component, with [field](?path=/docs/designsystemet-no-field--code), [input](?path=/docs/designsystemet-no-input--code) or [textarea](?path=/docs/designsystemet-no-textarea--code) and [label](?path=/docs/designsystemet-no-typography-label--code).
+
+Here we only show `ds-input`'s variables and data attributes.
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors).
+The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## React
+
+```tsx
+import { Textfield } from "@arbeidstilsynet/design-react";
+
+<Textfield label="Label" />;
+```
+
+<Canvas of={TextfieldStories.Preview} />
+
+<Controls of={TextfieldStories.Preview} sort="requiredFirst" />

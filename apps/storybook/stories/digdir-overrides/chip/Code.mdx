@@ -1,0 +1,102 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/chip/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/chip.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as ChipStories from "./Chip.stories";
+
+<Meta of={ChipStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={ChipStories.Preview} sourceState="shown" />
+
+## Usage
+
+Chip uses two different HTML structures, but both have the class name `ds-chip`.
+
+### As radio or checkbox
+
+Notice that we put `<input>` inside `<label>`, this means you don't need to connect them with `for` and `id`.
+
+```html
+<!-- radio -->
+<label class="ds-chip">
+  <input class="ds-input" type="radio" value="bokmål" name="my-radio" />
+  Bokmål
+</label>
+
+<!-- checkbox -->
+<label class="ds-chip">
+  <input class="ds-input" type="checkbox" value="value" name="my-checkbox" />
+  Checkbox
+</label>
+```
+
+### As removable or button
+
+A removable chip uses a `<button>` element, but `data-removable="true"` has been added to indicate that it is a removable chip.
+Then a cross will appear to the right of the chip, this is drawn with CSS.
+
+```html
+<!-- button -->
+<button class="ds-chip" type="button">Clear all filters</button>
+
+<!-- removable -->
+<button class="ds-chip" type="button" data-removable="true">Norway</button>
+```
+
+### With text wrapping
+
+Chips by default force text on a single line, and truncate text with an ellipsis if it overflows.
+Use `data-wrap="wrap"` to allow multi-line text inside the chip.
+
+<Canvas of={ChipStories.Wrap} />
+
+## CSS variables and data attributes
+
+Chip also uses `ds-input` internally when it is a radio or checkbox.
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors).
+The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+{/* Gnist: start */}
+
+In Gnist, `--dsc-chip-background` is `var(--ds-color-surface-default)`. See
+[Gnist overrides](?path=/docs/designsystemet-no-chip--overview#gnist-overrides).
+
+{/* Gnist: end */}
+
+<CssAttributes css={css} />
+
+## React
+
+```tsx
+import { Chip } from "@arbeidstilsynet/design-react";
+
+// as radio
+<Chip.Radio name="my-chip">Radio</Chip.Radio>;
+
+// as checkbox
+<Chip.Checkbox name="my-chip">Checkbox</Chip.Checkbox>;
+
+// as removable
+<Chip.Removable>Removable</Chip.Removable>;
+
+// as button
+<Chip.Button>Button</Chip.Button>;
+```
+
+<Canvas of={ChipStories.Preview} />
+
+<Controls of={ChipStories.Preview} sort="requiredFirst" />

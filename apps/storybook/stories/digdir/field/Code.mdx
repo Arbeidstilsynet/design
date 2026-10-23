@@ -1,0 +1,132 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/field/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import { Alert } from "@arbeidstilsynet/design-react";
+import css from "@arbeidstilsynet/design-css/digdir/field.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as FieldStories from "./Field.stories";
+
+<Meta of={FieldStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={FieldStories.Preview} sourceState="shown" />
+
+## Usage
+
+Field groups a label, an optional description, a form element (such as input, textarea, or select), and a validation message.
+
+Add the class name `ds-field` to the `<ds-field>` element. `<ds-field>` automatically adds accessibility attributes and support for optional character count.
+`<ds-field>` also links the validation message across fields if it is placed inside a [fieldset](?path=/docs/designsystemet-no-fieldset--code).
+
+<Alert className="sb-unstyled">
+**Field or fieldset?**
+
+Field is used for individual form elements, while [fieldset](?path=/docs/designsystemet-no-fieldset--code) is used to group multiple fields together.
+A good rule of thumb is that a **fieldset is a set of fields**.
+
+</Alert>
+
+**Note**: The React component [textfield](?path=/docs/designsystemet-no-textfield--code) already has field built-in and should therefore not be placed inside a field.
+
+```html
+<ds-field class="ds-field">
+  <label class="ds-label">Last name</label>
+  <div data-field="description">Last name cannot contain spaces</div>
+  <input class="ds-input" type="text" value="Smith Washington" />
+  <p class="ds-validation-message" data-field="validation">
+    You cannot have spaces in your last name
+  </p>
+</ds-field>
+```
+
+## Examples
+
+### Prefix/Suffix
+
+Prefixes and suffixes are useful for showing units, currency or other types of information relevant to the field. You should **not** use these on their own, as screen readers do not announce them.
+
+<Canvas of={FieldStories.Affix} />
+
+### Character count
+
+Add a `<p>` with the attribute `data-field="counter"` inside the `ds-field` to get a counter on input and textarea.
+
+<Canvas of={FieldStories.Counter} />
+
+```html
+<ds-field class="ds-field">
+  <label class="ds-label">Add a description</label>
+  <textarea class="ds-input"></textarea>
+  <p
+    class="ds-validation-message"
+    data-field="counter"
+    data-limit="20"
+    data-over="%d characters too many"
+    data-under="%d characters left"
+  ></p>
+</ds-field>
+```
+
+You can control the text in the counter using the following attributes:
+
+| attribute  | type   | default         | required |
+| ---------- | ------ | --------------- | -------- |
+| data-limit | number | undefined       | true     |
+| data-over  | string | %d tegn for mye | false    |
+| data-under | string | %d tegn igjen   | false    |
+
+### Placement
+
+Use `data-position="end"` on `<ds-field>` when you want to place, for example, a switch to the right of the label. The default is `data-position="start"`.
+
+<Canvas of={FieldStories.Position} />
+
+### Indeterminate
+
+To make a checkbox indeterminate, add `data-indeterminate="true"` on the `<input>` element.
+
+```html
+<ds-field class="ds-field">
+  <label class="ds-label">Label</label>
+  <input class="ds-input" type="checkbox" data-indeterminate="true" />
+</ds-field>
+```
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit from the closest parent that has these set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} exclude={["state"]} />
+
+## React
+
+```tsx
+import {
+  Field,
+  Label,
+  Input,
+  ValidationMessage,
+} from "@arbeidstilsynet/design-react";
+
+<Field>
+  <Label>Short description</Label>
+  <Field.Description>Description</Field.Description>
+  <Input />
+  <ValidationMessage>Error message</ValidationMessage>
+</Field>;
+```
+
+<Canvas of={FieldStories.Preview} />
+
+<Controls of={FieldStories.Preview} sort="requiredFirst" />

@@ -1,0 +1,45 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/divider/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/divider.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as DividerStories from "./Divider.stories";
+
+<Meta of={DividerStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={DividerStories.Preview} sourceState="shown" />
+
+## Usage
+
+The class name `ds-divider` is applied directly to the `<hr>` element.
+Apply `aria-hidden="true"` to avoid noise in screen readers.
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## React
+
+```tsx
+import { Divider } from "@arbeidstilsynet/design-react";
+
+<Divider />;
+```
+
+<Canvas of={DividerStories.Preview} />
+
+<Controls of={DividerStories.Preview} sort="requiredFirst" />

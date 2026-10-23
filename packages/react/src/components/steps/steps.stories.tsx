@@ -10,8 +10,8 @@ import {
   InformationIcon,
   PersonChatIcon,
 } from "@navikt/aksel-icons";
-import type { Meta, StoryObj } from "@storybook/react-vite";
 import React, { useState, type ComponentPropsWithoutRef } from "react";
+import preview from "../../../../../apps/storybook/.storybook/preview";
 import { Steps } from "..";
 
 type StoryLayoutProps = ComponentPropsWithoutRef<"div"> & {
@@ -70,7 +70,7 @@ function Grid({
   );
 }
 
-const meta: Meta<typeof Steps> = {
+const meta = preview.meta({
   title: "Arbeidstilsynet/Steps",
   component: Steps,
   parameters: {
@@ -90,16 +90,13 @@ const meta: Meta<typeof Steps> = {
       </Grid>
     ),
   ],
-};
-
-export default meta;
-type Story = StoryObj<typeof meta>;
+});
 
 /**
  * Default Steps with all sub-components: `StepMark`, `StepTitle`, `StepDescription`, and `StepDetails`.
  * The third step is marked as the current step with `aria-current="step"`.
  */
-export const Default: Story = {
+export const Default = meta.story({
   render: (args) => (
     <Steps {...args}>
       <Steps.Step>
@@ -143,13 +140,13 @@ export const Default: Story = {
   parameters: {
     chromatic: { disableSnapshot: false },
   },
-};
+});
 
 /**
  * All steps are marked as completed using `data-state="complete"`.
  * Use this to indicate a finished process.
  */
-export const WithStateComplete: Story = {
+export const WithStateComplete = meta.story({
   render: () => (
     <Steps data-state="complete">
       <Steps.Step>
@@ -190,7 +187,7 @@ export const WithStateComplete: Story = {
       </Steps.Step>
     </Steps>
   ),
-};
+});
 
 /**
  * `data-state="incomplete"` manually forces a step's mark to appear unchecked,
@@ -200,7 +197,7 @@ export const WithStateComplete: Story = {
  * Useful when a previous step was skipped or is known to be unfinished despite
  * the user having moved past it.
  */
-export const WithStateIncomplete: Story = {
+export const WithStateIncomplete = meta.story({
   parameters: {
     chromatic: { disableSnapshot: false },
   },
@@ -283,7 +280,7 @@ export const WithStateIncomplete: Story = {
       </Steps>
     </>
   ),
-};
+});
 
 /**
  * Demonstrates all three `data-direction` values.
@@ -292,7 +289,7 @@ export const WithStateIncomplete: Story = {
  * - `"down"`: vertical layout, progressing top to bottom.
  * - `"up"`: vertical layout, progressing bottom to top.
  */
-export const WithDirection: Story = {
+export const WithDirection = meta.story({
   parameters: {
     chromatic: { disableSnapshot: false },
   },
@@ -402,7 +399,7 @@ export const WithDirection: Story = {
       </Grid>
     </Flex>
   ),
-};
+});
 
 /**
  * Demonstrates the `data-fade` prop which dims steps away from the active one.
@@ -413,7 +410,7 @@ export const WithDirection: Story = {
  * - `data-fade="both"`: Apply fade effect before first step and after last step
  * - `data-fade="none"`: No fade effect is applied
  */
-export const WithFade: Story = {
+export const WithFade = meta.story({
   render: () => (
     <>
       <strong>
@@ -486,13 +483,13 @@ export const WithFade: Story = {
       </Steps>
     </>
   ),
-};
+});
 
 /**
  * Combines `data-fade` with vertical `data-direction` values.
  * Shows how fading works alongside `"down"` and `"up"` layouts.
  */
-export const WithFadeAndDirection: Story = {
+export const WithFadeAndDirection = meta.story({
   render: () => (
     <Flex data-items="500" data-gap="14">
       <Grid data-gap="14">
@@ -607,13 +604,13 @@ export const WithFadeAndDirection: Story = {
       </Grid>
     </Flex>
   ),
-};
+});
 
 /**
  * Uses `data-color` on individual `Steps.Step` or `Steps.StepMark` elements
  * to highlight specific steps (e.g., warnings, errors, or informational steps).
  */
-export const WithColors: Story = {
+export const WithColors = meta.story({
   render: () => (
     <Flex data-items="500" data-gap="14">
       <Grid data-gap="14">
@@ -707,7 +704,7 @@ export const WithColors: Story = {
       </Grid>
     </Flex>
   ),
-};
+});
 
 const InteractiveStepsComponent = () => {
   const [activeStep, setActiveStep] = useState(2);
@@ -750,14 +747,14 @@ const InteractiveStepsComponent = () => {
  * `Steps.StepMark`, replacing the auto-check icon with the warning colour and
  * close icon.
  */
-export const WithInteraction: Story = {
+export const WithInteraction = meta.story({
   parameters: {
     chromatic: { disableSnapshot: false },
   },
   render: () => <InteractiveStepsComponent />,
-};
+});
 
-export const Timeline: Story = {
+export const Timeline = meta.story({
   parameters: {
     showInOverview: true,
     chromatic: { disableSnapshot: false },
@@ -809,4 +806,4 @@ export const Timeline: Story = {
       </Steps.Step>
     </Steps>
   ),
-};
+});

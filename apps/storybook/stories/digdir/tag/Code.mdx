@@ -1,0 +1,51 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/tag/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/tag.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as TagStories from "./Tag.stories";
+
+<Meta of={TagStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={TagStories.Preview} sourceState="shown" />
+
+## Usage
+
+Apply the class name `ds-tag` to the element that should be a tag.
+You can set `variant="outline"` to add an outline to the tag.
+
+## CSS variables and data attributes
+
+Size is controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and color with [data-color](https://designsystemet.no/en/fundamentals/code/colors). The component inherits these from the closest parent where they are set.
+
+```tsx
+import { Tag } from "@arbeidstilsynet/design-react";
+
+<Tag>Beta</Tag>;
+```
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## React
+
+```tsx
+import { Tag } from "@arbeidstilsynet/design-react";
+
+<Tag>Beta</Tag>;
+```
+
+<Canvas of={TagStories.Preview} />
+
+<Controls of={TagStories.Preview} sort="requiredFirst" />

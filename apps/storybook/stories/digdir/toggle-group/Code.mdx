@@ -1,0 +1,107 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/toggle-group/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/toggle-group.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as ToggleGroupStories from "./ToggleGroup.stories";
+
+<Meta of={ToggleGroupStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={ToggleGroupStories.Preview} sourceState="shown" />
+
+## Usage
+
+If you are using `@digdir/designsystemet-web`, you can implement toggle group by using the `focusgroup="radiogroup"` and `aria-label` attributes.
+Note that `focusgroup` is a [upcoming W3C standard](https://open-ui.org/components/scoped-focusgroup.explainer/), currently only supported in Chrome. The design system automatically adds a polyfill to provide support in all browsers.
+
+```html
+<fieldset
+  class="ds-toggle-group"
+  focusgroup="radiogroup"
+  aria-label="Text alignment"
+  data-variant="secondary"
+>
+  <label class="ds-button">
+    <input type="radio" name="alignment" value="left" checked />
+    Leftadjusted
+  </label>
+  <label class="ds-button">
+    <input type="radio" name="alignment" value="center" />
+    Centered
+  </label>
+  <label class="ds-button">
+    <input type="radio" name="alignment" value="right" />
+    Rightadjusted
+  </label>
+</fieldset>
+```
+
+### Old way with `<button>`
+
+**With this approach, you need to handle keyboard navigation and ARIA roles yourself.**
+You can read about what you need to do to implement this in the [accessibility documentation](?path=/docs/designsystemet-no-togglegroup--accessibility).
+Each button in the group is a `<button>` with class name `ds-button` and `aria-checked` which indicates whether the button is selected or not.
+
+```html
+<div
+  class="ds-toggle-group"
+  focusgroup="radiogroup"
+  aria-label="Filter"
+  data-variant="primary"
+>
+  <button
+    class="ds-button"
+    type="button"
+    id="togglegroup-item-1"
+    aria-checked="true"
+  >
+    Inbox
+  </button>
+  <button
+    class="ds-button"
+    type="button"
+    id="togglegroup-item-2"
+    aria-checked="false"
+  >
+    Sent
+  </button>
+</div>
+```
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors).
+The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## React
+
+```tsx
+import { ToggleGroup } from "@arbeidstilsynet/design-react";
+
+<ToggleGroup aria-label="Options" defaultValue="option1">
+  <ToggleGroup.Item value="option1">Option 1</ToggleGroup.Item>
+  <ToggleGroup.Item value="option2">Option 2</ToggleGroup.Item>
+</ToggleGroup>;
+```
+
+### Controlled example
+
+<Canvas of={ToggleGroupStories.Controlled} />
+
+<Canvas of={ToggleGroupStories.Preview} />
+
+<Controls of={ToggleGroupStories.Preview} sort="requiredFirst" />

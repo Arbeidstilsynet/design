@@ -1,0 +1,45 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/link/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/link.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as LinkStories from "./Link.stories";
+
+<Meta of={LinkStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={LinkStories.Preview} sourceState="shown" />
+
+## Usage
+
+The component is an `<a>` element, and on MDN Web Docs you can read more about the [anchor HTML tag (mozilla.org)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a).
+Use the class name `ds-link` on an `<a>` element to apply the link style.
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## React
+
+```tsx
+import { Link } from "@arbeidstilsynet/design-react";
+
+<Link href="https://designsystemet.no/">Go to Designsystemet</Link>;
+```
+
+<Canvas of={LinkStories.Preview} />
+
+<Controls of={LinkStories.Preview} sort="requiredFirst" />

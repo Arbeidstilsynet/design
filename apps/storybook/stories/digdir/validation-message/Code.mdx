@@ -1,0 +1,59 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/validation-message/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import { Alert } from "@arbeidstilsynet/design-react";
+import css from "@arbeidstilsynet/design-css/digdir/validation-message.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as ValidationMessageStories from "./ValidationMessage.stories";
+
+<Meta of={ValidationMessageStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={ValidationMessageStories.Preview} sourceState="shown" />
+
+## Usage
+
+Use the class name `ds-validation-message` to style a validation message.
+
+## Form fields and status
+
+A validation message will automatically be connected to a form field when it has the attribute `data-field="validation"` and is inside a `<ds-field>`.
+The form element automatically gets `aria-invalid="true"` when a validation message is visible in the default color `danger`.
+
+<Alert className="sb-unstyled">
+  **Note:** Use the `hidden` attribute or add/remove the validation message
+  element, rather than hiding/showing with CSS class names or inline styling.
+  This ensures `<ds-field>` can correctly convey the visibility of the
+  validation message to assistive technologies.
+</Alert>
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## Example
+
+## React
+
+```tsx
+import { ValidationMessage } from "@arbeidstilsynet/design-react";
+
+<ValidationMessage>This is a validation message.</ValidationMessage>;
+```
+
+<Canvas of={ValidationMessageStories.Preview} />
+
+<Controls of={ValidationMessageStories.Preview} sort="requiredFirst" />

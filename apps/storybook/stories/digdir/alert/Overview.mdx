@@ -1,0 +1,106 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/alert/en/overview.mdx */}
+
+import { Canvas, Meta, Subtitle, Title } from "@storybook/addon-docs/blocks";
+import * as AlertStories from "./Alert.stories";
+
+<Meta of={AlertStories} name="Overview" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={AlertStories.Preview} />
+
+**Use Alert when**
+
+- you have short and informative messaging that is important to highlight
+- the information has a semantic meaning (error, success, info, warning)
+- you need to inform about minor or technical errors
+
+**Avoid Alert when**
+
+- you need to notify the user about an error in a single form field, use the component’s own error message [validation message](?path=/docs/designsystemet-no-typography-validationmessage--overview) instead, and [error summary](?path=/docs/designsystemet-no-errorsummary--overview) to summarise multiple errors
+- you want to highlight content visually
+
+For more comprehensive guidelines on how to use alerts in services, see the pattern for [System notifications](https://designsystemet.no/en/patterns/systemnotifications). There you will find examples and recommendations on when to use alert, and when other solutions may be more appropriate.
+
+## Examples
+
+Alert can be used for four types of messages: information, success, warning and error.
+
+### Information
+
+Use `info` when you want to provide the user with neutral and useful information.
+
+<Canvas of={AlertStories.VariantInfo} />
+
+### Success
+
+Use `success` when you want to confirm that the user has completed a task, that the action was successful.
+
+<Canvas of={AlertStories.VariantSuccess} />
+
+### Warning
+
+Use `warning` when you want the user to take a specific action or to warn them about something important.
+
+<Canvas of={AlertStories.VariantWarning} />
+
+### Error message
+
+Use `danger` to inform about something that is critical or that prevents the user from moving forward.
+
+<Canvas of={AlertStories.VariantDanger} />
+
+### Closable
+
+If the user should be able to close the alert, it should be clear what happens next.
+Instead of a general close icon, add one or more call to action buttons that both close the alert and provide the user's next step.
+
+<Canvas of={AlertStories.Closable} />
+
+### With and without heading
+
+If the message is longer than a sentence, it can be useful to use a heading to highlight the most important thing. This can be done using the [Heading](?path=/docs/designsystemet-no-typography-heading--overview) components. Remember to choose the correct heading level based on the space the alert has in the content structure of the page.
+
+<Canvas of={AlertStories.WithHeading} />
+
+If the title and description repeat the same thing, it is better to use a simple sentence without a heading.
+
+<Canvas of={AlertStories.WithOnlyHeading} />
+
+### With link
+
+You can include a link in the alert if it is necessary for the user to complete their task. Remember that links take the user out of the service, so they should be used with caution, for example when opening forms or performing other important actions.
+
+<Canvas of={AlertStories.WithLink} />
+
+## Guidelines
+
+Alert is used to display important messages that require attention. It can be used to inform the user about the status, changes, or problems in a solution.
+
+Use alert with caution. Users can confuse alerts with advertising, and thus ignore them. If we use alerts too often, we can exacerbate this problem.
+
+Make sure that alert has the same look and feel across all services and products. This component should be recognizable everywhere, so we should not adjust it.
+
+## Text
+
+It is not always easy to understand the difference between the notifications, even though they have different icons and colours. Therefore, it is important that the text we write in the notification is clear and easy to understand.
+
+If there is something users need to or can do to get through their task, the text should convey that. When the message is longer than a sentence, it may be a good idea to include a heading that highlights the most important points.
+
+Avoid multiple alerts on the same page, as it can confuse the user and make it difficult to understand what is important.
+
+Here is a list of the types of information that a notification should contain:
+
+- Tell them what happened
+  - Example: "Couldn't connect to account."
+- Tell them why it happened
+  - Example: "We were unable to connect to your account due to technical issues on our end."
+- Reassure the user
+  - Example: "Your changes have been saved."
+- Give them a way out of the problem
+  - Example: "If this problem occurs again, contact customer service."
+- Help them fix the problem themselves
+  - Example: "Please try again."
+
+For more guidance on how to write clear and effective alert text, see the language recommendations in the [System notifications pattern](https://designsystemet.no/en/patterns/systemnotifications#language).

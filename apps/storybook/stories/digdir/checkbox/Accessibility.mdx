@@ -1,0 +1,98 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/checkbox/en/accessibility.mdx */}
+
+import { Meta, Subtitle, Title } from "@storybook/addon-docs/blocks";
+import { Divider } from "@arbeidstilsynet/design-react";
+import * as CheckboxStories from "./Checkbox.stories";
+
+<Meta of={CheckboxStories} name="Accessibility" />
+
+<Title />
+<Subtitle />
+
+## What you need to check
+
+**Groups of choices must have a descriptive legend.**
+
+The legend, description, and error messages must be connected to the group so that they are available to assistive technologies.
+
+You can use [Fieldset](?path=/docs/designsystemet-no-fieldset--overview) to connect the legend, description, and error messages.
+
+<span data-size="sm">
+
+WCAG: [1.3.1 Info and relationships (W3C)](https://www.w3.org/WAI/WCAG22/Understanding/info-and-relationships)
+
+</span>
+
+<Divider />
+
+\
+**The field must have a clear accessible name that matches the visible label.**
+
+The accessible name must contain the visible text that describes the field. This allows users of speech recognition and screen readers to refer to the field using the same name shown on screen.
+
+<span data-size="sm">
+
+WCAG: [2.5.3 Label in Name (W3C)](https://www.w3.org/WAI/WCAG21/Understanding/label-in-name.html)
+
+</span>
+
+<Divider />
+
+\
+**A checkbox without a visible label must have an accessible name.**
+
+This applies, for example, when a checkbox is used in a table and the name must be derived from the content of the row or column.
+
+The accessible name must make it clear what the checkbox refers to.
+
+<span data-size="sm">
+
+WCAG: [4.1.2 Name, role, value (W3C)](https://www.w3.org/WAI/WCAG21/Understanding/name-role-value.html)
+
+</span>
+
+<Divider />
+
+\
+**Required fields must be clearly marked.**
+
+Users must easily understand which fields must be filled in. Follow the [pattern for required and optional form fields](https://designsystemet.no/en/patterns/required-and-optional-fields).
+
+<span data-size="sm">
+
+WCAG: [3.3.2 Labels or Instructions (W3C)](https://www.w3.org/WAI/WCAG22/Understanding/labels-or-instructions.html)
+
+</span>
+
+<Divider />
+
+\
+**Error messages must be clearly linked to the correct field and explain how to fix the error.**
+
+The error message must make it clear which field contains an error, what is wrong, and how the user can fix it. Avoid generic messages such as “Error” or “Invalid value”. Use specific messages instead, for example “The email address must contain @”. See the [pattern for user-triggered error messages](https://designsystemet.no/en/patterns/errors) for recommendations on when and how error messages should be shown.
+
+<span data-size="sm">
+
+WCAG: [3.3.1 Error Identification (W3C)](https://www.w3.org/WAI/WCAG22/Understanding/error-identification.html) and [3.3.3 Error Suggestion (W3C)](https://www.w3.org/WAI/WCAG21/Understanding/error-suggestion.html)
+
+</span>
+
+<Divider />
+
+## Test with a Keyboard
+
+**Verify that you can**
+
+- reach a checkbox using <kbd>Tab</kbd>
+- check and uncheck it using <kbd>Space</kbd>
+- reach all checkboxes in a group using <kbd>Tab</kbd>
+- navigate back to a previous checkbox using <kbd>Shift</kbd> + <kbd>Tab</kbd>
+
+<Divider />
+
+## Handled by Designsystemet
+
+- When checkbox is used in a [field](?path=/docs/designsystemet-no-field--overview), semantic connections to the label, description, and validation message are handled to support WCAG 4.1.2 Name, Role, Value.
+- Designsystemet includes styles for focus, hover, checked, indeterminate, invalid, and read-only states. Still check that these are visible when using keyboard focus and mouse hover.
+- Color contrast is handled by Designsystemet's color system. If you deviate from the recommended color tokens, verify that the combination of text and background colors meets the required contrast ratios for checkbox.
+- Sizing and scaling are handled by Designsystemet's sizing system. If you deviate from it, verify that checkbox remains usable when text is resized or when screen magnification is used, without loss of information or functionality.

@@ -1,0 +1,45 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/spinner/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/spinner.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as SpinnerStories from "./Spinner.stories";
+
+<Meta of={SpinnerStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={SpinnerStories.Preview} sourceState="shown" />
+
+## Usage
+
+Add the class name `ds-spinner` to an `<svg>` tag to create a spinner.
+The `<svg>` should have two `<circle>` elements inside it to create the spinner.
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## React
+
+```tsx
+import { Spinner } from "@arbeidstilsynet/design-react";
+
+<Spinner aria-label="Loader" />;
+```
+
+<Canvas of={SpinnerStories.Preview} />
+
+<Controls of={SpinnerStories.Preview} sort="requiredFirst" />

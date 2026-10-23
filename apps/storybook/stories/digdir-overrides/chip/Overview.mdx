@@ -1,0 +1,75 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/chip/en/overview.mdx */}
+
+import { Canvas, Meta, Subtitle, Title } from "@storybook/addon-docs/blocks";
+import { Alert } from "@arbeidstilsynet/design-react";
+import * as ChipStories from "./Chip.stories";
+
+<Meta of={ChipStories} name="Overview" />
+
+<Title />
+<Subtitle />
+
+{/* Gnist: start */}
+
+<Alert data-color="info" className="sb-unstyled">
+  Gnist overrides the styles of Chip. See [Gnist overrides](#gnist-overrides)
+  and [Overrides](?path=/docs/overrides--docs).
+</Alert>
+
+{/* Gnist: end */}
+
+<Canvas of={ChipStories.Preview} />
+
+**Use chip when**
+
+- users need to filter information, for example in lists or tables
+- active filters should be displayed
+
+**Avoid chip when**
+
+- you need to show status or numbers, use [badge](?path=/docs/designsystemet-no-badge--overview) instead
+- content should be labelled with a non-interactive category or topic, use [tag](?path=/docs/designsystemet-no-tag--overview) instead
+- you are creating menus or navigation elements
+
+## Examples
+
+### Chip as checkbox
+
+Use this variant when the user can select one or more options, for example to filter a search or a list.
+
+<Canvas of={ChipStories.CheckboxVariant} />
+
+### Chip as filter
+
+Shows an active filter that the user can remove. The cross on the right indicates that the filter can be removed with a single click.
+
+<Canvas of={ChipStories.Removable} />
+
+### Chip as button
+
+Use this variant when the chip should trigger an action, for example to clear all active filters.
+
+<Canvas of={ChipStories.AsButton} />
+
+## Guidelines
+
+Chip allows users to control how they want to display content.
+
+Avoid placing chip vertically. If you need to show options stacked vertically, use [checkbox](?path=/docs/designsystemet-no-checkbox--overview) or [radio](?path=/docs/designsystemet-no-radio--overview) instead. A group of chip components may wrap across multiple lines.
+
+## Text
+
+Chip should contain as few words as possible, preferably just one or two.
+
+{/* Gnist: start */}
+
+## Gnist overrides
+
+Gnist changes the background of unchecked chips from `surface-tinted` to
+`surface-default`, in every `data-color`. Checked and removable chips, and the
+hover and active states, are unchanged. This matrix shows unchecked chips in a
+selection of colours with our override applied.
+
+<Canvas of={ChipStories.ColorMatrix} />
+
+{/* Gnist: end */}

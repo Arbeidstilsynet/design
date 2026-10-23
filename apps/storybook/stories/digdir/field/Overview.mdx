@@ -1,0 +1,43 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/field/en/overview.mdx */}
+
+import { Canvas, Meta, Subtitle, Title } from "@storybook/addon-docs/blocks";
+import * as FieldStories from "./Field.stories";
+
+<Meta of={FieldStories} name="Overview" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={FieldStories.Preview} />
+
+**Use field when**
+
+- you need to ensure that [label](?path=/docs/designsystemet-no-typography-label--overview), description, [validation message](?path=/docs/designsystemet-no-typography-validationmessage--overview) and character count are correctly associated with a field
+
+**Avoid field when**
+
+- you need to semantically group multiple fields; use [fieldset](?path=/docs/designsystemet-no-fieldset--overview) instead
+
+## Example
+
+### Prefix/Suffix
+
+Prefixes and suffixes are useful for showing units, currency or other types of information relevant to the field. You should **not** use these on their own, as screen readers do not announce them. It is important that the same information shown in the prefix or suffix is also included in the label.
+
+<Canvas of={FieldStories.Affix} />
+
+### Character count
+
+Show users how many characters they have left to type.
+
+<Canvas of={FieldStories.Counter} />
+
+### Placement
+
+When you use field together with choice components such as switch, you can place the label either before or after the control. This makes it easy to adapt the component to the context.
+
+<Canvas of={FieldStories.Position} />
+
+## Guidelines
+
+Field helps you structure form fields in an accessible and consistent way. It automatically links label, description, validation message and character count to the relevant field, so that assistive technology like screen readers reads them as one unit.

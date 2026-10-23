@@ -1,0 +1,80 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/avatar/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/avatar.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as AvatarStories from "./Avatar.stories";
+
+<Meta of={AvatarStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={AvatarStories.Preview} sourceState="shown" />
+
+## Usage
+
+Avatar uses the class name `ds-avatar` on a `<span>` with `role="img"`.Ensure the avatar has an [accessible name](?path=/docs/designsystemet-no-avatar--accessibility).
+
+## CSS variables and data attributes
+
+Sizes are controlled with [`data-size`](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [`data-color`](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit from the closest parent where these are set.
+
+<CssAttributes css={css} exclude={["variant", "initials"]} />
+
+<CssVariables css={css} prefix="--dsc-" />
+
+## Example
+
+### With initials
+
+Place text inside avatar to show initials.
+
+<Canvas of={AvatarStories.Initials} />
+
+### With image or icon
+
+Avatar displays a user icon by default, but this can be overridden in CSS using the `--dsc-avatar-icon-url` variable.
+
+If you add an image or icon as content inside the avatar, make sure to set `aria-hidden="true"` to avoid duplicate information. You must add an `aria-label` to the avatar yourself to explain who or what the avatar represents.
+
+<Canvas of={AvatarStories.WithImageAndIcon} />
+
+### Shape and radius
+
+Use `--dsc-avatar-radius` CSS custom property to adjust the radius of the avatar.
+
+<Canvas of={AvatarStories.Radius} />
+
+## React
+
+```tsx
+/* With default user icon */
+<Avatar aria-label="Ola Nordmann" />
+
+/* With initials */
+<Avatar aria-label="Ola Nordmann">ON</Avatar>
+
+/* With image */
+<Avatar aria-label="Ola Nordmann">
+  <img src="..." />
+</Avatar>
+```
+
+<Canvas of={AvatarStories.Preview} />
+
+<Controls of={AvatarStories.Preview} sort="requiredFirst" />
+
+### Composition
+
+The component should be able to be composed into other components.
+Here is an example of using avatar inside a dropdown component.
+
+<Canvas of={AvatarStories.InDropdown} />

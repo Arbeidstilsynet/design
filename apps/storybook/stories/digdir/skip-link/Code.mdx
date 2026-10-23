@@ -1,0 +1,45 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/skip-link/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/skip-link.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as SkipLinkStories from "./SkipLink.stories";
+
+<Meta of={SkipLinkStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={SkipLinkStories.Preview} sourceState="shown" />
+
+## Usage
+
+Add the class name `ds-skip-link` to an `<a>` tag that points to the main content of the page.
+The target should be able to receive focus with `tabindex="-1"`.
+
+## CSS variables and data attributes
+
+Sizes are controlled with [data-size](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [data-color](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit from the closest parent where these are set.
+
+<CssVariables css={css} prefix="--dsc-" />
+
+<CssAttributes css={css} />
+
+## React
+
+```tsx
+import { SkipLink } from "@arbeidstilsynet/design-react";
+
+<SkipLink href="#main-content">Skip to main content</SkipLink>;
+```
+
+<Canvas of={SkipLinkStories.Preview} />
+
+<Controls of={SkipLinkStories.Preview} sort="requiredFirst" />

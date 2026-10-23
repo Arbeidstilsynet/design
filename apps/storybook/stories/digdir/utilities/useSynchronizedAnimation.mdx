@@ -1,0 +1,26 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components-docs/en/utilities/use-synchronized-animation.mdx */}
+
+import { Canvas, Meta } from "@storybook/addon-docs/blocks";
+import * as UseSynchronizedAnimationStories from "./useSynchronizedAnimation.stories";
+
+<Meta of={UseSynchronizedAnimationStories} />
+
+# useSynchronizedAnimation
+
+A react hook to synchronize CSS animations across multiple elements.
+
+<Canvas of={UseSynchronizedAnimationStories.Preview} />
+
+You pass in the name of the animation you want to synchronize.
+The hook returns a `ref`, which you pass to your element.
+The animation on your element will be synchronized to the first animation with the same name on the page.
+
+## Usage
+
+```tsx
+const SyncedBox = () => {
+  const ref = useSynchronizedAnimation<HTMLDivElement>("spin");
+
+  return <div ref={ref} />;
+};
+```

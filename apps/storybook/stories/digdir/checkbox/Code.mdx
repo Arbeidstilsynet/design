@@ -1,0 +1,101 @@
+{/* upstream: digdir/designsystemet@v1.23.0 apps/www/app/content/components/checkbox/en/code.mdx */}
+
+import {
+  Canvas,
+  Controls,
+  Meta,
+  Subtitle,
+  Title,
+} from "@storybook/addon-docs/blocks";
+import css from "@arbeidstilsynet/design-css/digdir/input.css?inline";
+import { CssAttributes } from "../../../../../packages/react/src/docs-components/CssAttributes";
+import { CssVariables } from "../../../../../packages/react/src/docs-components/CssVariables";
+import * as CheckboxStories from "./Checkbox.stories";
+
+<Meta of={CheckboxStories} name="Code" />
+
+<Title />
+<Subtitle />
+
+<Canvas of={CheckboxStories.Preview} sourceState="shown" />
+
+## Usage
+
+Use the classname `ds-input` on `<input>` along with `type="checkbox"`.
+
+```html
+<input class="ds-input" type="checkbox" />
+```
+
+For a valid form element, we recommend using `<ds-field>` together with a `<label>`.
+
+```html
+<ds-field>
+  <label class="ds-label">Checkbox</label>
+  <input class="ds-input" type="checkbox" />
+</ds-field>
+```
+
+## CSS variables and data attributes
+
+Sizes are controlled with [`data-size`](https://designsystemet.no/en/fundamentals/code/sizes) and colors with [`data-color`](https://designsystemet.no/en/fundamentals/code/colors). The component will inherit these from the nearest parent.
+
+Checkbox is `ds-input` with `type="checkbox"`, so variables and data attributes that apply to [input](?path=/docs/designsystemet-no-input--overview) also apply to checkbox.
+
+<CssAttributes css={css} />
+
+<CssVariables css={css} prefix="--dsc-" />
+
+## Examples
+
+### Grouping
+
+Use [fieldset](?path=/docs/designsystemet-no-fieldset--code) for grouping multiple choices.
+
+<Canvas of={CheckboxStories.Group} />
+
+### Outline
+
+`data-variant="outline"` adds extra padding and a border around the selection to create a larger clickable area.
+
+<Canvas of={CheckboxStories.Outline} />
+
+### ReadOnly
+
+From the web standard, checkbox is always `:read-only` because you cannot type text into it.
+
+Designsystemet ensures that the `readonly` attribute behaves as read-only by preventing `click` and `change`.
+
+Use `input[type="checkbox"][readonly]` as a CSS selector if you need to extend the styling of a checkbox with the readonly attribute.
+
+The user will still be able to focus on the element.
+
+<Canvas of={CheckboxStories.ReadOnly} />
+
+## React
+
+In React, building a checkbox is simpler, because we have a ready-made component that handles most of the logic and state management for us.
+
+`Checkbox` is a composite component that uses [field](?path=/docs/designsystemet-no-field--overview), [label](?path=/docs/designsystemet-no-typography-label--overview), [validation message](?path=/docs/designsystemet-no-typography-validationmessage--overview), and [input](?path=/docs/designsystemet-no-input--overview) to create a checkbox.
+
+We also have a dedicated [useCheckboxGroup](?path=/docs/designsystemet-no-utilities-usecheckboxgroup--docs) React hook to make it easier to manage a group of Checkbox components.
+
+```tsx
+import { Checkbox } from "@arbeidstilsynet/design-react";
+
+<Checkbox label="Checkbox label" value="value" />;
+```
+
+<Canvas of={CheckboxStories.Preview} />
+
+<Controls of={CheckboxStories.Preview} sort="requiredFirst" />
+
+### Indeterminate checkbox
+
+Use [useCheckboxGroup](?path=/docs/designsystemet-no-utilities-usecheckboxgroup--docs) to connect a parent checkbox that can select or clear all options in the group.
+
+This activates an additional state, `indeterminate`, alongside `checked` and `unchecked`. It is shown as a horizontal line when one or more checkboxes are selected in the group. It is shown as a regular checkbox when all checkboxes in the group share the same state.
+
+This is enabled by setting `allowIndeterminate: true` in `getCheckboxProps`.
+
+<Canvas of={CheckboxStories.InTable} />
