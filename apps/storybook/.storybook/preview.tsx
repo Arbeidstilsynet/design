@@ -16,6 +16,10 @@ import "../utils/add-displaynames";
 import { customStylesDecorator } from "../utils/customStylesDecorator";
 import { chromaticModes } from "./modes";
 import "./preview.css";
+import { colorSchemeDecorator, syncStoredColorScheme } from "./colorScheme";
+import { ThemedDocsContainer } from "./docsContainer";
+
+syncStoredColorScheme();
 
 const atViewPorts: ViewportMap = {
   atmobile: {
@@ -54,21 +58,12 @@ const atViewPorts: ViewportMap = {
 
 export default definePreview({
   addons: [addonA11y(), addonDocs()],
-  initialGlobals: {
-    colorScheme: "auto",
-  },
   globalTypes: {
+    // No toolbar: the color scheme toolbar item is a manager addon that
+    // avoids globals, since changing globals reloads docs pages. The global
+    // is still used by Chromatic modes, tests and `?globals=colorScheme:dark`.
     colorScheme: {
-      description: "Set color-scheme in stories",
-      toolbar: {
-        title: "Color scheme",
-        icon: "contrast",
-        items: [
-          { title: "Light", value: "light" },
-          { title: "Dark", value: "dark" },
-          { title: "Auto", value: "auto" },
-        ],
-      },
+      description: "Color scheme override for Chromatic modes and tests",
     },
   },
   parameters: {
@@ -146,6 +141,7 @@ export default definePreview({
       },
     },
     docs: {
+      container: ThemedDocsContainer,
       codePanel: true,
       toc: {
         headingSelector: "h2, h3",
@@ -173,6 +169,6 @@ export default definePreview({
       modes: chromaticModes,
     },
   },
-  decorators: [customStylesDecorator],
+  decorators: [customStylesDecorator, colorSchemeDecorator],
   tags: ["autodocs"],
 });

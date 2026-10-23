@@ -1,24 +1,32 @@
 import { addons, types } from "storybook/manager-api";
-import { create } from "storybook/theming";
+import { ColorSchemeSelect } from "./addon-color-scheme";
 import { GitHubLink } from "./addon-github-link";
+import { darkColorSchemeQuery, getTheme, readStoredColorScheme } from "./theme";
 
-const ADDON_ID = "github-link";
+const GITHUB_ADDON_ID = "github-link";
+const COLOR_SCHEME_ADDON_ID = "color-scheme";
 
-addons.register(ADDON_ID, () => {
-  addons.add(ADDON_ID, {
+addons.register(GITHUB_ADDON_ID, () => {
+  addons.add(GITHUB_ADDON_ID, {
     type: types.TOOLEXTRA,
     title: "GitHub Repository",
     render: GitHubLink,
   });
 });
 
+addons.register(COLOR_SCHEME_ADDON_ID, (api) => {
+  addons.add(COLOR_SCHEME_ADDON_ID, {
+    type: types.TOOL,
+    title: "Color scheme",
+    render: ColorSchemeSelect,
+  });
+
+  // Follow the system setting when "auto" is chosen.
+  window.matchMedia(darkColorSchemeQuery).addEventListener("change", () => {
+    api.setOptions({ theme: getTheme(readStoredColorScheme()) });
+  });
+});
+
 addons.setConfig({
-  theme: create({
-    base: "light",
-    brandTitle: "Gnist, Arbeidstilsynet Design",
-    brandUrl: "https://gnist.arbeidstilsynet.no/",
-    brandImage:
-      "https://at-static.arbeidstilsynet.no/logos/at-logo-horizontal.svg",
-    appBg: "white",
-  }),
+  theme: getTheme(readStoredColorScheme()),
 });

@@ -142,6 +142,8 @@ Note: `gh pr edit --title` can fail with a "Projects (classic) is being deprecat
 
 Tokens are managed in Figma via Tokens Studio plugin and synced to the `design-tokens/` directory. Run `pnpm tokens:build` to regenerate theme CSS from tokens. See `docs/TOKENS.md` for full workflow.
 
+The Storybook UI theme (sidebar, toolbar, docs pages) in `apps/storybook/.storybook/theme.ts` reads `--ds-color-*` values from the theme CSS at runtime, so changed token values apply automatically. If a token it uses is renamed or removed, update `theme.ts`; Storybook fails to load with `Storybook theme: missing --ds-color-…` until then.
+
 ## Agent skills
 
 ### Issue tracker
