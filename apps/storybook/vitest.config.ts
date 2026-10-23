@@ -38,7 +38,6 @@ export function browserProject({
     extends: true,
     // Use define for compile-time replacement — guaranteed to work in browser mode
     define: {
-      "process.env.STORYBOOK_COLOR_SCHEME": JSON.stringify(colorScheme),
       "import.meta.env.STORYBOOK_SKIP_A11Y": JSON.stringify(String(skipA11y)),
     },
     plugins: [
@@ -46,6 +45,9 @@ export function browserProject({
       // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
       storybookTest({
         configDir: path.join(dirname, ".storybook"),
+        // Applies to CSF Next stories too, which ignore globals passed to
+        // setProjectAnnotations in vitest.setup.ts.
+        initialGlobals: { colorScheme },
       }),
     ],
     test: {
