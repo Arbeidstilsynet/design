@@ -297,7 +297,8 @@ component costs one combined snapshot:
   covering the resting states the override changes (hover and visited can't
   be captured without pseudo-states). The combined snapshot picks it up.
   Keep it the single matrix: a review already collapsed Button's six into
-  one.
+  one. Fold new dimensions into it, as Button's icon and rounded buttons
+  sit in each cell, rather than adding stories.
 - `play` functions do not run inside the combined snapshot. Interactive
   components (Dialog, Dropdown, Popover, Suggestion, Tooltip today) have no
   upstream chromatic file; their `Preview` gets a Gnist `play` that opens it

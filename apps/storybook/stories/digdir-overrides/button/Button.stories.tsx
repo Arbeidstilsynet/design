@@ -105,9 +105,10 @@ export const Loading = meta.story(() => (
   </>
 ));
 
-// Gnist: every variant in a selection of colours, covering what our override
-// changes. Keep this single matrix: it is the override's part of the combined
-// Chromatic snapshot in Button.chromatic.stories.tsx.
+// Gnist: every variant in a selection of colours, with text, icon and rounded
+// icon buttons, covering what our override changes. Keep this single matrix:
+// it is the override's part of the combined Chromatic snapshot in
+// Button.chromatic.stories.tsx.
 
 const buttonColors = [
   "accent",
@@ -147,9 +148,39 @@ export const VariantMatrix = meta.story({
         <Fragment key={color}>
           <HelpText text={color} />
           {buttonVariants.map((variant) => (
-            <Button key={variant} variant={variant} data-color={color}>
-              Button
-            </Button>
+            <div
+              key={variant}
+              style={{
+                display: "flex",
+                gap: "var(--ds-size-2)",
+                alignItems: "center",
+              }}
+            >
+              <Button variant={variant} data-color={color}>
+                Button
+              </Button>
+              <Button variant={variant} data-color={color}>
+                <PencilWritingIcon aria-hidden />
+                Edit
+              </Button>
+              <Button
+                variant={variant}
+                data-color={color}
+                icon
+                aria-label="Edit"
+              >
+                <PencilWritingIcon aria-hidden />
+              </Button>
+              <Button
+                variant={variant}
+                data-color={color}
+                icon
+                aria-label="Edit"
+                style={{ borderRadius: "50%" }}
+              >
+                <PencilWritingIcon aria-hidden />
+              </Button>
+            </div>
           ))}
         </Fragment>
       ))}
@@ -160,6 +191,22 @@ export const VariantMatrix = meta.story({
       source: {
         code: `<Button variant={variant} data-color={color}>
   Button
+</Button>
+<Button variant={variant} data-color={color}>
+  <PencilWritingIcon aria-hidden />
+  Edit
+</Button>
+<Button variant={variant} data-color={color} icon aria-label="Edit">
+  <PencilWritingIcon aria-hidden />
+</Button>
+<Button
+  variant={variant}
+  data-color={color}
+  icon
+  aria-label="Edit"
+  style={{ borderRadius: "50%" }}
+>
+  <PencilWritingIcon aria-hidden />
 </Button>`,
       },
     },
