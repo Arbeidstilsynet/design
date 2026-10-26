@@ -183,8 +183,8 @@ importers:
         specifier: 1.23.0
         version: 1.23.0(@types/node@24.19.2)
       '@scaleway/changesets-renovate':
-        specifier: 4.0.5
-        version: 4.0.5(@changesets/cli@3.0.3)(supports-color@10.2.2)
+        specifier: 4.0.6
+        version: 4.0.6(@changesets/cli@3.0.3)(supports-color@10.2.2)
       '@types/node':
         specifier: 24.19.2
         version: 24.19.2
@@ -1712,8 +1712,8 @@ packages:
       rollup:
         optional: true
 
-  '@scaleway/changesets-renovate@4.0.5':
-    resolution: {integrity: sha512-3CtSh4XX9DGvR/aelWAKuNHqPrEPdZW5gKlBAa+s9WO8u6SDqZztJpfFPMsU9DPuz1J52eWM0NReolZHNWqADw==}
+  '@scaleway/changesets-renovate@4.0.6':
+    resolution: {integrity: sha512-svUaM/xLN12Y03mK/PVfWmCUED8MNc+1FhsVYFoTQSVZ5/NravYzGdqLv4MuHGvD3FX8LVkU+VCoC3DHrNsKiA==}
     engines: {node: 24.x || 25.x || 26.x}
     hasBin: true
     peerDependencies:
@@ -5171,12 +5171,11 @@ snapshots:
       estree-walker: 2.0.2
       picomatch: 4.0.7
 
-  '@scaleway/changesets-renovate@4.0.5(@changesets/cli@3.0.3)(supports-color@10.2.2)':
+  '@scaleway/changesets-renovate@4.0.6(@changesets/cli@3.0.3)(supports-color@10.2.2)':
     dependencies:
       '@changesets/cli': 3.0.3
       '@changesets/config': 4.0.1
       simple-git: 4.0.2(supports-color@10.2.2)
-      tinyglobby: 0.2.17
       yaml: 2.9.1
     transitivePeerDependencies:
       - supports-color
