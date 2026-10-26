@@ -16,7 +16,8 @@ export interface FilePickerFilesProps
   columnNames?: [string, string, string];
 
   /**
-   * Custom label for the remove button.
+   * Visible label for the remove button, also used in its accessible name
+   * followed by the filename.
    */
   removeButtonLabel?: string;
 }
@@ -77,7 +78,7 @@ export function FilePickerFiles({
                   data-color="danger"
                   variant="tertiary"
                   disabled={disabled}
-                  aria-label={`Remove ${file.name}`}
+                  aria-label={`${removeButtonLabel} ${file.name}`}
                   onClick={() => onRemove(id)}
                   className="at-filepicker-files-file__button"
                 >

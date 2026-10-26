@@ -107,6 +107,36 @@ describe("FilePicker", () => {
     expect(screen.getByText("512 KB")).toBeInTheDocument();
   });
 
+  test.each([
+    { props: {}, expectedLabel: "Fjern" },
+    {
+      props: { removeButtonLabel: "Slett fil" },
+      expectedLabel: "Slett fil",
+    },
+    { props: { removeButtonLabel: "Remove" }, expectedLabel: "Remove" },
+  ] as const)(
+    "includes the visible remove label $expectedLabel and filename in the accessible name",
+    ({ props, expectedLabel }) => {
+      const files = [
+        { id: 1, file: createMockFileInKb("document.pdf", 1024) },
+        { id: 2, file: createMockFileInKb("other.pdf", 512) },
+      ];
+
+      render(
+        <FilePicker {...defaultProps} files={files}>
+          <FilePicker.Files {...props} />
+        </FilePicker>,
+      );
+
+      for (const { file } of files) {
+        const removeButton = screen.getByRole("button", {
+          name: `${expectedLabel} ${file.name}`,
+        });
+        expect(removeButton).toHaveTextContent(expectedLabel);
+      }
+    },
+  );
+
   test("calls onRemove when remove button is clicked", async () => {
     const user = userEvent.setup();
     const onRemove = vi.fn<() => void>();
@@ -119,7 +149,7 @@ describe("FilePicker", () => {
     );
 
     const removeButton = screen.getByRole("button", {
-      name: "Remove document.pdf",
+      name: "Fjern document.pdf",
     });
     await user.click(removeButton);
 
@@ -157,7 +187,7 @@ describe("FilePicker", () => {
     );
 
     const removeButton = screen.getByRole("button", {
-      name: "Remove document.pdf",
+      name: "Fjern document.pdf",
     });
     expect(removeButton).toBeDisabled();
   });
@@ -172,7 +202,7 @@ describe("FilePicker", () => {
     );
 
     const removeButton = screen.getByRole("button", {
-      name: "Remove document.pdf",
+      name: "Fjern document.pdf",
     });
     expect(removeButton).toHaveAttribute("data-color", "danger");
     expect(removeButton.closest("td")).not.toHaveAttribute(
