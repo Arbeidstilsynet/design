@@ -19,7 +19,7 @@ COPY . /app
 RUN pnpm run build:storybook
 
 
-FROM nginx:alpine@sha256:4a73073bd557c65b759505da037898b61f1be6cbcc3c2c3aeac22d2a470c1752 AS runner
+FROM nginx:alpine@sha256:a3554c0d0b48177b1413c26e01f695334428020d9df01243fbae3e11cfd17417 AS runner
 
 COPY /apps/storybook/nginx.conf /etc/nginx/nginx.conf
 COPY --from=builder /app/apps/storybook/storybook-static /usr/share/nginx/html
