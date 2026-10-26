@@ -55,7 +55,7 @@ export const Preview = meta.story({
   render: (args) => {
     return (
       <Header {...args}>
-        <Link href="/" aria-label="Link til hjem">
+        <Link href="/" aria-label="Fagsystem - hjem">
           <Header.Title>
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
@@ -115,7 +115,7 @@ export const NoMenu = meta.story({
   render: (args) => {
     return (
       <Header {...args}>
-        <Link href="/" aria-label="Link til hjem">
+        <Link href="/" aria-label="Fagsystem - hjem">
           <Header.Title>
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
@@ -145,7 +145,7 @@ export const NoNavigation = meta.story({
   render: (args) => {
     return (
       <Header {...args}>
-        <Link href="/" aria-label="Link til hjem">
+        <Link href="/" aria-label="Fagsystem - hjem">
           <Header.Title>
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
@@ -179,7 +179,7 @@ export const CustomMaxWidth = meta.story({
         {...args}
         style={{ "--at-header-max-width": "50rem" } as React.CSSProperties}
       >
-        <Link href="/" aria-label="Link til hjem">
+        <Link href="/" aria-label="Fagsystem - hjem">
           <Header.Title>
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
@@ -239,7 +239,7 @@ export const SVGLogo = meta.story({
             color: "var(--ds-color-neutral-text-default)",
             textDecoration: "none",
           }}
-          aria-label="Link til hjem"
+          aria-label="Fagsystem - hjem"
         >
           <Header.Title>
             <Header.Illustration>
@@ -294,7 +294,7 @@ export const OnlyDarkModeInMenu = meta.story({
   render: (args) => {
     return (
       <Header {...args}>
-        <Link href="/" aria-label="Link til hjem">
+        <Link href="/" aria-label="Fagsystem - hjem">
           <Header.Title>
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
@@ -320,7 +320,7 @@ export const DifferentMenuRows = meta.story({
   render: (args) => {
     return (
       <Header {...args}>
-        <Link href="/" aria-label="Link til hjem">
+        <Link href="/" aria-label="Fagsystem - hjem">
           <Header.Title>
             <Header.Illustration>
               <HeaderStoriesIllustration aria-label="Fagsystem logo" />
@@ -427,7 +427,7 @@ export const ContentAboveHeader = meta.story({
           TEST
         </div>
         <Header {...args}>
-          <Link href="/" aria-label="Link til hjem">
+          <Link href="/" aria-label="Fagsystem - hjem">
             <Header.Title>
               <Header.Illustration>
                 <HeaderStoriesIllustration aria-label="Fagsystem logo" />

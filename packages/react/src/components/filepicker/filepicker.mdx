@@ -17,6 +17,12 @@ import css from "@arbeidstilsynet/design-css/filepicker.css?inline";
 <Primary />
 <Controls sort="requiredFirst" />
 
+## Accessibility
+
+`FilePicker.Files` uses `removeButtonLabel` (default: `Fjern`) as the visible
+remove-button text and includes it before the filename in the accessible name.
+For example, the default name for `document.pdf` is `Fjern document.pdf`.
+
 ## CSS variables
 
 <CssVariables css={css} caption={false} />
