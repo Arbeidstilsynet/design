@@ -1,5 +1,13 @@
 # @arbeidstilsynet/design-css
 
+## 0.12.5
+
+Released: 2026-10-28
+
+### Patch Changes
+
+- **Link**: Remove redundant visited color override. Designsystemet already uses the link color for visited links. ([#1370](https://github.com/Arbeidstilsynet/design/pull/1370))
+
 ## 0.12.4
 
 Released: 2026-10-12
