@@ -1,5 +1,19 @@
 # @arbeidstilsynet/design-react
 
+## 0.12.5
+
+Released: 2026-10-28
+
+### Patch Changes
+
+- **FilePicker**: Include the visible remove-button label in its accessible name before the filename. This fixes the label-content-name mismatch reported by axe-core 4.14 and respects custom labels. ([#1388](https://github.com/Arbeidstilsynet/design/pull/1388))
+
+- Updated dependency `react-dropzone` to `^20.1.4`. ([#1352](https://github.com/Arbeidstilsynet/design/pull/1352))
+
+- Updated dependency `@radix-ui/react-slot` to `^1.5.0`. ([#1325](https://github.com/Arbeidstilsynet/design/pull/1325))
+
+- Updated dependency `@navikt/aksel-icons` to `^8.20.0`. ([#1386](https://github.com/Arbeidstilsynet/design/pull/1386))
+
 ## 0.12.4
 
 Released: 2026-10-12
