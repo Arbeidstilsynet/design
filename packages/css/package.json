@@ -32,7 +32,7 @@
     "@digdir/designsystemet-css": "1.23.0"
   },
   "devDependencies": {
-    "@types/node": "24.19.2",
+    "@types/node": "26.6.5",
     "autoprefixer": "10.6.1",
     "cssnano": "9.9.0",
     "del-cli": "8.0.1",
