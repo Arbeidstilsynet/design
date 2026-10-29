@@ -231,8 +231,8 @@ importers:
         specifier: workspace:*
         version: link:../../packages/theme
       '@navikt/aksel-icons':
-        specifier: 8.20.0
-        version: 8.20.0
+        specifier: 8.20.1
+        version: 8.20.1
       clsx:
         specifier: 2.1.1
         version: 2.1.1
@@ -344,8 +344,8 @@ importers:
         specifier: 1.23.0
         version: 1.23.0
       '@navikt/aksel-icons':
-        specifier: ^8.20.0
-        version: 8.20.0
+        specifier: ^8.20.1
+        version: 8.20.1
       '@radix-ui/react-slot':
         specifier: ^1.5.0
         version: 1.5.0(@types/react@19.3.0)(react@19.3.1)
@@ -1051,8 +1051,8 @@ packages:
       '@emnapi/core': ^1.7.1 || ^2.0.0-alpha.4
       '@emnapi/runtime': ^1.7.1 || ^2.0.0-alpha.4
 
-  '@navikt/aksel-icons@8.20.0':
-    resolution: {integrity: sha512-5FVFg9Xba++NpvdBlqE/VoGbOie34M1sSLYqSUZEy6IZUjBwh4QrbKCU1hcamuBJ2pQFINwOAqxmw8Ri1AIDyw==}
+  '@navikt/aksel-icons@8.20.1':
+    resolution: {integrity: sha512-+rS7SW9iyq1OIylkOIEpU9bGtspSp1edUxMUYip6ukOJEZ97cHBUHpOJkx6J/t/VrX/UCojBxdjYBwb9cPZ45w==}
 
   '@neoconfetti/react@1.0.0':
     resolution: {integrity: sha512-klcSooChXXOzIm+SE5IISIAn3bYzYfPjbX7D7HoqZL84oAfgREeSg5vSIaSFH+DaGzzvImTyWe1OyrJ67vik4A==}
@@ -4409,7 +4409,7 @@ snapshots:
       '@digdir/designsystemet-web': 1.23.0
       '@floating-ui/dom': 1.8.0
       '@floating-ui/react': 0.26.23(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
-      '@navikt/aksel-icons': 8.20.0
+      '@navikt/aksel-icons': 8.20.1
       '@radix-ui/react-slot': 1.5.0(@types/react@19.3.0)(react@19.3.1)
       '@tanstack/react-virtual': 3.14.22(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       clsx: 2.1.1
@@ -4824,7 +4824,7 @@ snapshots:
       '@tybys/wasm-util': 0.10.4
     optional: true
 
-  '@navikt/aksel-icons@8.20.0': {}
+  '@navikt/aksel-icons@8.20.1': {}
 
   '@neoconfetti/react@1.0.0': {}
 
