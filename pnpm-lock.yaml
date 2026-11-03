@@ -243,8 +243,8 @@ importers:
         specifier: 19.3.1
         version: 19.3.1(react@19.3.1)
       react-toastify:
-        specifier: ^11.1.0
-        version: 11.1.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+        specifier: ^11.2.0
+        version: 11.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
     devDependencies:
       '@chromatic-com/storybook':
         specifier: 5.6.0
@@ -402,8 +402,8 @@ importers:
         specifier: 19.3.1
         version: 19.3.1(react@19.3.1)
       react-toastify:
-        specifier: 11.1.0
-        version: 11.1.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
+        specifier: 11.2.0
+        version: 11.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
       storybook:
         specifier: 10.6.5
         version: 10.6.5(@types/react@19.3.0)(prettier@3.9.10)(react@19.3.1)
@@ -3547,8 +3547,8 @@ packages:
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
 
-  react-toastify@11.1.0:
-    resolution: {integrity: sha512-e9h23x3phN0wbFeB6yovmWp7lobzV4CaCH0LO8nVP6H7Y+3GbcLpIzMm9dJhcp1RXbpyfvjgpfXqO80QAmn7sg==}
+  react-toastify@11.2.0:
+    resolution: {integrity: sha512-lznu1N00MfEv4p9vGWNVqCfDQ3DxScDAZTFk6STMsEcLcRZKT4PCO0JxsNduGN7LJPBSkXXs/YuLydjh650T7Q==}
     peerDependencies:
       react: ^18 || ^19
       react-dom: ^18 || ^19
@@ -7070,7 +7070,7 @@ snapshots:
 
   react-is@17.0.2: {}
 
-  react-toastify@11.1.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
+  react-toastify@11.2.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1):
     dependencies:
       clsx: 2.1.1
       react: 19.3.1
