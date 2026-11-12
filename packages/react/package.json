@@ -31,8 +31,8 @@
     "circular": "pnpm dlx madge --circular --extensions \"js,jsx,ts,tsx\" --exclude \"\" ."
   },
   "dependencies": {
-    "@digdir/designsystemet-react": "1.23.0",
-    "@digdir/designsystemet-types": "1.23.0",
+    "@digdir/designsystemet-react": "1.24.0",
+    "@digdir/designsystemet-types": "1.24.0",
     "@navikt/aksel-icons": "^8.22.1",
     "@radix-ui/react-slot": "^1.5.0",
     "clsx": "^2.1.1",
