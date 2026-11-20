@@ -19,7 +19,7 @@ COPY . /app
 RUN pnpm run build:storybook
 
 
-FROM nginx:alpine@sha256:0563c36f94a6d3ec3584161b77859f740f7e20b4853f52c796a864ce6908e8ea AS runner
+FROM nginx:alpine@sha256:fb4658584bd9a916ffb6f6e365f97c25cfdb2923801f551ea08356e695f14ff7 AS runner
 
 RUN apk upgrade --no-cache
 
