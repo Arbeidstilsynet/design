@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@types/node": "26.6.6",
-    "autoprefixer": "10.6.2",
+    "autoprefixer": "10.7.0",
     "cssnano": "9.9.0",
     "del-cli": "8.0.1",
     "postcss": "8.5.33",
