@@ -82,10 +82,19 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
       - uses: nais/setup@fb8692f65df9c904e2cdac5d395630ac876abdcf # v1.0.3
       - run: nais --version
-      - name: Validate manifests with environment mixins
+      - name: Validate Application manifests
+        run: nais validate storybook.yml
+      - name: Dry-run Application manifests with mixins
         run: |
-          for mixin in storybook.dev.yml storybook.prod.yml storybook.demo.yml; do
-            yq eval-all '. as $item ireduce ({}; . *+ $item)' \
-              storybook.yml "$mixin" > "$RUNNER_TEMP/storybook.yml"
-            nais validate "$RUNNER_TEMP/storybook.yml"
+          for mixin in dev demo; do
+            nais apply storybook.yml \
+              --mixin "storybook.$mixin.yml" \
+              --environment dev \
+              --team plattform \
+              --dry-run
           done
+          nais apply storybook.yml \
+            --mixin storybook.prod.yml \
+            --environment prod \
+            --team plattform \
+            --dry-run
