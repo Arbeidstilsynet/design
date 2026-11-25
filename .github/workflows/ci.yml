@@ -84,17 +84,24 @@ jobs:
       - run: nais --version
       - name: Validate Application manifests
         run: nais validate storybook.yml
-      - name: Dry-run Application manifests with mixins
+      - name: Validate Application manifests with mixins
         run: |
-          for mixin in dev demo; do
-            nais apply storybook.yml \
-              --mixin "storybook.$mixin.yml" \
-              --environment dev \
+          set -o pipefail
+          render_dir="$RUNNER_TEMP/rendered"
+          mkdir -p "$render_dir"
+
+          # Dry-run does not schema-validate, so validate the rendered output
+          render() {
+            nais apply "$1.yml" \
+              --mixin "$1.$2.yml" \
+              --environment "$3" \
               --team plattform \
-              --dry-run
-          done
-          nais apply storybook.yml \
-            --mixin storybook.prod.yml \
-            --environment prod \
-            --team plattform \
-            --dry-run
+              --dry-run |
+              sed -n '/^---$/,/^dry-run complete/{//!p}' >"$render_dir/$1.$2.yml"
+          }
+
+          render storybook dev dev
+          render storybook demo dev
+          render storybook prod prod
+
+          nais validate "$render_dir"/*.yml
