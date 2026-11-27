@@ -7,7 +7,7 @@ export function HeaderStoriesIllustration() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="18" cy="18" r="18" fill="var(--ds-color-background-tinted" />
+      <circle cx="18" cy="18" r="18" fill="var(--ds-color-background-tinted)" />
     </svg>
   );
 }
