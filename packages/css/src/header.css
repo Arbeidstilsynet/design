@@ -47,7 +47,7 @@
 
 .at-header__left {
   justify-content: flex-start;
-  gap: var(--ds-size-4);
+  gap: var(--ds-size-3);
 }
 
 .at-header__center {
@@ -175,6 +175,10 @@
 .at-header__menu-badge-danger {
   color: var(--ds-color-danger-text-default);
   background-color: var(--ds-color-danger-surface-tinted);
+}
+.at-header__illustration {
+  display: flex;
+  align-items: center;
 }
 
 /* Responsive adjustments */
