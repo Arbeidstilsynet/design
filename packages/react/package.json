@@ -48,7 +48,7 @@
     "@testing-library/react": "16.3.3",
     "@testing-library/user-event": "14.6.13",
     "@types/node": "26.6.6",
-    "@types/react": "19.3.0",
+    "@types/react": "19.3.1",
     "@types/react-dom": "19.3.0",
     "@typescript/typescript6": "6.0.2",
     "happy-dom": "21.0.4",
