@@ -1,5 +1,15 @@
 # @arbeidstilsynet/design-react
 
+## 0.12.6
+
+Released: 2026-11-28
+
+### Patch Changes
+
+- Updated dependency `@navikt/aksel-icons` to `^8.23.1`. ([#1491](https://github.com/Arbeidstilsynet/design/pull/1491))
+
+- Updated dependency `react-dropzone` to `^20.2.1`. ([#1476](https://github.com/Arbeidstilsynet/design/pull/1476))
+
 ## 0.12.5
 
 Released: 2026-10-28
