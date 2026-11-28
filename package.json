@@ -29,7 +29,7 @@
     "@types/node": "26.6.7",
     "@vitest/coverage-v8": "5.1.1",
     "eslint": "workspace:*",
-    "eslint-plugin-storybook": "10.6.8",
+    "eslint-plugin-storybook": "10.6.9",
     "oxfmt": "0.80.0",
     "oxlint": "1.95.0",
     "oxlint-tsgolint": "7.0.2008",
